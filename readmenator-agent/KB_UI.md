@@ -1,0 +1,95 @@
+# Subsystem: UI
+
+## client/src/Havoc/PythonApi/UI/PyDialogClass.cc
+- Layer: presentation
+- Doc: define PY_SSIZE_T_CLEAN include <Python.h> include <structmember.h>  include <Havoc/PythonApi/PythonApi.h> include <Havo
+- Language: cc
+- Symbols:
+  - `DialogClass_dealloc` (function, line 85) `void DialogClass_dealloc( PPyDialogClass self )`
+  - `DialogClass_new` (function, line 98) `PyObject* DialogClass_new( PyTypeObject *type, PyObject *args, PyObject *kwds )`
+  - `DialogClass_init` (function, line 120) `int DialogClass_init( PPyDialogClass self, PyObject *args, PyObject *kwds )`
+  - `DialogClass_exec` (function, line 155) `PyObject* DialogClass_exec( PPyDialogClass self, PyObject *args )`
+  - `DialogClass_addLabel` (function, line 162) `PyObject* DialogClass_addLabel( PPyDialogClass self, PyObject *args )`
+  - `DialogClass_addImage` (function, line 176) `PyObject* DialogClass_addImage( PPyDialogClass self, PyObject *args )`
+  - `DialogClass_addButton` (function, line 192) `PyObject* DialogClass_addButton( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 212) `QObject::connect(button, &QPushButton::clicked, self->DialogWindow->window, [button_callback]()`
+  - `DialogClass_addCheckbox` (function, line 218) `PyObject* DialogClass_addCheckbox( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 241) `QObject::connect(checkbox, &QCheckBox::clicked, self->DialogWindow->window, [checkbox_callback]()`
+  - `DialogClass_addCombobox` (function, line 247) `PyObject* DialogClass_addCombobox( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 265) `QObject::connect(comboBox, QOverload<int>::of(&QComboBox::activated), [callable_obj](int index)`
+  - `DialogClass_addLineedit` (function, line 271) `PyObject* DialogClass_addLineedit( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 289) `QObject::connect(line, &QLineEdit::editingFinished, self->DialogWindow->window, [line, line_callb...`
+  - `DialogClass_addCalendar` (function, line 299) `PyObject* DialogClass_addCalendar( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 316) `QObject::connect(cal, &QCalendarWidget::selectionChanged, self->DialogWindow->window, [cal, cal_c...`
+  - `DialogClass_addDial` (function, line 328) `PyObject* DialogClass_addDial( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 345) `QObject::connect(dial, &QDial::valueChanged, self->DialogWindow->window, [cal_callback](long value)`
+  - `DialogClass_addSlider` (function, line 351) `PyObject* DialogClass_addSlider( PPyDialogClass self, PyObject *args )`
+  - `connect` (function, line 374) `QObject::connect(slider, &QSlider::valueChanged, self->DialogWindow->window, [cal_callback](long ...`
+  - `DialogClass_replaceLabel` (function, line 380) `PyObject* DialogClass_replaceLabel( PPyDialogClass self, PyObject *args )`
+  - `DialogClass_close` (function, line 404) `PyObject* DialogClass_close( PPyDialogClass self, PyObject *args )`
+  - `DialogClass_clear` (function, line 411) `PyObject* DialogClass_clear( PPyDialogClass self, PyObject *args )`
+  - `PY_SSIZE_T_CLEAN` (macro, line 1)
+  - `AllocMov` (macro, line 77)
+
+## client/src/Havoc/PythonApi/UI/PyLoggerClass.cc
+- Layer: presentation
+- Doc: define PY_SSIZE_T_CLEAN include <Python.h> include <structmember.h>  include <Havoc/PythonApi/PythonApi.h> include <Havo
+- Language: cc
+- Symbols:
+  - `LoggerClass_dealloc` (function, line 76) `void LoggerClass_dealloc( PPyLoggerClass self )`
+  - `LoggerClass_new` (function, line 85) `PyObject* LoggerClass_new( PyTypeObject *type, PyObject *args, PyObject *kwds )`
+  - `LoggerClass_init` (function, line 94) `int LoggerClass_init( PPyLoggerClass self, PyObject *args, PyObject *kwds )`
+  - `LoggerClass_setBottomTab` (function, line 122) `PyObject* LoggerClass_setBottomTab( PPyLoggerClass self, PyObject *args )`
+  - `LoggerClass_setSmallTab` (function, line 129) `PyObject* LoggerClass_setSmallTab( PPyLoggerClass self, PyObject *args )`
+  - `LoggerClass_addText` (function, line 136) `PyObject* LoggerClass_addText( PPyLoggerClass self, PyObject *args )`
+  - `LoggerClass_clear` (function, line 148) `PyObject* LoggerClass_clear( PPyLoggerClass self, PyObject *args )`
+  - `PY_SSIZE_T_CLEAN` (macro, line 1)
+  - `AllocMov` (macro, line 68)
+
+## client/src/Havoc/PythonApi/UI/PyTreeClass.cc
+- Layer: presentation
+- Doc: define PY_SSIZE_T_CLEAN include <Python.h> include <structmember.h>  include <Havoc/PythonApi/PythonApi.h> include <Havo
+- Language: cc
+- Symbols:
+  - `TreeClass_dealloc` (function, line 77) `void TreeClass_dealloc( PPyTreeClass self )`
+  - `TreeClass_new` (function, line 90) `PyObject* TreeClass_new( PyTypeObject *type, PyObject *args, PyObject *kwds )`
+  - `TreeClass_init` (function, line 111) `int TreeClass_init( PPyTreeClass self, PyObject *args, PyObject *kwds )`
+  - `connect` (function, line 164) `QObject::connect(self->TreeWindow->tree_view->selectionModel(), &QItemSelectionModel::selectionCh...`
+  - `TreeClass_setBottomTab` (function, line 180) `PyObject* TreeClass_setBottomTab( PPyTreeClass self, PyObject *args )`
+  - `TreeClass_setSmallTab` (function, line 187) `PyObject* TreeClass_setSmallTab( PPyTreeClass self, PyObject *args )`
+  - `TreeClass_addRow` (function, line 194) `PyObject* TreeClass_addRow( PPyTreeClass self, PyObject *args )`
+  - `TreeClass_setItem` (function, line 217) `PyObject* TreeClass_setItem( PPyTreeClass self, PyObject *args )`
+  - `TreeClass_setPanel` (function, line 232) `PyObject* TreeClass_setPanel( PPyTreeClass self, PyObject *args )`
+  - `PY_SSIZE_T_CLEAN` (macro, line 1)
+  - `AllocMov` (macro, line 69)
+
+## client/src/Havoc/PythonApi/UI/PyWidgetClass.cc
+- Layer: presentation
+- Doc: define PY_SSIZE_T_CLEAN include <Python.h> include <structmember.h>  include <Havoc/PythonApi/PythonApi.h> include <Havo
+- Language: cc
+- Symbols:
+  - `WidgetClass_dealloc` (function, line 85) `void WidgetClass_dealloc( PPyWidgetClass self )`
+  - `WidgetClass_new` (function, line 98) `PyObject* WidgetClass_new( PyTypeObject *type, PyObject *args, PyObject *kwds )`
+  - `WidgetClass_init` (function, line 118) `int WidgetClass_init( PPyWidgetClass self, PyObject *args, PyObject *kwds )`
+  - `WidgetClass_addLabel` (function, line 149) `PyObject* WidgetClass_addLabel( PPyWidgetClass self, PyObject *args )`
+  - `WidgetClass_addImage` (function, line 162) `PyObject* WidgetClass_addImage( PPyWidgetClass self, PyObject *args )`
+  - `WidgetClass_setBottomTab` (function, line 178) `PyObject* WidgetClass_setBottomTab( PPyWidgetClass self, PyObject *args )`
+  - `WidgetClass_setSmallTab` (function, line 185) `PyObject* WidgetClass_setSmallTab( PPyWidgetClass self, PyObject *args )`
+  - `WidgetClass_addButton` (function, line 192) `PyObject* WidgetClass_addButton( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 212) `QObject::connect(button, &QPushButton::clicked, self->WidgetWindow->window, [button_callback]()`
+  - `WidgetClass_addCheckbox` (function, line 218) `PyObject* WidgetClass_addCheckbox( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 241) `QObject::connect(checkbox, &QCheckBox::clicked, self->WidgetWindow->window, [checkbox_callback]()`
+  - `WidgetClass_addCombobox` (function, line 247) `PyObject* WidgetClass_addCombobox( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 265) `QObject::connect(comboBox, QOverload<int>::of(&QComboBox::activated), [callable_obj](int index)`
+  - `WidgetClass_addLineedit` (function, line 271) `PyObject* WidgetClass_addLineedit( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 289) `QObject::connect(line, &QLineEdit::editingFinished, self->WidgetWindow->window, [line, line_callb...`
+  - `WidgetClass_addCalendar` (function, line 299) `PyObject* WidgetClass_addCalendar( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 316) `QObject::connect(cal, &QCalendarWidget::selectionChanged, self->WidgetWindow->window, [cal, cal_c...`
+  - `WidgetClass_addDial` (function, line 328) `PyObject* WidgetClass_addDial( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 345) `QObject::connect(dial, &QDial::valueChanged, self->WidgetWindow->window, [cal_callback](long value)`
+  - `WidgetClass_addSlider` (function, line 351) `PyObject* WidgetClass_addSlider( PPyWidgetClass self, PyObject *args )`
+  - `connect` (function, line 374) `QObject::connect(slider, &QSlider::valueChanged, self->WidgetWindow->window, [cal_callback](long ...`
+  - `WidgetClass_replaceLabel` (function, line 380) `PyObject* WidgetClass_replaceLabel( PPyWidgetClass self, PyObject *args )`
+  - `WidgetClass_clear` (function, line 404) `PyObject* WidgetClass_clear( PPyWidgetClass self, PyObject *args )`
+  - `PY_SSIZE_T_CLEAN` (macro, line 1)
+  - `AllocMov` (macro, line 77)
