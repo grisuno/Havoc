@@ -1,0 +1,3944 @@
+# Subsystem: common
+
+## payloads/Demon/include/common/Clr.h
+- Layer: utility
+- Doc: ifndef DEMON_CLR_H define DEMON_CLR_H  include <windows.h>  include <core/Win32.h>
+- Language: h
+- Symbols:
+  - `_BinderVtbl` (struct, line 55)
+  - `_Binder` (struct, line 83)
+  - `_AppDomainVtbl` (struct, line 90)
+  - `_AppDomain` (struct, line 181)
+  - `_AssemblyVtbl` (struct, line 188)
+  - `_Assembly` (struct, line 286)
+  - `_TypeVtbl` (struct, line 293)
+  - `ICLRRuntimeInfoVtbl` (struct, line 433)
+  - `_ICLRRuntimeInfo` (struct, line 517)
+  - `_Type` (struct, line 521)
+  - `ICLRMetaHostVtbl` (struct, line 525)
+  - `_ICLRMetaHost` (struct, line 579)
+  - `_MethodInfoVtbl` (struct, line 588)
+  - `_MethodInfo` (struct, line 656)
+  - `_DOTNET_ARGS` (struct, line 660)
+  - `_BindingFlags` (enum, line 263)
+  - `ICLRMetaHost` (type_alias, line 14) `typedef struct _ICLRMetaHost ICLRMetaHost;`
+  - `ICLRRuntimeInfo` (type_alias, line 16) `typedef struct _ICLRRuntimeInfo ICLRRuntimeInfo;`
+  - `IAppDomain` (type_alias, line 17) `typedef struct _AppDomain IAppDomain;`
+  - `IAssembly` (type_alias, line 18) `typedef struct _Assembly IAssembly;`
+  - `IType` (type_alias, line 19) `typedef struct _Type IType;`
+  - `IBinder` (type_alias, line 20) `typedef struct _Binder IBinder;`
+  - `IMethodInfo` (type_alias, line 21) `typedef struct _MethodInfo IMethodInfo;`
+  - `HDOMAINENUM` (type_alias, line 29) `typedef void* HDOMAINENUM;`
+  - `lpVtbl` (type_alias, line 82) `typedef struct _Binder { BinderVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 180) `typedef struct _AppDomain { AppDomainVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 285) `typedef struct _Assembly { AssemblyVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 516) `typedef struct _ICLRRuntimeInfo { ICLRRuntimeInfoVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 520) `typedef struct _Type { TypeVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 578) `typedef struct _ICLRMetaHost { ICLRMetaHostVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 655) `typedef struct _MethodInfo { MethodInfoVtbl* lpVtbl;`
+  - `RequestID` (type_alias, line 659) `typedef struct _DOTNET_ARGS { /* The random task id associated with the requested DOTNET exec */ UINT32 RequestID;`
+  - `HRESULT` (function, line 31) `typedef HRESULT(__stdcall* CLRCreateInstanceFnPtr)( REFCLSID clsid, REFIID riid, LPVOID* ppInterface);`
+  - `void` (function, line 46) `typedef void(__stdcall* RuntimeLoadedCallbackFnPtr)( ICLRRuntimeInfo* pRuntimeInfo, CallbackThreadSetFnPtr pfnCallbackThreadSet, CallbackThreadUnsetFnPtr pfnCallbackThreadUnset);`
+  - `ULONG` (function, line 60) `ULONG(STDMETHODCALLTYPE* AddRef)( IBinder* This);`
+  - `DUMMY_METHOD` (function, line 66) `DUMMY_METHOD(GetTypeInfoCount);`
+  - `ClrCreateInstance` (function, line 710) `DWORD ClrCreateInstance( LPCWSTR dotNetVersion, PICLRMetaHost* ppClrMetaHost, PICLRRuntimeInfo* ppClrRuntimeInfo, ICorRuntimeHost** ppICorRuntimeHost );`
+  - `FindVersion` (function, line 712) `BOOL FindVersion( PVOID Assembly, DWORD length );`
+  - `xCLSID_CLRMetaHost` (variable, line 7) `extern GUID xCLSID_CLRMetaHost;`
+  - `xIID_ICLRMetaHost` (variable, line 9) `extern GUID xIID_ICLRMetaHost;`
+  - `xIID_ICLRRuntimeInfo` (variable, line 10) `extern GUID xIID_ICLRRuntimeInfo;`
+  - `xCLSID_CorRuntimeHost` (variable, line 11) `extern GUID xCLSID_CorRuntimeHost;`
+  - `xIID_ICorRuntimeHost` (variable, line 12) `extern GUID xIID_ICorRuntimeHost;`
+  - `xIID_AppDomain` (variable, line 13) `extern GUID xIID_AppDomain;`
+  - `DEMON_CLR_H` (macro, line 2) `#define DEMON_CLR_H`
+  - `DUMMY_METHOD` (macro, line 53) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 88) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 186) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 291) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 586) `#define DUMMY_METHOD(x)`
+  - `DEMOn_CLR_ERROR_REFUSE_VERSION` (macro, line 708) `#define DEMOn_CLR_ERROR_REFUSE_VERSION`
+- Depends on: `payloads/Demon/include/core/Win32.h`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Dotnet.h`
+
+## payloads/Demon/include/common/Defines.h
+- Layer: utility
+- Doc: ifndef DEMON_STRINGS_H define DEMON_STRINGS_H  define PROCESS_ARCH_UNKNOWN				0 define PROCESS_ARCH_X86					1 define PRO
+- Language: h
+- Symbols:
+  - `DEMON_STRINGS_H` (macro, line 2) `#define DEMON_STRINGS_H`
+  - `PROCESS_ARCH_UNKNOWN` (macro, line 3) `#define PROCESS_ARCH_UNKNOWN`
+  - `PROCESS_ARCH_X86` (macro, line 5) `#define PROCESS_ARCH_X86`
+  - `PROCESS_ARCH_X64` (macro, line 6) `#define PROCESS_ARCH_X64`
+  - `PROCESS_ARCH_IA64` (macro, line 7) `#define PROCESS_ARCH_IA64`
+  - `PROCESS_AGENT_ARCH` (macro, line 10) `#define PROCESS_AGENT_ARCH`
+  - `PROCESS_AGENT_ARCH` (macro, line 12) `#define PROCESS_AGENT_ARCH`
+  - `DEMON_MAGIC_VALUE` (macro, line 14) `#define DEMON_MAGIC_VALUE`
+  - `WIN_VERSION_UNKNOWN` (macro, line 16) `#define WIN_VERSION_UNKNOWN`
+  - `WIN_VERSION_XP` (macro, line 18) `#define WIN_VERSION_XP`
+  - `WIN_VERSION_VISTA` (macro, line 19) `#define WIN_VERSION_VISTA`
+  - `WIN_VERSION_2008` (macro, line 20) `#define WIN_VERSION_2008`
+  - `WIN_VERSION_7` (macro, line 21) `#define WIN_VERSION_7`
+  - `WIN_VERSION_2008_R2` (macro, line 22) `#define WIN_VERSION_2008_R2`
+  - `WIN_VERSION_2008_R2` (macro, line 23) `#define WIN_VERSION_2008_R2`
+  - `WIN_VERSION_2012` (macro, line 24) `#define WIN_VERSION_2012`
+  - `WIN_VERSION_8` (macro, line 25) `#define WIN_VERSION_8`
+  - `WIN_VERSION_8_1` (macro, line 26) `#define WIN_VERSION_8_1`
+  - `WIN_VERSION_2012_R2` (macro, line 27) `#define WIN_VERSION_2012_R2`
+  - `WIN_VERSION_10` (macro, line 28) `#define WIN_VERSION_10`
+  - `WIN_VERSION_2016_X` (macro, line 29) `#define WIN_VERSION_2016_X`
+  - `LDR_GADGET_MODULE_SIZE` (macro, line 30) `#define LDR_GADGET_MODULE_SIZE`
+  - `LDR_GADGET_HEADER_SIZE` (macro, line 32) `#define LDR_GADGET_HEADER_SIZE`
+  - `PROXYLOAD_NONE` (macro, line 33) `#define PROXYLOAD_NONE`
+  - `PROXYLOAD_RTLREGISTERWAIT` (macro, line 35) `#define PROXYLOAD_RTLREGISTERWAIT`
+  - `PROXYLOAD_RTLCREATETIMER` (macro, line 36) `#define PROXYLOAD_RTLCREATETIMER`
+  - `PROXYLOAD_RTLQUEUEWORKITEM` (macro, line 37) `#define PROXYLOAD_RTLQUEUEWORKITEM`
+  - `AMSIETW_PATCH_NONE` (macro, line 38) `#define AMSIETW_PATCH_NONE`
+  - `AMSIETW_PATCH_HWBP` (macro, line 40) `#define AMSIETW_PATCH_HWBP`
+  - `AMSIETW_PATCH_MEMORY` (macro, line 41) `#define AMSIETW_PATCH_MEMORY`
+  - `H_FUNC_LDRLOADDLL` (macro, line 44) `#define H_FUNC_LDRLOADDLL`
+  - `H_FUNC_LDRGETPROCEDUREADDRESS` (macro, line 45) `#define H_FUNC_LDRGETPROCEDUREADDRESS`
+  - `H_FUNC_NTADDBOOTENTRY` (macro, line 46) `#define H_FUNC_NTADDBOOTENTRY`
+  - `H_FUNC_NTALLOCATEVIRTUALMEMORY` (macro, line 47) `#define H_FUNC_NTALLOCATEVIRTUALMEMORY`
+  - `H_FUNC_NTFREEVIRTUALMEMORY` (macro, line 48) `#define H_FUNC_NTFREEVIRTUALMEMORY`
+  - `H_FUNC_NTUNMAPVIEWOFSECTION` (macro, line 49) `#define H_FUNC_NTUNMAPVIEWOFSECTION`
+  - `H_FUNC_NTWRITEVIRTUALMEMORY` (macro, line 50) `#define H_FUNC_NTWRITEVIRTUALMEMORY`
+  - `H_FUNC_NTSETINFORMATIONVIRTUALMEMORY` (macro, line 51) `#define H_FUNC_NTSETINFORMATIONVIRTUALMEMORY`
+  - `H_FUNC_NTQUERYVIRTUALMEMORY` (macro, line 52) `#define H_FUNC_NTQUERYVIRTUALMEMORY`
+  - `H_FUNC_NTOPENPROCESSTOKEN` (macro, line 53) `#define H_FUNC_NTOPENPROCESSTOKEN`
+  - `H_FUNC_NTOPENTHREADTOKEN` (macro, line 54) `#define H_FUNC_NTOPENTHREADTOKEN`
+  - `H_FUNC_NTQUERYOBJECT` (macro, line 55) `#define H_FUNC_NTQUERYOBJECT`
+  - `H_FUNC_NTTRACEEVENT` (macro, line 56) `#define H_FUNC_NTTRACEEVENT`
+  - `H_FUNC_NTOPENPROCESS` (macro, line 57) `#define H_FUNC_NTOPENPROCESS`
+  - `H_FUNC_NTTERMINATEPROCESS` (macro, line 58) `#define H_FUNC_NTTERMINATEPROCESS`
+  - `H_FUNC_NTOPENTHREAD` (macro, line 59) `#define H_FUNC_NTOPENTHREAD`
+  - `H_FUNC_NTOPENTHREADTOKEN` (macro, line 60) `#define H_FUNC_NTOPENTHREADTOKEN`
+  - `H_FUNC_NTSETCONTEXTTHREAD` (macro, line 61) `#define H_FUNC_NTSETCONTEXTTHREAD`
+  - `H_FUNC_NTGETCONTEXTTHREAD` (macro, line 62) `#define H_FUNC_NTGETCONTEXTTHREAD`
+  - `H_FUNC_NTCLOSE` (macro, line 63) `#define H_FUNC_NTCLOSE`
+  - `H_FUNC_NTCONTINUE` (macro, line 64) `#define H_FUNC_NTCONTINUE`
+  - `H_FUNC_NTSETEVENT` (macro, line 65) `#define H_FUNC_NTSETEVENT`
+  - `H_FUNC_NTCREATEEVENT` (macro, line 66) `#define H_FUNC_NTCREATEEVENT`
+  - `H_FUNC_NTWAITFORSINGLEOBJECT` (macro, line 67) `#define H_FUNC_NTWAITFORSINGLEOBJECT`
+  - `H_FUNC_NTSIGNALANDWAITFORSINGLEOBJECT` (macro, line 68) `#define H_FUNC_NTSIGNALANDWAITFORSINGLEOBJECT`
+  - `H_FUNC_NTGETNEXTTHREAD` (macro, line 69) `#define H_FUNC_NTGETNEXTTHREAD`
+  - `H_FUNC_NTRESUMETHREAD` (macro, line 70) `#define H_FUNC_NTRESUMETHREAD`
+  - `H_FUNC_NTSUSPENDTHREAD` (macro, line 71) `#define H_FUNC_NTSUSPENDTHREAD`
+  - `H_FUNC_NTDUPLICATEOBJECT` (macro, line 72) `#define H_FUNC_NTDUPLICATEOBJECT`
+  - `H_FUNC_NTQUERYINFORMATIONTHREAD` (macro, line 73) `#define H_FUNC_NTQUERYINFORMATIONTHREAD`
+  - `H_FUNC_NTCREATETHREADEX` (macro, line 74) `#define H_FUNC_NTCREATETHREADEX`
+  - `H_FUNC_NTQUEUEAPCTHREAD` (macro, line 75) `#define H_FUNC_NTQUEUEAPCTHREAD`
+  - `H_FUNC_NTQUERYSYSTEMINFORMATION` (macro, line 76) `#define H_FUNC_NTQUERYSYSTEMINFORMATION`
+  - `H_FUNC_NTQUERYINFORMATIONTOKEN` (macro, line 77) `#define H_FUNC_NTQUERYINFORMATIONTOKEN`
+  - `H_FUNC_NTQUERYINFORMATIONPROCESS` (macro, line 78) `#define H_FUNC_NTQUERYINFORMATIONPROCESS`
+  - `H_FUNC_NTSETINFORMATIONTHREAD` (macro, line 79) `#define H_FUNC_NTSETINFORMATIONTHREAD`
+  - `H_FUNC_NTSETINFORMATIONVIRTUALMEMORY` (macro, line 80) `#define H_FUNC_NTSETINFORMATIONVIRTUALMEMORY`
+  - `H_FUNC_NTPROTECTVIRTUALMEMORY` (macro, line 81) `#define H_FUNC_NTPROTECTVIRTUALMEMORY`
+  - `H_FUNC_NTREADVIRTUALMEMORY` (macro, line 82) `#define H_FUNC_NTREADVIRTUALMEMORY`
+  - `H_FUNC_NTFREEVIRTUALMEMORY` (macro, line 83) `#define H_FUNC_NTFREEVIRTUALMEMORY`
+  - `H_FUNC_NTTERMINATETHREAD` (macro, line 84) `#define H_FUNC_NTTERMINATETHREAD`
+  - `H_FUNC_NTWRITEVIRTUALMEMORY` (macro, line 85) `#define H_FUNC_NTWRITEVIRTUALMEMORY`
+  - `H_FUNC_NTDUPLICATETOKEN` (macro, line 86) `#define H_FUNC_NTDUPLICATETOKEN`
+  - `H_FUNC_NTALERTRESUMETHREAD` (macro, line 87) `#define H_FUNC_NTALERTRESUMETHREAD`
+  - `H_FUNC_NTTESTALERT` (macro, line 88) `#define H_FUNC_NTTESTALERT`
+  - `H_FUNC_RTLALLOCATEHEAP` (macro, line 89) `#define H_FUNC_RTLALLOCATEHEAP`
+  - `H_FUNC_RTLREALLOCATEHEAP` (macro, line 90) `#define H_FUNC_RTLREALLOCATEHEAP`
+  - `H_FUNC_RTLFREEHEAP` (macro, line 91) `#define H_FUNC_RTLFREEHEAP`
+  - `H_FUNC_RTLEXITUSERPROCESS` (macro, line 92) `#define H_FUNC_RTLEXITUSERPROCESS`
+  - `H_FUNC_RTLRANDOMEX` (macro, line 93) `#define H_FUNC_RTLRANDOMEX`
+  - `H_FUNC_RTLRANDOMEX` (macro, line 94) `#define H_FUNC_RTLRANDOMEX`
+  - `H_FUNC_RTLNTSTATUSTODOSERROR` (macro, line 95) `#define H_FUNC_RTLNTSTATUSTODOSERROR`
+  - `H_FUNC_RTLGETVERSION` (macro, line 96) `#define H_FUNC_RTLGETVERSION`
+  - `H_FUNC_RTLADDVECTOREDEXCEPTIONHANDLER` (macro, line 97) `#define H_FUNC_RTLADDVECTOREDEXCEPTIONHANDLER`
+  - `H_FUNC_RTLREMOVEVECTOREDEXCEPTIONHANDLER` (macro, line 98) `#define H_FUNC_RTLREMOVEVECTOREDEXCEPTIONHANDLER`
+  - `H_FUNC_RTLCREATETIMERQUEUE` (macro, line 99) `#define H_FUNC_RTLCREATETIMERQUEUE`
+  - `H_FUNC_RTLDELETETIMERQUEUE` (macro, line 100) `#define H_FUNC_RTLDELETETIMERQUEUE`
+  - `H_FUNC_RTLCREATETIMER` (macro, line 101) `#define H_FUNC_RTLCREATETIMER`
+  - `H_FUNC_RTLQUEUEWORKITEM` (macro, line 102) `#define H_FUNC_RTLQUEUEWORKITEM`
+  - `H_FUNC_RTLREGISTERWAIT` (macro, line 103) `#define H_FUNC_RTLREGISTERWAIT`
+  - `H_FUNC_RTLCAPTURECONTEXT` (macro, line 104) `#define H_FUNC_RTLCAPTURECONTEXT`
+  - `H_FUNC_RTLCOPYMAPPEDMEMORY` (macro, line 105) `#define H_FUNC_RTLCOPYMAPPEDMEMORY`
+  - `H_FUNC_RTLFILLMEMORY` (macro, line 106) `#define H_FUNC_RTLFILLMEMORY`
+  - `H_FUNC_RTLEXITUSERTHREAD` (macro, line 107) `#define H_FUNC_RTLEXITUSERTHREAD`
+  - `H_FUNC_RTLSUBAUTHORITYSID` (macro, line 108) `#define H_FUNC_RTLSUBAUTHORITYSID`
+  - `H_FUNC_RTLSUBAUTHORITYCOUNTSID` (macro, line 109) `#define H_FUNC_RTLSUBAUTHORITYCOUNTSID`
+  - `H_FUNC_LOADLIBRARYW` (macro, line 110) `#define H_FUNC_LOADLIBRARYW`
+  - `H_FUNC_GETCOMPUTERNAMEEXA` (macro, line 112) `#define H_FUNC_GETCOMPUTERNAMEEXA`
+  - `H_FUNC_WAITFORSINGLEOBJECTEX` (macro, line 113) `#define H_FUNC_WAITFORSINGLEOBJECTEX`
+  - `H_FUNC_VIRTUALPROTECT` (macro, line 114) `#define H_FUNC_VIRTUALPROTECT`
+  - `H_FUNC_GETMODULEHANDLEA` (macro, line 115) `#define H_FUNC_GETMODULEHANDLEA`
+  - `H_FUNC_GETPROCADDRESS` (macro, line 116) `#define H_FUNC_GETPROCADDRESS`
+  - `H_FUNC_GETCURRENTDIRECTORYW` (macro, line 117) `#define H_FUNC_GETCURRENTDIRECTORYW`
+  - `H_FUNC_FINDFIRSTFILEW` (macro, line 118) `#define H_FUNC_FINDFIRSTFILEW`
+  - `H_FUNC_FINDNEXTFILEW` (macro, line 119) `#define H_FUNC_FINDNEXTFILEW`
+  - `H_FUNC_FINDCLOSE` (macro, line 120) `#define H_FUNC_FINDCLOSE`
+  - `H_FUNC_FILETIMETOSYSTEMTIME` (macro, line 121) `#define H_FUNC_FILETIMETOSYSTEMTIME`
+  - `H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME` (macro, line 122) `#define H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME`
+  - `H_FUNC_OUTPUTDEBUGSTRINGA` (macro, line 123) `#define H_FUNC_OUTPUTDEBUGSTRINGA`
+  - `H_FUNC_DEBUGBREAK` (macro, line 124) `#define H_FUNC_DEBUGBREAK`
+  - `H_FUNC_SYSTEMFUNCTION032` (macro, line 125) `#define H_FUNC_SYSTEMFUNCTION032`
+  - `H_FUNC_LOOKUPACCOUNTSIDW` (macro, line 126) `#define H_FUNC_LOOKUPACCOUNTSIDW`
+  - `H_FUNC_LOGONUSEREXW` (macro, line 127) `#define H_FUNC_LOGONUSEREXW`
+  - `H_FUNC_VSNPRINTF` (macro, line 128) `#define H_FUNC_VSNPRINTF`
+  - `H_FUNC_GETADAPTERSINFO` (macro, line 129) `#define H_FUNC_GETADAPTERSINFO`
+  - `H_FUNC_WINHTTPOPEN` (macro, line 130) `#define H_FUNC_WINHTTPOPEN`
+  - `H_FUNC_WINHTTPCONNECT` (macro, line 131) `#define H_FUNC_WINHTTPCONNECT`
+  - `H_FUNC_WINHTTPOPENREQUEST` (macro, line 132) `#define H_FUNC_WINHTTPOPENREQUEST`
+  - `H_FUNC_WINHTTPSETOPTION` (macro, line 133) `#define H_FUNC_WINHTTPSETOPTION`
+  - `H_FUNC_WINHTTPSENDREQUEST` (macro, line 134) `#define H_FUNC_WINHTTPSENDREQUEST`
+  - `H_FUNC_WINHTTPRECEIVERESPONSE` (macro, line 135) `#define H_FUNC_WINHTTPRECEIVERESPONSE`
+  - `H_FUNC_WINHTTPADDREQUESTHEADERS` (macro, line 136) `#define H_FUNC_WINHTTPADDREQUESTHEADERS`
+  - `H_FUNC_WINHTTPREADDATA` (macro, line 137) `#define H_FUNC_WINHTTPREADDATA`
+  - `H_FUNC_WINHTTPQUERYHEADERS` (macro, line 138) `#define H_FUNC_WINHTTPQUERYHEADERS`
+  - `H_FUNC_WINHTTPCLOSEHANDLE` (macro, line 139) `#define H_FUNC_WINHTTPCLOSEHANDLE`
+  - `H_FUNC_WINHTTPGETIEPROXYCONFIGFORCURRENTUSER` (macro, line 140) `#define H_FUNC_WINHTTPGETIEPROXYCONFIGFORCURRENTUSER`
+  - `H_FUNC_WINHTTPGETPROXYFORURL` (macro, line 141) `#define H_FUNC_WINHTTPGETPROXYFORURL`
+  - `H_FUNC_VIRTUALPROTECTEX` (macro, line 142) `#define H_FUNC_VIRTUALPROTECTEX`
+  - `H_FUNC_LOCALALLOC` (macro, line 143) `#define H_FUNC_LOCALALLOC`
+  - `H_FUNC_LOCALREALLOC` (macro, line 144) `#define H_FUNC_LOCALREALLOC`
+  - `H_FUNC_LOCALFREE` (macro, line 145) `#define H_FUNC_LOCALFREE`
+  - `H_FUNC_CREATEREMOTETHREAD` (macro, line 146) `#define H_FUNC_CREATEREMOTETHREAD`
+  - `H_FUNC_CREATETOOLHELP32SNAPSHOT` (macro, line 147) `#define H_FUNC_CREATETOOLHELP32SNAPSHOT`
+  - `H_FUNC_PROCESS32FIRSTW` (macro, line 148) `#define H_FUNC_PROCESS32FIRSTW`
+  - `H_FUNC_PROCESS32NEXTW` (macro, line 149) `#define H_FUNC_PROCESS32NEXTW`
+  - `H_FUNC_CREATEPIPE` (macro, line 150) `#define H_FUNC_CREATEPIPE`
+  - `H_FUNC_CREATEPROCESSW` (macro, line 151) `#define H_FUNC_CREATEPROCESSW`
+  - `H_FUNC_CREATEFILEW` (macro, line 152) `#define H_FUNC_CREATEFILEW`
+  - `H_FUNC_GETFULLPATHNAMEW` (macro, line 153) `#define H_FUNC_GETFULLPATHNAMEW`
+  - `H_FUNC_GETFILESIZE` (macro, line 154) `#define H_FUNC_GETFILESIZE`
+  - `H_FUNC_GETFILESIZEEX` (macro, line 155) `#define H_FUNC_GETFILESIZEEX`
+  - `H_FUNC_CREATENAMEDPIPEW` (macro, line 156) `#define H_FUNC_CREATENAMEDPIPEW`
+  - `H_FUNC_CONVERTFIBERTOTHREAD` (macro, line 157) `#define H_FUNC_CONVERTFIBERTOTHREAD`
+  - `H_FUNC_CREATEFIBEREX` (macro, line 158) `#define H_FUNC_CREATEFIBEREX`
+  - `H_FUNC_READFILE` (macro, line 159) `#define H_FUNC_READFILE`
+  - `H_FUNC_VIRTUALALLOCEX` (macro, line 160) `#define H_FUNC_VIRTUALALLOCEX`
+  - `H_FUNC_WAITFORSINGLEOBJECTEX` (macro, line 161) `#define H_FUNC_WAITFORSINGLEOBJECTEX`
+  - `H_FUNC_GETCOMPUTERNAMEEXA` (macro, line 162) `#define H_FUNC_GETCOMPUTERNAMEEXA`
+  - `H_FUNC_EXITPROCESS` (macro, line 163) `#define H_FUNC_EXITPROCESS`
+  - `H_FUNC_GETEXITCODEPROCESS` (macro, line 164) `#define H_FUNC_GETEXITCODEPROCESS`
+  - `H_FUNC_GETEXITCODETHREAD` (macro, line 165) `#define H_FUNC_GETEXITCODETHREAD`
+  - `H_FUNC_CONVERTTHREADTOFIBEREX` (macro, line 166) `#define H_FUNC_CONVERTTHREADTOFIBEREX`
+  - `H_FUNC_SWITCHTOFIBER` (macro, line 167) `#define H_FUNC_SWITCHTOFIBER`
+  - `H_FUNC_DELETEFIBER` (macro, line 168) `#define H_FUNC_DELETEFIBER`
+  - `H_FUNC_ALLOCCONSOLE` (macro, line 169) `#define H_FUNC_ALLOCCONSOLE`
+  - `H_FUNC_FREECONSOLE` (macro, line 170) `#define H_FUNC_FREECONSOLE`
+  - `H_FUNC_GETCONSOLEWINDOW` (macro, line 171) `#define H_FUNC_GETCONSOLEWINDOW`
+  - `H_FUNC_GETSTDHANDLE` (macro, line 172) `#define H_FUNC_GETSTDHANDLE`
+  - `H_FUNC_SETSTDHANDLE` (macro, line 173) `#define H_FUNC_SETSTDHANDLE`
+  - `H_FUNC_WAITNAMEDPIPEW` (macro, line 174) `#define H_FUNC_WAITNAMEDPIPEW`
+  - `H_FUNC_PEEKNAMEDPIPE` (macro, line 175) `#define H_FUNC_PEEKNAMEDPIPE`
+  - `H_FUNC_DISCONNECTNAMEDPIPE` (macro, line 176) `#define H_FUNC_DISCONNECTNAMEDPIPE`
+  - `H_FUNC_WRITEFILE` (macro, line 177) `#define H_FUNC_WRITEFILE`
+  - `H_FUNC_CONNECTNAMEDPIPE` (macro, line 178) `#define H_FUNC_CONNECTNAMEDPIPE`
+  - `H_FUNC_FREELIBRARY` (macro, line 179) `#define H_FUNC_FREELIBRARY`
+  - `H_FUNC_GETCURRENTDIRECTORYW` (macro, line 180) `#define H_FUNC_GETCURRENTDIRECTORYW`
+  - `H_FUNC_GETFILEATTRIBUTESW` (macro, line 181) `#define H_FUNC_GETFILEATTRIBUTESW`
+  - `H_FUNC_FINDFIRSTFILEW` (macro, line 182) `#define H_FUNC_FINDFIRSTFILEW`
+  - `H_FUNC_FINDNEXTFILEW` (macro, line 183) `#define H_FUNC_FINDNEXTFILEW`
+  - `H_FUNC_FINDCLOSE` (macro, line 184) `#define H_FUNC_FINDCLOSE`
+  - `H_FUNC_FILETIMETOSYSTEMTIME` (macro, line 185) `#define H_FUNC_FILETIMETOSYSTEMTIME`
+  - `H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME` (macro, line 186) `#define H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME`
+  - `H_FUNC_REMOVEDIRECTORYW` (macro, line 187) `#define H_FUNC_REMOVEDIRECTORYW`
+  - `H_FUNC_DELETEFILEW` (macro, line 188) `#define H_FUNC_DELETEFILEW`
+  - `H_FUNC_CREATEDIRECTORYW` (macro, line 189) `#define H_FUNC_CREATEDIRECTORYW`
+  - `H_FUNC_COPYFILEW` (macro, line 190) `#define H_FUNC_COPYFILEW`
+  - `H_FUNC_MOVEFILEEXW` (macro, line 191) `#define H_FUNC_MOVEFILEEXW`
+  - `H_FUNC_SETCURRENTDIRECTORYW` (macro, line 192) `#define H_FUNC_SETCURRENTDIRECTORYW`
+  - `H_FUNC_WOW64DISABLEWOW64FSREDIRECTION` (macro, line 193) `#define H_FUNC_WOW64DISABLEWOW64FSREDIRECTION`
+  - `H_FUNC_WOW64REVERTWOW64FSREDIRECTION` (macro, line 194) `#define H_FUNC_WOW64REVERTWOW64FSREDIRECTION`
+  - `H_FUNC_GETMODULEHANDLEA` (macro, line 195) `#define H_FUNC_GETMODULEHANDLEA`
+  - `H_FUNC_GETSYSTEMTIMEASFILETIME` (macro, line 196) `#define H_FUNC_GETSYSTEMTIMEASFILETIME`
+  - `H_FUNC_GETLOCALTIME` (macro, line 197) `#define H_FUNC_GETLOCALTIME`
+  - `H_FUNC_DUPLICATEHANDLE` (macro, line 198) `#define H_FUNC_DUPLICATEHANDLE`
+  - `H_FUNC_ATTACHCONSOLE` (macro, line 199) `#define H_FUNC_ATTACHCONSOLE`
+  - `H_FUNC_WRITECONSOLEA` (macro, line 200) `#define H_FUNC_WRITECONSOLEA`
+  - `H_FUNC_TERMINATEPROCESS` (macro, line 201) `#define H_FUNC_TERMINATEPROCESS`
+  - `H_FUNC_VIRTUALPROTECT` (macro, line 202) `#define H_FUNC_VIRTUALPROTECT`
+  - `H_FUNC_GETTOKENINFORMATION` (macro, line 203) `#define H_FUNC_GETTOKENINFORMATION`
+  - `H_FUNC_CREATEPROCESSWITHTOKENW` (macro, line 204) `#define H_FUNC_CREATEPROCESSWITHTOKENW`
+  - `H_FUNC_CREATEPROCESSWITHLOGONW` (macro, line 205) `#define H_FUNC_CREATEPROCESSWITHLOGONW`
+  - `H_FUNC_REVERTTOSELF` (macro, line 206) `#define H_FUNC_REVERTTOSELF`
+  - `H_FUNC_GETUSERNAMEA` (macro, line 207) `#define H_FUNC_GETUSERNAMEA`
+  - `H_FUNC_LOGONUSERW` (macro, line 208) `#define H_FUNC_LOGONUSERW`
+  - `H_FUNC_LOOKUPACCOUNTSIDA` (macro, line 209) `#define H_FUNC_LOOKUPACCOUNTSIDA`
+  - `H_FUNC_LOOKUPACCOUNTSIDW` (macro, line 210) `#define H_FUNC_LOOKUPACCOUNTSIDW`
+  - `H_FUNC_OPENTHREADTOKEN` (macro, line 211) `#define H_FUNC_OPENTHREADTOKEN`
+  - `H_FUNC_OPENPROCESSTOKEN` (macro, line 212) `#define H_FUNC_OPENPROCESSTOKEN`
+  - `H_FUNC_ADJUSTTOKENPRIVILEGES` (macro, line 213) `#define H_FUNC_ADJUSTTOKENPRIVILEGES`
+  - `H_FUNC_LOOKUPPRIVILEGENAMEA` (macro, line 214) `#define H_FUNC_LOOKUPPRIVILEGENAMEA`
+  - `H_FUNC_SYSTEMFUNCTION032` (macro, line 215) `#define H_FUNC_SYSTEMFUNCTION032`
+  - `H_FUNC_FREESID` (macro, line 216) `#define H_FUNC_FREESID`
+  - `H_FUNC_SETSECURITYDESCRIPTORSACL` (macro, line 217) `#define H_FUNC_SETSECURITYDESCRIPTORSACL`
+  - `H_FUNC_SETSECURITYDESCRIPTORDACL` (macro, line 218) `#define H_FUNC_SETSECURITYDESCRIPTORDACL`
+  - `H_FUNC_INITIALIZESECURITYDESCRIPTOR` (macro, line 219) `#define H_FUNC_INITIALIZESECURITYDESCRIPTOR`
+  - `H_FUNC_ADDMANDATORYACE` (macro, line 220) `#define H_FUNC_ADDMANDATORYACE`
+  - `H_FUNC_INITIALIZEACL` (macro, line 221) `#define H_FUNC_INITIALIZEACL`
+  - `H_FUNC_ALLOCATEANDINITIALIZESID` (macro, line 222) `#define H_FUNC_ALLOCATEANDINITIALIZESID`
+  - `H_FUNC_CHECKTOKENMEMBERSHIP` (macro, line 223) `#define H_FUNC_CHECKTOKENMEMBERSHIP`
+  - `H_FUNC_SETENTRIESINACLW` (macro, line 224) `#define H_FUNC_SETENTRIESINACLW`
+  - `H_FUNC_SETTHREADTOKEN` (macro, line 225) `#define H_FUNC_SETTHREADTOKEN`
+  - `H_FUNC_LSANTSTATUSTOWINERROR` (macro, line 226) `#define H_FUNC_LSANTSTATUSTOWINERROR`
+  - `H_FUNC_EQUALSID` (macro, line 227) `#define H_FUNC_EQUALSID`
+  - `H_FUNC_CONVERTSIDTOSTRINGSIDW` (macro, line 228) `#define H_FUNC_CONVERTSIDTOSTRINGSIDW`
+  - `H_FUNC_GETSIDSUBAUTHORITYCOUNT` (macro, line 229) `#define H_FUNC_GETSIDSUBAUTHORITYCOUNT`
+  - `H_FUNC_GETSIDSUBAUTHORITY` (macro, line 230) `#define H_FUNC_GETSIDSUBAUTHORITY`
+  - `H_FUNC_LOOKUPPRIVILEGEVALUEA` (macro, line 231) `#define H_FUNC_LOOKUPPRIVILEGEVALUEA`
+  - `H_FUNC_SAFEARRAYACCESSDATA` (macro, line 232) `#define H_FUNC_SAFEARRAYACCESSDATA`
+  - `H_FUNC_SAFEARRAYUNACCESSDATA` (macro, line 233) `#define H_FUNC_SAFEARRAYUNACCESSDATA`
+  - `H_FUNC_SAFEARRAYCREATE` (macro, line 234) `#define H_FUNC_SAFEARRAYCREATE`
+  - `H_FUNC_SAFEARRAYPUTELEMENT` (macro, line 235) `#define H_FUNC_SAFEARRAYPUTELEMENT`
+  - `H_FUNC_SAFEARRAYCREATEVECTOR` (macro, line 236) `#define H_FUNC_SAFEARRAYCREATEVECTOR`
+  - `H_FUNC_SAFEARRAYDESTROY` (macro, line 237) `#define H_FUNC_SAFEARRAYDESTROY`
+  - `H_FUNC_SYSALLOCSTRING` (macro, line 238) `#define H_FUNC_SYSALLOCSTRING`
+  - `H_FUNC_COMMANDLINETOARGVW` (macro, line 239) `#define H_FUNC_COMMANDLINETOARGVW`
+  - `H_FUNC_SHOWWINDOW` (macro, line 240) `#define H_FUNC_SHOWWINDOW`
+  - `H_FUNC_GETSYSTEMMETRICS` (macro, line 241) `#define H_FUNC_GETSYSTEMMETRICS`
+  - `H_FUNC_GETDC` (macro, line 242) `#define H_FUNC_GETDC`
+  - `H_FUNC_RELEASEDC` (macro, line 243) `#define H_FUNC_RELEASEDC`
+  - `H_FUNC_GETCURRENTOBJECT` (macro, line 244) `#define H_FUNC_GETCURRENTOBJECT`
+  - `H_FUNC_GETOBJECTW` (macro, line 245) `#define H_FUNC_GETOBJECTW`
+  - `H_FUNC_CREATECOMPATIBLEDC` (macro, line 246) `#define H_FUNC_CREATECOMPATIBLEDC`
+  - `H_FUNC_CREATEDIBSECTION` (macro, line 247) `#define H_FUNC_CREATEDIBSECTION`
+  - `H_FUNC_SELECTOBJECT` (macro, line 248) `#define H_FUNC_SELECTOBJECT`
+  - `H_FUNC_BITBLT` (macro, line 249) `#define H_FUNC_BITBLT`
+  - `H_FUNC_DELETEOBJECT` (macro, line 250) `#define H_FUNC_DELETEOBJECT`
+  - `H_FUNC_DELETEDC` (macro, line 251) `#define H_FUNC_DELETEDC`
+  - `H_FUNC_SETPROCESSVALIDCALLTARGETS` (macro, line 252) `#define H_FUNC_SETPROCESSVALIDCALLTARGETS`
+  - `H_FUNC_CLRCREATEINSTANCE` (macro, line 253) `#define H_FUNC_CLRCREATEINSTANCE`
+  - `H_FUNC_GETADAPTERSINFO` (macro, line 254) `#define H_FUNC_GETADAPTERSINFO`
+  - `H_FUNC_NETLOCALGROUPENUM` (macro, line 255) `#define H_FUNC_NETLOCALGROUPENUM`
+  - `H_FUNC_NETGROUPENUM` (macro, line 256) `#define H_FUNC_NETGROUPENUM`
+  - `H_FUNC_NETUSERENUM` (macro, line 257) `#define H_FUNC_NETUSERENUM`
+  - `H_FUNC_NETWKSTAUSERENUM` (macro, line 258) `#define H_FUNC_NETWKSTAUSERENUM`
+  - `H_FUNC_NETSESSIONENUM` (macro, line 259) `#define H_FUNC_NETSESSIONENUM`
+  - `H_FUNC_NETSHAREENUM` (macro, line 260) `#define H_FUNC_NETSHAREENUM`
+  - `H_FUNC_NETAPIBUFFERFREE` (macro, line 261) `#define H_FUNC_NETAPIBUFFERFREE`
+  - `H_FUNC_WSASTARTUP` (macro, line 262) `#define H_FUNC_WSASTARTUP`
+  - `H_FUNC_WSACLEANUP` (macro, line 263) `#define H_FUNC_WSACLEANUP`
+  - `H_FUNC_WSASOCKETA` (macro, line 264) `#define H_FUNC_WSASOCKETA`
+  - `H_FUNC_WSAGETLASTERROR` (macro, line 265) `#define H_FUNC_WSAGETLASTERROR`
+  - `H_FUNC_IOCTLSOCKET` (macro, line 266) `#define H_FUNC_IOCTLSOCKET`
+  - `H_FUNC_BIND` (macro, line 267) `#define H_FUNC_BIND`
+  - `H_FUNC_LISTEN` (macro, line 268) `#define H_FUNC_LISTEN`
+  - `H_FUNC_ACCEPT` (macro, line 269) `#define H_FUNC_ACCEPT`
+  - `H_FUNC_CLOSESOCKET` (macro, line 270) `#define H_FUNC_CLOSESOCKET`
+  - `H_FUNC_RECV` (macro, line 271) `#define H_FUNC_RECV`
+  - `H_FUNC_SEND` (macro, line 272) `#define H_FUNC_SEND`
+  - `H_FUNC_CONNECT` (macro, line 273) `#define H_FUNC_CONNECT`
+  - `H_FUNC_GETADDRINFO` (macro, line 274) `#define H_FUNC_GETADDRINFO`
+  - `H_FUNC_FREEADDRINFO` (macro, line 275) `#define H_FUNC_FREEADDRINFO`
+  - `H_FUNC_LSAREGISTERLOGONPROCESS` (macro, line 276) `#define H_FUNC_LSAREGISTERLOGONPROCESS`
+  - `H_FUNC_LSALOOKUPAUTHENTICATIONPACKAGE` (macro, line 277) `#define H_FUNC_LSALOOKUPAUTHENTICATIONPACKAGE`
+  - `H_FUNC_LSADEREGISTERLOGONPROCESS` (macro, line 278) `#define H_FUNC_LSADEREGISTERLOGONPROCESS`
+  - `H_FUNC_LSACONNECTUNTRUSTED` (macro, line 279) `#define H_FUNC_LSACONNECTUNTRUSTED`
+  - `H_FUNC_LSAFREERETURNBUFFER` (macro, line 280) `#define H_FUNC_LSAFREERETURNBUFFER`
+  - `H_FUNC_LSACALLAUTHENTICATIONPACKAGE` (macro, line 281) `#define H_FUNC_LSACALLAUTHENTICATIONPACKAGE`
+  - `H_FUNC_LSAGETLOGONSESSIONDATA` (macro, line 282) `#define H_FUNC_LSAGETLOGONSESSIONDATA`
+  - `H_FUNC_LSAENUMERATELOGONSESSIONS` (macro, line 283) `#define H_FUNC_LSAENUMERATELOGONSESSIONS`
+  - `H_FUNC_SLEEP` (macro, line 284) `#define H_FUNC_SLEEP`
+  - `H_FUNC_CREATETHREAD` (macro, line 285) `#define H_FUNC_CREATETHREAD`
+  - `H_FUNC_AMSISCANBUFFER` (macro, line 286) `#define H_FUNC_AMSISCANBUFFER`
+  - `H_FUNC_GLOBALFREE` (macro, line 287) `#define H_FUNC_GLOBALFREE`
+  - `H_FUNC_SWPRINTF_S` (macro, line 288) `#define H_FUNC_SWPRINTF_S`
+  - `H_COFFAPI_BEACONDATAPARSER` (macro, line 292) `#define H_COFFAPI_BEACONDATAPARSER`
+  - `H_COFFAPI_BEACONDATAINT` (macro, line 293) `#define H_COFFAPI_BEACONDATAINT`
+  - `H_COFFAPI_BEACONDATASHORT` (macro, line 294) `#define H_COFFAPI_BEACONDATASHORT`
+  - `H_COFFAPI_BEACONDATALENGTH` (macro, line 295) `#define H_COFFAPI_BEACONDATALENGTH`
+  - `H_COFFAPI_BEACONDATAEXTRACT` (macro, line 296) `#define H_COFFAPI_BEACONDATAEXTRACT`
+  - `H_COFFAPI_BEACONFORMATALLOC` (macro, line 297) `#define H_COFFAPI_BEACONFORMATALLOC`
+  - `H_COFFAPI_BEACONFORMATRESET` (macro, line 299) `#define H_COFFAPI_BEACONFORMATRESET`
+  - `H_COFFAPI_BEACONFORMATFREE` (macro, line 300) `#define H_COFFAPI_BEACONFORMATFREE`
+  - `H_COFFAPI_BEACONFORMATAPPEND` (macro, line 301) `#define H_COFFAPI_BEACONFORMATAPPEND`
+  - `H_COFFAPI_BEACONFORMATPRINTF` (macro, line 302) `#define H_COFFAPI_BEACONFORMATPRINTF`
+  - `H_COFFAPI_BEACONFORMATTOSTRING` (macro, line 303) `#define H_COFFAPI_BEACONFORMATTOSTRING`
+  - `H_COFFAPI_BEACONFORMATINT` (macro, line 304) `#define H_COFFAPI_BEACONFORMATINT`
+  - `H_COFFAPI_BEACONPRINTF` (macro, line 305) `#define H_COFFAPI_BEACONPRINTF`
+  - `H_COFFAPI_BEACONOUTPUT` (macro, line 307) `#define H_COFFAPI_BEACONOUTPUT`
+  - `H_COFFAPI_BEACONUSETOKEN` (macro, line 308) `#define H_COFFAPI_BEACONUSETOKEN`
+  - `H_COFFAPI_BEACONREVERTTOKEN` (macro, line 309) `#define H_COFFAPI_BEACONREVERTTOKEN`
+  - `H_COFFAPI_BEACONISADMIN` (macro, line 310) `#define H_COFFAPI_BEACONISADMIN`
+  - `H_COFFAPI_BEACONGETSPAWNTO` (macro, line 311) `#define H_COFFAPI_BEACONGETSPAWNTO`
+  - `H_COFFAPI_BEACONSPAWNTEMPORARYPROCESS` (macro, line 312) `#define H_COFFAPI_BEACONSPAWNTEMPORARYPROCESS`
+  - `H_COFFAPI_BEACONINJECTPROCESS` (macro, line 313) `#define H_COFFAPI_BEACONINJECTPROCESS`
+  - `H_COFFAPI_BEACONINJECTTEMPORARYPROCESS` (macro, line 314) `#define H_COFFAPI_BEACONINJECTTEMPORARYPROCESS`
+  - `H_COFFAPI_BEACONCLEANUPPROCESS` (macro, line 315) `#define H_COFFAPI_BEACONCLEANUPPROCESS`
+  - `H_COFFAPI_BEACONINFORMATION` (macro, line 316) `#define H_COFFAPI_BEACONINFORMATION`
+  - `H_COFFAPI_BEACONADDVALUE` (macro, line 317) `#define H_COFFAPI_BEACONADDVALUE`
+  - `H_COFFAPI_BEACONGETVALUE` (macro, line 318) `#define H_COFFAPI_BEACONGETVALUE`
+  - `H_COFFAPI_BEACONREMOVEVALUE` (macro, line 319) `#define H_COFFAPI_BEACONREMOVEVALUE`
+  - `H_COFFAPI_BEACONDATASTOREGETITEM` (macro, line 320) `#define H_COFFAPI_BEACONDATASTOREGETITEM`
+  - `H_COFFAPI_BEACONDATASTOREPROTECTITEM` (macro, line 321) `#define H_COFFAPI_BEACONDATASTOREPROTECTITEM`
+  - `H_COFFAPI_BEACONDATASTOREUNPROTECTITEM` (macro, line 322) `#define H_COFFAPI_BEACONDATASTOREUNPROTECTITEM`
+  - `H_COFFAPI_BEACONDATASTOREMAXENTRIES` (macro, line 323) `#define H_COFFAPI_BEACONDATASTOREMAXENTRIES`
+  - `H_COFFAPI_BEACONGETCUSTOMUSERDATA` (macro, line 324) `#define H_COFFAPI_BEACONGETCUSTOMUSERDATA`
+  - `H_COFFAPI_TOWIDECHAR` (macro, line 325) `#define H_COFFAPI_TOWIDECHAR`
+  - `H_COFFAPI_LOADLIBRARYA` (macro, line 327) `#define H_COFFAPI_LOADLIBRARYA`
+  - `H_COFFAPI_GETPROCADDRESS` (macro, line 328) `#define H_COFFAPI_GETPROCADDRESS`
+  - `H_COFFAPI_GETMODULEHANDLE` (macro, line 329) `#define H_COFFAPI_GETMODULEHANDLE`
+  - `H_COFFAPI_FREELIBRARY` (macro, line 330) `#define H_COFFAPI_FREELIBRARY`
+  - `H_COFFAPI_LOCALFREE` (macro, line 331) `#define H_COFFAPI_LOCALFREE`
+  - `H_COFFAPI_NTOPENTHREAD` (macro, line 332) `#define H_COFFAPI_NTOPENTHREAD`
+  - `H_COFFAPI_NTOPENPROCESS` (macro, line 334) `#define H_COFFAPI_NTOPENPROCESS`
+  - `H_COFFAPI_NTTERMINATEPROCESS` (macro, line 335) `#define H_COFFAPI_NTTERMINATEPROCESS`
+  - `H_COFFAPI_NTOPENTHREADTOKEN` (macro, line 336) `#define H_COFFAPI_NTOPENTHREADTOKEN`
+  - `H_COFFAPI_NTOPENPROCESSTOKEN` (macro, line 337) `#define H_COFFAPI_NTOPENPROCESSTOKEN`
+  - `H_COFFAPI_NTDUPLICATETOKEN` (macro, line 338) `#define H_COFFAPI_NTDUPLICATETOKEN`
+  - `H_COFFAPI_NTQUEUEAPCTHREAD` (macro, line 339) `#define H_COFFAPI_NTQUEUEAPCTHREAD`
+  - `H_COFFAPI_NTSUSPENDTHREAD` (macro, line 340) `#define H_COFFAPI_NTSUSPENDTHREAD`
+  - `H_COFFAPI_NTRESUMETHREAD` (macro, line 341) `#define H_COFFAPI_NTRESUMETHREAD`
+  - `H_COFFAPI_NTCREATEEVENT` (macro, line 342) `#define H_COFFAPI_NTCREATEEVENT`
+  - `H_COFFAPI_NTCREATETHREADEX` (macro, line 343) `#define H_COFFAPI_NTCREATETHREADEX`
+  - `H_COFFAPI_NTDUPLICATEOBJECT` (macro, line 344) `#define H_COFFAPI_NTDUPLICATEOBJECT`
+  - `H_COFFAPI_NTGETCONTEXTTHREAD` (macro, line 345) `#define H_COFFAPI_NTGETCONTEXTTHREAD`
+  - `H_COFFAPI_NTSETCONTEXTTHREAD` (macro, line 346) `#define H_COFFAPI_NTSETCONTEXTTHREAD`
+  - `H_COFFAPI_NTQUERYINFORMATIONPROCESS` (macro, line 347) `#define H_COFFAPI_NTQUERYINFORMATIONPROCESS`
+  - `H_COFFAPI_NTQUERYSYSTEMINFORMATION` (macro, line 348) `#define H_COFFAPI_NTQUERYSYSTEMINFORMATION`
+  - `H_COFFAPI_NTWAITFORSINGLEOBJECT` (macro, line 349) `#define H_COFFAPI_NTWAITFORSINGLEOBJECT`
+  - `H_COFFAPI_NTALLOCATEVIRTUALMEMORY` (macro, line 350) `#define H_COFFAPI_NTALLOCATEVIRTUALMEMORY`
+  - `H_COFFAPI_NTWRITEVIRTUALMEMORY` (macro, line 351) `#define H_COFFAPI_NTWRITEVIRTUALMEMORY`
+  - `H_COFFAPI_NTFREEVIRTUALMEMORY` (macro, line 352) `#define H_COFFAPI_NTFREEVIRTUALMEMORY`
+  - `H_COFFAPI_NTUNMAPVIEWOFSECTION` (macro, line 353) `#define H_COFFAPI_NTUNMAPVIEWOFSECTION`
+  - `H_COFFAPI_NTPROTECTVIRTUALMEMORY` (macro, line 354) `#define H_COFFAPI_NTPROTECTVIRTUALMEMORY`
+  - `H_COFFAPI_NTREADVIRTUALMEMORY` (macro, line 355) `#define H_COFFAPI_NTREADVIRTUALMEMORY`
+  - `H_COFFAPI_NTTERMINATETHREAD` (macro, line 356) `#define H_COFFAPI_NTTERMINATETHREAD`
+  - `H_COFFAPI_NTALERTRESUMETHREAD` (macro, line 357) `#define H_COFFAPI_NTALERTRESUMETHREAD`
+  - `H_COFFAPI_NTSIGNALANDWAITFORSINGLEOBJECT` (macro, line 358) `#define H_COFFAPI_NTSIGNALANDWAITFORSINGLEOBJECT`
+  - `H_COFFAPI_NTQUERYVIRTUALMEMORY` (macro, line 359) `#define H_COFFAPI_NTQUERYVIRTUALMEMORY`
+  - `H_COFFAPI_NTQUERYINFORMATIONTOKEN` (macro, line 360) `#define H_COFFAPI_NTQUERYINFORMATIONTOKEN`
+  - `H_COFFAPI_NTQUERYINFORMATIONTHREAD` (macro, line 361) `#define H_COFFAPI_NTQUERYINFORMATIONTHREAD`
+  - `H_COFFAPI_NTQUERYOBJECT` (macro, line 362) `#define H_COFFAPI_NTQUERYOBJECT`
+  - `H_COFFAPI_NTCLOSE` (macro, line 363) `#define H_COFFAPI_NTCLOSE`
+  - `H_COFFAPI_NTSETINFORMATIONTHREAD` (macro, line 364) `#define H_COFFAPI_NTSETINFORMATIONTHREAD`
+  - `H_COFFAPI_NTSETINFORMATIONVIRTUALMEMORY` (macro, line 365) `#define H_COFFAPI_NTSETINFORMATIONVIRTUALMEMORY`
+  - `H_COFFAPI_NTGETNEXTTHREAD` (macro, line 366) `#define H_COFFAPI_NTGETNEXTTHREAD`
+  - `H_MODULE_KERNEL32` (macro, line 367) `#define H_MODULE_KERNEL32`
+  - `H_MODULE_NTDLL` (macro, line 369) `#define H_MODULE_NTDLL`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/ObjectApi.c`, `payloads/Demon/src/core/Syscalls.c`, `payloads/Demon/src/inject/Inject.c`, `payloads/Demon/src/inject/InjectUtil.c`, `payloads/Demon/src/main/MainDll.c`
+
+## payloads/Demon/include/common/Macros.h
+- Layer: utility
+- Doc: ifndef DEMON_MACROS_H define DEMON_MACROS_H  include <stdio.h>  ifdef _WIN64 define PPEB_PTR __readgsqword( 0x60 ) else 
+- Language: h
+- Symbols:
+  - `MemSet` (function, line 25) `MemSet( d, 0, l );`
+  - `printf` (function, line 79) `printf( #b ": [%d] [ ", l );`
+  - `puts` (function, line 84) `puts( "]" );`
+  - `DEMON_MACROS_H` (macro, line 2) `#define DEMON_MACROS_H`
+  - `PPEB_PTR` (macro, line 7) `#define PPEB_PTR`
+  - `PPEB_PTR` (macro, line 9) `#define PPEB_PTR`
+  - `NT_SUCCESS` (macro, line 11) `#define NT_SUCCESS(Status)`
+  - `NtCurrentProcess` (macro, line 13) `#define NtCurrentProcess()`
+  - `NtCurrentThread` (macro, line 14) `#define NtCurrentThread()`
+  - `NtGetLastError` (macro, line 15) `#define NtGetLastError()`
+  - `NtSetLastError` (macro, line 16) `#define NtSetLastError(x)`
+  - `NtProcessHeap` (macro, line 19) `#define NtProcessHeap()`
+  - `DLLEXPORT` (macro, line 20) `#define DLLEXPORT`
+  - `RVA` (macro, line 21) `#define RVA( TYPE, DLLBASE, RVA )`
+  - `DATA_FREE` (macro, line 23) `#define DATA_FREE( d, l )`
+  - `SEC_DATA` (macro, line 29) `#define SEC_DATA`
+  - `U_PTR` (macro, line 31) `#define U_PTR( x )`
+  - `C_PTR` (macro, line 32) `#define C_PTR( x )`
+  - `B_PTR` (macro, line 33) `#define B_PTR( x )`
+  - `DREF_U8` (macro, line 34) `#define DREF_U8( x )`
+  - `DREF_U16` (macro, line 35) `#define DREF_U16( x )`
+  - `HTONS32` (macro, line 36) `#define HTONS32( x )`
+  - `HTONS16` (macro, line 37) `#define HTONS16( x )`
+  - `IMAGE_SIZE` (macro, line 38) `#define IMAGE_SIZE( IM )`
+  - `PRINTF` (macro, line 44) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 45) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 47) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 48) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 50) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 51) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 53) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 54) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 57) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 58) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PUTS` (macro, line 63) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 64) `#define PUTS_DONT_SEND( s )`
+  - `PUTS` (macro, line 66) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 67) `#define PUTS_DONT_SEND( s )`
+  - `PUTS` (macro, line 69) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 70) `#define PUTS_DONT_SEND( s )`
+  - `PUTS` (macro, line 73) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 74) `#define PUTS_DONT_SEND( s )`
+  - `PRINT_HEX` (macro, line 78) `#define PRINT_HEX( b, l )`
+  - `PRINT_HEX` (macro, line 86) `#define PRINT_HEX( b, l )`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Win32.h`, `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/CoffeeLdr.c`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Obf.c`, `payloads/Demon/src/core/Pivot.c`, `payloads/Demon/src/core/Thread.c`, `payloads/Demon/src/core/Token.c`, `payloads/Demon/src/core/Transport.c`, `payloads/Demon/src/core/Win32.c`, `payloads/Demon/src/inject/Inject.c`
+
+## payloads/Demon/include/common/Native.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_STRING` (struct, line 366)
+  - `_CSTRING` (struct, line 382)
+  - `_UNICODE_STRING` (struct, line 394)
+  - `_STRING32` (struct, line 402)
+  - `_STRING64` (struct, line 417)
+  - `_LIST_ENTRY` (struct, line 444)
+  - `_TRIPLE_LIST_ENTRY` (struct, line 456)
+  - `_OBJECT_ATTRIBUTES` (struct, line 505)
+  - `_OBJECT_DIRECTORY_INFORMATION` (struct, line 527)
+  - `_PROCESSOR_NUMBER` (struct, line 534)
+  - `_CSV_NAMESPACE_INFO` (struct, line 888)
+  - `_PATHNAME_BUFFER` (struct, line 902)
+  - `_FSCTL_QUERY_FAT_BPB_BUFFER` (struct, line 909)
+  - `RETRIEVAL_POINTERS_BUFFER` (struct, line 971)
+  - `_MOVE_FILE_DATA32` (struct, line 1022)
+  - `_FILE_PREFETCH` (struct, line 1205)
+  - `_FILE_PREFETCH_EX` (struct, line 1211)
+  - `_FILESYSTEM_STATISTICS` (struct, line 1227)
+  - `_FAT_STATISTICS` (struct, line 1254)
+  - `_EXFAT_STATISTICS` (struct, line 1268)
+  - `_NTFS_STATISTICS` (struct, line 1282)
+  - `_FILE_OBJECTID_BUFFER` (struct, line 1384)
+  - `_FILE_SET_SPARSE_BUFFER` (struct, line 1410)
+  - `_FILE_ZERO_DATA_INFORMATION` (struct, line 1421)
+  - `_FILE_ALLOCATED_RANGE_BUFFER` (struct, line 1431)
+  - `_ENCRYPTION_BUFFER` (struct, line 1442)
+  - `_DECRYPTION_STATUS_BUFFER` (struct, line 1456)
+  - `_REQUEST_RAW_ENCRYPTED_DATA` (struct, line 1466)
+  - `_ENCRYPTED_DATA_INFO` (struct, line 1473)
+  - `_PLEX_READ_DATA_REQUEST` (struct, line 1502)
+  - `_SI_COPYFILE` (struct, line 1513)
+  - `_FILE_MAKE_COMPATIBLE_BUFFER` (struct, line 1527)
+  - `_FILE_SET_DEFECT_MGMT_BUFFER` (struct, line 1532)
+  - `_FILE_QUERY_SPARING_BUFFER` (struct, line 1537)
+  - `_FILE_QUERY_ON_DISK_VOL_INFO_BUFFER` (struct, line 1545)
+  - `_SHRINK_VOLUME_INFORMATION` (struct, line 1575)
+  - `_TXFS_MODIFY_RM` (struct, line 1628)
+  - `_TXFS_QUERY_RM_INFORMATION` (struct, line 1700)
+  - `_TXFS_ROLLFORWARD_REDO_INFORMATION` (struct, line 1802)
+  - `_TXFS_START_RM_INFORMATION` (struct, line 1840)
+  - `_TXFS_GET_METADATA_INFO_OUT` (struct, line 1930)
+  - `_TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY` (struct, line 1964)
+  - `_TXFS_LIST_TRANSACTION_LOCKED_FILES` (struct, line 2002)
+  - `_TXFS_LIST_TRANSACTIONS_ENTRY` (struct, line 2035)
+  - `_TXFS_LIST_TRANSACTIONS` (struct, line 2058)
+  - `_TXFS_READ_BACKUP_INFORMATION_OUT` (struct, line 2081)
+  - `_TXFS_WRITE_BACKUP_INFORMATION` (struct, line 2104)
+  - `_TXFS_GET_TRANSACTED_VERSION` (struct, line 2111)
+  - `_TXFS_SAVEPOINT_INFORMATION` (struct, line 2172)
+  - `_TXFS_CREATE_MINIVERSION_INFO` (struct, line 2179)
+  - `_TXFS_TRANSACTION_ACTIVE_INFO` (struct, line 2188)
+  - `_BOOT_AREA_INFO` (struct, line 2197)
+  - `_RETRIEVAL_POINTER_BASE` (struct, line 2206)
+  - `_FILE_FS_PERSISTENT_VOLUME_INFORMATION` (struct, line 2211)
+  - `_FILE_SYSTEM_RECOGNITION_INFORMATION` (struct, line 2220)
+  - `_REQUEST_OPLOCK_INPUT_BUFFER` (struct, line 2236)
+  - `_REQUEST_OPLOCK_OUTPUT_BUFFER` (struct, line 2263)
+  - `_SD_CHANGE_MACHINE_SID_INPUT` (struct, line 2284)
+  - `_SD_CHANGE_MACHINE_SID_OUTPUT` (struct, line 2294)
+  - `_SD_GLOBAL_CHANGE_INPUT` (struct, line 2349)
+  - `_SD_GLOBAL_CHANGE_OUTPUT` (struct, line 2371)
+  - `_EXTENDED_ENCRYPTED_DATA_INFO` (struct, line 2405)
+  - `_LOOKUP_STREAM_FROM_CLUSTER_INPUT` (struct, line 2415)
+  - `_LOOKUP_STREAM_FROM_CLUSTER_OUTPUT` (struct, line 2421)
+  - `_LOOKUP_STREAM_FROM_CLUSTER_ENTRY` (struct, line 2437)
+  - `_FILE_TYPE_NOTIFICATION_INPUT` (struct, line 2445)
+  - `_SYSDBG_VIRTUAL` (struct, line 2508)
+  - `_SYSDBG_PHYSICAL` (struct, line 2515)
+  - `_SYSDBG_CONTROL_SPACE` (struct, line 2522)
+  - `_SYSDBG_IO_SPACE` (struct, line 2535)
+  - `_SYSDBG_MSR` (struct, line 2545)
+  - `_SYSDBG_BUS_DATA` (struct, line 2569)
+  - `_SYSDBG_TRIAGE_DUMP` (struct, line 2579)
+  - `_IO_STATUS_BLOCK` (struct, line 3178)
+  - `_X86_FLOATING_SAVE_AREA` (struct, line 3192)
+  - `_X86_CONTEXT` (struct, line 3205)
+  - `_PORT_VIEW` (struct, line 3279)
+  - `_REMOTE_PORT_VIEW` (struct, line 3288)
+  - `_MEMORY_WORKING_SET_BLOCK` (struct, line 3312)
+  - `_MEMORY_WORKING_SET_INFORMATION` (struct, line 3325)
+  - `_MEMORY_WORKING_SET_EX_BLOCK` (struct, line 3331)
+  - `_MEMORY_REGION_INFORMATION` (struct, line 3348)
+  - `_MEMORY_WORKING_SET_EX_INFORMATION` (struct, line 3356)
+  - `_ATOM_BASIC_INFORMATION` (struct, line 3386)
+  - `_ATOM_TABLE_INFORMATION` (struct, line 3394)
+  - `_SEMAPHORE_BASIC_INFORMATION` (struct, line 3409)
+  - `_MUTANT_BASIC_INFORMATION` (struct, line 3423)
+  - `_TIMER_BASIC_INFORMATION` (struct, line 3438)
+  - `_OBJECT_BASIC_INFORMATION` (struct, line 3473)
+  - `_OBJECT_NAME_INFORMATION` (struct, line 3487)
+  - `_OBJECT_TYPE_INFORMATION` (struct, line 3491)
+  - `_OBJECT_TYPES_INFORMATION` (struct, line 3516)
+  - `_OBJECT_HANDLE_FLAG_INFORMATION` (struct, line 3522)
+  - `_PLUGPLAY_EVENT_BLOCK` (struct, line 3558)
+  - `_TIME_FIELDS` (struct, line 3626)
+  - `_RTL_TIME_ZONE_INFORMATION` (struct, line 3638)
+  - `_RTL_BITMAP_RUN` (struct, line 3648)
+  - `_PARSE_MESSAGE_CONTEXT` (struct, line 3654)
+  - `_RTL_RXACT_LOG` (struct, line 3670)
+  - `_RTL_RXACT_CONTEXT` (struct, line 3679)
+  - `_CPTABLEINFO` (struct, line 3688)
+  - `_NLSTABLEINFO` (struct, line 3703)
+  - `_RTL_RANGE` (struct, line 3713)
+  - `_KEY_BASIC_INFORMATION` (struct, line 3779)
+  - `_KEY_VALUE_BASIC_INFORMATION` (struct, line 3799)
+  - `_KEY_VALUE_FULL_INFORMATION` (struct, line 3806)
+  - `_KEY_VALUE_PARTIAL_INFORMATION` (struct, line 3816)
+  - `_KEY_VALUE_PARTIAL_INFORMATION_ALIGN64` (struct, line 3823)
+  - `_KEY_VALUE_ENTRY` (struct, line 3829)
+  - `_CLIENT_ID` (struct, line 3920)
+  - `_CLIENT_ID32` (struct, line 3926)
+  - `_CLIENT_ID64` (struct, line 3932)
+  - `_KSYSTEM_TIME` (struct, line 3940)
+  - `_FILE_BASIC_INFORMATION` (struct, line 3954)
+  - `_FILE_STANDARD_INFORMATION` (struct, line 3962)
+  - `_FILE_INTERNAL_INFORMATION` (struct, line 3971)
+  - `_FILE_EA_INFORMATION` (struct, line 3975)
+  - `_FILE_ACCESS_INFORMATION` (struct, line 3979)
+  - `_FILE_POSITION_INFORMATION` (struct, line 3983)
+  - `_FILE_MODE_INFORMATION` (struct, line 3987)
+  - `_FILE_ALIGNMENT_INFORMATION` (struct, line 3991)
+  - `_FILE_NAME_INFORMATION` (struct, line 3995)
+  - `_FILE_ALL_INFORMATION` (struct, line 4000)
+  - `_FILE_NETWORK_OPEN_INFORMATION` (struct, line 4012)
+  - `_FILE_ATTRIBUTE_TAG_INFORMATION` (struct, line 4022)
+  - `_FILE_ALLOCATION_INFORMATION` (struct, line 4027)
+  - `_FILE_COMPRESSION_INFORMATION` (struct, line 4031)
+  - `_FILE_DISPOSITION_INFORMATION` (struct, line 4040)
+  - `_FILE_END_OF_FILE_INFORMATION` (struct, line 4044)
+  - `_FILE_VALID_DATA_LENGTH_INFORMATION` (struct, line 4048)
+  - `_FILE_LINK_INFORMATION` (struct, line 4052)
+  - `_FILE_MOVE_CLUSTER_INFORMATION` (struct, line 4059)
+  - `_FILE_RENAME_INFORMATION` (struct, line 4066)
+  - `_FILE_STREAM_INFORMATION` (struct, line 4073)
+  - `_FILE_TRACKING_INFORMATION` (struct, line 4081)
+  - `_FILE_COMPLETION_INFORMATION` (struct, line 4087)
+  - `_FILE_PIPE_INFORMATION` (struct, line 4092)
+  - `_FILE_PIPE_LOCAL_INFORMATION` (struct, line 4097)
+  - `_FILE_PIPE_REMOTE_INFORMATION` (struct, line 4110)
+  - `_FILE_MAILSLOT_QUERY_INFORMATION` (struct, line 4115)
+  - `_FILE_MAILSLOT_SET_INFORMATION` (struct, line 4123)
+  - `_FILE_REPARSE_POINT_INFORMATION` (struct, line 4127)
+  - `_FILE_FULL_EA_INFORMATION` (struct, line 4140)
+  - `_FILE_GET_EA_INFORMATION` (struct, line 4150)
+  - `_FILE_GET_QUOTA_INFORMATION` (struct, line 4160)
+  - `_FILE_QUOTA_INFORMATION` (struct, line 4166)
+  - `_FILE_DIRECTORY_INFORMATION` (struct, line 4188)
+  - `_FILE_FULL_DIR_INFORMATION` (struct, line 4202)
+  - `_FILE_ID_FULL_DIR_INFORMATION` (struct, line 4217)
+  - `_FILE_BOTH_DIR_INFORMATION` (struct, line 4233)
+  - `_FILE_ID_BOTH_DIR_INFORMATION` (struct, line 4250)
+  - `_FILE_NAMES_INFORMATION` (struct, line 4268)
+  - `_FILE_OBJECTID_INFORMATION` (struct, line 4275)
+  - `_SYSTEM_GDI_DRIVER_INFORMATION` (struct, line 4293)
+  - `_SYSTEM_EXCEPTION_INFORMATION` (struct, line 4303)
+  - `_SYSTEM_THREAD_INFORMATION` (struct, line 4369)
+  - `_SYSTEM_EXTENDED_THREAD_INFORMATION` (struct, line 4383)
+  - `_SYSTEM_POOL_ENTRY` (struct, line 4394)
+  - `_SYSTEM_POOL_INFORMATION` (struct, line 4406)
+  - `_SYSTEM_POOLTAG` (struct, line 4416)
+  - `_SYSTEM_BIGPOOL_ENTRY` (struct, line 4429)
+  - `_SYSTEM_POOLTAG_INFORMATION` (struct, line 4441)
+  - `_SYSTEM_SESSION_POOLTAG_INFORMATION` (struct, line 4447)
+  - `_SYSTEM_BIGPOOL_INFORMATION` (struct, line 4454)
+  - `_SYSTEM_HANDLE_TABLE_ENTRY_INFO` (struct, line 4459)
+  - `_SYSTEM_HANDLE_INFORMATION` (struct, line 4470)
+  - `_SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX` (struct, line 4476)
+  - `_SYSTEM_HANDLE_INFORMATION_EX` (struct, line 4488)
+  - `_SYSTEM_SPECIAL_POOL_INFORMATION` (struct, line 4495)
+  - `_SYSTEM_OBJECTTYPE_INFORMATION` (struct, line 4501)
+  - `_SYSTEM_HIBERFILE_INFORMATION` (struct, line 4516)
+  - `_SYSTEM_KERNEL_DEBUGGER_INFORMATION` (struct, line 4522)
+  - `_SYSTEM_REGISTRY_QUOTA_INFORMATION` (struct, line 4527)
+  - `_SYSTEM_CONTEXT_SWITCH_INFORMATION` (struct, line 4533)
+  - `_SYSTEM_SESSION_MAPPED_VIEW_INFORMATION` (struct, line 4548)
+  - `_SYSTEM_INTERRUPT_INFORMATION` (struct, line 4556)
+  - `_SYSTEM_DPC_BEHAVIOR_INFORMATION` (struct, line 4565)
+  - `_SYSTEM_LOOKASIDE_INFORMATION` (struct, line 4573)
+  - `_SYSTEM_LEGACY_DRIVER_INFORMATION` (struct, line 4585)
+  - `_SYSTEM_VDM_INSTEMUL_INFO` (struct, line 4590)
+  - `_SYSTEM_TIMEOFDAY_INFORMATION` (struct, line 4628)
+  - `_SYSTEM_BASIC_INFORMATION` (struct, line 4645)
+  - `_SYSTEM_PROCESSOR_INFORMATION` (struct, line 4659)
+  - `_SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION` (struct, line 4667)
+  - `_SYSTEM_PROCESSOR_IDLE_INFORMATION` (struct, line 4676)
+  - `_SYSTEM_NUMA_INFORMATION` (struct, line 4687)
+  - `_CACHE_DESCRIPTOR` (struct, line 4716)
+  - `_SYSTEM_LOGICAL_PROCESSOR_INFORMATION` (struct, line 4725)
+  - `_MEMORY_BASIC_INFORMATION` (struct, line 4796)
+  - `_SYSTEM_PROCESSOR_POWER_INFORMATION` (struct, line 4809)
+  - `_SYSTEM_QUERY_TIME_ADJUST_INFORMATION` (struct, line 4831)
+  - `_SYSTEM_SET_TIME_ADJUST_INFORMATION` (struct, line 4837)
+  - `_SYSTEM_PERFORMANCE_INFORMATION` (struct, line 4842)
+  - `_SYSTEM_PROCESS_INFORMATION` (struct, line 4919)
+  - `_SYSTEM_SESSION_PROCESS_INFORMATION` (struct, line 4955)
+  - `_SYSTEM_MEMORY_INFO` (struct, line 4961)
+  - `_SYSTEM_MEMORY_INFORMATION` (struct, line 4969)
+  - `_SYSTEM_CALL_COUNT_INFORMATION` (struct, line 4975)
+  - `_SYSTEM_DEVICE_INFORMATION` (struct, line 4980)
+  - `_SYSTEM_FLAGS_INFORMATION` (struct, line 4989)
+  - `_SYSTEM_CALL_TIME_INFORMATION` (struct, line 4993)
+  - `_SYSTEM_OBJECT_INFORMATION` (struct, line 4999)
+  - `_SYSTEM_PAGEFILE_INFORMATION` (struct, line 5014)
+  - `_SYSTEM_VERIFIER_INFORMATION` (struct, line 5022)
+  - `_SYSTEM_VERIFIER_INFORMATION_EX` (struct, line 5057)
+  - `_SYSTEM_FILECACHE_INFORMATION` (struct, line 5070)
+  - `_HOTPATCH_HOOK_DESCRIPTOR` (struct, line 5094)
+  - `_SYSTEM_HOTPATCH_CODE_INFORMATION` (struct, line 5105)
+  - `_KERNEL_USER_TIMES` (struct, line 5154)
+  - `_SYSTEM_WATCHDOG_HANDLER_INFORMATION` (struct, line 5194)
+  - `_SYSTEM_WATCHDOG_TIMER_INFORMATION` (struct, line 5204)
+  - `_GDI_HANDLE_ENTRY` (struct, line 5298)
+  - `_GDI_SHARED_MEMORY` (struct, line 5321)
+  - `_CURDIR` (struct, line 5333)
+  - `_RTL_DRIVE_LETTER_CURDIR` (struct, line 5342)
+  - `_RTL_USER_PROCESS_PARAMETERS` (struct, line 5353)
+  - `LIST_ENTRY32` (struct, line 5422)
+  - `LIST_ENTRY64` (struct, line 5428)
+  - `_PEB_LDR_DATA32` (struct, line 5437)
+  - `_LDR_DATA_TABLE_ENTRY32` (struct, line 5452)
+  - `_CURDIR32` (struct, line 5489)
+  - `_RTL_DRIVE_LETTER_CURDIR32` (struct, line 5495)
+  - `_RTL_USER_PROCESS_PARAMETERS32` (struct, line 5503)
+  - `_PEB32` (struct, line 5543)
+  - `_GDI_TEB_BATCH32` (struct, line 5644)
+  - `_NT_TIB32` (struct, line 5655)
+  - `_NT_TIB64` (struct, line 5668)
+  - `_TEB32` (struct, line 5682)
+  - `_TIB` (struct, line 5738)
+  - `_NLS_USER_INFO` (struct, line 5760)
+  - `_INIFILE_MAPPING_TARGET` (struct, line 5802)
+  - `_INIFILE_MAPPING_VARNAME` (struct, line 5808)
+  - `_INIFILE_MAPPING_APPNAME` (struct, line 5816)
+  - `_INIFILE_MAPPING_FILENAME` (struct, line 5824)
+  - `_INIFILE_MAPPING` (struct, line 5832)
+  - `_PORT_MESSAGE` (struct, line 5844)
+  - `_PORT_DATA_ENTRY` (struct, line 5882)
+  - `_PORT_DATA_INFORMATION` (struct, line 5887)
+  - `_CSR_API_CONNECTINFO` (struct, line 5906)
+  - `_CSR_CLIENTCONNECT_MSG` (struct, line 5922)
+  - `_CSR_CAPTURE_HEADER` (struct, line 5934)
+  - `_CSR_NT_SESSION` (struct, line 5965)
+  - `_CSR_API_MSG` (struct, line 5973)
+  - `_CSR_CALLBACK_INFO` (struct, line 5999)
+  - `_RTL_DYNAMIC_TIME_ZONE_INFORMATION` (struct, line 6013)
+  - `_BASESRV_API_CONNECTINFO` (struct, line 6023)
+  - `_BASE_NLS_SET_USER_INFO_MSG` (struct, line 6068)
+  - `_BASE_NLS_GET_USER_INFO_MSG` (struct, line 6075)
+  - `_BASE_NLS_UPDATE_CACHE_COUNT_MSG` (struct, line 6081)
+  - `_BASE_UPDATE_VDM_ENTRY_MSG` (struct, line 6086)
+  - `_BASE_GET_NEXT_VDM_COMMAND_MSG` (struct, line 6097)
+  - `_BASE_SHUTDOWNPARAM_MSG` (struct, line 6130)
+  - `_BASE_GETTEMPFILE_MSG` (struct, line 6136)
+  - `_BASE_DEBUGPROCESS_MSG` (struct, line 6141)
+  - `_BASE_CHECKVDM_MSG` (struct, line 6148)
+  - `_BASE_GET_VDM_EXIT_CODE_MSG` (struct, line 6181)
+  - `_BASE_DEFERREDCREATEPROCESS_MSG` (struct, line 6188)
+  - `_BASE_EXITPROCESS_MSG` (struct, line 6194)
+  - `_BASE_GET_SET_VDM_CUR_DIRS_MSG` (struct, line 6198)
+  - `_BASE_SET_REENTER_COUNT` (struct, line 6205)
+  - `_ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION` (struct, line 6221)
+  - `_BASE_SXS_CREATEPROCESS_MSG` (struct, line 6232)
+  - `_BASE_CREATEPROCESS_MSG` (struct, line 6245)
+  - `_BASE_CREATETHREAD_MSG` (struct, line 6261)
+  - `_BASE_MSG_SXS_HANDLES` (struct, line 6268)
+  - `_BASE_EXIT_VDM_MSG` (struct, line 6277)
+  - `_BASE_IS_FIRST_VDM_MSG` (struct, line 6285)
+  - `_BASE_SET_REENTER_COUNT_MSG` (struct, line 6291)
+  - `_BASE_BAT_NOTIFICATION_MSG` (struct, line 6298)
+  - `_BASE_REGISTER_WOWEXEC_MSG` (struct, line 6305)
+  - `_BASE_REFRESHINIFILEMAPPING_MSG` (struct, line 6312)
+  - `_BASE_SET_TERMSRVCLIENTTIMEZONE` (struct, line 6318)
+  - `_BASE_SET_TERMSRVAPPINSTALLMODE` (struct, line 6326)
+  - `_BASE_SOUNDSENTRY_NOTIFICATION_MSG` (struct, line 6332)
+  - `_BASE_DEFINEDOSDEVICE_MSG` (struct, line 6338)
+  - `_BASE_MSG_SXS_STREAM` (struct, line 6345)
+  - `_BASE_SXS_CREATE_ACTIVATION_CONTEXT_MSG` (struct, line 6358)
+  - `_BASE_API_MSG` (struct, line 6376)
+  - `_BASE_STATIC_SERVER_DATA` (struct, line 6414)
+  - `_GDI_TEB_BATCH` (struct, line 6442)
+  - `_ASSEMBLY_STORAGE_MAP_ENTRY` (struct, line 6473)
+  - `_ASSEMBLY_STORAGE_MAP` (struct, line 6480)
+  - `_ACTIVATION_CONTEXT_DATA` (struct, line 6487)
+  - `_ACTIVATION_CONTEXT` (struct, line 6498)
+  - `_PEB_FREE_BLOCK` (struct, line 6515)
+  - `_PEB_LDR_DATA` (struct, line 6520)
+  - `_INITIAL_TEB` (struct, line 6533)
+  - `_WOW64_PROCESS` (struct, line 6547)
+  - `_LDR_DLL_LOADED_NOTIFICATION_DATA` (struct, line 6598)
+  - `_LDR_DLL_UNLOADED_NOTIFICATION_DATA` (struct, line 6607)
+  - `_RTL_PROCESS_MODULE_INFORMATION` (struct, line 6628)
+  - `_RTL_PROCESS_MODULES` (struct, line 6642)
+  - `_RTL_PROCESS_MODULE_INFORMATION_EX` (struct, line 6648)
+  - `_LDR_DATA_TABLE_ENTRY` (struct, line 6671)
+  - `_FLS_CALLBACK_INFO` (struct, line 6712)
+  - `_RTL_RELATIVE_NAME` (struct, line 6726)
+  - `_RTL_RELATIVE_NAME_U` (struct, line 6734)
+  - `_PEB` (struct, line 6757)
+  - `_RTL_ACTIVATION_CONTEXT_STACK_FRAME` (struct, line 6895)
+  - `_ACTIVATION_CONTEXT_STACK` (struct, line 6903)
+  - `_TEB_ACTIVE_FRAME_CONTEXT` (struct, line 6916)
+  - `_TEB_ACTIVE_FRAME_CONTEXT_EX` (struct, line 6924)
+  - `_TEB_ACTIVE_FRAME` (struct, line 6935)
+  - `_TEB_ACTIVE_FRAME_EX` (struct, line 6944)
+  - `_TEB` (struct, line 6953)
+  - `_THREAD_BASIC_INFORMATION` (struct, line 7112)
+  - `_PROCESS_DEVICEMAP_INFORMATION` (struct, line 7128)
+  - `_PROCESS_DEVICEMAP_INFORMATION_EX` (struct, line 7140)
+  - `_PROCESS_BASIC_INFORMATION` (struct, line 7154)
+  - `_PROCESS_EXTENDED_BASIC_INFORMATION` (struct, line 7165)
+  - `_RTL_HEAP_ENTRY` (struct, line 7183)
+  - `_RTL_HEAP_TAG` (struct, line 7213)
+  - `_RTL_HEAP_INFORMATION` (struct, line 7223)
+  - `_RTL_PROCESS_HEAPS` (struct, line 7240)
+  - `_RTL_PROCESS_LOCK_INFORMATION` (struct, line 7246)
+  - `_CONTEXT` (struct, line 7279)
+  - `_EXCEPTION_RECORD` (struct, line 7280)
+  - `_EXCEPTION_REGISTRATION_RECORD` (struct, line 7293)
+  - `_CONTEXT` (struct, line 7363)
+  - `_EXCEPTION_RECORD` (struct, line 7450)
+  - `_EXCEPTION_RECORD32` (struct, line 7466)
+  - `_EXCEPTION_RECORD64` (struct, line 7475)
+  - `_EXCEPTION_POINTERS` (struct, line 7489)
+  - `_RTL_QUERY_REGISTRY_TABLE` (struct, line 7506)
+  - `_PROCESS_PRIORITY_CLASS` (struct, line 7543)
+  - `_PROCESS_FOREGROUND_BACKGROUND` (struct, line 7548)
+  - `_FILE_PATH` (struct, line 7552)
+  - `_WINDOWS_OS_OPTIONS` (struct, line 7569)
+  - `_BOOT_ENTRY` (struct, line 7582)
+  - `_BOOT_OPTIONS` (struct, line 7595)
+  - `_USER_SID` (struct, line 7609)
+  - `_USER_PERMISSION` (struct, line 7617)
+  - `_LSA_UNICODE_STRING` (struct, line 8513)
+  - `_LSA_STRING` (struct, line 8522)
+  - `_LSA_OBJECT_ATTRIBUTES` (struct, line 8528)
+  - `_LSA_TRUST_INFORMATION` (struct, line 8539)
+  - `_LSA_REFERENCED_DOMAIN_LIST` (struct, line 8544)
+  - `_LSA_TRANSLATED_SID2` (struct, line 8550)
+  - `_LSA_TRANSLATED_NAME` (struct, line 8558)
+  - `_POLICY_ACCOUNT_DOMAIN_INFO` (struct, line 8564)
+  - `_POLICY_DNS_DOMAIN_INFO` (struct, line 8569)
+  - `_SE_ADT_OBJECT_TYPE` (struct, line 8715)
+  - `_SE_ADT_PARAMETER_ARRAY_ENTRY` (struct, line 8723)
+  - `_SE_ADT_ACCESS_REASON` (struct, line 8732)
+  - `_SE_ADT_PARAMETER_ARRAY` (struct, line 8743)
+  - `_LSA_TRANSLATED_SID` (struct, line 8914)
+  - `_POLICY_AUDIT_LOG_INFO` (struct, line 8961)
+  - `_POLICY_AUDIT_EVENTS_INFO` (struct, line 8972)
+  - `_POLICY_AUDIT_SUBCATEGORIES_INFO` (struct, line 8980)
+  - `_POLICY_AUDIT_CATEGORIES_INFO` (struct, line 8987)
+  - `_POLICY_PRIMARY_DOMAIN_INFO` (struct, line 9012)
+  - `_POLICY_PD_ACCOUNT_INFO` (struct, line 9019)
+  - `_POLICY_LSA_SERVER_ROLE_INFO` (struct, line 9025)
+  - `_POLICY_REPLICA_SOURCE_INFO` (struct, line 9031)
+  - `_POLICY_DEFAULT_QUOTA_INFO` (struct, line 9038)
+  - `_POLICY_MODIFICATION_INFO` (struct, line 9045)
+  - `_POLICY_AUDIT_FULL_SET_INFO` (struct, line 9053)
+  - `_POLICY_AUDIT_FULL_QUERY_INFO` (struct, line 9060)
+  - `_POLICY_DOMAIN_QUALITY_OF_SERVICE_INFO` (struct, line 9095)
+  - `_POLICY_DOMAIN_EFS_INFO` (struct, line 9103)
+  - `_POLICY_DOMAIN_KERBEROS_TICKET_INFO` (struct, line 9112)
+  - `_TRUSTED_DOMAIN_NAME_INFO` (struct, line 9155)
+  - `_TRUSTED_CONTROLLERS_INFO` (struct, line 9161)
+  - `_TRUSTED_POSIX_OFFSET_INFO` (struct, line 9168)
+  - `_TRUSTED_PASSWORD_INFO` (struct, line 9174)
+  - `_TRUSTED_DOMAIN_INFORMATION_EX` (struct, line 9237)
+  - `_TRUSTED_DOMAIN_INFORMATION_EX2` (struct, line 9248)
+  - `_LSA_AUTH_INFORMATION` (struct, line 9269)
+  - `_TRUSTED_DOMAIN_AUTH_INFORMATION` (struct, line 9277)
+  - `_TRUSTED_DOMAIN_FULL_INFORMATION` (struct, line 9288)
+  - `_TRUSTED_DOMAIN_FULL_INFORMATION2` (struct, line 9296)
+  - `_TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES` (struct, line 9304)
+  - `_LSA_FOREST_TRUST_DOMAIN_INFO` (struct, line 9346)
+  - `_LSA_FOREST_TRUST_BINARY_DATA` (struct, line 9368)
+  - `_LSA_FOREST_TRUST_RECORD` (struct, line 9380)
+  - `_LSA_FOREST_TRUST_INFORMATION` (struct, line 9415)
+  - `_LSA_FOREST_TRUST_COLLISION_RECORD` (struct, line 9435)
+  - `_LSA_FOREST_TRUST_COLLISION_INFORMATION` (struct, line 9444)
+  - `_LSA_ENUMERATION_INFORMATION` (struct, line 9465)
+  - `_LSA_LAST_INTER_LOGON_INFO` (struct, line 9493)
+  - `_SECURITY_LOGON_SESSION_DATA` (struct, line 9502)
+  - `_EFI_DRIVER_ENTRY` (struct, line 9854)
+  - `_EFI_DRIVER_ENTRY_LIST` (struct, line 9864)
+  - `_RTL_STACK_CONTEXT_ENTRY` (struct, line 9872)
+  - `_RTL_STACK_CONTEXT` (struct, line 9877)
+  - `_RTL_HEAP_PARAMETERS` (struct, line 9889)
+  - `_RTL_AVL_TABLE` (struct, line 9921)
+  - `_RTL_SPLAY_LINKS` (struct, line 9923)
+  - `_RTL_AVL_TABLE` (struct, line 9945)
+  - `_RTL_BALANCED_LINKS` (struct, line 10015)
+  - `_RTL_AVL_TABLE` (struct, line 10024)
+  - `_RTL_GENERIC_TABLE` (struct, line 10039)
+  - `_GENERATE_NAME_CONTEXT` (struct, line 10052)
+  - `_PREFIX_TABLE_ENTRY` (struct, line 10068)
+  - `_PREFIX_TABLE` (struct, line 10077)
+  - `_UNICODE_PREFIX_TABLE_ENTRY` (struct, line 10084)
+  - `_UNICODE_PREFIX_TABLE` (struct, line 10094)
+  - `_COMPRESSED_DATA_INFO` (struct, line 10110)
+  - `_SECTION_IMAGE_INFORMATION` (struct, line 10124)
+  - `_SECTION_IMAGE_INFORMATION64` (struct, line 10161)
+  - `_RTL_BITMAP` (struct, line 10185)
+  - `_RTL_RANGE_LIST` (struct, line 10198)
+  - `_RANGE_LIST_ITERATOR` (struct, line 10215)
+  - `_STARTUP_ARGUMENT` (struct, line 10222)
+  - `_RTL_USER_PROCESS_INFORMATION` (struct, line 10250)
+  - `_RTL_USER_PROCESS_INFORMATION64` (struct, line 10258)
+  - `_RTL_RESOURCE` (struct, line 10271)
+  - `_RTL_TRACE_BLOCK` (struct, line 10290)
+  - `_RTL_TRACE_ENUMERATE` (struct, line 10306)
+  - `_KLDR_DATA_TABLE_ENTRY` (struct, line 10312)
+  - `_DISPATCHER_HEADER` (struct, line 10347)
+  - `_KEVENT` (struct, line 10380)
+  - `_KGATE` (struct, line 10385)
+  - `_KSEMAPHORE` (struct, line 10390)
+  - `_OWNER_ENTRY` (struct, line 10396)
+  - `_ERESOURCE` (struct, line 10403)
+  - `_HEAP_LOCK` (struct, line 10441)
+  - `_HEAP_TUNING_PARAMETERS` (struct, line 10450)
+  - `_HEAP_PSEUDO_TAG_ENTRY` (struct, line 10456)
+  - `_HEAP_TAG_ENTRY` (struct, line 10463)
+  - `_HEAP_ENTRY` (struct, line 10473)
+  - `_HEAP_COUNTERS` (struct, line 10496)
+  - `_HEAP` (struct, line 10518)
+  - `_HEAP_FREE_ENTRY_EXTRA` (struct, line 10575)
+  - `_HEAP_ENTRY_EXTRA` (struct, line 10581)
+  - `_HEAP_VIRTUAL_ALLOC_ENTRY` (struct, line 10589)
+  - `_XSTATE_FEATURE` (struct, line 10674)
+  - `_XSTATE_CONFIGURATION` (struct, line 10679)
+  - `_KUSER_SHARED_DATA` (struct, line 10702)
+  - `_RTL_PROCESS_REFLECTION_INFORMATION` (struct, line 10915)
+  - `_VM_COUNTERS` (struct, line 10923)
+  - `_IO_COUNTERS` (struct, line 10940)
+  - `_SYSTEM_PROCESSES_INFORMATION` (struct, line 10953)
+  - `_DBGKM_EXCEPTION` (struct, line 10977)
+  - `_DBGKM_CREATE_THREAD` (struct, line 10983)
+  - `_DBGKM_CREATE_PROCESS` (struct, line 10989)
+  - `_DBGKM_EXIT_THREAD` (struct, line 10999)
+  - `_DBGKM_EXIT_PROCESS` (struct, line 11004)
+  - `_DBGKM_LOAD_DLL` (struct, line 11009)
+  - `_DBGKM_UNLOAD_DLL` (struct, line 11018)
+  - `_DBGUI_CREATE_THREAD` (struct, line 11038)
+  - `_DBGUI_CREATE_PROCESS` (struct, line 11044)
+  - `_DBGUI_WAIT_STATE_CHANGE` (struct, line 11051)
+  - `_RTL_HEAP_TAG_INFO` (struct, line 11086)
+  - `_RTL_HEAP_USAGE_ENTRY` (struct, line 11101)
+  - `_RTL_HEAP_USAGE` (struct, line 11110)
+  - `_RTL_HEAP_WALK_ENTRY` (struct, line 11126)
+  - `_HEAP_DEBUGGING_INFORMATION` (struct, line 11163)
+  - `_RTL_MEMORY_ZONE_SEGMENT` (struct, line 11182)
+  - `_RTL_SRWLOCK` (struct, line 11191)
+  - `_RTL_MEMORY_ZONE` (struct, line 11196)
+  - `_RTL_PROCESS_VERIFIER_OPTIONS` (struct, line 11204)
+  - `_VM_INFORMATION` (struct, line 11218)
+  - `_MEMORY_RANGE_ENTRY` (struct, line 11227)
+  - `_RTL_PROCESS_LOCKS` (struct, line 11233)
+  - `_RTL_PROCESS_BACKTRACE_INFORMATION` (struct, line 11240)
+  - `_RTL_PROCESS_BACKTRACES` (struct, line 11248)
+  - `_RTL_DEBUG_INFORMATION` (struct, line 11256)
+  - `_RTL_HANDLE_TABLE_ENTRY` (struct, line 11330)
+  - `_RTL_HANDLE_TABLE` (struct, line 11341)
+  - `_JOB_SET_ARRAY` (struct, line 11353)
+  - `_EVENT_DATA_DESCRIPTOR` (struct, line 11505)
+  - `_EVENT_DESCRIPTOR` (struct, line 11512)
+  - `_EVENT_FILTER_DESCRIPTOR` (struct, line 11528)
+  - `_CHANNEL_MESSAGE` (struct, line 11540)
+  - `_HOTPATCH_HEADER` (struct, line 11553)
+  - `_HOTPATCH_MODULE_DATA` (struct, line 11572)
+  - `_HOTPATCH_MODULE_ENTRY` (struct, line 11579)
+  - `_HOTPATCH_HOOK` (struct, line 11585)
+  - `_RTL_PATCH_HEADER` (struct, line 11594)
+  - `_RTL_UNLOAD_EVENT_TRACE` (struct, line 21429)
+  - `_RTL_UNLOAD_EVENT_TRACE64` (struct, line 21438)
+  - `_RTL_UNLOAD_EVENT_TRACE32` (struct, line 21447)
+  - `addrinfo` (struct, line 22497)
+  - `_SHRINK_VOLUME_REQUEST_TYPES` (enum, line 1567)
+  - `_SYSDBG_COMMAND` (enum, line 2467)
+  - `_INTERFACE_TYPE` (enum, line 2530)
+  - `_BUS_DATA_TYPE` (enum, line 2551)
+  - `_SYSTEM_INFORMATION_CLASS` (enum, line 2592)
+  - `_EVENT_TRACE_INFORMATION_CLASS` (enum, line 2704)
+  - `_KSPIN_LOCK_QUEUE_NUMBER` (enum, line 2723)
+  - `_KPROFILE_SOURCE` (enum, line 2745)
+  - `_PROCESSINFOCLASS` (enum, line 2773)
+  - `_THREADINFOCLASS` (enum, line 2829)
+  - `_PROCESS_TLS_INFORMATION_TYPE` (enum, line 2868)
+  - `_FILE_INFORMATION_CLASS` (enum, line 2950)
+  - `_FSINFOCLASS` (enum, line 3005)
+  - `_POOL_TYPE` (enum, line 3019)
+  - `_MEMORY_INFORMATION_CLASS` (enum, line 3037)
+  - `_REG_NOTIFY_CLASS` (enum, line 3046)
+  - `_HAL_QUERY_INFORMATION_CLASS` (enum, line 3103)
+  - `POWER_INFORMATION_LEVEL` (enum, line 3133)
+  - `_IO_COMPLETION_INFORMATION_CLASS` (enum, line 3298)
+  - `_PORT_INFORMATION_CLASS` (enum, line 3302)
+  - `_SECTION_INHERIT` (enum, line 3306)
+  - `_SHUTDOWN_ACTION` (enum, line 3374)
+  - `_ATOM_INFORMATION_CLASS` (enum, line 3380)
+  - `_SEMAPHORE_INFORMATION_CLASS` (enum, line 3405)
+  - `_MUTANT_INFORMATION_CLASS` (enum, line 3419)
+  - `_TIMER_INFORMATION_CLASS` (enum, line 3434)
+  - `_SECTION_INFORMATION_CLASS` (enum, line 3443)
+  - `_OBJECT_INFORMATION_CLASS` (enum, line 3463)
+  - `_PLUGPLAY_EVENT_CATEGORY` (enum, line 3528)
+  - `_PNP_VETO_TYPE` (enum, line 3542)
+  - `_RTL_RXACT_OPERATION` (enum, line 3663)
+  - `_EVENT_INFORMATION_CLASS` (enum, line 3729)
+  - `_PLUGPLAY_CONTROL_CLASS` (enum, line 3734)
+  - `_KEY_INFORMATION_CLASS` (enum, line 3769)
+  - `_KEY_VALUE_INFORMATION_CLASS` (enum, line 3786)
+  - `_KEY_SET_INFORMATION_CLASS` (enum, line 3840)
+  - `_THREAD_STATE` (enum, line 4315)
+  - `_KWAIT_REASON` (enum, line 4327)
+  - `_LOGICAL_PROCESSOR_RELATIONSHIP` (enum, line 4698)
+  - `_PROCESSOR_CACHE_TYPE` (enum, line 4706)
+  - `_WATCHDOG_HANDLER_ACTION` (enum, line 5162)
+  - `_WATCHDOG_INFORMATION_CLASS` (enum, line 5176)
+  - `_WOW64_SHARED_INFORMATION` (enum, line 5398)
+  - `_BASESRV_API_NUMBER` (enum, line 6034)
+  - `_EVENT_TYPE` (enum, line 6449)
+  - `_TIMER_TYPE` (enum, line 6454)
+  - `_WAIT_TYPE` (enum, line 6459)
+  - `_RTL_PATH_TYPE` (enum, line 6741)
+  - `_NT_PRODUCT_TYPE` (enum, line 7311)
+  - `_SUITE_TYPE` (enum, line 7319)
+  - `_LSA_LOOKUP_DOMAIN_INFO_CLASS` (enum, line 8581)
+  - `_SECURITY_LOGON_TYPE` (enum, line 8640)
+  - `_SE_ADT_PARAMETER_TYPE` (enum, line 8676)
+  - `_POLICY_AUDIT_EVENT_TYPE` (enum, line 8769)
+  - `_POLICY_LSA_SERVER_ROLE` (enum, line 8922)
+  - `_POLICY_SERVER_ENABLE_STATE` (enum, line 8931)
+  - `_POLICY_INFORMATION_CLASS` (enum, line 8941)
+  - `_POLICY_DOMAIN_INFORMATION_CLASS` (enum, line 9068)
+  - `_POLICY_NOTIFICATION_INFORMATION_CLASS` (enum, line 9122)
+  - `_TRUSTED_INFORMATION_CLASS` (enum, line 9138)
+  - `_TABLE_SEARCH_RESULT` (enum, line 9930)
+  - `_RTL_GENERIC_COMPARE_RESULTS` (enum, line 9938)
+  - `_HARDERROR_RESPONSE_OPTION` (enum, line 10614)
+  - `_HARDERROR_RESPONSE` (enum, line 10627)
+  - `_ALTERNATIVE_ARCHITECTURE_TYPE` (enum, line 10642)
+  - `_HEAP_INFORMATION_CLASS` (enum, line 10695)
+  - `_DBG_STATE` (enum, line 11023)
+  - `_DEBUGOBJECTINFOCLASS` (enum, line 11077)
+  - `_VIRTUAL_MEMORY_INFORMATION_CLASS` (enum, line 11211)
+  - `_LDR_DLL_NOTIFICATION_DATA` (union, line 6616)
+  - `_SLIST_HEADER` (union, line 11656)
+  - `NTSTATUS` (type_alias, line 41) `typedef LONG NTSTATUS;`
+  - `SECURITY_STATUS` (type_alias, line 46) `typedef LONG SECURITY_STATUS;`
+  - `CCHAR` (type_alias, line 353) `typedef char CCHAR;`
+  - `CSHORT` (type_alias, line 355) `typedef short CSHORT;`
+  - `CLONG` (type_alias, line 358) `typedef ULONG CLONG;`
+  - `LOGICAL` (type_alias, line 360) `typedef ULONG LOGICAL;`
+  - `KPRIORITY` (type_alias, line 363) `typedef LONG KPRIORITY;`
+  - `Length` (type_alias, line 365) `typedef struct _STRING { USHORT Length;`
+  - `ANSI_STRING` (type_alias, line 374) `typedef STRING ANSI_STRING;`
+  - `PANSI_STRING` (type_alias, line 376) `typedef PSTRING PANSI_STRING;`
+  - `OEM_STRING` (type_alias, line 377) `typedef STRING OEM_STRING;`
+  - `POEM_STRING` (type_alias, line 379) `typedef PSTRING POEM_STRING;`
+  - `PCOEM_STRING` (type_alias, line 380) `typedef CONST STRING* PCOEM_STRING;`
+  - `Length` (type_alias, line 381) `typedef struct _CSTRING { USHORT Length;`
+  - `CANSI_STRING` (type_alias, line 390) `typedef STRING CANSI_STRING;`
+  - `PCANSI_STRING` (type_alias, line 392) `typedef PSTRING PCANSI_STRING;`
+  - `Length` (type_alias, line 393) `typedef struct _UNICODE_STRING { USHORT Length;`
+  - `Length` (type_alias, line 401) `typedef struct _STRING32 { USHORT Length;`
+  - `UNICODE_STRING32` (type_alias, line 409) `typedef STRING32 UNICODE_STRING32;`
+  - `ANSI_STRING32` (type_alias, line 413) `typedef STRING32 ANSI_STRING32;`
+  - `Length` (type_alias, line 416) `typedef struct _STRING64 { USHORT Length;`
+  - `UNICODE_STRING64` (type_alias, line 425) `typedef STRING64 UNICODE_STRING64;`
+  - `ANSI_STRING64` (type_alias, line 428) `typedef STRING64 ANSI_STRING64;`
+  - `RTL_ATOM` (type_alias, line 431) `typedef USHORT RTL_ATOM;`
+  - `KIRQL` (type_alias, line 434) `typedef UCHAR KIRQL;`
+  - `Flink` (type_alias, line 455) `typedef struct _TRIPLE_LIST_ENTRY { struct _TRIPLE_LIST_ENTRY* Flink[ 3 ];`
+  - `Length` (type_alias, line 504) `typedef struct _OBJECT_ATTRIBUTES { ULONG Length;`
+  - `Name` (type_alias, line 527) `typedef struct _OBJECT_DIRECTORY_INFORMATION { UNICODE_STRING Name;`
+  - `Group` (type_alias, line 534) `typedef struct _PROCESSOR_NUMBER { WORD Group;`
+  - `Version` (type_alias, line 887) `typedef struct _CSV_NAMESPACE_INFO { ULONG Version;`
+  - `PathNameLength` (type_alias, line 901) `typedef struct _PATHNAME_BUFFER { ULONG PathNameLength;`
+  - `First0x24BytesOfBootSector` (type_alias, line 908) `typedef struct _FSCTL_QUERY_FAT_BPB_BUFFER { UCHAR First0x24BytesOfBootSector[0x24];`
+  - `ExtentCount` (type_alias, line 970) `typedef struct RETRIEVAL_POINTERS_BUFFER { ULONG ExtentCount;`
+  - `FileHandle` (type_alias, line 1021) `typedef struct _MOVE_FILE_DATA32 { UINT32 FileHandle;`
+  - `Type` (type_alias, line 1204) `typedef struct _FILE_PREFETCH { ULONG Type;`
+  - `Type` (type_alias, line 1210) `typedef struct _FILE_PREFETCH_EX { ULONG Type;`
+  - `FileSystemType` (type_alias, line 1226) `typedef struct _FILESYSTEM_STATISTICS { USHORT FileSystemType;`
+  - `CreateHits` (type_alias, line 1254) `typedef struct _FAT_STATISTICS { ULONG CreateHits;`
+  - `CreateHits` (type_alias, line 1267) `typedef struct _EXFAT_STATISTICS { ULONG CreateHits;`
+  - `LogFileFullExceptions` (type_alias, line 1281) `typedef struct _NTFS_STATISTICS { ULONG LogFileFullExceptions;`
+  - `ObjectId` (type_alias, line 1383) `typedef struct _FILE_OBJECTID_BUFFER { UCHAR ObjectId[16];`
+  - `SetSparse` (type_alias, line 1409) `typedef struct _FILE_SET_SPARSE_BUFFER { BOOLEAN SetSparse;`
+  - `FileOffset` (type_alias, line 1420) `typedef struct _FILE_ZERO_DATA_INFORMATION { LARGE_INTEGER FileOffset;`
+  - `FileOffset` (type_alias, line 1430) `typedef struct _FILE_ALLOCATED_RANGE_BUFFER { LARGE_INTEGER FileOffset;`
+  - `EncryptionOperation` (type_alias, line 1441) `typedef struct _ENCRYPTION_BUFFER { ULONG EncryptionOperation;`
+  - `NoEncryptedStreams` (type_alias, line 1455) `typedef struct _DECRYPTION_STATUS_BUFFER { BOOLEAN NoEncryptedStreams;`
+  - `FileOffset` (type_alias, line 1465) `typedef struct _REQUEST_RAW_ENCRYPTED_DATA { LONGLONG FileOffset;`
+  - `StartingFileOffset` (type_alias, line 1472) `typedef struct _ENCRYPTED_DATA_INFO { ULONGLONG StartingFileOffset;`
+  - `ByteOffset` (type_alias, line 1501) `typedef struct _PLEX_READ_DATA_REQUEST { LARGE_INTEGER ByteOffset;`
+  - `SourceFileNameLength` (type_alias, line 1512) `typedef struct _SI_COPYFILE { ULONG SourceFileNameLength;`
+  - `CloseDisc` (type_alias, line 1526) `typedef struct _FILE_MAKE_COMPATIBLE_BUFFER { BOOLEAN CloseDisc;`
+  - `Disable` (type_alias, line 1530) `typedef struct _FILE_SET_DEFECT_MGMT_BUFFER { BOOLEAN Disable;`
+  - `SparingUnitBytes` (type_alias, line 1535) `typedef struct _FILE_QUERY_SPARING_BUFFER { ULONG SparingUnitBytes;`
+  - `DirectoryCount` (type_alias, line 1543) `typedef struct _FILE_QUERY_ON_DISK_VOL_INFO_BUFFER { LARGE_INTEGER DirectoryCount;`
+  - `ShrinkRequestType` (type_alias, line 1574) `typedef struct _SHRINK_VOLUME_INFORMATION { SHRINK_VOLUME_REQUEST_TYPES ShrinkRequestType;`
+  - `Flags` (type_alias, line 1627) `typedef struct _TXFS_MODIFY_RM { // // TXFS_RM_FLAG_* flags // ULONG Flags;`
+  - `BytesRequired` (type_alias, line 1699) `typedef struct _TXFS_QUERY_RM_INFORMATION { ULONG BytesRequired;`
+  - `LastVirtualClock` (type_alias, line 1801) `typedef struct _TXFS_ROLLFORWARD_REDO_INFORMATION { LARGE_INTEGER LastVirtualClock;`
+  - `Flags` (type_alias, line 1839) `typedef struct _TXFS_START_RM_INFORMATION { // // TXFS_START_RM_FLAG_* flags. // ULONG Flags;`
+  - `LowPart` (type_alias, line 1929) `typedef struct _TXFS_GET_METADATA_INFO_OUT { // // Returns the TxfId of the file referenced by the handle used to call this routine. // struct { LONGLONG LowPart;`
+  - `Offset` (type_alias, line 1963) `typedef struct _TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY { // // Offset in bytes from the beginning of the TXFS_LIST_TRANSACTION_LOCKED_FILES // structure to the next TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY. // ULONGLONG Offset;`
+  - `KtmTransaction` (type_alias, line 2000) `typedef struct _TXFS_LIST_TRANSACTION_LOCKED_FILES { // // GUID name of the KTM transaction that files should be enumerated from. // GUID KtmTransaction;`
+  - `TransactionId` (type_alias, line 2034) `typedef struct _TXFS_LIST_TRANSACTIONS_ENTRY { // // Transaction GUID. // GUID TransactionId;`
+  - `NumberOfTransactions` (type_alias, line 2057) `typedef struct _TXFS_LIST_TRANSACTIONS { // // On output, the number of transactions involved in this RM. // ULONGLONG NumberOfTransactions;`
+  - `BufferLength` (type_alias, line 2080) `typedef struct _TXFS_READ_BACKUP_INFORMATION_OUT { union { // // Used to return the required buffer size if return code is STATUS_BUFFER_OVERFLOW // ULONG BufferLength;`
+  - `Buffer` (type_alias, line 2103) `typedef struct _TXFS_WRITE_BACKUP_INFORMATION { UCHAR Buffer[1];`
+  - `ThisBaseVersion` (type_alias, line 2110) `typedef struct _TXFS_GET_TRANSACTED_VERSION { // // The version that this handle is opened to. This will be // TXFS_TRANSACTED_VERSION_UNCOMMITTED for nontransacted and // transactional writer handles. // ULONG ThisBaseVersion;`
+  - `KtmTransaction` (type_alias, line 2171) `typedef struct _TXFS_SAVEPOINT_INFORMATION { HANDLE KtmTransaction;`
+  - `StructureVersion` (type_alias, line 2177) `typedef struct _TXFS_CREATE_MINIVERSION_INFO { USHORT StructureVersion;`
+  - `TransactionsActiveAtSnapshot` (type_alias, line 2186) `typedef struct _TXFS_TRANSACTION_ACTIVE_INFO { BOOLEAN TransactionsActiveAtSnapshot;`
+  - `BootSectorCount` (type_alias, line 2196) `typedef struct _BOOT_AREA_INFO { ULONG BootSectorCount;`
+  - `FileAreaOffset` (type_alias, line 2205) `typedef struct _RETRIEVAL_POINTER_BASE { LARGE_INTEGER FileAreaOffset;`
+  - `VolumeFlags` (type_alias, line 2210) `typedef struct _FILE_FS_PERSISTENT_VOLUME_INFORMATION { ULONG VolumeFlags;`
+  - `FileSystem` (type_alias, line 2219) `typedef struct _FILE_SYSTEM_RECOGNITION_INFORMATION { CHAR FileSystem[9];`
+  - `StructureVersion` (type_alias, line 2235) `typedef struct _REQUEST_OPLOCK_INPUT_BUFFER { // // This should be set to REQUEST_OPLOCK_CURRENT_VERSION. // USHORT StructureVersion;`
+  - `StructureVersion` (type_alias, line 2262) `typedef struct _REQUEST_OPLOCK_OUTPUT_BUFFER { USHORT StructureVersion;`
+  - `CurrentMachineSIDOffset` (type_alias, line 2283) `typedef struct _SD_CHANGE_MACHINE_SID_INPUT { USHORT CurrentMachineSIDOffset;`
+  - `NumSDChangedSuccess` (type_alias, line 2293) `typedef struct _SD_CHANGE_MACHINE_SID_OUTPUT { // // How many entries were successfully changed in the $Secure stream // ULONGLONG NumSDChangedSuccess;`
+  - `Flags` (type_alias, line 2348) `typedef struct _SD_GLOBAL_CHANGE_INPUT { // // Input flags (none currently defined) // ULONG Flags;`
+  - `Flags` (type_alias, line 2370) `typedef struct _SD_GLOBAL_CHANGE_OUTPUT { // // Output State Flags (none currently defined) // ULONG Flags;`
+  - `ExtendedCode` (type_alias, line 2404) `typedef struct _EXTENDED_ENCRYPTED_DATA_INFO { ULONG ExtendedCode;`
+  - `Flags` (type_alias, line 2413) `typedef struct _LOOKUP_STREAM_FROM_CLUSTER_INPUT { ULONG Flags;`
+  - `Offset` (type_alias, line 2420) `typedef struct _LOOKUP_STREAM_FROM_CLUSTER_OUTPUT { ULONG Offset;`
+  - `OffsetToNext` (type_alias, line 2436) `typedef struct _LOOKUP_STREAM_FROM_CLUSTER_ENTRY { ULONG OffsetToNext;`
+  - `Flags` (type_alias, line 2444) `typedef struct _FILE_TYPE_NOTIFICATION_INPUT { ULONG Flags;`
+  - `Address` (type_alias, line 2507) `typedef struct _SYSDBG_VIRTUAL { PVOID Address;`
+  - `Address` (type_alias, line 2514) `typedef struct _SYSDBG_PHYSICAL { PHYSICAL_ADDRESS Address;`
+  - `Address` (type_alias, line 2521) `typedef struct _SYSDBG_CONTROL_SPACE { ULONG64 Address;`
+  - `Address` (type_alias, line 2534) `typedef struct _SYSDBG_IO_SPACE { ULONG64 Address;`
+  - `Msr` (type_alias, line 2544) `typedef struct _SYSDBG_MSR { ULONG Msr;`
+  - `Address` (type_alias, line 2568) `typedef struct _SYSDBG_BUS_DATA { ULONG Address;`
+  - `Flags` (type_alias, line 2578) `typedef struct _SYSDBG_TRIAGE_DUMP { ULONG Flags;`
+  - `GDI_HANDLE_BUFFER32` (type_alias, line 2938) `typedef ULONG GDI_HANDLE_BUFFER32[GDI_HANDLE_BUFFER_SIZE32];`
+  - `GDI_HANDLE_BUFFER64` (type_alias, line 2940) `typedef ULONG GDI_HANDLE_BUFFER64[GDI_HANDLE_BUFFER_SIZE64];`
+  - `GDI_HANDLE_BUFFER` (type_alias, line 2941) `typedef ULONG GDI_HANDLE_BUFFER[GDI_HANDLE_BUFFER_SIZE];`
+  - `Status` (type_alias, line 3177) `typedef struct _IO_STATUS_BLOCK { union { NTSTATUS Status;`
+  - `ControlWord` (type_alias, line 3191) `typedef struct _X86_FLOATING_SAVE_AREA { ULONG ControlWord;`
+  - `ContextFlags` (type_alias, line 3204) `typedef struct _X86_CONTEXT { ULONG ContextFlags;`
+  - `Length` (type_alias, line 3278) `typedef struct _PORT_VIEW { ULONG Length;`
+  - `Length` (type_alias, line 3287) `typedef struct _REMOTE_PORT_VIEW { ULONG Length;`
+  - `5` (type_alias, line 3312) `typedef struct _MEMORY_WORKING_SET_BLOCK { ULONG_PTR Protection : 5;`
+  - `NumberOfEntries` (type_alias, line 3324) `typedef struct _MEMORY_WORKING_SET_INFORMATION { ULONG_PTR NumberOfEntries;`
+  - `1` (type_alias, line 3330) `typedef struct _MEMORY_WORKING_SET_EX_BLOCK { ULONG_PTR Valid : 1;`
+  - `AllocationBase` (type_alias, line 3347) `typedef struct _MEMORY_REGION_INFORMATION { PVOID AllocationBase;`
+  - `VirtualAddress` (type_alias, line 3355) `typedef struct _MEMORY_WORKING_SET_EX_INFORMATION { PVOID VirtualAddress;`
+  - `UsageCount` (type_alias, line 3385) `typedef struct _ATOM_BASIC_INFORMATION { USHORT UsageCount;`
+  - `NumberOfAtoms` (type_alias, line 3393) `typedef struct _ATOM_TABLE_INFORMATION { ULONG NumberOfAtoms;`
+  - `CurrentCount` (type_alias, line 3408) `typedef struct _SEMAPHORE_BASIC_INFORMATION { LONG CurrentCount;`
+  - `CurrentCount` (type_alias, line 3422) `typedef struct _MUTANT_BASIC_INFORMATION { LONG CurrentCount;`
+  - `RemainingTime` (type_alias, line 3437) `typedef struct _TIMER_BASIC_INFORMATION { LARGE_INTEGER RemainingTime;`
+  - `Attributes` (type_alias, line 3472) `typedef struct _OBJECT_BASIC_INFORMATION { ULONG Attributes;`
+  - `Name` (type_alias, line 3486) `typedef struct _OBJECT_NAME_INFORMATION { UNICODE_STRING Name;`
+  - `TypeName` (type_alias, line 3490) `typedef struct _OBJECT_TYPE_INFORMATION { UNICODE_STRING TypeName;`
+  - `NumberOfTypes` (type_alias, line 3515) `typedef struct _OBJECT_TYPES_INFORMATION { ULONG NumberOfTypes;`
+  - `Inherit` (type_alias, line 3521) `typedef struct _OBJECT_HANDLE_FLAG_INFORMATION { BOOLEAN Inherit;`
+  - `EventGuid` (type_alias, line 3557) `typedef struct _PLUGPLAY_EVENT_BLOCK { // // Common event data // GUID EventGuid;`
+  - `Year` (type_alias, line 3625) `typedef struct _TIME_FIELDS { CSHORT Year;`
+  - `Bias` (type_alias, line 3637) `typedef struct _RTL_TIME_ZONE_INFORMATION { LONG Bias;`
+  - `StartingIndex` (type_alias, line 3647) `typedef struct _RTL_BITMAP_RUN { ULONG StartingIndex;`
+  - `fFlags` (type_alias, line 3653) `typedef struct _PARSE_MESSAGE_CONTEXT { ULONG fFlags;`
+  - `OperationCount` (type_alias, line 3669) `typedef struct _RTL_RXACT_LOG { ULONG OperationCount;`
+  - `RootRegistryKey` (type_alias, line 3678) `typedef struct _RTL_RXACT_CONTEXT { HANDLE RootRegistryKey;`
+  - `CodePage` (type_alias, line 3687) `typedef struct _CPTABLEINFO { USHORT CodePage;`
+  - `OemTableInfo` (type_alias, line 3702) `typedef struct _NLSTABLEINFO { CPTABLEINFO OemTableInfo;`
+  - `Start` (type_alias, line 3712) `typedef struct _RTL_RANGE { ULONGLONG Start;`
+  - `LastWriteTime` (type_alias, line 3778) `typedef struct _KEY_BASIC_INFORMATION { LARGE_INTEGER LastWriteTime;`
+  - `TitleIndex` (type_alias, line 3798) `typedef struct _KEY_VALUE_BASIC_INFORMATION { ULONG TitleIndex;`
+  - `TitleIndex` (type_alias, line 3805) `typedef struct _KEY_VALUE_FULL_INFORMATION { ULONG TitleIndex;`
+  - `TitleIndex` (type_alias, line 3815) `typedef struct _KEY_VALUE_PARTIAL_INFORMATION { ULONG TitleIndex;`
+  - `Type` (type_alias, line 3822) `typedef struct _KEY_VALUE_PARTIAL_INFORMATION_ALIGN64 { ULONG Type;`
+  - `ValueName` (type_alias, line 3828) `typedef struct _KEY_VALUE_ENTRY { PUNICODE_STRING ValueName;`
+  - `UniqueProcess` (type_alias, line 3919) `typedef struct _CLIENT_ID { HANDLE UniqueProcess;`
+  - `UniqueProcess` (type_alias, line 3925) `typedef struct _CLIENT_ID32 { ULONG UniqueProcess;`
+  - `UniqueProcess` (type_alias, line 3931) `typedef struct _CLIENT_ID64 { ULONGLONG UniqueProcess;`
+  - `LowPart` (type_alias, line 3939) `typedef struct _KSYSTEM_TIME { ULONG LowPart;`
+  - `CreationTime` (type_alias, line 3953) `typedef struct _FILE_BASIC_INFORMATION { // ntddk wdm nthal LARGE_INTEGER CreationTime;`
+  - `AllocationSize` (type_alias, line 3961) `typedef struct _FILE_STANDARD_INFORMATION { LARGE_INTEGER AllocationSize;`
+  - `IndexNumber` (type_alias, line 3970) `typedef struct _FILE_INTERNAL_INFORMATION { LARGE_INTEGER IndexNumber;`
+  - `EaSize` (type_alias, line 3974) `typedef struct _FILE_EA_INFORMATION { ULONG EaSize;`
+  - `AccessFlags` (type_alias, line 3978) `typedef struct _FILE_ACCESS_INFORMATION { ACCESS_MASK AccessFlags;`
+  - `CurrentByteOffset` (type_alias, line 3982) `typedef struct _FILE_POSITION_INFORMATION { // ntddk wdm nthal LARGE_INTEGER CurrentByteOffset;`
+  - `Mode` (type_alias, line 3987) `typedef struct _FILE_MODE_INFORMATION { ULONG Mode;`
+  - `AlignmentRequirement` (type_alias, line 3990) `typedef struct _FILE_ALIGNMENT_INFORMATION { // ntddk nthal ULONG AlignmentRequirement;`
+  - `FileNameLength` (type_alias, line 3995) `typedef struct _FILE_NAME_INFORMATION { // ntddk ULONG FileNameLength;`
+  - `BasicInformation` (type_alias, line 3999) `typedef struct _FILE_ALL_INFORMATION { FILE_BASIC_INFORMATION BasicInformation;`
+  - `CreationTime` (type_alias, line 4011) `typedef struct _FILE_NETWORK_OPEN_INFORMATION { // ntddk wdm nthal LARGE_INTEGER CreationTime;`
+  - `FileAttributes` (type_alias, line 4022) `typedef struct _FILE_ATTRIBUTE_TAG_INFORMATION { // ntddk nthal ULONG FileAttributes;`
+  - `AllocationSize` (type_alias, line 4027) `typedef struct _FILE_ALLOCATION_INFORMATION { LARGE_INTEGER AllocationSize;`
+  - `CompressedFileSize` (type_alias, line 4030) `typedef struct _FILE_COMPRESSION_INFORMATION { LARGE_INTEGER CompressedFileSize;`
+  - `DeleteFile` (type_alias, line 4039) `typedef struct _FILE_DISPOSITION_INFORMATION { // ntddk nthal BOOLEAN DeleteFile;`
+  - `EndOfFile` (type_alias, line 4044) `typedef struct _FILE_END_OF_FILE_INFORMATION { // ntddk nthal LARGE_INTEGER EndOfFile;`
+  - `ValidDataLength` (type_alias, line 4048) `typedef struct _FILE_VALID_DATA_LENGTH_INFORMATION { // ntddk nthal LARGE_INTEGER ValidDataLength;`
+  - `ReplaceIfExists` (type_alias, line 4051) `typedef struct _FILE_LINK_INFORMATION { BOOLEAN ReplaceIfExists;`
+  - `ClusterCount` (type_alias, line 4058) `typedef struct _FILE_MOVE_CLUSTER_INFORMATION { ULONG ClusterCount;`
+  - `ReplaceIfExists` (type_alias, line 4065) `typedef struct _FILE_RENAME_INFORMATION { BOOLEAN ReplaceIfExists;`
+  - `NextEntryOffset` (type_alias, line 4072) `typedef struct _FILE_STREAM_INFORMATION { ULONG NextEntryOffset;`
+  - `DestinationFile` (type_alias, line 4080) `typedef struct _FILE_TRACKING_INFORMATION { HANDLE DestinationFile;`
+  - `Port` (type_alias, line 4086) `typedef struct _FILE_COMPLETION_INFORMATION { HANDLE Port;`
+  - `ReadMode` (type_alias, line 4091) `typedef struct _FILE_PIPE_INFORMATION { ULONG ReadMode;`
+  - `NamedPipeType` (type_alias, line 4096) `typedef struct _FILE_PIPE_LOCAL_INFORMATION { ULONG NamedPipeType;`
+  - `CollectDataTime` (type_alias, line 4109) `typedef struct _FILE_PIPE_REMOTE_INFORMATION { LARGE_INTEGER CollectDataTime;`
+  - `MaximumMessageSize` (type_alias, line 4114) `typedef struct _FILE_MAILSLOT_QUERY_INFORMATION { ULONG MaximumMessageSize;`
+  - `ReadTimeout` (type_alias, line 4122) `typedef struct _FILE_MAILSLOT_SET_INFORMATION { PLARGE_INTEGER ReadTimeout;`
+  - `FileReference` (type_alias, line 4126) `typedef struct _FILE_REPARSE_POINT_INFORMATION { LONGLONG FileReference;`
+  - `NextEntryOffset` (type_alias, line 4139) `typedef struct _FILE_FULL_EA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4149) `typedef struct _FILE_GET_EA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4159) `typedef struct _FILE_GET_QUOTA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4165) `typedef struct _FILE_QUOTA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4187) `typedef struct _FILE_DIRECTORY_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4201) `typedef struct _FILE_FULL_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4216) `typedef struct _FILE_ID_FULL_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4232) `typedef struct _FILE_BOTH_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4249) `typedef struct _FILE_ID_BOTH_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4267) `typedef struct _FILE_NAMES_INFORMATION { ULONG NextEntryOffset;`
+  - `FileReference` (type_alias, line 4274) `typedef struct _FILE_OBJECTID_INFORMATION { LONGLONG FileReference;`
+  - `DriverName` (type_alias, line 4292) `typedef struct _SYSTEM_GDI_DRIVER_INFORMATION { UNICODE_STRING DriverName;`
+  - `AlignmentFixupCount` (type_alias, line 4302) `typedef struct _SYSTEM_EXCEPTION_INFORMATION { ULONG AlignmentFixupCount;`
+  - `KernelTime` (type_alias, line 4369) `typedef struct _SYSTEM_THREAD_INFORMATION { LARGE_INTEGER KernelTime;`
+  - `ThreadInfo` (type_alias, line 4382) `typedef struct _SYSTEM_EXTENDED_THREAD_INFORMATION { SYSTEM_THREAD_INFORMATION ThreadInfo;`
+  - `Allocated` (type_alias, line 4393) `typedef struct _SYSTEM_POOL_ENTRY { BOOLEAN Allocated;`
+  - `TotalSize` (type_alias, line 4405) `typedef struct _SYSTEM_POOL_INFORMATION { SIZE_T TotalSize;`
+  - `Tag` (type_alias, line 4415) `typedef struct _SYSTEM_POOLTAG { union { UCHAR Tag[4];`
+  - `VirtualAddress` (type_alias, line 4428) `typedef struct _SYSTEM_BIGPOOL_ENTRY { union { PVOID VirtualAddress;`
+  - `Count` (type_alias, line 4440) `typedef struct _SYSTEM_POOLTAG_INFORMATION { ULONG Count;`
+  - `NextEntryOffset` (type_alias, line 4446) `typedef struct _SYSTEM_SESSION_POOLTAG_INFORMATION { SIZE_T NextEntryOffset;`
+  - `Count` (type_alias, line 4453) `typedef struct _SYSTEM_BIGPOOL_INFORMATION { ULONG Count;`
+  - `UniqueProcessId` (type_alias, line 4458) `typedef struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO { USHORT UniqueProcessId;`
+  - `NumberOfHandles` (type_alias, line 4469) `typedef struct _SYSTEM_HANDLE_INFORMATION { ULONG NumberOfHandles;`
+  - `Object` (type_alias, line 4475) `typedef struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX { PVOID Object;`
+  - `NumberOfHandles` (type_alias, line 4487) `typedef struct _SYSTEM_HANDLE_INFORMATION_EX { ULONG NumberOfHandles;`
+  - `PoolTag` (type_alias, line 4494) `typedef struct _SYSTEM_SPECIAL_POOL_INFORMATION { ULONG PoolTag;`
+  - `NextEntryOffset` (type_alias, line 4500) `typedef struct _SYSTEM_OBJECTTYPE_INFORMATION { ULONG NextEntryOffset;`
+  - `NumberOfMcbPairs` (type_alias, line 4515) `typedef struct _SYSTEM_HIBERFILE_INFORMATION { ULONG NumberOfMcbPairs;`
+  - `KernelDebuggerEnabled` (type_alias, line 4521) `typedef struct _SYSTEM_KERNEL_DEBUGGER_INFORMATION { BOOLEAN KernelDebuggerEnabled;`
+  - `RegistryQuotaAllowed` (type_alias, line 4526) `typedef struct _SYSTEM_REGISTRY_QUOTA_INFORMATION { ULONG RegistryQuotaAllowed;`
+  - `ContextSwitches` (type_alias, line 4532) `typedef struct _SYSTEM_CONTEXT_SWITCH_INFORMATION { ULONG ContextSwitches;`
+  - `NextEntryOffset` (type_alias, line 4547) `typedef struct _SYSTEM_SESSION_MAPPED_VIEW_INFORMATION { SIZE_T NextEntryOffset;`
+  - `ContextSwitches` (type_alias, line 4555) `typedef struct _SYSTEM_INTERRUPT_INFORMATION { ULONG ContextSwitches;`
+  - `Spare` (type_alias, line 4564) `typedef struct _SYSTEM_DPC_BEHAVIOR_INFORMATION { ULONG Spare;`
+  - `CurrentDepth` (type_alias, line 4572) `typedef struct _SYSTEM_LOOKASIDE_INFORMATION { USHORT CurrentDepth;`
+  - `VetoType` (type_alias, line 4584) `typedef struct _SYSTEM_LEGACY_DRIVER_INFORMATION { ULONG VetoType;`
+  - `SegmentNotPresent` (type_alias, line 4589) `typedef struct _SYSTEM_VDM_INSTEMUL_INFO { ULONG SegmentNotPresent;`
+  - `BootTime` (type_alias, line 4627) `typedef struct _SYSTEM_TIMEOFDAY_INFORMATION { LARGE_INTEGER BootTime;`
+  - `SYSINF_PAGE_COUNT` (type_alias, line 4640) `typedef ULONG SYSINF_PAGE_COUNT;`
+  - `SYSINF_PAGE_COUNT` (type_alias, line 4642) `typedef SIZE_T SYSINF_PAGE_COUNT;`
+  - `Reserved` (type_alias, line 4644) `typedef struct _SYSTEM_BASIC_INFORMATION { ULONG Reserved;`
+  - `ProcessorArchitecture` (type_alias, line 4658) `typedef struct _SYSTEM_PROCESSOR_INFORMATION { USHORT ProcessorArchitecture;`
+  - `IdleTime` (type_alias, line 4666) `typedef struct _SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION { LARGE_INTEGER IdleTime;`
+  - `IdleTime` (type_alias, line 4675) `typedef struct _SYSTEM_PROCESSOR_IDLE_INFORMATION { ULONGLONG IdleTime;`
+  - `HighestNodeNumber` (type_alias, line 4686) `typedef struct _SYSTEM_NUMA_INFORMATION { ULONG HighestNodeNumber;`
+  - `Level` (type_alias, line 4715) `typedef struct _CACHE_DESCRIPTOR { BYTE Level;`
+  - `ProcessorMask` (type_alias, line 4724) `typedef struct _SYSTEM_LOGICAL_PROCESSOR_INFORMATION { ULONG_PTR ProcessorMask;`
+  - `BaseAddress` (type_alias, line 4795) `typedef struct _MEMORY_BASIC_INFORMATION { PVOID BaseAddress;`
+  - `CurrentFrequency` (type_alias, line 4808) `typedef struct _SYSTEM_PROCESSOR_POWER_INFORMATION { UCHAR CurrentFrequency;`
+  - `TimeAdjustment` (type_alias, line 4830) `typedef struct _SYSTEM_QUERY_TIME_ADJUST_INFORMATION { ULONG TimeAdjustment;`
+  - `TimeAdjustment` (type_alias, line 4836) `typedef struct _SYSTEM_SET_TIME_ADJUST_INFORMATION { ULONG TimeAdjustment;`
+  - `IdleProcessTime` (type_alias, line 4841) `typedef struct _SYSTEM_PERFORMANCE_INFORMATION { LARGE_INTEGER IdleProcessTime;`
+  - `NextEntryOffset` (type_alias, line 4918) `typedef struct _SYSTEM_PROCESS_INFORMATION { ULONG NextEntryOffset;`
+  - `SessionId` (type_alias, line 4954) `typedef struct _SYSTEM_SESSION_PROCESS_INFORMATION { ULONG SessionId;`
+  - `StringOffset` (type_alias, line 4960) `typedef struct _SYSTEM_MEMORY_INFO { PUCHAR StringOffset;`
+  - `InfoSize` (type_alias, line 4968) `typedef struct _SYSTEM_MEMORY_INFORMATION { ULONG InfoSize;`
+  - `Length` (type_alias, line 4974) `typedef struct _SYSTEM_CALL_COUNT_INFORMATION { ULONG Length;`
+  - `NumberOfDisks` (type_alias, line 4979) `typedef struct _SYSTEM_DEVICE_INFORMATION { ULONG NumberOfDisks;`
+  - `Flags` (type_alias, line 4988) `typedef struct _SYSTEM_FLAGS_INFORMATION { ULONG Flags;`
+  - `Length` (type_alias, line 4992) `typedef struct _SYSTEM_CALL_TIME_INFORMATION { ULONG Length;`
+  - `NextEntryOffset` (type_alias, line 4998) `typedef struct _SYSTEM_OBJECT_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 5013) `typedef struct _SYSTEM_PAGEFILE_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 5021) `typedef struct _SYSTEM_VERIFIER_INFORMATION { ULONG NextEntryOffset;`
+  - `VerifyMode` (type_alias, line 5056) `typedef struct _SYSTEM_VERIFIER_INFORMATION_EX { ULONG VerifyMode;`
+  - `CurrentSize` (type_alias, line 5069) `typedef struct _SYSTEM_FILECACHE_INFORMATION { SIZE_T CurrentSize;`
+  - `TargetAddress` (type_alias, line 5093) `typedef struct _HOTPATCH_HOOK_DESCRIPTOR { ULONG_PTR TargetAddress;`
+  - `Flags` (type_alias, line 5104) `typedef struct _SYSTEM_HOTPATCH_CODE_INFORMATION { ULONG Flags;`
+  - `CreateTime` (type_alias, line 5153) `typedef struct _KERNEL_USER_TIMES { LARGE_INTEGER CreateTime;`
+  - `WdHandler` (type_alias, line 5193) `typedef struct _SYSTEM_WATCHDOG_HANDLER_INFORMATION { PWD_HANDLER WdHandler;`
+  - `WdInfoClass` (type_alias, line 5203) `typedef struct _SYSTEM_WATCHDOG_TIMER_INFORMATION { WATCHDOG_INFORMATION_CLASS WdInfoClass;`
+  - `Object` (type_alias, line 5297) `typedef struct _GDI_HANDLE_ENTRY { union { PVOID Object;`
+  - `Handles` (type_alias, line 5320) `typedef struct _GDI_SHARED_MEMORY { GDI_HANDLE_ENTRY Handles[GDI_MAX_HANDLE_COUNT];`
+  - `DosPath` (type_alias, line 5332) `typedef struct _CURDIR { UNICODE_STRING DosPath;`
+  - `Flags` (type_alias, line 5341) `typedef struct _RTL_DRIVE_LETTER_CURDIR { USHORT Flags;`
+  - `MaximumLength` (type_alias, line 5352) `typedef struct _RTL_USER_PROCESS_PARAMETERS { ULONG MaximumLength;`
+  - `Flink` (type_alias, line 5422) `typedef struct LIST_ENTRY32 { DWORD Flink;`
+  - `Flink` (type_alias, line 5427) `typedef struct LIST_ENTRY64 { ULONGLONG Flink;`
+  - `Length` (type_alias, line 5436) `typedef struct _PEB_LDR_DATA32 { ULONG Length;`
+  - `InLoadOrderLinks` (type_alias, line 5451) `typedef struct _LDR_DATA_TABLE_ENTRY32 { LIST_ENTRY32 InLoadOrderLinks;`
+  - `DosPath` (type_alias, line 5488) `typedef struct _CURDIR32 { UNICODE_STRING32 DosPath;`
+  - `Flags` (type_alias, line 5494) `typedef struct _RTL_DRIVE_LETTER_CURDIR32 { USHORT Flags;`
+  - `MaximumLength` (type_alias, line 5502) `typedef struct _RTL_USER_PROCESS_PARAMETERS32 { ULONG MaximumLength;`
+  - `InheritedAddressSpace` (type_alias, line 5542) `typedef struct _PEB32 { BOOLEAN InheritedAddressSpace;`
+  - `Offset` (type_alias, line 5643) `typedef struct _GDI_TEB_BATCH32 { ULONG Offset;`
+  - `ExceptionList` (type_alias, line 5655) `typedef struct _NT_TIB32 { DWORD ExceptionList;`
+  - `ExceptionList` (type_alias, line 5667) `typedef struct _NT_TIB64 { DWORD64 ExceptionList;`
+  - `NtTib` (type_alias, line 5681) `typedef struct _TEB32 { NT_TIB32 NtTib;`
+  - `iCountry` (type_alias, line 5759) `typedef struct _NLS_USER_INFO { /*<thisrel this+0x0>*/ /*|0xa0|*/ WCHAR iCountry[80];`
+  - `Next` (type_alias, line 5801) `typedef struct _INIFILE_MAPPING_TARGET { struct _INIFILE_MAPPING_TARGET* Next;`
+  - `Next` (type_alias, line 5807) `typedef struct _INIFILE_MAPPING_VARNAME { struct _INIFILE_MAPPING_VARNAME* Next;`
+  - `Next` (type_alias, line 5815) `typedef struct _INIFILE_MAPPING_APPNAME { struct _INIFILE_MAPPING_APPNAME* Next;`
+  - `Next` (type_alias, line 5823) `typedef struct _INIFILE_MAPPING_FILENAME { struct _INIFILE_MAPPING_FILENAME* Next;`
+  - `FileNames` (type_alias, line 5831) `typedef struct _INIFILE_MAPPING { struct _INIFILE_MAPPING_FILENAME* FileNames;`
+  - `DataLength` (type_alias, line 5843) `typedef struct _PORT_MESSAGE { union { struct { CSHORT DataLength;`
+  - `Base` (type_alias, line 5881) `typedef struct _PORT_DATA_ENTRY { LPC_PVOID Base;`
+  - `CountDataEntries` (type_alias, line 5886) `typedef struct _PORT_DATA_INFORMATION { ULONG CountDataEntries;`
+  - `CSR_API_NUMBER` (type_alias, line 5895) `typedef ULONG CSR_API_NUMBER;`
+  - `ObjectDirectory` (type_alias, line 5905) `typedef struct _CSR_API_CONNECTINFO { HANDLE ObjectDirectory;`
+  - `ServerDllIndex` (type_alias, line 5921) `typedef struct _CSR_CLIENTCONNECT_MSG { ULONG ServerDllIndex;`
+  - `Length` (type_alias, line 5933) `typedef struct _CSR_CAPTURE_HEADER { ULONG Length;`
+  - `SessionLink` (type_alias, line 5964) `typedef struct _CSR_NT_SESSION { struct _LIST_ENTRY SessionLink;`
+  - `h` (type_alias, line 5972) `typedef struct _CSR_API_MSG { PORT_MESSAGE h;`
+  - `ApiNumberBase` (type_alias, line 5998) `typedef struct _CSR_CALLBACK_INFO { ULONG ApiNumberBase;`
+  - `tzi` (type_alias, line 6012) `typedef struct _RTL_DYNAMIC_TIME_ZONE_INFORMATION { struct _RTL_TIME_ZONE_INFORMATION tzi;`
+  - `ExpectedVersion` (type_alias, line 6022) `typedef struct _BASESRV_API_CONNECTINFO { ULONG ExpectedVersion;`
+  - `LCType` (type_alias, line 6067) `typedef struct _BASE_NLS_SET_USER_INFO_MSG { ULONG LCType;`
+  - `pData` (type_alias, line 6074) `typedef struct _BASE_NLS_GET_USER_INFO_MSG { struct _NLS_USER_INFO* pData;`
+  - `Reserved` (type_alias, line 6080) `typedef struct _BASE_NLS_UPDATE_CACHE_COUNT_MSG { ULONG Reserved;`
+  - `iTask` (type_alias, line 6085) `typedef struct _BASE_UPDATE_VDM_ENTRY_MSG { ULONG iTask;`
+  - `iTask` (type_alias, line 6096) `typedef struct _BASE_GET_NEXT_VDM_COMMAND_MSG { ULONG iTask;`
+  - `ShutdownLevel` (type_alias, line 6129) `typedef struct _BASE_SHUTDOWNPARAM_MSG { ULONG ShutdownLevel;`
+  - `uUnique` (type_alias, line 6135) `typedef struct _BASE_GETTEMPFILE_MSG { ULONG uUnique;`
+  - `dwProcessId` (type_alias, line 6140) `typedef struct _BASE_DEBUGPROCESS_MSG { ULONG dwProcessId;`
+  - `iTask` (type_alias, line 6147) `typedef struct _BASE_CHECKVDM_MSG { ULONG iTask;`
+  - `ConsoleHandle` (type_alias, line 6180) `typedef struct _BASE_GET_VDM_EXIT_CODE_MSG { PVOID ConsoleHandle;`
+  - `ClientId` (type_alias, line 6187) `typedef struct _BASE_DEFERREDCREATEPROCESS_MSG { struct _CLIENT_ID* ClientId;`
+  - `uExitCode` (type_alias, line 6193) `typedef struct _BASE_EXITPROCESS_MSG { NTSTATUS uExitCode;`
+  - `ConsoleHandle` (type_alias, line 6197) `typedef struct _BASE_GET_SET_VDM_CUR_DIRS_MSG { PVOID ConsoleHandle;`
+  - `ConsoleHandle` (type_alias, line 6204) `typedef struct _BASE_SET_REENTER_COUNT { PVOID ConsoleHandle;`
+  - `ulFlags` (type_alias, line 6220) `typedef struct _ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION { DWORD ulFlags;`
+  - `PCACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION` (type_alias, line 6226) `typedef const struct _ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION * PCACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION;`
+  - `Flags` (type_alias, line 6231) `typedef struct _BASE_SXS_CREATEPROCESS_MSG { ULONG Flags;`
+  - `ProcessHandle` (type_alias, line 6243) `typedef struct _BASE_CREATEPROCESS_MSG { PVOID ProcessHandle;`
+  - `ThreadHandle` (type_alias, line 6259) `typedef struct _BASE_CREATETHREAD_MSG { PVOID ThreadHandle;`
+  - `File` (type_alias, line 6266) `typedef struct _BASE_MSG_SXS_HANDLES { PVOID File;`
+  - `ConsoleHandle` (type_alias, line 6275) `typedef struct _BASE_EXIT_VDM_MSG { PVOID ConsoleHandle;`
+  - `FirstVDM` (type_alias, line 6283) `typedef struct _BASE_IS_FIRST_VDM_MSG { __int32 FirstVDM;`
+  - `ConsoleHandle` (type_alias, line 6289) `typedef struct _BASE_SET_REENTER_COUNT_MSG { PVOID ConsoleHandle;`
+  - `ConsoleHandle` (type_alias, line 6296) `typedef struct _BASE_BAT_NOTIFICATION_MSG { PVOID ConsoleHandle;`
+  - `hEventWowExec` (type_alias, line 6303) `typedef struct _BASE_REGISTER_WOWEXEC_MSG { PVOID hEventWowExec;`
+  - `IniFileName` (type_alias, line 6310) `typedef struct _BASE_REFRESHINIFILEMAPPING_MSG { UNICODE_STRING IniFileName;`
+  - `pDTZInfo` (type_alias, line 6316) `typedef struct _BASE_SET_TERMSRVCLIENTTIMEZONE { struct _RTL_DYNAMIC_TIME_ZONE_INFORMATION* pDTZInfo;`
+  - `bState` (type_alias, line 6325) `typedef struct _BASE_SET_TERMSRVAPPINSTALLMODE { __int32 bState;`
+  - `VideoMode` (type_alias, line 6330) `typedef struct _BASE_SOUNDSENTRY_NOTIFICATION_MSG { ULONG VideoMode;`
+  - `Flags` (type_alias, line 6336) `typedef struct _BASE_DEFINEDOSDEVICE_MSG { ULONG Flags;`
+  - `FileType` (type_alias, line 6344) `typedef struct _BASE_MSG_SXS_STREAM { UCHAR FileType;`
+  - `Flags` (type_alias, line 6356) `typedef struct _BASE_SXS_CREATE_ACTIVATION_CONTEXT_MSG { ULONG Flags;`
+  - `h` (type_alias, line 6373) `typedef struct _BASE_API_MSG { PORT_MESSAGE h;`
+  - `WindowsDirectory` (type_alias, line 6413) `typedef struct _BASE_STATIC_SERVER_DATA { UNICODE_STRING WindowsDirectory;`
+  - `Offset` (type_alias, line 6441) `typedef struct _GDI_TEB_BATCH { ULONG Offset;`
+  - `PPVOID` (type_alias, line 6468) `typedef PVOID* PPVOID;`
+  - `Flags` (type_alias, line 6472) `typedef struct _ASSEMBLY_STORAGE_MAP_ENTRY { ULONG Flags;`
+  - `Flags` (type_alias, line 6479) `typedef struct _ASSEMBLY_STORAGE_MAP { ULONG Flags;`
+  - `Magic` (type_alias, line 6486) `typedef struct _ACTIVATION_CONTEXT_DATA { ULONG Magic;`
+  - `RefCount` (type_alias, line 6497) `typedef struct _ACTIVATION_CONTEXT { LONG RefCount;`
+  - `Length` (type_alias, line 6519) `typedef struct _PEB_LDR_DATA { ULONG Length;`
+  - `OldStackBase` (type_alias, line 6532) `typedef struct _INITIAL_TEB { struct { PVOID OldStackBase;`
+  - `Wow64` (type_alias, line 6546) `typedef struct _WOW64_PROCESS { PVOID Wow64;`
+  - `Flags` (type_alias, line 6597) `typedef struct _LDR_DLL_LOADED_NOTIFICATION_DATA { ULONG Flags;`
+  - `Flags` (type_alias, line 6606) `typedef struct _LDR_DLL_UNLOADED_NOTIFICATION_DATA { ULONG Flags;`
+  - `Section` (type_alias, line 6627) `typedef struct _RTL_PROCESS_MODULE_INFORMATION { HANDLE Section;`
+  - `NumberOfModules` (type_alias, line 6641) `typedef struct _RTL_PROCESS_MODULES { ULONG NumberOfModules;`
+  - `NextOffset` (type_alias, line 6647) `typedef struct _RTL_PROCESS_MODULE_INFORMATION_EX { USHORT NextOffset;`
+  - `InLoadOrderLinks` (type_alias, line 6670) `typedef struct _LDR_DATA_TABLE_ENTRY { LIST_ENTRY InLoadOrderLinks;`
+  - `LDR_RELOCATE_IMAGE_RETURN_TYPE` (type_alias, line 6709) `typedef NTSTATUS LDR_RELOCATE_IMAGE_RETURN_TYPE;`
+  - `RelativeName` (type_alias, line 6725) `typedef struct _RTL_RELATIVE_NAME { STRING RelativeName;`
+  - `RelativeName` (type_alias, line 6733) `typedef struct _RTL_RELATIVE_NAME_U { UNICODE_STRING RelativeName;`
+  - `InheritedAddressSpace` (type_alias, line 6757) `typedef struct _PEB { BOOLEAN InheritedAddressSpace;`
+  - `Previous` (type_alias, line 6894) `typedef struct _RTL_ACTIVATION_CONTEXT_STACK_FRAME { struct _RTL_ACTIVATION_CONTEXT_STACK_FRAME* Previous;`
+  - `ActiveFrame` (type_alias, line 6901) `typedef struct _ACTIVATION_CONTEXT_STACK { struct _RTL_ACTIVATION_CONTEXT_STACK_FRAME * ActiveFrame;`
+  - `PCACTIVATION_CONTEXT_STACK` (type_alias, line 6911) `typedef const ACTIVATION_CONTEXT_STACK * PCACTIVATION_CONTEXT_STACK;`
+  - `Flags` (type_alias, line 6915) `typedef struct _TEB_ACTIVE_FRAME_CONTEXT { ULONG Flags;`
+  - `BasicContext` (type_alias, line 6923) `typedef struct _TEB_ACTIVE_FRAME_CONTEXT_EX { TEB_ACTIVE_FRAME_CONTEXT BasicContext;`
+  - `Flags` (type_alias, line 6935) `typedef struct _TEB_ACTIVE_FRAME { ULONG Flags;`
+  - `BasicFrame` (type_alias, line 6943) `typedef struct _TEB_ACTIVE_FRAME_EX { TEB_ACTIVE_FRAME BasicFrame;`
+  - `NtTib` (type_alias, line 6953) `typedef struct _TEB { NT_TIB NtTib;`
+  - `ExitStatus` (type_alias, line 7112) `typedef struct _THREAD_BASIC_INFORMATION { NTSTATUS ExitStatus;`
+  - `DirectoryHandle` (type_alias, line 7128) `typedef struct _PROCESS_DEVICEMAP_INFORMATION { union { struct { HANDLE DirectoryHandle;`
+  - `DirectoryHandle` (type_alias, line 7139) `typedef struct _PROCESS_DEVICEMAP_INFORMATION_EX { union { struct { HANDLE DirectoryHandle;`
+  - `ExitStatus` (type_alias, line 7153) `typedef struct _PROCESS_BASIC_INFORMATION { NTSTATUS ExitStatus;`
+  - `Size` (type_alias, line 7164) `typedef struct _PROCESS_EXTENDED_BASIC_INFORMATION { SIZE_T Size;`
+  - `Size` (type_alias, line 7182) `typedef struct _RTL_HEAP_ENTRY { SIZE_T Size;`
+  - `NumberOfAllocations` (type_alias, line 7212) `typedef struct _RTL_HEAP_TAG { ULONG NumberOfAllocations;`
+  - `BaseAddress` (type_alias, line 7222) `typedef struct _RTL_HEAP_INFORMATION { PVOID BaseAddress;`
+  - `NumberOfHeaps` (type_alias, line 7239) `typedef struct _RTL_PROCESS_HEAPS { ULONG NumberOfHeaps;`
+  - `Address` (type_alias, line 7245) `typedef struct _RTL_PROCESS_LOCK_INFORMATION { PVOID Address;`
+  - `POINTER_64_INT` (type_alias, line 7303) `typedef unsigned __int64 POINTER_64_INT;`
+  - `ContextFlags` (type_alias, line 7362) `typedef struct _CONTEXT { // // The flags values within this flag control the contents of // a CONTEXT record. // // If the context record is used as an input parameter, then // for each portion of the context record controlled by a flag // whose value is set, it is assumed that that portion of the // context record contains valid context. If the context record // is being used to modify a threads context, then only that // portion of the threads context will be modified. // // If the context record is used as an _Inout_ parameter to capture // the context of a thread, then only those portions of the thread's // context corresponding to set flags will be returned. // // The context record is never used as an OUT only parameter. // DWORD ContextFlags;`
+  - `ExceptionCode` (type_alias, line 7449) `typedef struct _EXCEPTION_RECORD { DWORD ExceptionCode;`
+  - `ExceptionCode` (type_alias, line 7465) `typedef struct _EXCEPTION_RECORD32 { DWORD ExceptionCode;`
+  - `ExceptionCode` (type_alias, line 7474) `typedef struct _EXCEPTION_RECORD64 { DWORD ExceptionCode;`
+  - `ExceptionRecord` (type_alias, line 7488) `typedef struct _EXCEPTION_POINTERS { PEXCEPTION_RECORD ExceptionRecord;`
+  - `QueryRoutine` (type_alias, line 7505) `typedef struct _RTL_QUERY_REGISTRY_TABLE { PRTL_QUERY_REGISTRY_ROUTINE QueryRoutine;`
+  - `Foreground` (type_alias, line 7542) `typedef struct _PROCESS_PRIORITY_CLASS { BOOLEAN Foreground;`
+  - `Foreground` (type_alias, line 7547) `typedef struct _PROCESS_FOREGROUND_BACKGROUND { BOOLEAN Foreground;`
+  - `Version` (type_alias, line 7551) `typedef struct _FILE_PATH { ULONG Version;`
+  - `Signature` (type_alias, line 7568) `typedef struct _WINDOWS_OS_OPTIONS { UCHAR Signature[8];`
+  - `Version` (type_alias, line 7581) `typedef struct _BOOT_ENTRY { ULONG Version;`
+  - `Version` (type_alias, line 7594) `typedef struct _BOOT_OPTIONS { ULONG Version;`
+  - `sidAuthority` (type_alias, line 7608) `typedef struct _USER_SID { SID_IDENTIFIER_AUTHORITY sidAuthority;`
+  - `UserSid` (type_alias, line 7615) `typedef struct _USER_PERMISSION { USER_SID UserSid;`
+  - `Length` (type_alias, line 8512) `typedef struct _LSA_UNICODE_STRING { USHORT Length;`
+  - `Length` (type_alias, line 8521) `typedef struct _LSA_STRING { USHORT Length;`
+  - `Length` (type_alias, line 8527) `typedef struct _LSA_OBJECT_ATTRIBUTES { ULONG Length;`
+  - `Name` (type_alias, line 8538) `typedef struct _LSA_TRUST_INFORMATION { LSA_UNICODE_STRING Name;`
+  - `Entries` (type_alias, line 8543) `typedef struct _LSA_REFERENCED_DOMAIN_LIST { ULONG Entries;`
+  - `Use` (type_alias, line 8550) `typedef struct _LSA_TRANSLATED_SID2 { SID_NAME_USE Use;`
+  - `Use` (type_alias, line 8557) `typedef struct _LSA_TRANSLATED_NAME { SID_NAME_USE Use;`
+  - `DomainName` (type_alias, line 8563) `typedef struct _POLICY_ACCOUNT_DOMAIN_INFO { LSA_UNICODE_STRING DomainName;`
+  - `Name` (type_alias, line 8568) `typedef struct _POLICY_DNS_DOMAIN_INFO { LSA_UNICODE_STRING Name;`
+  - `ObjectType` (type_alias, line 8714) `typedef struct _SE_ADT_OBJECT_TYPE { GUID ObjectType;`
+  - `Type` (type_alias, line 8722) `typedef struct _SE_ADT_PARAMETER_ARRAY_ENTRY { SE_ADT_PARAMETER_TYPE Type;`
+  - `AccessMask` (type_alias, line 8730) `typedef struct _SE_ADT_ACCESS_REASON{ ACCESS_MASK AccessMask;`
+  - `CategoryId` (type_alias, line 8742) `typedef struct _SE_ADT_PARAMETER_ARRAY { ULONG CategoryId;`
+  - `Use` (type_alias, line 8913) `typedef struct _LSA_TRANSLATED_SID { SID_NAME_USE Use;`
+  - `AuditLogPercentFull` (type_alias, line 8960) `typedef struct _POLICY_AUDIT_LOG_INFO { ULONG AuditLogPercentFull;`
+  - `AuditingMode` (type_alias, line 8971) `typedef struct _POLICY_AUDIT_EVENTS_INFO { BOOLEAN AuditingMode;`
+  - `MaximumSubCategoryCount` (type_alias, line 8979) `typedef struct _POLICY_AUDIT_SUBCATEGORIES_INFO { ULONG MaximumSubCategoryCount;`
+  - `MaximumCategoryCount` (type_alias, line 8986) `typedef struct _POLICY_AUDIT_CATEGORIES_INFO { ULONG MaximumCategoryCount;`
+  - `Name` (type_alias, line 9011) `typedef struct _POLICY_PRIMARY_DOMAIN_INFO { LSA_UNICODE_STRING Name;`
+  - `Name` (type_alias, line 9018) `typedef struct _POLICY_PD_ACCOUNT_INFO { LSA_UNICODE_STRING Name;`
+  - `LsaServerRole` (type_alias, line 9024) `typedef struct _POLICY_LSA_SERVER_ROLE_INFO { POLICY_LSA_SERVER_ROLE LsaServerRole;`
+  - `ReplicaSource` (type_alias, line 9030) `typedef struct _POLICY_REPLICA_SOURCE_INFO { LSA_UNICODE_STRING ReplicaSource;`
+  - `QuotaLimits` (type_alias, line 9037) `typedef struct _POLICY_DEFAULT_QUOTA_INFO { QUOTA_LIMITS QuotaLimits;`
+  - `ModifiedId` (type_alias, line 9043) `typedef struct _POLICY_MODIFICATION_INFO { LARGE_INTEGER ModifiedId;`
+  - `ShutDownOnFull` (type_alias, line 9051) `typedef struct _POLICY_AUDIT_FULL_SET_INFO { BOOLEAN ShutDownOnFull;`
+  - `ShutDownOnFull` (type_alias, line 9058) `typedef struct _POLICY_AUDIT_FULL_QUERY_INFO { BOOLEAN ShutDownOnFull;`
+  - `QualityOfService` (type_alias, line 9095) `typedef struct _POLICY_DOMAIN_QUALITY_OF_SERVICE_INFO { ULONG QualityOfService;`
+  - `InfoLength` (type_alias, line 9102) `typedef struct _POLICY_DOMAIN_EFS_INFO { ULONG InfoLength;`
+  - `AuthenticationOptions` (type_alias, line 9111) `typedef struct _POLICY_DOMAIN_KERBEROS_TICKET_INFO { ULONG AuthenticationOptions;`
+  - `Name` (type_alias, line 9154) `typedef struct _TRUSTED_DOMAIN_NAME_INFO { LSA_UNICODE_STRING Name;`
+  - `Entries` (type_alias, line 9160) `typedef struct _TRUSTED_CONTROLLERS_INFO { ULONG Entries;`
+  - `Offset` (type_alias, line 9167) `typedef struct _TRUSTED_POSIX_OFFSET_INFO { ULONG Offset;`
+  - `Password` (type_alias, line 9173) `typedef struct _TRUSTED_PASSWORD_INFO { LSA_UNICODE_STRING Password;`
+  - `TRUSTED_DOMAIN_INFORMATION_BASIC` (type_alias, line 9178) `typedef LSA_TRUST_INFORMATION TRUSTED_DOMAIN_INFORMATION_BASIC;`
+  - `PTRUSTED_DOMAIN_INFORMATION_BASIC` (type_alias, line 9180) `typedef PLSA_TRUST_INFORMATION PTRUSTED_DOMAIN_INFORMATION_BASIC;`
+  - `Name` (type_alias, line 9236) `typedef struct _TRUSTED_DOMAIN_INFORMATION_EX { LSA_UNICODE_STRING Name;`
+  - `Name` (type_alias, line 9247) `typedef struct _TRUSTED_DOMAIN_INFORMATION_EX2 { LSA_UNICODE_STRING Name;`
+  - `LastUpdateTime` (type_alias, line 9268) `typedef struct _LSA_AUTH_INFORMATION { LARGE_INTEGER LastUpdateTime;`
+  - `IncomingAuthInfos` (type_alias, line 9276) `typedef struct _TRUSTED_DOMAIN_AUTH_INFORMATION { ULONG IncomingAuthInfos;`
+  - `Information` (type_alias, line 9287) `typedef struct _TRUSTED_DOMAIN_FULL_INFORMATION { TRUSTED_DOMAIN_INFORMATION_EX Information;`
+  - `Information` (type_alias, line 9295) `typedef struct _TRUSTED_DOMAIN_FULL_INFORMATION2 { TRUSTED_DOMAIN_INFORMATION_EX2 Information;`
+  - `SupportedEncryptionTypes` (type_alias, line 9303) `typedef struct _TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES { ULONG SupportedEncryptionTypes;`
+  - `Sid` (type_alias, line 9345) `typedef struct _LSA_FOREST_TRUST_DOMAIN_INFO { #ifdef MIDL_PASS PISID Sid;`
+  - `Length` (type_alias, line 9367) `typedef struct _LSA_FOREST_TRUST_BINARY_DATA { #ifdef MIDL_PASS [range(0, MAX_FOREST_TRUST_BINARY_DATA_SIZE)] ULONG Length;`
+  - `Flags` (type_alias, line 9379) `typedef struct _LSA_FOREST_TRUST_RECORD { ULONG Flags;`
+  - `RecordCount` (type_alias, line 9414) `typedef struct _LSA_FOREST_TRUST_INFORMATION { #ifdef MIDL_PASS [range(0, MAX_RECORDS_IN_FOREST_TRUST_INFO)] ULONG RecordCount;`
+  - `Index` (type_alias, line 9434) `typedef struct _LSA_FOREST_TRUST_COLLISION_RECORD { ULONG Index;`
+  - `RecordCount` (type_alias, line 9443) `typedef struct _LSA_FOREST_TRUST_COLLISION_INFORMATION { ULONG RecordCount;`
+  - `Sid` (type_alias, line 9464) `typedef struct _LSA_ENUMERATION_INFORMATION { PSID Sid;`
+  - `LastSuccessfulLogon` (type_alias, line 9492) `typedef struct _LSA_LAST_INTER_LOGON_INFO { LARGE_INTEGER LastSuccessfulLogon;`
+  - `Size` (type_alias, line 9502) `typedef struct _SECURITY_LOGON_SESSION_DATA { ULONG Size;`
+  - `Version` (type_alias, line 9853) `typedef struct _EFI_DRIVER_ENTRY { ULONG Version;`
+  - `NextEntryOffset` (type_alias, line 9863) `typedef struct _EFI_DRIVER_ENTRY_LIST { ULONG NextEntryOffset;`
+  - `Address` (type_alias, line 9871) `typedef struct _RTL_STACK_CONTEXT_ENTRY { ULONG_PTR Address;`
+  - `NumberOfEntries` (type_alias, line 9876) `typedef struct _RTL_STACK_CONTEXT { ULONG NumberOfEntries;`
+  - `Length` (type_alias, line 9888) `typedef struct _RTL_HEAP_PARAMETERS { ULONG Length;`
+  - `BalancedRoot` (type_alias, line 10023) `typedef struct _RTL_AVL_TABLE { RTL_BALANCED_LINKS BalancedRoot;`
+  - `TableRoot` (type_alias, line 10038) `typedef struct _RTL_GENERIC_TABLE { PRTL_SPLAY_LINKS TableRoot;`
+  - `Checksum` (type_alias, line 10051) `typedef struct _GENERATE_NAME_CONTEXT { USHORT Checksum;`
+  - `NodeTypeCode` (type_alias, line 10067) `typedef struct _PREFIX_TABLE_ENTRY { CSHORT NodeTypeCode;`
+  - `NodeTypeCode` (type_alias, line 10076) `typedef struct _PREFIX_TABLE { CSHORT NodeTypeCode;`
+  - `NodeTypeCode` (type_alias, line 10083) `typedef struct _UNICODE_PREFIX_TABLE_ENTRY { CSHORT NodeTypeCode;`
+  - `NodeTypeCode` (type_alias, line 10093) `typedef struct _UNICODE_PREFIX_TABLE { CSHORT NodeTypeCode;`
+  - `CompressionFormatAndEngine` (type_alias, line 10109) `typedef struct _COMPRESSED_DATA_INFO { USHORT CompressionFormatAndEngine;`
+  - `TransferAddress` (type_alias, line 10123) `typedef struct _SECTION_IMAGE_INFORMATION { PVOID TransferAddress;`
+  - `TransferAddress` (type_alias, line 10160) `typedef struct _SECTION_IMAGE_INFORMATION64 { ULONGLONG TransferAddress;`
+  - `SizeOfBitMap` (type_alias, line 10184) `typedef struct _RTL_BITMAP { ULONG SizeOfBitMap;`
+  - `ListHead` (type_alias, line 10197) `typedef struct _RTL_RANGE_LIST { LIST_ENTRY ListHead;`
+  - `RangeListHead` (type_alias, line 10214) `typedef struct _RANGE_LIST_ITERATOR { PLIST_ENTRY RangeListHead;`
+  - `Unknown` (type_alias, line 10221) `typedef struct _STARTUP_ARGUMENT { //ULONG Unknown[ 3 ];`
+  - `Length` (type_alias, line 10249) `typedef struct _RTL_USER_PROCESS_INFORMATION { ULONG Length;`
+  - `Length` (type_alias, line 10257) `typedef struct _RTL_USER_PROCESS_INFORMATION64 { ULONG Length;`
+  - `CriticalSection` (type_alias, line 10270) `typedef struct _RTL_RESOURCE { RTL_CRITICAL_SECTION CriticalSection;`
+  - `Magic` (type_alias, line 10289) `typedef struct _RTL_TRACE_BLOCK { ULONG Magic;`
+  - `PRTL_TRACE_DATABASE` (type_alias, line 10304) `typedef struct _RTL_TRACE_DATABASE * PRTL_TRACE_DATABASE;`
+  - `Database` (type_alias, line 10305) `typedef struct _RTL_TRACE_ENUMERATE { PRTL_TRACE_DATABASE Database;`
+  - `InLoadOrderLinks` (type_alias, line 10311) `typedef struct _KLDR_DATA_TABLE_ENTRY { LIST_ENTRY InLoadOrderLinks;`
+  - `Type` (type_alias, line 10346) `typedef struct _DISPATCHER_HEADER { union { struct { UCHAR Type;`
+  - `Header` (type_alias, line 10379) `typedef struct _KEVENT { DISPATCHER_HEADER Header;`
+  - `Header` (type_alias, line 10384) `typedef struct _KGATE { DISPATCHER_HEADER Header;`
+  - `Header` (type_alias, line 10389) `typedef struct _KSEMAPHORE { DISPATCHER_HEADER Header;`
+  - `OwnerThread` (type_alias, line 10395) `typedef struct _OWNER_ENTRY { ULONG OwnerThread;`
+  - `SystemResourcesList` (type_alias, line 10402) `typedef struct _ERESOURCE { LIST_ENTRY SystemResourcesList;`
+  - `CriticalSection` (type_alias, line 10440) `typedef struct _HEAP_LOCK { union { RTL_CRITICAL_SECTION CriticalSection;`
+  - `CommittThresholdShift` (type_alias, line 10449) `typedef struct _HEAP_TUNING_PARAMETERS { ULONG CommittThresholdShift;`
+  - `Allocs` (type_alias, line 10455) `typedef struct _HEAP_PSEUDO_TAG_ENTRY { ULONG Allocs;`
+  - `Allocs` (type_alias, line 10462) `typedef struct _HEAP_TAG_ENTRY { ULONG Allocs;`
+  - `Size` (type_alias, line 10472) `typedef struct _HEAP_ENTRY { USHORT Size;`
+  - `TotalMemoryReserved` (type_alias, line 10495) `typedef struct _HEAP_COUNTERS { ULONG TotalMemoryReserved;`
+  - `Entry` (type_alias, line 10517) `typedef struct _HEAP { HEAP_ENTRY Entry;`
+  - `TagIndex` (type_alias, line 10574) `typedef struct _HEAP_FREE_ENTRY_EXTRA { USHORT TagIndex;`
+  - `AllocatorBackTraceIndex` (type_alias, line 10580) `typedef struct _HEAP_ENTRY_EXTRA { USHORT AllocatorBackTraceIndex;`
+  - `Entry` (type_alias, line 10588) `typedef struct _HEAP_VIRTUAL_ALLOC_ENTRY { LIST_ENTRY Entry;`
+  - `Offset` (type_alias, line 10674) `typedef struct _XSTATE_FEATURE { DWORD Offset;`
+  - `EnabledFeatures` (type_alias, line 10678) `typedef struct _XSTATE_CONFIGURATION { // Mask of enabled features DWORD64 EnabledFeatures;`
+  - `TickCountLowDeprecated` (type_alias, line 10701) `typedef struct _KUSER_SHARED_DATA { ULONG TickCountLowDeprecated;`
+  - `Process` (type_alias, line 10915) `typedef struct _RTL_PROCESS_REFLECTION_INFORMATION { HANDLE Process;`
+  - `PeakVirtualSize` (type_alias, line 10923) `typedef struct _VM_COUNTERS { SIZE_T PeakVirtualSize;`
+  - `ReadOperationCount` (type_alias, line 10940) `typedef struct _IO_COUNTERS { ULONGLONG ReadOperationCount;`
+  - `NextEntryDelta` (type_alias, line 10953) `typedef struct _SYSTEM_PROCESSES_INFORMATION { ULONG NextEntryDelta;`
+  - `ExceptionRecord` (type_alias, line 10976) `typedef struct _DBGKM_EXCEPTION { EXCEPTION_RECORD ExceptionRecord;`
+  - `SubSystemKey` (type_alias, line 10982) `typedef struct _DBGKM_CREATE_THREAD { ULONG SubSystemKey;`
+  - `SubSystemKey` (type_alias, line 10988) `typedef struct _DBGKM_CREATE_PROCESS { ULONG SubSystemKey;`
+  - `ExitStatus` (type_alias, line 10998) `typedef struct _DBGKM_EXIT_THREAD { NTSTATUS ExitStatus;`
+  - `ExitStatus` (type_alias, line 11003) `typedef struct _DBGKM_EXIT_PROCESS { NTSTATUS ExitStatus;`
+  - `FileHandle` (type_alias, line 11008) `typedef struct _DBGKM_LOAD_DLL { HANDLE FileHandle;`
+  - `BaseAddress` (type_alias, line 11017) `typedef struct _DBGKM_UNLOAD_DLL { PVOID BaseAddress;`
+  - `HandleToThread` (type_alias, line 11037) `typedef struct _DBGUI_CREATE_THREAD { HANDLE HandleToThread;`
+  - `HandleToProcess` (type_alias, line 11043) `typedef struct _DBGUI_CREATE_PROCESS { HANDLE HandleToProcess;`
+  - `NewState` (type_alias, line 11050) `typedef struct _DBGUI_WAIT_STATE_CHANGE { DBG_STATE NewState;`
+  - `NumberOfAllocations` (type_alias, line 11086) `typedef struct _RTL_HEAP_TAG_INFO { ULONG NumberOfAllocations;`
+  - `Length` (type_alias, line 11109) `typedef struct _RTL_HEAP_USAGE { ULONG Length;`
+  - `DataAddress` (type_alias, line 11125) `typedef struct _RTL_HEAP_WALK_ENTRY { PVOID DataAddress;`
+  - `InterceptorFunction` (type_alias, line 11162) `typedef struct _HEAP_DEBUGGING_INFORMATION { PVOID InterceptorFunction;`
+  - `Ptr` (type_alias, line 11191) `typedef struct _RTL_SRWLOCK { PVOID Ptr;`
+  - `Segment` (type_alias, line 11195) `typedef struct _RTL_MEMORY_ZONE { RTL_MEMORY_ZONE_SEGMENT Segment;`
+  - `SizeStruct` (type_alias, line 11203) `typedef struct _RTL_PROCESS_VERIFIER_OPTIONS { ULONG SizeStruct;`
+  - `dwNumberOfOffsets` (type_alias, line 11217) `typedef struct _VM_INFORMATION { DWORD dwNumberOfOffsets;`
+  - `VirtualAddress` (type_alias, line 11226) `typedef struct _MEMORY_RANGE_ENTRY { PVOID VirtualAddress;`
+  - `NumberOfLocks` (type_alias, line 11232) `typedef struct _RTL_PROCESS_LOCKS { ULONG NumberOfLocks;`
+  - `SymbolicBackTrace` (type_alias, line 11239) `typedef struct _RTL_PROCESS_BACKTRACE_INFORMATION { PCHAR SymbolicBackTrace;`
+  - `CommittedMemory` (type_alias, line 11247) `typedef struct _RTL_PROCESS_BACKTRACES { ULONG CommittedMemory;`
+  - `SectionHandleClient` (type_alias, line 11255) `typedef struct _RTL_DEBUG_INFORMATION { HANDLE SectionHandleClient;`
+  - `Flags` (type_alias, line 11328) `typedef struct _RTL_HANDLE_TABLE_ENTRY { union { ULONG Flags;`
+  - `MaximumNumberOfHandles` (type_alias, line 11340) `typedef struct _RTL_HANDLE_TABLE { ULONG MaximumNumberOfHandles;`
+  - `JobHandle` (type_alias, line 11353) `typedef struct _JOB_SET_ARRAY { HANDLE JobHandle;`
+  - `Ptr` (type_alias, line 11504) `typedef struct _EVENT_DATA_DESCRIPTOR { ULONG_PTR Ptr;`
+  - `Id` (type_alias, line 11511) `typedef struct _EVENT_DESCRIPTOR { USHORT Id;`
+  - `Ptr` (type_alias, line 11528) `typedef struct _EVENT_FILTER_DESCRIPTOR { ULONG_PTR Ptr;`
+  - `Text` (type_alias, line 11540) `typedef struct _CHANNEL_MESSAGE { PVOID Text;`
+  - `Signature` (type_alias, line 11552) `typedef struct _HOTPATCH_HEADER { ULONG Signature;`
+  - `HotpatchImageNameLength` (type_alias, line 11571) `typedef struct _HOTPATCH_MODULE_DATA { USHORT HotpatchImageNameLength;`
+  - `ListEntry` (type_alias, line 11578) `typedef struct _HOTPATCH_MODULE_ENTRY { struct _TRIPLE_LIST_ENTRY ListEntry;`
+  - `HookType` (type_alias, line 11584) `typedef struct _HOTPATCH_HOOK { USHORT HookType;`
+  - `PatchList` (type_alias, line 11593) `typedef struct _RTL_PATCH_HEADER { LIST_ENTRY PatchList;`
+  - `Next` (type_alias, line 11632) `typedef struct DECLSPEC_ALIGN(16) _SLIST_ENTRY { PSLIST_ENTRY Next;`
+  - `Alignment` (type_alias, line 11646) `typedef struct DECLSPEC_ALIGN(16) _SLIST_HEADER { ULONGLONG Alignment;`
+  - `PRTL_OSVERSIONINFOW` (type_alias, line 14762) `typedef POSVERSIONINFOW PRTL_OSVERSIONINFOW;`
+  - `PRTL_OSVERSIONINFOEXW` (type_alias, line 14763) `typedef POSVERSIONINFOEXW PRTL_OSVERSIONINFOEXW;`
+  - `BaseAddress` (type_alias, line 21428) `typedef struct _RTL_UNLOAD_EVENT_TRACE { PVOID BaseAddress;`
+  - `BaseAddress` (type_alias, line 21437) `typedef struct _RTL_UNLOAD_EVENT_TRACE64 { ULONGLONG BaseAddress;`
+  - `BaseAddress` (type_alias, line 21446) `typedef struct _RTL_UNLOAD_EVENT_TRACE32 { ULONG BaseAddress;`
+  - `ai_flags` (type_alias, line 22497) `typedef struct addrinfo { int ai_flags;`
+  - `NtCurrentPeb` (function, line 7104) `__inline struct _PEB * NtCurrentPeb()`
+  - `GetKUserSharedData` (function, line 10904) `__inline struct _KUSER_SHARED_DATA * GetKUserSharedData()`
+  - `NtGetTickCount` (function, line 10906) `__forceinline ULONG NtGetTickCount()`
+  - `DEFINE_GUID` (function, line 2455) `DEFINE_GUID( FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE, 0x0d0a64a1, 0x38fc, 0x4db8, 0x9f, 0xe7, 0x3f, 0x43, 0x52, 0xcd, 0x7c, 0x5c );`
+  - `VOID` (function, line 3185) `typedef VOID(NTAPI *PIO_APC_ROUTINE)( IN PVOID ApcContext, IN PIO_STATUS_BLOCK IoStatusBlock, IN ULONG Reserved );`
+  - `BOOLEAN` (function, line 3721) `typedef BOOLEAN (*PRTL_CONFLICT_RANGE_CALLBACK) ( IN PVOID Context, IN PRTL_RANGE Range );`
+  - `NTSTATUS` (function, line 5184) `typedef NTSTATUS (*PWD_HANDLER)( IN WATCHDOG_HANDLER_ACTION Action, IN PVOID Context, _Inout_ PULONG DataValue, IN BOOLEAN NoLocks );`
+  - `ULONG` (function, line 5993) `typedef ULONG (*PCSR_CALLBACK_ROUTINE)( _Inout_ PCSR_API_MSG ReplyMsg );`
+  - `EXCEPTION_DISPOSITION` (function, line 7284) `typedef EXCEPTION_DISPOSITION (*PEXCEPTION_ROUTINE) ( IN struct _EXCEPTION_RECORD *ExceptionRecord, IN PVOID EstablisherFrame, _Inout_ struct _CONTEXT *ContextRecord, _Inout_ PVOID DispatcherContext )`
+  - `generated` (function, line 7965) `For handle based audits to be generated (Open handle AuditId: 0x1230, Close handle AuditId: 0x1232), the corresponding object sub-category AND Audit_ObjectAccess_Handle must be enabled. For eg, to gen`
+  - `LsaLookupOpenLocalPolicy` (function, line 8587) `NTSTATUS LsaLookupOpenLocalPolicy( IN PLSA_OBJECT_ATTRIBUTES ObjectAttributes, IN ACCESS_MASK AccessMask, _Inout_ PLSA_LOOKUP_HANDLE PolicyHandle );`
+  - `LsaLookupClose` (function, line 8594) `NTSTATUS LsaLookupClose( IN LSA_LOOKUP_HANDLE ObjectHandle );`
+  - `LsaLookupTranslateSids` (function, line 8599) `NTSTATUS LsaLookupTranslateSids( IN LSA_LOOKUP_HANDLE PolicyHandle, IN ULONG Count, IN PSID *Sids, OUT PLSA_REFERENCED_DOMAIN_LIST *ReferencedDomains, OUT PLSA_TRANSLATED_NAME *Names );`
+  - `LsaLookupTranslateNames` (function, line 8610) `NTSTATUS LsaLookupTranslateNames( IN LSA_LOOKUP_HANDLE PolicyHandle, IN ULONG Flags, IN ULONG Count, IN PLSA_UNICODE_STRING Names, OUT PLSA_REFERENCED_DOMAIN_LIST *ReferencedDomains, OUT PLSA_TRANSLAT`
+  - `LsaLookupGetDomainInfo` (function, line 8620) `NTSTATUS LsaLookupGetDomainInfo( IN LSA_LOOKUP_HANDLE PolicyHandle, IN LSA_LOOKUP_DOMAIN_INFO_CLASS DomainInfoClass, OUT PVOID *DomainInfo );`
+  - `LsaLookupFreeMemory` (function, line 8627) `NTSTATUS LsaLookupFreeMemory( IN PVOID Buffer );`
+  - `LsaRegisterLogonProcess` (function, line 8795) `NTSTATUS NTAPI LsaRegisterLogonProcess ( IN PLSA_STRING LogonProcessName, OUT PHANDLE LsaHandle, OUT PLSA_OPERATIONAL_MODE SecurityMode );`
+  - `LsaLogonUser` (function, line 8803) `NTSTATUS NTAPI LsaLogonUser ( IN HANDLE LsaHandle, IN PLSA_STRING OriginName, IN SECURITY_LOGON_TYPE LogonType, IN ULONG AuthenticationPackage, IN PVOID AuthenticationInformation, IN ULONG Authenticat`
+  - `LsaLookupAuthenticationPackage` (function, line 8822) `NTSTATUS NTAPI LsaLookupAuthenticationPackage ( IN HANDLE LsaHandle, IN PLSA_STRING PackageName, OUT PULONG AuthenticationPackage );`
+  - `LsaFreeReturnBuffer` (function, line 8830) `NTSTATUS NTAPI LsaFreeReturnBuffer ( IN PVOID Buffer );`
+  - `LsaCallAuthenticationPackage` (function, line 8836) `NTSTATUS NTAPI LsaCallAuthenticationPackage ( IN HANDLE LsaHandle, IN ULONG AuthenticationPackage, IN PVOID ProtocolSubmitBuffer, IN ULONG SubmitBufferLength, OUT OPTIONAL PVOID *ProtocolReturnBuffer,`
+  - `LsaDeregisterLogonProcess` (function, line 8848) `NTSTATUS NTAPI LsaDeregisterLogonProcess ( IN HANDLE LsaHandle );`
+  - `LsaConnectUntrusted` (function, line 8854) `NTSTATUS NTAPI LsaConnectUntrusted ( OUT PHANDLE LsaHandle );`
+  - `LsaFreeMemory` (function, line 9477) `NTSTATUS NTAPI LsaFreeMemory( _In_opt_ PVOID Buffer );`
+  - `LsaClose` (function, line 9484) `NTSTATUS NTAPI LsaClose( IN LSA_HANDLE ObjectHandle );`
+  - `LsaEnumerateLogonSessions` (function, line 9535) `NTSTATUS NTAPI LsaEnumerateLogonSessions( OUT PULONG LogonSessionCount, OUT PLUID * LogonSessionList );`
+  - `LsaGetLogonSessionData` (function, line 9542) `NTSTATUS NTAPI LsaGetLogonSessionData( IN PLUID LogonId, OUT PSECURITY_LOGON_SESSION_DATA * ppLogonSessionData );`
+  - `LsaOpenPolicy` (function, line 9551) `NTSTATUS NTAPI LsaOpenPolicy( _In_opt_ PLSA_UNICODE_STRING SystemName, IN PLSA_OBJECT_ATTRIBUTES ObjectAttributes, IN ACCESS_MASK DesiredAccess, OUT PLSA_HANDLE PolicyHandle );`
+  - `LsaQueryInformationPolicy` (function, line 9559) `NTSTATUS NTAPI LsaQueryInformationPolicy( IN LSA_HANDLE PolicyHandle, IN POLICY_INFORMATION_CLASS InformationClass, OUT PVOID *Buffer );`
+  - `LsaSetInformationPolicy` (function, line 9568) `NTSTATUS NTAPI LsaSetInformationPolicy( IN LSA_HANDLE PolicyHandle, IN POLICY_INFORMATION_CLASS InformationClass, IN PVOID Buffer );`
+  - `LsaQueryDomainInformationPolicy` (function, line 9576) `NTSTATUS NTAPI LsaQueryDomainInformationPolicy( IN LSA_HANDLE PolicyHandle, IN POLICY_DOMAIN_INFORMATION_CLASS InformationClass, OUT PVOID *Buffer );`
+  - `LsaSetDomainInformationPolicy` (function, line 9584) `NTSTATUS NTAPI LsaSetDomainInformationPolicy( IN LSA_HANDLE PolicyHandle, IN POLICY_DOMAIN_INFORMATION_CLASS InformationClass, _In_opt_ PVOID Buffer );`
+  - `LsaRegisterPolicyChangeNotification` (function, line 9592) `NTSTATUS NTAPI LsaRegisterPolicyChangeNotification( IN POLICY_NOTIFICATION_INFORMATION_CLASS InformationClass, IN HANDLE NotificationEventHandle );`
+  - `LsaUnregisterPolicyChangeNotification` (function, line 9599) `NTSTATUS NTAPI LsaUnregisterPolicyChangeNotification( IN POLICY_NOTIFICATION_INFORMATION_CLASS InformationClass, IN HANDLE NotificationEventHandle );`
+  - `LsaEnumerateTrustedDomains` (function, line 9606) `NTSTATUS NTAPI LsaEnumerateTrustedDomains( IN LSA_HANDLE PolicyHandle, _Inout_ PLSA_ENUMERATION_HANDLE EnumerationContext, OUT PVOID *Buffer, IN ULONG preferredMaximumLength, OUT PULONG CountReturned `
+  - `LsaLookupNames` (function, line 9616) `NTSTATUS NTAPI LsaLookupNames( IN LSA_HANDLE PolicyHandle, IN ULONG Count, IN PLSA_UNICODE_STRING Names, OUT PLSA_REFERENCED_DOMAIN_LIST *ReferencedDomains, OUT PLSA_TRANSLATED_SID *Sids );`
+  - `LsaLookupNames2` (function, line 9628) `NTSTATUS NTAPI LsaLookupNames2( IN LSA_HANDLE PolicyHandle, IN ULONG Flags, // Reserved IN ULONG Count, IN PLSA_UNICODE_STRING Names, OUT PLSA_REFERENCED_DOMAIN_LIST *ReferencedDomains, OUT PLSA_TRANS`
+  - `LsaLookupSids` (function, line 9639) `NTSTATUS NTAPI LsaLookupSids( IN LSA_HANDLE PolicyHandle, IN ULONG Count, IN PSID *Sids, OUT PLSA_REFERENCED_DOMAIN_LIST *ReferencedDomains, OUT PLSA_TRANSLATED_NAME *Names );`
+  - `LsaEnumerateAccountsWithUserRight` (function, line 9662) `NTSTATUS NTAPI LsaEnumerateAccountsWithUserRight( IN LSA_HANDLE PolicyHandle, _In_opt_ PLSA_UNICODE_STRING UserRight, OUT PVOID *Buffer, OUT PULONG CountReturned );`
+  - `LsaEnumerateAccountRights` (function, line 9671) `NTSTATUS NTAPI LsaEnumerateAccountRights( IN LSA_HANDLE PolicyHandle, IN PSID AccountSid, OUT PLSA_UNICODE_STRING *UserRights, OUT PULONG CountOfRights );`
+  - `LsaAddAccountRights` (function, line 9680) `NTSTATUS NTAPI LsaAddAccountRights( IN LSA_HANDLE PolicyHandle, IN PSID AccountSid, IN PLSA_UNICODE_STRING UserRights, IN ULONG CountOfRights );`
+  - `LsaRemoveAccountRights` (function, line 9689) `NTSTATUS NTAPI LsaRemoveAccountRights( IN LSA_HANDLE PolicyHandle, IN PSID AccountSid, IN BOOLEAN AllRights, IN LSA_UNICODE_STRING UserRights, IN ULONG CountOfRights );`
+  - `LsaOpenTrustedDomainByName` (function, line 9705) `NTSTATUS NTAPI LsaOpenTrustedDomainByName( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING TrustedDomainName, IN ACCESS_MASK DesiredAccess, OUT PLSA_HANDLE TrustedDomainHandle );`
+  - `LsaQueryTrustedDomainInfo` (function, line 9714) `NTSTATUS NTAPI LsaQueryTrustedDomainInfo( IN LSA_HANDLE PolicyHandle, IN PSID TrustedDomainSid, IN TRUSTED_INFORMATION_CLASS InformationClass, OUT PVOID *Buffer );`
+  - `LsaSetTrustedDomainInformation` (function, line 9723) `NTSTATUS NTAPI LsaSetTrustedDomainInformation( IN LSA_HANDLE PolicyHandle, IN PSID TrustedDomainSid, IN TRUSTED_INFORMATION_CLASS InformationClass, IN PVOID Buffer );`
+  - `LsaDeleteTrustedDomain` (function, line 9732) `NTSTATUS NTAPI LsaDeleteTrustedDomain( IN LSA_HANDLE PolicyHandle, IN PSID TrustedDomainSid );`
+  - `LsaQueryTrustedDomainInfoByName` (function, line 9739) `NTSTATUS NTAPI LsaQueryTrustedDomainInfoByName( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING TrustedDomainName, IN TRUSTED_INFORMATION_CLASS InformationClass, OUT PVOID *Buffer );`
+  - `LsaSetTrustedDomainInfoByName` (function, line 9748) `NTSTATUS NTAPI LsaSetTrustedDomainInfoByName( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING TrustedDomainName, IN TRUSTED_INFORMATION_CLASS InformationClass, IN PVOID Buffer );`
+  - `LsaEnumerateTrustedDomainsEx` (function, line 9757) `NTSTATUS NTAPI LsaEnumerateTrustedDomainsEx( IN LSA_HANDLE PolicyHandle, _Inout_ PLSA_ENUMERATION_HANDLE EnumerationContext, OUT PVOID *Buffer, IN ULONG preferredMaximumLength, OUT PULONG CountReturne`
+  - `LsaCreateTrustedDomainEx` (function, line 9767) `NTSTATUS NTAPI LsaCreateTrustedDomainEx( IN LSA_HANDLE PolicyHandle, IN PTRUSTED_DOMAIN_INFORMATION_EX TrustedDomainInformation, IN PTRUSTED_DOMAIN_AUTH_INFORMATION AuthenticationInformation, IN ACCES`
+  - `LsaQueryForestTrustInformation` (function, line 9779) `NTSTATUS NTAPI LsaQueryForestTrustInformation( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING TrustedDomainName, OUT PLSA_FOREST_TRUST_INFORMATION * ForestTrustInfo );`
+  - `LsaSetForestTrustInformation` (function, line 9786) `NTSTATUS NTAPI LsaSetForestTrustInformation( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING TrustedDomainName, IN PLSA_FOREST_TRUST_INFORMATION ForestTrustInfo, IN BOOLEAN CheckOnly, OUT PLSA_FORE`
+  - `LsaForestTrustFindMatch` (function, line 9799) `NTSTATUS NTAPI LsaForestTrustFindMatch( IN LSA_HANDLE PolicyHandle, IN ULONG Type, IN PLSA_UNICODE_STRING Name, OUT PLSA_UNICODE_STRING * Match );`
+  - `LsaStorePrivateData` (function, line 9816) `NTSTATUS NTAPI LsaStorePrivateData( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING KeyName, _In_opt_ PLSA_UNICODE_STRING PrivateData );`
+  - `LsaRetrievePrivateData` (function, line 9824) `NTSTATUS NTAPI LsaRetrievePrivateData( IN LSA_HANDLE PolicyHandle, IN PLSA_UNICODE_STRING KeyName, OUT PLSA_UNICODE_STRING * PrivateData );`
+  - `LsaNtStatusToWinError` (function, line 9832) `ULONG NTAPI LsaNtStatusToWinError( IN NTSTATUS Status );`
+  - `ConvertSidToStringSidW` (function, line 9839) `BOOL NTAPI ConvertSidToStringSidW( IN PSID Sid, OUT LPWSTR *StringSid );`
+  - `RTL_GENERIC_COMPARE_RESULTS` (function, line 9946) `typedef RTL_GENERIC_COMPARE_RESULTS (NTAPI *PRTL_AVL_COMPARE_ROUTINE)( IN struct _RTL_AVL_TABLE *Table, IN PVOID FirstStruct, IN PVOID SecondStruct );`
+  - `PVOID` (function, line 9952) `typedef PVOID (NTAPI *PRTL_AVL_ALLOCATE_ROUTINE)( IN struct _RTL_AVL_TABLE *Table, IN CLONG ByteSize );`
+  - `C_ASSERT` (function, line 10841) `C_ASSERT(FIELD_OFFSET(KUSER_SHARED_DATA, TickCountMultiplier) == 0x4);`
+  - `RtlReleaseMemoryStream` (function, line 11295) `HRESULT NTAPI RtlReleaseMemoryStream( PRTL_MEMORY_STREAM_WITH_VTABLE MemoryStream );`
+  - `RtlSetMemoryStreamSize` (function, line 11301) `HRESULT NTAPI RtlSetMemoryStreamSize( PRTL_MEMORY_STREAM_WITH_VTABLE MemoryStream, ULARGE_INTEGER ULargeInteger );`
+  - `RtlCommitMemoryStream` (function, line 11308) `HRESULT NTAPI RtlCommitMemoryStream( PRTL_MEMORY_STREAM_WITH_VTABLE MemoryStream, ULONG NewStream );`
+  - `RtlRevertMemoryStream` (function, line 11315) `HRESULT NTAPI RtlRevertMemoryStream( PRTL_MEMORY_STREAM_WITH_VTABLE MemoryStream );`
+  - `RtlCopySecurityDescriptor` (function, line 11321) `NTSTATUS NTAPI RtlCopySecurityDescriptor( PSECURITY_DESCRIPTOR SourceDescriptor, PSECURITY_DESCRIPTOR DestinationDescriptor );`
+  - `RtlInitializeHandleTable` (function, line 11359) `VOID NTAPI RtlInitializeHandleTable( IN ULONG MaximumNumberOfHandles, IN ULONG SizeOfHandleTableEntry, OUT PRTL_HANDLE_TABLE HandleTable );`
+  - `RtlDestroyHandleTable` (function, line 11367) `NTSTATUS NTAPI RtlDestroyHandleTable( _Inout_ PRTL_HANDLE_TABLE HandleTable );`
+  - `RtlAllocateHandle` (function, line 11373) `PRTL_HANDLE_TABLE_ENTRY NTAPI RtlAllocateHandle( IN PRTL_HANDLE_TABLE HandleTable, OUT OPTIONAL PULONG HandleIndex );`
+  - `RtlFreeHandle` (function, line 11380) `BOOLEAN NTAPI RtlFreeHandle( IN PRTL_HANDLE_TABLE HandleTable, IN PRTL_HANDLE_TABLE_ENTRY Handle );`
+  - `RtlIsValidHandle` (function, line 11387) `BOOLEAN NTAPI RtlIsValidHandle( IN PRTL_HANDLE_TABLE HandleTable, IN PRTL_HANDLE_TABLE_ENTRY Handle );`
+  - `RtlIsValidIndexHandle` (function, line 11394) `BOOLEAN NTAPI RtlIsValidIndexHandle( IN PRTL_HANDLE_TABLE HandleTable, IN ULONG HandleIndex, OUT PRTL_HANDLE_TABLE_ENTRY *Handle );`
+  - `RtlCreateAtomTable` (function, line 11408) `NTSTATUS NTAPI RtlCreateAtomTable( IN ULONG NumberOfBuckets, OUT PVOID *AtomTableHandle );`
+  - `RtlDestroyAtomTable` (function, line 11415) `NTSTATUS NTAPI RtlDestroyAtomTable( IN PVOID AtomTableHandle );`
+  - `RtlEmptyAtomTable` (function, line 11421) `NTSTATUS NTAPI RtlEmptyAtomTable( IN PVOID AtomTableHandle, IN BOOLEAN IncludePinnedAtoms );`
+  - `RtlAddAtomToAtomTable` (function, line 11428) `NTSTATUS NTAPI RtlAddAtomToAtomTable( IN PVOID AtomTableHandle, IN PWSTR AtomName, _Inout_opt_ PRTL_ATOM Atom );`
+  - `RtlLookupAtomInAtomTable` (function, line 11436) `NTSTATUS NTAPI RtlLookupAtomInAtomTable( IN PVOID AtomTableHandle, IN PWSTR AtomName, OUT OPTIONAL PRTL_ATOM Atom );`
+  - `RtlDeleteAtomFromAtomTable` (function, line 11444) `NTSTATUS NTAPI RtlDeleteAtomFromAtomTable( IN PVOID AtomTableHandle, IN RTL_ATOM Atom );`
+  - `RtlPinAtomInAtomTable` (function, line 11451) `NTSTATUS NTAPI RtlPinAtomInAtomTable( IN PVOID AtomTableHandle, IN RTL_ATOM Atom );`
+  - `RtlQueryAtomInAtomTable` (function, line 11458) `NTSTATUS NTAPI RtlQueryAtomInAtomTable( IN PVOID AtomTableHandle, IN RTL_ATOM Atom, OUT OPTIONAL PULONG AtomUsage, OUT OPTIONAL PULONG AtomFlags, _Inout_ PWSTR AtomName, _Inout_opt_ PULONG AtomNameLen`
+  - `RtlQueryAtomsInAtomTable` (function, line 11469) `NTSTATUS NTAPI RtlQueryAtomsInAtomTable( IN PVOID AtomTableHandle, IN ULONG MaximumNumberOfAtoms, OUT PULONG NumberOfAtoms, OUT PRTL_ATOM Atoms );`
+  - `RtlGetIntegerAtom` (function, line 11478) `BOOLEAN NTAPI RtlGetIntegerAtom( IN PWSTR AtomName, OUT OPTIONAL PUSHORT IntegerAtom );`
+  - `RtlInterlockedPushListSList` (function, line 11672) `PSLIST_ENTRY __fastcall RtlInterlockedPushListSList ( IN PSLIST_HEADER ListHead, IN PSLIST_ENTRY List, IN PSLIST_ENTRY ListEnd, IN ULONG Count );`
+  - `RtlAssert` (function, line 11681) `VOID NTAPI RtlAssert( IN PVOID VoidFailedAssertion, IN PVOID VoidFileName, IN ULONG LineNumber, _In_opt_ PSTR MutableMessage );`
+  - `RtlInitializeGenericTableAvl` (function, line 11690) `VOID NTAPI RtlInitializeGenericTableAvl ( PRTL_AVL_TABLE Table, PRTL_AVL_COMPARE_ROUTINE CompareRoutine, PRTL_AVL_ALLOCATE_ROUTINE AllocateRoutine, PRTL_AVL_FREE_ROUTINE FreeRoutine, PVOID TableContex`
+  - `RtlInsertElementGenericTableAvl` (function, line 11700) `PVOID NTAPI RtlInsertElementGenericTableAvl ( PRTL_AVL_TABLE Table, PVOID Buffer, ULONG BufferSize, PBOOLEAN NewElement OPTIONAL );`
+  - `RtlInsertElementGenericTableFullAvl` (function, line 11709) `PVOID NTAPI RtlInsertElementGenericTableFullAvl ( PRTL_AVL_TABLE Table, PVOID Buffer, ULONG BufferSize, PBOOLEAN NewElement OPTIONAL, PVOID NodeOrParent, TABLE_SEARCH_RESULT SearchResult );`
+  - `RtlDeleteElementGenericTableAvl` (function, line 11720) `BOOLEAN NTAPI RtlDeleteElementGenericTableAvl ( PRTL_AVL_TABLE Table, PVOID Buffer );`
+  - `RtlLookupElementGenericTableAvl` (function, line 11727) `PVOID NTAPI RtlLookupElementGenericTableAvl ( PRTL_AVL_TABLE Table, PVOID Buffer );`
+  - `RtlLookupElementGenericTableFullAvl` (function, line 11734) `PVOID NTAPI RtlLookupElementGenericTableFullAvl ( PRTL_AVL_TABLE Table, PVOID Buffer, OUT PVOID *NodeOrParent, OUT TABLE_SEARCH_RESULT *SearchResult );`
+  - `RtlEnumerateGenericTableAvl` (function, line 11743) `PVOID NTAPI RtlEnumerateGenericTableAvl ( PRTL_AVL_TABLE Table, BOOLEAN Restart );`
+  - `RtlEnumerateGenericTableWithoutSplayingAvl` (function, line 11750) `PVOID NTAPI RtlEnumerateGenericTableWithoutSplayingAvl ( PRTL_AVL_TABLE Table, PVOID *RestartKey );`
+  - `RtlEnumerateGenericTableLikeADirectory` (function, line 11757) `PVOID NTAPI RtlEnumerateGenericTableLikeADirectory ( IN PRTL_AVL_TABLE Table, IN PRTL_AVL_MATCH_FUNCTION MatchFunction, IN PVOID MatchData, IN ULONG NextFlag, _Inout_ PVOID *RestartKey, _Inout_ PULONG`
+  - `RtlGetElementGenericTableAvl` (function, line 11769) `PVOID NTAPI RtlGetElementGenericTableAvl ( PRTL_AVL_TABLE Table, ULONG I );`
+  - `RtlNumberGenericTableElementsAvl` (function, line 11776) `ULONG NTAPI RtlNumberGenericTableElementsAvl ( PRTL_AVL_TABLE Table );`
+  - `RtlIsGenericTableEmptyAvl` (function, line 11782) `BOOLEAN NTAPI RtlIsGenericTableEmptyAvl ( PRTL_AVL_TABLE Table );`
+  - `RtlSplay` (function, line 11788) `PRTL_SPLAY_LINKS NTAPI RtlSplay ( PRTL_SPLAY_LINKS Links );`
+  - `RtlDelete` (function, line 11794) `PRTL_SPLAY_LINKS NTAPI RtlDelete ( PRTL_SPLAY_LINKS Links );`
+  - `RtlDeleteNoSplay` (function, line 11800) `VOID NTAPI RtlDeleteNoSplay ( PRTL_SPLAY_LINKS Links, PRTL_SPLAY_LINKS *Root );`
+  - `RtlSubtreeSuccessor` (function, line 11807) `PRTL_SPLAY_LINKS NTAPI RtlSubtreeSuccessor ( PRTL_SPLAY_LINKS Links );`
+  - `RtlSubtreePredecessor` (function, line 11813) `PRTL_SPLAY_LINKS NTAPI RtlSubtreePredecessor ( PRTL_SPLAY_LINKS Links );`
+  - `RtlRealSuccessor` (function, line 11819) `PRTL_SPLAY_LINKS NTAPI RtlRealSuccessor ( PRTL_SPLAY_LINKS Links );`
+  - `RtlRealPredecessor` (function, line 11825) `PRTL_SPLAY_LINKS NTAPI RtlRealPredecessor ( PRTL_SPLAY_LINKS Links );`
+  - `RtlInitializeGenericTable` (function, line 11831) `VOID NTAPI RtlInitializeGenericTable ( PRTL_GENERIC_TABLE Table, PRTL_GENERIC_COMPARE_ROUTINE CompareRoutine, PRTL_GENERIC_ALLOCATE_ROUTINE AllocateRoutine, PRTL_GENERIC_FREE_ROUTINE FreeRoutine, PVOI`
+  - `RtlInsertElementGenericTable` (function, line 11841) `PVOID NTAPI RtlInsertElementGenericTable ( PRTL_GENERIC_TABLE Table, PVOID Buffer, ULONG BufferSize, PBOOLEAN NewElement OPTIONAL );`
+  - `RtlInsertElementGenericTableFull` (function, line 11850) `PVOID NTAPI RtlInsertElementGenericTableFull ( PRTL_GENERIC_TABLE Table, PVOID Buffer, ULONG BufferSize, PBOOLEAN NewElement OPTIONAL, PVOID NodeOrParent, TABLE_SEARCH_RESULT SearchResult );`
+  - `RtlDeleteElementGenericTable` (function, line 11861) `BOOLEAN NTAPI RtlDeleteElementGenericTable ( PRTL_GENERIC_TABLE Table, PVOID Buffer );`
+  - `RtlLookupElementGenericTable` (function, line 11868) `PVOID NTAPI RtlLookupElementGenericTable ( PRTL_GENERIC_TABLE Table, PVOID Buffer );`
+  - `RtlLookupElementGenericTableFull` (function, line 11875) `PVOID NTAPI RtlLookupElementGenericTableFull ( PRTL_GENERIC_TABLE Table, PVOID Buffer, OUT PVOID *NodeOrParent, OUT TABLE_SEARCH_RESULT *SearchResult );`
+  - `RtlEnumerateGenericTable` (function, line 11884) `PVOID NTAPI RtlEnumerateGenericTable ( PRTL_GENERIC_TABLE Table, BOOLEAN Restart );`
+  - `RtlEnumerateGenericTableWithoutSplaying` (function, line 11891) `PVOID NTAPI RtlEnumerateGenericTableWithoutSplaying ( PRTL_GENERIC_TABLE Table, PVOID *RestartKey );`
+  - `RtlGetElementGenericTable` (function, line 11898) `PVOID NTAPI RtlGetElementGenericTable( PRTL_GENERIC_TABLE Table, ULONG I );`
+  - `RtlNumberGenericTableElements` (function, line 11905) `ULONG NTAPI RtlNumberGenericTableElements( PRTL_GENERIC_TABLE Table );`
+  - `RtlIsGenericTableEmpty` (function, line 11911) `BOOLEAN NTAPI RtlIsGenericTableEmpty ( PRTL_GENERIC_TABLE Table );`
+  - `RtlInitializeHeapManager` (function, line 11917) `NTSTATUS NTAPI RtlInitializeHeapManager( );`
+  - `RtlCreateHeap` (function, line 11922) `PVOID NTAPI RtlCreateHeap( IN ULONG Flags, IN PVOID HeapBase OPTIONAL, IN SIZE_T ReserveSize OPTIONAL, IN SIZE_T CommitSize OPTIONAL, IN PVOID Lock OPTIONAL, IN PRTL_HEAP_PARAMETERS Parameters OPTIONA`
+  - `RtlDestroyHeap` (function, line 11933) `PVOID NTAPI RtlDestroyHeap( IN PVOID HeapHandle );`
+  - `RtlAllocateHeap` (function, line 11939) `PVOID NTAPI RtlAllocateHeap( IN PVOID HeapHandle, IN ULONG Flags, IN SIZE_T Size );`
+  - `RtlFreeHeap` (function, line 11947) `BOOLEAN NTAPI RtlFreeHeap( IN PVOID HeapHandle, _In_opt_ ULONG Flags, IN PVOID BaseAddress );`
+  - `RtlSizeHeap` (function, line 11955) `SIZE_T NTAPI RtlSizeHeap( IN PVOID HeapHandle, IN ULONG Flags, IN PVOID BaseAddress );`
+  - `RtlZeroHeap` (function, line 11963) `NTSTATUS NTAPI RtlZeroHeap( IN PVOID HeapHandle, IN ULONG Flags );`
+  - `RtlProtectHeap` (function, line 11970) `VOID NTAPI RtlProtectHeap( IN PVOID HeapHandle, IN BOOLEAN MakeReadOnly );`
+  - `RtlGetNtGlobalFlags` (function, line 11977) `ULONG NTAPI RtlGetNtGlobalFlags( VOID );`
+  - `RtlGetCallersAddress` (function, line 11983) `VOID NTAPI RtlGetCallersAddress( OUT PVOID *CallersAddress, OUT PVOID *CallersCaller );`
+  - `RtlWalkFrameChain` (function, line 11990) `ULONG NTAPI RtlWalkFrameChain ( OUT PVOID *Callers, IN ULONG Count, IN ULONG Flags );`
+  - `RtlLogStackBackTrace` (function, line 11998) `USHORT NTAPI RtlLogStackBackTrace( VOID );`
+  - `RtlCaptureStackContext` (function, line 12004) `ULONG NTAPI RtlCaptureStackContext ( OUT PULONG_PTR Callers, OUT PRTL_STACK_CONTEXT Context, IN ULONG Limit );`
+  - `RtlGetNtProductType` (function, line 12013) `BOOLEAN NTAPI RtlGetNtProductType( PNT_PRODUCT_TYPE NtProductType );`
+  - `RtlFormatCurrentUserKeyPath` (function, line 12019) `NTSTATUS NTAPI RtlFormatCurrentUserKeyPath ( OUT PUNICODE_STRING CurrentUserKeyPath );`
+  - `RtlOpenCurrentUser` (function, line 12025) `NTSTATUS NTAPI RtlOpenCurrentUser( IN ULONG DesiredAccess, OUT PHANDLE CurrentUserKey );`
+  - `RtlQueryRegistryValues` (function, line 12032) `NTSTATUS NTAPI RtlQueryRegistryValues( IN ULONG RelativeTo, IN PCWSTR Path, IN PRTL_QUERY_REGISTRY_TABLE QueryTable, IN PVOID Context, IN PVOID Environment OPTIONAL );`
+  - `RtlWriteRegistryValue` (function, line 12042) `NTSTATUS NTAPI RtlWriteRegistryValue( IN ULONG RelativeTo, IN PCWSTR Path, IN PCWSTR ValueName, IN ULONG ValueType, IN PVOID ValueData, IN ULONG ValueLength );`
+  - `RtlDeleteRegistryValue` (function, line 12053) `NTSTATUS NTAPI RtlDeleteRegistryValue( IN ULONG RelativeTo, IN PCWSTR Path, IN PCWSTR ValueName );`
+  - `RtlCreateRegistryKey` (function, line 12061) `NTSTATUS NTAPI RtlCreateRegistryKey( IN ULONG RelativeTo, IN PWSTR Path );`
+  - `RtlCheckRegistryKey` (function, line 12068) `NTSTATUS NTAPI RtlCheckRegistryKey( IN ULONG RelativeTo, IN PWSTR Path );`
+  - `RtlLockHeap` (function, line 12078) `BOOLEAN NTAPI RtlLockHeap( IN PVOID HeapHandle );`
+  - `RtlUnlockHeap` (function, line 12083) `BOOLEAN NTAPI RtlUnlockHeap( IN PVOID HeapHandle );`
+  - `RtlReAllocateHeap` (function, line 12090) `PVOID NTAPI RtlReAllocateHeap( IN PVOID HeapHandle, IN ULONG Flags, IN PVOID BaseAddress, IN SIZE_T Size );`
+  - `RtlGetUserInfoHeap` (function, line 12100) `BOOLEAN NTAPI RtlGetUserInfoHeap( IN PVOID HeapHandle, IN ULONG Flags, IN PVOID BaseAddress, OUT OPTIONAL PVOID *UserValue, OUT OPTIONAL PULONG UserFlags );`
+  - `RtlSetUserValueHeap` (function, line 12111) `BOOLEAN NTAPI RtlSetUserValueHeap( IN PVOID HeapHandle, IN ULONG Flags, IN PVOID BaseAddress, IN PVOID UserValue );`
+  - `RtlSetUserFlagsHeap` (function, line 12121) `BOOLEAN NTAPI RtlSetUserFlagsHeap( IN PVOID HeapHandle, IN ULONG Flags, IN PVOID BaseAddress, IN ULONG UserFlagsReset, IN ULONG UserFlagsSet );`
+  - `RtlCreateTagHeap` (function, line 12132) `ULONG NTAPI RtlCreateTagHeap( IN PVOID HeapHandle, IN ULONG Flags, _In_opt_ PWSTR TagPrefix, IN PWSTR TagNames );`
+  - `RtlQueryTagHeap` (function, line 12142) `PWSTR NTAPI RtlQueryTagHeap( IN PVOID HeapHandle, IN ULONG Flags, IN USHORT TagIndex, IN BOOLEAN ResetCounters, OUT OPTIONAL PRTL_HEAP_TAG_INFO TagInfo );`
+  - `RtlExtendHeap` (function, line 12153) `NTSTATUS NTAPI RtlExtendHeap( IN PVOID HeapHandle, IN ULONG Flags, IN PVOID Base, IN SIZE_T Size );`
+  - `RtlCompactHeap` (function, line 12163) `SIZE_T NTAPI RtlCompactHeap( IN PVOID HeapHandle, IN ULONG Flags );`
+  - `RtlValidateProcessHeaps` (function, line 12171) `BOOLEAN NTAPI RtlValidateProcessHeaps( );`
+  - `RtlGetProcessHeaps` (function, line 12177) `ULONG NTAPI RtlGetProcessHeaps( IN ULONG NumberOfHeaps, OUT PVOID *ProcessHeaps );`
+  - `RtlUsageHeap` (function, line 12184) `NTSTATUS NTAPI RtlUsageHeap( IN PVOID HeapHandle, IN ULONG Flags, _Inout_ PRTL_HEAP_USAGE Usage );`
+  - `RtlWalkHeap` (function, line 12193) `NTSTATUS NTAPI RtlWalkHeap( IN PVOID HeapHandle, _Inout_ PRTL_HEAP_WALK_ENTRY Entry );`
+  - `RtlQueryHeapInformation` (function, line 12203) `NTSTATUS NTAPI RtlQueryHeapInformation( IN PVOID HeapHandle, IN HEAP_INFORMATION_CLASS HeapInformationClass, OUT OPTIONAL PVOID HeapInformation, _In_opt_ SIZE_T HeapInformationLength, OUT OPTIONAL PSI`
+  - `RtlSetHeapInformation` (function, line 12212) `NTSTATUS NTAPI RtlSetHeapInformation( IN PVOID HeapHandle, IN HEAP_INFORMATION_CLASS HeapInformationClass, _In_opt_ PVOID HeapInformation, _In_opt_ SIZE_T HeapInformationLength );`
+  - `RtlMultipleAllocateHeap` (function, line 12222) `ULONG NTAPI RtlMultipleAllocateHeap( IN PVOID HeapHandle, IN ULONG Flags, IN SIZE_T Size, IN ULONG Count, OUT PVOID *Array );`
+  - `RtlMultipleFreeHeap` (function, line 12232) `ULONG NTAPI RtlMultipleFreeHeap( IN PVOID HeapHandle, IN ULONG Flags, IN ULONG Count, IN PVOID *Array );`
+  - `RtlDetectHeapLeaks` (function, line 12241) `VOID NTAPI RtlDetectHeapLeaks( VOID );`
+  - `RtlCreateMemoryZone` (function, line 12250) `NTSTATUS NTAPI RtlCreateMemoryZone( OUT PVOID *MemoryZone, IN SIZE_T InitialSize, ULONG Flags );`
+  - `RtlDestroyMemoryZone` (function, line 12257) `NTSTATUS NTAPI RtlDestroyMemoryZone( IN PVOID MemoryZone );`
+  - `RtlAllocateMemoryZone` (function, line 12263) `NTSTATUS NTAPI RtlAllocateMemoryZone( IN PVOID MemoryZone, IN SIZE_T BlockSize, OUT PVOID *Block );`
+  - `RtlResetMemoryZone` (function, line 12271) `NTSTATUS NTAPI RtlResetMemoryZone( IN PVOID MemoryZone );`
+  - `RtlLockMemoryZone` (function, line 12277) `NTSTATUS NTAPI RtlLockMemoryZone( IN PVOID MemoryZone );`
+  - `RtlUnlockMemoryZone` (function, line 12283) `NTSTATUS NTAPI RtlUnlockMemoryZone( IN PVOID MemoryZone );`
+  - `RtlCreateMemoryBlockLookaside` (function, line 12293) `NTSTATUS NTAPI RtlCreateMemoryBlockLookaside( OUT PVOID *MemoryBlockLookaside, IN ULONG Flags, IN ULONG InitialSize, IN ULONG MinimumBlockSize, IN ULONG MaximumBlockSize );`
+  - `RtlDestroyMemoryBlockLookaside` (function, line 12302) `NTSTATUS NTAPI RtlDestroyMemoryBlockLookaside( IN PVOID MemoryBlockLookaside );`
+  - `RtlAllocateMemoryBlockLookaside` (function, line 12308) `NTSTATUS NTAPI RtlAllocateMemoryBlockLookaside( IN PVOID MemoryBlockLookaside, IN ULONG BlockSize, OUT PVOID *Block );`
+  - `RtlFreeMemoryBlockLookaside` (function, line 12316) `NTSYSAPI NTSTATUS NTAPI RtlFreeMemoryBlockLookaside( IN PVOID MemoryBlockLookaside, IN PVOID Block );`
+  - `RtlExtendMemoryBlockLookaside` (function, line 12324) `NTSTATUS NTAPI RtlExtendMemoryBlockLookaside( IN PVOID MemoryBlockLookaside, IN ULONG Increment );`
+  - `RtlResetMemoryBlockLookaside` (function, line 12331) `NTSTATUS NTAPI RtlResetMemoryBlockLookaside( IN PVOID MemoryBlockLookaside );`
+  - `RtlLockMemoryBlockLookaside` (function, line 12337) `NTSTATUS NTAPI RtlLockMemoryBlockLookaside( IN PVOID MemoryBlockLookaside );`
+  - `RtlUnlockMemoryBlockLookaside` (function, line 12343) `NTSTATUS NTAPI RtlUnlockMemoryBlockLookaside( IN PVOID MemoryBlockLookaside );`
+  - `RtlGetCurrentTransaction` (function, line 12350) `HANDLE NTAPI RtlGetCurrentTransaction( );`
+  - `RtlSetCurrentTransaction` (function, line 12355) `LOGICAL NTAPI RtlSetCurrentTransaction( IN HANDLE TransactionHandle );`
+  - `RtlCreateQueryDebugBuffer` (function, line 12361) `PRTL_DEBUG_INFORMATION NTAPI RtlCreateQueryDebugBuffer( _In_opt_ ULONG MaximumCommit, IN BOOLEAN UseEventPair );`
+  - `RtlDestroyQueryDebugBuffer` (function, line 12368) `NTSTATUS NTAPI RtlDestroyQueryDebugBuffer( IN PRTL_DEBUG_INFORMATION Buffer );`
+  - `RtlQueryProcessDebugInformation` (function, line 12374) `NTSTATUS NTAPI RtlQueryProcessDebugInformation( IN HANDLE UniqueProcessId, IN ULONG Flags, _Inout_ PRTL_DEBUG_INFORMATION Buffer );`
+  - `RtlUniform` (function, line 12386) `ULONG NTAPI RtlUniform ( PULONG Seed );`
+  - `RtlComputeImportTableHash` (function, line 12392) `NTSTATUS RtlComputeImportTableHash( IN HANDLE hFile, OUT PCHAR Hash, IN ULONG ImportTableHashRevision );`
+  - `RtlIntegerToChar` (function, line 12399) `NTSTATUS NTAPI RtlIntegerToChar ( ULONG Value, ULONG Base, LONG OutputLength, PSZ String );`
+  - `RtlIntegerToUnicode` (function, line 12408) `NTSTATUS NTAPI RtlIntegerToUnicode ( IN ULONG Value, IN ULONG Base OPTIONAL, IN LONG OutputLength, OUT PWSTR String );`
+  - `RtlLargeIntegerToChar` (function, line 12417) `NTSTATUS NTAPI RtlLargeIntegerToChar ( PLARGE_INTEGER Value, ULONG Base OPTIONAL, LONG OutputLength, PSZ String );`
+  - `RtlLargeIntegerToUnicode` (function, line 12426) `NTSTATUS NTAPI RtlLargeIntegerToUnicode ( IN PLARGE_INTEGER Value, IN ULONG Base OPTIONAL, IN LONG OutputLength, OUT PWSTR String );`
+  - `RtlIpv4AddressToStringA` (function, line 12435) `PSTR NTAPI RtlIpv4AddressToStringA ( IN const struct in_addr *Addr, OUT PSTR S );`
+  - `RtlIpv6AddressToStringA` (function, line 12442) `PSTR NTAPI RtlIpv6AddressToStringA ( IN const struct in6_addr *Addr, OUT PSTR S );`
+  - `RtlIpv4AddressToStringExA` (function, line 12449) `NTSTATUS NTAPI RtlIpv4AddressToStringExA( IN const struct in_addr *Address, IN USHORT Port, OUT PSTR AddressString, _Inout_ PULONG AddressStringLength );`
+  - `RtlIpv6AddressToStringExA` (function, line 12458) `NTSTATUS NTAPI RtlIpv6AddressToStringExA( IN const struct in6_addr *Address, IN ULONG ScopeId, IN USHORT Port, OUT PSTR AddressString, _Inout_ PULONG AddressStringLength );`
+  - `RtlIpv4AddressToStringW` (function, line 12468) `PWSTR NTAPI RtlIpv4AddressToStringW ( IN const struct in_addr *Addr, OUT PWSTR S );`
+  - `RtlIpv6AddressToStringW` (function, line 12475) `PWSTR NTAPI RtlIpv6AddressToStringW ( IN const struct in6_addr *Addr, OUT PWSTR S );`
+  - `RtlIpv4AddressToStringExW` (function, line 12482) `NTSTATUS NTAPI RtlIpv4AddressToStringExW( IN const struct in_addr *Address, IN USHORT Port, OUT PWSTR AddressString, _Inout_ PULONG AddressStringLength );`
+  - `RtlIpv6AddressToStringExW` (function, line 12491) `NTSTATUS NTAPI RtlIpv6AddressToStringExW( IN const struct in6_addr *Address, IN ULONG ScopeId, IN USHORT Port, OUT PWSTR AddressString, _Inout_ PULONG AddressStringLength );`
+  - `RtlIpv4StringToAddressA` (function, line 12501) `NTSTATUS NTAPI RtlIpv4StringToAddressA ( IN PCSTR S, IN BOOLEAN Strict, OUT PCSTR *Terminator, OUT struct in_addr *Addr );`
+  - `RtlIpv6StringToAddressA` (function, line 12510) `NTSTATUS NTAPI RtlIpv6StringToAddressA ( IN PCSTR S, OUT PCSTR *Terminator, OUT struct in6_addr *Addr );`
+  - `RtlIpv4StringToAddressExA` (function, line 12518) `NTSTATUS NTAPI RtlIpv4StringToAddressExA ( IN PCSTR AddressString, IN BOOLEAN Strict, OUT struct in_addr *Address, OUT PUSHORT Port );`
+  - `RtlIpv6StringToAddressExA` (function, line 12527) `NTSTATUS NTAPI RtlIpv6StringToAddressExA ( IN PCSTR AddressString, OUT struct in6_addr *Address, OUT PULONG ScopeId, OUT PUSHORT Port );`
+  - `RtlIpv4StringToAddressW` (function, line 12536) `NTSTATUS NTAPI RtlIpv4StringToAddressW ( IN PCWSTR S, IN BOOLEAN Strict, OUT LPCWSTR *Terminator, OUT struct in_addr *Addr );`
+  - `RtlIpv6StringToAddressW` (function, line 12545) `NTSTATUS NTAPI RtlIpv6StringToAddressW ( IN PCWSTR S, OUT PCWSTR *Terminator, OUT struct in6_addr *Addr );`
+  - `RtlIpv4StringToAddressExW` (function, line 12553) `NTSTATUS NTAPI RtlIpv4StringToAddressExW ( IN PCWSTR AddressString, IN BOOLEAN Strict, OUT struct in_addr *Address, OUT PUSHORT Port );`
+  - `RtlIpv6StringToAddressExW` (function, line 12562) `NTSTATUS NTAPI RtlIpv6StringToAddressExW ( IN PCWSTR AddressString, OUT struct in6_addr *Address, OUT PULONG ScopeId, OUT PUSHORT Port );`
+  - `RtlIntegerToUnicodeString` (function, line 12571) `NTSTATUS NTAPI RtlIntegerToUnicodeString ( ULONG Value, ULONG Base, PUNICODE_STRING String );`
+  - `RtlInt64ToUnicodeString` (function, line 12579) `NTSTATUS NTAPI RtlInt64ToUnicodeString ( IN ULONGLONG Value, IN ULONG Base OPTIONAL, _Inout_ PUNICODE_STRING String );`
+  - `RtlUnicodeStringToInteger` (function, line 12587) `NTSTATUS NTAPI RtlUnicodeStringToInteger ( PCUNICODE_STRING String, ULONG Base, PULONG Value );`
+  - `RtlInitString` (function, line 12595) `VOID NTAPI RtlInitString( PSTRING DestinationString, PCSZ SourceString );`
+  - `RtlInitAnsiString` (function, line 12602) `VOID NTAPI RtlInitAnsiString( PANSI_STRING DestinationString, PCSZ SourceString );`
+  - `RtlInitUnicodeString` (function, line 12609) `NTSTATUS NTAPI RtlInitUnicodeString( PUNICODE_STRING DestinationString, PCWSTR SourceString );`
+  - `RtlInitUnicodeStringEx` (function, line 12616) `NTSTATUS NTAPI RtlInitUnicodeStringEx( PUNICODE_STRING DestinationString, PCWSTR SourceString );`
+  - `RtlInitAnsiStringEx` (function, line 12623) `NTSTATUS NTAPI RtlInitAnsiStringEx( OUT PANSI_STRING DestinationString, IN PCSZ SourceString OPTIONAL );`
+  - `RtlCreateUnicodeString` (function, line 12630) `BOOLEAN NTAPI RtlCreateUnicodeString( OUT PUNICODE_STRING DestinationString, IN PCWSTR SourceString );`
+  - `RtlEqualDomainName` (function, line 12637) `BOOLEAN NTAPI RtlEqualDomainName( IN PCUNICODE_STRING String1, IN PCUNICODE_STRING String2 );`
+  - `RtlEqualComputerName` (function, line 12644) `BOOLEAN NTAPI RtlEqualComputerName( IN PCUNICODE_STRING String1, IN PCUNICODE_STRING String2 );`
+  - `RtlDnsHostNameToComputerName` (function, line 12651) `NTSTATUS RtlDnsHostNameToComputerName( OUT PUNICODE_STRING ComputerNameString, IN PCUNICODE_STRING DnsHostNameString, IN BOOLEAN AllocateComputerNameString );`
+  - `RtlCreateUnicodeStringFromAsciiz` (function, line 12658) `BOOLEAN NTAPI RtlCreateUnicodeStringFromAsciiz( OUT PUNICODE_STRING DestinationString, IN PCSZ SourceString );`
+  - `RtlCopyString` (function, line 12665) `VOID NTAPI RtlCopyString( PSTRING DestinationString, const STRING * SourceString );`
+  - `RtlUpperChar` (function, line 12672) `CHAR NTAPI RtlUpperChar ( CHAR Character );`
+  - `RtlCompareString` (function, line 12678) `LONG NTAPI RtlCompareString( const STRING * String1, const STRING * String2, BOOLEAN CaseInSensitive );`
+  - `RtlEqualString` (function, line 12686) `BOOLEAN NTAPI RtlEqualString( const STRING * String1, const STRING * String2, BOOLEAN CaseInSensitive );`
+  - `RtlPrefixString` (function, line 12694) `BOOLEAN NTAPI RtlPrefixString( const STRING * String1, const STRING * String2, BOOLEAN CaseInSensitive );`
+  - `RtlUpperString` (function, line 12702) `VOID NTAPI RtlUpperString( PSTRING DestinationString, const STRING * SourceString );`
+  - `RtlAppendAsciizToString` (function, line 12709) `NTSTATUS NTAPI RtlAppendAsciizToString ( PSTRING Destination, PCSZ Source );`
+  - `RtlAppendStringToString` (function, line 12716) `NTSTATUS NTAPI RtlAppendStringToString ( PSTRING Destination, const STRING * Source );`
+  - `RtlAnsiStringToUnicodeString` (function, line 12723) `NTSTATUS NTAPI RtlAnsiStringToUnicodeString( PUNICODE_STRING DestinationString, PCANSI_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlAnsiCharToUnicodeChar` (function, line 12731) `WCHAR NTAPI RtlAnsiCharToUnicodeChar( PUCHAR *SourceCharacter );`
+  - `RtlUnicodeStringToAnsiString` (function, line 12737) `NTSTATUS NTAPI RtlUnicodeStringToAnsiString( PANSI_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlUpcaseUnicodeStringToAnsiString` (function, line 12745) `NTSTATUS NTAPI RtlUpcaseUnicodeStringToAnsiString( PANSI_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlOemStringToUnicodeString` (function, line 12753) `NTSTATUS NTAPI RtlOemStringToUnicodeString( PUNICODE_STRING DestinationString, PCOEM_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlUnicodeStringToOemString` (function, line 12761) `NTSTATUS NTAPI RtlUnicodeStringToOemString( POEM_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlUpcaseUnicodeStringToOemString` (function, line 12769) `NTSTATUS NTAPI RtlUpcaseUnicodeStringToOemString( POEM_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlOemStringToCountedUnicodeString` (function, line 12777) `NTSTATUS NTAPI RtlOemStringToCountedUnicodeString( PUNICODE_STRING DestinationString, PCOEM_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlUnicodeStringToCountedOemString` (function, line 12785) `NTSTATUS NTAPI RtlUnicodeStringToCountedOemString( POEM_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlUpcaseUnicodeStringToCountedOemString` (function, line 12793) `NTSTATUS NTAPI RtlUpcaseUnicodeStringToCountedOemString( POEM_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlCompareUnicodeString` (function, line 12801) `LONG NTAPI RtlCompareUnicodeString( PCUNICODE_STRING String1, PCUNICODE_STRING String2, BOOLEAN CaseInSensitive );`
+  - `RtlEqualUnicodeString` (function, line 12809) `BOOLEAN NTAPI RtlEqualUnicodeString( PCUNICODE_STRING String1, PCUNICODE_STRING String2, BOOLEAN CaseInSensitive );`
+  - `RtlHashUnicodeString` (function, line 12817) `NTSTATUS NTAPI RtlHashUnicodeString( IN const UNICODE_STRING *String, IN BOOLEAN CaseInSensitive, IN ULONG HashAlgorithm, OUT PULONG HashValue );`
+  - `RtlValidateUnicodeString` (function, line 12826) `NTSTATUS NTAPI RtlValidateUnicodeString( IN ULONG Flags, IN const UNICODE_STRING *String );`
+  - `RtlDuplicateUnicodeString` (function, line 12833) `NTSTATUS NTAPI RtlDuplicateUnicodeString( IN ULONG Flags, IN const UNICODE_STRING *StringIn, OUT UNICODE_STRING *StringOut );`
+  - `RtlPrefixUnicodeString` (function, line 12841) `BOOLEAN NTAPI RtlPrefixUnicodeString( IN PCUNICODE_STRING String1, IN PCUNICODE_STRING String2, IN BOOLEAN CaseInSensitive );`
+  - `RtlUpcaseUnicodeString` (function, line 12849) `NTSTATUS NTAPI RtlUpcaseUnicodeString( PUNICODE_STRING DestinationString, PCUNICODE_STRING SourceString, BOOLEAN AllocateDestinationString );`
+  - `RtlFindCharInUnicodeString` (function, line 12857) `NTSTATUS NTAPI RtlFindCharInUnicodeString( IN ULONG Flags, IN PCUNICODE_STRING StringToSearch, IN PCUNICODE_STRING CharSet, OUT USHORT *NonInclusivePrefixLength );`
+  - `RtlCopyUnicodeString` (function, line 12866) `VOID NTAPI RtlCopyUnicodeString( PUNICODE_STRING DestinationString, PCUNICODE_STRING SourceString );`
+  - `RtlAppendUnicodeStringToString` (function, line 12873) `NTSTATUS NTAPI RtlAppendUnicodeStringToString ( PUNICODE_STRING Destination, PCUNICODE_STRING Source );`
+  - `RtlAppendUnicodeToString` (function, line 12880) `NTSTATUS NTAPI RtlAppendUnicodeToString ( PUNICODE_STRING Destination, PCWSTR Source );`
+  - `RtlUpcaseUnicodeChar` (function, line 12887) `WCHAR NTAPI RtlUpcaseUnicodeChar( WCHAR SourceCharacter );`
+  - `RtlDowncaseUnicodeChar` (function, line 12893) `WCHAR NTAPI RtlDowncaseUnicodeChar( WCHAR SourceCharacter );`
+  - `RtlFreeUnicodeString` (function, line 12899) `VOID NTAPI RtlFreeUnicodeString( PUNICODE_STRING UnicodeString );`
+  - `RtlFreeAnsiString` (function, line 12905) `VOID NTAPI RtlFreeAnsiString( PANSI_STRING AnsiString );`
+  - `RtlFreeOemString` (function, line 12911) `VOID NTAPI RtlFreeOemString( POEM_STRING OemString );`
+  - `RtlxUnicodeStringToAnsiSize` (function, line 12917) `ULONG NTAPI RtlxUnicodeStringToAnsiSize( PCUNICODE_STRING UnicodeString );`
+  - `RtlxUnicodeStringToOemSize` (function, line 12923) `ULONG NTAPI RtlxUnicodeStringToOemSize( PCUNICODE_STRING UnicodeString );`
+  - `RtlxAnsiStringToUnicodeSize` (function, line 12929) `ULONG NTAPI RtlxAnsiStringToUnicodeSize( PCANSI_STRING AnsiString );`
+  - `RtlxOemStringToUnicodeSize` (function, line 12935) `ULONG NTAPI RtlxOemStringToUnicodeSize( PCOEM_STRING OemString );`
+  - `RtlMultiByteToUnicodeN` (function, line 12941) `NTSTATUS NTAPI RtlMultiByteToUnicodeN( OUT PWCH UnicodeString, IN ULONG MaxBytesInUnicodeString, OUT OPTIONAL PULONG BytesInUnicodeString, IN PCSTR MultiByteString, IN ULONG BytesInMultiByteString );`
+  - `RtlMultiByteToUnicodeSize` (function, line 12951) `NTSTATUS NTAPI RtlMultiByteToUnicodeSize( PULONG BytesInUnicodeString, PCSTR MultiByteString, ULONG BytesInMultiByteString );`
+  - `RtlUnicodeToMultiByteSize` (function, line 12959) `NTSTATUS NTAPI RtlUnicodeToMultiByteSize( OUT PULONG BytesInMultiByteString, IN PWCH UnicodeString, IN ULONG BytesInUnicodeString );`
+  - `RtlUnicodeToMultiByteN` (function, line 12967) `NTSTATUS NTAPI RtlUnicodeToMultiByteN( OUT PCHAR MultiByteString, IN ULONG MaxBytesInMultiByteString, OUT OPTIONAL PULONG BytesInMultiByteString, IN PWCH UnicodeString, IN ULONG BytesInUnicodeString )`
+  - `RtlUpcaseUnicodeToMultiByteN` (function, line 12977) `NTSTATUS NTAPI RtlUpcaseUnicodeToMultiByteN( OUT PCHAR MultiByteString, IN ULONG MaxBytesInMultiByteString, OUT OPTIONAL PULONG BytesInMultiByteString, IN PWCH UnicodeString, IN ULONG BytesInUnicodeSt`
+  - `RtlOemToUnicodeN` (function, line 12987) `NTSTATUS NTAPI RtlOemToUnicodeN( OUT PWSTR UnicodeString, IN ULONG MaxBytesInUnicodeString, OUT OPTIONAL PULONG BytesInUnicodeString, IN PCH OemString, IN ULONG BytesInOemString );`
+  - `RtlUnicodeToOemN` (function, line 12997) `NTSTATUS NTAPI RtlUnicodeToOemN( OUT PCHAR OemString, IN ULONG MaxBytesInOemString, OUT OPTIONAL PULONG BytesInOemString, IN PWCH UnicodeString, IN ULONG BytesInUnicodeString );`
+  - `RtlUpcaseUnicodeToOemN` (function, line 13007) `NTSTATUS NTAPI RtlUpcaseUnicodeToOemN( OUT PCHAR OemString, IN ULONG MaxBytesInOemString, OUT OPTIONAL PULONG BytesInOemString, IN PWCH UnicodeString, IN ULONG BytesInUnicodeString );`
+  - `RtlConsoleMultiByteToUnicodeN` (function, line 13017) `NTSTATUS NTAPI RtlConsoleMultiByteToUnicodeN( OUT PWCH UnicodeString, IN ULONG MaxBytesInUnicodeString, OUT OPTIONAL PULONG BytesInUnicodeString OPTIONAL, IN PCH MultiByteString, IN ULONG BytesInMulti`
+  - `RtlIsTextUnicode` (function, line 13027) `BOOLEAN NTAPI RtlIsTextUnicode( IN CONST VOID* Buffer, IN ULONG Size, _Inout_ PULONG Result OPTIONAL );`
+  - `RtlStringFromGUID` (function, line 13035) `NTSTATUS NTAPI RtlStringFromGUID( IN REFGUID Guid, OUT PUNICODE_STRING GuidString );`
+  - `RtlGUIDFromString` (function, line 13042) `NTSTATUS NTAPI RtlGUIDFromString( IN PUNICODE_STRING GuidString, OUT GUID* Guid );`
+  - `RtlGenerate8dot3Name` (function, line 13049) `VOID NTAPI RtlGenerate8dot3Name ( IN PUNICODE_STRING Name, IN BOOLEAN AllowExtendedCharacters, _Inout_ PGENERATE_NAME_CONTEXT Context, OUT PUNICODE_STRING Name8dot3 );`
+  - `RtlIsNameLegalDOS8Dot3` (function, line 13058) `BOOLEAN NTAPI RtlIsNameLegalDOS8Dot3 ( IN PUNICODE_STRING Name, _Inout_ POEM_STRING OemName OPTIONAL, _Inout_ PBOOLEAN NameContainsSpaces OPTIONAL );`
+  - `RtlInitializeContext` (function, line 13066) `VOID NTAPI RtlInitializeContext( HANDLE Process, PCONTEXT Context, PVOID Parameter, PVOID InitialPc, PVOID InitialSp );`
+  - `RtlRemoteCall` (function, line 13076) `NTSTATUS NTAPI RtlRemoteCall( HANDLE Process, HANDLE Thread, PVOID CallSite, ULONG ArgumentCount, PULONG_PTR Arguments, BOOLEAN PassContext, BOOLEAN AlreadySuspended );`
+  - `RtlAcquirePebLock` (function, line 13088) `VOID NTAPI RtlAcquirePebLock( );`
+  - `RtlReleasePebLock` (function, line 13093) `VOID NTAPI RtlReleasePebLock( );`
+  - `RtlAllocateFromPeb` (function, line 13098) `NTSTATUS NTAPI RtlAllocateFromPeb( ULONG Size, PVOID *Block );`
+  - `RtlFreeToPeb` (function, line 13105) `NTSTATUS NTAPI RtlFreeToPeb( PVOID Block, ULONG Size );`
+  - `RtlSetProcessIsCritical` (function, line 13112) `NTSTATUS STDAPIVCALLTYPE RtlSetProcessIsCritical( IN BOOLEAN NewValue, OUT PBOOLEAN OldValue OPTIONAL, IN BOOLEAN CheckFlag );`
+  - `RtlSetThreadIsCritical` (function, line 13120) `NTSTATUS STDAPIVCALLTYPE RtlSetThreadIsCritical( IN BOOLEAN NewValue, OUT PBOOLEAN OldValue OPTIONAL, IN BOOLEAN CheckFlag );`
+  - `RtlCreateEnvironment` (function, line 13128) `NTSTATUS NTAPI RtlCreateEnvironment( BOOLEAN CloneCurrentEnvironment, PVOID *Environment );`
+  - `RtlDestroyEnvironment` (function, line 13135) `NTSTATUS NTAPI RtlDestroyEnvironment( PVOID Environment );`
+  - `RtlSetCurrentEnvironment` (function, line 13141) `NTSTATUS NTAPI RtlSetCurrentEnvironment( PVOID Environment, PVOID *PreviousEnvironment );`
+  - `RtlSetEnvironmentVariable` (function, line 13148) `NTSTATUS NTAPI RtlSetEnvironmentVariable( PVOID *Environment, PCUNICODE_STRING Name, PCUNICODE_STRING Value );`
+  - `RtlIsDosDeviceName_U` (function, line 13156) `ULONG RtlIsDosDeviceName_U( IN PWSTR DosFileName );`
+  - `RtlQueryEnvironmentVariable_U` (function, line 13161) `NTSTATUS NTAPI RtlQueryEnvironmentVariable_U ( PVOID Environment, PCUNICODE_STRING Name, PUNICODE_STRING Value );`
+  - `RtlExpandEnvironmentStrings_U` (function, line 13169) `NTSTATUS NTAPI RtlExpandEnvironmentStrings_U( IN PVOID Environment OPTIONAL, IN PCUNICODE_STRING Source, OUT PUNICODE_STRING Destination, OUT PULONG ReturnedLength OPTIONAL );`
+  - `PfxInitialize` (function, line 13178) `VOID NTAPI PfxInitialize ( PPREFIX_TABLE PrefixTable );`
+  - `PfxInsertPrefix` (function, line 13184) `BOOLEAN NTAPI PfxInsertPrefix ( PPREFIX_TABLE PrefixTable, PSTRING Prefix, PPREFIX_TABLE_ENTRY PrefixTableEntry );`
+  - `PfxRemovePrefix` (function, line 13192) `VOID NTAPI PfxRemovePrefix ( PPREFIX_TABLE PrefixTable, PPREFIX_TABLE_ENTRY PrefixTableEntry );`
+  - `PfxFindPrefix` (function, line 13199) `PPREFIX_TABLE_ENTRY NTAPI PfxFindPrefix ( PPREFIX_TABLE PrefixTable, PSTRING FullName );`
+  - `RtlInitializeUnicodePrefix` (function, line 13206) `VOID NTAPI RtlInitializeUnicodePrefix ( PUNICODE_PREFIX_TABLE PrefixTable );`
+  - `RtlInsertUnicodePrefix` (function, line 13212) `BOOLEAN NTAPI RtlInsertUnicodePrefix ( PUNICODE_PREFIX_TABLE PrefixTable, PUNICODE_STRING Prefix, PUNICODE_PREFIX_TABLE_ENTRY PrefixTableEntry );`
+  - `RtlRemoveUnicodePrefix` (function, line 13220) `VOID NTAPI RtlRemoveUnicodePrefix ( PUNICODE_PREFIX_TABLE PrefixTable, PUNICODE_PREFIX_TABLE_ENTRY PrefixTableEntry );`
+  - `RtlFindUnicodePrefix` (function, line 13227) `PUNICODE_PREFIX_TABLE_ENTRY NTAPI RtlFindUnicodePrefix ( PUNICODE_PREFIX_TABLE PrefixTable, PUNICODE_STRING FullName, ULONG CaseInsensitiveIndex );`
+  - `RtlNextUnicodePrefix` (function, line 13235) `PUNICODE_PREFIX_TABLE_ENTRY NTAPI RtlNextUnicodePrefix ( PUNICODE_PREFIX_TABLE PrefixTable, BOOLEAN Restart );`
+  - `RtlGetCompressionWorkSpaceSize` (function, line 13242) `NTSTATUS NTAPI RtlGetCompressionWorkSpaceSize ( IN USHORT CompressionFormatAndEngine, OUT PULONG CompressBufferWorkSpaceSize, OUT PULONG CompressFragmentWorkSpaceSize );`
+  - `RtlCompressBuffer` (function, line 13250) `NTSTATUS NTAPI RtlCompressBuffer ( IN USHORT CompressionFormatAndEngine, IN PUCHAR UncompressedBuffer, IN ULONG UncompressedBufferSize, OUT PUCHAR CompressedBuffer, IN ULONG CompressedBufferSize, IN U`
+  - `RtlDecompressBuffer` (function, line 13263) `NTSTATUS NTAPI RtlDecompressBuffer ( IN USHORT CompressionFormat, OUT PUCHAR UncompressedBuffer, IN ULONG UncompressedBufferSize, IN PUCHAR CompressedBuffer, IN ULONG CompressedBufferSize, OUT PULONG `
+  - `RtlDecompressFragment` (function, line 13274) `NTSTATUS NTAPI RtlDecompressFragment ( IN USHORT CompressionFormat, OUT PUCHAR UncompressedFragment, IN ULONG UncompressedFragmentSize, IN PUCHAR CompressedBuffer, IN ULONG CompressedBufferSize, IN UL`
+  - `RtlDescribeChunk` (function, line 13287) `NTSTATUS NTAPI RtlDescribeChunk ( IN USHORT CompressionFormat, _Inout_ PUCHAR *CompressedBuffer, IN PUCHAR EndOfCompressedBufferPlus1, OUT PUCHAR *ChunkBuffer, OUT PULONG ChunkSize );`
+  - `RtlReserveChunk` (function, line 13297) `NTSTATUS NTAPI RtlReserveChunk ( IN USHORT CompressionFormat, _Inout_ PUCHAR *CompressedBuffer, IN PUCHAR EndOfCompressedBufferPlus1, OUT PUCHAR *ChunkBuffer, IN ULONG ChunkSize );`
+  - `RtlDecompressChunks` (function, line 13307) `NTSTATUS NTAPI RtlDecompressChunks ( OUT PUCHAR UncompressedBuffer, IN ULONG UncompressedBufferSize, IN PUCHAR CompressedBuffer, IN ULONG CompressedBufferSize, IN PUCHAR CompressedTail, IN ULONG Compr`
+  - `RtlCompressChunks` (function, line 13319) `NTSTATUS NTAPI RtlCompressChunks ( IN PUCHAR UncompressedBuffer, IN ULONG UncompressedBufferSize, OUT PUCHAR CompressedBuffer, IN ULONG CompressedBufferSize, _Inout_ PCOMPRESSED_DATA_INFO CompressedDa`
+  - `RtlCreateProcessParameters` (function, line 13331) `NTSTATUS NTAPI RtlCreateProcessParameters( PRTL_USER_PROCESS_PARAMETERS *ProcessParameters, PUNICODE_STRING ImagePathName, PUNICODE_STRING DllPath, PUNICODE_STRING CurrentDirectory, PUNICODE_STRING Co`
+  - `RtlDestroyProcessParameters` (function, line 13346) `NTSTATUS NTAPI RtlDestroyProcessParameters( PRTL_USER_PROCESS_PARAMETERS ProcessParameters );`
+  - `RtlNormalizeProcessParams` (function, line 13352) `PRTL_USER_PROCESS_PARAMETERS NTAPI RtlNormalizeProcessParams( PRTL_USER_PROCESS_PARAMETERS ProcessParameters );`
+  - `RtlDeNormalizeProcessParams` (function, line 13358) `PRTL_USER_PROCESS_PARAMETERS NTAPI RtlDeNormalizeProcessParams( PRTL_USER_PROCESS_PARAMETERS ProcessParameters );`
+  - `RtlCreateUserProcess` (function, line 13364) `NTSTATUS NTAPI RtlCreateUserProcess( PUNICODE_STRING NtImagePathName, ULONG Attributes, PRTL_USER_PROCESS_PARAMETERS ProcessParameters, PSECURITY_DESCRIPTOR ProcessSecurityDescriptor, PSECURITY_DESCRI`
+  - `RtlCreateUserThread` (function, line 13379) `NTSTATUS NTAPI RtlCreateUserThread( HANDLE Process, PSECURITY_DESCRIPTOR ThreadSecurityDescriptor, BOOLEAN CreateSuspended, ULONG StackZeroBits, SIZE_T MaximumStackSize OPTIONAL, SIZE_T InitialStackSi`
+  - `RtlExitUserThread` (function, line 13394) `VOID NTAPI RtlExitUserThread ( IN NTSTATUS ExitStatus );`
+  - `RtlFreeUserThreadStack` (function, line 13400) `VOID NTAPI RtlFreeUserThreadStack( HANDLE hProcess, HANDLE hThread );`
+  - `RtlPcToFileHeader` (function, line 13408) `PVOID NTAPI RtlPcToFileHeader( PVOID PcValue, PVOID *BaseOfImage );`
+  - `RtlImageNtHeaderEx` (function, line 13414) `NTSTATUS NTAPI RtlImageNtHeaderEx( ULONG Flags, PVOID Base, ULONG64 Size, OUT PIMAGE_NT_HEADERS * OutHeaders );`
+  - `RtlImageNtHeader` (function, line 13423) `PIMAGE_NT_HEADERS NTAPI RtlImageNtHeader( PVOID Base );`
+  - `RtlAddressInSectionTable` (function, line 13429) `PVOID NTAPI RtlAddressInSectionTable ( IN PIMAGE_NT_HEADERS NtHeaders, IN PVOID BaseOfImage, IN ULONG VirtualAddress );`
+  - `RtlSectionTableFromVirtualAddress` (function, line 13437) `PIMAGE_SECTION_HEADER NTAPI RtlSectionTableFromVirtualAddress ( IN PIMAGE_NT_HEADERS NtHeaders, IN PVOID BaseOfImage, IN ULONG VirtualAddress );`
+  - `RtlImageDirectoryEntryToData` (function, line 13445) `NTSTATUS NTAPI RtlImageDirectoryEntryToData( PVOID BaseOfImage, BOOLEAN MappedAsImage, USHORT DirectoryEntry, PULONG Size );`
+  - `RtlImageDirectoryEntryToData32` (function, line 13454) `PVOID RtlImageDirectoryEntryToData32 ( IN PVOID Base, IN BOOLEAN MappedAsImage, IN USHORT DirectoryEntry, OUT PULONG Size );`
+  - `RtlImageRvaToSection` (function, line 13462) `PIMAGE_SECTION_HEADER NTAPI RtlImageRvaToSection( IN PIMAGE_NT_HEADERS NtHeaders, IN PVOID Base, IN ULONG Rva );`
+  - `RtlImageRvaToVa` (function, line 13470) `PVOID NTAPI RtlImageRvaToVa( IN PIMAGE_NT_HEADERS NtHeaders, IN PVOID Base, IN ULONG Rva, _Inout_ PIMAGE_SECTION_HEADER *LastRvaSection OPTIONAL );`
+  - `RtlCopyMemoryNonTemporal` (function, line 13479) `VOID NTAPI RtlCopyMemoryNonTemporal ( VOID UNALIGNED *Destination, CONST VOID UNALIGNED *Source, SIZE_T Length );`
+  - `RtlPrefetchMemoryNonTemporal` (function, line 13488) `VOID __fastcall RtlPrefetchMemoryNonTemporal( IN PVOID Source, IN SIZE_T Length );`
+  - `RtlCompareMemoryUlong` (function, line 13494) `SIZE_T NTAPI RtlCompareMemoryUlong ( PVOID Source, SIZE_T Length, ULONG Pattern );`
+  - `RtlFillMemoryUlong` (function, line 13502) `VOID NTAPI RtlFillMemoryUlong ( PVOID Destination, SIZE_T Length, ULONG Pattern );`
+  - `RtlFillMemoryUlonglong` (function, line 13510) `VOID NTAPI RtlFillMemoryUlonglong ( PVOID Destination, SIZE_T Length, ULONGLONG Pattern );`
+  - `RtlInitializeExceptionLog` (function, line 13518) `VOID NTAPI RtlInitializeExceptionLog( IN ULONG Entries );`
+  - `RtlUnhandledExceptionFilter` (function, line 13524) `LONG NTAPI RtlUnhandledExceptionFilter( IN struct _EXCEPTION_POINTERS *ExceptionInfo );`
+  - `RtlUnhandledExceptionFilter2` (function, line 13530) `LONG NTAPI RtlUnhandledExceptionFilter2( IN struct _EXCEPTION_POINTERS *ExceptionInfo, IN PCSTR Function );`
+  - `DbgUserBreakPoint` (function, line 13537) `VOID NTAPI DbgUserBreakPoint( VOID );`
+  - `DbgBreakPointWithStatus` (function, line 13543) `VOID NTAPI DbgBreakPointWithStatus( IN ULONG Status );`
+  - `DbgPrintEx` (function, line 13549) `ULONG DbgPrintEx ( IN ULONG ComponentId, IN ULONG Level, IN PCH Format, ... );`
+  - `vDbgPrintEx` (function, line 13557) `ULONG NTAPI vDbgPrintEx( IN ULONG ComponentId, IN ULONG Level, IN PCH Format, IN va_list arglist );`
+  - `vDbgPrintExWithPrefix` (function, line 13566) `ULONG NTAPI vDbgPrintExWithPrefix ( IN PCH Prefix, IN ULONG ComponentId, IN ULONG Level, IN PCH Format, IN va_list arglist );`
+  - `DbgPrintReturnControlC` (function, line 13576) `ULONG DbgPrintReturnControlC ( IN PCHAR Format, ... );`
+  - `DbgQueryDebugFilterState` (function, line 13582) `NTSTATUS NTAPI DbgQueryDebugFilterState ( IN ULONG ComponentId, IN ULONG Level );`
+  - `DbgSetDebugFilterState` (function, line 13589) `NTSTATUS NTAPI DbgSetDebugFilterState ( IN ULONG ComponentId, IN ULONG Level, IN BOOLEAN State );`
+  - `DbgPrompt` (function, line 13597) `ULONG NTAPI DbgPrompt ( IN PCH Prompt, OUT PCH Response, IN ULONG Length );`
+  - `DbgLoadImageSymbols` (function, line 13605) `VOID NTAPI DbgLoadImageSymbols ( IN PSTRING FileName, IN PVOID ImageBase, IN ULONG_PTR ProcessId );`
+  - `DbgUnLoadImageSymbols` (function, line 13613) `VOID NTAPI DbgUnLoadImageSymbols ( IN PSTRING FileName, IN PVOID ImageBase, IN ULONG_PTR ProcessId );`
+  - `DbgCommandString` (function, line 13621) `VOID NTAPI DbgCommandString ( IN PCH Name, IN PCH Command );`
+  - `RtlCutoverTimeToSystemTime` (function, line 13628) `BOOLEAN NTAPI RtlCutoverTimeToSystemTime( PTIME_FIELDS CutoverTime, PLARGE_INTEGER SystemTime, PLARGE_INTEGER CurrentSystemTime, BOOLEAN ThisYear );`
+  - `RtlSystemTimeToLocalTime` (function, line 13637) `NTSTATUS NTAPI RtlSystemTimeToLocalTime ( IN PLARGE_INTEGER SystemTime, OUT PLARGE_INTEGER LocalTime );`
+  - `RtlLocalTimeToSystemTime` (function, line 13644) `NTSTATUS NTAPI RtlLocalTimeToSystemTime ( IN PLARGE_INTEGER LocalTime, OUT PLARGE_INTEGER SystemTime );`
+  - `RtlTimeToElapsedTimeFields` (function, line 13651) `VOID NTAPI RtlTimeToElapsedTimeFields ( IN PLARGE_INTEGER Time, OUT PTIME_FIELDS TimeFields );`
+  - `RtlTimeToTimeFields` (function, line 13658) `VOID NTAPI RtlTimeToTimeFields ( PLARGE_INTEGER Time, PTIME_FIELDS TimeFields );`
+  - `RtlTimeFieldsToTime` (function, line 13665) `BOOLEAN NTAPI RtlTimeFieldsToTime ( PTIME_FIELDS TimeFields, PLARGE_INTEGER Time );`
+  - `RtlTimeToSecondsSince1980` (function, line 13672) `BOOLEAN NTAPI RtlTimeToSecondsSince1980 ( PLARGE_INTEGER Time, PULONG ElapsedSeconds );`
+  - `RtlSecondsSince1980ToTime` (function, line 13679) `VOID NTAPI RtlSecondsSince1980ToTime ( ULONG ElapsedSeconds, PLARGE_INTEGER Time );`
+  - `RtlTimeToSecondsSince1970` (function, line 13686) `BOOLEAN NTAPI RtlTimeToSecondsSince1970 ( PLARGE_INTEGER Time, PULONG ElapsedSeconds );`
+  - `RtlSecondsSince1970ToTime` (function, line 13693) `VOID NTAPI RtlSecondsSince1970ToTime ( ULONG ElapsedSeconds, PLARGE_INTEGER Time );`
+  - `RtlQueryTimeZoneInformation` (function, line 13700) `NTSTATUS NTAPI RtlQueryTimeZoneInformation( OUT PRTL_TIME_ZONE_INFORMATION TimeZoneInformation );`
+  - `RtlSetTimeZoneInformation` (function, line 13706) `NTSTATUS NTAPI RtlSetTimeZoneInformation( IN PRTL_TIME_ZONE_INFORMATION TimeZoneInformation );`
+  - `RtlSetActiveTimeBias` (function, line 13712) `NTSTATUS NTAPI RtlSetActiveTimeBias( IN LONG ActiveBias );`
+  - `RtlInitializeBitMap` (function, line 13718) `VOID NTAPI RtlInitializeBitMap ( PRTL_BITMAP BitMapHeader, PULONG BitMapBuffer, ULONG SizeOfBitMap );`
+  - `RtlClearBit` (function, line 13726) `VOID NTAPI RtlClearBit ( PRTL_BITMAP BitMapHeader, ULONG BitNumber );`
+  - `RtlSetBit` (function, line 13733) `VOID NTAPI RtlSetBit ( PRTL_BITMAP BitMapHeader, ULONG BitNumber );`
+  - `RtlTestBit` (function, line 13740) `BOOLEAN NTAPI RtlTestBit ( PRTL_BITMAP BitMapHeader, ULONG BitNumber );`
+  - `RtlClearAllBits` (function, line 13747) `VOID NTAPI RtlClearAllBits ( PRTL_BITMAP BitMapHeader );`
+  - `RtlSetAllBits` (function, line 13753) `VOID NTAPI RtlSetAllBits ( PRTL_BITMAP BitMapHeader );`
+  - `RtlFindClearBits` (function, line 13759) `ULONG NTAPI RtlFindClearBits ( PRTL_BITMAP BitMapHeader, ULONG NumberToFind, ULONG HintIndex );`
+  - `RtlFindSetBits` (function, line 13767) `ULONG NTAPI RtlFindSetBits ( PRTL_BITMAP BitMapHeader, ULONG NumberToFind, ULONG HintIndex );`
+  - `RtlFindClearBitsAndSet` (function, line 13775) `ULONG NTAPI RtlFindClearBitsAndSet ( PRTL_BITMAP BitMapHeader, ULONG NumberToFind, ULONG HintIndex );`
+  - `RtlFindSetBitsAndClear` (function, line 13783) `ULONG NTAPI RtlFindSetBitsAndClear ( PRTL_BITMAP BitMapHeader, ULONG NumberToFind, ULONG HintIndex );`
+  - `RtlClearBits` (function, line 13791) `VOID NTAPI RtlClearBits ( PRTL_BITMAP BitMapHeader, ULONG StartingIndex, ULONG NumberToClear );`
+  - `RtlSetBits` (function, line 13799) `VOID NTAPI RtlSetBits ( PRTL_BITMAP BitMapHeader, ULONG StartingIndex, ULONG NumberToSet );`
+  - `RtlFindClearRuns` (function, line 13807) `ULONG NTAPI RtlFindClearRuns ( PRTL_BITMAP BitMapHeader, PRTL_BITMAP_RUN RunArray, ULONG SizeOfRunArray, BOOLEAN LocateLongestRuns );`
+  - `RtlFindLongestRunClear` (function, line 13816) `ULONG NTAPI RtlFindLongestRunClear ( PRTL_BITMAP BitMapHeader, PULONG StartingIndex );`
+  - `RtlFindFirstRunClear` (function, line 13823) `ULONG NTAPI RtlFindFirstRunClear ( PRTL_BITMAP BitMapHeader, PULONG StartingIndex );`
+  - `RtlNumberOfClearBits` (function, line 13830) `ULONG NTAPI RtlNumberOfClearBits ( PRTL_BITMAP BitMapHeader );`
+  - `RtlNumberOfSetBits` (function, line 13836) `ULONG NTAPI RtlNumberOfSetBits ( PRTL_BITMAP BitMapHeader );`
+  - `RtlAreBitsClear` (function, line 13842) `BOOLEAN NTAPI RtlAreBitsClear ( PRTL_BITMAP BitMapHeader, ULONG StartingIndex, ULONG Length );`
+  - `RtlAreBitsSet` (function, line 13850) `BOOLEAN NTAPI RtlAreBitsSet ( PRTL_BITMAP BitMapHeader, ULONG StartingIndex, ULONG Length );`
+  - `RtlFindNextForwardRunClear` (function, line 13858) `ULONG NTAPI RtlFindNextForwardRunClear ( IN PRTL_BITMAP BitMapHeader, IN ULONG FromIndex, IN PULONG StartingRunIndex );`
+  - `RtlFindLastBackwardRunClear` (function, line 13866) `ULONG NTAPI RtlFindLastBackwardRunClear ( IN PRTL_BITMAP BitMapHeader, IN ULONG FromIndex, IN PULONG StartingRunIndex );`
+  - `RtlFindLeastSignificantBit` (function, line 13874) `CCHAR NTAPI RtlFindLeastSignificantBit ( IN ULONGLONG Set );`
+  - `RtlFindMostSignificantBit` (function, line 13880) `CCHAR NTAPI RtlFindMostSignificantBit ( IN ULONGLONG Set );`
+  - `RtlValidSid` (function, line 13886) `BOOLEAN NTAPI RtlValidSid ( PSID Sid );`
+  - `RtlEqualSid` (function, line 13892) `BOOLEAN NTAPI RtlEqualSid ( PSID Sid1, PSID Sid2 );`
+  - `RtlEqualPrefixSid` (function, line 13899) `BOOLEAN NTAPI RtlEqualPrefixSid ( PSID Sid1, PSID Sid2 );`
+  - `RtlLengthRequiredSid` (function, line 13906) `ULONG NTAPI RtlLengthRequiredSid ( ULONG SubAuthorityCount );`
+  - `RtlFreeSid` (function, line 13912) `PVOID NTAPI RtlFreeSid( IN PSID Sid );`
+  - `RtlInitializeSid` (function, line 13918) `NTSTATUS NTAPI RtlInitializeSid( OUT PSID Sid, IN PSID_IDENTIFIER_AUTHORITY IdentifierAuthority, IN UCHAR SubAuthorityCount );`
+  - `RtlAllocateAndInitializeSid` (function, line 13926) `NTSTATUS NTAPI RtlAllocateAndInitializeSid( IN PSID_IDENTIFIER_AUTHORITY IdentifierAuthority, IN UCHAR SubAuthorityCount, IN ULONG SubAuthority0, IN ULONG SubAuthority1, IN ULONG SubAuthority2, IN ULO`
+  - `RtlIdentifierAuthoritySid` (function, line 13942) `PSID_IDENTIFIER_AUTHORITY NTAPI RtlIdentifierAuthoritySid ( PSID Sid );`
+  - `RtlSubAuthoritySid` (function, line 13948) `PULONG NTAPI RtlSubAuthoritySid( IN PSID Sid, IN ULONG SubAuthority );`
+  - `RtlSubAuthorityCountSid` (function, line 13955) `PUCHAR NTAPI RtlSubAuthorityCountSid ( PSID Sid );`
+  - `RtlLengthSid` (function, line 13961) `ULONG NTAPI RtlLengthSid ( PSID Sid );`
+  - `RtlCopySid` (function, line 13967) `NTSTATUS NTAPI RtlCopySid ( ULONG DestinationSidLength, PSID DestinationSid, PSID SourceSid );`
+  - `RtlCopySidAndAttributesArray` (function, line 13975) `NTSTATUS NTAPI RtlCopySidAndAttributesArray ( ULONG ArrayLength, PSID_AND_ATTRIBUTES Source, ULONG TargetSidBufferSize, PSID_AND_ATTRIBUTES TargetArrayElement, PSID TargetSid, PSID *NextTargetSid, PUL`
+  - `RtlLengthSidAsUnicodeString` (function, line 13987) `NTSTATUS NTAPI RtlLengthSidAsUnicodeString( PSID Sid, PULONG StringLength );`
+  - `RtlConvertSidToUnicodeString` (function, line 13994) `NTSTATUS NTAPI RtlConvertSidToUnicodeString( PUNICODE_STRING UnicodeString, PSID Sid, BOOLEAN AllocateDestinationString );`
+  - `RtlCopyLuid` (function, line 14002) `VOID NTAPI RtlCopyLuid ( PLUID DestinationLuid, PLUID SourceLuid );`
+  - `RtlCopyLuidAndAttributesArray` (function, line 14009) `VOID NTAPI RtlCopyLuidAndAttributesArray ( ULONG ArrayLength, PLUID_AND_ATTRIBUTES Source, PLUID_AND_ATTRIBUTES Target );`
+  - `RtlAreAllAccessesGranted` (function, line 14017) `BOOLEAN NTAPI RtlAreAllAccessesGranted( ACCESS_MASK GrantedAccess, ACCESS_MASK DesiredAccess );`
+  - `RtlAreAnyAccessesGranted` (function, line 14024) `BOOLEAN NTAPI RtlAreAnyAccessesGranted( ACCESS_MASK GrantedAccess, ACCESS_MASK DesiredAccess );`
+  - `RtlMapGenericMask` (function, line 14031) `VOID NTAPI RtlMapGenericMask( PACCESS_MASK AccessMask, PGENERIC_MAPPING GenericMapping );`
+  - `RtlCreateAcl` (function, line 14038) `NTSTATUS NTAPI RtlCreateAcl( OUT PACL Acl, IN ULONG AclLength, IN ULONG AclRevision );`
+  - `RtlValidAcl` (function, line 14046) `BOOLEAN NTAPI RtlValidAcl( PACL Acl );`
+  - `RtlQueryInformationAcl` (function, line 14052) `NTSTATUS NTAPI RtlQueryInformationAcl( PACL Acl, PVOID AclInformation, ULONG AclInformationLength, ACL_INFORMATION_CLASS AclInformationClass );`
+  - `RtlSetInformationAcl` (function, line 14061) `NTSTATUS NTAPI RtlSetInformationAcl( PACL Acl, PVOID AclInformation, ULONG AclInformationLength, ACL_INFORMATION_CLASS AclInformationClass );`
+  - `RtlAddAce` (function, line 14070) `NTSTATUS NTAPI RtlAddAce( PACL Acl, ULONG AceRevision, ULONG StartingAceIndex, PVOID AceList, ULONG AceListLength );`
+  - `RtlDeleteAce` (function, line 14080) `NTSTATUS NTAPI RtlDeleteAce( PACL Acl, ULONG AceIndex );`
+  - `RtlGetAce` (function, line 14087) `NTSTATUS NTAPI RtlGetAce( PACL Acl, ULONG AceIndex, PVOID *Ace );`
+  - `RtlSetOwnerSecurityDescriptor` (function, line 14095) `NTSTATUS NTAPI RtlSetOwnerSecurityDescriptor( _Inout_ PSECURITY_DESCRIPTOR SecurityDescriptor, _In_opt_ PSID Owner, _In_opt_ BOOLEAN OwnerDefaulted );`
+  - `RtlGetOwnerSecurityDescriptor` (function, line 14103) `NTSTATUS NTAPI RtlGetOwnerSecurityDescriptor( IN PSECURITY_DESCRIPTOR SecurityDescriptor, OUT PSID *Owner, OUT PBOOLEAN OwnerDefaulted );`
+  - `RtlAddAccessAllowedAce` (function, line 14111) `NTSTATUS NTAPI RtlAddAccessAllowedAce( PACL Acl, ULONG AceRevision, ACCESS_MASK AccessMask, PSID Sid );`
+  - `RtlAddAccessAllowedAceEx` (function, line 14120) `NTSTATUS NTAPI RtlAddAccessAllowedAceEx( PACL Acl, ULONG AceRevision, ULONG AceFlags, ACCESS_MASK AccessMask, PSID Sid );`
+  - `RtlAddAccessDeniedAce` (function, line 14130) `NTSTATUS NTAPI RtlAddAccessDeniedAce( PACL Acl, ULONG AceRevision, ACCESS_MASK AccessMask, PSID Sid );`
+  - `RtlAddAccessDeniedAceEx` (function, line 14139) `NTSTATUS NTAPI RtlAddAccessDeniedAceEx( PACL Acl, ULONG AceRevision, ULONG AceFlags, ACCESS_MASK AccessMask, PSID Sid );`
+  - `RtlAddAuditAccessAce` (function, line 14149) `NTSTATUS NTAPI RtlAddAuditAccessAce( PACL Acl, ULONG AceRevision, ACCESS_MASK AccessMask, PSID Sid, BOOLEAN AuditSuccess, BOOLEAN AuditFailure );`
+  - `RtlAddAuditAccessAceEx` (function, line 14160) `NTSTATUS NTAPI RtlAddAuditAccessAceEx( PACL Acl, ULONG AceRevision, ULONG AceFlags, ACCESS_MASK AccessMask, PSID Sid, BOOLEAN AuditSuccess, BOOLEAN AuditFailure );`
+  - `RtlAddAccessAllowedObjectAce` (function, line 14172) `NTSTATUS NTAPI RtlAddAccessAllowedObjectAce( _Inout_ PACL Acl, IN ULONG AceRevision, IN ULONG AceFlags, IN ACCESS_MASK AccessMask, IN GUID *ObjectTypeGuid OPTIONAL, IN GUID *InheritedObjectTypeGuid OP`
+  - `RtlAddAccessDeniedObjectAce` (function, line 14184) `NTSTATUS NTAPI RtlAddAccessDeniedObjectAce( _Inout_ PACL Acl, IN ULONG AceRevision, IN ULONG AceFlags, IN ACCESS_MASK AccessMask, IN GUID *ObjectTypeGuid OPTIONAL, IN GUID *InheritedObjectTypeGuid OPT`
+  - `RtlAddAuditAccessObjectAce` (function, line 14196) `NTSTATUS NTAPI RtlAddAuditAccessObjectAce( _Inout_ PACL Acl, IN ULONG AceRevision, IN ULONG AceFlags, IN ACCESS_MASK AccessMask, IN GUID *ObjectTypeGuid OPTIONAL, IN GUID *InheritedObjectTypeGuid OPTI`
+  - `RtlFirstFreeAce` (function, line 14210) `BOOLEAN NTAPI RtlFirstFreeAce( PACL Acl, PVOID *FirstFree );`
+  - `RtlAddCompoundAce` (function, line 14217) `NTSTATUS NTAPI RtlAddCompoundAce( IN PACL Acl, IN ULONG AceRevision, IN UCHAR AceType, IN ACCESS_MASK AccessMask, IN PSID ServerSid, IN PSID ClientSid );`
+  - `RtlCreateSecurityDescriptor` (function, line 14228) `NTSTATUS NTAPI RtlCreateSecurityDescriptor( PSECURITY_DESCRIPTOR SecurityDescriptor, ULONG Revision );`
+  - `RtlCreateSecurityDescriptorRelative` (function, line 14235) `NTSTATUS NTAPI RtlCreateSecurityDescriptorRelative( PISECURITY_DESCRIPTOR_RELATIVE SecurityDescriptor, ULONG Revision );`
+  - `RtlValidSecurityDescriptor` (function, line 14242) `BOOLEAN NTAPI RtlValidSecurityDescriptor( PSECURITY_DESCRIPTOR SecurityDescriptor );`
+  - `RtlLengthSecurityDescriptor` (function, line 14248) `ULONG NTAPI RtlLengthSecurityDescriptor( PSECURITY_DESCRIPTOR SecurityDescriptor );`
+  - `RtlValidRelativeSecurityDescriptor` (function, line 14254) `BOOLEAN NTAPI RtlValidRelativeSecurityDescriptor( IN PSECURITY_DESCRIPTOR SecurityDescriptorInput, IN ULONG SecurityDescriptorLength, IN SECURITY_INFORMATION RequiredInformation );`
+  - `RtlGetControlSecurityDescriptor` (function, line 14262) `NTSTATUS NTAPI RtlGetControlSecurityDescriptor ( PSECURITY_DESCRIPTOR SecurityDescriptor, PSECURITY_DESCRIPTOR_CONTROL Control, PULONG Revision );`
+  - `RtlSetControlSecurityDescriptor` (function, line 14270) `NTSTATUS NTAPI RtlSetControlSecurityDescriptor ( IN PSECURITY_DESCRIPTOR pSecurityDescriptor, IN SECURITY_DESCRIPTOR_CONTROL ControlBitsOfInterest, IN SECURITY_DESCRIPTOR_CONTROL ControlBitsToSet );`
+  - `RtlSetAttributesSecurityDescriptor` (function, line 14278) `NTSTATUS NTAPI RtlSetAttributesSecurityDescriptor( IN PSECURITY_DESCRIPTOR SecurityDescriptor, IN SECURITY_DESCRIPTOR_CONTROL Control, _Inout_ PULONG Revision );`
+  - `RtlSetDaclSecurityDescriptor` (function, line 14286) `NTSTATUS NTAPI RtlSetDaclSecurityDescriptor ( PSECURITY_DESCRIPTOR SecurityDescriptor, BOOLEAN DaclPresent, PACL Dacl, BOOLEAN DaclDefaulted );`
+  - `RtlGetDaclSecurityDescriptor` (function, line 14295) `NTSTATUS NTAPI RtlGetDaclSecurityDescriptor ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, OUT PBOOLEAN DaclPresent, OUT PACL *Dacl, OUT PBOOLEAN DaclDefaulted );`
+  - `RtlGetSecurityDescriptorRMControl` (function, line 14304) `BOOLEAN NTAPI RtlGetSecurityDescriptorRMControl( IN PSECURITY_DESCRIPTOR SecurityDescriptor, OUT PUCHAR RMControl );`
+  - `RtlSetSecurityDescriptorRMControl` (function, line 14311) `VOID NTAPI RtlSetSecurityDescriptorRMControl( _Inout_ PSECURITY_DESCRIPTOR SecurityDescriptor, IN PUCHAR RMControl OPTIONAL );`
+  - `RtlSetSaclSecurityDescriptor` (function, line 14318) `NTSTATUS NTAPI RtlSetSaclSecurityDescriptor ( PSECURITY_DESCRIPTOR SecurityDescriptor, BOOLEAN SaclPresent, PACL Sacl, BOOLEAN SaclDefaulted );`
+  - `RtlGetSaclSecurityDescriptor` (function, line 14327) `NTSTATUS NTAPI RtlGetSaclSecurityDescriptor ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, OUT PBOOLEAN SaclPresent, OUT PACL *Sacl, OUT PBOOLEAN SaclDefaulted );`
+  - `RtlSetGroupSecurityDescriptor` (function, line 14336) `NTSTATUS NTAPI RtlSetGroupSecurityDescriptor ( _Inout_ PSECURITY_DESCRIPTOR SecurityDescriptor, IN PSID Group OPTIONAL, IN BOOLEAN GroupDefaulted OPTIONAL );`
+  - `RtlGetGroupSecurityDescriptor` (function, line 14344) `NTSTATUS NTAPI RtlGetGroupSecurityDescriptor ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, OUT PSID *Group, OUT PBOOLEAN GroupDefaulted );`
+  - `RtlMakeSelfRelativeSD` (function, line 14352) `NTSTATUS NTAPI RtlMakeSelfRelativeSD ( IN PSECURITY_DESCRIPTOR AbsoluteSecurityDescriptor, OUT PSECURITY_DESCRIPTOR SelfRelativeSecurityDescriptor, _Inout_ PULONG BufferLength );`
+  - `RtlAbsoluteToSelfRelativeSD` (function, line 14360) `NTSTATUS NTAPI RtlAbsoluteToSelfRelativeSD ( IN PSECURITY_DESCRIPTOR AbsoluteSecurityDescriptor, OUT PSECURITY_DESCRIPTOR SelfRelativeSecurityDescriptor, _Inout_ PULONG BufferLength );`
+  - `RtlSelfRelativeToAbsoluteSD` (function, line 14368) `NTSTATUS NTAPI RtlSelfRelativeToAbsoluteSD ( IN PSECURITY_DESCRIPTOR SelfRelativeSecurityDescriptor, OUT OPTIONAL PSECURITY_DESCRIPTOR AbsoluteSecurityDescriptor, _Inout_ PULONG AbsoluteSecurityDescri`
+  - `RtlSelfRelativeToAbsoluteSD2` (function, line 14384) `NTSTATUS NTAPI RtlSelfRelativeToAbsoluteSD2 ( _Inout_ PSECURITY_DESCRIPTOR pSelfRelativeSecurityDescriptor, _Inout_ PULONG pBufferSize );`
+  - `RtlNewSecurityGrantedAccess` (function, line 14391) `NTSTATUS NTAPI RtlNewSecurityGrantedAccess ( ACCESS_MASK DesiredAccess, PPRIVILEGE_SET Privileges, PULONG Length, HANDLE Token, PGENERIC_MAPPING GenericMapping, PACCESS_MASK RemainingDesiredAccess );`
+  - `RtlMapSecurityErrorToNtStatus` (function, line 14402) `NTSTATUS NTAPI RtlMapSecurityErrorToNtStatus ( SECURITY_STATUS Error );`
+  - `RtlImpersonateSelf` (function, line 14408) `NTSTATUS NTAPI RtlImpersonateSelf ( IN SECURITY_IMPERSONATION_LEVEL ImpersonationLevel );`
+  - `RtlAdjustPrivilege` (function, line 14414) `NTSTATUS NTAPI RtlAdjustPrivilege ( ULONG Privilege, BOOLEAN Enable, BOOLEAN Client, PBOOLEAN WasEnabled );`
+  - `RtlAcquirePrivilege` (function, line 14423) `NTSTATUS NTAPI RtlAcquirePrivilege ( PULONG Privilege, ULONG NumPriv, ULONG Flags, PVOID *ReturnedState );`
+  - `RtlReleasePrivilege` (function, line 14432) `VOID NTAPI RtlReleasePrivilege ( PVOID StatePointer );`
+  - `RtlRunEncodeUnicodeString` (function, line 14438) `VOID NTAPI RtlRunEncodeUnicodeString( PUCHAR Seed OPTIONAL, PUNICODE_STRING String );`
+  - `RtlRunDecodeUnicodeString` (function, line 14445) `VOID NTAPI RtlRunDecodeUnicodeString( UCHAR Seed, PUNICODE_STRING String );`
+  - `RtlEraseUnicodeString` (function, line 14452) `VOID NTAPI RtlEraseUnicodeString( PUNICODE_STRING String );`
+  - `RtlFindMessage` (function, line 14458) `NTSTATUS NTAPI RtlFindMessage( PVOID DllHandle, ULONG MessageTableId, ULONG MessageLanguageId, ULONG MessageId, PMESSAGE_RESOURCE_ENTRY *MessageEntry );`
+  - `RtlFormatMessage` (function, line 14468) `NTSTATUS NTAPI RtlFormatMessage( IN PWSTR MessageFormat, IN ULONG MaximumWidth, IN BOOLEAN IgnoreInserts, IN BOOLEAN ArgumentsAreAnsi, IN BOOLEAN ArgumentsAreAnArray, IN va_list *Arguments, OUT PWSTR `
+  - `RtlFormatMessageEx` (function, line 14482) `NTSTATUS NTAPI RtlFormatMessageEx( IN PWSTR MessageFormat, IN ULONG MaximumWidth, IN BOOLEAN IgnoreInserts, IN BOOLEAN ArgumentsAreAnsi, IN BOOLEAN ArgumentsAreAnArray, IN va_list *Arguments, OUT PWST`
+  - `RtlInitializeRXact` (function, line 14497) `NTSTATUS NTAPI RtlInitializeRXact( IN HANDLE RootRegistryKey, IN BOOLEAN CommitIfNecessary, OUT PRTL_RXACT_CONTEXT *RXactContext );`
+  - `RtlStartRXact` (function, line 14505) `NTSTATUS NTAPI RtlStartRXact( IN PRTL_RXACT_CONTEXT RXactContext );`
+  - `RtlAbortRXact` (function, line 14511) `NTSTATUS NTAPI RtlAbortRXact( IN PRTL_RXACT_CONTEXT RXactContext );`
+  - `RtlAddAttributeActionToRXact` (function, line 14517) `NTSTATUS NTAPI RtlAddAttributeActionToRXact( IN PRTL_RXACT_CONTEXT RXactContext, IN RTL_RXACT_OPERATION Operation, IN PUNICODE_STRING SubKeyName, IN HANDLE KeyHandle, IN PUNICODE_STRING AttributeName,`
+  - `RtlAddActionToRXact` (function, line 14530) `NTSTATUS NTAPI RtlAddActionToRXact( IN PRTL_RXACT_CONTEXT RXactContext, IN RTL_RXACT_OPERATION Operation, IN PUNICODE_STRING SubKeyName, IN ULONG NewKeyValueType, IN PVOID NewKeyValue OPTIONAL, IN ULO`
+  - `RtlApplyRXact` (function, line 14541) `NTSTATUS NTAPI RtlApplyRXact( IN PRTL_RXACT_CONTEXT RXactContext );`
+  - `RtlApplyRXactNoFlush` (function, line 14547) `NTSTATUS NTAPI RtlApplyRXactNoFlush( IN PRTL_RXACT_CONTEXT RXactContext );`
+  - `RtlNtStatusToDosError` (function, line 14553) `ULONG NTAPI RtlNtStatusToDosError ( NTSTATUS Status );`
+  - `RtlNtStatusToDosErrorNoTeb` (function, line 14559) `ULONG NTAPI RtlNtStatusToDosErrorNoTeb ( NTSTATUS Status );`
+  - `RtlGetCurrentPeb` (function, line 14565) `PPEB RtlGetCurrentPeb ( VOID );`
+  - `RtlCustomCPToUnicodeN` (function, line 14570) `NTSTATUS NTAPI RtlCustomCPToUnicodeN( IN PCPTABLEINFO CustomCP, OUT PWCH UnicodeString, IN ULONG MaxBytesInUnicodeString, OUT OPTIONAL PULONG BytesInUnicodeString, IN PCH CustomCPString, IN ULONG Byte`
+  - `RtlUnicodeToCustomCPN` (function, line 14581) `NTSTATUS NTAPI RtlUnicodeToCustomCPN( IN PCPTABLEINFO CustomCP, OUT PCH CustomCPString, IN ULONG MaxBytesInCustomCPString, OUT OPTIONAL PULONG BytesInCustomCPString, IN PWCH UnicodeString, IN ULONG By`
+  - `RtlUpcaseUnicodeToCustomCPN` (function, line 14592) `NTSTATUS NTAPI RtlUpcaseUnicodeToCustomCPN( IN PCPTABLEINFO CustomCP, OUT PCH CustomCPString, IN ULONG MaxBytesInCustomCPString, OUT OPTIONAL PULONG BytesInCustomCPString, IN PWCH UnicodeString, IN UL`
+  - `RtlInitCodePageTable` (function, line 14603) `VOID NTAPI RtlInitCodePageTable( IN PUSHORT TableBase, OUT PCPTABLEINFO CodePageTable );`
+  - `RtlInitNlsTables` (function, line 14610) `VOID NTAPI RtlInitNlsTables( IN PUSHORT AnsiNlsBase, IN PUSHORT OemNlsBase, IN PUSHORT LanguageNlsBase, OUT PNLSTABLEINFO TableInfo );`
+  - `RtlResetRtlTranslations` (function, line 14619) `VOID NTAPI RtlResetRtlTranslations( PNLSTABLEINFO TableInfo );`
+  - `RtlGetDefaultCodePage` (function, line 14625) `VOID NTAPI RtlGetDefaultCodePage( OUT PUSHORT AnsiCodePage, OUT PUSHORT OemCodePage );`
+  - `RtlInitializeRangeList` (function, line 14632) `VOID NTAPI RtlInitializeRangeList( _Inout_ PRTL_RANGE_LIST RangeList );`
+  - `RtlFreeRangeList` (function, line 14638) `VOID NTAPI RtlFreeRangeList( IN PRTL_RANGE_LIST RangeList );`
+  - `RtlCopyRangeList` (function, line 14644) `NTSTATUS NTAPI RtlCopyRangeList( OUT PRTL_RANGE_LIST CopyRangeList, IN PRTL_RANGE_LIST RangeList );`
+  - `RtlAddRange` (function, line 14651) `NTSTATUS NTAPI RtlAddRange( _Inout_ PRTL_RANGE_LIST RangeList, IN ULONGLONG Start, IN ULONGLONG End, IN UCHAR Attributes, IN ULONG Flags, IN PVOID UserData, OPTIONAL IN PVOID Owner OPTIONAL );`
+  - `RtlDeleteRange` (function, line 14663) `NTSTATUS NTAPI RtlDeleteRange( _Inout_ PRTL_RANGE_LIST RangeList, IN ULONGLONG Start, IN ULONGLONG End, IN PVOID Owner );`
+  - `RtlDeleteOwnersRanges` (function, line 14672) `NTSTATUS NTAPI RtlDeleteOwnersRanges( _Inout_ PRTL_RANGE_LIST RangeList, IN PVOID Owner );`
+  - `RtlFindRange` (function, line 14679) `NTSTATUS NTAPI RtlFindRange( IN PRTL_RANGE_LIST RangeList, IN ULONGLONG Minimum, IN ULONGLONG Maximum, IN ULONG Length, IN ULONG Alignment, IN ULONG Flags, IN UCHAR AttributeAvailableMask, IN PVOID Co`
+  - `RtlIsRangeAvailable` (function, line 14694) `NTSTATUS NTAPI RtlIsRangeAvailable( IN PRTL_RANGE_LIST RangeList, IN ULONGLONG Start, IN ULONGLONG End, IN ULONG Flags, IN UCHAR AttributeAvailableMask, IN PVOID Context OPTIONAL, IN PRTL_CONFLICT_RAN`
+  - `RtlGetFirstRange` (function, line 14707) `NTSTATUS NTAPI RtlGetFirstRange( IN PRTL_RANGE_LIST RangeList, OUT PRTL_RANGE_LIST_ITERATOR Iterator, OUT PRTL_RANGE *Range );`
+  - `RtlGetLastRange` (function, line 14715) `NTSTATUS NTAPI RtlGetLastRange( IN PRTL_RANGE_LIST RangeList, OUT PRTL_RANGE_LIST_ITERATOR Iterator, OUT PRTL_RANGE *Range );`
+  - `RtlGetNextRange` (function, line 14723) `NTSTATUS NTAPI RtlGetNextRange( _Inout_ PRTL_RANGE_LIST_ITERATOR Iterator, OUT PRTL_RANGE *Range, IN BOOLEAN MoveForwards );`
+  - `RtlMergeRangeLists` (function, line 14731) `NTSTATUS NTAPI RtlMergeRangeLists( OUT PRTL_RANGE_LIST MergedRangeList, IN PRTL_RANGE_LIST RangeList1, IN PRTL_RANGE_LIST RangeList2, IN ULONG Flags );`
+  - `RtlInvertRangeList` (function, line 14740) `NTSTATUS NTAPI RtlInvertRangeList( OUT PRTL_RANGE_LIST InvertedRangeList, IN PRTL_RANGE_LIST RangeList );`
+  - `RtlVolumeDeviceToDosName` (function, line 14747) `NTSTATUS NTAPI RtlVolumeDeviceToDosName( IN PVOID VolumeDeviceObject, OUT PUNICODE_STRING DosName );`
+  - `RtlCreateSystemVolumeInformationFolder` (function, line 14754) `NTSTATUS NTAPI RtlCreateSystemVolumeInformationFolder( IN PUNICODE_STRING VolumeRootPath );`
+  - `LONG` (function, line 14764) `typedef LONG (NTAPI *PVECTORED_EXCEPTION_HANDLER)( struct _EXCEPTION_POINTERS *ExceptionInfo );`
+  - `RtlGetVersion` (function, line 14771) `NTSTATUS NTAPI RtlGetVersion( OUT PRTL_OSVERSIONINFOW lpVersionInformation );`
+  - `RtlVerifyVersionInfo` (function, line 14777) `NTSTATUS RtlVerifyVersionInfo( IN PRTL_OSVERSIONINFOEXW VersionInfo, IN ULONG TypeMask, IN ULONGLONG ConditionMask );`
+  - `RtlFlushSecureMemoryCache` (function, line 14784) `BOOLEAN RtlFlushSecureMemoryCache( PVOID lpAddr, SIZE_T size );`
+  - `RtlGetLastWin32Error` (function, line 14790) `LONG NTAPI RtlGetLastWin32Error( VOID );`
+  - `RtlSetLastWin32ErrorAndNtStatusFromNtStatus` (function, line 14796) `VOID NTAPI RtlSetLastWin32ErrorAndNtStatusFromNtStatus( NTSTATUS Status );`
+  - `RtlSetLastWin32Error` (function, line 14802) `VOID NTAPI RtlSetLastWin32Error( LONG Win32Error );`
+  - `RtlRestoreLastWin32Error` (function, line 14808) `VOID NTAPI RtlRestoreLastWin32Error( LONG Win32Error );`
+  - `RtlGetSetBootStatusData` (function, line 14814) `NTSTATUS NTAPI RtlGetSetBootStatusData( IN HANDLE Handle, IN BOOLEAN Get, IN RTL_BSD_ITEM_TYPE DataItem, IN PVOID DataBuffer, IN ULONG DataBufferLength, OUT PULONG ByteRead OPTIONAL );`
+  - `RtlLockBootStatusData` (function, line 14825) `NTSTATUS NTAPI RtlLockBootStatusData( OUT PHANDLE BootStatusDataHandle );`
+  - `RtlUnlockBootStatusData` (function, line 14831) `VOID NTAPI RtlUnlockBootStatusData( IN HANDLE BootStatusDataHandle );`
+  - `RtlCreateBootStatusDataFile` (function, line 14837) `NTSTATUS NTAPI RtlCreateBootStatusDataFile( VOID );`
+  - `NtDelayExecution` (function, line 14848) `NTSTATUS NTAPI NtDelayExecution( IN BOOLEAN Alertable, IN PLARGE_INTEGER DelayInterval );`
+  - `NtQuerySystemEnvironmentValue` (function, line 14854) `NTSTATUS NTAPI NtQuerySystemEnvironmentValue ( IN PUNICODE_STRING VariableName, OUT PWSTR VariableValue, IN USHORT ValueLength, OUT OPTIONAL PUSHORT ReturnLength );`
+  - `NtSetSystemEnvironmentValue` (function, line 14864) `NTSTATUS NTAPI NtSetSystemEnvironmentValue ( IN PUNICODE_STRING VariableName, IN PUNICODE_STRING VariableValue );`
+  - `NtQuerySystemEnvironmentValueEx` (function, line 14872) `NTSTATUS NTAPI NtQuerySystemEnvironmentValueEx ( IN PUNICODE_STRING VariableName, IN LPGUID VendorGuid, OUT OPTIONAL PVOID Value, _Inout_ PULONG ValueLength, OUT OPTIONAL PULONG Attributes );`
+  - `NtSetSystemEnvironmentValueEx` (function, line 14883) `NTSTATUS NTAPI NtSetSystemEnvironmentValueEx ( IN PUNICODE_STRING VariableName, IN LPGUID VendorGuid, _In_opt_ PVOID Value, IN ULONG ValueLength, IN ULONG Attributes );`
+  - `NtEnumerateSystemEnvironmentValuesEx` (function, line 14894) `NTSTATUS NTAPI NtEnumerateSystemEnvironmentValuesEx ( IN ULONG InformationClass, OUT PVOID Buffer, _Inout_ PULONG BufferLength );`
+  - `NtAddBootEntry` (function, line 14903) `NTSTATUS NTAPI NtAddBootEntry ( IN PBOOT_ENTRY BootEntry, OUT OPTIONAL PULONG Id );`
+  - `NtDeleteBootEntry` (function, line 14911) `NTSTATUS NTAPI NtDeleteBootEntry ( IN ULONG Id );`
+  - `NtModifyBootEntry` (function, line 14918) `NTSTATUS NTAPI NtModifyBootEntry ( IN PBOOT_ENTRY BootEntry );`
+  - `NtEnumerateBootEntries` (function, line 14925) `NTSTATUS NTAPI NtEnumerateBootEntries ( OUT OPTIONAL PVOID Buffer, _Inout_ PULONG BufferLength );`
+  - `NtQueryBootEntryOrder` (function, line 14933) `NTSTATUS NTAPI NtQueryBootEntryOrder ( OUT OPTIONAL PULONG Ids, _Inout_ PULONG Count );`
+  - `NtSetBootEntryOrder` (function, line 14941) `NTSTATUS NTAPI NtSetBootEntryOrder ( IN PULONG Ids, IN ULONG Count );`
+  - `NtQueryBootOptions` (function, line 14949) `NTSTATUS NTAPI NtQueryBootOptions ( OUT OPTIONAL PBOOT_OPTIONS BootOptions, _Inout_ PULONG BootOptionsLength );`
+  - `NtSetBootOptions` (function, line 14957) `NTSTATUS NTAPI NtSetBootOptions ( IN PBOOT_OPTIONS BootOptions, IN ULONG FieldsToChange );`
+  - `NtTranslateFilePath` (function, line 14965) `NTSTATUS NTAPI NtTranslateFilePath ( IN PFILE_PATH InputFilePath, IN ULONG OutputType, OUT OPTIONAL PFILE_PATH OutputFilePath, _Inout_opt_ PULONG OutputFilePathLength );`
+  - `NtAddDriverEntry` (function, line 14975) `NTSTATUS NTAPI NtAddDriverEntry ( IN PEFI_DRIVER_ENTRY DriverEntry, OUT OPTIONAL PULONG Id );`
+  - `NtDeleteDriverEntry` (function, line 14983) `NTSTATUS NTAPI NtDeleteDriverEntry ( IN ULONG Id );`
+  - `NtModifyDriverEntry` (function, line 14990) `NTSTATUS NTAPI NtModifyDriverEntry ( IN PEFI_DRIVER_ENTRY DriverEntry );`
+  - `NtEnumerateDriverEntries` (function, line 14997) `NTSTATUS NTAPI NtEnumerateDriverEntries ( OUT PVOID Buffer, _Inout_ PULONG BufferLength );`
+  - `NtQueryDriverEntryOrder` (function, line 15005) `NTSTATUS NTAPI NtQueryDriverEntryOrder ( OUT PULONG Ids, _Inout_ PULONG Count );`
+  - `NtSetDriverEntryOrder` (function, line 15013) `NTSTATUS NTAPI NtSetDriverEntryOrder ( IN PULONG Ids, IN ULONG Count );`
+  - `NtClearEvent` (function, line 15021) `NTSTATUS NTAPI NtClearEvent ( IN HANDLE EventHandle );`
+  - `NtCreateEvent` (function, line 15028) `NTSTATUS NTAPI NtCreateEvent ( OUT PHANDLE EventHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN EVENT_TYPE EventType, IN BOOLEAN InitialState );`
+  - `NtOpenEvent` (function, line 15039) `NTSTATUS NTAPI NtOpenEvent ( OUT PHANDLE EventHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtPulseEvent` (function, line 15048) `NTSTATUS NTAPI NtPulseEvent ( IN HANDLE EventHandle, OUT OPTIONAL PLONG PreviousState );`
+  - `NtQueryEvent` (function, line 15056) `NTSTATUS NTAPI NtQueryEvent ( IN HANDLE EventHandle, IN EVENT_INFORMATION_CLASS EventInformationClass, OUT PVOID EventInformation, IN ULONG EventInformationLength, OUT OPTIONAL PULONG ReturnLength );`
+  - `NtResetEvent` (function, line 15067) `NTSTATUS NTAPI NtResetEvent ( IN HANDLE EventHandle, OUT OPTIONAL PLONG PreviousState );`
+  - `NtSetEvent` (function, line 15075) `NTSTATUS NTAPI NtSetEvent ( IN HANDLE EventHandle, OUT OPTIONAL PLONG PreviousState );`
+  - `NtSetEventBoostPriority` (function, line 15083) `NTSTATUS NTAPI NtSetEventBoostPriority ( IN HANDLE EventHandle );`
+  - `NtCreateEventPair` (function, line 15090) `NTSTATUS NTAPI NtCreateEventPair ( OUT PHANDLE EventPairHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtOpenEventPair` (function, line 15099) `NTSTATUS NTAPI NtOpenEventPair ( OUT PHANDLE EventPairHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtWaitLowEventPair` (function, line 15108) `NTSTATUS NTAPI NtWaitLowEventPair ( IN HANDLE EventPairHandle );`
+  - `NtWaitHighEventPair` (function, line 15115) `NTSTATUS NTAPI NtWaitHighEventPair ( IN HANDLE EventPairHandle );`
+  - `NtSetLowWaitHighEventPair` (function, line 15122) `NTSTATUS NTAPI NtSetLowWaitHighEventPair ( IN HANDLE EventPairHandle );`
+  - `NtSetHighWaitLowEventPair` (function, line 15129) `NTSTATUS NTAPI NtSetHighWaitLowEventPair ( IN HANDLE EventPairHandle );`
+  - `NtSetLowEventPair` (function, line 15136) `NTSTATUS NTAPI NtSetLowEventPair ( IN HANDLE EventPairHandle );`
+  - `NtSetHighEventPair` (function, line 15143) `NTSTATUS NTAPI NtSetHighEventPair ( IN HANDLE EventPairHandle );`
+  - `NtCreateMutant` (function, line 15150) `NTSTATUS NTAPI NtCreateMutant ( OUT PHANDLE MutantHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN BOOLEAN InitialOwner );`
+  - `NtOpenMutant` (function, line 15160) `NTSTATUS NTAPI NtOpenMutant ( OUT PHANDLE MutantHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtQueryMutant` (function, line 15169) `NTSTATUS NTAPI NtQueryMutant ( IN HANDLE MutantHandle, IN MUTANT_INFORMATION_CLASS MutantInformationClass, OUT PVOID MutantInformation, IN ULONG MutantInformationLength, OUT OPTIONAL PULONG ReturnLeng`
+  - `NtReleaseMutant` (function, line 15180) `NTSTATUS NTAPI NtReleaseMutant ( IN HANDLE MutantHandle, OUT OPTIONAL PLONG PreviousCount );`
+  - `NtCreateSemaphore` (function, line 15188) `NTSTATUS NTAPI NtCreateSemaphore ( OUT PHANDLE SemaphoreHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN LONG InitialCount, IN LONG MaximumCount );`
+  - `NtOpenSemaphore` (function, line 15199) `NTSTATUS NTAPI NtOpenSemaphore( OUT PHANDLE SemaphoreHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtQuerySemaphore` (function, line 15208) `NTSTATUS NTAPI NtQuerySemaphore ( IN HANDLE SemaphoreHandle, IN SEMAPHORE_INFORMATION_CLASS SemaphoreInformationClass, OUT PVOID SemaphoreInformation, IN ULONG SemaphoreInformationLength, OUT OPTIONAL`
+  - `NtReleaseSemaphore` (function, line 15219) `NTSTATUS NTAPI NtReleaseSemaphore( IN HANDLE SemaphoreHandle, IN LONG ReleaseCount, OUT OPTIONAL PLONG PreviousCount );`
+  - `NtCreateTimer` (function, line 15228) `NTSTATUS NTAPI NtCreateTimer ( OUT PHANDLE TimerHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN TIMER_TYPE TimerType );`
+  - `NtOpenTimer` (function, line 15238) `NTSTATUS NTAPI NtOpenTimer ( OUT PHANDLE TimerHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtCancelTimer` (function, line 15247) `NTSTATUS NTAPI NtCancelTimer ( IN HANDLE TimerHandle, OUT OPTIONAL PBOOLEAN CurrentState );`
+  - `NtQueryTimer` (function, line 15255) `NTSTATUS NTAPI NtQueryTimer ( IN HANDLE TimerHandle, IN TIMER_INFORMATION_CLASS TimerInformationClass, OUT PVOID TimerInformation, IN ULONG TimerInformationLength, OUT OPTIONAL PULONG ReturnLength );`
+  - `NtSetTimer` (function, line 15266) `NTSTATUS NTAPI NtSetTimer ( IN HANDLE TimerHandle, IN PLARGE_INTEGER DueTime, _In_opt_ PTIMER_APC_ROUTINE TimerApcRoutine, _In_opt_ PVOID TimerContext, IN BOOLEAN ResumeTimer, _In_opt_ LONG Period, OU`
+  - `NtQuerySystemTime` (function, line 15279) `NTSTATUS NTAPI NtQuerySystemTime ( OUT PLARGE_INTEGER SystemTime );`
+  - `NtSetSystemTime` (function, line 15286) `NTSTATUS NTAPI NtSetSystemTime ( _In_opt_ PLARGE_INTEGER SystemTime, OUT OPTIONAL PLARGE_INTEGER PreviousTime );`
+  - `NtQueryTimerResolution` (function, line 15294) `NTSTATUS NTAPI NtQueryTimerResolution ( OUT PULONG MaximumTime, OUT PULONG MinimumTime, OUT PULONG CurrentTime );`
+  - `NtSetTimerResolution` (function, line 15303) `NTSTATUS NTAPI NtSetTimerResolution ( IN ULONG DesiredTime, IN BOOLEAN SetResolution, OUT PULONG ActualTime );`
+  - `NtAllocateLocallyUniqueId` (function, line 15312) `NTSTATUS NTAPI NtAllocateLocallyUniqueId ( OUT PLUID Luid );`
+  - `NtSetUuidSeed` (function, line 15319) `NTSTATUS NTAPI NtSetUuidSeed ( IN PCHAR Seed );`
+  - `NtAllocateUuids` (function, line 15326) `NTSTATUS NTAPI NtAllocateUuids ( OUT PULARGE_INTEGER Time, OUT PULONG Range, OUT PULONG Sequence, OUT PCHAR Seed );`
+  - `NtCreateProfile` (function, line 15336) `NTSTATUS NTAPI NtCreateProfile ( OUT PHANDLE ProfileHandle, IN HANDLE Process OPTIONAL, IN PVOID ProfileBase, IN SIZE_T ProfileSize, IN ULONG BucketSize, IN PULONG Buffer, IN ULONG BufferSize, IN KPRO`
+  - `NtStartProfile` (function, line 15351) `NTSTATUS NTAPI NtStartProfile ( IN HANDLE ProfileHandle );`
+  - `NtStopProfile` (function, line 15358) `NTSTATUS NTAPI NtStopProfile ( IN HANDLE ProfileHandle );`
+  - `NtSetIntervalProfile` (function, line 15365) `NTSTATUS NTAPI NtSetIntervalProfile ( IN ULONG Interval, IN KPROFILE_SOURCE Source );`
+  - `NtQueryIntervalProfile` (function, line 15373) `NTSTATUS NTAPI NtQueryIntervalProfile ( IN KPROFILE_SOURCE ProfileSource, OUT PULONG Interval );`
+  - `NtQueryPerformanceCounter` (function, line 15381) `NTSTATUS NTAPI NtQueryPerformanceCounter ( OUT PLARGE_INTEGER PerformanceCounter, OUT OPTIONAL PLARGE_INTEGER PerformanceFrequency );`
+  - `NtCreateKeyedEvent` (function, line 15389) `NTSTATUS NTAPI NtCreateKeyedEvent ( OUT PHANDLE KeyedEventHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG Flags );`
+  - `NtOpenKeyedEvent` (function, line 15399) `NTSTATUS NTAPI NtOpenKeyedEvent ( OUT PHANDLE KeyedEventHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtReleaseKeyedEvent` (function, line 15408) `NTSTATUS NTAPI NtReleaseKeyedEvent ( IN HANDLE KeyedEventHandle, IN PVOID KeyValue, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtWaitForKeyedEvent` (function, line 15418) `NTSTATUS NTAPI NtWaitForKeyedEvent ( IN HANDLE KeyedEventHandle, IN PVOID KeyValue, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtQuerySystemInformation` (function, line 15428) `NTSTATUS NTAPI NtQuerySystemInformation ( IN SYSTEM_INFORMATION_CLASS SystemInformationClass, OUT OPTIONAL PVOID SystemInformation, IN ULONG SystemInformationLength, OUT OPTIONAL PULONG ReturnLength )`
+  - `NtSetSystemInformation` (function, line 15438) `NTSTATUS NTAPI NtSetSystemInformation ( IN SYSTEM_INFORMATION_CLASS SystemInformationClass, _In_opt_ PVOID SystemInformation, IN ULONG SystemInformationLength );`
+  - `NtSystemDebugControl` (function, line 15447) `NTSTATUS NTAPI NtSystemDebugControl ( IN SYSDBG_COMMAND Command, _In_opt_ PVOID InputBuffer, IN ULONG InputBufferLength, OUT OPTIONAL PVOID OutputBuffer, IN ULONG OutputBufferLength, OUT OPTIONAL PULO`
+  - `NtRaiseHardError` (function, line 15459) `NTSTATUS NTAPI NtRaiseHardError ( IN NTSTATUS ErrorStatus, IN ULONG NumberOfParameters, IN ULONG UnicodeStringParameterMask, _In_opt_ PULONG_PTR Parameters, IN ULONG ValidResponseOptions, OUT PULONG R`
+  - `NtQueryDefaultLocale` (function, line 15471) `NTSTATUS NTAPI NtQueryDefaultLocale ( IN BOOLEAN UserProfile, OUT PLCID DefaultLocaleId );`
+  - `NtSetDefaultLocale` (function, line 15479) `NTSTATUS NTAPI NtSetDefaultLocale ( IN BOOLEAN UserProfile, IN LCID DefaultLocaleId );`
+  - `NtQueryInstallUILanguage` (function, line 15487) `NTSTATUS NTAPI NtQueryInstallUILanguage ( OUT LANGID *InstallUILanguageId );`
+  - `NtQueryDefaultUILanguage` (function, line 15494) `NTSTATUS NTAPI NtQueryDefaultUILanguage ( OUT LANGID *DefaultUILanguageId );`
+  - `NtSetDefaultUILanguage` (function, line 15501) `NTSTATUS NTAPI NtSetDefaultUILanguage ( IN LANGID DefaultUILanguageId );`
+  - `NtSetDefaultHardErrorPort` (function, line 15508) `NTSTATUS NTAPI NtSetDefaultHardErrorPort( IN HANDLE DefaultHardErrorPort );`
+  - `NtShutdownSystem` (function, line 15515) `NTSTATUS NTAPI NtShutdownSystem ( IN SHUTDOWN_ACTION Action );`
+  - `NtDisplayString` (function, line 15522) `NTSTATUS NTAPI NtDisplayString ( IN PUNICODE_STRING String );`
+  - `NtAddAtom` (function, line 15529) `NTSTATUS NTAPI NtAddAtom ( _In_opt_ PWSTR AtomName, IN ULONG Length, OUT OPTIONAL PRTL_ATOM Atom );`
+  - `NtFindAtom` (function, line 15538) `NTSTATUS NTAPI NtFindAtom ( _In_opt_ PWSTR AtomName, IN ULONG Length, OUT OPTIONAL PRTL_ATOM Atom );`
+  - `NtDeleteAtom` (function, line 15547) `NTSTATUS NTAPI NtDeleteAtom ( IN RTL_ATOM Atom );`
+  - `NtQueryInformationAtom` (function, line 15554) `NTSTATUS NTAPI NtQueryInformationAtom( IN RTL_ATOM Atom, IN ATOM_INFORMATION_CLASS AtomInformationClass, OUT OPTIONAL PVOID AtomInformation, IN ULONG AtomInformationLength, OUT OPTIONAL PULONG ReturnL`
+  - `NtCancelIoFile` (function, line 15565) `NTSTATUS NTAPI NtCancelIoFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock );`
+  - `NtCreateNamedPipeFile` (function, line 15573) `NTSTATUS NTAPI NtCreateNamedPipeFile ( OUT PHANDLE FileHandle, IN ULONG DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG ShareAccess, IN ULONG Create`
+  - `NtCreateMailslotFile` (function, line 15593) `NTSTATUS NTAPI NtCreateMailslotFile ( OUT PHANDLE FileHandle, IN ULONG DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG CreateOptions, IN ULONG Mails`
+  - `NtDeleteFile` (function, line 15607) `NTSTATUS NTAPI NtDeleteFile ( IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtFlushBuffersFile` (function, line 15614) `NTSTATUS NTAPI NtFlushBuffersFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock );`
+  - `NtNotifyChangeDirectoryFile` (function, line 15622) `NTSTATUS NTAPI NtNotifyChangeDirectoryFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID `
+  - `NtQueryAttributesFile` (function, line 15637) `NTSTATUS NTAPI NtQueryAttributesFile ( IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PFILE_BASIC_INFORMATION FileInformation );`
+  - `NtQueryFullAttributesFile` (function, line 15645) `NTSTATUS NTAPI NtQueryFullAttributesFile( IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PFILE_NETWORK_OPEN_INFORMATION FileInformation );`
+  - `NtQueryEaFile` (function, line 15653) `NTSTATUS NTAPI NtQueryEaFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID Buffer, IN ULONG Length, IN BOOLEAN ReturnSingleEntry, IN PVOID EaList, IN ULONG EaListLength, _In_op`
+  - `NtCreateFile` (function, line 15668) `NTSTATUS NTAPI NtCreateFile ( OUT PHANDLE FileHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, _In_opt_ PLARGE_INTEGER AllocationSize, `
+  - `NtDeviceIoControlFile` (function, line 15685) `NTSTATUS NTAPI NtDeviceIoControlFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG IoContr`
+  - `NtFsControlFile` (function, line 15701) `NTSTATUS NTAPI NtFsControlFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG FsControlCode`
+  - `NtLockFile` (function, line 15717) `NTSTATUS NTAPI NtLockFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PLARGE_INTEGER ByteOffse`
+  - `NtOpenFile` (function, line 15733) `NTSTATUS NTAPI NtOpenFile ( OUT PHANDLE FileHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG ShareAccess, IN ULONG OpenOptions`
+  - `NtQueryDirectoryFile` (function, line 15745) `NTSTATUS NTAPI NtQueryDirectoryFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID FileInf`
+  - `NtQueryInformationFile` (function, line 15762) `NTSTATUS NTAPI NtQueryInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID FileInformation, IN ULONG Length, IN FILE_INFORMATION_CLASS FileInformationClass );`
+  - `NtQueryQuotaInformationFile` (function, line 15773) `NTSTATUS NTAPI NtQueryQuotaInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID Buffer, IN ULONG Length, IN BOOLEAN ReturnSingleEntry, _In_opt_ PVOID SidList, IN ULONG`
+  - `NtQueryVolumeInformationFile` (function, line 15788) `NTSTATUS NTAPI NtQueryVolumeInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID FsInformation, IN ULONG Length, IN FS_INFORMATION_CLASS FsInformationClass );`
+  - `NtReadFile` (function, line 15799) `NTSTATUS NTAPI NtReadFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID Buffer, IN ULONG `
+  - `NtSetInformationFile` (function, line 15814) `NTSTATUS NTAPI NtSetInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID FileInformation, IN ULONG Length, IN FILE_INFORMATION_CLASS FileInformationClass );`
+  - `NtSetQuotaInformationFile` (function, line 15825) `NTSTATUS NTAPI NtSetQuotaInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID Buffer, IN ULONG Length );`
+  - `NtSetVolumeInformationFile` (function, line 15835) `NTSTATUS NTAPI NtSetVolumeInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID FsInformation, IN ULONG Length, IN FS_INFORMATION_CLASS FsInformationClass );`
+  - `NtWriteFile` (function, line 15846) `NTSTATUS NTAPI NtWriteFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID Buffer, IN ULONG `
+  - `NtUnlockFile` (function, line 15861) `NTSTATUS NTAPI NtUnlockFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PLARGE_INTEGER ByteOffset, IN PLARGE_INTEGER Length, IN ULONG Key );`
+  - `NtReadFileScatter` (function, line 15872) `NTSTATUS NTAPI NtReadFileScatter ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PFILE_SEGMENT_ELE`
+  - `NtSetEaFile` (function, line 15887) `NTSTATUS NTAPI NtSetEaFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID Buffer, IN ULONG Length );`
+  - `NtWriteFileGather` (function, line 15897) `NTSTATUS NTAPI NtWriteFileGather ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PFILE_SEGMENT_ELE`
+  - `NtLoadDriver` (function, line 15912) `NTSTATUS NTAPI NtLoadDriver ( IN PUNICODE_STRING DriverServiceName );`
+  - `NtUnloadDriver` (function, line 15919) `NTSTATUS NTAPI NtUnloadDriver ( IN PUNICODE_STRING DriverServiceName );`
+  - `NtCreateIoCompletion` (function, line 15926) `NTSTATUS NTAPI NtCreateIoCompletion ( OUT PHANDLE IoCompletionHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG Count OPTIONAL );`
+  - `NtOpenIoCompletion` (function, line 15936) `NTSTATUS NTAPI NtOpenIoCompletion ( OUT PHANDLE IoCompletionHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtQueryIoCompletion` (function, line 15945) `NTSTATUS NTAPI NtQueryIoCompletion ( IN HANDLE IoCompletionHandle, IN IO_COMPLETION_INFORMATION_CLASS IoCompletionInformationClass, OUT PVOID IoCompletionInformation, IN ULONG IoCompletionInformationL`
+  - `NtSetIoCompletion` (function, line 15956) `NTSTATUS NTAPI NtSetIoCompletion ( IN HANDLE IoCompletionHandle, IN PVOID KeyContext, _In_opt_ PVOID ApcContext, IN NTSTATUS IoStatus, IN ULONG_PTR IoStatusInformation );`
+  - `NtRemoveIoCompletion` (function, line 15967) `NTSTATUS NTAPI NtRemoveIoCompletion ( IN HANDLE IoCompletionHandle, OUT PVOID *KeyContext, OUT PVOID *ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtCallbackReturn` (function, line 15978) `NTSTATUS NTAPI NtCallbackReturn ( IN PVOID OutputBuffer OPTIONAL, IN ULONG OutputLength, IN NTSTATUS Status );`
+  - `NtQueryDebugFilterState` (function, line 15987) `NTSTATUS NTAPI NtQueryDebugFilterState ( IN ULONG ComponentId, IN ULONG Level );`
+  - `NtSetDebugFilterState` (function, line 15995) `NTSTATUS NTAPI NtSetDebugFilterState ( IN ULONG ComponentId, IN ULONG Level, IN BOOLEAN State );`
+  - `NtYieldExecution` (function, line 16004) `NTSTATUS NTAPI NtYieldExecution ( VOID );`
+  - `NtCreatePort` (function, line 16011) `NTSTATUS NTAPI NtCreatePort( OUT PHANDLE PortHandle, IN POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG MaxConnectionInfoLength, IN ULONG MaxMessageLength, _In_opt_ ULONG MaxPoolUsage );`
+  - `NtCreateWaitablePort` (function, line 16022) `NTSTATUS NTAPI NtCreateWaitablePort( OUT PHANDLE PortHandle, IN POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG MaxConnectionInfoLength, IN ULONG MaxMessageLength, _In_opt_ ULONG MaxPoolUsage );`
+  - `NtConnectPort` (function, line 16033) `NTSTATUS NTAPI NtConnectPort( OUT PHANDLE PortHandle, IN PUNICODE_STRING PortName, IN PSECURITY_QUALITY_OF_SERVICE SecurityQos, _Inout_opt_ PPORT_VIEW ClientView, _Inout_opt_ PREMOTE_PORT_VIEW ServerV`
+  - `NtSecureConnectPort` (function, line 16047) `NTSTATUS NTAPI NtSecureConnectPort( OUT PHANDLE PortHandle, IN PUNICODE_STRING PortName, IN PSECURITY_QUALITY_OF_SERVICE SecurityQos, _Inout_opt_ PPORT_VIEW ClientView, _In_opt_ PSID RequiredServerSid`
+  - `NtListenPort` (function, line 16062) `NTSTATUS NTAPI NtListenPort( IN HANDLE PortHandle, OUT PPORT_MESSAGE ConnectionRequest );`
+  - `NtAcceptConnectPort` (function, line 16070) `NTSTATUS NTAPI NtAcceptConnectPort( OUT PHANDLE PortHandle, _In_opt_ PVOID PortContext, IN PPORT_MESSAGE ConnectionRequest, IN BOOLEAN AcceptConnection, _Inout_opt_ PPORT_VIEW ServerView, OUT OPTIONAL`
+  - `NtCompleteConnectPort` (function, line 16082) `NTSTATUS NTAPI NtCompleteConnectPort( IN HANDLE PortHandle );`
+  - `NtRequestPort` (function, line 16089) `NTSTATUS NTAPI NtRequestPort( IN HANDLE PortHandle, IN PPORT_MESSAGE RequestMessage );`
+  - `NtRequestWaitReplyPort` (function, line 16097) `NTSTATUS NTAPI NtRequestWaitReplyPort( IN HANDLE PortHandle, IN PPORT_MESSAGE RequestMessage, OUT PPORT_MESSAGE ReplyMessage );`
+  - `NtReplyPort` (function, line 16106) `NTSTATUS NTAPI NtReplyPort( IN HANDLE PortHandle, IN PPORT_MESSAGE ReplyMessage );`
+  - `NtReplyWaitReplyPort` (function, line 16114) `NTSTATUS NTAPI NtReplyWaitReplyPort( IN HANDLE PortHandle, _Inout_ PPORT_MESSAGE ReplyMessage );`
+  - `NtReplyWaitReceivePort` (function, line 16122) `NTSTATUS NTAPI NtReplyWaitReceivePort( IN HANDLE PortHandle, OUT OPTIONAL PVOID *PortContext , _In_opt_ PPORT_MESSAGE ReplyMessage, OUT PPORT_MESSAGE ReceiveMessage );`
+  - `NtReplyWaitReceivePortEx` (function, line 16132) `NTSTATUS NTAPI NtReplyWaitReceivePortEx( IN HANDLE PortHandle, OUT OPTIONAL PVOID *PortContext, _In_opt_ PPORT_MESSAGE ReplyMessage, OUT PPORT_MESSAGE ReceiveMessage, _In_opt_ PLARGE_INTEGER Timeout )`
+  - `NtImpersonateClientOfPort` (function, line 16143) `NTSTATUS NTAPI NtImpersonateClientOfPort( IN HANDLE PortHandle, IN PPORT_MESSAGE Message );`
+  - `NtReadRequestData` (function, line 16151) `NTSTATUS NTAPI NtReadRequestData( IN HANDLE PortHandle, IN PPORT_MESSAGE Message, IN ULONG DataEntryIndex, OUT PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesRead );`
+  - `NtWriteRequestData` (function, line 16163) `NTSTATUS NTAPI NtWriteRequestData( IN HANDLE PortHandle, IN PPORT_MESSAGE Message, IN ULONG DataEntryIndex, IN PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesWritten );`
+  - `NtQueryInformationPort` (function, line 16175) `NTSTATUS NTAPI NtQueryInformationPort( IN HANDLE PortHandle, IN PORT_INFORMATION_CLASS PortInformationClass, OUT PVOID PortInformation, IN ULONG Length, OUT OPTIONAL PULONG ReturnLength );`
+  - `NtCreateSection` (function, line 16186) `NTSTATUS NTAPI NtCreateSection ( OUT PHANDLE SectionHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, _In_opt_ PLARGE_INTEGER MaximumSize, IN ULONG SectionPageProtect`
+  - `NtOpenSection` (function, line 16199) `NTSTATUS NTAPI NtOpenSection ( OUT PHANDLE SectionHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtMapViewOfSection` (function, line 16208) `NTSTATUS NTAPI NtMapViewOfSection ( IN HANDLE SectionHandle, IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, IN ULONG_PTR ZeroBits, IN SIZE_T CommitSize, _Inout_opt_ PLARGE_INTEGER SectionOffset,`
+  - `NtUnmapViewOfSection` (function, line 16224) `NTSTATUS NTAPI NtUnmapViewOfSection ( IN HANDLE ProcessHandle, IN PVOID BaseAddress );`
+  - `NtExtendSection` (function, line 16232) `NTSTATUS NTAPI NtExtendSection ( IN HANDLE SectionHandle, _Inout_ PLARGE_INTEGER NewSectionSize );`
+  - `NtAreMappedFilesTheSame` (function, line 16240) `NTSTATUS NTAPI NtAreMappedFilesTheSame ( IN PVOID File1MappedAsAnImage, IN PVOID File2MappedAsFile );`
+  - `NtAllocateVirtualMemory` (function, line 16248) `NTSTATUS NTAPI NtAllocateVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, IN ULONG_PTR ZeroBits, _Inout_ PSIZE_T RegionSize, IN ULONG AllocationType, IN ULONG Protect );`
+  - `NtFreeVirtualMemory` (function, line 16260) `NTSTATUS NTAPI NtFreeVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG FreeType );`
+  - `NtReadVirtualMemory` (function, line 16270) `NTSTATUS NTAPI NtReadVirtualMemory ( IN HANDLE ProcessHandle, _In_opt_ PVOID BaseAddress, OUT PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesRead );`
+  - `NtWriteVirtualMemory` (function, line 16281) `NTSTATUS NTAPI NtWriteVirtualMemory ( IN HANDLE ProcessHandle, _In_opt_ PVOID BaseAddress, IN CONST VOID *Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesWritten );`
+  - `NtFlushVirtualMemory` (function, line 16292) `NTSTATUS NTAPI NtFlushVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, OUT PIO_STATUS_BLOCK IoStatus );`
+  - `NtLockVirtualMemory` (function, line 16302) `NTSTATUS NTAPI NtLockVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG MapType );`
+  - `NtUnlockVirtualMemory` (function, line 16312) `NTSTATUS NTAPI NtUnlockVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG MapType );`
+  - `NtProtectVirtualMemory` (function, line 16322) `NTSTATUS NTAPI NtProtectVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG NewProtect, OUT PULONG OldProtect );`
+  - `NtQueryVirtualMemory` (function, line 16333) `NTSTATUS NTAPI NtQueryVirtualMemory ( IN HANDLE ProcessHandle, IN PVOID BaseAddress, IN MEMORY_INFORMATION_CLASS MemoryInformationClass, OUT PVOID MemoryInformation, IN SIZE_T MemoryInformationLength,`
+  - `NtQuerySection` (function, line 16345) `NTSTATUS NTAPI NtQuerySection ( IN HANDLE SectionHandle, IN SECTION_INFORMATION_CLASS SectionInformationClass, OUT PVOID SectionInformation, IN SIZE_T SectionInformationLength, OUT OPTIONAL PSIZE_T Re`
+  - `NtMapUserPhysicalPages` (function, line 16356) `NTSTATUS NTAPI NtMapUserPhysicalPages ( IN PVOID VirtualAddress, IN ULONG_PTR NumberOfPages, _In_opt_ PULONG_PTR UserPfnArray );`
+  - `NtMapUserPhysicalPagesScatter` (function, line 16365) `NTSTATUS NTAPI NtMapUserPhysicalPagesScatter ( IN PVOID *VirtualAddresses, IN ULONG_PTR NumberOfPages, _In_opt_ PULONG_PTR UserPfnArray );`
+  - `NtAllocateUserPhysicalPages` (function, line 16374) `NTSTATUS NTAPI NtAllocateUserPhysicalPages ( IN HANDLE ProcessHandle, _Inout_ PULONG_PTR NumberOfPages, OUT PULONG_PTR UserPfnArray );`
+  - `NtFreeUserPhysicalPages` (function, line 16383) `NTSTATUS NTAPI NtFreeUserPhysicalPages ( IN HANDLE ProcessHandle, _Inout_ PULONG_PTR NumberOfPages, IN PULONG_PTR UserPfnArray );`
+  - `NtGetWriteWatch` (function, line 16392) `NTSTATUS NTAPI NtGetWriteWatch ( IN HANDLE ProcessHandle, IN ULONG Flags, IN PVOID BaseAddress, IN SIZE_T RegionSize, OUT PVOID *UserAddressArray, _Inout_ PULONG_PTR EntriesInUserAddressArray, OUT PUL`
+  - `NtResetWriteWatch` (function, line 16405) `NTSTATUS NTAPI NtResetWriteWatch ( IN HANDLE ProcessHandle, IN PVOID BaseAddress, IN SIZE_T RegionSize );`
+  - `NtCreatePagingFile` (function, line 16414) `NTSTATUS NTAPI NtCreatePagingFile ( IN PUNICODE_STRING PageFileName, IN PLARGE_INTEGER MinimumSize, IN PLARGE_INTEGER MaximumSize, IN ULONG Priority );`
+  - `NtFlushInstructionCache` (function, line 16424) `NTSTATUS NTAPI NtFlushInstructionCache ( IN HANDLE ProcessHandle, _In_opt_ PVOID BaseAddress, IN SIZE_T Length );`
+  - `NtFlushWriteBuffer` (function, line 16433) `NTSTATUS NTAPI NtFlushWriteBuffer ( VOID );`
+  - `NtQueryObject` (function, line 16440) `NTSTATUS NTAPI NtQueryObject ( IN HANDLE Handle, IN OBJECT_INFORMATION_CLASS ObjectInformationClass, OUT PVOID ObjectInformation, IN ULONG ObjectInformationLength, OUT PULONG ReturnLength );`
+  - `NtSetInformationObject` (function, line 16451) `NTSTATUS NTAPI NtSetInformationObject ( IN HANDLE Handle, IN OBJECT_INFORMATION_CLASS ObjectInformationClass, IN PVOID ObjectInformation, IN ULONG ObjectInformationLength );`
+  - `NtDuplicateObject` (function, line 16461) `NTSTATUS NTAPI NtDuplicateObject ( IN HANDLE SourceProcessHandle, IN HANDLE SourceHandle, _In_opt_ HANDLE TargetProcessHandle, OUT PHANDLE TargetHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAt`
+  - `NtMakeTemporaryObject` (function, line 16474) `NTSTATUS NTAPI NtMakeTemporaryObject ( IN HANDLE Handle );`
+  - `NtMakePermanentObject` (function, line 16481) `NTSTATUS NTAPI NtMakePermanentObject ( IN HANDLE Handle );`
+  - `NtSignalAndWaitForSingleObject` (function, line 16488) `NTSTATUS NTAPI NtSignalAndWaitForSingleObject ( IN HANDLE SignalHandle, IN HANDLE WaitHandle, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtWaitForSingleObject` (function, line 16498) `NTSTATUS NTAPI NtWaitForSingleObject ( IN HANDLE Handle, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtWaitForMultipleObjects` (function, line 16507) `NTSTATUS NTAPI NtWaitForMultipleObjects ( IN ULONG Count, IN HANDLE Handles[], IN WAIT_TYPE WaitType, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtWaitForMultipleObjects32` (function, line 16518) `NTSTATUS NTAPI NtWaitForMultipleObjects32 ( IN ULONG Count, IN LONG Handles[], IN WAIT_TYPE WaitType, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `NtSetSecurityObject` (function, line 16529) `NTSTATUS NTAPI NtSetSecurityObject ( IN HANDLE Handle, IN SECURITY_INFORMATION SecurityInformation, IN PSECURITY_DESCRIPTOR SecurityDescriptor );`
+  - `NtQuerySecurityObject` (function, line 16538) `NTSTATUS NTAPI NtQuerySecurityObject ( IN HANDLE Handle, IN SECURITY_INFORMATION SecurityInformation, OUT PSECURITY_DESCRIPTOR SecurityDescriptor, IN ULONG Length, OUT PULONG LengthNeeded );`
+  - `NtClose` (function, line 16549) `NTSTATUS NTAPI NtClose ( IN HANDLE Handle );`
+  - `NtCreateDirectoryObject` (function, line 16556) `NTSTATUS NTAPI NtCreateDirectoryObject ( OUT PHANDLE DirectoryHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtOpenDirectoryObject` (function, line 16565) `NTSTATUS NTAPI NtOpenDirectoryObject ( OUT PHANDLE DirectoryHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtQueryDirectoryObject` (function, line 16574) `NTSTATUS NTAPI NtQueryDirectoryObject ( IN HANDLE DirectoryHandle, OUT PVOID Buffer, IN ULONG Length, IN BOOLEAN ReturnSingleEntry, IN BOOLEAN RestartScan, _Inout_ PULONG Context, OUT PULONG ReturnLen`
+  - `NtCreateSymbolicLinkObject` (function, line 16587) `NTSTATUS NTAPI NtCreateSymbolicLinkObject ( OUT PHANDLE LinkHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN PUNICODE_STRING LinkTarget );`
+  - `NtOpenSymbolicLinkObject` (function, line 16597) `NTSTATUS NTAPI NtOpenSymbolicLinkObject ( OUT PHANDLE LinkHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtQuerySymbolicLinkObject` (function, line 16606) `NTSTATUS NTAPI NtQuerySymbolicLinkObject ( IN HANDLE LinkHandle, _Inout_ PUNICODE_STRING LinkTarget, OUT PULONG ReturnedLength );`
+  - `NtGetPlugPlayEvent` (function, line 16615) `NTSTATUS NTAPI NtGetPlugPlayEvent ( IN HANDLE EventHandle, _In_opt_ PVOID Context, OUT PPLUGPLAY_EVENT_BLOCK EventBlock, IN ULONG EventBufferSize );`
+  - `NtPlugPlayControl` (function, line 16625) `NTSTATUS NTAPI NtPlugPlayControl( IN PLUGPLAY_CONTROL_CLASS PnPControlClass, _Inout_ PVOID PnPControlData, IN ULONG PnPControlDataLength );`
+  - `NtPowerInformation` (function, line 16634) `NTSTATUS NTAPI NtPowerInformation( IN POWER_INFORMATION_LEVEL InformationLevel, _In_opt_ PVOID InputBuffer, IN ULONG InputBufferLength, OUT OPTIONAL PVOID OutputBuffer, IN ULONG OutputBufferLength );`
+  - `NtSetThreadExecutionState` (function, line 16645) `NTSTATUS NTAPI NtSetThreadExecutionState( IN EXECUTION_STATE esFlags, // ES_xxx flags OUT EXECUTION_STATE *PreviousFlags );`
+  - `NtRequestWakeupLatency` (function, line 16653) `NTSTATUS NTAPI NtRequestWakeupLatency( IN LATENCY_TIME latency );`
+  - `NtCancelDeviceWakeupRequest` (function, line 16687) `NTSTATUS NTAPI NtCancelDeviceWakeupRequest( IN HANDLE Device );`
+  - `NtRequestDeviceWakeup` (function, line 16694) `NTSTATUS NTAPI NtRequestDeviceWakeup( IN HANDLE Device );`
+  - `NtCreateProcess` (function, line 16701) `NTSTATUS NTAPI NtCreateProcess ( OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ParentProcess, IN BOOLEAN InheritObjectTable, _In_opt_`
+  - `NtCreateProcessEx` (function, line 16715) `NTSTATUS NTAPI NtCreateProcessEx( OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ParentProcess, IN ULONG Flags, _In_opt_ HANDLE Sectio`
+  - `NtOpenProcess` (function, line 16730) `NTSTATUS NTAPI NtOpenProcess ( OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, _In_opt_ PCLIENT_ID ClientId );`
+  - `NtTerminateProcess` (function, line 16740) `NTSTATUS NTAPI NtTerminateProcess( _In_opt_ HANDLE ProcessHandle, IN NTSTATUS ExitStatus );`
+  - `NtQueryInformationProcess` (function, line 16754) `NTSTATUS NTAPI NtQueryInformationProcess ( IN HANDLE ProcessHandle, IN PROCESSINFOCLASS ProcessInformationClass, OUT PVOID ProcessInformation, IN ULONG ProcessInformationLength, OUT OPTIONAL PULONG Re`
+  - `NtGetNextProcess` (function, line 16765) `NTSTATUS NTAPI NtGetNextProcess ( IN HANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAttributes, IN ULONG Flags, OUT PHANDLE NewProcessHandle );`
+  - `NtGetNextThread` (function, line 16776) `NTSTATUS NTAPI NtGetNextThread ( IN HANDLE ProcessHandle, IN HANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAttributes, IN ULONG Flags, OUT PHANDLE NewThreadHandle );`
+  - `NtQueryPortInformationProcess` (function, line 16788) `NTSTATUS NTAPI NtQueryPortInformationProcess ( VOID );`
+  - `NtSetInformationProcess` (function, line 16795) `NTSTATUS NTAPI NtSetInformationProcess ( IN HANDLE ProcessHandle, IN PROCESSINFOCLASS ProcessInformationClass, IN PVOID ProcessInformation, IN ULONG ProcessInformationLength );`
+  - `NtCreateThread` (function, line 16805) `NTSTATUS NTAPI NtCreateThread ( OUT PHANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ProcessHandle, OUT PCLIENT_ID ClientId, IN PCONTEXT Thre`
+  - `NtCreateThreadEx` (function, line 16819) `NTSTATUS NTAPI NtCreateThreadEx ( PHANDLE hThread, ACCESS_MASK DesiredAccess, PVOID ObjectAttributes, HANDLE ProcessHandle, PVOID lpStartAddress, PVOID lpParameter, ULONG Flags, SIZE_T StackZeroBits, `
+  - `NtOpenThread` (function, line 16834) `NTSTATUS NTAPI NtOpenThread ( OUT PHANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, _In_opt_ PCLIENT_ID ClientId );`
+  - `NtTerminateThread` (function, line 16843) `NTSTATUS NTAPI NtTerminateThread ( _In_opt_ HANDLE ThreadHandle, IN NTSTATUS ExitStatus );`
+  - `NtSuspendThread` (function, line 16851) `NTSTATUS NTAPI NtSuspendThread ( IN HANDLE ThreadHandle, OUT OPTIONAL PULONG PreviousSuspendCount );`
+  - `NtResumeThread` (function, line 16859) `NTSTATUS NTAPI NtResumeThread ( IN HANDLE ThreadHandle, OUT OPTIONAL PULONG PreviousSuspendCount );`
+  - `NtSuspendProcess` (function, line 16867) `NTSTATUS NTAPI NtSuspendProcess ( HANDLE ProcessHandle );`
+  - `NtResumeProcess` (function, line 16874) `NTSTATUS NTAPI NtResumeProcess ( IN HANDLE ProcessHandle );`
+  - `NtGetContextThread` (function, line 16881) `NTSTATUS NTAPI NtGetContextThread ( IN HANDLE ThreadHandle, _Inout_ PCONTEXT ThreadContext );`
+  - `NtSetContextThread` (function, line 16889) `NTSTATUS NTAPI NtSetContextThread ( IN HANDLE ThreadHandle, IN PCONTEXT ThreadContext );`
+  - `NtQueryInformationThread` (function, line 16897) `NTSTATUS NTAPI NtQueryInformationThread ( IN HANDLE ThreadHandle, IN THREADINFOCLASS ThreadInformationClass, OUT PVOID ThreadInformation, IN ULONG ThreadInformationLength, OUT OPTIONAL PULONG ReturnLe`
+  - `NtSetInformationThread` (function, line 16908) `NTSTATUS NTAPI NtSetInformationThread ( IN HANDLE ThreadHandle, IN THREADINFOCLASS ThreadInformationClass, IN PVOID ThreadInformation, IN ULONG ThreadInformationLength );`
+  - `NtSetInformationVirtualMemory` (function, line 16918) `NTSTATUS NtSetInformationVirtualMemory( IN HANDLE ProcessHandle, IN VIRTUAL_MEMORY_INFORMATION_CLASS VmInformationClass, IN ULONG_PTR NumberOfEntries, IN PMEMORY_RANGE_ENTRY VirtualAddresses, IN PVOID`
+  - `NtAlertThread` (function, line 16927) `NTSTATUS NTAPI NtAlertThread ( IN HANDLE ThreadHandle );`
+  - `NtAlertResumeThread` (function, line 16933) `NTSTATUS NTAPI NtAlertResumeThread ( IN HANDLE ThreadHandle, OUT OPTIONAL PULONG PreviousSuspendCount );`
+  - `NtImpersonateThread` (function, line 16941) `NTSTATUS NTAPI NtImpersonateThread ( IN HANDLE ServerThreadHandle, IN HANDLE ClientThreadHandle, IN PSECURITY_QUALITY_OF_SERVICE SecurityQos );`
+  - `NtTestAlert` (function, line 16950) `NTSTATUS NTAPI NtTestAlert ( VOID );`
+  - `NtRegisterThreadTerminatePort` (function, line 16957) `NTSTATUS NTAPI NtRegisterThreadTerminatePort ( IN HANDLE PortHandle );`
+  - `NtSetLdtEntries` (function, line 16964) `NTSTATUS NTAPI NtSetLdtEntries ( IN ULONG Selector0, IN ULONG Entry0Low, IN ULONG Entry0Hi, IN ULONG Selector1, IN ULONG Entry1Low, IN ULONG Entry1Hi );`
+  - `NtQueueApcThread` (function, line 16976) `NTSTATUS NTAPI NtQueueApcThread ( IN HANDLE ThreadHandle, IN PPS_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcArgument1, _In_opt_ PVOID ApcArgument2, _In_opt_ PVOID ApcArgument3 );`
+  - `NtCreateJobObject` (function, line 16987) `NTSTATUS NTAPI NtCreateJobObject ( OUT PHANDLE JobHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtOpenJobObject` (function, line 16996) `NTSTATUS NTAPI NtOpenJobObject ( OUT PHANDLE JobHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtAssignProcessToJobObject` (function, line 17005) `NTSTATUS NTAPI NtAssignProcessToJobObject ( IN HANDLE JobHandle, IN HANDLE ProcessHandle );`
+  - `NtTerminateJobObject` (function, line 17013) `NTSTATUS NTAPI NtTerminateJobObject ( IN HANDLE JobHandle, IN NTSTATUS ExitStatus );`
+  - `NtIsProcessInJob` (function, line 17021) `NTSTATUS NTAPI NtIsProcessInJob ( IN HANDLE ProcessHandle, _In_opt_ HANDLE JobHandle );`
+  - `NtCreateJobSet` (function, line 17029) `NTSTATUS NTAPI NtCreateJobSet ( IN ULONG NumJob, IN PJOB_SET_ARRAY UserJobSet, IN ULONG Flags );`
+  - `NtQueryInformationJobObject` (function, line 17038) `NTSTATUS NTAPI NtQueryInformationJobObject ( _In_opt_ HANDLE JobHandle, IN JOBOBJECTINFOCLASS JobObjectInformationClass, OUT PVOID JobObjectInformation, IN ULONG JobObjectInformationLength, OUT OPTION`
+  - `NtSetInformationJobObject` (function, line 17049) `NTSTATUS NTAPI NtSetInformationJobObject ( IN HANDLE JobHandle, IN JOBOBJECTINFOCLASS JobObjectInformationClass, IN PVOID JobObjectInformation, IN ULONG JobObjectInformationLength );`
+  - `NtCreateKey` (function, line 17059) `NTSTATUS NTAPI NtCreateKey( OUT PHANDLE KeyHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, ULONG TitleIndex, _In_opt_ PUNICODE_STRING Class, IN ULONG CreateOptions, OUT O`
+  - `NtDeleteKey` (function, line 17072) `NTSTATUS NTAPI NtDeleteKey( IN HANDLE KeyHandle );`
+  - `NtDeleteValueKey` (function, line 17079) `NTSTATUS NTAPI NtDeleteValueKey( IN HANDLE KeyHandle, IN PUNICODE_STRING ValueName );`
+  - `NtEnumerateKey` (function, line 17087) `NTSTATUS NTAPI NtEnumerateKey( IN HANDLE KeyHandle, IN ULONG Index, IN KEY_INFORMATION_CLASS KeyInformationClass, OUT OPTIONAL PVOID KeyInformation, IN ULONG Length, OUT PULONG ResultLength );`
+  - `NtEnumerateValueKey` (function, line 17099) `NTSTATUS NTAPI NtEnumerateValueKey( IN HANDLE KeyHandle, IN ULONG Index, IN KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, OUT OPTIONAL PVOID KeyValueInformation, IN ULONG Length, OUT PULONG Re`
+  - `NtFlushKey` (function, line 17111) `NTSTATUS NTAPI NtFlushKey( IN HANDLE KeyHandle );`
+  - `NtInitializeRegistry` (function, line 17118) `NTSTATUS NTAPI NtInitializeRegistry( IN USHORT BootCondition );`
+  - `NtNotifyChangeKey` (function, line 17125) `NTSTATUS NTAPI NtNotifyChangeKey( IN HANDLE KeyHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG CompletionFil`
+  - `NtNotifyChangeMultipleKeys` (function, line 17141) `NTSTATUS NTAPI NtNotifyChangeMultipleKeys( IN HANDLE MasterKeyHandle, _In_opt_ ULONG Count, _In_opt_ OBJECT_ATTRIBUTES SlaveObjects[], _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_o`
+  - `NtLoadKey` (function, line 17159) `NTSTATUS NTAPI NtLoadKey( IN POBJECT_ATTRIBUTES TargetKey, IN POBJECT_ATTRIBUTES SourceFile );`
+  - `NtLoadKey2` (function, line 17167) `NTSTATUS NTAPI NtLoadKey2( IN POBJECT_ATTRIBUTES TargetKey, IN POBJECT_ATTRIBUTES SourceFile, IN ULONG Flags );`
+  - `NtLoadKeyEx` (function, line 17176) `NTSTATUS NTAPI NtLoadKeyEx( IN POBJECT_ATTRIBUTES TargetKey, IN POBJECT_ATTRIBUTES SourceFile, IN ULONG Flags, _In_opt_ HANDLE TrustClassKey );`
+  - `NtOpenKey` (function, line 17186) `NTSTATUS NTAPI NtOpenKey( OUT PHANDLE KeyHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtQueryKey` (function, line 17195) `NTSTATUS NTAPI NtQueryKey( IN HANDLE KeyHandle, IN KEY_INFORMATION_CLASS KeyInformationClass, OUT OPTIONAL PVOID KeyInformation, IN ULONG Length, OUT PULONG ResultLength );`
+  - `NtQueryValueKey` (function, line 17206) `NTSTATUS NTAPI NtQueryValueKey( IN HANDLE KeyHandle, IN PUNICODE_STRING ValueName, IN KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, OUT OPTIONAL PVOID KeyValueInformation, IN ULONG Length, OUT`
+  - `NtQueryMultipleValueKey` (function, line 17218) `NTSTATUS NTAPI NtQueryMultipleValueKey( IN HANDLE KeyHandle, _Inout_ PKEY_VALUE_ENTRY ValueEntries, IN ULONG EntryCount, OUT PVOID ValueBuffer, _Inout_ PULONG BufferLength, OUT OPTIONAL PULONG Require`
+  - `NtReplaceKey` (function, line 17230) `NTSTATUS NTAPI NtReplaceKey( IN POBJECT_ATTRIBUTES NewFile, IN HANDLE TargetHandle, IN POBJECT_ATTRIBUTES OldFile );`
+  - `NtRenameKey` (function, line 17239) `NTSTATUS NTAPI NtRenameKey( IN HANDLE KeyHandle, IN PUNICODE_STRING NewName );`
+  - `NtCompactKeys` (function, line 17247) `NTSTATUS NTAPI NtCompactKeys( IN ULONG Count, IN HANDLE KeyArray[] );`
+  - `NtCompressKey` (function, line 17255) `NTSTATUS NTAPI NtCompressKey( IN HANDLE Key );`
+  - `NtRestoreKey` (function, line 17262) `NTSTATUS NTAPI NtRestoreKey( IN HANDLE KeyHandle, IN HANDLE FileHandle, IN ULONG Flags );`
+  - `NtSaveKey` (function, line 17271) `NTSTATUS NTAPI NtSaveKey( IN HANDLE KeyHandle, IN HANDLE FileHandle );`
+  - `NtSaveKeyEx` (function, line 17279) `NTSTATUS NTAPI NtSaveKeyEx( IN HANDLE KeyHandle, IN HANDLE FileHandle, IN ULONG Format );`
+  - `NtSaveMergedKeys` (function, line 17288) `NTSTATUS NTAPI NtSaveMergedKeys( IN HANDLE HighPrecedenceKeyHandle, IN HANDLE LowPrecedenceKeyHandle, IN HANDLE FileHandle );`
+  - `NtSetValueKey` (function, line 17297) `NTSTATUS NTAPI NtSetValueKey( IN HANDLE KeyHandle, IN PUNICODE_STRING ValueName, _In_opt_ ULONG TitleIndex, IN ULONG Type, _In_opt_ PVOID Data, IN ULONG DataSize );`
+  - `NtUnloadKey` (function, line 17309) `NTSTATUS NTAPI NtUnloadKey( IN POBJECT_ATTRIBUTES TargetKey );`
+  - `NtUnloadKey2` (function, line 17316) `NTSTATUS NTAPI NtUnloadKey2( IN POBJECT_ATTRIBUTES TargetKey, IN ULONG Flags );`
+  - `NtUnloadKeyEx` (function, line 17324) `NTSTATUS NTAPI NtUnloadKeyEx( IN POBJECT_ATTRIBUTES TargetKey, _In_opt_ HANDLE Event );`
+  - `NtSetInformationKey` (function, line 17332) `NTSTATUS NTAPI NtSetInformationKey( IN HANDLE KeyHandle, IN KEY_SET_INFORMATION_CLASS KeySetInformationClass, IN PVOID KeySetInformation, IN ULONG KeySetInformationLength );`
+  - `NtQueryOpenSubKeys` (function, line 17342) `NTSTATUS NTAPI NtQueryOpenSubKeys( IN POBJECT_ATTRIBUTES TargetKey, OUT PULONG HandleCount );`
+  - `NtQueryOpenSubKeysEx` (function, line 17350) `NTSTATUS NTAPI NtQueryOpenSubKeysEx( IN POBJECT_ATTRIBUTES TargetKey, IN ULONG BufferLength, OUT PVOID Buffer, OUT PULONG RequiredSize );`
+  - `NtLockRegistryKey` (function, line 17360) `NTSTATUS NTAPI NtLockRegistryKey( IN HANDLE KeyHandle );`
+  - `NtLockProductActivationKeys` (function, line 17367) `NTSTATUS NTAPI NtLockProductActivationKeys( _Inout_opt_ ULONG *pPrivateVer, OUT OPTIONAL ULONG *pSafeMode );`
+  - `NtAccessCheck` (function, line 17375) `NTSTATUS NTAPI NtAccessCheck ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN PGENERIC_MAPPING GenericMapping, OUT PPRIVILEGE_SET PrivilegeSet, _In`
+  - `NtAccessCheckByType` (function, line 17389) `NTSTATUS NTAPI NtAccessCheckByType ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, _In_opt_ PSID PrincipalSelfSid, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN POBJECT_TYPE_LIST ObjectTypeLis`
+  - `NtAccessCheckByTypeResultList` (function, line 17406) `NTSTATUS NTAPI NtAccessCheckByTypeResultList ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, _In_opt_ PSID PrincipalSelfSid, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN POBJECT_TYPE_LIST Obj`
+  - `NtCreateToken` (function, line 17423) `NTSTATUS NTAPI NtCreateToken( OUT PHANDLE TokenHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN TOKEN_TYPE TokenType, IN PLUID AuthenticationId, IN PLARGE_INTEGER`
+  - `NtCompareTokens` (function, line 17442) `NTSTATUS NTAPI NtCompareTokens( IN HANDLE FirstTokenHandle, IN HANDLE SecondTokenHandle, OUT PBOOLEAN Equal );`
+  - `NtOpenThreadToken` (function, line 17451) `NTSTATUS NTAPI NtOpenThreadToken( IN HANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN BOOLEAN OpenAsSelf, OUT PHANDLE TokenHandle );`
+  - `NtOpenThreadTokenEx` (function, line 17461) `NTSTATUS NTAPI NtOpenThreadTokenEx( IN HANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN BOOLEAN OpenAsSelf, IN ULONG HandleAttributes, OUT PHANDLE TokenHandle );`
+  - `NtOpenProcessToken` (function, line 17472) `NTSTATUS NTAPI NtOpenProcessToken( IN HANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, OUT PHANDLE TokenHandle );`
+  - `NtOpenProcessTokenEx` (function, line 17481) `NTSTATUS NTAPI NtOpenProcessTokenEx( IN HANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAttributes, OUT PHANDLE TokenHandle );`
+  - `NtDuplicateToken` (function, line 17491) `NTSTATUS NTAPI NtDuplicateToken( IN HANDLE ExistingTokenHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN BOOLEAN EffectiveOnly, IN TOKEN_TYPE TokenType, OUT PHANDLE New`
+  - `NtFilterToken` (function, line 17503) `NTSTATUS NTAPI NtFilterToken ( IN HANDLE ExistingTokenHandle, IN ULONG Flags, _In_opt_ PTOKEN_GROUPS SidsToDisable, _In_opt_ PTOKEN_PRIVILEGES PrivilegesToDelete, _In_opt_ PTOKEN_GROUPS RestrictedSids`
+  - `NtImpersonateAnonymousToken` (function, line 17515) `NTSTATUS NTAPI NtImpersonateAnonymousToken( IN HANDLE ThreadHandle );`
+  - `NtQueryInformationToken` (function, line 17522) `NTSTATUS NTAPI NtQueryInformationToken ( IN HANDLE TokenHandle, IN TOKEN_INFORMATION_CLASS TokenInformationClass, OUT PVOID TokenInformation, IN ULONG TokenInformationLength, OUT PULONG ReturnLength )`
+  - `NtSetInformationToken` (function, line 17533) `NTSTATUS NTAPI NtSetInformationToken ( IN HANDLE TokenHandle, IN TOKEN_INFORMATION_CLASS TokenInformationClass, IN PVOID TokenInformation, IN ULONG TokenInformationLength );`
+  - `NtAdjustPrivilegesToken` (function, line 17543) `NTSTATUS NTAPI NtAdjustPrivilegesToken ( IN HANDLE TokenHandle, IN BOOLEAN DisableAllPrivileges, _In_opt_ PTOKEN_PRIVILEGES NewState, _In_opt_ ULONG BufferLength, OUT PTOKEN_PRIVILEGES PreviousState, `
+  - `NtAdjustGroupsToken` (function, line 17555) `NTSTATUS NTAPI NtAdjustGroupsToken ( IN HANDLE TokenHandle, IN BOOLEAN ResetToDefault, IN PTOKEN_GROUPS NewState , _In_opt_ ULONG BufferLength , OUT PTOKEN_GROUPS PreviousState , OUT PULONG ReturnLeng`
+  - `NtPrivilegeCheck` (function, line 17567) `NTSTATUS NTAPI NtPrivilegeCheck ( IN HANDLE ClientToken, _Inout_ PPRIVILEGE_SET RequiredPrivileges, OUT PBOOLEAN Result );`
+  - `NtAccessCheckAndAuditAlarm` (function, line 17576) `NTSTATUS NTAPI NtAccessCheckAndAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN PSECURITY_DESCRIPTOR Securit`
+  - `NtAccessCheckByTypeAndAuditAlarm` (function, line 17593) `NTSTATUS NTAPI NtAccessCheckByTypeAndAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN PSECURITY_DESCRIPTOR S`
+  - `NtAccessCheckByTypeResultListAndAuditAlarm` (function, line 17615) `NTSTATUS NTAPI NtAccessCheckByTypeResultListAndAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN PSECURITY_DE`
+  - `NtAccessCheckByTypeResultListAndAuditAlarmByHandle` (function, line 17637) `NTSTATUS NTAPI NtAccessCheckByTypeResultListAndAuditAlarmByHandle ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN HANDLE ClientToken, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STR`
+  - `NtOpenObjectAuditAlarm` (function, line 17660) `NTSTATUS NTAPI NtOpenObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, _In_opt_ PSECURITY_DESCRIPTOR Secur`
+  - `NtPrivilegeObjectAuditAlarm` (function, line 17678) `NTSTATUS NTAPI NtPrivilegeObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN PPRIVILEGE_SET Privileges, IN BOOLEAN Ac`
+  - `NtCloseObjectAuditAlarm` (function, line 17690) `NTSTATUS NTAPI NtCloseObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN BOOLEAN GenerateOnClose );`
+  - `NtDeleteObjectAuditAlarm` (function, line 17699) `NTSTATUS NTAPI NtDeleteObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, _In_opt_ PVOID HandleId, IN BOOLEAN GenerateOnClose );`
+  - `NtPrivilegedServiceAuditAlarm` (function, line 17708) `NTSTATUS NTAPI NtPrivilegedServiceAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN PUNICODE_STRING ServiceName, IN HANDLE ClientToken, IN PPRIVILEGE_SET Privileges, IN BOOLEAN AccessGranted );`
+  - `NtContinue` (function, line 17719) `NTSTATUS NTAPI NtContinue ( IN PCONTEXT ContextRecord, IN BOOLEAN TestAlert );`
+  - `NtRaiseException` (function, line 17727) `NTSTATUS NTAPI NtRaiseException ( IN PEXCEPTION_RECORD ExceptionRecord, IN PCONTEXT ContextRecord, IN BOOLEAN FirstChance );`
+  - `ZwDelayExecution` (function, line 17741) `NTSTATUS NTAPI ZwDelayExecution ( IN BOOLEAN Alertable, IN PLARGE_INTEGER DelayInterval );`
+  - `ZwQuerySystemEnvironmentValue` (function, line 17747) `NTSTATUS NTAPI ZwQuerySystemEnvironmentValue ( IN PUNICODE_STRING VariableName, OUT PWSTR VariableValue, IN USHORT ValueLength, OUT OPTIONAL PUSHORT ReturnLength );`
+  - `ZwSetSystemEnvironmentValue` (function, line 17758) `NTSTATUS NTAPI ZwSetSystemEnvironmentValue ( IN PUNICODE_STRING VariableName, IN PUNICODE_STRING VariableValue );`
+  - `ZwQuerySystemEnvironmentValueEx` (function, line 17767) `NTSTATUS NTAPI ZwQuerySystemEnvironmentValueEx ( IN PUNICODE_STRING VariableName, IN LPGUID VendorGuid, OUT OPTIONAL PVOID Value, _Inout_ PULONG ValueLength, OUT OPTIONAL PULONG Attributes );`
+  - `ZwSetSystemEnvironmentValueEx` (function, line 17779) `NTSTATUS NTAPI ZwSetSystemEnvironmentValueEx ( IN PUNICODE_STRING VariableName, IN LPGUID VendorGuid, _In_opt_ PVOID Value, IN ULONG ValueLength, IN ULONG Attributes );`
+  - `ZwEnumerateSystemEnvironmentValuesEx` (function, line 17791) `NTSTATUS NTAPI ZwEnumerateSystemEnvironmentValuesEx ( IN ULONG InformationClass, OUT PVOID Buffer, _Inout_ PULONG BufferLength );`
+  - `ZwAddBootEntry` (function, line 17801) `NTSTATUS NTAPI ZwAddBootEntry ( IN PBOOT_ENTRY BootEntry, OUT OPTIONAL PULONG Id );`
+  - `ZwDeleteBootEntry` (function, line 17810) `NTSTATUS NTAPI ZwDeleteBootEntry ( IN ULONG Id );`
+  - `ZwModifyBootEntry` (function, line 17818) `NTSTATUS NTAPI ZwModifyBootEntry ( IN PBOOT_ENTRY BootEntry );`
+  - `ZwEnumerateBootEntries` (function, line 17826) `NTSTATUS NTAPI ZwEnumerateBootEntries ( OUT OPTIONAL PVOID Buffer, _Inout_ PULONG BufferLength );`
+  - `ZwQueryBootEntryOrder` (function, line 17835) `NTSTATUS NTAPI ZwQueryBootEntryOrder ( OUT OPTIONAL PULONG Ids, _Inout_ PULONG Count );`
+  - `ZwSetBootEntryOrder` (function, line 17844) `NTSTATUS NTAPI ZwSetBootEntryOrder ( IN PULONG Ids, IN ULONG Count );`
+  - `ZwQueryBootOptions` (function, line 17853) `NTSTATUS NTAPI ZwQueryBootOptions ( OUT OPTIONAL PBOOT_OPTIONS BootOptions, _Inout_ PULONG BootOptionsLength );`
+  - `ZwSetBootOptions` (function, line 17862) `NTSTATUS NTAPI ZwSetBootOptions ( IN PBOOT_OPTIONS BootOptions, IN ULONG FieldsToChange );`
+  - `ZwTranslateFilePath` (function, line 17871) `NTSTATUS NTAPI ZwTranslateFilePath ( IN PFILE_PATH InputFilePath, IN ULONG OutputType, OUT OPTIONAL PFILE_PATH OutputFilePath, _Inout_opt_ PULONG OutputFilePathLength );`
+  - `ZwAddDriverEntry` (function, line 17882) `NTSTATUS NTAPI ZwAddDriverEntry ( IN PEFI_DRIVER_ENTRY DriverEntry, OUT OPTIONAL PULONG Id );`
+  - `ZwDeleteDriverEntry` (function, line 17891) `NTSTATUS NTAPI ZwDeleteDriverEntry ( IN ULONG Id );`
+  - `ZwModifyDriverEntry` (function, line 17899) `NTSTATUS NTAPI ZwModifyDriverEntry ( IN PEFI_DRIVER_ENTRY DriverEntry );`
+  - `ZwEnumerateDriverEntries` (function, line 17907) `NTSTATUS NTAPI ZwEnumerateDriverEntries ( OUT PVOID Buffer, _Inout_ PULONG BufferLength );`
+  - `ZwQueryDriverEntryOrder` (function, line 17916) `NTSTATUS NTAPI ZwQueryDriverEntryOrder ( OUT PULONG Ids, _Inout_ PULONG Count );`
+  - `ZwSetDriverEntryOrder` (function, line 17925) `NTSTATUS NTAPI ZwSetDriverEntryOrder ( IN PULONG Ids, IN ULONG Count );`
+  - `ZwClearEvent` (function, line 17934) `NTSTATUS NTAPI ZwClearEvent ( IN HANDLE EventHandle );`
+  - `ZwCreateEvent` (function, line 17942) `NTSTATUS NTAPI ZwCreateEvent ( OUT PHANDLE EventHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN EVENT_TYPE EventType, IN BOOLEAN InitialState );`
+  - `ZwOpenEvent` (function, line 17954) `NTSTATUS NTAPI ZwOpenEvent ( OUT PHANDLE EventHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwPulseEvent` (function, line 17964) `NTSTATUS NTAPI ZwPulseEvent ( IN HANDLE EventHandle, OUT OPTIONAL PLONG PreviousState );`
+  - `ZwQueryEvent` (function, line 17973) `NTSTATUS NTAPI ZwQueryEvent ( IN HANDLE EventHandle, IN EVENT_INFORMATION_CLASS EventInformationClass, OUT PVOID EventInformation, IN ULONG EventInformationLength, OUT OPTIONAL PULONG ReturnLength );`
+  - `ZwResetEvent` (function, line 17985) `NTSTATUS NTAPI ZwResetEvent ( IN HANDLE EventHandle, OUT OPTIONAL PLONG PreviousState );`
+  - `ZwSetEvent` (function, line 17994) `NTSTATUS NTAPI ZwSetEvent ( IN HANDLE EventHandle, OUT OPTIONAL PLONG PreviousState );`
+  - `ZwSetEventBoostPriority` (function, line 18003) `NTSTATUS NTAPI ZwSetEventBoostPriority ( IN HANDLE EventHandle );`
+  - `ZwCreateEventPair` (function, line 18011) `NTSTATUS NTAPI ZwCreateEventPair ( OUT PHANDLE EventPairHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwOpenEventPair` (function, line 18021) `NTSTATUS NTAPI ZwOpenEventPair ( OUT PHANDLE EventPairHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwWaitLowEventPair` (function, line 18031) `NTSTATUS NTAPI ZwWaitLowEventPair ( IN HANDLE EventPairHandle );`
+  - `ZwWaitHighEventPair` (function, line 18039) `NTSTATUS NTAPI ZwWaitHighEventPair ( IN HANDLE EventPairHandle );`
+  - `ZwSetLowWaitHighEventPair` (function, line 18047) `NTSTATUS NTAPI ZwSetLowWaitHighEventPair ( IN HANDLE EventPairHandle );`
+  - `ZwSetHighWaitLowEventPair` (function, line 18055) `NTSTATUS NTAPI ZwSetHighWaitLowEventPair ( IN HANDLE EventPairHandle );`
+  - `ZwSetLowEventPair` (function, line 18063) `NTSTATUS NTAPI ZwSetLowEventPair ( IN HANDLE EventPairHandle );`
+  - `ZwSetHighEventPair` (function, line 18071) `NTSTATUS NTAPI ZwSetHighEventPair ( IN HANDLE EventPairHandle );`
+  - `ZwCreateMutant` (function, line 18079) `NTSTATUS NTAPI ZwCreateMutant ( OUT PHANDLE MutantHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN BOOLEAN InitialOwner );`
+  - `ZwOpenMutant` (function, line 18090) `NTSTATUS NTAPI ZwOpenMutant ( OUT PHANDLE MutantHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwQueryMutant` (function, line 18100) `NTSTATUS NTAPI ZwQueryMutant ( IN HANDLE MutantHandle, IN MUTANT_INFORMATION_CLASS MutantInformationClass, OUT PVOID MutantInformation, IN ULONG MutantInformationLength, OUT OPTIONAL PULONG ReturnLeng`
+  - `ZwReleaseMutant` (function, line 18112) `NTSTATUS NTAPI ZwReleaseMutant ( IN HANDLE MutantHandle, OUT OPTIONAL PLONG PreviousCount );`
+  - `ZwCreateSemaphore` (function, line 18121) `NTSTATUS NTAPI ZwCreateSemaphore ( OUT PHANDLE SemaphoreHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN LONG InitialCount, IN LONG MaximumCount );`
+  - `ZwOpenSemaphore` (function, line 18133) `NTSTATUS NTAPI ZwOpenSemaphore( OUT PHANDLE SemaphoreHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwQuerySemaphore` (function, line 18143) `NTSTATUS NTAPI ZwQuerySemaphore ( IN HANDLE SemaphoreHandle, IN SEMAPHORE_INFORMATION_CLASS SemaphoreInformationClass, OUT PVOID SemaphoreInformation, IN ULONG SemaphoreInformationLength, OUT OPTIONAL`
+  - `ZwReleaseSemaphore` (function, line 18155) `NTSTATUS NTAPI ZwReleaseSemaphore( IN HANDLE SemaphoreHandle, IN LONG ReleaseCount, OUT OPTIONAL PLONG PreviousCount );`
+  - `ZwCreateTimer` (function, line 18165) `NTSTATUS NTAPI ZwCreateTimer ( OUT PHANDLE TimerHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN TIMER_TYPE TimerType );`
+  - `ZwOpenTimer` (function, line 18176) `NTSTATUS NTAPI ZwOpenTimer ( OUT PHANDLE TimerHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwCancelTimer` (function, line 18186) `NTSTATUS NTAPI ZwCancelTimer ( IN HANDLE TimerHandle, OUT OPTIONAL PBOOLEAN CurrentState );`
+  - `ZwQueryTimer` (function, line 18195) `NTSTATUS NTAPI ZwQueryTimer ( IN HANDLE TimerHandle, IN TIMER_INFORMATION_CLASS TimerInformationClass, OUT PVOID TimerInformation, IN ULONG TimerInformationLength, OUT OPTIONAL PULONG ReturnLength );`
+  - `ZwSetTimer` (function, line 18207) `NTSTATUS NTAPI ZwSetTimer ( IN HANDLE TimerHandle, IN PLARGE_INTEGER DueTime, _In_opt_ PTIMER_APC_ROUTINE TimerApcRoutine, _In_opt_ PVOID TimerContext, IN BOOLEAN ResumeTimer, _In_opt_ LONG Period, OU`
+  - `ZwQuerySystemTime` (function, line 18221) `NTSTATUS NTAPI ZwQuerySystemTime ( OUT PLARGE_INTEGER SystemTime );`
+  - `ZwSetSystemTime` (function, line 18229) `NTSTATUS NTAPI ZwSetSystemTime ( _In_opt_ PLARGE_INTEGER SystemTime, OUT OPTIONAL PLARGE_INTEGER PreviousTime );`
+  - `ZwQueryTimerResolution` (function, line 18238) `NTSTATUS NTAPI ZwQueryTimerResolution ( OUT PULONG MaximumTime, OUT PULONG MinimumTime, OUT PULONG CurrentTime );`
+  - `ZwSetTimerResolution` (function, line 18248) `NTSTATUS NTAPI ZwSetTimerResolution ( IN ULONG DesiredTime, IN BOOLEAN SetResolution, OUT PULONG ActualTime );`
+  - `ZwAllocateLocallyUniqueId` (function, line 18258) `NTSTATUS NTAPI ZwAllocateLocallyUniqueId ( OUT PLUID Luid );`
+  - `ZwSetUuidSeed` (function, line 18266) `NTSTATUS NTAPI ZwSetUuidSeed ( IN PCHAR Seed );`
+  - `ZwAllocateUuids` (function, line 18274) `NTSTATUS NTAPI ZwAllocateUuids ( OUT PULARGE_INTEGER Time, OUT PULONG Range, OUT PULONG Sequence, OUT PCHAR Seed );`
+  - `ZwCreateProfile` (function, line 18285) `NTSTATUS NTAPI ZwCreateProfile ( OUT PHANDLE ProfileHandle, IN HANDLE Process OPTIONAL, IN PVOID ProfileBase, IN SIZE_T ProfileSize, IN ULONG BucketSize, IN PULONG Buffer, IN ULONG BufferSize, IN KPRO`
+  - `ZwStartProfile` (function, line 18301) `NTSTATUS NTAPI ZwStartProfile ( IN HANDLE ProfileHandle );`
+  - `ZwStopProfile` (function, line 18309) `NTSTATUS NTAPI ZwStopProfile ( IN HANDLE ProfileHandle );`
+  - `ZwSetIntervalProfile` (function, line 18317) `NTSTATUS NTAPI ZwSetIntervalProfile ( IN ULONG Interval, IN KPROFILE_SOURCE Source );`
+  - `ZwQueryIntervalProfile` (function, line 18326) `NTSTATUS NTAPI ZwQueryIntervalProfile ( IN KPROFILE_SOURCE ProfileSource, OUT PULONG Interval );`
+  - `ZwQueryPerformanceCounter` (function, line 18335) `NTSTATUS NTAPI ZwQueryPerformanceCounter ( OUT PLARGE_INTEGER PerformanceCounter, OUT OPTIONAL PLARGE_INTEGER PerformanceFrequency );`
+  - `ZwCreateKeyedEvent` (function, line 18344) `NTSTATUS NTAPI ZwCreateKeyedEvent ( OUT PHANDLE KeyedEventHandle, IN ACCESS_MASK DesiredAccess, _In_opt_ POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG Flags );`
+  - `ZwOpenKeyedEvent` (function, line 18355) `NTSTATUS NTAPI ZwOpenKeyedEvent ( OUT PHANDLE KeyedEventHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwReleaseKeyedEvent` (function, line 18365) `NTSTATUS NTAPI ZwReleaseKeyedEvent ( IN HANDLE KeyedEventHandle, IN PVOID KeyValue, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `ZwWaitForKeyedEvent` (function, line 18376) `NTSTATUS NTAPI ZwWaitForKeyedEvent ( IN HANDLE KeyedEventHandle, IN PVOID KeyValue, IN BOOLEAN Alertable, _In_opt_ PLARGE_INTEGER Timeout );`
+  - `ZwQuerySystemInformation` (function, line 18387) `NTSTATUS NTAPI ZwQuerySystemInformation ( IN SYSTEM_INFORMATION_CLASS SystemInformationClass, OUT OPTIONAL PVOID SystemInformation, IN ULONG SystemInformationLength, OUT OPTIONAL PULONG ReturnLength )`
+  - `ZwSetSystemInformation` (function, line 18398) `NTSTATUS NTAPI ZwSetSystemInformation ( IN SYSTEM_INFORMATION_CLASS SystemInformationClass, _In_opt_ PVOID SystemInformation, IN ULONG SystemInformationLength );`
+  - `ZwSystemDebugControl` (function, line 18408) `NTSTATUS NTAPI ZwSystemDebugControl ( IN SYSDBG_COMMAND Command, _In_opt_ PVOID InputBuffer, IN ULONG InputBufferLength, OUT OPTIONAL PVOID OutputBuffer, IN ULONG OutputBufferLength, OUT OPTIONAL PULO`
+  - `ZwRaiseHardError` (function, line 18421) `NTSTATUS NTAPI ZwRaiseHardError ( IN NTSTATUS ErrorStatus, IN ULONG NumberOfParameters, IN ULONG UnicodeStringParameterMask, _In_opt_ PULONG_PTR Parameters, IN ULONG ValidResponseOptions, OUT PULONG R`
+  - `ZwQueryDefaultLocale` (function, line 18434) `NTSTATUS NTAPI ZwQueryDefaultLocale ( IN BOOLEAN UserProfile, OUT PLCID DefaultLocaleId );`
+  - `ZwSetDefaultLocale` (function, line 18443) `NTSTATUS NTAPI ZwSetDefaultLocale ( IN BOOLEAN UserProfile, IN LCID DefaultLocaleId );`
+  - `ZwQueryInstallUILanguage` (function, line 18452) `NTSTATUS NTAPI ZwQueryInstallUILanguage ( OUT LANGID *InstallUILanguageId );`
+  - `ZwQueryDefaultUILanguage` (function, line 18460) `NTSTATUS NTAPI ZwQueryDefaultUILanguage ( OUT LANGID *DefaultUILanguageId );`
+  - `ZwSetDefaultUILanguage` (function, line 18468) `NTSTATUS NTAPI ZwSetDefaultUILanguage ( IN LANGID DefaultUILanguageId );`
+  - `ZwSetDefaultHardErrorPort` (function, line 18476) `NTSTATUS NTAPI ZwSetDefaultHardErrorPort( IN HANDLE DefaultHardErrorPort );`
+  - `ZwShutdownSystem` (function, line 18484) `NTSTATUS NTAPI ZwShutdownSystem ( IN SHUTDOWN_ACTION Action );`
+  - `ZwDisplayString` (function, line 18492) `NTSTATUS NTAPI ZwDisplayString ( IN PUNICODE_STRING String );`
+  - `ZwAddAtom` (function, line 18500) `NTSTATUS NTAPI ZwAddAtom ( _In_opt_ PWSTR AtomName, IN ULONG Length, OUT OPTIONAL PRTL_ATOM Atom );`
+  - `ZwFindAtom` (function, line 18510) `NTSTATUS NTAPI ZwFindAtom ( _In_opt_ PWSTR AtomName, IN ULONG Length, OUT OPTIONAL PRTL_ATOM Atom );`
+  - `ZwDeleteAtom` (function, line 18520) `NTSTATUS NTAPI ZwDeleteAtom ( IN RTL_ATOM Atom );`
+  - `ZwQueryInformationAtom` (function, line 18528) `NTSTATUS NTAPI ZwQueryInformationAtom( IN RTL_ATOM Atom, IN ATOM_INFORMATION_CLASS AtomInformationClass, OUT OPTIONAL PVOID AtomInformation, IN ULONG AtomInformationLength, OUT OPTIONAL PULONG ReturnL`
+  - `ZwCancelIoFile` (function, line 18540) `NTSTATUS NTAPI ZwCancelIoFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock );`
+  - `ZwCreateNamedPipeFile` (function, line 18549) `NTSTATUS NTAPI ZwCreateNamedPipeFile ( OUT PHANDLE FileHandle, IN ULONG DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG ShareAccess, IN ULONG Create`
+  - `ZwCreateMailslotFile` (function, line 18570) `NTSTATUS NTAPI ZwCreateMailslotFile ( OUT PHANDLE FileHandle, IN ULONG DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG CreateOptions, IN ULONG Mails`
+  - `ZwDeleteFile` (function, line 18585) `NTSTATUS NTAPI ZwDeleteFile ( IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwFlushBuffersFile` (function, line 18593) `NTSTATUS NTAPI ZwFlushBuffersFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock );`
+  - `ZwNotifyChangeDirectoryFile` (function, line 18602) `NTSTATUS NTAPI ZwNotifyChangeDirectoryFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID `
+  - `ZwQueryAttributesFile` (function, line 18618) `NTSTATUS NTAPI ZwQueryAttributesFile ( IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PFILE_BASIC_INFORMATION FileInformation );`
+  - `ZwQueryFullAttributesFile` (function, line 18627) `NTSTATUS NTAPI ZwQueryFullAttributesFile( IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PFILE_NETWORK_OPEN_INFORMATION FileInformation );`
+  - `ZwQueryEaFile` (function, line 18636) `NTSTATUS NTAPI ZwQueryEaFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID Buffer, IN ULONG Length, IN BOOLEAN ReturnSingleEntry, IN PVOID EaList, IN ULONG EaListLength, _In_op`
+  - `ZwCreateFile` (function, line 18652) `NTSTATUS NTAPI ZwCreateFile ( OUT PHANDLE FileHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, _In_opt_ PLARGE_INTEGER AllocationSize, `
+  - `ZwDeviceIoControlFile` (function, line 18669) `NTSTATUS NTAPI ZwDeviceIoControlFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG IoContr`
+  - `ZwFsControlFile` (function, line 18686) `NTSTATUS NTAPI ZwFsControlFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG FsControlCode`
+  - `ZwLockFile` (function, line 18703) `NTSTATUS NTAPI ZwLockFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PLARGE_INTEGER ByteOffse`
+  - `ZwOpenFile` (function, line 18720) `NTSTATUS NTAPI ZwOpenFile ( OUT PHANDLE FileHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG ShareAccess, IN ULONG OpenOptions`
+  - `ZwQueryDirectoryFile` (function, line 18733) `NTSTATUS NTAPI ZwQueryDirectoryFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID FileInf`
+  - `ZwQueryInformationFile` (function, line 18751) `NTSTATUS NTAPI ZwQueryInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID FileInformation, IN ULONG Length, IN FILE_INFORMATION_CLASS FileInformationClass );`
+  - `ZwQueryQuotaInformationFile` (function, line 18763) `NTSTATUS NTAPI ZwQueryQuotaInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID Buffer, IN ULONG Length, IN BOOLEAN ReturnSingleEntry, _In_opt_ PVOID SidList, IN ULONG`
+  - `ZwQueryVolumeInformationFile` (function, line 18779) `NTSTATUS NTAPI ZwQueryVolumeInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID FsInformation, IN ULONG Length, IN FS_INFORMATION_CLASS FsInformationClass );`
+  - `ZwReadFile` (function, line 18791) `NTSTATUS NTAPI ZwReadFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, OUT PVOID Buffer, IN ULONG `
+  - `ZwSetInformationFile` (function, line 18807) `NTSTATUS NTAPI ZwSetInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID FileInformation, IN ULONG Length, IN FILE_INFORMATION_CLASS FileInformationClass );`
+  - `ZwSetQuotaInformationFile` (function, line 18819) `NTSTATUS NTAPI ZwSetQuotaInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID Buffer, IN ULONG Length );`
+  - `ZwSetVolumeInformationFile` (function, line 18830) `NTSTATUS NTAPI ZwSetVolumeInformationFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID FsInformation, IN ULONG Length, IN FS_INFORMATION_CLASS FsInformationClass );`
+  - `ZwWriteFile` (function, line 18842) `NTSTATUS NTAPI ZwWriteFile ( IN HANDLE FileHandle, _In_opt_ HANDLE Event, _In_opt_ PIO_APC_ROUTINE ApcRoutine, _In_opt_ PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID Buffer, IN ULONG `
+  - `ZwUnlockFile` (function, line 18858) `NTSTATUS NTAPI ZwUnlockFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PLARGE_INTEGER ByteOffset, IN PLARGE_INTEGER Length, IN ULONG Key );`
+  - `ZwReadFileScatter` (function, line 18870) `NTSTATUS NTAPI ZwReadFileScatter ( IN HANDLE FileHandle, IN OPTIONAL HANDLE Event, IN OPTIONAL PIO_APC_ROUTINE ApcRoutine, IN OPTIONAL PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PFILE_SE`
+  - `ZwSetEaFile` (function, line 18886) `NTSTATUS NTAPI ZwSetEaFile ( IN HANDLE FileHandle, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PVOID Buffer, IN ULONG Length );`
+  - `ZwWriteFileGather` (function, line 18897) `NTSTATUS NTAPI ZwWriteFileGather ( IN HANDLE FileHandle, IN OPTIONAL HANDLE Event, IN OPTIONAL PIO_APC_ROUTINE ApcRoutine, IN OPTIONAL PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN PFILE_SE`
+  - `ZwLoadDriver` (function, line 18913) `NTSTATUS NTAPI ZwLoadDriver ( IN PUNICODE_STRING DriverServiceName );`
+  - `ZwUnloadDriver` (function, line 18921) `NTSTATUS NTAPI ZwUnloadDriver ( IN PUNICODE_STRING DriverServiceName );`
+  - `ZwCreateIoCompletion` (function, line 18929) `NTSTATUS NTAPI ZwCreateIoCompletion ( OUT PHANDLE IoCompletionHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG Count OPTIONAL );`
+  - `ZwOpenIoCompletion` (function, line 18940) `NTSTATUS NTAPI ZwOpenIoCompletion ( OUT PHANDLE IoCompletionHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwQueryIoCompletion` (function, line 18950) `NTSTATUS NTAPI ZwQueryIoCompletion ( IN HANDLE IoCompletionHandle, IN IO_COMPLETION_INFORMATION_CLASS IoCompletionInformationClass, OUT PVOID IoCompletionInformation, IN ULONG IoCompletionInformationL`
+  - `ZwSetIoCompletion` (function, line 18962) `NTSTATUS NTAPI ZwSetIoCompletion ( IN HANDLE IoCompletionHandle, IN PVOID KeyContext, IN OPTIONAL PVOID ApcContext, IN NTSTATUS IoStatus, IN ULONG_PTR IoStatusInformation );`
+  - `ZwRemoveIoCompletion` (function, line 18974) `NTSTATUS NTAPI ZwRemoveIoCompletion ( IN HANDLE IoCompletionHandle, OUT PVOID *KeyContext, OUT PVOID *ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN OPTIONAL PLARGE_INTEGER Timeout );`
+  - `ZwCallbackReturn` (function, line 18986) `NTSTATUS NTAPI ZwCallbackReturn ( IN PVOID OutputBuffer OPTIONAL, IN ULONG OutputLength, IN NTSTATUS Status );`
+  - `ZwQueryDebugFilterState` (function, line 18996) `NTSTATUS NTAPI ZwQueryDebugFilterState ( IN ULONG ComponentId, IN ULONG Level );`
+  - `ZwSetDebugFilterState` (function, line 19005) `NTSTATUS NTAPI ZwSetDebugFilterState ( IN ULONG ComponentId, IN ULONG Level, IN BOOLEAN State );`
+  - `ZwYieldExecution` (function, line 19015) `NTSTATUS NTAPI ZwYieldExecution ( VOID );`
+  - `ZwCreatePort` (function, line 19023) `NTSTATUS NTAPI ZwCreatePort( OUT PHANDLE PortHandle, IN POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG MaxConnectionInfoLength, IN ULONG MaxMessageLength, IN OPTIONAL ULONG MaxPoolUsage );`
+  - `ZwCreateWaitablePort` (function, line 19035) `NTSTATUS NTAPI ZwCreateWaitablePort( OUT PHANDLE PortHandle, IN POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG MaxConnectionInfoLength, IN ULONG MaxMessageLength, IN OPTIONAL ULONG MaxPoolUsage );`
+  - `ZwConnectPort` (function, line 19047) `NTSTATUS NTAPI ZwConnectPort( OUT PHANDLE PortHandle, IN PUNICODE_STRING PortName, IN PSECURITY_QUALITY_OF_SERVICE SecurityQos, _Inout_opt_ PPORT_VIEW ClientView, _Inout_opt_ PREMOTE_PORT_VIEW ServerV`
+  - `ZwSecureConnectPort` (function, line 19062) `NTSTATUS NTAPI ZwSecureConnectPort( OUT PHANDLE PortHandle, IN PUNICODE_STRING PortName, IN PSECURITY_QUALITY_OF_SERVICE SecurityQos, _Inout_opt_ PPORT_VIEW ClientView, IN OPTIONAL PSID RequiredServer`
+  - `ZwListenPort` (function, line 19078) `NTSTATUS NTAPI ZwListenPort( IN HANDLE PortHandle, OUT PPORT_MESSAGE ConnectionRequest );`
+  - `ZwAcceptConnectPort` (function, line 19087) `NTSTATUS NTAPI ZwAcceptConnectPort( OUT PHANDLE PortHandle, IN OPTIONAL PVOID PortContext, IN PPORT_MESSAGE ConnectionRequest, IN BOOLEAN AcceptConnection, _Inout_opt_ PPORT_VIEW ServerView, OUT OPTIO`
+  - `ZwCompleteConnectPort` (function, line 19100) `NTSTATUS NTAPI ZwCompleteConnectPort( IN HANDLE PortHandle );`
+  - `ZwRequestPort` (function, line 19108) `NTSTATUS NTAPI ZwRequestPort( IN HANDLE PortHandle, IN PPORT_MESSAGE RequestMessage );`
+  - `ZwRequestWaitReplyPort` (function, line 19117) `NTSTATUS NTAPI ZwRequestWaitReplyPort( IN HANDLE PortHandle, IN PPORT_MESSAGE RequestMessage, OUT PPORT_MESSAGE ReplyMessage );`
+  - `ZwReplyPort` (function, line 19127) `NTSTATUS NTAPI ZwReplyPort( IN HANDLE PortHandle, IN PPORT_MESSAGE ReplyMessage );`
+  - `ZwReplyWaitReplyPort` (function, line 19136) `NTSTATUS NTAPI ZwReplyWaitReplyPort( IN HANDLE PortHandle, _Inout_ PPORT_MESSAGE ReplyMessage );`
+  - `ZwReplyWaitReceivePort` (function, line 19145) `NTSTATUS NTAPI ZwReplyWaitReceivePort( IN HANDLE PortHandle, OUT OPTIONAL PVOID *PortContext , IN OPTIONAL PPORT_MESSAGE ReplyMessage, OUT PPORT_MESSAGE ReceiveMessage );`
+  - `ZwReplyWaitReceivePortEx` (function, line 19156) `NTSTATUS NTAPI ZwReplyWaitReceivePortEx( IN HANDLE PortHandle, OUT OPTIONAL PVOID *PortContext, IN OPTIONAL PPORT_MESSAGE ReplyMessage, OUT PPORT_MESSAGE ReceiveMessage, IN OPTIONAL PLARGE_INTEGER Tim`
+  - `ZwImpersonateClientOfPort` (function, line 19168) `NTSTATUS NTAPI ZwImpersonateClientOfPort( IN HANDLE PortHandle, IN PPORT_MESSAGE Message );`
+  - `ZwReadRequestData` (function, line 19177) `NTSTATUS NTAPI ZwReadRequestData( IN HANDLE PortHandle, IN PPORT_MESSAGE Message, IN ULONG DataEntryIndex, OUT PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesRead );`
+  - `ZwWriteRequestData` (function, line 19190) `NTSTATUS NTAPI ZwWriteRequestData( IN HANDLE PortHandle, IN PPORT_MESSAGE Message, IN ULONG DataEntryIndex, IN PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesWritten );`
+  - `ZwQueryInformationPort` (function, line 19203) `NTSTATUS NTAPI ZwQueryInformationPort( IN HANDLE PortHandle, IN PORT_INFORMATION_CLASS PortInformationClass, OUT PVOID PortInformation, IN ULONG Length, OUT OPTIONAL PULONG ReturnLength );`
+  - `ZwCreateSection` (function, line 19215) `NTSTATUS NTAPI ZwCreateSection ( OUT PHANDLE SectionHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes, IN OPTIONAL PLARGE_INTEGER MaximumSize, IN ULONG SectionPageP`
+  - `ZwOpenSection` (function, line 19229) `NTSTATUS NTAPI ZwOpenSection ( OUT PHANDLE SectionHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwMapViewOfSection` (function, line 19239) `NTSTATUS NTAPI ZwMapViewOfSection ( IN HANDLE SectionHandle, IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, IN ULONG_PTR ZeroBits, IN SIZE_T CommitSize, _Inout_ OPTIONAL PLARGE_INTEGER SectionOf`
+  - `ZwUnmapViewOfSection` (function, line 19256) `NTSTATUS NTAPI ZwUnmapViewOfSection ( IN HANDLE ProcessHandle, IN PVOID BaseAddress );`
+  - `ZwExtendSection` (function, line 19265) `NTSTATUS NTAPI ZwExtendSection ( IN HANDLE SectionHandle, _Inout_ PLARGE_INTEGER NewSectionSize );`
+  - `ZwAreMappedFilesTheSame` (function, line 19274) `NTSTATUS NTAPI ZwAreMappedFilesTheSame ( IN PVOID File1MappedAsAnImage, IN PVOID File2MappedAsFile );`
+  - `ZwAllocateVirtualMemory` (function, line 19283) `NTSTATUS NTAPI ZwAllocateVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, IN ULONG_PTR ZeroBits, _Inout_ PSIZE_T RegionSize, IN ULONG AllocationType, IN ULONG Protect );`
+  - `ZwFreeVirtualMemory` (function, line 19296) `NTSTATUS NTAPI ZwFreeVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG FreeType );`
+  - `ZwReadVirtualMemory` (function, line 19307) `NTSTATUS NTAPI ZwReadVirtualMemory ( IN HANDLE ProcessHandle, IN OPTIONAL PVOID BaseAddress, OUT PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesRead );`
+  - `ZwWriteVirtualMemory` (function, line 19319) `NTSTATUS NTAPI ZwWriteVirtualMemory ( IN HANDLE ProcessHandle, IN OPTIONAL PVOID BaseAddress, IN CONST VOID *Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesWritten );`
+  - `ZwFlushVirtualMemory` (function, line 19331) `NTSTATUS NTAPI ZwFlushVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, OUT PIO_STATUS_BLOCK IoStatus );`
+  - `ZwLockVirtualMemory` (function, line 19342) `NTSTATUS NTAPI ZwLockVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG MapType );`
+  - `ZwUnlockVirtualMemory` (function, line 19353) `NTSTATUS NTAPI ZwUnlockVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG MapType );`
+  - `ZwProtectVirtualMemory` (function, line 19364) `NTSTATUS NTAPI ZwProtectVirtualMemory ( IN HANDLE ProcessHandle, _Inout_ PVOID *BaseAddress, _Inout_ PSIZE_T RegionSize, IN ULONG NewProtect, OUT PULONG OldProtect );`
+  - `ZwQueryVirtualMemory` (function, line 19376) `NTSTATUS NTAPI ZwQueryVirtualMemory ( IN HANDLE ProcessHandle, IN PVOID BaseAddress, IN MEMORY_INFORMATION_CLASS MemoryInformationClass, OUT PVOID MemoryInformation, IN SIZE_T MemoryInformationLength,`
+  - `ZwQuerySection` (function, line 19389) `NTSTATUS NTAPI ZwQuerySection ( IN HANDLE SectionHandle, IN SECTION_INFORMATION_CLASS SectionInformationClass, OUT PVOID SectionInformation, IN SIZE_T SectionInformationLength, OUT OPTIONAL PSIZE_T Re`
+  - `ZwMapUserPhysicalPages` (function, line 19401) `NTSTATUS NTAPI ZwMapUserPhysicalPages ( IN PVOID VirtualAddress, IN ULONG_PTR NumberOfPages, IN OPTIONAL PULONG_PTR UserPfnArray );`
+  - `ZwMapUserPhysicalPagesScatter` (function, line 19411) `NTSTATUS NTAPI ZwMapUserPhysicalPagesScatter ( IN PVOID *VirtualAddresses, IN ULONG_PTR NumberOfPages, IN OPTIONAL PULONG_PTR UserPfnArray );`
+  - `ZwAllocateUserPhysicalPages` (function, line 19421) `NTSTATUS NTAPI ZwAllocateUserPhysicalPages ( IN HANDLE ProcessHandle, _Inout_ PULONG_PTR NumberOfPages, OUT PULONG_PTR UserPfnArray );`
+  - `ZwFreeUserPhysicalPages` (function, line 19431) `NTSTATUS NTAPI ZwFreeUserPhysicalPages ( IN HANDLE ProcessHandle, _Inout_ PULONG_PTR NumberOfPages, IN PULONG_PTR UserPfnArray );`
+  - `ZwGetWriteWatch` (function, line 19441) `NTSTATUS NTAPI ZwGetWriteWatch ( IN HANDLE ProcessHandle, IN ULONG Flags, IN PVOID BaseAddress, IN SIZE_T RegionSize, OUT PVOID *UserAddressArray, _Inout_ PULONG_PTR EntriesInUserAddressArray, OUT PUL`
+  - `ZwResetWriteWatch` (function, line 19455) `NTSTATUS NTAPI ZwResetWriteWatch ( IN HANDLE ProcessHandle, IN PVOID BaseAddress, IN SIZE_T RegionSize );`
+  - `ZwCreatePagingFile` (function, line 19465) `NTSTATUS NTAPI ZwCreatePagingFile ( IN PUNICODE_STRING PageFileName, IN PLARGE_INTEGER MinimumSize, IN PLARGE_INTEGER MaximumSize, IN ULONG Priority );`
+  - `ZwFlushInstructionCache` (function, line 19476) `NTSTATUS NTAPI ZwFlushInstructionCache ( IN HANDLE ProcessHandle, IN OPTIONAL PVOID BaseAddress, IN SIZE_T Length );`
+  - `ZwFlushWriteBuffer` (function, line 19486) `NTSTATUS NTAPI ZwFlushWriteBuffer ( VOID );`
+  - `ZwQueryObject` (function, line 19494) `NTSTATUS NTAPI ZwQueryObject ( IN HANDLE Handle, IN OBJECT_INFORMATION_CLASS ObjectInformationClass, OUT PVOID ObjectInformation, IN ULONG ObjectInformationLength, OUT PULONG ReturnLength );`
+  - `ZwSetInformationObject` (function, line 19506) `NTSTATUS NTAPI ZwSetInformationObject ( IN HANDLE Handle, IN OBJECT_INFORMATION_CLASS ObjectInformationClass, IN PVOID ObjectInformation, IN ULONG ObjectInformationLength );`
+  - `ZwDuplicateObject` (function, line 19517) `NTSTATUS NTAPI ZwDuplicateObject ( IN HANDLE SourceProcessHandle, IN HANDLE SourceHandle, IN OPTIONAL HANDLE TargetProcessHandle, OUT PHANDLE TargetHandle, IN ACCESS_MASK DesiredAccess, IN ULONG Handl`
+  - `ZwMakeTemporaryObject` (function, line 19531) `NTSTATUS NTAPI ZwMakeTemporaryObject ( IN HANDLE Handle );`
+  - `ZwMakePermanentObject` (function, line 19539) `NTSTATUS NTAPI ZwMakePermanentObject ( IN HANDLE Handle );`
+  - `ZwSignalAndWaitForSingleObject` (function, line 19547) `NTSTATUS NTAPI ZwSignalAndWaitForSingleObject ( IN HANDLE SignalHandle, IN HANDLE WaitHandle, IN BOOLEAN Alertable, IN OPTIONAL PLARGE_INTEGER Timeout );`
+  - `ZwWaitForSingleObject` (function, line 19558) `NTSTATUS NTAPI ZwWaitForSingleObject ( IN HANDLE Handle, IN BOOLEAN Alertable, IN OPTIONAL PLARGE_INTEGER Timeout );`
+  - `ZwWaitForMultipleObjects` (function, line 19568) `NTSTATUS NTAPI ZwWaitForMultipleObjects ( IN ULONG Count, IN HANDLE Handles[], IN WAIT_TYPE WaitType, IN BOOLEAN Alertable, IN OPTIONAL PLARGE_INTEGER Timeout );`
+  - `ZwWaitForMultipleObjects32` (function, line 19580) `NTSTATUS NTAPI ZwWaitForMultipleObjects32 ( IN ULONG Count, IN LONG Handles[], IN WAIT_TYPE WaitType, IN BOOLEAN Alertable, IN OPTIONAL PLARGE_INTEGER Timeout );`
+  - `ZwSetSecurityObject` (function, line 19592) `NTSTATUS NTAPI ZwSetSecurityObject ( IN HANDLE Handle, IN SECURITY_INFORMATION SecurityInformation, IN PSECURITY_DESCRIPTOR SecurityDescriptor );`
+  - `ZwQuerySecurityObject` (function, line 19602) `NTSTATUS NTAPI ZwQuerySecurityObject ( IN HANDLE Handle, IN SECURITY_INFORMATION SecurityInformation, OUT PSECURITY_DESCRIPTOR SecurityDescriptor, IN ULONG Length, OUT PULONG LengthNeeded );`
+  - `ZwClose` (function, line 19614) `NTSTATUS NTAPI ZwClose ( IN HANDLE Handle );`
+  - `ZwCreateDirectoryObject` (function, line 19622) `NTSTATUS NTAPI ZwCreateDirectoryObject ( OUT PHANDLE DirectoryHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwOpenDirectoryObject` (function, line 19632) `NTSTATUS NTAPI ZwOpenDirectoryObject ( OUT PHANDLE DirectoryHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwQueryDirectoryObject` (function, line 19642) `NTSTATUS NTAPI ZwQueryDirectoryObject ( IN HANDLE DirectoryHandle, OUT PVOID Buffer, IN ULONG Length, IN BOOLEAN ReturnSingleEntry, IN BOOLEAN RestartScan, _Inout_ PULONG Context, OUT PULONG ReturnLen`
+  - `ZwCreateSymbolicLinkObject` (function, line 19656) `NTSTATUS NTAPI ZwCreateSymbolicLinkObject ( OUT PHANDLE LinkHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN PUNICODE_STRING LinkTarget );`
+  - `ZwOpenSymbolicLinkObject` (function, line 19667) `NTSTATUS NTAPI ZwOpenSymbolicLinkObject ( OUT PHANDLE LinkHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwQuerySymbolicLinkObject` (function, line 19677) `NTSTATUS NTAPI ZwQuerySymbolicLinkObject ( IN HANDLE LinkHandle, _Inout_ PUNICODE_STRING LinkTarget, OUT PULONG ReturnedLength );`
+  - `ZwGetPlugPlayEvent` (function, line 19687) `NTSTATUS NTAPI ZwGetPlugPlayEvent ( IN HANDLE EventHandle, IN OPTIONAL PVOID Context, OUT PPLUGPLAY_EVENT_BLOCK EventBlock, IN ULONG EventBufferSize );`
+  - `ZwPlugPlayControl` (function, line 19698) `NTSTATUS NTAPI ZwPlugPlayControl( IN PLUGPLAY_CONTROL_CLASS PnPControlClass, _Inout_ PVOID PnPControlData, IN ULONG PnPControlDataLength );`
+  - `ZwPowerInformation` (function, line 19708) `NTSTATUS NTAPI ZwPowerInformation( IN POWER_INFORMATION_LEVEL InformationLevel, IN OPTIONAL PVOID InputBuffer, IN ULONG InputBufferLength, OUT OPTIONAL PVOID OutputBuffer, IN ULONG OutputBufferLength `
+  - `ZwSetThreadExecutionState` (function, line 19720) `NTSTATUS NTAPI ZwSetThreadExecutionState( IN EXECUTION_STATE esFlags, // ES_xxx flags OUT EXECUTION_STATE *PreviousFlags );`
+  - `ZwRequestWakeupLatency` (function, line 19729) `NTSTATUS NTAPI ZwRequestWakeupLatency( IN LATENCY_TIME latency );`
+  - `ZwCancelDeviceWakeupRequest` (function, line 19767) `NTSTATUS NTAPI ZwCancelDeviceWakeupRequest( IN HANDLE Device );`
+  - `ZwRequestDeviceWakeup` (function, line 19775) `NTSTATUS NTAPI ZwRequestDeviceWakeup( IN HANDLE Device );`
+  - `ZwCreateProcess` (function, line 19783) `NTSTATUS NTAPI ZwCreateProcess ( OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ParentProcess, IN BOOLEAN InheritObjectTable, IN OP`
+  - `ZwCreateProcessEx` (function, line 19798) `NTSTATUS NTAPI ZwCreateProcessEx ( OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ParentProcess, IN ULONG Flags, IN OPTIONAL HANDLE`
+  - `ZwOpenProcess` (function, line 19814) `NTSTATUS NTAPI ZwOpenProcess ( OUT PHANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN OPTIONAL PCLIENT_ID ClientId );`
+  - `ZwTerminateProcess` (function, line 19825) `NTSTATUS NTAPI ZwTerminateProcess ( IN OPTIONAL HANDLE ProcessHandle, IN NTSTATUS ExitStatus );`
+  - `ZwQueryInformationProcess` (function, line 19834) `NTSTATUS NTAPI ZwQueryInformationProcess ( IN HANDLE ProcessHandle, IN PROCESSINFOCLASS ProcessInformationClass, OUT PVOID ProcessInformation, IN ULONG ProcessInformationLength, OUT OPTIONAL PULONG Re`
+  - `ZwGetNextProcess` (function, line 19846) `NTSTATUS NTAPI ZwGetNextProcess ( IN HANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAttributes, IN ULONG Flags, OUT PHANDLE NewProcessHandle );`
+  - `ZwGetNextThread` (function, line 19858) `NTSTATUS NTAPI ZwGetNextThread ( IN HANDLE ProcessHandle, IN HANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAttributes, IN ULONG Flags, OUT PHANDLE NewThreadHandle );`
+  - `ZwQueryPortInformationProcess` (function, line 19871) `NTSTATUS NTAPI ZwQueryPortInformationProcess ( VOID );`
+  - `ZwSetInformationProcess` (function, line 19879) `NTSTATUS NTAPI ZwSetInformationProcess ( IN HANDLE ProcessHandle, IN PROCESSINFOCLASS ProcessInformationClass, IN PVOID ProcessInformation, IN ULONG ProcessInformationLength );`
+  - `ZwCreateThread` (function, line 19890) `NTSTATUS NTAPI ZwCreateThread ( OUT PHANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes, IN HANDLE ProcessHandle, OUT PCLIENT_ID ClientId, IN PCONTEXT T`
+  - `ZwOpenThread` (function, line 19905) `NTSTATUS NTAPI ZwOpenThread ( OUT PHANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN OPTIONAL PCLIENT_ID ClientId );`
+  - `ZwTerminateThread` (function, line 19916) `NTSTATUS NTAPI ZwTerminateThread ( IN OPTIONAL HANDLE ThreadHandle, IN NTSTATUS ExitStatus );`
+  - `ZwSuspendThread` (function, line 19925) `NTSTATUS NTAPI ZwSuspendThread ( IN HANDLE ThreadHandle, OUT OPTIONAL PULONG PreviousSuspendCount );`
+  - `ZwResumeThread` (function, line 19934) `NTSTATUS NTAPI ZwResumeThread ( IN HANDLE ThreadHandle, OUT OPTIONAL PULONG PreviousSuspendCount );`
+  - `ZwSuspendProcess` (function, line 19943) `NTSTATUS NTAPI ZwSuspendProcess ( IN HANDLE ProcessHandle );`
+  - `ZwResumeProcess` (function, line 19951) `NTSTATUS NTAPI ZwResumeProcess ( IN HANDLE ProcessHandle );`
+  - `ZwGetContextThread` (function, line 19959) `NTSTATUS NTAPI ZwGetContextThread ( IN HANDLE ThreadHandle, _Inout_ PCONTEXT ThreadContext );`
+  - `ZwSetContextThread` (function, line 19968) `NTSTATUS NTAPI ZwSetContextThread ( IN HANDLE ThreadHandle, IN PCONTEXT ThreadContext );`
+  - `ZwQueryInformationThread` (function, line 19977) `NTSTATUS NTAPI ZwQueryInformationThread ( IN HANDLE ThreadHandle, IN THREADINFOCLASS ThreadInformationClass, OUT PVOID ThreadInformation, IN ULONG ThreadInformationLength, OUT OPTIONAL PULONG ReturnLe`
+  - `ZwSetInformationThread` (function, line 19989) `NTSTATUS NTAPI ZwSetInformationThread ( IN HANDLE ThreadHandle, IN THREADINFOCLASS ThreadInformationClass, IN PVOID ThreadInformation, IN ULONG ThreadInformationLength );`
+  - `ZwAlertThread` (function, line 20000) `NTSTATUS NTAPI ZwAlertThread ( IN HANDLE ThreadHandle );`
+  - `ZwAlertResumeThread` (function, line 20008) `NTSTATUS NTAPI ZwAlertResumeThread ( IN HANDLE ThreadHandle, OUT OPTIONAL PULONG PreviousSuspendCount );`
+  - `ZwImpersonateThread` (function, line 20017) `NTSTATUS NTAPI ZwImpersonateThread ( IN HANDLE ServerThreadHandle, IN HANDLE ClientThreadHandle, IN PSECURITY_QUALITY_OF_SERVICE SecurityQos );`
+  - `ZwTestAlert` (function, line 20027) `NTSTATUS NTAPI ZwTestAlert ( VOID );`
+  - `ZwRegisterThreadTerminatePort` (function, line 20035) `NTSTATUS NTAPI ZwRegisterThreadTerminatePort ( IN HANDLE PortHandle );`
+  - `ZwSetLdtEntries` (function, line 20043) `NTSTATUS NTAPI ZwSetLdtEntries ( IN ULONG Selector0, IN ULONG Entry0Low, IN ULONG Entry0Hi, IN ULONG Selector1, IN ULONG Entry1Low, IN ULONG Entry1Hi );`
+  - `ZwQueueApcThread` (function, line 20056) `NTSTATUS NTAPI ZwQueueApcThread ( IN HANDLE ThreadHandle, IN PPS_APC_ROUTINE ApcRoutine, IN OPTIONAL PVOID ApcArgument1, IN OPTIONAL PVOID ApcArgument2, IN OPTIONAL PVOID ApcArgument3 );`
+  - `ZwCreateJobObject` (function, line 20068) `NTSTATUS NTAPI ZwCreateJobObject ( OUT PHANDLE JobHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwOpenJobObject` (function, line 20078) `NTSTATUS NTAPI ZwOpenJobObject ( OUT PHANDLE JobHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwAssignProcessToJobObject` (function, line 20088) `NTSTATUS NTAPI ZwAssignProcessToJobObject ( IN HANDLE JobHandle, IN HANDLE ProcessHandle );`
+  - `ZwTerminateJobObject` (function, line 20097) `NTSTATUS NTAPI ZwTerminateJobObject ( IN HANDLE JobHandle, IN NTSTATUS ExitStatus );`
+  - `ZwIsProcessInJob` (function, line 20106) `NTSTATUS NTAPI ZwIsProcessInJob ( IN HANDLE ProcessHandle, IN OPTIONAL HANDLE JobHandle );`
+  - `ZwCreateJobSet` (function, line 20115) `NTSTATUS NTAPI ZwCreateJobSet ( IN ULONG NumJob, IN PJOB_SET_ARRAY UserJobSet, IN ULONG Flags );`
+  - `ZwQueryInformationJobObject` (function, line 20125) `NTSTATUS NTAPI ZwQueryInformationJobObject ( IN OPTIONAL HANDLE JobHandle, IN JOBOBJECTINFOCLASS JobObjectInformationClass, OUT PVOID JobObjectInformation, IN ULONG JobObjectInformationLength, OUT OPT`
+  - `ZwSetInformationJobObject` (function, line 20137) `NTSTATUS NTAPI ZwSetInformationJobObject ( IN HANDLE JobHandle, IN JOBOBJECTINFOCLASS JobObjectInformationClass, IN PVOID JobObjectInformation, IN ULONG JobObjectInformationLength );`
+  - `ZwCreateKey` (function, line 20148) `NTSTATUS NTAPI ZwCreateKey( OUT PHANDLE KeyHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, ULONG TitleIndex, IN OPTIONAL PUNICODE_STRING Class, IN ULONG CreateOptions, OU`
+  - `ZwDeleteKey` (function, line 20162) `NTSTATUS NTAPI ZwDeleteKey( IN HANDLE KeyHandle );`
+  - `ZwDeleteValueKey` (function, line 20170) `NTSTATUS NTAPI ZwDeleteValueKey( IN HANDLE KeyHandle, IN PUNICODE_STRING ValueName );`
+  - `ZwEnumerateKey` (function, line 20179) `NTSTATUS NTAPI ZwEnumerateKey( IN HANDLE KeyHandle, IN ULONG Index, IN KEY_INFORMATION_CLASS KeyInformationClass, OUT OPTIONAL PVOID KeyInformation, IN ULONG Length, OUT PULONG ResultLength );`
+  - `ZwEnumerateValueKey` (function, line 20192) `NTSTATUS NTAPI ZwEnumerateValueKey( IN HANDLE KeyHandle, IN ULONG Index, IN KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, OUT OPTIONAL PVOID KeyValueInformation, IN ULONG Length, OUT PULONG Re`
+  - `ZwFlushKey` (function, line 20205) `NTSTATUS NTAPI ZwFlushKey( IN HANDLE KeyHandle );`
+  - `ZwInitializeRegistry` (function, line 20213) `NTSTATUS NTAPI ZwInitializeRegistry( IN USHORT BootCondition );`
+  - `ZwNotifyChangeKey` (function, line 20221) `NTSTATUS NTAPI ZwNotifyChangeKey( IN HANDLE KeyHandle, IN OPTIONAL HANDLE Event, IN OPTIONAL PIO_APC_ROUTINE ApcRoutine, IN OPTIONAL PVOID ApcContext, OUT PIO_STATUS_BLOCK IoStatusBlock, IN ULONG Comp`
+  - `ZwNotifyChangeMultipleKeys` (function, line 20238) `NTSTATUS NTAPI ZwNotifyChangeMultipleKeys( IN HANDLE MasterKeyHandle, IN OPTIONAL ULONG Count, IN OPTIONAL OBJECT_ATTRIBUTES SlaveObjects[], IN OPTIONAL HANDLE Event, IN OPTIONAL PIO_APC_ROUTINE ApcRo`
+  - `ZwLoadKey` (function, line 20257) `NTSTATUS NTAPI ZwLoadKey( IN POBJECT_ATTRIBUTES TargetKey, IN POBJECT_ATTRIBUTES SourceFile );`
+  - `ZwLoadKey2` (function, line 20266) `NTSTATUS NTAPI ZwLoadKey2( IN POBJECT_ATTRIBUTES TargetKey, IN POBJECT_ATTRIBUTES SourceFile, IN ULONG Flags );`
+  - `ZwLoadKeyEx` (function, line 20276) `NTSTATUS NTAPI ZwLoadKeyEx( IN POBJECT_ATTRIBUTES TargetKey, IN POBJECT_ATTRIBUTES SourceFile, IN ULONG Flags, IN OPTIONAL HANDLE TrustClassKey );`
+  - `ZwOpenKey` (function, line 20287) `NTSTATUS NTAPI ZwOpenKey( OUT PHANDLE KeyHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `ZwQueryKey` (function, line 20297) `NTSTATUS NTAPI ZwQueryKey( IN HANDLE KeyHandle, IN KEY_INFORMATION_CLASS KeyInformationClass, OUT OPTIONAL PVOID KeyInformation, IN ULONG Length, OUT PULONG ResultLength );`
+  - `ZwQueryValueKey` (function, line 20309) `NTSTATUS NTAPI ZwQueryValueKey( IN HANDLE KeyHandle, IN PUNICODE_STRING ValueName, IN KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass, OUT OPTIONAL PVOID KeyValueInformation, IN ULONG Length, OUT`
+  - `ZwQueryMultipleValueKey` (function, line 20322) `NTSTATUS NTAPI ZwQueryMultipleValueKey( IN HANDLE KeyHandle, _Inout_ PKEY_VALUE_ENTRY ValueEntries, IN ULONG EntryCount, OUT PVOID ValueBuffer, _Inout_ PULONG BufferLength, OUT OPTIONAL PULONG Require`
+  - `ZwReplaceKey` (function, line 20335) `NTSTATUS NTAPI ZwReplaceKey( IN POBJECT_ATTRIBUTES NewFile, IN HANDLE TargetHandle, IN POBJECT_ATTRIBUTES OldFile );`
+  - `ZwRenameKey` (function, line 20345) `NTSTATUS NTAPI ZwRenameKey( IN HANDLE KeyHandle, IN PUNICODE_STRING NewName );`
+  - `ZwCompactKeys` (function, line 20354) `NTSTATUS NTAPI ZwCompactKeys( IN ULONG Count, IN HANDLE KeyArray[] );`
+  - `ZwCompressKey` (function, line 20363) `NTSTATUS NTAPI ZwCompressKey( IN HANDLE Key );`
+  - `ZwRestoreKey` (function, line 20371) `NTSTATUS NTAPI ZwRestoreKey( IN HANDLE KeyHandle, IN HANDLE FileHandle, IN ULONG Flags );`
+  - `ZwSaveKey` (function, line 20381) `NTSTATUS NTAPI ZwSaveKey( IN HANDLE KeyHandle, IN HANDLE FileHandle );`
+  - `ZwSaveKeyEx` (function, line 20390) `NTSTATUS NTAPI ZwSaveKeyEx( IN HANDLE KeyHandle, IN HANDLE FileHandle, IN ULONG Format );`
+  - `ZwSaveMergedKeys` (function, line 20400) `NTSTATUS NTAPI ZwSaveMergedKeys( IN HANDLE HighPrecedenceKeyHandle, IN HANDLE LowPrecedenceKeyHandle, IN HANDLE FileHandle );`
+  - `ZwSetValueKey` (function, line 20410) `NTSTATUS NTAPI ZwSetValueKey( IN HANDLE KeyHandle, IN PUNICODE_STRING ValueName, IN OPTIONAL ULONG TitleIndex, IN ULONG Type, IN OPTIONAL PVOID Data, IN ULONG DataSize );`
+  - `ZwUnloadKey` (function, line 20423) `NTSTATUS NTAPI ZwUnloadKey( IN POBJECT_ATTRIBUTES TargetKey );`
+  - `ZwUnloadKey2` (function, line 20431) `NTSTATUS NTAPI ZwUnloadKey2( IN POBJECT_ATTRIBUTES TargetKey, IN ULONG Flags );`
+  - `ZwUnloadKeyEx` (function, line 20440) `NTSTATUS NTAPI ZwUnloadKeyEx( IN POBJECT_ATTRIBUTES TargetKey, IN OPTIONAL HANDLE Event );`
+  - `ZwSetInformationKey` (function, line 20449) `NTSTATUS NTAPI ZwSetInformationKey( IN HANDLE KeyHandle, IN KEY_SET_INFORMATION_CLASS KeySetInformationClass, IN PVOID KeySetInformation, IN ULONG KeySetInformationLength );`
+  - `ZwQueryOpenSubKeys` (function, line 20460) `NTSTATUS NTAPI ZwQueryOpenSubKeys( IN POBJECT_ATTRIBUTES TargetKey, OUT PULONG HandleCount );`
+  - `ZwQueryOpenSubKeysEx` (function, line 20469) `NTSTATUS NTAPI ZwQueryOpenSubKeysEx( IN POBJECT_ATTRIBUTES TargetKey, IN ULONG BufferLength, OUT PVOID Buffer, OUT PULONG RequiredSize );`
+  - `ZwLockRegistryKey` (function, line 20480) `NTSTATUS NTAPI ZwLockRegistryKey( IN HANDLE KeyHandle );`
+  - `ZwLockProductActivationKeys` (function, line 20488) `NTSTATUS NTAPI ZwLockProductActivationKeys( _Inout_opt_ ULONG *pPrivateVer, OUT OPTIONAL ULONG *pSafeMode );`
+  - `ZwAccessCheck` (function, line 20497) `NTSTATUS NTAPI ZwAccessCheck ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN PGENERIC_MAPPING GenericMapping, OUT PPRIVILEGE_SET PrivilegeSet, _In`
+  - `ZwAccessCheckByType` (function, line 20512) `NTSTATUS NTAPI ZwAccessCheckByType ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, IN OPTIONAL PSID PrincipalSelfSid, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN POBJECT_TYPE_LIST ObjectType`
+  - `ZwAccessCheckByTypeResultList` (function, line 20530) `NTSTATUS NTAPI ZwAccessCheckByTypeResultList ( IN PSECURITY_DESCRIPTOR SecurityDescriptor, IN OPTIONAL PSID PrincipalSelfSid, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN POBJECT_TYPE_LIST `
+  - `ZwCreateToken` (function, line 20548) `NTSTATUS NTAPI ZwCreateToken( OUT PHANDLE TokenHandle, IN ACCESS_MASK DesiredAccess, IN OPTIONAL POBJECT_ATTRIBUTES ObjectAttributes, IN TOKEN_TYPE TokenType, IN PLUID AuthenticationId, IN PLARGE_INTE`
+  - `ZwCompareTokens` (function, line 20568) `NTSTATUS NTAPI ZwCompareTokens( IN HANDLE FirstTokenHandle, IN HANDLE SecondTokenHandle, OUT PBOOLEAN Equal );`
+  - `ZwOpenThreadToken` (function, line 20578) `NTSTATUS NTAPI ZwOpenThreadToken( IN HANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN BOOLEAN OpenAsSelf, OUT PHANDLE TokenHandle );`
+  - `ZwOpenThreadTokenEx` (function, line 20589) `NTSTATUS NTAPI ZwOpenThreadTokenEx( IN HANDLE ThreadHandle, IN ACCESS_MASK DesiredAccess, IN BOOLEAN OpenAsSelf, IN ULONG HandleAttributes, OUT PHANDLE TokenHandle );`
+  - `ZwOpenProcessToken` (function, line 20601) `NTSTATUS NTAPI ZwOpenProcessToken( IN HANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, OUT PHANDLE TokenHandle );`
+  - `ZwOpenProcessTokenEx` (function, line 20611) `NTSTATUS NTAPI ZwOpenProcessTokenEx( IN HANDLE ProcessHandle, IN ACCESS_MASK DesiredAccess, IN ULONG HandleAttributes, OUT PHANDLE TokenHandle );`
+  - `ZwDuplicateToken` (function, line 20622) `NTSTATUS NTAPI ZwDuplicateToken( IN HANDLE ExistingTokenHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN BOOLEAN EffectiveOnly, IN TOKEN_TYPE TokenType, OUT PHANDLE New`
+  - `ZwFilterToken` (function, line 20635) `NTSTATUS NTAPI ZwFilterToken ( IN HANDLE ExistingTokenHandle, IN ULONG Flags, IN OPTIONAL PTOKEN_GROUPS SidsToDisable, IN OPTIONAL PTOKEN_PRIVILEGES PrivilegesToDelete, IN OPTIONAL PTOKEN_GROUPS Restr`
+  - `ZwImpersonateAnonymousToken` (function, line 20648) `NTSTATUS NTAPI ZwImpersonateAnonymousToken( IN HANDLE ThreadHandle );`
+  - `ZwQueryInformationToken` (function, line 20656) `NTSTATUS NTAPI ZwQueryInformationToken ( IN HANDLE TokenHandle, IN TOKEN_INFORMATION_CLASS TokenInformationClass, OUT PVOID TokenInformation, IN ULONG TokenInformationLength, OUT PULONG ReturnLength )`
+  - `ZwSetInformationToken` (function, line 20668) `NTSTATUS NTAPI ZwSetInformationToken ( IN HANDLE TokenHandle, IN TOKEN_INFORMATION_CLASS TokenInformationClass, IN PVOID TokenInformation, IN ULONG TokenInformationLength );`
+  - `ZwAdjustPrivilegesToken` (function, line 20679) `NTSTATUS NTAPI ZwAdjustPrivilegesToken ( IN HANDLE TokenHandle, IN BOOLEAN DisableAllPrivileges, IN OPTIONAL PTOKEN_PRIVILEGES NewState, IN OPTIONAL ULONG BufferLength, OUT PTOKEN_PRIVILEGES PreviousS`
+  - `ZwAdjustGroupsToken` (function, line 20692) `NTSTATUS NTAPI ZwAdjustGroupsToken ( IN HANDLE TokenHandle, IN BOOLEAN ResetToDefault, IN PTOKEN_GROUPS NewState , IN OPTIONAL ULONG BufferLength , OUT PTOKEN_GROUPS PreviousState , OUT PULONG ReturnL`
+  - `ZwPrivilegeCheck` (function, line 20705) `NTSTATUS NTAPI ZwPrivilegeCheck ( IN HANDLE ClientToken, _Inout_ PPRIVILEGE_SET RequiredPrivileges, OUT PBOOLEAN Result );`
+  - `ZwAccessCheckAndAuditAlarm` (function, line 20715) `NTSTATUS NTAPI ZwAccessCheckAndAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN PSECURITY_DESCRIPTOR Secu`
+  - `ZwAccessCheckByTypeAndAuditAlarm` (function, line 20733) `NTSTATUS NTAPI ZwAccessCheckByTypeAndAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN PSECURITY_DESCRIPTO`
+  - `ZwAccessCheckByTypeResultListAndAuditAlarm` (function, line 20756) `NTSTATUS NTAPI ZwAccessCheckByTypeResultListAndAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN PSECURITY`
+  - `ZwAccessCheckByTypeResultListAndAuditAlarmByHandle` (function, line 20779) `NTSTATUS NTAPI ZwAccessCheckByTypeResultListAndAuditAlarmByHandle ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN HANDLE ClientToken, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_`
+  - `ZwOpenObjectAuditAlarm` (function, line 20803) `NTSTATUS NTAPI ZwOpenObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN PUNICODE_STRING ObjectTypeName, IN PUNICODE_STRING ObjectName, IN OPTIONAL PSECURITY_DESCRIPTOR`
+  - `ZwPrivilegeObjectAuditAlarm` (function, line 20821) `NTSTATUS NTAPI ZwPrivilegeObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN HANDLE ClientToken, IN ACCESS_MASK DesiredAccess, IN PPRIVILEGE_SET Privileges, IN BOOLEAN`
+  - `ZwCloseObjectAuditAlarm` (function, line 20833) `NTSTATUS NTAPI ZwCloseObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN BOOLEAN GenerateOnClose );`
+  - `ZwDeleteObjectAuditAlarm` (function, line 20842) `NTSTATUS NTAPI ZwDeleteObjectAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN OPTIONAL PVOID HandleId, IN BOOLEAN GenerateOnClose );`
+  - `ZwPrivilegedServiceAuditAlarm` (function, line 20851) `NTSTATUS NTAPI ZwPrivilegedServiceAuditAlarm ( IN PUNICODE_STRING SubsystemName, IN PUNICODE_STRING ServiceName, IN HANDLE ClientToken, IN PPRIVILEGE_SET Privileges, IN BOOLEAN AccessGranted );`
+  - `ZwContinue` (function, line 20862) `NTSTATUS NTAPI ZwContinue ( IN PCONTEXT ContextRecord, IN BOOLEAN TestAlert );`
+  - `ZwRaiseException` (function, line 20870) `NTSTATUS NTAPI ZwRaiseException ( IN PEXCEPTION_RECORD ExceptionRecord, IN PCONTEXT ContextRecord, IN BOOLEAN FirstChance );`
+  - `DbgPrint` (function, line 20881) `ULONG DbgPrint( IN PCH Format, ... );`
+  - `DebugService2` (function, line 20887) `VOID NTAPI DebugService2 ( PVOID Arg1, PVOID Arg2, ULONG Service );`
+  - `RtlLargeIntegerAdd` (function, line 20897) `__inline LARGE_INTEGER NTAPI RtlLargeIntegerAdd ( LARGE_INTEGER Addend1, LARGE_INTEGER Addend2 );`
+  - `RtlEnlargedIntegerMultiply` (function, line 20904) `__inline LARGE_INTEGER NTAPI RtlEnlargedIntegerMultiply ( LONG Multiplicand, LONG Multiplier );`
+  - `RtlEnlargedUnsignedMultiply` (function, line 20912) `__inline LARGE_INTEGER NTAPI RtlEnlargedUnsignedMultiply ( ULONG Multiplicand, ULONG Multiplier );`
+  - `RtlEnlargedUnsignedDivide` (function, line 20920) `__inline ULONG NTAPI RtlEnlargedUnsignedDivide ( IN ULARGE_INTEGER Dividend, IN ULONG Divisor, IN PULONG Remainder OPTIONAL );`
+  - `RtlLargeIntegerNegate` (function, line 20929) `__inline LARGE_INTEGER NTAPI RtlLargeIntegerNegate ( LARGE_INTEGER Subtrahend );`
+  - `RtlLargeIntegerSubtract` (function, line 20936) `__inline LARGE_INTEGER NTAPI RtlLargeIntegerSubtract ( LARGE_INTEGER Minuend, LARGE_INTEGER Subtrahend );`
+  - `RtlExtendedMagicDivide` (function, line 20944) `LARGE_INTEGER NTAPI RtlExtendedMagicDivide ( LARGE_INTEGER Dividend, LARGE_INTEGER MagicDivisor, CCHAR ShiftCount );`
+  - `RtlExtendedLargeIntegerDivide` (function, line 20951) `LARGE_INTEGER NTAPI RtlExtendedLargeIntegerDivide ( LARGE_INTEGER Dividend, ULONG Divisor, PULONG Remainder );`
+  - `RtlLargeIntegerDivide` (function, line 20959) `LARGE_INTEGER NTAPI RtlLargeIntegerDivide ( LARGE_INTEGER Dividend, LARGE_INTEGER Divisor, PLARGE_INTEGER Remainder );`
+  - `RtlExtendedIntegerMultiply` (function, line 20967) `LARGE_INTEGER NTAPI RtlExtendedIntegerMultiply ( LARGE_INTEGER Multiplicand, LONG Multiplier );`
+  - `RtlConvertLongToLargeInteger` (function, line 20976) `__inline LARGE_INTEGER NTAPI RtlConvertLongToLargeInteger ( LONG SignedInteger );`
+  - `RtlConvertUlongToLargeInteger` (function, line 20982) `__inline LARGE_INTEGER NTAPI RtlConvertUlongToLargeInteger ( ULONG UnsignedInteger );`
+  - `RtlLargeIntegerShiftLeft` (function, line 20990) `__inline LARGE_INTEGER NTAPI RtlLargeIntegerShiftLeft ( LARGE_INTEGER LargeInteger, CCHAR ShiftCount );`
+  - `RtlLargeIntegerShiftRight` (function, line 20998) `__inline LARGE_INTEGER NTAPI RtlLargeIntegerShiftRight ( LARGE_INTEGER LargeInteger, CCHAR ShiftCount );`
+  - `RtlLargeIntegerArithmeticShift` (function, line 21006) `__inline LARGE_INTEGER NTAPI RtlLargeIntegerArithmeticShift ( LARGE_INTEGER LargeInteger, CCHAR ShiftCount );`
+  - `RtlCheckBit` (function, line 21014) `__inline BOOLEAN NTAPI RtlCheckBit ( PRTL_BITMAP BitMapHeader, ULONG BitPosition );`
+  - `RtlIsValidOemCharacter` (function, line 21022) `BOOLEAN NTAPI RtlIsValidOemCharacter ( _Inout_ PWCHAR Char );`
+  - `RtlpImageNtHeader` (function, line 21028) `PIMAGE_NT_HEADERS NTAPI RtlpImageNtHeader( PVOID Base );`
+  - `RtlDetermineDosPathNameType_U` (function, line 21034) `RTL_PATH_TYPE RtlDetermineDosPathNameType_U( IN PCWSTR DosFileName );`
+  - `RtlTraceDatabaseCreate` (function, line 21039) `PRTL_TRACE_DATABASE RtlTraceDatabaseCreate ( IN ULONG Buckets, IN SIZE_T MaximumSize OPTIONAL, IN ULONG Flags, // OPTIONAL in User mode IN ULONG Tag, // OPTIONAL in User mode IN RTL_TRACE_HASH_FUNCTIO`
+  - `RtlTraceDatabaseValidate` (function, line 21048) `BOOLEAN RtlTraceDatabaseValidate ( IN PRTL_TRACE_DATABASE Database );`
+  - `RtlTraceDatabaseAdd` (function, line 21053) `BOOLEAN RtlTraceDatabaseAdd ( IN PRTL_TRACE_DATABASE Database, IN ULONG Count, IN PVOID * Trace, OUT PRTL_TRACE_BLOCK * TraceBlock OPTIONAL );`
+  - `RtlTraceDatabaseFind` (function, line 21061) `BOOLEAN RtlTraceDatabaseFind ( PRTL_TRACE_DATABASE Database, IN ULONG Count, IN PVOID * Trace, OUT PRTL_TRACE_BLOCK * TraceBlock OPTIONAL );`
+  - `RtlTraceDatabaseEnumerate` (function, line 21069) `BOOLEAN RtlTraceDatabaseEnumerate ( PRTL_TRACE_DATABASE Database, OUT PRTL_TRACE_ENUMERATE Enumerate, OUT PRTL_TRACE_BLOCK * TraceBlock );`
+  - `RtlTraceDatabaseLock` (function, line 21076) `VOID RtlTraceDatabaseLock ( IN PRTL_TRACE_DATABASE Database );`
+  - `RtlTraceDatabaseUnlock` (function, line 21081) `VOID RtlTraceDatabaseUnlock ( IN PRTL_TRACE_DATABASE Database );`
+  - `RtlpGetStackLimits` (function, line 21086) `VOID RtlpGetStackLimits ( OUT PULONG_PTR LowLimit, OUT PULONG_PTR HighLimit );`
+  - `RtlEnterCriticalSection` (function, line 21092) `NTSTATUS NTAPI RtlEnterCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlLeaveCriticalSection` (function, line 21098) `NTSTATUS NTAPI RtlLeaveCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlIsCriticalSectionLocked` (function, line 21104) `LOGICAL NTAPI RtlIsCriticalSectionLocked ( IN PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlIsCriticalSectionLockedByThread` (function, line 21110) `LOGICAL NTAPI RtlIsCriticalSectionLockedByThread ( IN PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlGetCriticalSectionRecursionCount` (function, line 21116) `ULONG NTAPI RtlGetCriticalSectionRecursionCount ( IN PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlTryEnterCriticalSection` (function, line 21122) `LOGICAL NTAPI RtlTryEnterCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlInitializeCriticalSection` (function, line 21128) `NTSTATUS NTAPI RtlInitializeCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlEnableEarlyCriticalSectionEventCreation` (function, line 21134) `VOID NTAPI RtlEnableEarlyCriticalSectionEventCreation( VOID );`
+  - `RtlInitializeCriticalSectionAndSpinCount` (function, line 21140) `NTSTATUS NTAPI RtlInitializeCriticalSectionAndSpinCount( PRTL_CRITICAL_SECTION CriticalSection, ULONG SpinCount );`
+  - `RtlSetCriticalSectionSpinCount` (function, line 21147) `ULONG NTAPI RtlSetCriticalSectionSpinCount( PRTL_CRITICAL_SECTION CriticalSection, ULONG SpinCount );`
+  - `RtlDeleteCriticalSection` (function, line 21154) `NTSTATUS NTAPI RtlDeleteCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `LdrDisableThreadCalloutsForDll` (function, line 21160) `NTSTATUS NTAPI LdrDisableThreadCalloutsForDll ( IN PVOID DllHandle );`
+  - `LdrLoadDll` (function, line 21166) `NTSTATUS NTAPI LdrLoadDll( IN OPTIONAL PWSTR DllPath, IN OPTIONAL PULONG DllCharacteristics, IN PUNICODE_STRING DllName, OUT PVOID *DllHandle );`
+  - `LdrUnloadDll` (function, line 21175) `NTSTATUS NTAPI LdrUnloadDll( IN PVOID DllHandle );`
+  - `LdrGetDllHandle` (function, line 21181) `NTSTATUS NTAPI LdrGetDllHandle( IN OPTIONAL PWSTR DllPath, IN OPTIONAL PULONG DllCharacteristics, IN PUNICODE_STRING DllName, OUT PVOID *DllHandle );`
+  - `LdrGetDllHandleEx` (function, line 21190) `NTSTATUS NTAPI LdrGetDllHandleEx( IN ULONG Flags, IN OPTIONAL PCWSTR DllPath, IN OPTIONAL PULONG DllCharacteristics, IN PUNICODE_STRING DllName, OUT OPTIONAL PVOID *DllHandle );`
+  - `LdrGetDllHandleByMapping` (function, line 21200) `NTSTATUS NTAPI LdrGetDllHandleByMapping( IN PVOID Base, OUT PVOID *DllHandle );`
+  - `LdrGetDllHandleByName` (function, line 21207) `NTSTATUS NTAPI LdrGetDllHandleByName( IN OPTIONAL PUNICODE_STRING BaseDllName, IN OPTIONAL PUNICODE_STRING FullDllName, OUT PVOID *DllHandle );`
+  - `LdrAddRefDll` (function, line 21215) `NTSTATUS NTAPI LdrAddRefDll( IN ULONG Flags, IN PVOID DllHandle );`
+  - `LdrGetProcedureAddress` (function, line 21222) `NTSTATUS NTAPI LdrGetProcedureAddress( IN PVOID DllHandle, IN OPTIONAL PANSI_STRING ProcedureName, IN OPTIONAL ULONG ProcedureNumber, OUT PVOID *ProcedureAddress );`
+  - `LdrGetProcedureAddressEx` (function, line 21231) `NTSTATUS NTAPI LdrGetProcedureAddressEx( IN PVOID DllHandle, IN OPTIONAL PANSI_STRING ProcedureName, IN OPTIONAL ULONG ProcedureNumber, OUT PVOID *ProcedureAddress, IN ULONG Flags );`
+  - `LdrLockLoaderLock` (function, line 21241) `NTSTATUS NTAPI LdrLockLoaderLock( IN ULONG Flags, OUT OPTIONAL ULONG *Disposition, OUT PVOID *Cookie );`
+  - `LdrRelocateImage` (function, line 21249) `NTSTATUS NTAPI LdrRelocateImage( IN PVOID NewBase, IN PSTR LoaderName, IN NTSTATUS Success, IN NTSTATUS Conflict, IN NTSTATUS Invalid );`
+  - `LdrRelocateImageWithBias` (function, line 21259) `NTSTATUS NTAPI LdrRelocateImageWithBias( IN PVOID NewBase, IN LONGLONG Bias, IN PSTR LoaderName, IN NTSTATUS Success, IN NTSTATUS Conflict, IN NTSTATUS Invalid );`
+  - `LdrProcessRelocationBlock` (function, line 21270) `PIMAGE_BASE_RELOCATION NTAPI LdrProcessRelocationBlock( IN ULONG_PTR VA, IN ULONG SizeOfBlock, IN PUSHORT NextOffset, IN LONG_PTR Diff );`
+  - `LdrVerifyMappedImageMatchesChecksum` (function, line 21279) `BOOLEAN NTAPI LdrVerifyMappedImageMatchesChecksum( IN PVOID BaseAddress, IN SIZE_T NumberOfBytes, IN ULONG FileLength );`
+  - `LdrQueryModuleServiceTags` (function, line 21287) `NTSTATUS NTAPI LdrQueryModuleServiceTags( IN PVOID DllHandle, OUT PULONG ServiceTagBuffer, _Inout_ PULONG BufferSize );`
+  - `LdrRegisterDllNotification` (function, line 21295) `NTSTATUS NTAPI LdrRegisterDllNotification( IN ULONG Flags, IN PLDR_DLL_NOTIFICATION_FUNCTION NotificationFunction, IN PVOID Context, OUT PVOID *Cookie );`
+  - `LdrUnregisterDllNotification` (function, line 21304) `NTSTATUS NTAPI LdrUnregisterDllNotification( IN PVOID Cookie );`
+  - `CsrGetProcessId` (function, line 21310) `ULONG NTAPI CsrGetProcessId( );`
+  - `A_SHAFinal` (function, line 21315) `void NTAPI A_SHAFinal( PSHA_CTX Context, PULONG Result );`
+  - `A_SHAUpdate` (function, line 21322) `PVOID NTAPI A_SHAUpdate( _Inout_ PSHA_CTX, IN PCHAR, IN UINT );`
+  - `A_SHAInit` (function, line 21331) `PVOID NTAPI A_SHAInit( _Inout_ PSHA_CTX, OUT PVOID );`
+  - `RtlDosPathNameToNtPathName_U` (function, line 21338) `BOOLEAN NTAPI RtlDosPathNameToNtPathName_U( IN PCWSTR DosFileName, OUT PUNICODE_STRING NtFileName, OUT PWSTR *FilePart OPTIONAL, PVOID Reserved );`
+  - `RtlDosPathNameToNtPathName_U_WithStatus` (function, line 21347) `NTSTATUS NTAPI RtlDosPathNameToNtPathName_U_WithStatus( IN PCWSTR DosFileName, OUT PUNICODE_STRING NtFileName, OUT PWSTR *FilePart OPTIONAL, PVOID Reserved // Must be NULL );`
+  - `RtlAddVectoredExceptionHandler` (function, line 21356) `PVOID NTAPI RtlAddVectoredExceptionHandler ( IN ULONG First, IN PVECTORED_EXCEPTION_HANDLER Handler );`
+  - `RtlAddVectoredContinueHandler` (function, line 21363) `PVOID NTAPI RtlAddVectoredContinueHandler ( IN ULONG First, IN PVECTORED_EXCEPTION_HANDLER Handler );`
+  - `RtlAnalyzeProfile` (function, line 21370) `NTSTATUS NTAPI RtlAnalyzeProfile ( VOID );`
+  - `RtlCallVectoredContinueHandlers` (function, line 21376) `BOOLEAN NTAPI RtlCallVectoredContinueHandlers ( IN PEXCEPTION_RECORD ExceptionRecord, IN PCONTEXT ContextRecord );`
+  - `RtlEncodePointer` (function, line 21383) `PVOID RtlEncodePointer( PVOID Ptr );`
+  - `RtlDecodePointer` (function, line 21388) `PVOID RtlDecodePointer( PVOID Ptr );`
+  - `RtlEncodeSystemPointer` (function, line 21393) `PVOID RtlEncodeSystemPointer( PVOID Ptr );`
+  - `RtlDecodeSystemPointer` (function, line 21398) `PVOID RtlDecodeSystemPointer( PVOID Ptr );`
+  - `RtlDeleteResource` (function, line 21403) `VOID NTAPI RtlDeleteResource( PRTL_RESOURCE Resource );`
+  - `RtlDeleteSecurityObject` (function, line 21409) `NTSTATUS NTAPI RtlDeleteSecurityObject( PSECURITY_DESCRIPTOR * ObjectDescriptor );`
+  - `RtlDllShutdownInProgress` (function, line 21415) `BOOLEAN RtlDllShutdownInProgress( VOID );`
+  - `RtlGetCurrentProcessorNumber` (function, line 21420) `ULONG NTAPI RtlGetCurrentProcessorNumber ( VOID );`
+  - `RtlGetUnloadEventTrace` (function, line 21455) `PRTL_UNLOAD_EVENT_TRACE NTAPI RtlGetUnloadEventTrace( VOID );`
+  - `RtlInitializeProfile` (function, line 21461) `NTSTATUS NTAPI RtlInitializeProfile( BOOLEAN KernelToo );`
+  - `RtlIsThreadWithinLoaderCallout` (function, line 21473) `BOOLEAN NTAPI RtlIsThreadWithinLoaderCallout ( VOID );`
+  - `RtlSetLFHDebuggingInformation` (function, line 21479) `NTSTATUS NTAPI RtlSetLFHDebuggingInformation( PVOID LFHHeap, PHEAP_DEBUGGING_INFORMATION DebuggingInformation );`
+  - `RtlNewSecurityObjectEx` (function, line 21505) `NTSTATUS NTAPI RtlNewSecurityObjectEx ( IN PSECURITY_DESCRIPTOR ParentDescriptor OPTIONAL, IN PSECURITY_DESCRIPTOR CreatorDescriptor OPTIONAL, OUT PSECURITY_DESCRIPTOR * NewDescriptor, IN GUID *Object`
+  - `RtlNewSecurityObjectWithMultipleInheritance` (function, line 21518) `NTSTATUS NTAPI RtlNewSecurityObjectWithMultipleInheritance ( IN PSECURITY_DESCRIPTOR ParentDescriptor OPTIONAL, IN PSECURITY_DESCRIPTOR CreatorDescriptor OPTIONAL, OUT PSECURITY_DESCRIPTOR * NewDescri`
+  - `RtlQuerySecurityObject` (function, line 21553) `NTSTATUS NTAPI RtlQuerySecurityObject ( PSECURITY_DESCRIPTOR ObjectDescriptor, SECURITY_INFORMATION SecurityInformation, PSECURITY_DESCRIPTOR ResultantDescriptor, ULONG DescriptorLength, PULONG Return`
+  - `RtlRegisterWait` (function, line 21563) `NTSTATUS NTAPI RtlRegisterWait( OUT PHANDLE WaitHandle, IN HANDLE Handle, IN WAITORTIMERCALLBACKFUNC Function, IN PVOID Context, IN ULONG Milliseconds, IN ULONG Flags );`
+  - `RtlRemoveVectoredContinueHandler` (function, line 21574) `ULONG NTAPI RtlRemoveVectoredContinueHandler ( IN PVOID Handle );`
+  - `RtlRemoveVectoredExceptionHandler` (function, line 21580) `ULONG NTAPI RtlRemoveVectoredExceptionHandler ( IN PVOID Handle );`
+  - `RtlSetIoCompletionCallback` (function, line 21586) `NTSTATUS NTAPI RtlSetIoCompletionCallback( IN HANDLE FileHandle, IN APC_CALLBACK_FUNCTION CompletionProc, IN ULONG Flags );`
+  - `RtlSetSecurityObject` (function, line 21594) `NTSTATUS NTAPI RtlSetSecurityObject( SECURITY_INFORMATION SecurityInformation, PSECURITY_DESCRIPTOR ModificationDescriptor, PSECURITY_DESCRIPTOR *ObjectsSecurityDescriptor, PGENERIC_MAPPING GenericMap`
+  - `RtlSetSecurityObjectEx` (function, line 21604) `NTSTATUS NTAPI RtlSetSecurityObjectEx( IN SECURITY_INFORMATION SecurityInformation, IN PSECURITY_DESCRIPTOR ModificationDescriptor, _Inout_ PSECURITY_DESCRIPTOR *ObjectsSecurityDescriptor, IN ULONG Au`
+  - `RtlSetUnhandledExceptionFilter` (function, line 21621) `VOID RtlSetUnhandledExceptionFilter ( PRTLP_UNHANDLED_EXCEPTION_FILTER UnhandledExceptionFilter );`
+  - `RtlStartProfile` (function, line 21626) `NTSTATUS NTAPI RtlStartProfile ( VOID );`
+  - `RtlStopProfile` (function, line 21632) `NTSTATUS NTAPI RtlStopProfile ( VOID );`
+  - `RtlWow64EnableFsRedirection` (function, line 21638) `NTSTATUS RtlWow64EnableFsRedirection( IN BOOLEAN Wow64FsEnableRedirection );`
+  - `RtlWow64EnableFsRedirectionEx` (function, line 21643) `NTSTATUS RtlWow64EnableFsRedirectionEx( IN PVOID Wow64FsEnableRedirection, OUT PVOID *OldFsRedirectionLevel );`
+  - `RtlDeregisterWait` (function, line 21661) `NTSTATUS NTAPI RtlDeregisterWait( IN HANDLE WaitHandle );`
+  - `RtlDeregisterWaitEx` (function, line 21667) `NTSTATUS NTAPI RtlDeregisterWaitEx( IN HANDLE WaitHandle, IN HANDLE Event );`
+  - `RtlCopyMappedMemory` (function, line 21680) `NTSTATUS NTAPI RtlCopyMappedMemory ( PVOID pDest, CONST PVOID pSrc, SIZE_T bytesToCopy );`
+  - `KiUserCallbackDispatcher` (function, line 21694) `VOID KiUserCallbackDispatcher( IN ULONG ApiNumber, IN PVOID InputBuffer, IN ULONG INputLength );`
+  - `CsrClientConnectToServer` (function, line 21701) `NTSTATUS NTAPI CsrClientConnectToServer( IN PWSTR ObjectDirectory, IN ULONG ServertDllIndex, IN PCSR_CALLBACK_INFO CallbackInformation OPTIONAL, IN PVOID ConnectionInformation, _Inout_ PULONG Connecti`
+  - `CsrClientCallServer` (function, line 21712) `NTSTATUS NTAPI CsrClientCallServer( _Inout_ PCSR_API_MSG m, _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer OPTIONAL, IN CSR_API_NUMBER ApiNumber, IN ULONG ArgLength );`
+  - `CsrAllocateCaptureBuffer` (function, line 21722) `PCSR_CAPTURE_HEADER NTAPI CsrAllocateCaptureBuffer( IN ULONG CountMessagePointers, IN ULONG CountCapturePointers, IN ULONG Size );`
+  - `CsrFreeCaptureBuffer` (function, line 21731) `VOID NTAPI CsrFreeCaptureBuffer( IN PCSR_CAPTURE_HEADER CaptureBuffer );`
+  - `CsrAllocateMessagePointer` (function, line 21737) `ULONG NTAPI CsrAllocateMessagePointer( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN ULONG Length, OUT PVOID *Pointer );`
+  - `CsrCaptureMessageBuffer` (function, line 21746) `VOID NTAPI CsrCaptureMessageBuffer( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN PVOID Buffer OPTIONAL, IN ULONG Length, OUT PVOID *CapturedBuffer );`
+  - `CsrCaptureMessageString` (function, line 21755) `VOID NTAPI CsrCaptureMessageString( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN PCSTR String, IN ULONG Length, IN ULONG MaximumLength, OUT PSTRING CapturedString );`
+  - `CsrCaptureTimeout` (function, line 21765) `PLARGE_INTEGER NTAPI CsrCaptureTimeout( IN ULONG Milliseconds, OUT PLARGE_INTEGER Timeout );`
+  - `CsrProbeForWrite` (function, line 21772) `VOID NTAPI CsrProbeForWrite( IN PVOID Address, IN ULONG Length, IN ULONG Alignment );`
+  - `CsrProbeForRead` (function, line 21780) `VOID NTAPI CsrProbeForRead( IN PVOID Address, IN ULONG Length, IN ULONG Alignment );`
+  - `CsrNewThread` (function, line 21788) `NTSTATUS NTAPI CsrNewThread( VOID );`
+  - `CsrIdentifyAlertableThread` (function, line 21794) `NTSTATUS NTAPI CsrIdentifyAlertableThread( VOID );`
+  - `CsrSetPriorityClass` (function, line 21800) `NTSTATUS NTAPI CsrSetPriorityClass( IN HANDLE ProcessHandle, _Inout_ PULONG PriorityClass );`
+  - `RtlCreateProcessReflection` (function, line 21809) `NTSTATUS NTAPI RtlCreateProcessReflection( IN HANDLE ProcessHandle, IN ULONG Flags, IN OPTIONAL PVOID StartRoutine, IN OPTIONAL PVOID StartContext, IN OPTIONAL HANDLE EventHandle, OUT OPTIONAL PRTL_PR`
+  - `RtlCloneUserProcess` (function, line 21819) `NTSTATUS NTAPI RtlCloneUserProcess( IN ULONG ProcessFlags, IN OPTIONAL PSECURITY_DESCRIPTOR ProcessSecurityDescriptor, IN OPTIONAL PSECURITY_DESCRIPTOR ThreadSecurityDescriptor, IN OPTIONAL HANDLE Deb`
+  - `LdrShutdownProcess` (function, line 21830) `VOID NTAPI LdrShutdownProcess( );`
+  - `RtlQueryProcessModuleInformation` (function, line 21836) `NTSTATUS NTAPI RtlQueryProcessModuleInformation( IN HANDLE hProcess OPTIONAL, IN ULONG Flags, _Inout_ PRTL_DEBUG_INFORMATION Buffer );`
+  - `RtlQueryProcessBackTraceInformation` (function, line 21844) `NTSTATUS NTAPI RtlQueryProcessBackTraceInformation( _Inout_ PRTL_DEBUG_INFORMATION Buffer );`
+  - `RtlQueryProcessHeapInformation` (function, line 21850) `NTSTATUS NTAPI RtlQueryProcessHeapInformation( _Inout_ PRTL_DEBUG_INFORMATION Buffer );`
+  - `RtlQueryProcessLockInformation` (function, line 21856) `NTSTATUS NTAPI RtlQueryProcessLockInformation( _Inout_ PRTL_DEBUG_INFORMATION Buffer );`
+  - `RtlCreateTimer` (function, line 21883) `NTSTATUS NTAPI RtlCreateTimer( IN HANDLE TimerQueueHandle, OUT HANDLE *Handle, IN WAITORTIMERCALLBACKFUNC Function, IN PVOID Context, IN ULONG DueTime, IN ULONG Period, IN ULONG Flags );`
+  - `RtlCreateTimerQueue` (function, line 21895) `NTSTATUS NTAPI RtlCreateTimerQueue( PHANDLE TimerQueueHandle );`
+  - `RtlUpdateTimer` (function, line 21899) `NTSTATUS NTAPI RtlUpdateTimer( IN HANDLE TimerQueueHandle, IN HANDLE TimerHandle, IN ULONG DueTime, IN ULONG Period );`
+  - `RtlDeleteTimer` (function, line 21908) `NTSTATUS NTAPI RtlDeleteTimer( IN HANDLE TimerQueueHandle, IN HANDLE TimerToCancel, IN HANDLE Event );`
+  - `RtlDeleteTimerQueue` (function, line 21916) `NTSTATUS NTAPI RtlDeleteTimerQueue( IN HANDLE TimerQueueHandle );`
+  - `RtlDeleteTimerQueueEx` (function, line 21922) `NTSTATUS NTAPI RtlDeleteTimerQueueEx( IN HANDLE TimerQueueHandle, IN HANDLE Event );`
+  - `RtlDoesFileExists_U` (function, line 21929) `BOOLEAN NTAPI RtlDoesFileExists_U( PCWSTR FileName );`
+  - `RtlGetCurrentDirectory_U` (function, line 21936) `ULONG RtlGetCurrentDirectory_U( ULONG nBufferLength, PWSTR lpBuffer );`
+  - `RtlSetCurrentDirectory_U` (function, line 21943) `NTSTATUS RtlSetCurrentDirectory_U( PUNICODE_STRING PathName );`
+  - `RtlDosSearchPath_U` (function, line 21948) `ULONG RtlDosSearchPath_U( IN PWSTR lpPath, IN PWSTR lpFileName, IN PWSTR lpExtension OPTIONAL, IN ULONG nBufferLength, OUT PWSTR lpBuffer, OUT PWSTR *lpFilePart );`
+  - `RtlGetFullPathName_U` (function, line 21967) `ULONG NTAPI RtlGetFullPathName_U( IN PCWSTR lpFileName, IN ULONG nBufferLength, OUT PWSTR lpBuffer, OUT OPTIONAL PWSTR *lpFilePart );`
+  - `EtwRegisterSecurityProvider` (function, line 22001) `ULONG NTAPI EtwRegisterSecurityProvider();`
+  - `EtwWriteUMSecurityEvent` (function, line 22006) `ULONG NTAPI EtwWriteUMSecurityEvent( PCEVENT_DESCRIPTOR EventDescriptor, USHORT EventProperty, ULONG UserDataCount, PEVENT_DATA_DESCRIPTOR UserData);`
+  - `EtwEventWriteEndScenario` (function, line 22014) `ULONG NTAPI EtwEventWriteEndScenario( REGHANDLE RegHandle, PCEVENT_DESCRIPTOR EventDescriptor, ULONG UserDataCount, PEVENT_DATA_DESCRIPTOR UserData );`
+  - `EtwEventWriteFull` (function, line 22024) `ULONG NTAPI EtwEventWriteFull( REGHANDLE RegHandle, PCEVENT_DESCRIPTOR EventDescriptor, USHORT EventProperty, LPCGUID ActivityId, LPCGUID RelatedActivityId, ULONG UserDataCount, PEVENT_DATA_DESCRIPTOR`
+  - `EtwEventWriteStartScenario` (function, line 22036) `ULONG NTAPI EtwEventWriteStartScenario( REGHANDLE RegHandle, PCEVENT_DESCRIPTOR EventDescriptor, ULONG UserDataCount, PEVENT_DATA_DESCRIPTOR UserData );`
+  - `NtCreateChannel` (function, line 22051) `NTSTATUS NTAPI NtCreateChannel ( OUT PHANDLE ChannelHandle, IN POBJECT_ATTRIBUTES ObjectAttributes OPTIONAL );`
+  - `NtOpenChannel` (function, line 22058) `NTSTATUS NTAPI NtOpenChannel ( OUT PHANDLE ChannelHandle, IN POBJECT_ATTRIBUTES ObjectAttributes );`
+  - `NtListenChannel` (function, line 22065) `NTSTATUS NTAPI NtListenChannel ( IN HANDLE ChannelHandle, OUT PCHANNEL_MESSAGE *Message );`
+  - `NtSendWaitReplyChannel` (function, line 22072) `NTSTATUS NTAPI NtSendWaitReplyChannel ( IN HANDLE ChannelHandle, IN PVOID Text, IN ULONG Length, OUT PCHANNEL_MESSAGE *Message );`
+  - `NtReplyWaitSendChannel` (function, line 22081) `NTSTATUS NTAPI NtReplyWaitSendChannel ( IN PVOID Text, IN ULONG Length, OUT PCHANNEL_MESSAGE *Message );`
+  - `AlpcUnregisterCompletionListWorkerThread` (function, line 22089) `ULONG NTAPI AlpcUnregisterCompletionListWorkerThread( PVOID CompletionList );`
+  - `RtlUpdateClonedCriticalSection` (function, line 22096) `void NTAPI RtlUpdateClonedCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `RtlGetFullPathName_UstrEx` (function, line 22103) `NTSTATUS NTAPI RtlGetFullPathName_UstrEx( PUNICODE_STRING FileName, PUNICODE_STRING StaticString, PUNICODE_STRING DynamicString, PPUNICODE_STRING StringUsed, PULONG FilePartPrefixCch, PUCHAR NameInval`
+  - `LdrInitShimEngineDynamic` (function, line 22115) `int NTAPI LdrInitShimEngineDynamic( PVOID pShimEngineModule);`
+  - `ZwWow64QueryInformationProcess64` (function, line 22155) `NTSTATUS NTAPI ZwWow64QueryInformationProcess64( IN HANDLE ProcessHandle, IN PROCESSINFOCLASS ProcessInformationClass, OUT PVOID ProcessInformation, IN ULONG ProcessInformationLength, OUT OPTIONAL PUL`
+  - `ZwWow64QueryVirtualMemory64` (function, line 22165) `NTSTATUS NTAPI ZwWow64QueryVirtualMemory64( IN HANDLE ProcessHandle, IN PVOID BaseAddress, IN MEMORY_INFORMATION_CLASS MemoryInformationClass, OUT PVOID MemoryInformation, IN SIZE_T MemoryInformationL`
+  - `ZwWow64ReadVirtualMemory64` (function, line 22177) `NTSTATUS NTAPI ZwWow64ReadVirtualMemory64( IN HANDLE ProcessHandle, IN OPTIONAL PVOID BaseAddress, OUT PVOID Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesRead );`
+  - `ZwWow64WriteVirtualMemory64` (function, line 22188) `NTSTATUS NTAPI ZwWow64WriteVirtualMemory64( IN HANDLE ProcessHandle, IN OPTIONAL PVOID BaseAddress, IN CONST VOID *Buffer, IN SIZE_T BufferSize, OUT OPTIONAL PSIZE_T NumberOfBytesWritten );`
+  - `ZwWow64GetCurrentProcessorNumberEx` (function, line 22199) `void NTAPI ZwWow64GetCurrentProcessorNumberEx( OUT PPROCESSOR_NUMBER ProcNumber );`
+  - `ZwWow64CsrAllocateCaptureBuffer` (function, line 22205) `PCSR_CAPTURE_HEADER NTAPI ZwWow64CsrAllocateCaptureBuffer( IN ULONG CountMessagePointers, IN ULONG CountCapturePointers, IN ULONG Size );`
+  - `ZwWow64CsrAllocateMessagePointer` (function, line 22213) `ULONG NTAPI ZwWow64CsrAllocateMessagePointer( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN ULONG Length, OUT PVOID *Pointer );`
+  - `ZwWow64CsrCaptureMessageBuffer` (function, line 22221) `void NTAPI ZwWow64CsrCaptureMessageBuffer( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN PVOID Buffer OPTIONAL, IN ULONG Length, OUT PVOID *CapturedBuffer );`
+  - `ZwWow64CsrCaptureMessageString` (function, line 22230) `void NTAPI ZwWow64CsrCaptureMessageString( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN PCSTR String, IN ULONG Length, IN ULONG MaximumLength, OUT PSTRING CapturedString );`
+  - `ZwWow64CsrClientConnectToServer` (function, line 22240) `NTSTATUS NTAPI ZwWow64CsrClientConnectToServer( IN PWSTR ObjectDirectory, IN ULONG ServerDllIndex, IN PCSR_CALLBACK_INFO CallbackInformation OPTIONAL, IN PVOID ConnectionInformation, _Inout_ PULONG Co`
+  - `ZwWow64CsrFreeCaptureBuffer` (function, line 22251) `void NTAPI ZwWow64CsrFreeCaptureBuffer( IN PCSR_CAPTURE_HEADER CaptureBuffer );`
+  - `ZwWow64CsrIdentifyAlertableThread` (function, line 22257) `NTSTATUS NTAPI ZwWow64CsrIdentifyAlertableThread( void );`
+  - `ZwWow64DebuggerCall` (function, line 22263) `NTSTATUS NTAPI ZwWow64DebuggerCall ( IN ULONG ServiceClass, IN ULONG Arg1, IN ULONG Arg2 );`
+  - `RtlCleanUpTEBLangLists` (function, line 22271) `NTSTATUS NTAPI RtlCleanUpTEBLangLists( void );`
+  - `KiUserApcDispatcher` (function, line 22277) `VOID KiUserApcDispatcher ( PVOID NormalContext, PVOID SystemArgument1, PVOID SystemArgument2, PKNORMAL_ROUTINE NormalRoutine );`
+  - `KiUserExceptionDispatcher` (function, line 22285) `VOID KiUserExceptionDispatcher ( PEXCEPTION_RECORD ExceptionRecord, PCONTEXT ContextFrame );`
+  - `NtCreateDebugObject` (function, line 22291) `NTSTATUS NTAPI NtCreateDebugObject( OUT PHANDLE DebugObjectHandle, IN ACCESS_MASK DesiredAccess, IN POBJECT_ATTRIBUTES ObjectAttributes, IN ULONG Flags );`
+  - `NtDebugActiveProcess` (function, line 22300) `NTSTATUS NTAPI NtDebugActiveProcess( IN HANDLE ProcessHandle, IN HANDLE DebugObjectHandle );`
+  - `NtDebugContinue` (function, line 22307) `NTSTATUS NTAPI NtDebugContinue( IN HANDLE DebugObjectHandle, IN PCLIENT_ID ClientId, IN NTSTATUS ContinueStatus );`
+  - `NtRemoveProcessDebug` (function, line 22315) `NTSTATUS NTAPI NtRemoveProcessDebug( IN HANDLE ProcessHandle, IN HANDLE DebugObjectHandle );`
+  - `NtSetInformationDebugObject` (function, line 22322) `NTSTATUS NTAPI NtSetInformationDebugObject( IN HANDLE DebugObjectHandle, IN DEBUGOBJECTINFOCLASS DebugObjectInformationClass, IN PVOID DebugInformation, IN ULONG DebugInformationLength, OUT OPTIONAL P`
+  - `NtWaitForDebugEvent` (function, line 22332) `NTSTATUS NTAPI NtWaitForDebugEvent( IN HANDLE DebugObjectHandle, IN BOOLEAN Alertable, IN OPTIONAL PLARGE_INTEGER Timeout, OUT PVOID WaitStateChange );`
+  - `DbgUiConnectToDbg` (function, line 22343) `NTSTATUS NTAPI DbgUiConnectToDbg( VOID );`
+  - `DbgUiGetThreadDebugObject` (function, line 22349) `HANDLE NTAPI DbgUiGetThreadDebugObject( VOID );`
+  - `DbgUiSetThreadDebugObject` (function, line 22355) `VOID NTAPI DbgUiSetThreadDebugObject( IN HANDLE DebugObject );`
+  - `DbgUiWaitStateChange` (function, line 22361) `NTSTATUS NTAPI DbgUiWaitStateChange( OUT PDBGUI_WAIT_STATE_CHANGE StateChange, IN OPTIONAL PLARGE_INTEGER Timeout );`
+  - `DbgUiContinue` (function, line 22368) `NTSTATUS NTAPI DbgUiContinue( IN PCLIENT_ID AppClientId, IN NTSTATUS ContinueStatus );`
+  - `DbgUiStopDebugging` (function, line 22375) `NTSTATUS NTAPI DbgUiStopDebugging( IN HANDLE Process );`
+  - `DbgUiDebugActiveProcess` (function, line 22381) `NTSTATUS NTAPI DbgUiDebugActiveProcess( IN HANDLE Process );`
+  - `DbgUiRemoteBreakin` (function, line 22387) `VOID NTAPI DbgUiRemoteBreakin( IN PVOID Context );`
+  - `DbgUiIssueRemoteBreakin` (function, line 22393) `NTSTATUS NTAPI DbgUiIssueRemoteBreakin( IN HANDLE Process );`
+  - `RtlExitUserProcess` (function, line 22399) `VOID NTAPI RtlExitUserProcess( IN NTSTATUS ExitStatus );`
+  - `RtlQueueWorkItem` (function, line 22405) `NTSTATUS NTAPI RtlQueueWorkItem( IN WORKERCALLBACKFUNC CallbackFunction, IN OPTIONAL PVOID Context, IN ULONG Flags );`
+  - `RtlCreateUserStack` (function, line 22413) `NTSTATUS NTAPI RtlCreateUserStack( SIZE_T CommittedStackSize, SIZE_T MaximumStackSize, SIZE_T ZeroBits, ULONG PageSize, ULONG ReserveAlignment, PINITIAL_TEB InitialTeb );`
+  - `NtdllDefWindowProc_W` (function, line 22425) `LRESULT NTAPI NtdllDefWindowProc_W( );`
+  - `NtdllDefWindowProc_A` (function, line 22431) `LRESULT NTAPI NtdllDefWindowProc_A( );`
+  - `LdrQueryProcessModuleInformation` (function, line 22437) `NTSTATUS NTAPI LdrQueryProcessModuleInformation( PRTL_PROCESS_MODULES ModuleInformation, ULONG ModuleInformationLength, PULONG ReturnLength );`
+  - `RtlRandomEx` (function, line 22446) `NTSYSAPI ULONG NTAPI RtlRandomEx( PULONG Seed );`
+  - `ImpersonateLoggedOnUser` (function, line 22453) `NTSYSAPI BOOL NTAPI ImpersonateLoggedOnUser( IN HANDLE hToken );`
+  - `DuplicateHandle` (function, line 22460) `NTSYSAPI BOOL NTAPI DuplicateHandle( IN HANDLE hSourceProcessHandle, IN HANDLE hSourceHandle, IN HANDLE hTargetProcessHandle, OUT LPHANDLE lpTargetHandle, IN DWORD dwDesiredAccess, IN BOOL bInheritHan`
+  - `AttachConsole` (function, line 22473) `BOOL WINAPI AttachConsole( IN DWORD dwProcessId );`
+  - `GetStdHandle` (function, line 22479) `HANDLE WINAPI GetStdHandle( IN DWORD nStdHandle );`
+  - `WriteConsoleA` (function, line 22487) `BOOL WINAPI WriteConsoleA( IN HANDLE hConsoleOutput, IN VOID *lpBuffer, IN DWORD nNumberOfCharsToWrite, OUT LPDWORD lpNumberOfCharsWritten, IN LPVOID lpReserved );`
+  - `getaddrinfo` (function, line 22507) `INT WSAAPI getaddrinfo( IN OPTIONAL PCSTR pNodeName, IN OPTIONAL PCSTR pServiceName, IN OPTIONAL const ADDRINFOA *pHints, OUT PADDRINFOA *ppResult );`
+  - `freeaddrinfo` (function, line 22516) `VOID WSAAPI freeaddrinfo( IN PADDRINFOA pAddrInfo );`
+  - `wcslen` (function, line 22538) `IMPORT_FN size_t __cdecl wcslen(const wchar_t *);`
+  - `wcscat` (function, line 22539) `IMPORT_FN wchar_t * __cdecl wcscat(wchar_t *dst, const wchar_t *src);`
+  - `wcscmp` (function, line 22540) `IMPORT_FN int __cdecl wcscmp(const wchar_t *src, const wchar_t *dst);`
+  - `_wcsicmp` (function, line 22541) `IMPORT_FN int __cdecl _wcsicmp(const wchar_t *, const wchar_t *);`
+  - `_wcsnicmp` (function, line 22542) `IMPORT_FN int __cdecl _wcsnicmp(const wchar_t *, const wchar_t *, size_t);`
+  - `_wcslwr` (function, line 22543) `IMPORT_FN wchar_t * __cdecl _wcslwr(wchar_t *);`
+  - `_wcsupr` (function, line 22544) `IMPORT_FN wchar_t * __cdecl _wcsupr(wchar_t *);`
+  - `wcschr` (function, line 22545) `IMPORT_FN wchar_t * __cdecl wcschr(const wchar_t *string, wchar_t ch);`
+  - `wcscpy` (function, line 22546) `IMPORT_FN wchar_t * __cdecl wcscpy(wchar_t *dst, const wchar_t *src);`
+  - `wcsncat` (function, line 22547) `IMPORT_FN wchar_t * __cdecl wcsncat(wchar_t *front, const wchar_t *back, size_t count);`
+  - `wcsncpy` (function, line 22548) `IMPORT_FN wchar_t * __cdecl wcsncpy(wchar_t *dest, const wchar_t *source, size_t count);`
+  - `NTSTATUS` (variable, line 34) `extern "C" { #endif #include <wtypes.h> #include <basetsd.h> #if !defined(NTSTATUS) typedef LONG NTSTATUS;`
+  - `_NTDLL_` (macro, line 21) `#define _NTDLL_`
+  - `EXPORT_FN` (macro, line 48) `#define EXPORT_FN`
+  - `IMPORT_FN` (macro, line 50) `#define IMPORT_FN`
+  - `PAGE_SIZE` (macro, line 51) `#define PAGE_SIZE`
+  - `EXTERNAL` (macro, line 53) `#define EXTERNAL`
+  - `UNREFERENCED_PARAMETER` (macro, line 57) `#define UNREFERENCED_PARAMETER(P)`
+  - `NT_SUCCESS` (macro, line 61) `#define NT_SUCCESS(Status)`
+  - `NT_INFORMATION` (macro, line 63) `#define NT_INFORMATION(Status)`
+  - `NT_WARNING` (macro, line 64) `#define NT_WARNING(Status)`
+  - `NT_ERROR` (macro, line 65) `#define NT_ERROR(Status)`
+  - `ABSOLUTE_TIME` (macro, line 66) `#define ABSOLUTE_TIME(wait)`
+  - `RELATIVE_TIME` (macro, line 68) `#define RELATIVE_TIME(wait)`
+  - `NANOSECONDS` (macro, line 69) `#define NANOSECONDS(nanos)`
+  - `MICROSECONDS` (macro, line 71) `#define MICROSECONDS(micros)`
+  - `MILLISECONDS` (macro, line 73) `#define MILLISECONDS(milli)`
+  - `SECONDS` (macro, line 75) `#define SECONDS(seconds)`
+  - `ARGUMENT_PRESENT` (macro, line 77) `#define ARGUMENT_PRESENT(ArgumentPointer)`
+  - `RESTORE_LIST` (macro, line 80) `#define RESTORE_LIST(ListEntry)`
+  - `UNLINK` (macro, line 84) `#define UNLINK(x)`
+  - `ALIGN_TO_POWER2` (macro, line 87) `#define ALIGN_TO_POWER2( x, n )`
+  - `POI` (macro, line 89) `#define POI(addr)`
+  - `IS_PATH_SEPARATOR` (macro, line 91) `#define IS_PATH_SEPARATOR(ch)`
+  - `IS_DOT` (macro, line 93) `#define IS_DOT(s)`
+  - `IS_DOT_DOT` (macro, line 94) `#define IS_DOT_DOT(s)`
+  - `IS_PATH_SEPARATOR_U` (macro, line 95) `#define IS_PATH_SEPARATOR_U(ch)`
+  - `IS_DOT_U` (macro, line 97) `#define IS_DOT_U(s)`
+  - `IS_DOT_DOT_U` (macro, line 98) `#define IS_DOT_DOT_U(s)`
+  - `jmp_length` (macro, line 99) `#define jmp_length(y,x)`
+  - `stc_jc` (macro, line 101) `#define stc_jc(y,x)`
+  - `MODIFYBYTE` (macro, line 102) `#define MODIFYBYTE( _base, _offset, _byte )`
+  - `MODIFYWORD` (macro, line 104) `#define MODIFYWORD( _base, _offset, _word )`
+  - `MODIFYDWORD` (macro, line 105) `#define MODIFYDWORD( _base, _offset, _dword )`
+  - `MODIFYQWORD` (macro, line 106) `#define MODIFYQWORD( _base, _offset, _qword )`
+  - `PTR_ADD_OFFSET` (macro, line 107) `#define PTR_ADD_OFFSET(Pointer, Offset)`
+  - `WRITE_JMP` (macro, line 109) `#define WRITE_JMP( from, to )`
+  - `GET_JMP` (macro, line 111) `#define GET_JMP( from )`
+  - `ASSERT` (macro, line 112) `#define ASSERT( exp )`
+  - `SHORT_SIZE` (macro, line 120) `#define SHORT_SIZE`
+  - `SHORT_MASK` (macro, line 121) `#define SHORT_MASK`
+  - `LONG_SIZE` (macro, line 122) `#define LONG_SIZE`
+  - `LONG_MASK` (macro, line 123) `#define LONG_MASK`
+  - `LOWBYTE_MASK` (macro, line 124) `#define LOWBYTE_MASK`
+  - `FIRSTBYTE` (macro, line 125) `#define FIRSTBYTE(VALUE)`
+  - `SECONDBYTE` (macro, line 127) `#define SECONDBYTE(VALUE)`
+  - `THIRDBYTE` (macro, line 128) `#define THIRDBYTE(VALUE)`
+  - `FOURTHBYTE` (macro, line 129) `#define FOURTHBYTE(VALUE)`
+  - `SHORT_LEAST_SIGNIFICANT_BIT` (macro, line 134) `#define SHORT_LEAST_SIGNIFICANT_BIT`
+  - `SHORT_MOST_SIGNIFICANT_BIT` (macro, line 136) `#define SHORT_MOST_SIGNIFICANT_BIT`
+  - `LONG_LEAST_SIGNIFICANT_BIT` (macro, line 137) `#define LONG_LEAST_SIGNIFICANT_BIT`
+  - `LONG_3RD_MOST_SIGNIFICANT_BIT` (macro, line 139) `#define LONG_3RD_MOST_SIGNIFICANT_BIT`
+  - `LONG_2ND_MOST_SIGNIFICANT_BIT` (macro, line 140) `#define LONG_2ND_MOST_SIGNIFICANT_BIT`
+  - `LONG_MOST_SIGNIFICANT_BIT` (macro, line 141) `#define LONG_MOST_SIGNIFICANT_BIT`
+  - `RtlStoreUshort` (macro, line 166) `#define RtlStoreUshort(ADDRESS,VALUE)`
+  - `RtlStoreUlong` (macro, line 204) `#define RtlStoreUlong(ADDRESS,VALUE)`
+  - `RtlRetrieveUshort` (macro, line 239) `#define RtlRetrieveUshort(DEST_ADDRESS,SRC_ADDRESS)`
+  - `RtlRetrieveUlong` (macro, line 276) `#define RtlRetrieveUlong(DEST_ADDRESS,SRC_ADDRESS)`
+  - `RtlOffsetToPointer` (macro, line 315) `#define RtlOffsetToPointer(B,O)`
+  - `RtlPointerToOffset` (macro, line 346) `#define RtlPointerToOffset(B,P)`
+  - `ANSI_NULL` (macro, line 389) `#define ANSI_NULL`
+  - `UNICODE_NULL` (macro, line 412) `#define UNICODE_NULL`
+  - `FIELD_OFFSET` (macro, line 448) `#define FIELD_OFFSET(type, field)`
+  - `CONTAINING_RECORD` (macro, line 450) `#define CONTAINING_RECORD(address, type, field)`
+  - `IN_REGION` (macro, line 461) `#define IN_REGION(x, Base, Size)`
+  - `RVATOVA` (macro, line 465) `#define RVATOVA(base, offset)`
+  - `NOP_FUNCTION` (macro, line 469) `#define NOP_FUNCTION`
+  - `PAGED_CODE` (macro, line 471) `#define PAGED_CODE()`
+  - `LPC_CLIENT_ID` (macro, line 474) `#define LPC_CLIENT_ID`
+  - `LPC_SIZE_T` (macro, line 475) `#define LPC_SIZE_T`
+  - `LPC_PVOID` (macro, line 476) `#define LPC_PVOID`
+  - `LPC_HANDLE` (macro, line 477) `#define LPC_HANDLE`
+  - `LPC_CLIENT_ID` (macro, line 479) `#define LPC_CLIENT_ID`
+  - `LPC_SIZE_T` (macro, line 480) `#define LPC_SIZE_T`
+  - `LPC_PVOID` (macro, line 481) `#define LPC_PVOID`
+  - `LPC_HANDLE` (macro, line 482) `#define LPC_HANDLE`
+  - `OBJ_INHERIT` (macro, line 484) `#define OBJ_INHERIT`
+  - `OBJ_HANDLE_TAGBITS` (macro, line 486) `#define OBJ_HANDLE_TAGBITS`
+  - `OBJ_PERMANENT` (macro, line 487) `#define OBJ_PERMANENT`
+  - `OBJ_EXCLUSIVE` (macro, line 488) `#define OBJ_EXCLUSIVE`
+  - `OBJ_CASE_INSENSITIVE` (macro, line 489) `#define OBJ_CASE_INSENSITIVE`
+  - `OBJ_OPENIF` (macro, line 490) `#define OBJ_OPENIF`
+  - `OBJ_OPENLINK` (macro, line 491) `#define OBJ_OPENLINK`
+  - `OBJ_KERNEL_HANDLE` (macro, line 492) `#define OBJ_KERNEL_HANDLE`
+  - `OBJ_FORCE_ACCESS_CHECK` (macro, line 493) `#define OBJ_FORCE_ACCESS_CHECK`
+  - `OBJ_VALID_ATTRIBUTES` (macro, line 494) `#define OBJ_VALID_ATTRIBUTES`
+  - `RTL_QUERY_PROCESS_MODULES` (macro, line 495) `#define RTL_QUERY_PROCESS_MODULES`
+  - `RTL_QUERY_PROCESS_BACKTRACES` (macro, line 497) `#define RTL_QUERY_PROCESS_BACKTRACES`
+  - `RTL_QUERY_PROCESS_HEAP_SUMMARY` (macro, line 498) `#define RTL_QUERY_PROCESS_HEAP_SUMMARY`
+  - `RTL_QUERY_PROCESS_HEAP_TAGS` (macro, line 499) `#define RTL_QUERY_PROCESS_HEAP_TAGS`
+  - `RTL_QUERY_PROCESS_HEAP_ENTRIES` (macro, line 500) `#define RTL_QUERY_PROCESS_HEAP_ENTRIES`
+  - `RTL_QUERY_PROCESS_LOCKS` (macro, line 501) `#define RTL_QUERY_PROCESS_LOCKS`
+  - `RTL_QUERY_PROCESS_MODULES32` (macro, line 502) `#define RTL_QUERY_PROCESS_MODULES32`
+  - `RTL_QUERY_PROCESS_NONINVASIVE` (macro, line 503) `#define RTL_QUERY_PROCESS_NONINVASIVE`
+  - `InitializeObjectAttributes` (macro, line 516) `#define InitializeObjectAttributes( p, n, a, r, s )`
+  - `___PROCESSOR_NUMBER_DEFINED` (macro, line 533) `#define ___PROCESSOR_NUMBER_DEFINED`
+  - `ANSI_NULL` (macro, line 542) `#define ANSI_NULL`
+  - `UNICODE_NULL` (macro, line 544) `#define UNICODE_NULL`
+  - `UNICODE_STRING_MAX_BYTES` (macro, line 547) `#define UNICODE_STRING_MAX_BYTES`
+  - `UNICODE_STRING_MAX_CHARS` (macro, line 549) `#define UNICODE_STRING_MAX_CHARS`
+  - `DECLARE_CONST_UNICODE_STRING` (macro, line 551) `#define DECLARE_CONST_UNICODE_STRING(_variablename, _string)`
+  - `IsListEmpty` (macro, line 557) `#define IsListEmpty(ListHead)`
+  - `InitializeListHead` (macro, line 560) `#define InitializeListHead(ListHead)`
+  - `IsListEmpty` (macro, line 563) `#define IsListEmpty(ListHead)`
+  - `RemoveHeadList` (macro, line 566) `#define RemoveHeadList(ListHead)`
+  - `RemoveTailList` (macro, line 570) `#define RemoveTailList(ListHead)`
+  - `RemoveEntryList` (macro, line 579) `#define RemoveEntryList(Entry)`
+  - `InsertTailList` (macro, line 594) `#define InsertTailList(ListHead,Entry)`
+  - `InsertHeadList` (macro, line 610) `#define InsertHeadList(ListHead,Entry)`
+  - `COUNT_IS_ALIGNED` (macro, line 627) `#define COUNT_IS_ALIGNED(Count,Pow2)`
+  - `POINTER_IS_ALIGNED` (macro, line 636) `#define POINTER_IS_ALIGNED(Ptr,Pow2)`
+  - `ROUND_DOWN_COUNT` (macro, line 638) `#define ROUND_DOWN_COUNT(Count,Pow2)`
+  - `ROUND_DOWN_POINTER` (macro, line 642) `#define ROUND_DOWN_POINTER(Ptr,Pow2)`
+  - `ROUND_UP_COUNT` (macro, line 655) `#define ROUND_UP_COUNT(Count,Pow2)`
+  - `ROUND_UP_POINTER` (macro, line 665) `#define ROUND_UP_POINTER(Ptr,Pow2)`
+  - `ALIGN_BYTE` (macro, line 667) `#define ALIGN_BYTE`
+  - `ALIGN_CHAR` (macro, line 669) `#define ALIGN_CHAR`
+  - `ALIGN_DESC_CHAR` (macro, line 670) `#define ALIGN_DESC_CHAR`
+  - `ALIGN_DWORD` (macro, line 671) `#define ALIGN_DWORD`
+  - `ALIGN_LONG` (macro, line 672) `#define ALIGN_LONG`
+  - `ALIGN_LPBYTE` (macro, line 673) `#define ALIGN_LPBYTE`
+  - `ALIGN_LPDWORD` (macro, line 674) `#define ALIGN_LPDWORD`
+  - `ALIGN_LPSTR` (macro, line 675) `#define ALIGN_LPSTR`
+  - `ALIGN_LPTSTR` (macro, line 676) `#define ALIGN_LPTSTR`
+  - `ALIGN_LPVOID` (macro, line 677) `#define ALIGN_LPVOID`
+  - `ALIGN_LPWORD` (macro, line 678) `#define ALIGN_LPWORD`
+  - `ALIGN_TCHAR` (macro, line 679) `#define ALIGN_TCHAR`
+  - `ALIGN_WCHAR` (macro, line 680) `#define ALIGN_WCHAR`
+  - `ALIGN_WORD` (macro, line 681) `#define ALIGN_WORD`
+  - `ALIGN_QUAD` (macro, line 682) `#define ALIGN_QUAD`
+  - `ALIGN_WORST` (macro, line 683) `#define ALIGN_WORST`
+  - `QUAD_ALIGN` (macro, line 687) `#define QUAD_ALIGN(VALUE)`
+  - `EXPORT_VA` (macro, line 693) `#define EXPORT_VA(x)`
+  - `IMPORT_VA` (macro, line 694) `#define IMPORT_VA(x)`
+  - `RELOC_VA` (macro, line 695) `#define RELOC_VA(x)`
+  - `RESOURCE_VA` (macro, line 696) `#define RESOURCE_VA(x)`
+  - `EXPORT_SIZE` (macro, line 697) `#define EXPORT_SIZE(x)`
+  - `IMPORT_SIZE` (macro, line 699) `#define IMPORT_SIZE(x)`
+  - `RELOC_SIZE` (macro, line 700) `#define RELOC_SIZE(x)`
+  - `RESOURCE_SIZE` (macro, line 701) `#define RESOURCE_SIZE(x)`
+  - `DEBUGDIR_VA` (macro, line 702) `#define DEBUGDIR_VA(x)`
+  - `DEBUGDIR_SIZE` (macro, line 703) `#define DEBUGDIR_SIZE(x)`
+  - `IS_VALID_HANDLE` (macro, line 705) `#define IS_VALID_HANDLE(hHandle)`
+  - `SIZEOF_ARRAY` (macro, line 707) `#define SIZEOF_ARRAY(arr)`
+  - `_FILESYSTEMFSCTL_` (macro, line 712) `#define _FILESYSTEMFSCTL_`
+  - `FSCTL_REQUEST_OPLOCK_LEVEL_1` (macro, line 713) `#define FSCTL_REQUEST_OPLOCK_LEVEL_1`
+  - `FSCTL_REQUEST_OPLOCK_LEVEL_2` (macro, line 715) `#define FSCTL_REQUEST_OPLOCK_LEVEL_2`
+  - `FSCTL_REQUEST_BATCH_OPLOCK` (macro, line 716) `#define FSCTL_REQUEST_BATCH_OPLOCK`
+  - `FSCTL_OPLOCK_BREAK_ACKNOWLEDGE` (macro, line 717) `#define FSCTL_OPLOCK_BREAK_ACKNOWLEDGE`
+  - `FSCTL_OPBATCH_ACK_CLOSE_PENDING` (macro, line 718) `#define FSCTL_OPBATCH_ACK_CLOSE_PENDING`
+  - `FSCTL_OPLOCK_BREAK_NOTIFY` (macro, line 719) `#define FSCTL_OPLOCK_BREAK_NOTIFY`
+  - `FSCTL_LOCK_VOLUME` (macro, line 720) `#define FSCTL_LOCK_VOLUME`
+  - `FSCTL_UNLOCK_VOLUME` (macro, line 721) `#define FSCTL_UNLOCK_VOLUME`
+  - `FSCTL_DISMOUNT_VOLUME` (macro, line 722) `#define FSCTL_DISMOUNT_VOLUME`
+  - `FSCTL_IS_VOLUME_MOUNTED` (macro, line 724) `#define FSCTL_IS_VOLUME_MOUNTED`
+  - `FSCTL_IS_PATHNAME_VALID` (macro, line 725) `#define FSCTL_IS_PATHNAME_VALID`
+  - `FSCTL_MARK_VOLUME_DIRTY` (macro, line 726) `#define FSCTL_MARK_VOLUME_DIRTY`
+  - `FSCTL_QUERY_RETRIEVAL_POINTERS` (macro, line 728) `#define FSCTL_QUERY_RETRIEVAL_POINTERS`
+  - `FSCTL_GET_COMPRESSION` (macro, line 729) `#define FSCTL_GET_COMPRESSION`
+  - `FSCTL_SET_COMPRESSION` (macro, line 730) `#define FSCTL_SET_COMPRESSION`
+  - `FSCTL_SET_BOOTLOADER_ACCESSED` (macro, line 733) `#define FSCTL_SET_BOOTLOADER_ACCESSED`
+  - `FSCTL_OPLOCK_BREAK_ACK_NO_2` (macro, line 734) `#define FSCTL_OPLOCK_BREAK_ACK_NO_2`
+  - `FSCTL_INVALIDATE_VOLUMES` (macro, line 735) `#define FSCTL_INVALIDATE_VOLUMES`
+  - `FSCTL_QUERY_FAT_BPB` (macro, line 736) `#define FSCTL_QUERY_FAT_BPB`
+  - `FSCTL_REQUEST_FILTER_OPLOCK` (macro, line 737) `#define FSCTL_REQUEST_FILTER_OPLOCK`
+  - `FSCTL_FILESYSTEM_GET_STATISTICS` (macro, line 738) `#define FSCTL_FILESYSTEM_GET_STATISTICS`
+  - `FSCTL_GET_NTFS_VOLUME_DATA` (macro, line 741) `#define FSCTL_GET_NTFS_VOLUME_DATA`
+  - `FSCTL_GET_NTFS_FILE_RECORD` (macro, line 742) `#define FSCTL_GET_NTFS_FILE_RECORD`
+  - `FSCTL_GET_VOLUME_BITMAP` (macro, line 743) `#define FSCTL_GET_VOLUME_BITMAP`
+  - `FSCTL_GET_RETRIEVAL_POINTERS` (macro, line 744) `#define FSCTL_GET_RETRIEVAL_POINTERS`
+  - `FSCTL_MOVE_FILE` (macro, line 745) `#define FSCTL_MOVE_FILE`
+  - `FSCTL_IS_VOLUME_DIRTY` (macro, line 746) `#define FSCTL_IS_VOLUME_DIRTY`
+  - `FSCTL_ALLOW_EXTENDED_DASD_IO` (macro, line 748) `#define FSCTL_ALLOW_EXTENDED_DASD_IO`
+  - `FSCTL_FIND_FILES_BY_SID` (macro, line 754) `#define FSCTL_FIND_FILES_BY_SID`
+  - `FSCTL_SET_OBJECT_ID` (macro, line 757) `#define FSCTL_SET_OBJECT_ID`
+  - `FSCTL_GET_OBJECT_ID` (macro, line 758) `#define FSCTL_GET_OBJECT_ID`
+  - `FSCTL_DELETE_OBJECT_ID` (macro, line 759) `#define FSCTL_DELETE_OBJECT_ID`
+  - `FSCTL_SET_REPARSE_POINT` (macro, line 760) `#define FSCTL_SET_REPARSE_POINT`
+  - `FSCTL_GET_REPARSE_POINT` (macro, line 761) `#define FSCTL_GET_REPARSE_POINT`
+  - `FSCTL_DELETE_REPARSE_POINT` (macro, line 762) `#define FSCTL_DELETE_REPARSE_POINT`
+  - `FSCTL_ENUM_USN_DATA` (macro, line 763) `#define FSCTL_ENUM_USN_DATA`
+  - `FSCTL_SECURITY_ID_CHECK` (macro, line 764) `#define FSCTL_SECURITY_ID_CHECK`
+  - `FSCTL_READ_USN_JOURNAL` (macro, line 765) `#define FSCTL_READ_USN_JOURNAL`
+  - `FSCTL_SET_OBJECT_ID_EXTENDED` (macro, line 766) `#define FSCTL_SET_OBJECT_ID_EXTENDED`
+  - `FSCTL_CREATE_OR_GET_OBJECT_ID` (macro, line 767) `#define FSCTL_CREATE_OR_GET_OBJECT_ID`
+  - `FSCTL_SET_SPARSE` (macro, line 768) `#define FSCTL_SET_SPARSE`
+  - `FSCTL_SET_ZERO_DATA` (macro, line 769) `#define FSCTL_SET_ZERO_DATA`
+  - `FSCTL_QUERY_ALLOCATED_RANGES` (macro, line 770) `#define FSCTL_QUERY_ALLOCATED_RANGES`
+  - `FSCTL_ENABLE_UPGRADE` (macro, line 771) `#define FSCTL_ENABLE_UPGRADE`
+  - `FSCTL_SET_ENCRYPTION` (macro, line 773) `#define FSCTL_SET_ENCRYPTION`
+  - `FSCTL_ENCRYPTION_FSCTL_IO` (macro, line 774) `#define FSCTL_ENCRYPTION_FSCTL_IO`
+  - `FSCTL_WRITE_RAW_ENCRYPTED` (macro, line 775) `#define FSCTL_WRITE_RAW_ENCRYPTED`
+  - `FSCTL_READ_RAW_ENCRYPTED` (macro, line 776) `#define FSCTL_READ_RAW_ENCRYPTED`
+  - `FSCTL_CREATE_USN_JOURNAL` (macro, line 777) `#define FSCTL_CREATE_USN_JOURNAL`
+  - `FSCTL_READ_FILE_USN_DATA` (macro, line 778) `#define FSCTL_READ_FILE_USN_DATA`
+  - `FSCTL_WRITE_USN_CLOSE_RECORD` (macro, line 779) `#define FSCTL_WRITE_USN_CLOSE_RECORD`
+  - `FSCTL_EXTEND_VOLUME` (macro, line 780) `#define FSCTL_EXTEND_VOLUME`
+  - `FSCTL_QUERY_USN_JOURNAL` (macro, line 781) `#define FSCTL_QUERY_USN_JOURNAL`
+  - `FSCTL_DELETE_USN_JOURNAL` (macro, line 782) `#define FSCTL_DELETE_USN_JOURNAL`
+  - `FSCTL_MARK_HANDLE` (macro, line 783) `#define FSCTL_MARK_HANDLE`
+  - `FSCTL_SIS_COPYFILE` (macro, line 784) `#define FSCTL_SIS_COPYFILE`
+  - `FSCTL_SIS_LINK_FILES` (macro, line 785) `#define FSCTL_SIS_LINK_FILES`
+  - `FSCTL_RECALL_FILE` (macro, line 789) `#define FSCTL_RECALL_FILE`
+  - `FSCTL_READ_FROM_PLEX` (macro, line 791) `#define FSCTL_READ_FROM_PLEX`
+  - `FSCTL_FILE_PREFETCH` (macro, line 792) `#define FSCTL_FILE_PREFETCH`
+  - `FSCTL_MAKE_MEDIA_COMPATIBLE` (macro, line 796) `#define FSCTL_MAKE_MEDIA_COMPATIBLE`
+  - `FSCTL_SET_DEFECT_MANAGEMENT` (macro, line 797) `#define FSCTL_SET_DEFECT_MANAGEMENT`
+  - `FSCTL_QUERY_SPARING_INFO` (macro, line 798) `#define FSCTL_QUERY_SPARING_INFO`
+  - `FSCTL_QUERY_ON_DISK_VOLUME_INFO` (macro, line 799) `#define FSCTL_QUERY_ON_DISK_VOLUME_INFO`
+  - `FSCTL_SET_VOLUME_COMPRESSION_STATE` (macro, line 800) `#define FSCTL_SET_VOLUME_COMPRESSION_STATE`
+  - `FSCTL_TXFS_MODIFY_RM` (macro, line 802) `#define FSCTL_TXFS_MODIFY_RM`
+  - `FSCTL_TXFS_QUERY_RM_INFORMATION` (macro, line 803) `#define FSCTL_TXFS_QUERY_RM_INFORMATION`
+  - `FSCTL_TXFS_ROLLFORWARD_REDO` (macro, line 805) `#define FSCTL_TXFS_ROLLFORWARD_REDO`
+  - `FSCTL_TXFS_ROLLFORWARD_UNDO` (macro, line 806) `#define FSCTL_TXFS_ROLLFORWARD_UNDO`
+  - `FSCTL_TXFS_START_RM` (macro, line 807) `#define FSCTL_TXFS_START_RM`
+  - `FSCTL_TXFS_SHUTDOWN_RM` (macro, line 808) `#define FSCTL_TXFS_SHUTDOWN_RM`
+  - `FSCTL_TXFS_READ_BACKUP_INFORMATION` (macro, line 809) `#define FSCTL_TXFS_READ_BACKUP_INFORMATION`
+  - `FSCTL_TXFS_WRITE_BACKUP_INFORMATION` (macro, line 810) `#define FSCTL_TXFS_WRITE_BACKUP_INFORMATION`
+  - `FSCTL_TXFS_CREATE_SECONDARY_RM` (macro, line 811) `#define FSCTL_TXFS_CREATE_SECONDARY_RM`
+  - `FSCTL_TXFS_GET_METADATA_INFO` (macro, line 812) `#define FSCTL_TXFS_GET_METADATA_INFO`
+  - `FSCTL_TXFS_GET_TRANSACTED_VERSION` (macro, line 813) `#define FSCTL_TXFS_GET_TRANSACTED_VERSION`
+  - `FSCTL_TXFS_SAVEPOINT_INFORMATION` (macro, line 815) `#define FSCTL_TXFS_SAVEPOINT_INFORMATION`
+  - `FSCTL_TXFS_CREATE_MINIVERSION` (macro, line 816) `#define FSCTL_TXFS_CREATE_MINIVERSION`
+  - `FSCTL_TXFS_TRANSACTION_ACTIVE` (macro, line 820) `#define FSCTL_TXFS_TRANSACTION_ACTIVE`
+  - `FSCTL_SET_ZERO_ON_DEALLOCATION` (macro, line 821) `#define FSCTL_SET_ZERO_ON_DEALLOCATION`
+  - `FSCTL_SET_REPAIR` (macro, line 822) `#define FSCTL_SET_REPAIR`
+  - `FSCTL_GET_REPAIR` (macro, line 823) `#define FSCTL_GET_REPAIR`
+  - `FSCTL_WAIT_FOR_REPAIR` (macro, line 824) `#define FSCTL_WAIT_FOR_REPAIR`
+  - `FSCTL_INITIATE_REPAIR` (macro, line 826) `#define FSCTL_INITIATE_REPAIR`
+  - `FSCTL_CSC_INTERNAL` (macro, line 827) `#define FSCTL_CSC_INTERNAL`
+  - `FSCTL_SHRINK_VOLUME` (macro, line 828) `#define FSCTL_SHRINK_VOLUME`
+  - `FSCTL_SET_SHORT_NAME_BEHAVIOR` (macro, line 829) `#define FSCTL_SET_SHORT_NAME_BEHAVIOR`
+  - `FSCTL_DFSR_SET_GHOST_HANDLE_STATE` (macro, line 830) `#define FSCTL_DFSR_SET_GHOST_HANDLE_STATE`
+  - `FSCTL_TXFS_LIST_TRANSACTION_LOCKED_FILES` (macro, line 835) `#define FSCTL_TXFS_LIST_TRANSACTION_LOCKED_FILES`
+  - `FSCTL_TXFS_LIST_TRANSACTIONS` (macro, line 838) `#define FSCTL_TXFS_LIST_TRANSACTIONS`
+  - `FSCTL_QUERY_PAGEFILE_ENCRYPTION` (macro, line 839) `#define FSCTL_QUERY_PAGEFILE_ENCRYPTION`
+  - `FSCTL_RESET_VOLUME_ALLOCATION_HINTS` (macro, line 843) `#define FSCTL_RESET_VOLUME_ALLOCATION_HINTS`
+  - `FSCTL_QUERY_DEPENDENT_VOLUME` (macro, line 847) `#define FSCTL_QUERY_DEPENDENT_VOLUME`
+  - `FSCTL_SD_GLOBAL_CHANGE` (macro, line 848) `#define FSCTL_SD_GLOBAL_CHANGE`
+  - `FSCTL_TXFS_READ_BACKUP_INFORMATION2` (macro, line 852) `#define FSCTL_TXFS_READ_BACKUP_INFORMATION2`
+  - `FSCTL_LOOKUP_STREAM_FROM_CLUSTER` (macro, line 856) `#define FSCTL_LOOKUP_STREAM_FROM_CLUSTER`
+  - `FSCTL_TXFS_WRITE_BACKUP_INFORMATION2` (macro, line 857) `#define FSCTL_TXFS_WRITE_BACKUP_INFORMATION2`
+  - `FSCTL_FILE_TYPE_NOTIFICATION` (macro, line 858) `#define FSCTL_FILE_TYPE_NOTIFICATION`
+  - `FSCTL_GET_BOOT_AREA_INFO` (macro, line 865) `#define FSCTL_GET_BOOT_AREA_INFO`
+  - `FSCTL_GET_RETRIEVAL_POINTER_BASE` (macro, line 866) `#define FSCTL_GET_RETRIEVAL_POINTER_BASE`
+  - `FSCTL_SET_PERSISTENT_VOLUME_STATE` (macro, line 867) `#define FSCTL_SET_PERSISTENT_VOLUME_STATE`
+  - `FSCTL_QUERY_PERSISTENT_VOLUME_STATE` (macro, line 868) `#define FSCTL_QUERY_PERSISTENT_VOLUME_STATE`
+  - `FSCTL_REQUEST_OPLOCK` (macro, line 869) `#define FSCTL_REQUEST_OPLOCK`
+  - `FSCTL_CSV_TUNNEL_REQUEST` (macro, line 871) `#define FSCTL_CSV_TUNNEL_REQUEST`
+  - `FSCTL_IS_CSV_FILE` (macro, line 873) `#define FSCTL_IS_CSV_FILE`
+  - `FSCTL_QUERY_FILE_SYSTEM_RECOGNITION` (macro, line 874) `#define FSCTL_QUERY_FILE_SYSTEM_RECOGNITION`
+  - `FSCTL_CSV_GET_VOLUME_PATH_NAME` (macro, line 876) `#define FSCTL_CSV_GET_VOLUME_PATH_NAME`
+  - `FSCTL_CSV_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT` (macro, line 877) `#define FSCTL_CSV_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT`
+  - `FSCTL_CSV_GET_VOLUME_PATH_NAMES_FOR_VOLUME_NAME` (macro, line 878) `#define FSCTL_CSV_GET_VOLUME_PATH_NAMES_FOR_VOLUME_NAME`
+  - `FSCTL_IS_FILE_ON_CSV_VOLUME` (macro, line 879) `#define FSCTL_IS_FILE_ON_CSV_VOLUME`
+  - `FSCTL_MARK_AS_SYSTEM_HIVE` (macro, line 882) `#define FSCTL_MARK_AS_SYSTEM_HIVE`
+  - `CSV_NAMESPACE_INFO_V1` (macro, line 896) `#define CSV_NAMESPACE_INFO_V1`
+  - `CSV_INVALID_DEVICE_NUMBER` (macro, line 898) `#define CSV_INVALID_DEVICE_NUMBER`
+  - `USN_PAGE_SIZE` (macro, line 1095) `#define USN_PAGE_SIZE`
+  - `USN_REASON_DATA_OVERWRITE` (macro, line 1097) `#define USN_REASON_DATA_OVERWRITE`
+  - `USN_REASON_DATA_EXTEND` (macro, line 1099) `#define USN_REASON_DATA_EXTEND`
+  - `USN_REASON_DATA_TRUNCATION` (macro, line 1100) `#define USN_REASON_DATA_TRUNCATION`
+  - `USN_REASON_NAMED_DATA_OVERWRITE` (macro, line 1101) `#define USN_REASON_NAMED_DATA_OVERWRITE`
+  - `USN_REASON_NAMED_DATA_EXTEND` (macro, line 1102) `#define USN_REASON_NAMED_DATA_EXTEND`
+  - `USN_REASON_NAMED_DATA_TRUNCATION` (macro, line 1103) `#define USN_REASON_NAMED_DATA_TRUNCATION`
+  - `USN_REASON_FILE_CREATE` (macro, line 1104) `#define USN_REASON_FILE_CREATE`
+  - `USN_REASON_FILE_DELETE` (macro, line 1105) `#define USN_REASON_FILE_DELETE`
+  - `USN_REASON_EA_CHANGE` (macro, line 1106) `#define USN_REASON_EA_CHANGE`
+  - `USN_REASON_SECURITY_CHANGE` (macro, line 1107) `#define USN_REASON_SECURITY_CHANGE`
+  - `USN_REASON_RENAME_OLD_NAME` (macro, line 1108) `#define USN_REASON_RENAME_OLD_NAME`
+  - `USN_REASON_RENAME_NEW_NAME` (macro, line 1109) `#define USN_REASON_RENAME_NEW_NAME`
+  - `USN_REASON_INDEXABLE_CHANGE` (macro, line 1110) `#define USN_REASON_INDEXABLE_CHANGE`
+  - `USN_REASON_BASIC_INFO_CHANGE` (macro, line 1111) `#define USN_REASON_BASIC_INFO_CHANGE`
+  - `USN_REASON_HARD_LINK_CHANGE` (macro, line 1112) `#define USN_REASON_HARD_LINK_CHANGE`
+  - `USN_REASON_COMPRESSION_CHANGE` (macro, line 1113) `#define USN_REASON_COMPRESSION_CHANGE`
+  - `USN_REASON_ENCRYPTION_CHANGE` (macro, line 1114) `#define USN_REASON_ENCRYPTION_CHANGE`
+  - `USN_REASON_OBJECT_ID_CHANGE` (macro, line 1115) `#define USN_REASON_OBJECT_ID_CHANGE`
+  - `USN_REASON_REPARSE_POINT_CHANGE` (macro, line 1116) `#define USN_REASON_REPARSE_POINT_CHANGE`
+  - `USN_REASON_STREAM_CHANGE` (macro, line 1117) `#define USN_REASON_STREAM_CHANGE`
+  - `USN_REASON_TRANSACTED_CHANGE` (macro, line 1118) `#define USN_REASON_TRANSACTED_CHANGE`
+  - `USN_REASON_CLOSE` (macro, line 1119) `#define USN_REASON_CLOSE`
+  - `USN_DELETE_FLAG_DELETE` (macro, line 1139) `#define USN_DELETE_FLAG_DELETE`
+  - `USN_DELETE_FLAG_NOTIFY` (macro, line 1141) `#define USN_DELETE_FLAG_NOTIFY`
+  - `USN_DELETE_VALID_FLAGS` (macro, line 1142) `#define USN_DELETE_VALID_FLAGS`
+  - `USN_SOURCE_DATA_MANAGEMENT` (macro, line 1163) `#define USN_SOURCE_DATA_MANAGEMENT`
+  - `USN_SOURCE_AUXILIARY_DATA` (macro, line 1165) `#define USN_SOURCE_AUXILIARY_DATA`
+  - `USN_SOURCE_REPLICATION_MANAGEMENT` (macro, line 1166) `#define USN_SOURCE_REPLICATION_MANAGEMENT`
+  - `MARK_HANDLE_PROTECT_CLUSTERS` (macro, line 1167) `#define MARK_HANDLE_PROTECT_CLUSTERS`
+  - `MARK_HANDLE_TXF_SYSTEM_LOG` (macro, line 1169) `#define MARK_HANDLE_TXF_SYSTEM_LOG`
+  - `MARK_HANDLE_NOT_TXF_SYSTEM_LOG` (macro, line 1170) `#define MARK_HANDLE_NOT_TXF_SYSTEM_LOG`
+  - `MARK_HANDLE_REALTIME` (macro, line 1175) `#define MARK_HANDLE_REALTIME`
+  - `MARK_HANDLE_NOT_REALTIME` (macro, line 1177) `#define MARK_HANDLE_NOT_REALTIME`
+  - `NO_8DOT3_NAME_PRESENT` (macro, line 1178) `#define NO_8DOT3_NAME_PRESENT`
+  - `REMOVED_8DOT3_NAME` (macro, line 1180) `#define REMOVED_8DOT3_NAME`
+  - `PERSISTENT_VOLUME_STATE_SHORT_NAME_CREATION_DISABLED` (macro, line 1181) `#define PERSISTENT_VOLUME_STATE_SHORT_NAME_CREATION_DISABLED`
+  - `VOLUME_IS_DIRTY` (macro, line 1197) `#define VOLUME_IS_DIRTY`
+  - `VOLUME_UPGRADE_SCHEDULED` (macro, line 1199) `#define VOLUME_UPGRADE_SCHEDULED`
+  - `VOLUME_SESSION_OPEN` (macro, line 1200) `#define VOLUME_SESSION_OPEN`
+  - `FILE_PREFETCH_TYPE_FOR_CREATE` (macro, line 1217) `#define FILE_PREFETCH_TYPE_FOR_CREATE`
+  - `FILE_PREFETCH_TYPE_FOR_DIRENUM` (macro, line 1219) `#define FILE_PREFETCH_TYPE_FOR_DIRENUM`
+  - `FILE_PREFETCH_TYPE_FOR_CREATE_EX` (macro, line 1220) `#define FILE_PREFETCH_TYPE_FOR_CREATE_EX`
+  - `FILE_PREFETCH_TYPE_FOR_DIRENUM_EX` (macro, line 1221) `#define FILE_PREFETCH_TYPE_FOR_DIRENUM_EX`
+  - `FILE_PREFETCH_TYPE_MAX` (macro, line 1222) `#define FILE_PREFETCH_TYPE_MAX`
+  - `FILESYSTEM_STATISTICS_TYPE_NTFS` (macro, line 1250) `#define FILESYSTEM_STATISTICS_TYPE_NTFS`
+  - `FILESYSTEM_STATISTICS_TYPE_FAT` (macro, line 1252) `#define FILESYSTEM_STATISTICS_TYPE_FAT`
+  - `FILESYSTEM_STATISTICS_TYPE_EXFAT` (macro, line 1253) `#define FILESYSTEM_STATISTICS_TYPE_EXFAT`
+  - `FILE_SET_ENCRYPTION` (macro, line 1448) `#define FILE_SET_ENCRYPTION`
+  - `FILE_CLEAR_ENCRYPTION` (macro, line 1450) `#define FILE_CLEAR_ENCRYPTION`
+  - `STREAM_SET_ENCRYPTION` (macro, line 1451) `#define STREAM_SET_ENCRYPTION`
+  - `STREAM_CLEAR_ENCRYPTION` (macro, line 1452) `#define STREAM_CLEAR_ENCRYPTION`
+  - `MAXIMUM_ENCRYPTION_VALUE` (macro, line 1453) `#define MAXIMUM_ENCRYPTION_VALUE`
+  - `ENCRYPTION_FORMAT_DEFAULT` (macro, line 1461) `#define ENCRYPTION_FORMAT_DEFAULT`
+  - `COMPRESSION_FORMAT_SPARSE` (macro, line 1463) `#define COMPRESSION_FORMAT_SPARSE`
+  - `COPYFILE_SIS_LINK` (macro, line 1519) `#define COPYFILE_SIS_LINK`
+  - `COPYFILE_SIS_REPLACE` (macro, line 1521) `#define COPYFILE_SIS_REPLACE`
+  - `COPYFILE_SIS_FLAGS` (macro, line 1522) `#define COPYFILE_SIS_FLAGS`
+  - `SET_REPAIR_ENABLED` (macro, line 1558) `#define SET_REPAIR_ENABLED`
+  - `SET_REPAIR_VOLUME_BITMAP_SCAN` (macro, line 1561) `#define SET_REPAIR_VOLUME_BITMAP_SCAN`
+  - `SET_REPAIR_DELETE_CROSSLINK` (macro, line 1562) `#define SET_REPAIR_DELETE_CROSSLINK`
+  - `SET_REPAIR_WARN_ABOUT_DATA_LOSS` (macro, line 1563) `#define SET_REPAIR_WARN_ABOUT_DATA_LOSS`
+  - `SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT` (macro, line 1564) `#define SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT`
+  - `SET_REPAIR_VALID_MASK` (macro, line 1565) `#define SET_REPAIR_VALID_MASK`
+  - `TXFS_RM_FLAG_LOGGING_MODE` (macro, line 1582) `#define TXFS_RM_FLAG_LOGGING_MODE`
+  - `TXFS_RM_FLAG_RENAME_RM` (macro, line 1584) `#define TXFS_RM_FLAG_RENAME_RM`
+  - `TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX` (macro, line 1585) `#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX`
+  - `TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN` (macro, line 1586) `#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN`
+  - `TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS` (macro, line 1587) `#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS`
+  - `TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT` (macro, line 1588) `#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT`
+  - `TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE` (macro, line 1589) `#define TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE`
+  - `TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX` (macro, line 1590) `#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX`
+  - `TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN` (macro, line 1591) `#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN`
+  - `TXFS_RM_FLAG_GROW_LOG` (macro, line 1592) `#define TXFS_RM_FLAG_GROW_LOG`
+  - `TXFS_RM_FLAG_SHRINK_LOG` (macro, line 1593) `#define TXFS_RM_FLAG_SHRINK_LOG`
+  - `TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE` (macro, line 1594) `#define TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE`
+  - `TXFS_RM_FLAG_PRESERVE_CHANGES` (macro, line 1595) `#define TXFS_RM_FLAG_PRESERVE_CHANGES`
+  - `TXFS_RM_FLAG_RESET_RM_AT_NEXT_START` (macro, line 1596) `#define TXFS_RM_FLAG_RESET_RM_AT_NEXT_START`
+  - `TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START` (macro, line 1597) `#define TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START`
+  - `TXFS_RM_FLAG_PREFER_CONSISTENCY` (macro, line 1598) `#define TXFS_RM_FLAG_PREFER_CONSISTENCY`
+  - `TXFS_RM_FLAG_PREFER_AVAILABILITY` (macro, line 1599) `#define TXFS_RM_FLAG_PREFER_AVAILABILITY`
+  - `TXFS_LOGGING_MODE_SIMPLE` (macro, line 1600) `#define TXFS_LOGGING_MODE_SIMPLE`
+  - `TXFS_LOGGING_MODE_FULL` (macro, line 1602) `#define TXFS_LOGGING_MODE_FULL`
+  - `TXFS_TRANSACTION_STATE_NONE` (macro, line 1603) `#define TXFS_TRANSACTION_STATE_NONE`
+  - `TXFS_TRANSACTION_STATE_ACTIVE` (macro, line 1605) `#define TXFS_TRANSACTION_STATE_ACTIVE`
+  - `TXFS_TRANSACTION_STATE_PREPARED` (macro, line 1606) `#define TXFS_TRANSACTION_STATE_PREPARED`
+  - `TXFS_TRANSACTION_STATE_NOTACTIVE` (macro, line 1607) `#define TXFS_TRANSACTION_STATE_NOTACTIVE`
+  - `TXFS_MODIFY_RM_VALID_FLAGS` (macro, line 1608) `#define TXFS_MODIFY_RM_VALID_FLAGS`
+  - `TXFS_RM_STATE_NOT_STARTED` (macro, line 1684) `#define TXFS_RM_STATE_NOT_STARTED`
+  - `TXFS_RM_STATE_STARTING` (macro, line 1686) `#define TXFS_RM_STATE_STARTING`
+  - `TXFS_RM_STATE_ACTIVE` (macro, line 1687) `#define TXFS_RM_STATE_ACTIVE`
+  - `TXFS_RM_STATE_SHUTTING_DOWN` (macro, line 1688) `#define TXFS_RM_STATE_SHUTTING_DOWN`
+  - `TXFS_QUERY_RM_INFORMATION_VALID_FLAGS` (macro, line 1689) `#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS`
+  - `TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN` (macro, line 1794) `#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN`
+  - `TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK` (macro, line 1796) `#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK`
+  - `TXFS_ROLLFORWARD_REDO_VALID_FLAGS` (macro, line 1797) `#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS`
+  - `TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX` (macro, line 1809) `#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX`
+  - `TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN` (macro, line 1811) `#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN`
+  - `TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE` (macro, line 1812) `#define TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE`
+  - `TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS` (macro, line 1813) `#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS`
+  - `TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT` (macro, line 1814) `#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT`
+  - `TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE` (macro, line 1815) `#define TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE`
+  - `TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX` (macro, line 1816) `#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX`
+  - `TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN` (macro, line 1817) `#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN`
+  - `TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT` (macro, line 1818) `#define TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT`
+  - `TXFS_START_RM_FLAG_LOGGING_MODE` (macro, line 1820) `#define TXFS_START_RM_FLAG_LOGGING_MODE`
+  - `TXFS_START_RM_FLAG_PRESERVE_CHANGES` (macro, line 1821) `#define TXFS_START_RM_FLAG_PRESERVE_CHANGES`
+  - `TXFS_START_RM_FLAG_PREFER_CONSISTENCY` (macro, line 1822) `#define TXFS_START_RM_FLAG_PREFER_CONSISTENCY`
+  - `TXFS_START_RM_FLAG_PREFER_AVAILABILITY` (macro, line 1824) `#define TXFS_START_RM_FLAG_PREFER_AVAILABILITY`
+  - `TXFS_START_RM_VALID_FLAGS` (macro, line 1825) `#define TXFS_START_RM_VALID_FLAGS`
+  - `TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED` (macro, line 1960) `#define TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED`
+  - `TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED` (macro, line 1962) `#define TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED`
+  - `TXFS_TRANSACTED_VERSION_NONTRANSACTED` (macro, line 2107) `#define TXFS_TRANSACTED_VERSION_NONTRANSACTED`
+  - `TXFS_TRANSACTED_VERSION_UNCOMMITTED` (macro, line 2109) `#define TXFS_TRANSACTED_VERSION_UNCOMMITTED`
+  - `TXFS_SAVEPOINT_SET` (macro, line 2149) `#define TXFS_SAVEPOINT_SET`
+  - `TXFS_SAVEPOINT_ROLLBACK` (macro, line 2156) `#define TXFS_SAVEPOINT_ROLLBACK`
+  - `TXFS_SAVEPOINT_CLEAR` (macro, line 2163) `#define TXFS_SAVEPOINT_CLEAR`
+  - `TXFS_SAVEPOINT_CLEAR_ALL` (macro, line 2169) `#define TXFS_SAVEPOINT_CLEAR_ALL`
+  - `OPLOCK_LEVEL_CACHE_READ` (macro, line 2225) `#define OPLOCK_LEVEL_CACHE_READ`
+  - `OPLOCK_LEVEL_CACHE_HANDLE` (macro, line 2227) `#define OPLOCK_LEVEL_CACHE_HANDLE`
+  - `OPLOCK_LEVEL_CACHE_WRITE` (macro, line 2228) `#define OPLOCK_LEVEL_CACHE_WRITE`
+  - `REQUEST_OPLOCK_INPUT_FLAG_REQUEST` (macro, line 2229) `#define REQUEST_OPLOCK_INPUT_FLAG_REQUEST`
+  - `REQUEST_OPLOCK_INPUT_FLAG_ACK` (macro, line 2231) `#define REQUEST_OPLOCK_INPUT_FLAG_ACK`
+  - `REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE` (macro, line 2232) `#define REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE`
+  - `REQUEST_OPLOCK_CURRENT_VERSION` (macro, line 2233) `#define REQUEST_OPLOCK_CURRENT_VERSION`
+  - `REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED` (macro, line 2259) `#define REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED`
+  - `REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED` (macro, line 2261) `#define REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED`
+  - `SD_GLOBAL_CHANGE_TYPE_MACHINE_SID` (macro, line 2280) `#define SD_GLOBAL_CHANGE_TYPE_MACHINE_SID`
+  - `ENCRYPTED_DATA_INFO_SPARSE_FILE` (macro, line 2402) `#define ENCRYPTED_DATA_INFO_SPARSE_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE` (macro, line 2426) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET` (macro, line 2428) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE` (macro, line 2429) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE` (macro, line 2430) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK` (macro, line 2431) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA` (macro, line 2433) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX` (macro, line 2434) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM` (macro, line 2435) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM`
+  - `FILE_TYPE_NOTIFICATION_FLAG_USAGE_BEGIN` (macro, line 2452) `#define FILE_TYPE_NOTIFICATION_FLAG_USAGE_BEGIN`
+  - `FILE_TYPE_NOTIFICATION_FLAG_USAGE_END` (macro, line 2454) `#define FILE_TYPE_NOTIFICATION_FLAG_USAGE_END`
+  - `LOCK_QUEUE_WAIT` (macro, line 2713) `#define LOCK_QUEUE_WAIT`
+  - `LOCK_QUEUE_WAIT_BIT` (macro, line 2715) `#define LOCK_QUEUE_WAIT_BIT`
+  - `LOCK_QUEUE_OWNER` (macro, line 2716) `#define LOCK_QUEUE_OWNER`
+  - `LOCK_QUEUE_OWNER_BIT` (macro, line 2718) `#define LOCK_QUEUE_OWNER_BIT`
+  - `LOCK_QUEUE_TIMER_LOCK_SHIFT` (macro, line 2719) `#define LOCK_QUEUE_TIMER_LOCK_SHIFT`
+  - `LOCK_QUEUE_TIMER_TABLE_LOCKS` (macro, line 2721) `#define LOCK_QUEUE_TIMER_TABLE_LOCKS`
+  - `PROCESS_TERMINATE` (macro, line 2874) `#define PROCESS_TERMINATE`
+  - `PROCESS_CREATE_THREAD` (macro, line 2877) `#define PROCESS_CREATE_THREAD`
+  - `PROCESS_SET_SESSIONID` (macro, line 2878) `#define PROCESS_SET_SESSIONID`
+  - `PROCESS_VM_OPERATION` (macro, line 2879) `#define PROCESS_VM_OPERATION`
+  - `PROCESS_VM_READ` (macro, line 2880) `#define PROCESS_VM_READ`
+  - `PROCESS_VM_WRITE` (macro, line 2881) `#define PROCESS_VM_WRITE`
+  - `PROCESS_DUP_HANDLE` (macro, line 2882) `#define PROCESS_DUP_HANDLE`
+  - `PROCESS_CREATE_PROCESS` (macro, line 2883) `#define PROCESS_CREATE_PROCESS`
+  - `PROCESS_SET_QUOTA` (macro, line 2884) `#define PROCESS_SET_QUOTA`
+  - `PROCESS_SET_INFORMATION` (macro, line 2885) `#define PROCESS_SET_INFORMATION`
+  - `PROCESS_QUERY_INFORMATION` (macro, line 2886) `#define PROCESS_QUERY_INFORMATION`
+  - `PROCESS_SET_PORT` (macro, line 2887) `#define PROCESS_SET_PORT`
+  - `PROCESS_SUSPEND_RESUME` (macro, line 2888) `#define PROCESS_SUSPEND_RESUME`
+  - `NtCurrentThread` (macro, line 2889) `#define NtCurrentThread()`
+  - `NtCurrentProcess` (macro, line 2891) `#define NtCurrentProcess()`
+  - `ZwCurrentProcess` (macro, line 2892) `#define ZwCurrentProcess()`
+  - `ZwCurrentThread` (macro, line 2893) `#define ZwCurrentThread()`
+  - `NtLastError` (macro, line 2896) `#define NtLastError()`
+  - `NtLastStatus` (macro, line 2897) `#define NtLastStatus()`
+  - `NtCurrentPID` (macro, line 2900) `#define NtCurrentPID()`
+  - `NtCurrentPID` (macro, line 2902) `#define NtCurrentPID()`
+  - `THREAD_TERMINATE` (macro, line 2904) `#define THREAD_TERMINATE`
+  - `THREAD_SUSPEND_RESUME` (macro, line 2906) `#define THREAD_SUSPEND_RESUME`
+  - `THREAD_ALERT` (macro, line 2907) `#define THREAD_ALERT`
+  - `THREAD_GET_CONTEXT` (macro, line 2908) `#define THREAD_GET_CONTEXT`
+  - `THREAD_SET_CONTEXT` (macro, line 2909) `#define THREAD_SET_CONTEXT`
+  - `THREAD_SET_INFORMATION` (macro, line 2910) `#define THREAD_SET_INFORMATION`
+  - `THREAD_QUERY_INFORMATION` (macro, line 2911) `#define THREAD_QUERY_INFORMATION`
+  - `THREAD_SET_THREAD_TOKEN` (macro, line 2912) `#define THREAD_SET_THREAD_TOKEN`
+  - `THREAD_IMPERSONATE` (macro, line 2913) `#define THREAD_IMPERSONATE`
+  - `THREAD_DIRECT_IMPERSONATION` (macro, line 2914) `#define THREAD_DIRECT_IMPERSONATION`
+  - `JOB_OBJECT_ASSIGN_PROCESS` (macro, line 2915) `#define JOB_OBJECT_ASSIGN_PROCESS`
+  - `JOB_OBJECT_SET_ATTRIBUTES` (macro, line 2917) `#define JOB_OBJECT_SET_ATTRIBUTES`
+  - `JOB_OBJECT_QUERY` (macro, line 2918) `#define JOB_OBJECT_QUERY`
+  - `JOB_OBJECT_TERMINATE` (macro, line 2919) `#define JOB_OBJECT_TERMINATE`
+  - `JOB_OBJECT_SET_SECURITY_ATTRIBUTES` (macro, line 2920) `#define JOB_OBJECT_SET_SECURITY_ATTRIBUTES`
+  - `JOB_OBJECT_ALL_ACCESS` (macro, line 2922) `#define JOB_OBJECT_ALL_ACCESS`
+  - `PEB_STDIO_HANDLE_NATIVE` (macro, line 2924) `#define PEB_STDIO_HANDLE_NATIVE`
+  - `PEB_STDIO_HANDLE_SUBSYS` (macro, line 2926) `#define PEB_STDIO_HANDLE_SUBSYS`
+  - `PEB_STDIO_HANDLE_PM` (macro, line 2927) `#define PEB_STDIO_HANDLE_PM`
+  - `PEB_STDIO_HANDLE_RESERVED` (macro, line 2928) `#define PEB_STDIO_HANDLE_RESERVED`
+  - `GDI_HANDLE_BUFFER_SIZE32` (macro, line 2929) `#define GDI_HANDLE_BUFFER_SIZE32`
+  - `GDI_HANDLE_BUFFER_SIZE64` (macro, line 2931) `#define GDI_HANDLE_BUFFER_SIZE64`
+  - `GDI_HANDLE_BUFFER_SIZE` (macro, line 2934) `#define GDI_HANDLE_BUFFER_SIZE`
+  - `GDI_HANDLE_BUFFER_SIZE` (macro, line 2936) `#define GDI_HANDLE_BUFFER_SIZE`
+  - `FOREGROUND_BASE_PRIORITY` (macro, line 2942) `#define FOREGROUND_BASE_PRIORITY`
+  - `NORMAL_BASE_PRIORITY` (macro, line 2944) `#define NORMAL_BASE_PRIORITY`
+  - `FILE_READ_ACCESS` (macro, line 2947) `#define FILE_READ_ACCESS`
+  - `FILE_SUPERSEDE` (macro, line 3232) `#define FILE_SUPERSEDE`
+  - `FILE_OPEN` (macro, line 3234) `#define FILE_OPEN`
+  - `FILE_CREATE` (macro, line 3235) `#define FILE_CREATE`
+  - `FILE_OPEN_IF` (macro, line 3236) `#define FILE_OPEN_IF`
+  - `FILE_OVERWRITE` (macro, line 3237) `#define FILE_OVERWRITE`
+  - `FILE_OVERWRITE_IF` (macro, line 3238) `#define FILE_OVERWRITE_IF`
+  - `FILE_MAXIMUM_DISPOSITION` (macro, line 3239) `#define FILE_MAXIMUM_DISPOSITION`
+  - `FILE_DIRECTORY_FILE` (macro, line 3240) `#define FILE_DIRECTORY_FILE`
+  - `FILE_WRITE_THROUGH` (macro, line 3242) `#define FILE_WRITE_THROUGH`
+  - `FILE_SEQUENTIAL_ONLY` (macro, line 3243) `#define FILE_SEQUENTIAL_ONLY`
+  - `FILE_NO_INTERMEDIATE_BUFFERING` (macro, line 3244) `#define FILE_NO_INTERMEDIATE_BUFFERING`
+  - `FILE_SYNCHRONOUS_IO_ALERT` (macro, line 3245) `#define FILE_SYNCHRONOUS_IO_ALERT`
+  - `FILE_SYNCHRONOUS_IO_NONALERT` (macro, line 3247) `#define FILE_SYNCHRONOUS_IO_NONALERT`
+  - `FILE_NON_DIRECTORY_FILE` (macro, line 3248) `#define FILE_NON_DIRECTORY_FILE`
+  - `FILE_CREATE_TREE_CONNECTION` (macro, line 3249) `#define FILE_CREATE_TREE_CONNECTION`
+  - `FILE_COMPLETE_IF_OPLOCKED` (macro, line 3250) `#define FILE_COMPLETE_IF_OPLOCKED`
+  - `FILE_NO_EA_KNOWLEDGE` (macro, line 3252) `#define FILE_NO_EA_KNOWLEDGE`
+  - `FILE_OPEN_FOR_RECOVERY` (macro, line 3253) `#define FILE_OPEN_FOR_RECOVERY`
+  - `FILE_RANDOM_ACCESS` (macro, line 3254) `#define FILE_RANDOM_ACCESS`
+  - `FILE_DELETE_ON_CLOSE` (macro, line 3255) `#define FILE_DELETE_ON_CLOSE`
+  - `FILE_OPEN_BY_FILE_ID` (macro, line 3257) `#define FILE_OPEN_BY_FILE_ID`
+  - `FILE_OPEN_FOR_BACKUP_INTENT` (macro, line 3258) `#define FILE_OPEN_FOR_BACKUP_INTENT`
+  - `FILE_NO_COMPRESSION` (macro, line 3259) `#define FILE_NO_COMPRESSION`
+  - `FILE_RESERVE_OPFILTER` (macro, line 3260) `#define FILE_RESERVE_OPFILTER`
+  - `FILE_OPEN_REPARSE_POINT` (macro, line 3262) `#define FILE_OPEN_REPARSE_POINT`
+  - `FILE_OPEN_NO_RECALL` (macro, line 3263) `#define FILE_OPEN_NO_RECALL`
+  - `FILE_OPEN_FOR_FREE_SPACE_QUERY` (macro, line 3264) `#define FILE_OPEN_FOR_FREE_SPACE_QUERY`
+  - `FILE_COPY_STRUCTURED_STORAGE` (macro, line 3265) `#define FILE_COPY_STRUCTURED_STORAGE`
+  - `FILE_STRUCTURED_STORAGE` (macro, line 3268) `#define FILE_STRUCTURED_STORAGE`
+  - `FILE_VALID_OPTION_FLAGS` (macro, line 3269) `#define FILE_VALID_OPTION_FLAGS`
+  - `FILE_VALID_PIPE_OPTION_FLAGS` (macro, line 3271) `#define FILE_VALID_PIPE_OPTION_FLAGS`
+  - `FILE_VALID_MAILSLOT_OPTION_FLAGS` (macro, line 3272) `#define FILE_VALID_MAILSLOT_OPTION_FLAGS`
+  - `FILE_VALID_SET_FLAGS` (macro, line 3273) `#define FILE_VALID_SET_FLAGS`
+  - `WIN32_CLIENT_INFO_LENGTH` (macro, line 3274) `#define WIN32_CLIENT_INFO_LENGTH`
+  - `PIO_APC_ROUTINE_DEFINED` (macro, line 3276) `#define PIO_APC_ROUTINE_DEFINED`
+  - `IO_COMPLETION_QUERY_STATE` (macro, line 3293) `#define IO_COMPLETION_QUERY_STATE`
+  - `IO_COMPLETION_MODIFY_STATE` (macro, line 3295) `#define IO_COMPLETION_MODIFY_STATE`
+  - `IO_COMPLETION_ALL_ACCESS` (macro, line 3296) `#define IO_COMPLETION_ALL_ACCESS`
+  - `SEMAPHORE_QUERY_STATE` (macro, line 3399) `#define SEMAPHORE_QUERY_STATE`
+  - `SEMAPHORE_MODIFY_STATE` (macro, line 3401) `#define SEMAPHORE_MODIFY_STATE`
+  - `SEMAPHORE_ALL_ACCESS` (macro, line 3402) `#define SEMAPHORE_ALL_ACCESS`
+  - `MUTANT_QUERY_STATE` (macro, line 3413) `#define MUTANT_QUERY_STATE`
+  - `MUTANT_ALL_ACCESS` (macro, line 3415) `#define MUTANT_ALL_ACCESS`
+  - `TIMER_QUERY_STATE` (macro, line 3428) `#define TIMER_QUERY_STATE`
+  - `TIMER_MODIFY_STATE` (macro, line 3430) `#define TIMER_MODIFY_STATE`
+  - `TIMER_ALL_ACCESS` (macro, line 3431) `#define TIMER_ALL_ACCESS`
+  - `OBJ_NAME_PATH_SEPARATOR` (macro, line 3448) `#define OBJ_NAME_PATH_SEPARATOR`
+  - `OBJ_MAX_REPARSE_ATTEMPTS` (macro, line 3450) `#define OBJ_MAX_REPARSE_ATTEMPTS`
+  - `OBJECT_TYPE_CREATE` (macro, line 3451) `#define OBJECT_TYPE_CREATE`
+  - `OBJECT_TYPE_ALL_ACCESS` (macro, line 3452) `#define OBJECT_TYPE_ALL_ACCESS`
+  - `DIRECTORY_QUERY` (macro, line 3453) `#define DIRECTORY_QUERY`
+  - `DIRECTORY_TRAVERSE` (macro, line 3455) `#define DIRECTORY_TRAVERSE`
+  - `DIRECTORY_CREATE_OBJECT` (macro, line 3456) `#define DIRECTORY_CREATE_OBJECT`
+  - `DIRECTORY_CREATE_SUBDIRECTORY` (macro, line 3457) `#define DIRECTORY_CREATE_SUBDIRECTORY`
+  - `DIRECTORY_ALL_ACCESS` (macro, line 3458) `#define DIRECTORY_ALL_ACCESS`
+  - `SYMBOLIC_LINK_QUERY` (macro, line 3460) `#define SYMBOLIC_LINK_QUERY`
+  - `SYMBOLIC_LINK_ALL_ACCESS` (macro, line 3461) `#define SYMBOLIC_LINK_ALL_ACCESS`
+  - `MDL_HASH_TABLE_SIZE` (macro, line 3616) `#define MDL_HASH_TABLE_SIZE`
+  - `MDL_HASH_MASK` (macro, line 3618) `#define MDL_HASH_MASK`
+  - `MDL_HASH_INDEX` (macro, line 3619) `#define MDL_HASH_INDEX(wch)`
+  - `HEAP_MAKE_TAG_FLAGS` (macro, line 3622) `#define HEAP_MAKE_TAG_FLAGS( b, o )`
+  - `RTL_HEAP_MAKE_TAG` (macro, line 3624) `#define RTL_HEAP_MAKE_TAG`
+  - `MAXIMUM_LEADBYTES` (macro, line 3685) `#define MAXIMUM_LEADBYTES`
+  - `RTL_RANGE_LIST_SHARED_OK` (macro, line 3709) `#define RTL_RANGE_LIST_SHARED_OK`
+  - `RTL_RANGE_LIST_NULL_CONFLICT_OK` (macro, line 3711) `#define RTL_RANGE_LIST_NULL_CONFLICT_OK`
+  - `SE_CREATE_TOKEN_NAME` (macro, line 3845) `#define SE_CREATE_TOKEN_NAME`
+  - `SE_ASSIGNPRIMARYTOKEN_NAME` (macro, line 3847) `#define SE_ASSIGNPRIMARYTOKEN_NAME`
+  - `SE_LOCK_MEMORY_NAME` (macro, line 3848) `#define SE_LOCK_MEMORY_NAME`
+  - `SE_INCREASE_QUOTA_NAME` (macro, line 3849) `#define SE_INCREASE_QUOTA_NAME`
+  - `SE_UNSOLICITED_INPUT_NAME` (macro, line 3850) `#define SE_UNSOLICITED_INPUT_NAME`
+  - `SE_MACHINE_ACCOUNT_NAME` (macro, line 3851) `#define SE_MACHINE_ACCOUNT_NAME`
+  - `SE_TCB_NAME` (macro, line 3852) `#define SE_TCB_NAME`
+  - `SE_SECURITY_NAME` (macro, line 3853) `#define SE_SECURITY_NAME`
+  - `SE_TAKE_OWNERSHIP_NAME` (macro, line 3854) `#define SE_TAKE_OWNERSHIP_NAME`
+  - `SE_LOAD_DRIVER_NAME` (macro, line 3855) `#define SE_LOAD_DRIVER_NAME`
+  - `SE_SYSTEM_PROFILE_NAME` (macro, line 3856) `#define SE_SYSTEM_PROFILE_NAME`
+  - `SE_SYSTEMTIME_NAME` (macro, line 3857) `#define SE_SYSTEMTIME_NAME`
+  - `SE_PROF_SINGLE_PROCESS_NAME` (macro, line 3858) `#define SE_PROF_SINGLE_PROCESS_NAME`
+  - `SE_INC_BASE_PRIORITY_NAME` (macro, line 3859) `#define SE_INC_BASE_PRIORITY_NAME`
+  - `SE_CREATE_PAGEFILE_NAME` (macro, line 3860) `#define SE_CREATE_PAGEFILE_NAME`
+  - `SE_CREATE_PERMANENT_NAME` (macro, line 3861) `#define SE_CREATE_PERMANENT_NAME`
+  - `SE_BACKUP_NAME` (macro, line 3862) `#define SE_BACKUP_NAME`
+  - `SE_RESTORE_NAME` (macro, line 3863) `#define SE_RESTORE_NAME`
+  - `SE_SHUTDOWN_NAME` (macro, line 3864) `#define SE_SHUTDOWN_NAME`
+  - `SE_DEBUG_NAME` (macro, line 3865) `#define SE_DEBUG_NAME`
+  - `SE_AUDIT_NAME` (macro, line 3866) `#define SE_AUDIT_NAME`
+  - `SE_SYSTEM_ENVIRONMENT_NAME` (macro, line 3867) `#define SE_SYSTEM_ENVIRONMENT_NAME`
+  - `SE_CHANGE_NOTIFY_NAME` (macro, line 3868) `#define SE_CHANGE_NOTIFY_NAME`
+  - `SE_REMOTE_SHUTDOWN_NAME` (macro, line 3869) `#define SE_REMOTE_SHUTDOWN_NAME`
+  - `SE_UNDOCK_NAME` (macro, line 3870) `#define SE_UNDOCK_NAME`
+  - `SE_SYNC_AGENT_NAME` (macro, line 3871) `#define SE_SYNC_AGENT_NAME`
+  - `SE_ENABLE_DELEGATION_NAME` (macro, line 3872) `#define SE_ENABLE_DELEGATION_NAME`
+  - `SE_MANAGE_VOLUME_NAME` (macro, line 3873) `#define SE_MANAGE_VOLUME_NAME`
+  - `SE_IMPERSONATE_NAME` (macro, line 3874) `#define SE_IMPERSONATE_NAME`
+  - `SE_CREATE_GLOBAL_NAME` (macro, line 3878) `#define SE_CREATE_GLOBAL_NAME`
+  - `SE_MIN_WELL_KNOWN_PRIVILEGE` (macro, line 3881) `#define SE_MIN_WELL_KNOWN_PRIVILEGE`
+  - `SE_CREATE_TOKEN_PRIVILEGE` (macro, line 3883) `#define SE_CREATE_TOKEN_PRIVILEGE`
+  - `SE_ASSIGNPRIMARYTOKEN_PRIVILEGE` (macro, line 3884) `#define SE_ASSIGNPRIMARYTOKEN_PRIVILEGE`
+  - `SE_LOCK_MEMORY_PRIVILEGE` (macro, line 3885) `#define SE_LOCK_MEMORY_PRIVILEGE`
+  - `SE_INCREASE_QUOTA_PRIVILEGE` (macro, line 3886) `#define SE_INCREASE_QUOTA_PRIVILEGE`
+  - `SE_MACHINE_ACCOUNT_PRIVILEGE` (macro, line 3887) `#define SE_MACHINE_ACCOUNT_PRIVILEGE`
+  - `SE_TCB_PRIVILEGE` (macro, line 3889) `#define SE_TCB_PRIVILEGE`
+  - `SE_SECURITY_PRIVILEGE` (macro, line 3890) `#define SE_SECURITY_PRIVILEGE`
+  - `SE_TAKE_OWNERSHIP_PRIVILEGE` (macro, line 3891) `#define SE_TAKE_OWNERSHIP_PRIVILEGE`
+  - `SE_LOAD_DRIVER_PRIVILEGE` (macro, line 3892) `#define SE_LOAD_DRIVER_PRIVILEGE`
+  - `SE_SYSTEM_PROFILE_PRIVILEGE` (macro, line 3893) `#define SE_SYSTEM_PROFILE_PRIVILEGE`
+  - `SE_SYSTEMTIME_PRIVILEGE` (macro, line 3894) `#define SE_SYSTEMTIME_PRIVILEGE`
+  - `SE_PROF_SINGLE_PROCESS_PRIVILEGE` (macro, line 3895) `#define SE_PROF_SINGLE_PROCESS_PRIVILEGE`
+  - `SE_INC_BASE_PRIORITY_PRIVILEGE` (macro, line 3896) `#define SE_INC_BASE_PRIORITY_PRIVILEGE`
+  - `SE_CREATE_PAGEFILE_PRIVILEGE` (macro, line 3897) `#define SE_CREATE_PAGEFILE_PRIVILEGE`
+  - `SE_CREATE_PERMANENT_PRIVILEGE` (macro, line 3898) `#define SE_CREATE_PERMANENT_PRIVILEGE`
+  - `SE_BACKUP_PRIVILEGE` (macro, line 3899) `#define SE_BACKUP_PRIVILEGE`
+  - `SE_RESTORE_PRIVILEGE` (macro, line 3900) `#define SE_RESTORE_PRIVILEGE`
+  - `SE_SHUTDOWN_PRIVILEGE` (macro, line 3901) `#define SE_SHUTDOWN_PRIVILEGE`
+  - `SE_DEBUG_PRIVILEGE` (macro, line 3902) `#define SE_DEBUG_PRIVILEGE`
+  - `SE_AUDIT_PRIVILEGE` (macro, line 3903) `#define SE_AUDIT_PRIVILEGE`
+  - `SE_SYSTEM_ENVIRONMENT_PRIVILEGE` (macro, line 3904) `#define SE_SYSTEM_ENVIRONMENT_PRIVILEGE`
+  - `SE_CHANGE_NOTIFY_PRIVILEGE` (macro, line 3905) `#define SE_CHANGE_NOTIFY_PRIVILEGE`
+  - `SE_REMOTE_SHUTDOWN_PRIVILEGE` (macro, line 3906) `#define SE_REMOTE_SHUTDOWN_PRIVILEGE`
+  - `SE_UNDOCK_PRIVILEGE` (macro, line 3907) `#define SE_UNDOCK_PRIVILEGE`
+  - `SE_SYNC_AGENT_PRIVILEGE` (macro, line 3908) `#define SE_SYNC_AGENT_PRIVILEGE`
+  - `SE_ENABLE_DELEGATION_PRIVILEGE` (macro, line 3909) `#define SE_ENABLE_DELEGATION_PRIVILEGE`
+  - `SE_MANAGE_VOLUME_PRIVILEGE` (macro, line 3910) `#define SE_MANAGE_VOLUME_PRIVILEGE`
+  - `SE_IMPERSONATE_PRIVILEGE` (macro, line 3911) `#define SE_IMPERSONATE_PRIVILEGE`
+  - `SE_CREATE_GLOBAL_PRIVILEGE` (macro, line 3912) `#define SE_CREATE_GLOBAL_PRIVILEGE`
+  - `SE_TRUSTED_CREDMAN_ACCESS_PRIVILEGE` (macro, line 3913) `#define SE_TRUSTED_CREDMAN_ACCESS_PRIVILEGE`
+  - `SE_RELABEL_PRIVILEGE` (macro, line 3914) `#define SE_RELABEL_PRIVILEGE`
+  - `SE_INC_WORKING_SET_PRIVILEGE` (macro, line 3915) `#define SE_INC_WORKING_SET_PRIVILEGE`
+  - `SE_TIME_ZONE_PRIVILEGE` (macro, line 3916) `#define SE_TIME_ZONE_PRIVILEGE`
+  - `SE_CREATE_SYMBOLIC_LINK_PRIVILEGE` (macro, line 3917) `#define SE_CREATE_SYMBOLIC_LINK_PRIVILEGE`
+  - `SE_MAX_WELL_KNOWN_PRIVILEGE` (macro, line 3918) `#define SE_MAX_WELL_KNOWN_PRIVILEGE`
+  - `CACHE_FULLY_ASSOCIATIVE` (macro, line 4713) `#define CACHE_FULLY_ASSOCIATIVE`
+  - `PROCESSOR_INTEL_386` (macro, line 4739) `#define PROCESSOR_INTEL_386`
+  - `PROCESSOR_INTEL_486` (macro, line 4741) `#define PROCESSOR_INTEL_486`
+  - `PROCESSOR_INTEL_PENTIUM` (macro, line 4742) `#define PROCESSOR_INTEL_PENTIUM`
+  - `PROCESSOR_INTEL_IA64` (macro, line 4743) `#define PROCESSOR_INTEL_IA64`
+  - `PROCESSOR_AMD_X8664` (macro, line 4744) `#define PROCESSOR_AMD_X8664`
+  - `PROCESSOR_MIPS_R4000` (macro, line 4745) `#define PROCESSOR_MIPS_R4000`
+  - `PROCESSOR_ALPHA_21064` (macro, line 4746) `#define PROCESSOR_ALPHA_21064`
+  - `PROCESSOR_PPC_601` (macro, line 4747) `#define PROCESSOR_PPC_601`
+  - `PROCESSOR_PPC_603` (macro, line 4748) `#define PROCESSOR_PPC_603`
+  - `PROCESSOR_PPC_604` (macro, line 4749) `#define PROCESSOR_PPC_604`
+  - `PROCESSOR_PPC_620` (macro, line 4750) `#define PROCESSOR_PPC_620`
+  - `PROCESSOR_HITACHI_SH3` (macro, line 4751) `#define PROCESSOR_HITACHI_SH3`
+  - `PROCESSOR_HITACHI_SH3E` (macro, line 4752) `#define PROCESSOR_HITACHI_SH3E`
+  - `PROCESSOR_HITACHI_SH4` (macro, line 4753) `#define PROCESSOR_HITACHI_SH4`
+  - `PROCESSOR_MOTOROLA_821` (macro, line 4754) `#define PROCESSOR_MOTOROLA_821`
+  - `PROCESSOR_SHx_SH3` (macro, line 4755) `#define PROCESSOR_SHx_SH3`
+  - `PROCESSOR_SHx_SH4` (macro, line 4756) `#define PROCESSOR_SHx_SH4`
+  - `PROCESSOR_STRONGARM` (macro, line 4757) `#define PROCESSOR_STRONGARM`
+  - `PROCESSOR_ARM720` (macro, line 4758) `#define PROCESSOR_ARM720`
+  - `PROCESSOR_ARM820` (macro, line 4759) `#define PROCESSOR_ARM820`
+  - `PROCESSOR_ARM920` (macro, line 4760) `#define PROCESSOR_ARM920`
+  - `PROCESSOR_ARM_7TDMI` (macro, line 4761) `#define PROCESSOR_ARM_7TDMI`
+  - `PROCESSOR_OPTIL` (macro, line 4762) `#define PROCESSOR_OPTIL`
+  - `PROCESSOR_ARCHITECTURE_INTEL` (macro, line 4763) `#define PROCESSOR_ARCHITECTURE_INTEL`
+  - `PROCESSOR_ARCHITECTURE_MIPS` (macro, line 4765) `#define PROCESSOR_ARCHITECTURE_MIPS`
+  - `PROCESSOR_ARCHITECTURE_ALPHA` (macro, line 4766) `#define PROCESSOR_ARCHITECTURE_ALPHA`
+  - `PROCESSOR_ARCHITECTURE_PPC` (macro, line 4767) `#define PROCESSOR_ARCHITECTURE_PPC`
+  - `PROCESSOR_ARCHITECTURE_SHX` (macro, line 4768) `#define PROCESSOR_ARCHITECTURE_SHX`
+  - `PROCESSOR_ARCHITECTURE_ARM` (macro, line 4769) `#define PROCESSOR_ARCHITECTURE_ARM`
+  - `PROCESSOR_ARCHITECTURE_IA64` (macro, line 4770) `#define PROCESSOR_ARCHITECTURE_IA64`
+  - `PROCESSOR_ARCHITECTURE_ALPHA64` (macro, line 4771) `#define PROCESSOR_ARCHITECTURE_ALPHA64`
+  - `PROCESSOR_ARCHITECTURE_MSIL` (macro, line 4772) `#define PROCESSOR_ARCHITECTURE_MSIL`
+  - `PROCESSOR_ARCHITECTURE_AMD64` (macro, line 4773) `#define PROCESSOR_ARCHITECTURE_AMD64`
+  - `PROCESSOR_ARCHITECTURE_IA32_ON_WIN64` (macro, line 4774) `#define PROCESSOR_ARCHITECTURE_IA32_ON_WIN64`
+  - `PROCESSOR_ARCHITECTURE_UNKNOWN` (macro, line 4775) `#define PROCESSOR_ARCHITECTURE_UNKNOWN`
+  - `PF_FLOATING_POINT_PRECISION_ERRATA` (macro, line 4777) `#define PF_FLOATING_POINT_PRECISION_ERRATA`
+  - `PF_FLOATING_POINT_EMULATED` (macro, line 4779) `#define PF_FLOATING_POINT_EMULATED`
+  - `PF_COMPARE_EXCHANGE_DOUBLE` (macro, line 4780) `#define PF_COMPARE_EXCHANGE_DOUBLE`
+  - `PF_MMX_INSTRUCTIONS_AVAILABLE` (macro, line 4781) `#define PF_MMX_INSTRUCTIONS_AVAILABLE`
+  - `PF_PPC_MOVEMEM_64BIT_OK` (macro, line 4782) `#define PF_PPC_MOVEMEM_64BIT_OK`
+  - `PF_ALPHA_BYTE_INSTRUCTIONS` (macro, line 4783) `#define PF_ALPHA_BYTE_INSTRUCTIONS`
+  - `PF_XMMI_INSTRUCTIONS_AVAILABLE` (macro, line 4784) `#define PF_XMMI_INSTRUCTIONS_AVAILABLE`
+  - `PF_3DNOW_INSTRUCTIONS_AVAILABLE` (macro, line 4785) `#define PF_3DNOW_INSTRUCTIONS_AVAILABLE`
+  - `PF_RDTSC_INSTRUCTION_AVAILABLE` (macro, line 4786) `#define PF_RDTSC_INSTRUCTION_AVAILABLE`
+  - `PF_PAE_ENABLED` (macro, line 4787) `#define PF_PAE_ENABLED`
+  - `PF_XMMI64_INSTRUCTIONS_AVAILABLE` (macro, line 4788) `#define PF_XMMI64_INSTRUCTIONS_AVAILABLE`
+  - `PF_SSE_DAZ_MODE_AVAILABLE` (macro, line 4789) `#define PF_SSE_DAZ_MODE_AVAILABLE`
+  - `PF_NX_ENABLED` (macro, line 4790) `#define PF_NX_ENABLED`
+  - `PF_SSE3_INSTRUCTIONS_AVAILABLE` (macro, line 4791) `#define PF_SSE3_INSTRUCTIONS_AVAILABLE`
+  - `PF_COMPARE_EXCHANGE128` (macro, line 4792) `#define PF_COMPARE_EXCHANGE128`
+  - `PF_COMPARE64_EXCHANGE128` (macro, line 4793) `#define PF_COMPARE64_EXCHANGE128`
+  - `PF_CHANNELS_ENABLED` (macro, line 4794) `#define PF_CHANNELS_ENABLED`
+  - `MM_WORKING_SET_MAX_HARD_ENABLE` (macro, line 5064) `#define MM_WORKING_SET_MAX_HARD_ENABLE`
+  - `MM_WORKING_SET_MAX_HARD_DISABLE` (macro, line 5066) `#define MM_WORKING_SET_MAX_HARD_DISABLE`
+  - `MM_WORKING_SET_MIN_HARD_ENABLE` (macro, line 5067) `#define MM_WORKING_SET_MIN_HARD_ENABLE`
+  - `MM_WORKING_SET_MIN_HARD_DISABLE` (macro, line 5068) `#define MM_WORKING_SET_MIN_HARD_DISABLE`
+  - `FLG_HOTPATCH_KERNEL` (macro, line 5081) `#define FLG_HOTPATCH_KERNEL`
+  - `FLG_HOTPATCH_RELOAD_NTDLL` (macro, line 5083) `#define FLG_HOTPATCH_RELOAD_NTDLL`
+  - `FLG_HOTPATCH_NAME_INFO` (macro, line 5084) `#define FLG_HOTPATCH_NAME_INFO`
+  - `FLG_HOTPATCH_RENAME_INFO` (macro, line 5085) `#define FLG_HOTPATCH_RENAME_INFO`
+  - `FLG_HOTPATCH_MAP_ATOMIC_SWAP` (macro, line 5086) `#define FLG_HOTPATCH_MAP_ATOMIC_SWAP`
+  - `FLG_HOTPATCH_WOW64` (macro, line 5087) `#define FLG_HOTPATCH_WOW64`
+  - `FLG_HOTPATCH_ACTIVE` (macro, line 5088) `#define FLG_HOTPATCH_ACTIVE`
+  - `FLG_HOTPATCH_STATUS_FLAGS` (macro, line 5090) `#define FLG_HOTPATCH_STATUS_FLAGS`
+  - `FLG_HOTPATCH_VERIFICATION_ERROR` (macro, line 5091) `#define FLG_HOTPATCH_VERIFICATION_ERROR`
+  - `WDSTATE_FIRED` (macro, line 5198) `#define WDSTATE_FIRED`
+  - `WDSTATE_HARDWARE_ENABLED` (macro, line 5200) `#define WDSTATE_HARDWARE_ENABLED`
+  - `WDSTATE_STARTED` (macro, line 5201) `#define WDSTATE_STARTED`
+  - `WDSTATE_HARDWARE_PRESENT` (macro, line 5202) `#define WDSTATE_HARDWARE_PRESENT`
+  - `GDI_MAX_HANDLE_COUNT` (macro, line 5208) `#define GDI_MAX_HANDLE_COUNT`
+  - `GDI_HANDLE_INDEX_SHIFT` (macro, line 5210) `#define GDI_HANDLE_INDEX_SHIFT`
+  - `GDI_HANDLE_INDEX_BITS` (macro, line 5212) `#define GDI_HANDLE_INDEX_BITS`
+  - `GDI_HANDLE_INDEX_MASK` (macro, line 5213) `#define GDI_HANDLE_INDEX_MASK`
+  - `GDI_HANDLE_TYPE_SHIFT` (macro, line 5214) `#define GDI_HANDLE_TYPE_SHIFT`
+  - `GDI_HANDLE_TYPE_BITS` (macro, line 5216) `#define GDI_HANDLE_TYPE_BITS`
+  - `GDI_HANDLE_TYPE_MASK` (macro, line 5217) `#define GDI_HANDLE_TYPE_MASK`
+  - `GDI_HANDLE_ALTTYPE_SHIFT` (macro, line 5218) `#define GDI_HANDLE_ALTTYPE_SHIFT`
+  - `GDI_HANDLE_ALTTYPE_BITS` (macro, line 5220) `#define GDI_HANDLE_ALTTYPE_BITS`
+  - `GDI_HANDLE_ALTTYPE_MASK` (macro, line 5221) `#define GDI_HANDLE_ALTTYPE_MASK`
+  - `GDI_HANDLE_STOCK_SHIFT` (macro, line 5222) `#define GDI_HANDLE_STOCK_SHIFT`
+  - `GDI_HANDLE_STOCK_BITS` (macro, line 5224) `#define GDI_HANDLE_STOCK_BITS`
+  - `GDI_HANDLE_STOCK_MASK` (macro, line 5225) `#define GDI_HANDLE_STOCK_MASK`
+  - `GDI_HANDLE_UNIQUE_SHIFT` (macro, line 5226) `#define GDI_HANDLE_UNIQUE_SHIFT`
+  - `GDI_HANDLE_UNIQUE_BITS` (macro, line 5228) `#define GDI_HANDLE_UNIQUE_BITS`
+  - `GDI_HANDLE_UNIQUE_MASK` (macro, line 5229) `#define GDI_HANDLE_UNIQUE_MASK`
+  - `GDI_HANDLE_INDEX` (macro, line 5230) `#define GDI_HANDLE_INDEX(Handle)`
+  - `GDI_HANDLE_TYPE` (macro, line 5232) `#define GDI_HANDLE_TYPE(Handle)`
+  - `GDI_HANDLE_ALTTYPE` (macro, line 5233) `#define GDI_HANDLE_ALTTYPE(Handle)`
+  - `GDI_HANDLE_STOCK` (macro, line 5234) `#define GDI_HANDLE_STOCK(Handle)`
+  - `GDI_MAKE_HANDLE` (macro, line 5235) `#define GDI_MAKE_HANDLE(Index, Unique)`
+  - `GDI_DEF_TYPE` (macro, line 5239) `#define GDI_DEF_TYPE`
+  - `GDI_DC_TYPE` (macro, line 5241) `#define GDI_DC_TYPE`
+  - `GDI_DD_DIRECTDRAW_TYPE` (macro, line 5242) `#define GDI_DD_DIRECTDRAW_TYPE`
+  - `GDI_DD_SURFACE_TYPE` (macro, line 5243) `#define GDI_DD_SURFACE_TYPE`
+  - `GDI_RGN_TYPE` (macro, line 5244) `#define GDI_RGN_TYPE`
+  - `GDI_SURF_TYPE` (macro, line 5245) `#define GDI_SURF_TYPE`
+  - `GDI_CLIENTOBJ_TYPE` (macro, line 5246) `#define GDI_CLIENTOBJ_TYPE`
+  - `GDI_PATH_TYPE` (macro, line 5247) `#define GDI_PATH_TYPE`
+  - `GDI_PAL_TYPE` (macro, line 5248) `#define GDI_PAL_TYPE`
+  - `GDI_ICMLCS_TYPE` (macro, line 5249) `#define GDI_ICMLCS_TYPE`
+  - `GDI_LFONT_TYPE` (macro, line 5250) `#define GDI_LFONT_TYPE`
+  - `GDI_RFONT_TYPE` (macro, line 5251) `#define GDI_RFONT_TYPE`
+  - `GDI_PFE_TYPE` (macro, line 5252) `#define GDI_PFE_TYPE`
+  - `GDI_PFT_TYPE` (macro, line 5253) `#define GDI_PFT_TYPE`
+  - `GDI_ICMCXF_TYPE` (macro, line 5254) `#define GDI_ICMCXF_TYPE`
+  - `GDI_ICMDLL_TYPE` (macro, line 5255) `#define GDI_ICMDLL_TYPE`
+  - `GDI_BRUSH_TYPE` (macro, line 5256) `#define GDI_BRUSH_TYPE`
+  - `GDI_PFF_TYPE` (macro, line 5257) `#define GDI_PFF_TYPE`
+  - `GDI_CACHE_TYPE` (macro, line 5258) `#define GDI_CACHE_TYPE`
+  - `GDI_SPACE_TYPE` (macro, line 5259) `#define GDI_SPACE_TYPE`
+  - `GDI_DBRUSH_TYPE` (macro, line 5260) `#define GDI_DBRUSH_TYPE`
+  - `GDI_META_TYPE` (macro, line 5261) `#define GDI_META_TYPE`
+  - `GDI_EFSTATE_TYPE` (macro, line 5262) `#define GDI_EFSTATE_TYPE`
+  - `GDI_BMFD_TYPE` (macro, line 5263) `#define GDI_BMFD_TYPE`
+  - `GDI_VTFD_TYPE` (macro, line 5264) `#define GDI_VTFD_TYPE`
+  - `GDI_TTFD_TYPE` (macro, line 5265) `#define GDI_TTFD_TYPE`
+  - `GDI_RC_TYPE` (macro, line 5266) `#define GDI_RC_TYPE`
+  - `GDI_TEMP_TYPE` (macro, line 5267) `#define GDI_TEMP_TYPE`
+  - `GDI_DRVOBJ_TYPE` (macro, line 5268) `#define GDI_DRVOBJ_TYPE`
+  - `GDI_DCIOBJ_TYPE` (macro, line 5269) `#define GDI_DCIOBJ_TYPE`
+  - `GDI_SPOOL_TYPE` (macro, line 5270) `#define GDI_SPOOL_TYPE`
+  - `GDI_CLIENT_TYPE_FROM_HANDLE` (macro, line 5273) `#define GDI_CLIENT_TYPE_FROM_HANDLE(Handle)`
+  - `GDI_CLIENT_TYPE_FROM_UNIQUE` (macro, line 5276) `#define GDI_CLIENT_TYPE_FROM_UNIQUE(Unique)`
+  - `GDI_ALTTYPE_1` (macro, line 5277) `#define GDI_ALTTYPE_1`
+  - `GDI_ALTTYPE_2` (macro, line 5279) `#define GDI_ALTTYPE_2`
+  - `GDI_ALTTYPE_3` (macro, line 5280) `#define GDI_ALTTYPE_3`
+  - `GDI_CLIENT_BITMAP_TYPE` (macro, line 5281) `#define GDI_CLIENT_BITMAP_TYPE`
+  - `GDI_CLIENT_BRUSH_TYPE` (macro, line 5283) `#define GDI_CLIENT_BRUSH_TYPE`
+  - `GDI_CLIENT_CLIENTOBJ_TYPE` (macro, line 5284) `#define GDI_CLIENT_CLIENTOBJ_TYPE`
+  - `GDI_CLIENT_DC_TYPE` (macro, line 5285) `#define GDI_CLIENT_DC_TYPE`
+  - `GDI_CLIENT_FONT_TYPE` (macro, line 5286) `#define GDI_CLIENT_FONT_TYPE`
+  - `GDI_CLIENT_PALETTE_TYPE` (macro, line 5287) `#define GDI_CLIENT_PALETTE_TYPE`
+  - `GDI_CLIENT_REGION_TYPE` (macro, line 5288) `#define GDI_CLIENT_REGION_TYPE`
+  - `GDI_CLIENT_ALTDC_TYPE` (macro, line 5289) `#define GDI_CLIENT_ALTDC_TYPE`
+  - `GDI_CLIENT_DIBSECTION_TYPE` (macro, line 5291) `#define GDI_CLIENT_DIBSECTION_TYPE`
+  - `GDI_CLIENT_EXTPEN_TYPE` (macro, line 5292) `#define GDI_CLIENT_EXTPEN_TYPE`
+  - `GDI_CLIENT_METADC16_TYPE` (macro, line 5293) `#define GDI_CLIENT_METADC16_TYPE`
+  - `GDI_CLIENT_METAFILE_TYPE` (macro, line 5294) `#define GDI_CLIENT_METAFILE_TYPE`
+  - `GDI_CLIENT_METAFILE16_TYPE` (macro, line 5295) `#define GDI_CLIENT_METAFILE16_TYPE`
+  - `GDI_CLIENT_PEN_TYPE` (macro, line 5296) `#define GDI_CLIENT_PEN_TYPE`
+  - `FLS_MAXIMUM_AVAILABLE` (macro, line 5325) `#define FLS_MAXIMUM_AVAILABLE`
+  - `TLS_MINIMUM_AVAILABLE` (macro, line 5327) `#define TLS_MINIMUM_AVAILABLE`
+  - `TLS_EXPANSION_SLOTS` (macro, line 5328) `#define TLS_EXPANSION_SLOTS`
+  - `DOS_MAX_COMPONENT_LENGTH` (macro, line 5329) `#define DOS_MAX_COMPONENT_LENGTH`
+  - `DOS_MAX_PATH_LENGTH` (macro, line 5331) `#define DOS_MAX_PATH_LENGTH`
+  - `RTL_USER_PROC_CURDIR_CLOSE` (macro, line 5338) `#define RTL_USER_PROC_CURDIR_CLOSE`
+  - `RTL_USER_PROC_CURDIR_INHERIT` (macro, line 5340) `#define RTL_USER_PROC_CURDIR_INHERIT`
+  - `RTL_MAX_DRIVE_LETTERS` (macro, line 5349) `#define RTL_MAX_DRIVE_LETTERS`
+  - `RTL_DRIVE_LETTER_VALID` (macro, line 5351) `#define RTL_DRIVE_LETTER_VALID`
+  - `WOW64_SYSTEM_DIRECTORY` (macro, line 5392) `#define WOW64_SYSTEM_DIRECTORY`
+  - `WOW64_SYSTEM_DIRECTORY_U` (macro, line 5394) `#define WOW64_SYSTEM_DIRECTORY_U`
+  - `WOW64_X86_TAG` (macro, line 5395) `#define WOW64_X86_TAG`
+  - `WOW64_X86_TAG_U` (macro, line 5396) `#define WOW64_X86_TAG_U`
+  - `SET_LAST_STATUS` (macro, line 5416) `#define SET_LAST_STATUS(S)`
+  - `WOW64_POINTER` (macro, line 5434) `#define WOW64_POINTER(Type)`
+  - `LDR_DATA_TABLE_ENTRY_SIZE_WINXP32` (macro, line 5449) `#define LDR_DATA_TABLE_ENTRY_SIZE_WINXP32`
+  - `GDI_BATCH_BUFFER_SIZE` (macro, line 5641) `#define GDI_BATCH_BUFFER_SIZE`
+  - `PORT_CONNECT` (macro, line 5839) `#define PORT_CONNECT`
+  - `PORT_ALL_ACCESS` (macro, line 5841) `#define PORT_ALL_ACCESS`
+  - `CSR_API_PORT_NAME` (macro, line 5897) `#define CSR_API_PORT_NAME`
+  - `CSR_NORMAL_PRIORITY_CLASS` (macro, line 5928) `#define CSR_NORMAL_PRIORITY_CLASS`
+  - `CSR_IDLE_PRIORITY_CLASS` (macro, line 5930) `#define CSR_IDLE_PRIORITY_CLASS`
+  - `CSR_HIGH_PRIORITY_CLASS` (macro, line 5931) `#define CSR_HIGH_PRIORITY_CLASS`
+  - `CSR_REALTIME_PRIORITY_CLASS` (macro, line 5932) `#define CSR_REALTIME_PRIORITY_CLASS`
+  - `WINSS_OBJECT_DIRECTORY_NAME` (macro, line 5941) `#define WINSS_OBJECT_DIRECTORY_NAME`
+  - `CSRSRV_SERVERDLL_INDEX` (macro, line 5943) `#define CSRSRV_SERVERDLL_INDEX`
+  - `CSRSRV_FIRST_API_NUMBER` (macro, line 5945) `#define CSRSRV_FIRST_API_NUMBER`
+  - `BASESRV_SERVERDLL_INDEX` (macro, line 5946) `#define BASESRV_SERVERDLL_INDEX`
+  - `BASESRV_FIRST_API_NUMBER` (macro, line 5948) `#define BASESRV_FIRST_API_NUMBER`
+  - `CONSRV_SERVERDLL_INDEX` (macro, line 5949) `#define CONSRV_SERVERDLL_INDEX`
+  - `CONSRV_FIRST_API_NUMBER` (macro, line 5951) `#define CONSRV_FIRST_API_NUMBER`
+  - `USERSRV_SERVERDLL_INDEX` (macro, line 5952) `#define USERSRV_SERVERDLL_INDEX`
+  - `USERSRV_FIRST_API_NUMBER` (macro, line 5954) `#define USERSRV_FIRST_API_NUMBER`
+  - `CSR_MAKE_API_NUMBER` (macro, line 5955) `#define CSR_MAKE_API_NUMBER( DllIndex, ApiIndex )`
+  - `CSR_APINUMBER_TO_SERVERDLLINDEX` (macro, line 5958) `#define CSR_APINUMBER_TO_SERVERDLLINDEX( ApiNumber )`
+  - `CSR_APINUMBER_TO_APITABLEINDEX` (macro, line 5961) `#define CSR_APINUMBER_TO_APITABLEINDEX( ApiNumber )`
+  - `GDI_BATCH_BUFFER_SIZE` (macro, line 6439) `#define GDI_BATCH_BUFFER_SIZE`
+  - `STATIC_UNICODE_BUFFER_LENGTH` (macro, line 6463) `#define STATIC_UNICODE_BUFFER_LENGTH`
+  - `WIN32_CLIENT_INFO_LENGTH` (macro, line 6465) `#define WIN32_CLIENT_INFO_LENGTH`
+  - `WIN32_CLIENT_INFO_SPIN_COUNT` (macro, line 6466) `#define WIN32_CLIENT_INFO_SPIN_COUNT`
+  - `TLS_MINIMUM_AVAILABLE` (macro, line 6470) `#define TLS_MINIMUM_AVAILABLE`
+  - `LDRP_STATIC_LINK` (macro, line 6555) `#define LDRP_STATIC_LINK`
+  - `LDRP_IMAGE_DLL` (macro, line 6557) `#define LDRP_IMAGE_DLL`
+  - `LDRP_LOAD_IN_PROGRESS` (macro, line 6558) `#define LDRP_LOAD_IN_PROGRESS`
+  - `LDRP_UNLOAD_IN_PROGRESS` (macro, line 6559) `#define LDRP_UNLOAD_IN_PROGRESS`
+  - `LDRP_ENTRY_PROCESSED` (macro, line 6560) `#define LDRP_ENTRY_PROCESSED`
+  - `LDRP_ENTRY_INSERTED` (macro, line 6561) `#define LDRP_ENTRY_INSERTED`
+  - `LDRP_CURRENT_LOAD` (macro, line 6562) `#define LDRP_CURRENT_LOAD`
+  - `LDRP_FAILED_BUILTIN_LOAD` (macro, line 6563) `#define LDRP_FAILED_BUILTIN_LOAD`
+  - `LDRP_DONT_CALL_FOR_THREADS` (macro, line 6564) `#define LDRP_DONT_CALL_FOR_THREADS`
+  - `LDRP_PROCESS_ATTACH_CALLED` (macro, line 6565) `#define LDRP_PROCESS_ATTACH_CALLED`
+  - `LDRP_DEBUG_SYMBOLS_LOADED` (macro, line 6566) `#define LDRP_DEBUG_SYMBOLS_LOADED`
+  - `LDRP_IMAGE_NOT_AT_BASE` (macro, line 6567) `#define LDRP_IMAGE_NOT_AT_BASE`
+  - `LDRP_COR_IMAGE` (macro, line 6568) `#define LDRP_COR_IMAGE`
+  - `LDRP_COR_OWNS_UNMAP` (macro, line 6569) `#define LDRP_COR_OWNS_UNMAP`
+  - `LDRP_SYSTEM_MAPPED` (macro, line 6570) `#define LDRP_SYSTEM_MAPPED`
+  - `LDRP_IMAGE_VERIFYING` (macro, line 6571) `#define LDRP_IMAGE_VERIFYING`
+  - `LDRP_DRIVER_DEPENDENT_DLL` (macro, line 6572) `#define LDRP_DRIVER_DEPENDENT_DLL`
+  - `LDRP_ENTRY_NATIVE` (macro, line 6573) `#define LDRP_ENTRY_NATIVE`
+  - `LDRP_REDIRECTED` (macro, line 6574) `#define LDRP_REDIRECTED`
+  - `LDRP_NON_PAGED_DEBUG_INFO` (macro, line 6575) `#define LDRP_NON_PAGED_DEBUG_INFO`
+  - `LDRP_MM_LOADED` (macro, line 6576) `#define LDRP_MM_LOADED`
+  - `LDRP_COMPAT_DATABASE_PROCESSED` (macro, line 6577) `#define LDRP_COMPAT_DATABASE_PROCESSED`
+  - `LDR_GET_DLL_HANDLE_EX_UNCHANGED_REFCOUNT` (macro, line 6578) `#define LDR_GET_DLL_HANDLE_EX_UNCHANGED_REFCOUNT`
+  - `LDR_GET_DLL_HANDLE_EX_PIN` (macro, line 6580) `#define LDR_GET_DLL_HANDLE_EX_PIN`
+  - `LDR_ADDREF_DLL_PIN` (macro, line 6581) `#define LDR_ADDREF_DLL_PIN`
+  - `LDR_GET_PROCEDURE_ADDRESS_DONT_RECORD_FORWARDER` (macro, line 6583) `#define LDR_GET_PROCEDURE_ADDRESS_DONT_RECORD_FORWARDER`
+  - `LDR_LOCK_LOADER_LOCK_FLAG_RAISE_ON_ERRORS` (macro, line 6585) `#define LDR_LOCK_LOADER_LOCK_FLAG_RAISE_ON_ERRORS`
+  - `LDR_LOCK_LOADER_LOCK_FLAG_TRY_ONLY` (macro, line 6587) `#define LDR_LOCK_LOADER_LOCK_FLAG_TRY_ONLY`
+  - `LDR_LOCK_LOADER_LOCK_DISPOSITION_INVALID` (macro, line 6588) `#define LDR_LOCK_LOADER_LOCK_DISPOSITION_INVALID`
+  - `LDR_LOCK_LOADER_LOCK_DISPOSITION_LOCK_ACQUIRED` (macro, line 6590) `#define LDR_LOCK_LOADER_LOCK_DISPOSITION_LOCK_ACQUIRED`
+  - `LDR_LOCK_LOADER_LOCK_DISPOSITION_LOCK_NOT_ACQUIRED` (macro, line 6591) `#define LDR_LOCK_LOADER_LOCK_DISPOSITION_LOCK_NOT_ACQUIRED`
+  - `LDR_UNLOCK_LOADER_LOCK_FLAG_RAISE_ON_ERRORS` (macro, line 6592) `#define LDR_UNLOCK_LOADER_LOCK_FLAG_RAISE_ON_ERRORS`
+  - `LDR_DLL_NOTIFICATION_REASON_LOADED` (macro, line 6594) `#define LDR_DLL_NOTIFICATION_REASON_LOADED`
+  - `LDR_DLL_NOTIFICATION_REASON_UNLOADED` (macro, line 6596) `#define LDR_DLL_NOTIFICATION_REASON_UNLOADED`
+  - `DOS_MAX_COMPONENT_LENGTH` (macro, line 6719) `#define DOS_MAX_COMPONENT_LENGTH`
+  - `DOS_MAX_PATH_LENGTH` (macro, line 6721) `#define DOS_MAX_PATH_LENGTH`
+  - `RTL_USER_PROC_CURDIR_CLOSE` (macro, line 6722) `#define RTL_USER_PROC_CURDIR_CLOSE`
+  - `RTL_USER_PROC_CURDIR_INHERIT` (macro, line 6724) `#define RTL_USER_PROC_CURDIR_INHERIT`
+  - `RTL_MAX_DRIVE_LETTERS` (macro, line 6752) `#define RTL_MAX_DRIVE_LETTERS`
+  - `RTL_DRIVE_LETTER_VALID` (macro, line 6754) `#define RTL_DRIVE_LETTER_VALID`
+  - `ACTIVATION_CONTEXT_STACK_FLAG_QUERIES_DISABLED` (macro, line 6892) `#define ACTIVATION_CONTEXT_STACK_FLAG_QUERIES_DISABLED`
+  - `TEB_ACTIVE_FRAME_CONTEXT_FLAG_EXTENDED` (macro, line 6913) `#define TEB_ACTIVE_FRAME_CONTEXT_FLAG_EXTENDED`
+  - `TEB_ACTIVE_FRAME_FLAG_EXTENDED` (macro, line 6931) `#define TEB_ACTIVE_FRAME_FLAG_EXTENDED`
+  - `PcTeb` (macro, line 7095) `#define PcTeb`
+  - `RtlGetCurrentProcessId` (macro, line 7097) `#define RtlGetCurrentProcessId()`
+  - `RtlGetCurrentThreadId` (macro, line 7099) `#define RtlGetCurrentThreadId()`
+  - `ZwCurrentProcess` (macro, line 7100) `#define ZwCurrentProcess()`
+  - `WOWAddress` (macro, line 7105) `#define WOWAddress()`
+  - `RtlProcessHeap` (macro, line 7106) `#define RtlProcessHeap()`
+  - `RtlAcquireLockRoutine` (macro, line 7109) `#define RtlAcquireLockRoutine(L)`
+  - `RTL_HEAP_BUSY` (macro, line 7202) `#define RTL_HEAP_BUSY`
+  - `RTL_HEAP_SEGMENT` (macro, line 7204) `#define RTL_HEAP_SEGMENT`
+  - `RTL_HEAP_SETTABLE_VALUE` (macro, line 7205) `#define RTL_HEAP_SETTABLE_VALUE`
+  - `RTL_HEAP_SETTABLE_FLAG1` (macro, line 7206) `#define RTL_HEAP_SETTABLE_FLAG1`
+  - `RTL_HEAP_SETTABLE_FLAG2` (macro, line 7207) `#define RTL_HEAP_SETTABLE_FLAG2`
+  - `RTL_HEAP_SETTABLE_FLAG3` (macro, line 7208) `#define RTL_HEAP_SETTABLE_FLAG3`
+  - `RTL_HEAP_SETTABLE_FLAGS` (macro, line 7209) `#define RTL_HEAP_SETTABLE_FLAGS`
+  - `RTL_HEAP_UNCOMMITTED_RANGE` (macro, line 7210) `#define RTL_HEAP_UNCOMMITTED_RANGE`
+  - `RTL_HEAP_PROTECTED_ENTRY` (macro, line 7211) `#define RTL_HEAP_PROTECTED_ENTRY`
+  - `POINTER_64` (macro, line 7302) `#define POINTER_64`
+  - `POINTER_32` (macro, line 7305) `#define POINTER_32`
+  - `POINTER_32` (macro, line 7307) `#define POINTER_32`
+  - `VER_SERVER_NT` (macro, line 7338) `#define VER_SERVER_NT`
+  - `VER_WORKSTATION_NT` (macro, line 7340) `#define VER_WORKSTATION_NT`
+  - `VER_SUITE_SMALLBUSINESS` (macro, line 7341) `#define VER_SUITE_SMALLBUSINESS`
+  - `VER_SUITE_ENTERPRISE` (macro, line 7342) `#define VER_SUITE_ENTERPRISE`
+  - `VER_SUITE_BACKOFFICE` (macro, line 7343) `#define VER_SUITE_BACKOFFICE`
+  - `VER_SUITE_COMMUNICATIONS` (macro, line 7344) `#define VER_SUITE_COMMUNICATIONS`
+  - `VER_SUITE_TERMINAL` (macro, line 7345) `#define VER_SUITE_TERMINAL`
+  - `VER_SUITE_SMALLBUSINESS_RESTRICTED` (macro, line 7346) `#define VER_SUITE_SMALLBUSINESS_RESTRICTED`
+  - `VER_SUITE_EMBEDDEDNT` (macro, line 7347) `#define VER_SUITE_EMBEDDEDNT`
+  - `VER_SUITE_DATACENTER` (macro, line 7348) `#define VER_SUITE_DATACENTER`
+  - `VER_SUITE_SINGLEUSERTS` (macro, line 7349) `#define VER_SUITE_SINGLEUSERTS`
+  - `VER_SUITE_PERSONAL` (macro, line 7350) `#define VER_SUITE_PERSONAL`
+  - `VER_SUITE_BLADE` (macro, line 7351) `#define VER_SUITE_BLADE`
+  - `VER_SUITE_EMBEDDED_RESTRICTED` (macro, line 7352) `#define VER_SUITE_EMBEDDED_RESTRICTED`
+  - `VER_SUITE_SECURITY_APPLIANCE` (macro, line 7353) `#define VER_SUITE_SECURITY_APPLIANCE`
+  - `VER_SUITE_STORAGE_SERVER` (macro, line 7354) `#define VER_SUITE_STORAGE_SERVER`
+  - `VER_SUITE_COMPUTE_SERVER` (macro, line 7355) `#define VER_SUITE_COMPUTE_SERVER`
+  - `EXCEPTION_CHAIN_END` (macro, line 7516) `#define EXCEPTION_CHAIN_END`
+  - `MAJOR_VERSION` (macro, line 7518) `#define MAJOR_VERSION`
+  - `MINOR_VERSION` (macro, line 7520) `#define MINOR_VERSION`
+  - `OS2_VERSION` (macro, line 7521) `#define OS2_VERSION`
+  - `DBG_TEB_THREADNAME` (macro, line 7524) `#define DBG_TEB_THREADNAME`
+  - `DBG_TEB_RESERVED_1` (macro, line 7525) `#define DBG_TEB_RESERVED_1`
+  - `DBG_TEB_RESERVED_2` (macro, line 7526) `#define DBG_TEB_RESERVED_2`
+  - `DBG_TEB_RESERVED_3` (macro, line 7527) `#define DBG_TEB_RESERVED_3`
+  - `DBG_TEB_RESERVED_4` (macro, line 7528) `#define DBG_TEB_RESERVED_4`
+  - `DBG_TEB_RESERVED_5` (macro, line 7529) `#define DBG_TEB_RESERVED_5`
+  - `DBG_TEB_RESERVED_6` (macro, line 7530) `#define DBG_TEB_RESERVED_6`
+  - `DBG_TEB_RESERVED_7` (macro, line 7531) `#define DBG_TEB_RESERVED_7`
+  - `DBG_TEB_RESERVED_8` (macro, line 7532) `#define DBG_TEB_RESERVED_8`
+  - `PROCESS_PRIORITY_CLASS_UNKNOWN` (macro, line 7534) `#define PROCESS_PRIORITY_CLASS_UNKNOWN`
+  - `PROCESS_PRIORITY_CLASS_IDLE` (macro, line 7536) `#define PROCESS_PRIORITY_CLASS_IDLE`
+  - `PROCESS_PRIORITY_CLASS_NORMAL` (macro, line 7537) `#define PROCESS_PRIORITY_CLASS_NORMAL`
+  - `PROCESS_PRIORITY_CLASS_HIGH` (macro, line 7538) `#define PROCESS_PRIORITY_CLASS_HIGH`
+  - `PROCESS_PRIORITY_CLASS_REALTIME` (macro, line 7539) `#define PROCESS_PRIORITY_CLASS_REALTIME`
+  - `PROCESS_PRIORITY_CLASS_BELOW_NORMAL` (macro, line 7540) `#define PROCESS_PRIORITY_CLASS_BELOW_NORMAL`
+  - `PROCESS_PRIORITY_CLASS_ABOVE_NORMAL` (macro, line 7541) `#define PROCESS_PRIORITY_CLASS_ABOVE_NORMAL`
+  - `FILE_PATH_VERSION` (macro, line 7558) `#define FILE_PATH_VERSION`
+  - `FILE_PATH_TYPE_ARC` (macro, line 7560) `#define FILE_PATH_TYPE_ARC`
+  - `FILE_PATH_TYPE_ARC_SIGNATURE` (macro, line 7562) `#define FILE_PATH_TYPE_ARC_SIGNATURE`
+  - `FILE_PATH_TYPE_NT` (macro, line 7563) `#define FILE_PATH_TYPE_NT`
+  - `FILE_PATH_TYPE_EFI` (macro, line 7564) `#define FILE_PATH_TYPE_EFI`
+  - `FILE_PATH_TYPE_MIN` (macro, line 7565) `#define FILE_PATH_TYPE_MIN`
+  - `FILE_PATH_TYPE_MAX` (macro, line 7567) `#define FILE_PATH_TYPE_MAX`
+  - `WINDOWS_OS_OPTIONS_SIGNATURE` (macro, line 7577) `#define WINDOWS_OS_OPTIONS_SIGNATURE`
+  - `WINDOWS_OS_OPTIONS_VERSION` (macro, line 7579) `#define WINDOWS_OS_OPTIONS_VERSION`
+  - `LongAlignPtr` (macro, line 7626) `#define LongAlignPtr(Ptr)`
+  - `LongAlignSize` (macro, line 7628) `#define LongAlignSize(Size)`
+  - `RtlpOwnerAddrSecurityDescriptor` (macro, line 7637) `#define RtlpOwnerAddrSecurityDescriptor( SD )`
+  - `RtlpGroupAddrSecurityDescriptor` (macro, line 7645) `#define RtlpGroupAddrSecurityDescriptor( SD )`
+  - `RtlpSaclAddrSecurityDescriptor` (macro, line 7653) `#define RtlpSaclAddrSecurityDescriptor( SD )`
+  - `RtlpDaclAddrSecurityDescriptor` (macro, line 7664) `#define RtlpDaclAddrSecurityDescriptor( SD )`
+  - `RtlpIdAssignableAsOwner` (macro, line 7682) `#define RtlpIdAssignableAsOwner( G )`
+  - `RtlpPropagateControlBits` (macro, line 7691) `#define RtlpPropagateControlBits( NewSD, OldSD, Bits )`
+  - `RtlpAreControlBitsSet` (macro, line 7703) `#define RtlpAreControlBitsSet( SD, Bits )`
+  - `RtlpSetControlBits` (macro, line 7713) `#define RtlpSetControlBits( SD, Bits )`
+  - `RtlpClearControlBits` (macro, line 7722) `#define RtlpClearControlBits( SD, Bits )`
+  - `Audit_System_SecurityStateChange_defined` (macro, line 7743) `#define Audit_System_SecurityStateChange_defined`
+  - `Audit_System_SecuritySubsystemExtension_defined` (macro, line 7755) `#define Audit_System_SecuritySubsystemExtension_defined`
+  - `Audit_System_Integrity_defined` (macro, line 7767) `#define Audit_System_Integrity_defined`
+  - `Audit_System_IPSecDriverEvents_defined` (macro, line 7779) `#define Audit_System_IPSecDriverEvents_defined`
+  - `Audit_System_Others_defined` (macro, line 7791) `#define Audit_System_Others_defined`
+  - `Audit_Logon_Logon_defined` (macro, line 7803) `#define Audit_Logon_Logon_defined`
+  - `Audit_Logon_Logoff_defined` (macro, line 7815) `#define Audit_Logon_Logoff_defined`
+  - `Audit_Logon_AccountLockout_defined` (macro, line 7827) `#define Audit_Logon_AccountLockout_defined`
+  - `Audit_Logon_IPSecMainMode_defined` (macro, line 7839) `#define Audit_Logon_IPSecMainMode_defined`
+  - `Audit_Logon_IPSecQuickMode_defined` (macro, line 7851) `#define Audit_Logon_IPSecQuickMode_defined`
+  - `Audit_Logon_IPSecUserMode_defined` (macro, line 7863) `#define Audit_Logon_IPSecUserMode_defined`
+  - `Audit_Logon_SpecialLogon_defined` (macro, line 7875) `#define Audit_Logon_SpecialLogon_defined`
+  - `Audit_Logon_Others_defined` (macro, line 7887) `#define Audit_Logon_Others_defined`
+  - `Audit_ObjectAccess_FileSystem_defined` (macro, line 7899) `#define Audit_ObjectAccess_FileSystem_defined`
+  - `Audit_ObjectAccess_Registry_defined` (macro, line 7911) `#define Audit_ObjectAccess_Registry_defined`
+  - `Audit_ObjectAccess_Kernel_defined` (macro, line 7923) `#define Audit_ObjectAccess_Kernel_defined`
+  - `Audit_ObjectAccess_Sam_defined` (macro, line 7935) `#define Audit_ObjectAccess_Sam_defined`
+  - `Audit_ObjectAccess_CertificationServices_defined` (macro, line 7947) `#define Audit_ObjectAccess_CertificationServices_defined`
+  - `Audit_ObjectAccess_ApplicationGenerated_defined` (macro, line 7959) `#define Audit_ObjectAccess_ApplicationGenerated_defined`
+  - `Audit_ObjectAccess_Handle_defined` (macro, line 7979) `#define Audit_ObjectAccess_Handle_defined`
+  - `Audit_ObjectAccess_Share_defined` (macro, line 7991) `#define Audit_ObjectAccess_Share_defined`
+  - `Audit_ObjectAccess_FirewallPacketDrops_defined` (macro, line 8003) `#define Audit_ObjectAccess_FirewallPacketDrops_defined`
+  - `Audit_ObjectAccess_FirewallConnection_defined` (macro, line 8015) `#define Audit_ObjectAccess_FirewallConnection_defined`
+  - `Audit_ObjectAccess_Other_defined` (macro, line 8027) `#define Audit_ObjectAccess_Other_defined`
+  - `Audit_PrivilegeUse_Sensitive_defined` (macro, line 8039) `#define Audit_PrivilegeUse_Sensitive_defined`
+  - `Audit_PrivilegeUse_NonSensitive_defined` (macro, line 8051) `#define Audit_PrivilegeUse_NonSensitive_defined`
+  - `Audit_PrivilegeUse_Others_defined` (macro, line 8063) `#define Audit_PrivilegeUse_Others_defined`
+  - `Audit_DetailedTracking_ProcessCreation_defined` (macro, line 8075) `#define Audit_DetailedTracking_ProcessCreation_defined`
+  - `Audit_DetailedTracking_ProcessTermination_defined` (macro, line 8087) `#define Audit_DetailedTracking_ProcessTermination_defined`
+  - `Audit_DetailedTracking_DpapiActivity_defined` (macro, line 8099) `#define Audit_DetailedTracking_DpapiActivity_defined`
+  - `Audit_DetailedTracking_RpcCall_defined` (macro, line 8111) `#define Audit_DetailedTracking_RpcCall_defined`
+  - `Audit_PolicyChange_AuditPolicy_defined` (macro, line 8123) `#define Audit_PolicyChange_AuditPolicy_defined`
+  - `Audit_PolicyChange_AuthenticationPolicy_defined` (macro, line 8135) `#define Audit_PolicyChange_AuthenticationPolicy_defined`
+  - `Audit_PolicyChange_AuthorizationPolicy_defined` (macro, line 8147) `#define Audit_PolicyChange_AuthorizationPolicy_defined`
+  - `Audit_PolicyChange_MpsscvRulePolicy_defined` (macro, line 8159) `#define Audit_PolicyChange_MpsscvRulePolicy_defined`
+  - `Audit_PolicyChange_WfpIPSecPolicy_defined` (macro, line 8171) `#define Audit_PolicyChange_WfpIPSecPolicy_defined`
+  - `Audit_PolicyChange_Others_defined` (macro, line 8183) `#define Audit_PolicyChange_Others_defined`
+  - `Audit_AccountManagement_UserAccount_defined` (macro, line 8195) `#define Audit_AccountManagement_UserAccount_defined`
+  - `Audit_AccountManagement_ComputerAccount_defined` (macro, line 8207) `#define Audit_AccountManagement_ComputerAccount_defined`
+  - `Audit_AccountManagement_SecurityGroup_defined` (macro, line 8219) `#define Audit_AccountManagement_SecurityGroup_defined`
+  - `Audit_AccountManagement_DistributionGroup_defined` (macro, line 8231) `#define Audit_AccountManagement_DistributionGroup_defined`
+  - `Audit_AccountManagement_ApplicationGroup_defined` (macro, line 8243) `#define Audit_AccountManagement_ApplicationGroup_defined`
+  - `Audit_AccountManagement_Others_defined` (macro, line 8255) `#define Audit_AccountManagement_Others_defined`
+  - `Audit_DSAccess_DSAccess_defined` (macro, line 8267) `#define Audit_DSAccess_DSAccess_defined`
+  - `Audit_DsAccess_AdAuditChanges_defined` (macro, line 8279) `#define Audit_DsAccess_AdAuditChanges_defined`
+  - `Audit_Ds_Replication_defined` (macro, line 8291) `#define Audit_Ds_Replication_defined`
+  - `Audit_Ds_DetailedReplication_defined` (macro, line 8303) `#define Audit_Ds_DetailedReplication_defined`
+  - `Audit_AccountLogon_CredentialValidation_defined` (macro, line 8315) `#define Audit_AccountLogon_CredentialValidation_defined`
+  - `Audit_AccountLogon_Kerberos_defined` (macro, line 8327) `#define Audit_AccountLogon_Kerberos_defined`
+  - `Audit_AccountLogon_Others_defined` (macro, line 8339) `#define Audit_AccountLogon_Others_defined`
+  - `Audit_AccountLogon_KerbCredentialValidation_defined` (macro, line 8351) `#define Audit_AccountLogon_KerbCredentialValidation_defined`
+  - `Audit_Logon_NPS_defined` (macro, line 8363) `#define Audit_Logon_NPS_defined`
+  - `Audit_ObjectAccess_DetailedFileShare_defined` (macro, line 8375) `#define Audit_ObjectAccess_DetailedFileShare_defined`
+  - `Audit_System_defined` (macro, line 8396) `#define Audit_System_defined`
+  - `Audit_Logon_defined` (macro, line 8408) `#define Audit_Logon_defined`
+  - `Audit_ObjectAccess_defined` (macro, line 8420) `#define Audit_ObjectAccess_defined`
+  - `Audit_PrivilegeUse_defined` (macro, line 8432) `#define Audit_PrivilegeUse_defined`
+  - `Audit_DetailedTracking_defined` (macro, line 8444) `#define Audit_DetailedTracking_defined`
+  - `Audit_PolicyChange_defined` (macro, line 8456) `#define Audit_PolicyChange_defined`
+  - `Audit_AccountManagement_defined` (macro, line 8468) `#define Audit_AccountManagement_defined`
+  - `Audit_DirectoryServiceAccess_defined` (macro, line 8480) `#define Audit_DirectoryServiceAccess_defined`
+  - `Audit_AccountLogon_defined` (macro, line 8492) `#define Audit_AccountLogon_defined`
+  - `_NTLSA_IFS_` (macro, line 8500) `#define _NTLSA_IFS_`
+  - `_LSALOOKUP_` (macro, line 8503) `#define _LSALOOKUP_`
+  - `LOOKUP_VIEW_LOCAL_INFORMATION` (macro, line 8577) `#define LOOKUP_VIEW_LOCAL_INFORMATION`
+  - `LOOKUP_TRANSLATE_NAMES` (macro, line 8579) `#define LOOKUP_TRANSLATE_NAMES`
+  - `LSA_MODE_PASSWORD_PROTECTED` (macro, line 8634) `#define LSA_MODE_PASSWORD_PROTECTED`
+  - `LSA_MODE_INDIVIDUAL_ACCOUNTS` (macro, line 8636) `#define LSA_MODE_INDIVIDUAL_ACCOUNTS`
+  - `LSA_MODE_MANDATORY_ACCESS` (macro, line 8637) `#define LSA_MODE_MANDATORY_ACCESS`
+  - `LSA_MODE_LOG_FULL` (macro, line 8638) `#define LSA_MODE_LOG_FULL`
+  - `_NTLSA_AUDIT_` (macro, line 8665) `#define _NTLSA_AUDIT_`
+  - `SE_ADT_OBJECT_ONLY` (macro, line 8718) `#define SE_ADT_OBJECT_ONLY`
+  - `SE_MAX_AUDIT_PARAMETERS` (macro, line 8739) `#define SE_MAX_AUDIT_PARAMETERS`
+  - `SE_MAX_GENERIC_AUDIT_PARAMETERS` (macro, line 8741) `#define SE_MAX_GENERIC_AUDIT_PARAMETERS`
+  - `SE_ADT_PARAMETERS_SELF_RELATIVE` (macro, line 8755) `#define SE_ADT_PARAMETERS_SELF_RELATIVE`
+  - `SE_ADT_PARAMETERS_SEND_TO_LSA` (macro, line 8757) `#define SE_ADT_PARAMETERS_SEND_TO_LSA`
+  - `SE_ADT_PARAMETER_EXTENSIBLE_AUDIT` (macro, line 8758) `#define SE_ADT_PARAMETER_EXTENSIBLE_AUDIT`
+  - `SE_ADT_PARAMETER_GENERIC_AUDIT` (macro, line 8759) `#define SE_ADT_PARAMETER_GENERIC_AUDIT`
+  - `SE_ADT_PARAMETER_WRITE_SYNCHRONOUS` (macro, line 8760) `#define SE_ADT_PARAMETER_WRITE_SYNCHRONOUS`
+  - `LSAP_SE_ADT_PARAMETER_ARRAY_TRUE_SIZE` (macro, line 8761) `#define LSAP_SE_ADT_PARAMETER_ARRAY_TRUE_SIZE(AuditParameters)`
+  - `POLICY_AUDIT_EVENT_UNCHANGED` (macro, line 8782) `#define POLICY_AUDIT_EVENT_UNCHANGED`
+  - `POLICY_AUDIT_EVENT_SUCCESS` (macro, line 8784) `#define POLICY_AUDIT_EVENT_SUCCESS`
+  - `POLICY_AUDIT_EVENT_FAILURE` (macro, line 8785) `#define POLICY_AUDIT_EVENT_FAILURE`
+  - `POLICY_AUDIT_EVENT_NONE` (macro, line 8786) `#define POLICY_AUDIT_EVENT_NONE`
+  - `POLICY_AUDIT_EVENT_MASK` (macro, line 8787) `#define POLICY_AUDIT_EVENT_MASK`
+  - `LSA_SUCCESS` (macro, line 8793) `#define LSA_SUCCESS(Error)`
+  - `POLICY_VIEW_LOCAL_INFORMATION` (macro, line 8866) `#define POLICY_VIEW_LOCAL_INFORMATION`
+  - `POLICY_VIEW_AUDIT_INFORMATION` (macro, line 8868) `#define POLICY_VIEW_AUDIT_INFORMATION`
+  - `POLICY_GET_PRIVATE_INFORMATION` (macro, line 8869) `#define POLICY_GET_PRIVATE_INFORMATION`
+  - `POLICY_TRUST_ADMIN` (macro, line 8870) `#define POLICY_TRUST_ADMIN`
+  - `POLICY_CREATE_ACCOUNT` (macro, line 8871) `#define POLICY_CREATE_ACCOUNT`
+  - `POLICY_CREATE_SECRET` (macro, line 8872) `#define POLICY_CREATE_SECRET`
+  - `POLICY_CREATE_PRIVILEGE` (macro, line 8873) `#define POLICY_CREATE_PRIVILEGE`
+  - `POLICY_SET_DEFAULT_QUOTA_LIMITS` (macro, line 8874) `#define POLICY_SET_DEFAULT_QUOTA_LIMITS`
+  - `POLICY_SET_AUDIT_REQUIREMENTS` (macro, line 8875) `#define POLICY_SET_AUDIT_REQUIREMENTS`
+  - `POLICY_AUDIT_LOG_ADMIN` (macro, line 8876) `#define POLICY_AUDIT_LOG_ADMIN`
+  - `POLICY_SERVER_ADMIN` (macro, line 8877) `#define POLICY_SERVER_ADMIN`
+  - `POLICY_LOOKUP_NAMES` (macro, line 8878) `#define POLICY_LOOKUP_NAMES`
+  - `POLICY_NOTIFICATION` (macro, line 8879) `#define POLICY_NOTIFICATION`
+  - `POLICY_ALL_ACCESS` (macro, line 8880) `#define POLICY_ALL_ACCESS`
+  - `POLICY_READ` (macro, line 8894) `#define POLICY_READ`
+  - `POLICY_WRITE` (macro, line 8899) `#define POLICY_WRITE`
+  - `POLICY_EXECUTE` (macro, line 8909) `#define POLICY_EXECUTE`
+  - `PER_USER_POLICY_UNCHANGED` (macro, line 8997) `#define PER_USER_POLICY_UNCHANGED`
+  - `PER_USER_AUDIT_SUCCESS_INCLUDE` (macro, line 8999) `#define PER_USER_AUDIT_SUCCESS_INCLUDE`
+  - `PER_USER_AUDIT_SUCCESS_EXCLUDE` (macro, line 9000) `#define PER_USER_AUDIT_SUCCESS_EXCLUDE`
+  - `PER_USER_AUDIT_FAILURE_INCLUDE` (macro, line 9001) `#define PER_USER_AUDIT_FAILURE_INCLUDE`
+  - `PER_USER_AUDIT_FAILURE_EXCLUDE` (macro, line 9002) `#define PER_USER_AUDIT_FAILURE_EXCLUDE`
+  - `PER_USER_AUDIT_NONE` (macro, line 9003) `#define PER_USER_AUDIT_NONE`
+  - `VALID_PER_USER_AUDIT_POLICY_FLAG` (macro, line 9004) `#define VALID_PER_USER_AUDIT_POLICY_FLAG`
+  - `POLICY_QOS_SCHANNEL_REQUIRED` (macro, line 9079) `#define POLICY_QOS_SCHANNEL_REQUIRED`
+  - `POLICY_QOS_OUTBOUND_INTEGRITY` (macro, line 9081) `#define POLICY_QOS_OUTBOUND_INTEGRITY`
+  - `POLICY_QOS_OUTBOUND_CONFIDENTIALITY` (macro, line 9082) `#define POLICY_QOS_OUTBOUND_CONFIDENTIALITY`
+  - `POLICY_QOS_INBOUND_INTEGRITY` (macro, line 9083) `#define POLICY_QOS_INBOUND_INTEGRITY`
+  - `POLICY_QOS_INBOUND_CONFIDENTIALITY` (macro, line 9084) `#define POLICY_QOS_INBOUND_CONFIDENTIALITY`
+  - `POLICY_QOS_ALLOW_LOCAL_ROOT_CERT_STORE` (macro, line 9085) `#define POLICY_QOS_ALLOW_LOCAL_ROOT_CERT_STORE`
+  - `POLICY_QOS_RAS_SERVER_ALLOWED` (macro, line 9086) `#define POLICY_QOS_RAS_SERVER_ALLOWED`
+  - `POLICY_QOS_DHCP_SERVER_ALLOWED` (macro, line 9087) `#define POLICY_QOS_DHCP_SERVER_ALLOWED`
+  - `POLICY_KERBEROS_VALIDATE_CLIENT` (macro, line 9109) `#define POLICY_KERBEROS_VALIDATE_CLIENT`
+  - `TRUST_DIRECTION_DISABLED` (macro, line 9181) `#define TRUST_DIRECTION_DISABLED`
+  - `TRUST_DIRECTION_INBOUND` (macro, line 9183) `#define TRUST_DIRECTION_INBOUND`
+  - `TRUST_DIRECTION_OUTBOUND` (macro, line 9184) `#define TRUST_DIRECTION_OUTBOUND`
+  - `TRUST_DIRECTION_BIDIRECTIONAL` (macro, line 9185) `#define TRUST_DIRECTION_BIDIRECTIONAL`
+  - `TRUST_TYPE_DOWNLEVEL` (macro, line 9186) `#define TRUST_TYPE_DOWNLEVEL`
+  - `TRUST_TYPE_UPLEVEL` (macro, line 9188) `#define TRUST_TYPE_UPLEVEL`
+  - `TRUST_TYPE_MIT` (macro, line 9189) `#define TRUST_TYPE_MIT`
+  - `TRUST_TYPE_DCE` (macro, line 9192) `#define TRUST_TYPE_DCE`
+  - `TRUST_ATTRIBUTE_NON_TRANSITIVE` (macro, line 9197) `#define TRUST_ATTRIBUTE_NON_TRANSITIVE`
+  - `TRUST_ATTRIBUTE_UPLEVEL_ONLY` (macro, line 9199) `#define TRUST_ATTRIBUTE_UPLEVEL_ONLY`
+  - `TRUST_ATTRIBUTE_TREE_PARENT` (macro, line 9201) `#define TRUST_ATTRIBUTE_TREE_PARENT`
+  - `TRUST_ATTRIBUTE_TREE_ROOT` (macro, line 9203) `#define TRUST_ATTRIBUTE_TREE_ROOT`
+  - `TRUST_ATTRIBUTES_VALID` (macro, line 9208) `#define TRUST_ATTRIBUTES_VALID`
+  - `TRUST_ATTRIBUTE_FILTER_SIDS` (macro, line 9212) `#define TRUST_ATTRIBUTE_FILTER_SIDS`
+  - `TRUST_ATTRIBUTE_QUARANTINED_DOMAIN` (macro, line 9214) `#define TRUST_ATTRIBUTE_QUARANTINED_DOMAIN`
+  - `TRUST_ATTRIBUTE_FOREST_TRANSITIVE` (macro, line 9218) `#define TRUST_ATTRIBUTE_FOREST_TRANSITIVE`
+  - `TRUST_ATTRIBUTE_CROSS_ORGANIZATION` (macro, line 9220) `#define TRUST_ATTRIBUTE_CROSS_ORGANIZATION`
+  - `TRUST_ATTRIBUTE_WITHIN_FOREST` (macro, line 9221) `#define TRUST_ATTRIBUTE_WITHIN_FOREST`
+  - `TRUST_ATTRIBUTE_TREAT_AS_EXTERNAL` (macro, line 9222) `#define TRUST_ATTRIBUTE_TREAT_AS_EXTERNAL`
+  - `TRUST_ATTRIBUTE_TRUST_USES_RC4_ENCRYPTION` (macro, line 9224) `#define TRUST_ATTRIBUTE_TRUST_USES_RC4_ENCRYPTION`
+  - `TRUST_ATTRIBUTE_TRUST_USES_AES_KEYS` (macro, line 9225) `#define TRUST_ATTRIBUTE_TRUST_USES_AES_KEYS`
+  - `TRUST_ATTRIBUTES_VALID` (macro, line 9233) `#define TRUST_ATTRIBUTES_VALID`
+  - `TRUST_ATTRIBUTES_USER` (macro, line 9235) `#define TRUST_ATTRIBUTES_USER`
+  - `TRUST_AUTH_TYPE_NONE` (macro, line 9263) `#define TRUST_AUTH_TYPE_NONE`
+  - `TRUST_AUTH_TYPE_NT4OWF` (macro, line 9265) `#define TRUST_AUTH_TYPE_NT4OWF`
+  - `TRUST_AUTH_TYPE_CLEAR` (macro, line 9266) `#define TRUST_AUTH_TYPE_CLEAR`
+  - `TRUST_AUTH_TYPE_VERSION` (macro, line 9267) `#define TRUST_AUTH_TYPE_VERSION`
+  - `LSA_FOREST_TRUST_RECORD_TYPE_UNRECOGNIZED` (macro, line 9320) `#define LSA_FOREST_TRUST_RECORD_TYPE_UNRECOGNIZED`
+  - `LSA_FTRECORD_DISABLED_REASONS` (macro, line 9326) `#define LSA_FTRECORD_DISABLED_REASONS`
+  - `LSA_TLN_DISABLED_NEW` (macro, line 9332) `#define LSA_TLN_DISABLED_NEW`
+  - `LSA_TLN_DISABLED_ADMIN` (macro, line 9334) `#define LSA_TLN_DISABLED_ADMIN`
+  - `LSA_TLN_DISABLED_CONFLICT` (macro, line 9335) `#define LSA_TLN_DISABLED_CONFLICT`
+  - `LSA_SID_DISABLED_ADMIN` (macro, line 9340) `#define LSA_SID_DISABLED_ADMIN`
+  - `LSA_SID_DISABLED_CONFLICT` (macro, line 9342) `#define LSA_SID_DISABLED_CONFLICT`
+  - `LSA_NB_DISABLED_ADMIN` (macro, line 9343) `#define LSA_NB_DISABLED_ADMIN`
+  - `LSA_NB_DISABLED_CONFLICT` (macro, line 9344) `#define LSA_NB_DISABLED_CONFLICT`
+  - `MAX_FOREST_TRUST_BINARY_DATA_SIZE` (macro, line 9364) `#define MAX_FOREST_TRUST_BINARY_DATA_SIZE`
+  - `MAX_RECORDS_IN_FOREST_TRUST_INFO` (macro, line 9411) `#define MAX_RECORDS_IN_FOREST_TRUST_INFO`
+  - `SE_INTERACTIVE_LOGON_NAME` (macro, line 9649) `#define SE_INTERACTIVE_LOGON_NAME`
+  - `SE_NETWORK_LOGON_NAME` (macro, line 9651) `#define SE_NETWORK_LOGON_NAME`
+  - `SE_BATCH_LOGON_NAME` (macro, line 9652) `#define SE_BATCH_LOGON_NAME`
+  - `SE_SERVICE_LOGON_NAME` (macro, line 9653) `#define SE_SERVICE_LOGON_NAME`
+  - `SE_DENY_INTERACTIVE_LOGON_NAME` (macro, line 9654) `#define SE_DENY_INTERACTIVE_LOGON_NAME`
+  - `SE_DENY_NETWORK_LOGON_NAME` (macro, line 9655) `#define SE_DENY_NETWORK_LOGON_NAME`
+  - `SE_DENY_BATCH_LOGON_NAME` (macro, line 9656) `#define SE_DENY_BATCH_LOGON_NAME`
+  - `SE_DENY_SERVICE_LOGON_NAME` (macro, line 9657) `#define SE_DENY_SERVICE_LOGON_NAME`
+  - `SE_REMOTE_INTERACTIVE_LOGON_NAME` (macro, line 9659) `#define SE_REMOTE_INTERACTIVE_LOGON_NAME`
+  - `SE_DENY_REMOTE_INTERACTIVE_LOGON_NAME` (macro, line 9660) `#define SE_DENY_REMOTE_INTERACTIVE_LOGON_NAME`
+  - `EFI_DRIVER_ENTRY_VERSION` (macro, line 9868) `#define EFI_DRIVER_ENTRY_VERSION`
+  - `MAX_STACK_DEPTH` (macro, line 9870) `#define MAX_STACK_DEPTH`
+  - `HEAP_SETTABLE_USER_VALUE` (macro, line 9903) `#define HEAP_SETTABLE_USER_VALUE`
+  - `HEAP_SETTABLE_USER_FLAG1` (macro, line 9905) `#define HEAP_SETTABLE_USER_FLAG1`
+  - `HEAP_SETTABLE_USER_FLAG2` (macro, line 9906) `#define HEAP_SETTABLE_USER_FLAG2`
+  - `HEAP_SETTABLE_USER_FLAG3` (macro, line 9907) `#define HEAP_SETTABLE_USER_FLAG3`
+  - `HEAP_SETTABLE_USER_FLAGS` (macro, line 9908) `#define HEAP_SETTABLE_USER_FLAGS`
+  - `HEAP_CLASS_0` (macro, line 9909) `#define HEAP_CLASS_0`
+  - `HEAP_CLASS_1` (macro, line 9911) `#define HEAP_CLASS_1`
+  - `HEAP_CLASS_2` (macro, line 9912) `#define HEAP_CLASS_2`
+  - `HEAP_CLASS_3` (macro, line 9913) `#define HEAP_CLASS_3`
+  - `HEAP_CLASS_4` (macro, line 9914) `#define HEAP_CLASS_4`
+  - `HEAP_CLASS_5` (macro, line 9915) `#define HEAP_CLASS_5`
+  - `HEAP_CLASS_6` (macro, line 9916) `#define HEAP_CLASS_6`
+  - `HEAP_CLASS_7` (macro, line 9917) `#define HEAP_CLASS_7`
+  - `HEAP_CLASS_8` (macro, line 9918) `#define HEAP_CLASS_8`
+  - `HEAP_CLASS_MASK` (macro, line 9919) `#define HEAP_CLASS_MASK`
+  - `COMPRESSION_FORMAT_NONE` (macro, line 10101) `#define COMPRESSION_FORMAT_NONE`
+  - `COMPRESSION_FORMAT_DEFAULT` (macro, line 10103) `#define COMPRESSION_FORMAT_DEFAULT`
+  - `COMPRESSION_FORMAT_LZNT1` (macro, line 10104) `#define COMPRESSION_FORMAT_LZNT1`
+  - `COMPRESSION_ENGINE_STANDARD` (macro, line 10105) `#define COMPRESSION_ENGINE_STANDARD`
+  - `COMPRESSION_ENGINE_MAXIMUM` (macro, line 10107) `#define COMPRESSION_ENGINE_MAXIMUM`
+  - `COMPRESSION_ENGINE_HIBER` (macro, line 10108) `#define COMPRESSION_ENGINE_HIBER`
+  - `RTL_USER_PROC_CURDIR_CLOSE` (macro, line 10191) `#define RTL_USER_PROC_CURDIR_CLOSE`
+  - `RTL_USER_PROC_CURDIR_INHERIT` (macro, line 10193) `#define RTL_USER_PROC_CURDIR_INHERIT`
+  - `RTL_RANGE_SHARED` (macro, line 10194) `#define RTL_RANGE_SHARED`
+  - `RTL_RANGE_CONFLICT` (macro, line 10196) `#define RTL_RANGE_CONFLICT`
+  - `RTL_USER_PROC_PARAMS_NORMALIZED` (macro, line 10228) `#define RTL_USER_PROC_PARAMS_NORMALIZED`
+  - `RTL_USER_PROC_PROFILE_USER` (macro, line 10230) `#define RTL_USER_PROC_PROFILE_USER`
+  - `RTL_USER_PROC_PROFILE_KERNEL` (macro, line 10231) `#define RTL_USER_PROC_PROFILE_KERNEL`
+  - `RTL_USER_PROC_PROFILE_SERVER` (macro, line 10232) `#define RTL_USER_PROC_PROFILE_SERVER`
+  - `RTL_USER_PROC_RESERVE_1MB` (macro, line 10233) `#define RTL_USER_PROC_RESERVE_1MB`
+  - `RTL_USER_PROC_RESERVE_16MB` (macro, line 10234) `#define RTL_USER_PROC_RESERVE_16MB`
+  - `RTL_USER_PROC_CASE_SENSITIVE` (macro, line 10235) `#define RTL_USER_PROC_CASE_SENSITIVE`
+  - `RTL_USER_PROC_DISABLE_HEAP_DECOMMIT` (macro, line 10236) `#define RTL_USER_PROC_DISABLE_HEAP_DECOMMIT`
+  - `RTL_USER_PROC_DLL_REDIRECTION_LOCAL` (macro, line 10237) `#define RTL_USER_PROC_DLL_REDIRECTION_LOCAL`
+  - `RTL_USER_PROC_APP_MANIFEST_PRESENT` (macro, line 10238) `#define RTL_USER_PROC_APP_MANIFEST_PRESENT`
+  - `RTL_USER_PROC_IMAGE_KEY_MISSING` (macro, line 10239) `#define RTL_USER_PROC_IMAGE_KEY_MISSING`
+  - `RTL_USER_PROC_OPTIN_PROCESS` (macro, line 10240) `#define RTL_USER_PROC_OPTIN_PROCESS`
+  - `RTL_TRACE_IN_USER_MODE` (macro, line 10265) `#define RTL_TRACE_IN_USER_MODE`
+  - `RTL_TRACE_IN_KERNEL_MODE` (macro, line 10267) `#define RTL_TRACE_IN_KERNEL_MODE`
+  - `RTL_TRACE_USE_NONPAGED_POOL` (macro, line 10268) `#define RTL_TRACE_USE_NONPAGED_POOL`
+  - `RTL_TRACE_USE_PAGED_POOL` (macro, line 10269) `#define RTL_TRACE_USE_PAGED_POOL`
+  - `RTL_RESOURCE_FLAG_LONG_TERM` (macro, line 10287) `#define RTL_RESOURCE_FLAG_LONG_TERM`
+  - `RTL_HEAP_BUSY` (macro, line 10334) `#define RTL_HEAP_BUSY`
+  - `RTL_HEAP_SEGMENT` (macro, line 10336) `#define RTL_HEAP_SEGMENT`
+  - `RTL_HEAP_SETTABLE_VALUE` (macro, line 10337) `#define RTL_HEAP_SETTABLE_VALUE`
+  - `RTL_HEAP_SETTABLE_FLAG1` (macro, line 10338) `#define RTL_HEAP_SETTABLE_FLAG1`
+  - `RTL_HEAP_SETTABLE_FLAG2` (macro, line 10339) `#define RTL_HEAP_SETTABLE_FLAG2`
+  - `RTL_HEAP_SETTABLE_FLAG3` (macro, line 10340) `#define RTL_HEAP_SETTABLE_FLAG3`
+  - `RTL_HEAP_SETTABLE_FLAGS` (macro, line 10341) `#define RTL_HEAP_SETTABLE_FLAGS`
+  - `RTL_HEAP_UNCOMMITTED_RANGE` (macro, line 10342) `#define RTL_HEAP_UNCOMMITTED_RANGE`
+  - `RTL_HEAP_PROTECTED_ENTRY` (macro, line 10343) `#define RTL_HEAP_PROTECTED_ENTRY`
+  - `SET_LAST_STATUS` (macro, line 10420) `#define SET_LAST_STATUS(S)`
+  - `HEAP_GRANULARITY` (macro, line 10422) `#define HEAP_GRANULARITY`
+  - `HEAP_GRANULARITY_SHIFT` (macro, line 10424) `#define HEAP_GRANULARITY_SHIFT`
+  - `HEAP_MAXIMUM_BLOCK_SIZE` (macro, line 10425) `#define HEAP_MAXIMUM_BLOCK_SIZE`
+  - `HEAP_MAXIMUM_FREELISTS` (macro, line 10427) `#define HEAP_MAXIMUM_FREELISTS`
+  - `HEAP_MAXIMUM_SEGMENTS` (macro, line 10429) `#define HEAP_MAXIMUM_SEGMENTS`
+  - `HEAP_ENTRY_BUSY` (macro, line 10430) `#define HEAP_ENTRY_BUSY`
+  - `HEAP_ENTRY_EXTRA_PRESENT` (macro, line 10432) `#define HEAP_ENTRY_EXTRA_PRESENT`
+  - `HEAP_ENTRY_FILL_PATTERN` (macro, line 10433) `#define HEAP_ENTRY_FILL_PATTERN`
+  - `HEAP_ENTRY_VIRTUAL_ALLOC` (macro, line 10434) `#define HEAP_ENTRY_VIRTUAL_ALLOC`
+  - `HEAP_ENTRY_LAST_ENTRY` (macro, line 10435) `#define HEAP_ENTRY_LAST_ENTRY`
+  - `HEAP_ENTRY_SETTABLE_FLAG1` (macro, line 10436) `#define HEAP_ENTRY_SETTABLE_FLAG1`
+  - `HEAP_ENTRY_SETTABLE_FLAG2` (macro, line 10437) `#define HEAP_ENTRY_SETTABLE_FLAG2`
+  - `HEAP_ENTRY_SETTABLE_FLAG3` (macro, line 10438) `#define HEAP_ENTRY_SETTABLE_FLAG3`
+  - `HEAP_ENTRY_SETTABLE_FLAGS` (macro, line 10439) `#define HEAP_ENTRY_SETTABLE_FLAGS`
+  - `NX_SUPPORT_POLICY_ALWAYSOFF` (macro, line 10648) `#define NX_SUPPORT_POLICY_ALWAYSOFF`
+  - `NX_SUPPORT_POLICY_ALWAYSON` (macro, line 10650) `#define NX_SUPPORT_POLICY_ALWAYSON`
+  - `NX_SUPPORT_POLICY_OPTIN` (macro, line 10651) `#define NX_SUPPORT_POLICY_OPTIN`
+  - `NX_SUPPORT_POLICY_OPTOUT` (macro, line 10652) `#define NX_SUPPORT_POLICY_OPTOUT`
+  - `PROCESSOR_FEATURE_MAX` (macro, line 10653) `#define PROCESSOR_FEATURE_MAX`
+  - `MAX_WOW64_SHARED_ENTRIES` (macro, line 10655) `#define MAX_WOW64_SHARED_ENTRIES`
+  - `XSTATE_LEGACY_FLOATING_POINT` (macro, line 10658) `#define XSTATE_LEGACY_FLOATING_POINT`
+  - `XSTATE_LEGACY_SSE` (macro, line 10660) `#define XSTATE_LEGACY_SSE`
+  - `XSTATE_GSSE` (macro, line 10661) `#define XSTATE_GSSE`
+  - `XSTATE_MASK_LEGACY_FLOATING_POINT` (macro, line 10662) `#define XSTATE_MASK_LEGACY_FLOATING_POINT`
+  - `XSTATE_MASK_LEGACY_SSE` (macro, line 10664) `#define XSTATE_MASK_LEGACY_SSE`
+  - `XSTATE_MASK_LEGACY` (macro, line 10665) `#define XSTATE_MASK_LEGACY`
+  - `XSTATE_MASK_GSSE` (macro, line 10666) `#define XSTATE_MASK_GSSE`
+  - `MAXIMUM_XSTATE_FEATURES` (macro, line 10667) `#define MAXIMUM_XSTATE_FEATURES`
+  - `SHARED_USER_DATA_VA` (macro, line 10901) `#define SHARED_USER_DATA_VA`
+  - `USER_SHARED_DATA` (macro, line 10903) `#define USER_SHARED_DATA`
+  - `RTL_CLONE_PROCESS_FLAGS_CREATE_SUSPENDED` (macro, line 10910) `#define RTL_CLONE_PROCESS_FLAGS_CREATE_SUSPENDED`
+  - `RTL_CLONE_PROCESS_FLAGS_INHERIT_HANDLES` (macro, line 10911) `#define RTL_CLONE_PROCESS_FLAGS_INHERIT_HANDLES`
+  - `RTL_CLONE_PROCESS_FLAGS_NO_SYNCHRONIZE` (macro, line 10912) `#define RTL_CLONE_PROCESS_FLAGS_NO_SYNCHRONIZE`
+  - `SIZEOF_BP_BUFFER` (macro, line 10973) `#define SIZEOF_BP_BUFFER`
+  - `LPC_BUFFER_SIZE` (macro, line 10975) `#define LPC_BUFFER_SIZE`
+  - `DEBUG_READ_EVENT` (macro, line 11066) `#define DEBUG_READ_EVENT`
+  - `DEBUG_PROCESS_ASSIGN` (macro, line 11068) `#define DEBUG_PROCESS_ASSIGN`
+  - `DEBUG_SET_INFORMATION` (macro, line 11069) `#define DEBUG_SET_INFORMATION`
+  - `DEBUG_QUERY_INFORMATION` (macro, line 11070) `#define DEBUG_QUERY_INFORMATION`
+  - `DEBUG_ALL_ACCESS` (macro, line 11071) `#define DEBUG_ALL_ACCESS`
+  - `DEBUG_KILL_ON_CLOSE` (macro, line 11074) `#define DEBUG_KILL_ON_CLOSE`
+  - `RTL_HEAP_MAKE_TAG` (macro, line 11092) `#define RTL_HEAP_MAKE_TAG`
+  - `MAKE_TAG` (macro, line 11094) `#define MAKE_TAG( t )`
+  - `HEAP_USAGE_ALLOCATED_BLOCKS` (macro, line 11122) `#define HEAP_USAGE_ALLOCATED_BLOCKS`
+  - `HEAP_USAGE_FREE_BUFFER` (macro, line 11124) `#define HEAP_USAGE_FREE_BUFFER`
+  - `HeapDebuggingInformation` (macro, line 11151) `#define HeapDebuggingInformation`
+  - `PREALLOCATE_EVENT_MASK` (macro, line 11175) `#define PREALLOCATE_EVENT_MASK`
+  - `RtlInitializeLockRoutine` (macro, line 11176) `#define RtlInitializeLockRoutine(L)`
+  - `RtlAcquireLockRoutine` (macro, line 11178) `#define RtlAcquireLockRoutine(L)`
+  - `RtlReleaseLockRoutine` (macro, line 11179) `#define RtlReleaseLockRoutine(L)`
+  - `RtlDeleteLockRoutine` (macro, line 11180) `#define RtlDeleteLockRoutine(L)`
+  - `MAX_STACK_DEPTH` (macro, line 11237) `#define MAX_STACK_DEPTH`
+  - `RTL_HANDLE_ALLOCATED` (macro, line 11338) `#define RTL_HANDLE_ALLOCATED`
+  - `RTL_ATOM_MAXIMUM_INTEGER_ATOM` (macro, line 11402) `#define RTL_ATOM_MAXIMUM_INTEGER_ATOM`
+  - `RTL_ATOM_INVALID_ATOM` (macro, line 11404) `#define RTL_ATOM_INVALID_ATOM`
+  - `RTL_ATOM_TABLE_DEFAULT_NUMBER_OF_BUCKETS` (macro, line 11405) `#define RTL_ATOM_TABLE_DEFAULT_NUMBER_OF_BUCKETS`
+  - `RTL_ATOM_MAXIMUM_NAME_LENGTH` (macro, line 11406) `#define RTL_ATOM_MAXIMUM_NAME_LENGTH`
+  - `RTL_ATOM_PINNED` (macro, line 11407) `#define RTL_ATOM_PINNED`
+  - `EVENT_MIN_LEVEL` (macro, line 11485) `#define EVENT_MIN_LEVEL`
+  - `EVENT_MAX_LEVEL` (macro, line 11487) `#define EVENT_MAX_LEVEL`
+  - `EVENT_ACTIVITY_CTRL_GET_ID` (macro, line 11488) `#define EVENT_ACTIVITY_CTRL_GET_ID`
+  - `EVENT_ACTIVITY_CTRL_SET_ID` (macro, line 11490) `#define EVENT_ACTIVITY_CTRL_SET_ID`
+  - `EVENT_ACTIVITY_CTRL_CREATE_ID` (macro, line 11491) `#define EVENT_ACTIVITY_CTRL_CREATE_ID`
+  - `EVENT_ACTIVITY_CTRL_GET_SET_ID` (macro, line 11492) `#define EVENT_ACTIVITY_CTRL_GET_SET_ID`
+  - `EVENT_ACTIVITY_CTRL_CREATE_SET_ID` (macro, line 11493) `#define EVENT_ACTIVITY_CTRL_CREATE_SET_ID`
+  - `MAX_EVENT_DATA_DESCRIPTORS` (macro, line 11496) `#define MAX_EVENT_DATA_DESCRIPTORS`
+  - `MAX_EVENT_FILTER_DATA_SIZE` (macro, line 11498) `#define MAX_EVENT_FILTER_DATA_SIZE`
+  - `_SLIST_HEADER_` (macro, line 11616) `#define _SLIST_HEADER_`
+  - `SLIST_ENTRY` (macro, line 11638) `#define SLIST_ENTRY`
+  - `_SLIST_ENTRY` (macro, line 11640) `#define _SLIST_ENTRY`
+  - `PSLIST_ENTRY` (macro, line 11641) `#define PSLIST_ENTRY`
+  - `RTL_UNLOAD_EVENT_TRACE_NUMBER` (macro, line 21426) `#define RTL_UNLOAD_EVENT_TRACE_NUMBER`
+  - `RtlEqualMemory` (macro, line 21674) `#define RtlEqualMemory(Destination,Source,Length)`
+  - `RtlMoveMemory` (macro, line 21676) `#define RtlMoveMemory(Destination,Source,Length)`
+  - `RtlCopyMemory` (macro, line 21677) `#define RtlCopyMemory(Destination,Source,Length)`
+  - `RtlFillMemory` (macro, line 21678) `#define RtlFillMemory(Destination,Length,Fill)`
+  - `RtlZeroMemory` (macro, line 21679) `#define RtlZeroMemory(Destination,Length)`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Memory.h`, `payloads/Demon/include/core/SysNative.h`, `payloads/Demon/include/core/Syscalls.h`, `payloads/Demon/include/core/Thread.h`, `payloads/Demon/include/core/Win32.h`, `payloads/Demon/src/core/Win32.c`
