@@ -1,0 +1,31 @@
+{
+  "tool": "readmenator",
+  "generated_at": "2026-09-16T05:03:59Z",
+  "project_root": "/tmp/push_Havoc_20260916_013256",
+  "files": 379,
+  "symbols": 8076,
+  "imports": 1659,
+  "resolved_imports": 522,
+  "security_findings": 0,
+  "languages": {
+    "h": 54,
+    "hpp": 28,
+    "cc": 42,
+    "cpp": 3,
+    "py": 4,
+    "c": 38,
+    "asm": 4,
+    "s": 2,
+    "sh": 1,
+    "go": 202,
+    "rb": 1
+  },
+  "entrypoints": [],
+  "start_here": "INDEX.md",
+  "workflow": [
+    "grep -n '<keyword>' INDEX.md",
+    "cat KB_<subsystem>.md",
+    "grep -n '<file>' ARCHITECTURE.md SYMBOLS.md"
+  ],
+  "regenerate": "readmenator . --rebuild"
+}
