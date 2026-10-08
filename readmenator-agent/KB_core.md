@@ -1,0 +1,498 @@
+# Subsystem: core (page 1 of 2)
+Pages: [KB_core.md](KB_core.md), [KB_core_p2.md](KB_core_p2.md)
+
+## payloads/Demon/include/core/CoffeeLdr.h
+- Doc: Created by spider on 18.03.21.      https://courses.cs.washington.edu/courses/cse378/03wi/lecture...
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_COFFEE_PARAMS` (struct, line 19)
+  - `_COFF_FILE_HEADER` (struct, line 30)
+  - `_COFF_SECTION` (struct, line 46)
+  - `_COFF_RELOC` (struct, line 60)
+  - `_COFF_SYMBOL` (struct, line 67)
+  - `_SECTION_MAP` (struct, line 82)
+  - `_COFFEE` (struct, line 88)
+  - `_COFFEE_KEY_VALUE` (struct, line 108)
+  - `EntryName` (type_alias, line 18) `typedef struct _COFFEE_PARAMS { PCHAR EntryName;`
+  - `Machine` (type_alias, line 29) `typedef struct _COFF_FILE_HEADER { UINT16 Machine;`
+  - `Name` (type_alias, line 45) `typedef struct _COFF_SECTION { CHAR Name[ 8 ];`
+  - `VirtualAddress` (type_alias, line 59) `typedef struct _COFF_RELOC { UINT32 VirtualAddress;`
+  - `Name` (type_alias, line 66) `typedef struct _COFF_SYMBOL { union { CHAR Name[ 8 ];`
+  - `Ptr` (type_alias, line 81) `typedef struct _SECTION_MAP { PCHAR Ptr;`
+  - `Data` (type_alias, line 87) `typedef struct _COFFEE { PVOID Data;`
+  - `Key` (type_alias, line 107) `typedef struct _COFFEE_KEY_VALUE { CHAR Key[COFFEE_KEY_VALUE_MAX_KEY];`
+  - `thread` (function, line 118) `* CoffeeLdr * Simply executes an object file in the current thread (blocking) * @param EntryName * @param CoffeeData...`
+  - `DEMON_DOF_H` (macro, line 6) `#define DEMON_DOF_H`
+  - `SIZE_OF_PAGE` (macro, line 8) `#define SIZE_OF_PAGE`
+  - `PAGE_ALLIGN` (macro, line 9) `#define PAGE_ALLIGN( x )`
+  - `IMAGE_SCN_MEM_NOT_CACHED` (macro, line 11) `#define IMAGE_SCN_MEM_NOT_CACHED`
+  - `IMAGE_SCN_MEM_EXECUTE` (macro, line 12) `#define IMAGE_SCN_MEM_EXECUTE`
+  - `IMAGE_SCN_MEM_READ` (macro, line 13) `#define IMAGE_SCN_MEM_READ`
+  - `IMAGE_SCN_MEM_WRITE` (macro, line 14) `#define IMAGE_SCN_MEM_WRITE`
+  - `SYMBOL_IS_A_FUNCTION` (macro, line 17) `#define SYMBOL_IS_A_FUNCTION`
+  - `MACHINETYPE_AMD64` (macro, line 42) `#define MACHINETYPE_AMD64`
+  - `COFFEE_KEY_VALUE_MAX_KEY` (macro, line 106) `#define COFFEE_KEY_VALUE_MAX_KEY`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/core/CoffeeLdr.c`, `payloads/Demon/src/core/Command.c`
+
+## payloads/Demon/include/core/Command.h
+- Doc: Commands
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_COMMAND` (struct, line 139)
+  - `DEMON_COMMAND_H` (macro, line 2) `#define DEMON_COMMAND_H`
+  - `DEMON_COMMAND_CHECKIN` (macro, line 7) `#define DEMON_COMMAND_CHECKIN`
+  - `DEMON_COMMAND_GET_JOB` (macro, line 8) `#define DEMON_COMMAND_GET_JOB`
+  - `DEMON_COMMAND_NO_JOB` (macro, line 9) `#define DEMON_COMMAND_NO_JOB`
+  - `DEMON_COMMAND_SLEEP` (macro, line 10) `#define DEMON_COMMAND_SLEEP`
+  - `DEMON_COMMAND_PROC` (macro, line 11) `#define DEMON_COMMAND_PROC`
+  - `DEMON_COMMAND_PROC_LIST` (macro, line 12) `#define DEMON_COMMAND_PROC_LIST`
+  - `DEMON_COMMAND_FS` (macro, line 13) `#define DEMON_COMMAND_FS`
+  - `DEMON_COMMAND_INLINE_EXECUTE` (macro, line 14) `#define DEMON_COMMAND_INLINE_EXECUTE`
+  - `DEMON_COMMAND_JOB` (macro, line 15) `#define DEMON_COMMAND_JOB`
+  - `DEMON_COMMAND_INJECT_DLL` (macro, line 16) `#define DEMON_COMMAND_INJECT_DLL`
+  - `DEMON_COMMAND_INJECT_SHELLCODE` (macro, line 17) `#define DEMON_COMMAND_INJECT_SHELLCODE`
+  - `DEMON_COMMAND_SPAWN_DLL` (macro, line 18) `#define DEMON_COMMAND_SPAWN_DLL`
+  - `DEMON_COMMAND_TOKEN` (macro, line 19) `#define DEMON_COMMAND_TOKEN`
+  - `DEMON_COMMAND_ASSEMBLY_INLINE_EXECUTE` (macro, line 20) `#define DEMON_COMMAND_ASSEMBLY_INLINE_EXECUTE`
+  - `DEMON_COMMAND_ASSEMBLY_VERSIONS` (macro, line 21) `#define DEMON_COMMAND_ASSEMBLY_VERSIONS`
+  - `DEMON_COMMAND_NET` (macro, line 22) `#define DEMON_COMMAND_NET`
+  - `DEMON_COMMAND_CONFIG` (macro, line 23) `#define DEMON_COMMAND_CONFIG`
+  - `DEMON_COMMAND_SCREENSHOT` (macro, line 24) `#define DEMON_COMMAND_SCREENSHOT`
+  - `DEMON_COMMAND_PIVOT` (macro, line 25) `#define DEMON_COMMAND_PIVOT`
+  - `DEMON_COMMAND_TRANSFER` (macro, line 26) `#define DEMON_COMMAND_TRANSFER`
+  - `DEMON_COMMAND_SOCKET` (macro, line 27) `#define DEMON_COMMAND_SOCKET`
+  - `DEMON_COMMAND_KERBEROS` (macro, line 28) `#define DEMON_COMMAND_KERBEROS`
+  - `DEMON_COMMAND_MEM_FILE` (macro, line 29) `#define DEMON_COMMAND_MEM_FILE`
+  - `DEMON_PACKAGE_DROPPED` (macro, line 30) `#define DEMON_PACKAGE_DROPPED`
+  - `DEMON_INFO` (macro, line 32) `#define DEMON_INFO`
+  - `DEMON_OUTPUT` (macro, line 33) `#define DEMON_OUTPUT`
+  - `DEMON_ERROR` (macro, line 34) `#define DEMON_ERROR`
+  - `DEMON_EXIT` (macro, line 35) `#define DEMON_EXIT`
+  - `DEMON_KILL_DATE` (macro, line 36) `#define DEMON_KILL_DATE`
+  - `BEACON_OUTPUT` (macro, line 37) `#define BEACON_OUTPUT`
+  - `DEMON_INITIALIZE` (macro, line 38) `#define DEMON_INITIALIZE`
+  - `DEMON_COMMAND_INLINE_EXECUTE_EXCEPTION` (macro, line 40) `#define DEMON_COMMAND_INLINE_EXECUTE_EXCEPTION`
+  - `DEMON_COMMAND_INLINE_EXECUTE_SYMBOL_NOT_FOUND` (macro, line 41) `#define DEMON_COMMAND_INLINE_EXECUTE_SYMBOL_NOT_FOUND`
+  - `DEMON_COMMAND_INLINE_EXECUTE_RAN_OK` (macro, line 42) `#define DEMON_COMMAND_INLINE_EXECUTE_RAN_OK`
+  - `DEMON_COMMAND_INLINE_EXECUTE_COULD_NO_RUN` (macro, line 43) `#define DEMON_COMMAND_INLINE_EXECUTE_COULD_NO_RUN`
+  - `DOTNET_INFO_PATCHED` (macro, line 45) `#define DOTNET_INFO_PATCHED`
+  - `DOTNET_INFO_NET_VERSION` (macro, line 46) `#define DOTNET_INFO_NET_VERSION`
+  - `DOTNET_INFO_ENTRYPOINT_EXECUTED` (macro, line 47) `#define DOTNET_INFO_ENTRYPOINT_EXECUTED`
+  - `DOTNET_INFO_FINISHED` (macro, line 48) `#define DOTNET_INFO_FINISHED`
+  - `DOTNET_INFO_FAILED` (macro, line 49) `#define DOTNET_INFO_FAILED`
+  - `CALLBACK_ERROR_WIN32` (macro, line 51) `#define CALLBACK_ERROR_WIN32`
+  - `CALLBACK_ERROR_COFFEXEC` (macro, line 52) `#define CALLBACK_ERROR_COFFEXEC`
+  - `CALLBACK_ERROR_TOKEN` (macro, line 53) `#define CALLBACK_ERROR_TOKEN`
+  - `DEMON_CONFIG_SHOW_ALL` (macro, line 56) `#define DEMON_CONFIG_SHOW_ALL`
+  - `DEMON_CONFIG_IMPLANT_SLEEPMASK` (macro, line 58) `#define DEMON_CONFIG_IMPLANT_SLEEPMASK`
+  - `DEMON_CONFIG_IMPLANT_SPFTHREADADDR` (macro, line 59) `#define DEMON_CONFIG_IMPLANT_SPFTHREADADDR`
+  - `DEMON_CONFIG_IMPLANT_VERBOSE` (macro, line 60) `#define DEMON_CONFIG_IMPLANT_VERBOSE`
+  - `DEMON_CONFIG_IMPLANT_SLEEP_TECHNIQUE` (macro, line 61) `#define DEMON_CONFIG_IMPLANT_SLEEP_TECHNIQUE`
+  - `DEMON_CONFIG_IMPLANT_COFFEE_THREADED` (macro, line 62) `#define DEMON_CONFIG_IMPLANT_COFFEE_THREADED`
+  - `DEMON_CONFIG_IMPLANT_COFFEE_VEH` (macro, line 63) `#define DEMON_CONFIG_IMPLANT_COFFEE_VEH`
+  - `DEMON_CONFIG_MEMORY_ALLOC` (macro, line 65) `#define DEMON_CONFIG_MEMORY_ALLOC`
+  - `DEMON_CONFIG_MEMORY_EXECUTE` (macro, line 66) `#define DEMON_CONFIG_MEMORY_EXECUTE`
+  - `DEMON_CONFIG_INJECTION_TECHNIQUE` (macro, line 68) `#define DEMON_CONFIG_INJECTION_TECHNIQUE`
+  - `DEMON_CONFIG_INJECTION_SPOOFADDR` (macro, line 69) `#define DEMON_CONFIG_INJECTION_SPOOFADDR`
+  - `DEMON_CONFIG_INJECTION_SPAWN64` (macro, line 71) `#define DEMON_CONFIG_INJECTION_SPAWN64`
+  - `DEMON_CONFIG_INJECTION_SPAWN32` (macro, line 72) `#define DEMON_CONFIG_INJECTION_SPAWN32`
+  - `DEMON_CONFIG_KILLDATE` (macro, line 73) `#define DEMON_CONFIG_KILLDATE`
+  - `DEMON_CONFIG_WORKINGHOURS` (macro, line 74) `#define DEMON_CONFIG_WORKINGHOURS`
+  - `DEMON_NET_COMMAND_DOMAIN` (macro, line 76) `#define DEMON_NET_COMMAND_DOMAIN`
+  - `DEMON_NET_COMMAND_LOGONS` (macro, line 77) `#define DEMON_NET_COMMAND_LOGONS`
+  - `DEMON_NET_COMMAND_SESSIONS` (macro, line 78) `#define DEMON_NET_COMMAND_SESSIONS`
+  - `DEMON_NET_COMMAND_COMPUTER` (macro, line 79) `#define DEMON_NET_COMMAND_COMPUTER`
+  - `DEMON_NET_COMMAND_DCLIST` (macro, line 80) `#define DEMON_NET_COMMAND_DCLIST`
+  - `DEMON_NET_COMMAND_SHARE` (macro, line 81) `#define DEMON_NET_COMMAND_SHARE`
+  - `DEMON_NET_COMMAND_LOCALGROUP` (macro, line 82) `#define DEMON_NET_COMMAND_LOCALGROUP`
+  - `DEMON_NET_COMMAND_GROUP` (macro, line 83) `#define DEMON_NET_COMMAND_GROUP`
+  - `DEMON_NET_COMMAND_USER` (macro, line 84) `#define DEMON_NET_COMMAND_USER`
+  - `DEMON_PIVOT_LIST` (macro, line 86) `#define DEMON_PIVOT_LIST`
+  - `DEMON_PIVOT_SMB_CONNECT` (macro, line 88) `#define DEMON_PIVOT_SMB_CONNECT`
+  - `DEMON_PIVOT_SMB_DISCONNECT` (macro, line 89) `#define DEMON_PIVOT_SMB_DISCONNECT`
+  - `DEMON_PIVOT_SMB_COMMAND` (macro, line 90) `#define DEMON_PIVOT_SMB_COMMAND`
+  - `DEMON_INFO_MEM_ALLOC` (macro, line 92) `#define DEMON_INFO_MEM_ALLOC`
+  - `DEMON_INFO_MEM_EXEC` (macro, line 93) `#define DEMON_INFO_MEM_EXEC`
+  - `DEMON_INFO_MEM_PROTECT` (macro, line 94) `#define DEMON_INFO_MEM_PROTECT`
+  - `DEMON_INFO_PROC_CREATE` (macro, line 95) `#define DEMON_INFO_PROC_CREATE`
+  - `DEMON_CHECKIN_OPTION_PIVOTS` (macro, line 97) `#define DEMON_CHECKIN_OPTION_PIVOTS`
+  - `DEMON_COMMAND_JOB_LIST` (macro, line 99) `#define DEMON_COMMAND_JOB_LIST`
+  - `DEMON_COMMAND_JOB_SUSPEND` (macro, line 100) `#define DEMON_COMMAND_JOB_SUSPEND`
+  - `DEMON_COMMAND_JOB_RESUME` (macro, line 101) `#define DEMON_COMMAND_JOB_RESUME`
+  - `DEMON_COMMAND_JOB_KILL_REMOVE` (macro, line 102) `#define DEMON_COMMAND_JOB_KILL_REMOVE`
+  - `DEMON_COMMAND_JOB_DIED` (macro, line 103) `#define DEMON_COMMAND_JOB_DIED`
+  - `DEMON_COMMAND_TRANSFER_LIST` (macro, line 105) `#define DEMON_COMMAND_TRANSFER_LIST`
+  - `DEMON_COMMAND_TRANSFER_STOP` (macro, line 106) `#define DEMON_COMMAND_TRANSFER_STOP`
+  - `DEMON_COMMAND_TRANSFER_RESUME` (macro, line 107) `#define DEMON_COMMAND_TRANSFER_RESUME`
+  - `DEMON_COMMAND_TRANSFER_REMOVE` (macro, line 108) `#define DEMON_COMMAND_TRANSFER_REMOVE`
+  - `DEMON_COMMAND_PROC_MODULES` (macro, line 110) `#define DEMON_COMMAND_PROC_MODULES`
+  - `DEMON_COMMAND_PROC_GREP` (macro, line 111) `#define DEMON_COMMAND_PROC_GREP`
+  - `DEMON_COMMAND_PROC_CREATE` (macro, line 112) `#define DEMON_COMMAND_PROC_CREATE`
+  - `DEMON_COMMAND_PROC_MEMORY` (macro, line 113) `#define DEMON_COMMAND_PROC_MEMORY`
+  - `DEMON_COMMAND_PROC_KILL` (macro, line 114) `#define DEMON_COMMAND_PROC_KILL`
+  - `DEMON_COMMAND_TOKEN_IMPERSONATE` (macro, line 116) `#define DEMON_COMMAND_TOKEN_IMPERSONATE`
+  - `DEMON_COMMAND_TOKEN_STEAL` (macro, line 117) `#define DEMON_COMMAND_TOKEN_STEAL`
+  - `DEMON_COMMAND_TOKEN_LIST` (macro, line 118) `#define DEMON_COMMAND_TOKEN_LIST`
+  - `DEMON_COMMAND_TOKEN_PRIVSGET_OR_LIST` (macro, line 119) `#define DEMON_COMMAND_TOKEN_PRIVSGET_OR_LIST`
+  - `DEMON_COMMAND_TOKEN_MAKE` (macro, line 120) `#define DEMON_COMMAND_TOKEN_MAKE`
+  - `DEMON_COMMAND_TOKEN_GET_UID` (macro, line 121) `#define DEMON_COMMAND_TOKEN_GET_UID`
+  - `DEMON_COMMAND_TOKEN_REVERT` (macro, line 122) `#define DEMON_COMMAND_TOKEN_REVERT`
+  - `DEMON_COMMAND_TOKEN_REMOVE` (macro, line 123) `#define DEMON_COMMAND_TOKEN_REMOVE`
+  - `DEMON_COMMAND_TOKEN_CLEAR` (macro, line 124) `#define DEMON_COMMAND_TOKEN_CLEAR`
+  - `DEMON_COMMAND_TOKEN_FIND_TOKENS` (macro, line 125) `#define DEMON_COMMAND_TOKEN_FIND_TOKENS`
+  - `DEMON_COMMAND_FS_DIR` (macro, line 127) `#define DEMON_COMMAND_FS_DIR`
+  - `DEMON_COMMAND_FS_DOWNLOAD` (macro, line 128) `#define DEMON_COMMAND_FS_DOWNLOAD`
+  - `DEMON_COMMAND_FS_UPLOAD` (macro, line 129) `#define DEMON_COMMAND_FS_UPLOAD`
+  - `DEMON_COMMAND_FS_CD` (macro, line 130) `#define DEMON_COMMAND_FS_CD`
+  - `DEMON_COMMAND_FS_REMOVE` (macro, line 131) `#define DEMON_COMMAND_FS_REMOVE`
+  - `DEMON_COMMAND_FS_MKDIR` (macro, line 132) `#define DEMON_COMMAND_FS_MKDIR`
+  - `DEMON_COMMAND_FS_COPY` (macro, line 133) `#define DEMON_COMMAND_FS_COPY`
+  - `DEMON_COMMAND_FS_MOVE` (macro, line 134) `#define DEMON_COMMAND_FS_MOVE`
+  - `DEMON_COMMAND_FS_GET_PWD` (macro, line 135) `#define DEMON_COMMAND_FS_GET_PWD`
+  - `DEMON_COMMAND_FS_CAT` (macro, line 136) `#define DEMON_COMMAND_FS_CAT`
+- Depends on: `payloads/Demon/include/core/Parser.h`
+- Imported by: `payloads/Demon/include/core/Package.h`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/ObjectApi.c`, `payloads/Demon/src/core/Package.c`, `payloads/Demon/src/core/Pivot.c`
+
+## payloads/Demon/include/core/Dotnet.h
+- Layer: utility
+- Language: h
+- Depends on: `payloads/Demon/include/common/Clr.h`
+- Imported by: `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Dotnet.c`
+
+## payloads/Demon/include/core/Download.h
+- Doc: ID: /* What we have left to read.
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_DOWNLOAD_DATA` (struct, line 23)
+  - `_MEM_FILE` (struct, line 48)
+  - `FileID` (type_alias, line 22) `typedef struct _DOWNLOAD_DATA { /* Some random ID so both teamserver and agent knows what file it is */ DWORD FileID;`
+  - `ID` (type_alias, line 48) `typedef struct _MEM_FILE { /* Some random ID so both teamserver and agent knows what MemFile it is */ ULONG32 ID;`
+  - `DEMON_FILETRANFER_H` (macro, line 2) `#define DEMON_FILETRANFER_H`
+  - `DOWNLOAD_MODE_OPEN` (macro, line 6) `#define DOWNLOAD_MODE_OPEN`
+  - `DOWNLOAD_MODE_WRITE` (macro, line 7) `#define DOWNLOAD_MODE_WRITE`
+  - `DOWNLOAD_MODE_CLOSE` (macro, line 8) `#define DOWNLOAD_MODE_CLOSE`
+  - `DOWNLOAD_REASON_FINISHED` (macro, line 10) `#define DOWNLOAD_REASON_FINISHED`
+  - `DOWNLOAD_REASON_REMOVED` (macro, line 11) `#define DOWNLOAD_REASON_REMOVED`
+  - `DOWNLOAD_STATE_RUNNING` (macro, line 13) `#define DOWNLOAD_STATE_RUNNING`
+  - `DOWNLOAD_STATE_STOPPED` (macro, line 14) `#define DOWNLOAD_STATE_STOPPED`
+  - `DOWNLOAD_STATE_REMOVE` (macro, line 15) `#define DOWNLOAD_STATE_REMOVE`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/core/Command.c`
+
+## payloads/Demon/include/core/HwBpEngine.h
+- Doc: Tid: include <windows.h> include <ntstatus.h>
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_BP_LIST` (struct, line 7)
+  - `_HWBP_ENGINE` (struct, line 18)
+  - `Tid` (type_alias, line 6) `typedef struct _BP_LIST { DWORD Tid;`
+  - `Veh` (type_alias, line 17) `typedef struct _HWBP_ENGINE { /* Veh (Vectored Exception Handling) handle */ HANDLE Veh;`
+  - `DEMON_HWBPENGINE_H` (macro, line 2) `#define DEMON_HWBPENGINE_H`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/core/HwBpEngine.c`
+
+## payloads/Demon/include/core/HwBpExceptions.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_HWBPEXCEPTIONS_H` (macro, line 2) `#define DEMON_HWBPEXCEPTIONS_H`
+  - `EXCEPTION_DUMP` (macro, line 8) `#define EXCEPTION_DUMP( e )`
+  - `EXCEPTION_SET_RIP` (macro, line 29) `#define EXCEPTION_SET_RIP( e, p )`
+  - `EXCEPTION_SET_RET` (macro, line 30) `#define EXCEPTION_SET_RET( e, r )`
+  - `EXCEPTION_RESUME` (macro, line 31) `#define EXCEPTION_RESUME( e )`
+  - `EXCEPTION_GET_RET` (macro, line 32) `#define EXCEPTION_GET_RET( e )`
+  - `EXCEPTION_ADJ_STACK` (macro, line 33) `#define EXCEPTION_ADJ_STACK( e, i )`
+  - `EXCEPTION_ARG_1` (macro, line 34) `#define EXCEPTION_ARG_1( e )`
+  - `EXCEPTION_ARG_2` (macro, line 35) `#define EXCEPTION_ARG_2( e )`
+  - `EXCEPTION_ARG_3` (macro, line 36) `#define EXCEPTION_ARG_3( e )`
+  - `EXCEPTION_ARG_4` (macro, line 37) `#define EXCEPTION_ARG_4( e )`
+  - `EXCEPTION_ARG_5` (macro, line 38) `#define EXCEPTION_ARG_5( e )`
+  - `EXCEPTION_ARG_6` (macro, line 39) `#define EXCEPTION_ARG_6( e )`
+  - `EXCEPTION_ARG_7` (macro, line 40) `#define EXCEPTION_ARG_7( e )`
+  - `EXCEPTION_ARG_1` (macro, line 44) `#define EXCEPTION_ARG_1( e )`
+  - `EXCEPTION_ARG_2` (macro, line 45) `#define EXCEPTION_ARG_2( e )`
+  - `EXCEPTION_ARG_3` (macro, line 46) `#define EXCEPTION_ARG_3( e )`
+  - `EXCEPTION_ARG_4` (macro, line 47) `#define EXCEPTION_ARG_4( e )`
+  - `EXCEPTION_ARG_5` (macro, line 48) `#define EXCEPTION_ARG_5( e )`
+  - `EXCEPTION_ARG_6` (macro, line 49) `#define EXCEPTION_ARG_6( e )`
+  - `EXCEPTION_ARG_7` (macro, line 50) `#define EXCEPTION_ARG_7( e )`
+- Imported by: `payloads/Demon/src/core/Dotnet.c`, `payloads/Demon/src/core/HwBpEngine.c`, `payloads/Demon/src/core/HwBpExceptions.c`
+
+## payloads/Demon/include/core/Jobs.h
+- Doc: RequestID: define JOB_STATE_RUNNING    0x1 define JOB_STATE_SUSPENDED  0x2 define JOB_STATE_DEAD...
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_JOB_DATA` (struct, line 14)
+  - `RequestID` (type_alias, line 13) `typedef struct _JOB_DATA { UINT32 RequestID;`
+  - `DEMON_JOBS_HPP` (macro, line 2) `#define DEMON_JOBS_HPP`
+  - `JOB_TYPE_THREAD` (macro, line 6) `#define JOB_TYPE_THREAD`
+  - `JOB_TYPE_PROCESS` (macro, line 7) `#define JOB_TYPE_PROCESS`
+  - `JOB_TYPE_TRACK_PROCESS` (macro, line 8) `#define JOB_TYPE_TRACK_PROCESS`
+  - `JOB_STATE_RUNNING` (macro, line 10) `#define JOB_STATE_RUNNING`
+  - `JOB_STATE_SUSPENDED` (macro, line 11) `#define JOB_STATE_SUSPENDED`
+  - `JOB_STATE_DEAD` (macro, line 12) `#define JOB_STATE_DEAD`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/core/Jobs.c`
+
+## payloads/Demon/include/core/Kerberos.h
+- Doc: #include <ntsecapi.h>
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_TICKET_INFORMATION` (struct, line 26)
+  - `_SESSION_INFORMATION` (struct, line 40)
+  - `KERB_CRYPTO_KEY` (struct, line 96)
+  - `KERB_CRYPTO_KEY32` (struct, line 102)
+  - `_KERB_SUBMIT_TKT_REQUEST` (struct, line 108)
+  - `_KERB_PURGE_TKT_CACHE_REQUEST` (struct, line 117)
+  - `_KERB_TICKET_CACHE_INFO_EX` (struct, line 124)
+  - `_KERB_QUERY_TKT_CACHE_EX_RESPONSE` (struct, line 136)
+  - `_SecHandle` (struct, line 143)
+  - `_KERB_RETRIEVE_TKT_REQUEST` (struct, line 151)
+  - `_KERB_EXTERNAL_NAME` (struct, line 161)
+  - `_KERB_EXTERNAL_TICKET` (struct, line 167)
+  - `_KERB_RETRIEVE_TKT_RESPONSE` (struct, line 186)
+  - `_KERB_QUERY_TKT_CACHE_REQUEST` (struct, line 190)
+  - `_LOGON_SESSION_DATA` (struct, line 195)
+  - `_KERB_PROTOCOL_MESSAGE_TYPE` (enum, line 56)
+  - `ClientName` (type_alias, line 25) `typedef struct _TICKET_INFORMATION { WCHAR ClientName[FIELD_LENGTH];`
+  - `UserName` (type_alias, line 39) `typedef struct _SESSION_INFORMATION { WCHAR UserName[FIELD_LENGTH];`
+  - `KeyType` (type_alias, line 95) `typedef struct KERB_CRYPTO_KEY { LONG KeyType;`
+  - `KeyType` (type_alias, line 101) `typedef struct KERB_CRYPTO_KEY32 { LONG KeyType;`
+  - `MessageType` (type_alias, line 107) `typedef struct _KERB_SUBMIT_TKT_REQUEST { KERB_PROTOCOL_MESSAGE_TYPE MessageType;`
+  - `MessageType` (type_alias, line 116) `typedef struct _KERB_PURGE_TKT_CACHE_REQUEST { KERB_PROTOCOL_MESSAGE_TYPE MessageType;`
+  - `ClientName` (type_alias, line 123) `typedef struct _KERB_TICKET_CACHE_INFO_EX { UNICODE_STRING ClientName;`
+  - `MessageType` (type_alias, line 135) `typedef struct _KERB_QUERY_TKT_CACHE_EX_RESPONSE { KERB_PROTOCOL_MESSAGE_TYPE MessageType;`
+  - `dwLower` (type_alias, line 143) `typedef struct _SecHandle { ULONG_PTR dwLower;`
+  - `MessageType` (type_alias, line 150) `typedef struct _KERB_RETRIEVE_TKT_REQUEST { KERB_PROTOCOL_MESSAGE_TYPE MessageType;`
+  - `NameType` (type_alias, line 160) `typedef struct _KERB_EXTERNAL_NAME { SHORT NameType;`
+  - `ServiceName` (type_alias, line 166) `typedef struct _KERB_EXTERNAL_TICKET { PKERB_EXTERNAL_NAME ServiceName;`
+  - `Ticket` (type_alias, line 185) `typedef struct _KERB_RETRIEVE_TKT_RESPONSE { KERB_EXTERNAL_TICKET Ticket;`
+  - `MessageType` (type_alias, line 189) `typedef struct _KERB_QUERY_TKT_CACHE_REQUEST { KERB_PROTOCOL_MESSAGE_TYPE MessageType;`
+  - `sessionData` (type_alias, line 194) `typedef struct _LOGON_SESSION_DATA { PSECURITY_LOGON_SESSION_DATA* sessionData;`
+  - `GetLUID` (function, line 203) `LUID* GetLUID( HANDLE hToken );`
+  - `DEMON_KERBEROS_H` (macro, line 3) `#define DEMON_KERBEROS_H`
+  - `KERBEROS_COMMAND_LUID` (macro, line 7) `#define KERBEROS_COMMAND_LUID`
+  - `KERBEROS_COMMAND_KLIST` (macro, line 8) `#define KERBEROS_COMMAND_KLIST`
+  - `KERBEROS_COMMAND_PURGE` (macro, line 9) `#define KERBEROS_COMMAND_PURGE`
+  - `KERBEROS_COMMAND_PTT` (macro, line 10) `#define KERBEROS_COMMAND_PTT`
+  - `_KerbSubmitTicketMessage` (macro, line 12) `#define _KerbSubmitTicketMessage`
+  - `KERB_USE_DEFAULT_TICKET_FLAGS` (macro, line 14) `#define KERB_USE_DEFAULT_TICKET_FLAGS`
+  - `KERB_RETRIEVE_TICKET_DEFAULT` (macro, line 16) `#define KERB_RETRIEVE_TICKET_DEFAULT`
+  - `KERB_RETRIEVE_TICKET_DONT_USE_CACHE` (macro, line 17) `#define KERB_RETRIEVE_TICKET_DONT_USE_CACHE`
+  - `KERB_RETRIEVE_TICKET_USE_CACHE_ONLY` (macro, line 18) `#define KERB_RETRIEVE_TICKET_USE_CACHE_ONLY`
+  - `KERB_RETRIEVE_TICKET_USE_CREDHANDLE` (macro, line 19) `#define KERB_RETRIEVE_TICKET_USE_CREDHANDLE`
+  - `KERB_RETRIEVE_TICKET_AS_KERB_CRED` (macro, line 20) `#define KERB_RETRIEVE_TICKET_AS_KERB_CRED`
+  - `KERB_RETRIEVE_TICKET_WITH_SEC_CRED` (macro, line 21) `#define KERB_RETRIEVE_TICKET_WITH_SEC_CRED`
+  - `KERB_RETRIEVE_TICKET_CACHE_TICKET` (macro, line 22) `#define KERB_RETRIEVE_TICKET_CACHE_TICKET`
+  - `FIELD_LENGTH` (macro, line 24) `#define FIELD_LENGTH`
+  - `__SECHANDLE_DEFINED__` (macro, line 148) `#define __SECHANDLE_DEFINED__`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Kerberos.c`
+
+## payloads/Demon/include/core/Memory.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_DX_MEMORY` (enum, line 6)
+  - `DEMON_MEMORY_H` (macro, line 2) `#define DEMON_MEMORY_H`
+- Depends on: `payloads/Demon/include/common/Native.h`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/inject/Inject.h`, `payloads/Demon/src/core/Memory.c`, `payloads/Demon/src/core/Thread.c`
+
+## payloads/Demon/include/core/MiniStd.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_DSTDIO_H` (macro, line 2) `#define DEMON_DSTDIO_H`
+  - `MemCopy` (macro, line 6) `#define MemCopy`
+  - `MemSet` (macro, line 7) `#define MemSet`
+  - `MemZero` (macro, line 8) `#define MemZero( p, l )`
+  - `NO_INLINE` (macro, line 9) `#define NO_INLINE`
+- Depends on: `payloads/Demon/include/Demon.h`
+- Imported by: `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/CoffeeLdr.c`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Dotnet.c`, `payloads/Demon/src/core/Download.c`, `payloads/Demon/src/core/HwBpEngine.c`, `payloads/Demon/src/core/Jobs.c`, `payloads/Demon/src/core/Kerberos.c`, `payloads/Demon/src/core/Memory.c`, `payloads/Demon/src/core/MiniStd.c`, `payloads/Demon/src/core/Obf.c`, `payloads/Demon/src/core/ObjectApi.c`, `payloads/Demon/src/core/Package.c`, `payloads/Demon/src/core/Parser.c`, `payloads/Demon/src/core/Pivot.c`, `payloads/Demon/src/core/Runtime.c`, `payloads/Demon/src/core/Socket.c`, `payloads/Demon/src/core/Spoof.c`, `payloads/Demon/src/core/Thread.c`, `payloads/Demon/src/core/Token.c`, `payloads/Demon/src/core/Transport.c`, `payloads/Demon/src/core/TransportHttp.c`, `payloads/Demon/src/core/TransportSmb.c`, `payloads/Demon/src/core/Win32.c`, `payloads/Demon/src/crypt/AesCrypt.c`, `payloads/Demon/src/inject/Inject.c`, `payloads/Demon/src/inject/InjectUtil.c`
+
+## payloads/Demon/include/core/ObjectApi.h
+- Layer: presentation
+- Language: h
+- Symbols:
+  - `COFFAPIFUNC` (struct, line 6)
+  - `HEAP_RECORD` (struct, line 29)
+  - `BEACON_INFO` (struct, line 35)
+  - `BeaconApi` (variable, line 12) `extern COFFAPIFUNC BeaconApi[];`
+  - `BeaconApiCounter` (variable, line 13) `extern DWORD BeaconApiCounter;`
+  - `LdrApi` (variable, line 14) `extern COFFAPIFUNC LdrApi[];`
+  - `NtApi` (variable, line 15) `extern COFFAPIFUNC NtApi[];`
+  - `DEMON_OBJECTAPI_H` (macro, line 2) `#define DEMON_OBJECTAPI_H`
+  - `CALLBACK_OUTPUT` (macro, line 17) `#define CALLBACK_OUTPUT`
+  - `CALLBACK_OUTPUT_OEM` (macro, line 18) `#define CALLBACK_OUTPUT_OEM`
+  - `CALLBACK_ERROR` (macro, line 19) `#define CALLBACK_ERROR`
+  - `CALLBACK_OUTPUT_UTF8` (macro, line 20) `#define CALLBACK_OUTPUT_UTF8`
+  - `MASK_SIZE` (macro, line 33) `#define MASK_SIZE`
+  - `DATA_STORE_TYPE_EMPTY` (macro, line 46) `#define DATA_STORE_TYPE_EMPTY`
+  - `DATA_STORE_TYPE_GENERAL_FILE` (macro, line 47) `#define DATA_STORE_TYPE_GENERAL_FILE`
+- Imported by: `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/CoffeeLdr.c`, `payloads/Demon/src/core/Jobs.c`, `payloads/Demon/src/core/ObjectApi.c`
+
+## payloads/Demon/include/core/Package.h
+- Doc: RequestID: define DEMON_MAX_REQUEST_LENGTH 0x300000 // 3 MiB
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_PACKAGE` (struct, line 8)
+  - `RequestID` (type_alias, line 7) `typedef struct _PACKAGE { UINT32 RequestID;`
+  - `CALLBACK_PACKAGE_H` (macro, line 2) `#define CALLBACK_PACKAGE_H`
+  - `DEMON_MAX_REQUEST_LENGTH` (macro, line 6) `#define DEMON_MAX_REQUEST_LENGTH`
+  - `PACKAGE_ERROR_WIN32` (macro, line 102) `#define PACKAGE_ERROR_WIN32`
+  - `PACKAGE_ERROR_NTSTATUS` (macro, line 103) `#define PACKAGE_ERROR_NTSTATUS( s )`
+- Depends on: `payloads/Demon/include/core/Command.h`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Transport.h`, `payloads/Demon/src/core/CoffeeLdr.c`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Jobs.c`, `payloads/Demon/src/core/ObjectApi.c`, `payloads/Demon/src/core/Package.c`, `payloads/Demon/src/core/Pivot.c`, `payloads/Demon/src/core/Token.c`, `payloads/Demon/src/core/Transport.c`, `payloads/Demon/src/core/Win32.c`, `payloads/Demon/src/inject/Inject.c`, `payloads/Demon/src/inject/InjectUtil.c`
+
+## payloads/Demon/include/core/Parser.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_PARSER_H` (macro, line 2) `#define DEMON_PARSER_H`
+- Imported by: `payloads/Demon/include/core/Command.h`, `payloads/Demon/src/core/Parser.c`, `payloads/Demon/src/core/Pivot.c`
+
+## payloads/Demon/include/core/Pivot.h
+- Doc: DemonID: define MAX_SMB_PACKETS_PER_LOOP 30
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_PIVOT_DATA` (struct, line 8)
+  - `DemonID` (type_alias, line 7) `typedef struct _PIVOT_DATA { UINT32 DemonID;`
+  - `DEMON_PIVOT_H` (macro, line 2) `#define DEMON_PIVOT_H`
+  - `MAX_SMB_PACKETS_PER_LOOP` (macro, line 6) `#define MAX_SMB_PACKETS_PER_LOOP`
+- Imported by: `payloads/Demon/include/Demon.h`
+
+## payloads/Demon/include/core/Process.h
+- Layer: business_logic
+- Language: h
+- Symbols:
+  - `DEMON_PROCESS_H` (macro, line 2) `#define DEMON_PROCESS_H`
+
+## payloads/Demon/include/core/Runtime.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_RUNTIME_H` (macro, line 2) `#define DEMON_RUNTIME_H`
+- Imported by: `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/Dotnet.c`, `payloads/Demon/src/core/Runtime.c`
+
+## payloads/Demon/include/core/SleepObf.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_SLEEP_PARAM` (struct, line 32)
+  - `USTRING` (struct, line 25)
+  - `TimeOut` (type_alias, line 31) `typedef struct _SLEEP_PARAM { UINT32 TimeOut;`
+  - `DEMON_SLEEPOBF_H` (macro, line 3) `#define DEMON_SLEEPOBF_H`
+  - `SLEEPOBF_NO_OBF` (macro, line 7) `#define SLEEPOBF_NO_OBF`
+  - `SLEEPOBF_EKKO` (macro, line 8) `#define SLEEPOBF_EKKO`
+  - `SLEEPOBF_ZILEAN` (macro, line 9) `#define SLEEPOBF_ZILEAN`
+  - `SLEEPOBF_FOLIAGE` (macro, line 10) `#define SLEEPOBF_FOLIAGE`
+  - `SLEEPOBF_BYPASS_NONE` (macro, line 12) `#define SLEEPOBF_BYPASS_NONE`
+  - `SLEEPOBF_BYPASS_JMPRAX` (macro, line 13) `#define SLEEPOBF_BYPASS_JMPRAX`
+  - `SLEEPOBF_BYPASS_JMPRBX` (macro, line 14) `#define SLEEPOBF_BYPASS_JMPRBX`
+  - `OBF_JMP` (macro, line 16) `#define OBF_JMP( i, p )`
+- Imported by: `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Obf.c`
+
+## payloads/Demon/include/core/Socket.h
+- Doc: Errors
+- Layer: utility
+- Language: h
+- Symbols:
+  - `sockaddr_in6` (struct, line 28)
+  - `_SOCKET_DATA` (struct, line 39)
+  - `sin6_family` (type_alias, line 27) `typedef struct sockaddr_in6 { ADDRESS_FAMILY sin6_family;`
+  - `ID` (type_alias, line 38) `typedef struct _SOCKET_DATA { DWORD ID;`
+  - `HTTP` (function, line 66) `* This is needed for Socks5 and HTTP(S) agents. * @return TRUE or FALSE */ BOOL InitWSA( VOID );`
+  - `SOCKET_TYPE_NONE` (macro, line 3) `#define SOCKET_TYPE_NONE`
+  - `SOCKET_TYPE_REVERSE_PORTFWD` (macro, line 4) `#define SOCKET_TYPE_REVERSE_PORTFWD`
+  - `SOCKET_TYPE_REVERSE_PROXY` (macro, line 5) `#define SOCKET_TYPE_REVERSE_PROXY`
+  - `SOCKET_TYPE_CLIENT` (macro, line 6) `#define SOCKET_TYPE_CLIENT`
+  - `SOCKET_COMMAND_RPORTFWD_ADD` (macro, line 8) `#define SOCKET_COMMAND_RPORTFWD_ADD`
+  - `SOCKET_COMMAND_RPORTFWD_ADDLCL` (macro, line 9) `#define SOCKET_COMMAND_RPORTFWD_ADDLCL`
+  - `SOCKET_COMMAND_RPORTFWD_LIST` (macro, line 10) `#define SOCKET_COMMAND_RPORTFWD_LIST`
+  - `SOCKET_COMMAND_RPORTFWD_CLEAR` (macro, line 11) `#define SOCKET_COMMAND_RPORTFWD_CLEAR`
+  - `SOCKET_COMMAND_RPORTFWD_REMOVE` (macro, line 12) `#define SOCKET_COMMAND_RPORTFWD_REMOVE`
+  - `SOCKET_COMMAND_SOCKSPROXY_ADD` (macro, line 14) `#define SOCKET_COMMAND_SOCKSPROXY_ADD`
+  - `SOCKET_COMMAND_SOCKSPROXY_LIST` (macro, line 15) `#define SOCKET_COMMAND_SOCKSPROXY_LIST`
+  - `SOCKET_COMMAND_SOCKSPROXY_REMOVE` (macro, line 16) `#define SOCKET_COMMAND_SOCKSPROXY_REMOVE`
+  - `SOCKET_COMMAND_SOCKSPROXY_CLEAR` (macro, line 17) `#define SOCKET_COMMAND_SOCKSPROXY_CLEAR`
+  - `SOCKET_COMMAND_OPEN` (macro, line 19) `#define SOCKET_COMMAND_OPEN`
+  - `SOCKET_COMMAND_READ` (macro, line 20) `#define SOCKET_COMMAND_READ`
+  - `SOCKET_COMMAND_WRITE` (macro, line 21) `#define SOCKET_COMMAND_WRITE`
+  - `SOCKET_COMMAND_CLOSE` (macro, line 22) `#define SOCKET_COMMAND_CLOSE`
+  - `SOCKET_COMMAND_CONNECT` (macro, line 23) `#define SOCKET_COMMAND_CONNECT`
+  - `SOCKET_ERROR_ALREADY_BOUND` (macro, line 26) `#define SOCKET_ERROR_ALREADY_BOUND`
+- Imported by: `payloads/Demon/include/Demon.h`
+
+## payloads/Demon/include/core/Spoof.h
+- Doc: NOTE: this code is taken from AceLdr by kyleavery.
+- Layer: utility
+- Language: h
+- Symbols:
+  - `Spoof` (function, line 17) `static ULONG_PTR Spoof();`
+  - `DEMON_SPOOF_H` (macro, line 2) `#define DEMON_SPOOF_H`
+  - `SPOOF_X` (macro, line 19) `#define SPOOF_X( function, module, size )`
+  - `SPOOF_A` (macro, line 20) `#define SPOOF_A( function, module, size, a )`
+  - `SPOOF_B` (macro, line 21) `#define SPOOF_B( function, module, size, a, b )`
+  - `SPOOF_C` (macro, line 22) `#define SPOOF_C( function, module, size, a, b, c )`
+  - `SPOOF_D` (macro, line 23) `#define SPOOF_D( function, module, size, a, b, c, d )`
+  - `SPOOF_E` (macro, line 24) `#define SPOOF_E( function, module, size, a, b, c, d, e )`
+  - `SPOOF_F` (macro, line 25) `#define SPOOF_F( function, module, size, a, b, c, d, e, f )`
+  - `SPOOF_G` (macro, line 26) `#define SPOOF_G( function, module, size, a, b, c, d, e, f, g )`
+  - `SPOOF_H` (macro, line 27) `#define SPOOF_H( function, module, size, a, b, c, d, e, f, g, h )`
+  - `SETUP_ARGS` (macro, line 28) `#define SETUP_ARGS(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, ...)`
+  - `SPOOF_MACRO_CHOOSER` (macro, line 29) `#define SPOOF_MACRO_CHOOSER(...)`
+  - `SpoofFunc` (macro, line 30) `#define SpoofFunc(...)`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/SysNative.h`, `payloads/Demon/src/core/Spoof.c`
+
+## payloads/Demon/include/core/SysNative.h
+- Doc: define the OPT param option
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_SYSNATIVE_H` (macro, line 2) `#define DEMON_SYSNATIVE_H`
+  - `OPT` (macro, line 9) `#define OPT`
+  - `SYSCALL_INVOKE` (macro, line 12) `#define SYSCALL_INVOKE( SYS_NAME, ... )`
+- Depends on: `payloads/Demon/include/common/Native.h`, `payloads/Demon/include/core/Spoof.h`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/HwBpEngine.c`, `payloads/Demon/src/core/ObjectApi.c`, `payloads/Demon/src/core/SysNative.c`, `payloads/Demon/src/core/Thread.c`
+
+## payloads/Demon/include/core/Syscalls.h
+- Doc: Syscall functions
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_SYS_CONFIG` (struct, line 32)
+  - `Adr` (type_alias, line 31) `typedef struct _SYS_CONFIG { PVOID Adr;`
+  - `DEMON_SYSCALLS_H` (macro, line 3) `#define DEMON_SYSCALLS_H`
+  - `SYS_ASM_RET` (macro, line 9) `#define SYS_ASM_RET`
+  - `SYS_RANGE` (macro, line 10) `#define SYS_RANGE`
+  - `SYSCALL_ASM` (macro, line 12) `#define SYSCALL_ASM`
+  - `SSN_OFFSET_1` (macro, line 13) `#define SSN_OFFSET_1`
+  - `SSN_OFFSET_2` (macro, line 14) `#define SSN_OFFSET_2`
+  - `SYSCALL_ASM` (macro, line 16) `#define SYSCALL_ASM`
+  - `SSN_OFFSET_1` (macro, line 17) `#define SSN_OFFSET_1`
+  - `SSN_OFFSET_2` (macro, line 18) `#define SSN_OFFSET_2`
+  - `SYS_EXTRACT` (macro, line 21) `#define SYS_EXTRACT( NtName )`
+- Depends on: `payloads/Demon/include/common/Native.h`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Win32.h`, `payloads/Demon/src/core/SysNative.c`, `payloads/Demon/src/core/Syscalls.c`, `payloads/Demon/src/core/Win32.c`
+
+## payloads/Demon/include/core/Thread.h
+- Doc: thread execution methods
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_WOW64CONTEXT` (struct, line 25)
+  - `hProcess` (type_alias, line 25) `typedef struct _WOW64CONTEXT { union { HANDLE hProcess;`
+  - `DEMON_THREAD_H` (macro, line 2) `#define DEMON_THREAD_H`
+  - `THREAD_METHOD_DEFAULT` (macro, line 8) `#define THREAD_METHOD_DEFAULT`
+  - `THREAD_METHOD_CREATEREMOTETHREAD` (macro, line 9) `#define THREAD_METHOD_CREATEREMOTETHREAD`
+  - `THREAD_METHOD_NTCREATEHREADEX` (macro, line 10) `#define THREAD_METHOD_NTCREATEHREADEX`
+  - `THREAD_METHOD_NTQUEUEAPCTHREAD` (macro, line 11) `#define THREAD_METHOD_NTQUEUEAPCTHREAD`
+- Depends on: `payloads/Demon/include/common/Native.h`, `payloads/Demon/include/core/Win32.h`
+- Imported by: `payloads/Demon/include/inject/Inject.h`, `payloads/Demon/src/core/Obf.c`, `payloads/Demon/src/core/Thread.c`
+
+
+Next: [KB_core_p2.md](KB_core_p2.md)

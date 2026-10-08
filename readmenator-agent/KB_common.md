@@ -1,0 +1,458 @@
+# Subsystem: common (page 1 of 6)
+Pages: [KB_common.md](KB_common.md), [KB_common_p2.md](KB_common_p2.md), [KB_common_p3.md](KB_common_p3.md), [KB_common_p4.md](KB_common_p4.md), [KB_common_p5.md](KB_common_p5.md), [KB_common_p6.md](KB_common_p6.md)
+
+## payloads/Demon/include/common/Clr.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `_BinderVtbl` (struct, line 55)
+  - `_Binder` (struct, line 83)
+  - `_AppDomainVtbl` (struct, line 90)
+  - `_AppDomain` (struct, line 181)
+  - `_AssemblyVtbl` (struct, line 188)
+  - `_Assembly` (struct, line 286)
+  - `_TypeVtbl` (struct, line 293)
+  - `ICLRRuntimeInfoVtbl` (struct, line 433)
+  - `_ICLRRuntimeInfo` (struct, line 517)
+  - `_Type` (struct, line 521)
+  - `ICLRMetaHostVtbl` (struct, line 525)
+  - `_ICLRMetaHost` (struct, line 579)
+  - `_MethodInfoVtbl` (struct, line 588)
+  - `_MethodInfo` (struct, line 656)
+  - `_DOTNET_ARGS` (struct, line 660)
+  - `_BindingFlags` (enum, line 263)
+  - `ICLRMetaHost` (type_alias, line 14) `typedef struct _ICLRMetaHost ICLRMetaHost;`
+  - `ICLRRuntimeInfo` (type_alias, line 16) `typedef struct _ICLRRuntimeInfo ICLRRuntimeInfo;`
+  - `IAppDomain` (type_alias, line 17) `typedef struct _AppDomain IAppDomain;`
+  - `IAssembly` (type_alias, line 18) `typedef struct _Assembly IAssembly;`
+  - `IType` (type_alias, line 19) `typedef struct _Type IType;`
+  - `IBinder` (type_alias, line 20) `typedef struct _Binder IBinder;`
+  - `IMethodInfo` (type_alias, line 21) `typedef struct _MethodInfo IMethodInfo;`
+  - `HDOMAINENUM` (type_alias, line 29) `typedef void* HDOMAINENUM;`
+  - `lpVtbl` (type_alias, line 82) `typedef struct _Binder { BinderVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 180) `typedef struct _AppDomain { AppDomainVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 285) `typedef struct _Assembly { AssemblyVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 516) `typedef struct _ICLRRuntimeInfo { ICLRRuntimeInfoVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 520) `typedef struct _Type { TypeVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 578) `typedef struct _ICLRMetaHost { ICLRMetaHostVtbl* lpVtbl;`
+  - `lpVtbl` (type_alias, line 655) `typedef struct _MethodInfo { MethodInfoVtbl* lpVtbl;`
+  - `RequestID` (type_alias, line 659) `typedef struct _DOTNET_ARGS { /* The random task id associated with the requested DOTNET exec */ UINT32 RequestID;`
+  - `xCLSID_CLRMetaHost` (variable, line 8) `extern GUID xCLSID_CLRMetaHost;`
+  - `xIID_ICLRMetaHost` (variable, line 9) `extern GUID xIID_ICLRMetaHost;`
+  - `xIID_ICLRRuntimeInfo` (variable, line 10) `extern GUID xIID_ICLRRuntimeInfo;`
+  - `xCLSID_CorRuntimeHost` (variable, line 11) `extern GUID xCLSID_CorRuntimeHost;`
+  - `xIID_ICorRuntimeHost` (variable, line 12) `extern GUID xIID_ICorRuntimeHost;`
+  - `xIID_AppDomain` (variable, line 13) `extern GUID xIID_AppDomain;`
+  - `DEMON_CLR_H` (macro, line 2) `#define DEMON_CLR_H`
+  - `DUMMY_METHOD` (macro, line 53) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 88) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 186) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 291) `#define DUMMY_METHOD(x)`
+  - `DUMMY_METHOD` (macro, line 586) `#define DUMMY_METHOD(x)`
+  - `DEMOn_CLR_ERROR_REFUSE_VERSION` (macro, line 709) `#define DEMOn_CLR_ERROR_REFUSE_VERSION`
+- Depends on: `payloads/Demon/include/core/Win32.h`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Dotnet.h`
+
+## payloads/Demon/include/common/Defines.h
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_STRINGS_H` (macro, line 2) `#define DEMON_STRINGS_H`
+  - `PROCESS_ARCH_UNKNOWN` (macro, line 4) `#define PROCESS_ARCH_UNKNOWN`
+  - `PROCESS_ARCH_X86` (macro, line 5) `#define PROCESS_ARCH_X86`
+  - `PROCESS_ARCH_X64` (macro, line 6) `#define PROCESS_ARCH_X64`
+  - `PROCESS_ARCH_IA64` (macro, line 7) `#define PROCESS_ARCH_IA64`
+  - `PROCESS_AGENT_ARCH` (macro, line 10) `#define PROCESS_AGENT_ARCH`
+  - `PROCESS_AGENT_ARCH` (macro, line 12) `#define PROCESS_AGENT_ARCH`
+  - `DEMON_MAGIC_VALUE` (macro, line 15) `#define DEMON_MAGIC_VALUE`
+  - `WIN_VERSION_UNKNOWN` (macro, line 17) `#define WIN_VERSION_UNKNOWN`
+  - `WIN_VERSION_XP` (macro, line 18) `#define WIN_VERSION_XP`
+  - `WIN_VERSION_VISTA` (macro, line 19) `#define WIN_VERSION_VISTA`
+  - `WIN_VERSION_2008` (macro, line 20) `#define WIN_VERSION_2008`
+  - `WIN_VERSION_7` (macro, line 21) `#define WIN_VERSION_7`
+  - `WIN_VERSION_2008_R2` (macro, line 22) `#define WIN_VERSION_2008_R2`
+  - `WIN_VERSION_2008_R2` (macro, line 23) `#define WIN_VERSION_2008_R2`
+  - `WIN_VERSION_2012` (macro, line 24) `#define WIN_VERSION_2012`
+  - `WIN_VERSION_8` (macro, line 25) `#define WIN_VERSION_8`
+  - `WIN_VERSION_8_1` (macro, line 26) `#define WIN_VERSION_8_1`
+  - `WIN_VERSION_2012_R2` (macro, line 27) `#define WIN_VERSION_2012_R2`
+  - `WIN_VERSION_10` (macro, line 28) `#define WIN_VERSION_10`
+  - `WIN_VERSION_2016_X` (macro, line 29) `#define WIN_VERSION_2016_X`
+  - `LDR_GADGET_MODULE_SIZE` (macro, line 31) `#define LDR_GADGET_MODULE_SIZE`
+  - `LDR_GADGET_HEADER_SIZE` (macro, line 32) `#define LDR_GADGET_HEADER_SIZE`
+  - `PROXYLOAD_NONE` (macro, line 34) `#define PROXYLOAD_NONE`
+  - `PROXYLOAD_RTLREGISTERWAIT` (macro, line 35) `#define PROXYLOAD_RTLREGISTERWAIT`
+  - `PROXYLOAD_RTLCREATETIMER` (macro, line 36) `#define PROXYLOAD_RTLCREATETIMER`
+  - `PROXYLOAD_RTLQUEUEWORKITEM` (macro, line 37) `#define PROXYLOAD_RTLQUEUEWORKITEM`
+  - `AMSIETW_PATCH_NONE` (macro, line 39) `#define AMSIETW_PATCH_NONE`
+  - `AMSIETW_PATCH_HWBP` (macro, line 40) `#define AMSIETW_PATCH_HWBP`
+  - `AMSIETW_PATCH_MEMORY` (macro, line 41) `#define AMSIETW_PATCH_MEMORY`
+  - `H_FUNC_LDRLOADDLL` (macro, line 44) `#define H_FUNC_LDRLOADDLL`
+  - `H_FUNC_LDRGETPROCEDUREADDRESS` (macro, line 45) `#define H_FUNC_LDRGETPROCEDUREADDRESS`
+  - `H_FUNC_NTADDBOOTENTRY` (macro, line 46) `#define H_FUNC_NTADDBOOTENTRY`
+  - `H_FUNC_NTALLOCATEVIRTUALMEMORY` (macro, line 47) `#define H_FUNC_NTALLOCATEVIRTUALMEMORY`
+  - `H_FUNC_NTFREEVIRTUALMEMORY` (macro, line 48) `#define H_FUNC_NTFREEVIRTUALMEMORY`
+  - `H_FUNC_NTUNMAPVIEWOFSECTION` (macro, line 49) `#define H_FUNC_NTUNMAPVIEWOFSECTION`
+  - `H_FUNC_NTWRITEVIRTUALMEMORY` (macro, line 50) `#define H_FUNC_NTWRITEVIRTUALMEMORY`
+  - `H_FUNC_NTSETINFORMATIONVIRTUALMEMORY` (macro, line 51) `#define H_FUNC_NTSETINFORMATIONVIRTUALMEMORY`
+  - `H_FUNC_NTQUERYVIRTUALMEMORY` (macro, line 52) `#define H_FUNC_NTQUERYVIRTUALMEMORY`
+  - `H_FUNC_NTOPENPROCESSTOKEN` (macro, line 53) `#define H_FUNC_NTOPENPROCESSTOKEN`
+  - `H_FUNC_NTOPENTHREADTOKEN` (macro, line 54) `#define H_FUNC_NTOPENTHREADTOKEN`
+  - `H_FUNC_NTQUERYOBJECT` (macro, line 55) `#define H_FUNC_NTQUERYOBJECT`
+  - `H_FUNC_NTTRACEEVENT` (macro, line 56) `#define H_FUNC_NTTRACEEVENT`
+  - `H_FUNC_NTOPENPROCESS` (macro, line 57) `#define H_FUNC_NTOPENPROCESS`
+  - `H_FUNC_NTTERMINATEPROCESS` (macro, line 58) `#define H_FUNC_NTTERMINATEPROCESS`
+  - `H_FUNC_NTOPENTHREAD` (macro, line 59) `#define H_FUNC_NTOPENTHREAD`
+  - `H_FUNC_NTOPENTHREADTOKEN` (macro, line 60) `#define H_FUNC_NTOPENTHREADTOKEN`
+  - `H_FUNC_NTSETCONTEXTTHREAD` (macro, line 61) `#define H_FUNC_NTSETCONTEXTTHREAD`
+  - `H_FUNC_NTGETCONTEXTTHREAD` (macro, line 62) `#define H_FUNC_NTGETCONTEXTTHREAD`
+  - `H_FUNC_NTCLOSE` (macro, line 63) `#define H_FUNC_NTCLOSE`
+  - `H_FUNC_NTCONTINUE` (macro, line 64) `#define H_FUNC_NTCONTINUE`
+  - `H_FUNC_NTSETEVENT` (macro, line 65) `#define H_FUNC_NTSETEVENT`
+  - `H_FUNC_NTCREATEEVENT` (macro, line 66) `#define H_FUNC_NTCREATEEVENT`
+  - `H_FUNC_NTWAITFORSINGLEOBJECT` (macro, line 67) `#define H_FUNC_NTWAITFORSINGLEOBJECT`
+  - `H_FUNC_NTSIGNALANDWAITFORSINGLEOBJECT` (macro, line 68) `#define H_FUNC_NTSIGNALANDWAITFORSINGLEOBJECT`
+  - `H_FUNC_NTGETNEXTTHREAD` (macro, line 69) `#define H_FUNC_NTGETNEXTTHREAD`
+  - `H_FUNC_NTRESUMETHREAD` (macro, line 70) `#define H_FUNC_NTRESUMETHREAD`
+  - `H_FUNC_NTSUSPENDTHREAD` (macro, line 71) `#define H_FUNC_NTSUSPENDTHREAD`
+  - `H_FUNC_NTDUPLICATEOBJECT` (macro, line 72) `#define H_FUNC_NTDUPLICATEOBJECT`
+  - `H_FUNC_NTQUERYINFORMATIONTHREAD` (macro, line 73) `#define H_FUNC_NTQUERYINFORMATIONTHREAD`
+  - `H_FUNC_NTCREATETHREADEX` (macro, line 74) `#define H_FUNC_NTCREATETHREADEX`
+  - `H_FUNC_NTQUEUEAPCTHREAD` (macro, line 75) `#define H_FUNC_NTQUEUEAPCTHREAD`
+  - `H_FUNC_NTQUERYSYSTEMINFORMATION` (macro, line 76) `#define H_FUNC_NTQUERYSYSTEMINFORMATION`
+  - `H_FUNC_NTQUERYINFORMATIONTOKEN` (macro, line 77) `#define H_FUNC_NTQUERYINFORMATIONTOKEN`
+  - `H_FUNC_NTQUERYINFORMATIONPROCESS` (macro, line 78) `#define H_FUNC_NTQUERYINFORMATIONPROCESS`
+  - `H_FUNC_NTSETINFORMATIONTHREAD` (macro, line 79) `#define H_FUNC_NTSETINFORMATIONTHREAD`
+  - `H_FUNC_NTSETINFORMATIONVIRTUALMEMORY` (macro, line 80) `#define H_FUNC_NTSETINFORMATIONVIRTUALMEMORY`
+  - `H_FUNC_NTPROTECTVIRTUALMEMORY` (macro, line 81) `#define H_FUNC_NTPROTECTVIRTUALMEMORY`
+  - `H_FUNC_NTREADVIRTUALMEMORY` (macro, line 82) `#define H_FUNC_NTREADVIRTUALMEMORY`
+  - `H_FUNC_NTFREEVIRTUALMEMORY` (macro, line 83) `#define H_FUNC_NTFREEVIRTUALMEMORY`
+  - `H_FUNC_NTTERMINATETHREAD` (macro, line 84) `#define H_FUNC_NTTERMINATETHREAD`
+  - `H_FUNC_NTWRITEVIRTUALMEMORY` (macro, line 85) `#define H_FUNC_NTWRITEVIRTUALMEMORY`
+  - `H_FUNC_NTDUPLICATETOKEN` (macro, line 86) `#define H_FUNC_NTDUPLICATETOKEN`
+  - `H_FUNC_NTALERTRESUMETHREAD` (macro, line 87) `#define H_FUNC_NTALERTRESUMETHREAD`
+  - `H_FUNC_NTTESTALERT` (macro, line 88) `#define H_FUNC_NTTESTALERT`
+  - `H_FUNC_RTLALLOCATEHEAP` (macro, line 89) `#define H_FUNC_RTLALLOCATEHEAP`
+  - `H_FUNC_RTLREALLOCATEHEAP` (macro, line 90) `#define H_FUNC_RTLREALLOCATEHEAP`
+  - `H_FUNC_RTLFREEHEAP` (macro, line 91) `#define H_FUNC_RTLFREEHEAP`
+  - `H_FUNC_RTLEXITUSERPROCESS` (macro, line 92) `#define H_FUNC_RTLEXITUSERPROCESS`
+  - `H_FUNC_RTLRANDOMEX` (macro, line 93) `#define H_FUNC_RTLRANDOMEX`
+  - `H_FUNC_RTLRANDOMEX` (macro, line 94) `#define H_FUNC_RTLRANDOMEX`
+  - `H_FUNC_RTLNTSTATUSTODOSERROR` (macro, line 95) `#define H_FUNC_RTLNTSTATUSTODOSERROR`
+  - `H_FUNC_RTLGETVERSION` (macro, line 96) `#define H_FUNC_RTLGETVERSION`
+  - `H_FUNC_RTLADDVECTOREDEXCEPTIONHANDLER` (macro, line 97) `#define H_FUNC_RTLADDVECTOREDEXCEPTIONHANDLER`
+  - `H_FUNC_RTLREMOVEVECTOREDEXCEPTIONHANDLER` (macro, line 98) `#define H_FUNC_RTLREMOVEVECTOREDEXCEPTIONHANDLER`
+  - `H_FUNC_RTLCREATETIMERQUEUE` (macro, line 99) `#define H_FUNC_RTLCREATETIMERQUEUE`
+  - `H_FUNC_RTLDELETETIMERQUEUE` (macro, line 100) `#define H_FUNC_RTLDELETETIMERQUEUE`
+  - `H_FUNC_RTLCREATETIMER` (macro, line 101) `#define H_FUNC_RTLCREATETIMER`
+  - `H_FUNC_RTLQUEUEWORKITEM` (macro, line 102) `#define H_FUNC_RTLQUEUEWORKITEM`
+  - `H_FUNC_RTLREGISTERWAIT` (macro, line 103) `#define H_FUNC_RTLREGISTERWAIT`
+  - `H_FUNC_RTLCAPTURECONTEXT` (macro, line 104) `#define H_FUNC_RTLCAPTURECONTEXT`
+  - `H_FUNC_RTLCOPYMAPPEDMEMORY` (macro, line 105) `#define H_FUNC_RTLCOPYMAPPEDMEMORY`
+  - `H_FUNC_RTLFILLMEMORY` (macro, line 106) `#define H_FUNC_RTLFILLMEMORY`
+  - `H_FUNC_RTLEXITUSERTHREAD` (macro, line 107) `#define H_FUNC_RTLEXITUSERTHREAD`
+  - `H_FUNC_RTLSUBAUTHORITYSID` (macro, line 108) `#define H_FUNC_RTLSUBAUTHORITYSID`
+  - `H_FUNC_RTLSUBAUTHORITYCOUNTSID` (macro, line 109) `#define H_FUNC_RTLSUBAUTHORITYCOUNTSID`
+  - `H_FUNC_LOADLIBRARYW` (macro, line 111) `#define H_FUNC_LOADLIBRARYW`
+  - `H_FUNC_GETCOMPUTERNAMEEXA` (macro, line 112) `#define H_FUNC_GETCOMPUTERNAMEEXA`
+  - `H_FUNC_WAITFORSINGLEOBJECTEX` (macro, line 113) `#define H_FUNC_WAITFORSINGLEOBJECTEX`
+  - `H_FUNC_VIRTUALPROTECT` (macro, line 114) `#define H_FUNC_VIRTUALPROTECT`
+  - `H_FUNC_GETMODULEHANDLEA` (macro, line 115) `#define H_FUNC_GETMODULEHANDLEA`
+  - `H_FUNC_GETPROCADDRESS` (macro, line 116) `#define H_FUNC_GETPROCADDRESS`
+  - `H_FUNC_GETCURRENTDIRECTORYW` (macro, line 117) `#define H_FUNC_GETCURRENTDIRECTORYW`
+  - `H_FUNC_FINDFIRSTFILEW` (macro, line 118) `#define H_FUNC_FINDFIRSTFILEW`
+  - `H_FUNC_FINDNEXTFILEW` (macro, line 119) `#define H_FUNC_FINDNEXTFILEW`
+  - `H_FUNC_FINDCLOSE` (macro, line 120) `#define H_FUNC_FINDCLOSE`
+  - `H_FUNC_FILETIMETOSYSTEMTIME` (macro, line 121) `#define H_FUNC_FILETIMETOSYSTEMTIME`
+  - `H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME` (macro, line 122) `#define H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME`
+  - `H_FUNC_OUTPUTDEBUGSTRINGA` (macro, line 123) `#define H_FUNC_OUTPUTDEBUGSTRINGA`
+  - `H_FUNC_DEBUGBREAK` (macro, line 124) `#define H_FUNC_DEBUGBREAK`
+  - `H_FUNC_SYSTEMFUNCTION032` (macro, line 125) `#define H_FUNC_SYSTEMFUNCTION032`
+  - `H_FUNC_LOOKUPACCOUNTSIDW` (macro, line 126) `#define H_FUNC_LOOKUPACCOUNTSIDW`
+  - `H_FUNC_LOGONUSEREXW` (macro, line 127) `#define H_FUNC_LOGONUSEREXW`
+  - `H_FUNC_VSNPRINTF` (macro, line 128) `#define H_FUNC_VSNPRINTF`
+  - `H_FUNC_GETADAPTERSINFO` (macro, line 129) `#define H_FUNC_GETADAPTERSINFO`
+  - `H_FUNC_WINHTTPOPEN` (macro, line 130) `#define H_FUNC_WINHTTPOPEN`
+  - `H_FUNC_WINHTTPCONNECT` (macro, line 131) `#define H_FUNC_WINHTTPCONNECT`
+  - `H_FUNC_WINHTTPOPENREQUEST` (macro, line 132) `#define H_FUNC_WINHTTPOPENREQUEST`
+  - `H_FUNC_WINHTTPSETOPTION` (macro, line 133) `#define H_FUNC_WINHTTPSETOPTION`
+  - `H_FUNC_WINHTTPSENDREQUEST` (macro, line 134) `#define H_FUNC_WINHTTPSENDREQUEST`
+  - `H_FUNC_WINHTTPRECEIVERESPONSE` (macro, line 135) `#define H_FUNC_WINHTTPRECEIVERESPONSE`
+  - `H_FUNC_WINHTTPADDREQUESTHEADERS` (macro, line 136) `#define H_FUNC_WINHTTPADDREQUESTHEADERS`
+  - `H_FUNC_WINHTTPREADDATA` (macro, line 137) `#define H_FUNC_WINHTTPREADDATA`
+  - `H_FUNC_WINHTTPQUERYHEADERS` (macro, line 138) `#define H_FUNC_WINHTTPQUERYHEADERS`
+  - `H_FUNC_WINHTTPCLOSEHANDLE` (macro, line 139) `#define H_FUNC_WINHTTPCLOSEHANDLE`
+  - `H_FUNC_WINHTTPGETIEPROXYCONFIGFORCURRENTUSER` (macro, line 140) `#define H_FUNC_WINHTTPGETIEPROXYCONFIGFORCURRENTUSER`
+  - `H_FUNC_WINHTTPGETPROXYFORURL` (macro, line 141) `#define H_FUNC_WINHTTPGETPROXYFORURL`
+  - `H_FUNC_VIRTUALPROTECTEX` (macro, line 142) `#define H_FUNC_VIRTUALPROTECTEX`
+  - `H_FUNC_LOCALALLOC` (macro, line 143) `#define H_FUNC_LOCALALLOC`
+  - `H_FUNC_LOCALREALLOC` (macro, line 144) `#define H_FUNC_LOCALREALLOC`
+  - `H_FUNC_LOCALFREE` (macro, line 145) `#define H_FUNC_LOCALFREE`
+  - `H_FUNC_CREATEREMOTETHREAD` (macro, line 146) `#define H_FUNC_CREATEREMOTETHREAD`
+  - `H_FUNC_CREATETOOLHELP32SNAPSHOT` (macro, line 147) `#define H_FUNC_CREATETOOLHELP32SNAPSHOT`
+  - `H_FUNC_PROCESS32FIRSTW` (macro, line 148) `#define H_FUNC_PROCESS32FIRSTW`
+  - `H_FUNC_PROCESS32NEXTW` (macro, line 149) `#define H_FUNC_PROCESS32NEXTW`
+  - `H_FUNC_CREATEPIPE` (macro, line 150) `#define H_FUNC_CREATEPIPE`
+  - `H_FUNC_CREATEPROCESSW` (macro, line 151) `#define H_FUNC_CREATEPROCESSW`
+  - `H_FUNC_CREATEFILEW` (macro, line 152) `#define H_FUNC_CREATEFILEW`
+  - `H_FUNC_GETFULLPATHNAMEW` (macro, line 153) `#define H_FUNC_GETFULLPATHNAMEW`
+  - `H_FUNC_GETFILESIZE` (macro, line 154) `#define H_FUNC_GETFILESIZE`
+  - `H_FUNC_GETFILESIZEEX` (macro, line 155) `#define H_FUNC_GETFILESIZEEX`
+  - `H_FUNC_CREATENAMEDPIPEW` (macro, line 156) `#define H_FUNC_CREATENAMEDPIPEW`
+  - `H_FUNC_CONVERTFIBERTOTHREAD` (macro, line 157) `#define H_FUNC_CONVERTFIBERTOTHREAD`
+  - `H_FUNC_CREATEFIBEREX` (macro, line 158) `#define H_FUNC_CREATEFIBEREX`
+  - `H_FUNC_READFILE` (macro, line 159) `#define H_FUNC_READFILE`
+  - `H_FUNC_VIRTUALALLOCEX` (macro, line 160) `#define H_FUNC_VIRTUALALLOCEX`
+  - `H_FUNC_WAITFORSINGLEOBJECTEX` (macro, line 161) `#define H_FUNC_WAITFORSINGLEOBJECTEX`
+  - `H_FUNC_GETCOMPUTERNAMEEXA` (macro, line 162) `#define H_FUNC_GETCOMPUTERNAMEEXA`
+  - `H_FUNC_EXITPROCESS` (macro, line 163) `#define H_FUNC_EXITPROCESS`
+  - `H_FUNC_GETEXITCODEPROCESS` (macro, line 164) `#define H_FUNC_GETEXITCODEPROCESS`
+  - `H_FUNC_GETEXITCODETHREAD` (macro, line 165) `#define H_FUNC_GETEXITCODETHREAD`
+  - `H_FUNC_CONVERTTHREADTOFIBEREX` (macro, line 166) `#define H_FUNC_CONVERTTHREADTOFIBEREX`
+  - `H_FUNC_SWITCHTOFIBER` (macro, line 167) `#define H_FUNC_SWITCHTOFIBER`
+  - `H_FUNC_DELETEFIBER` (macro, line 168) `#define H_FUNC_DELETEFIBER`
+  - `H_FUNC_ALLOCCONSOLE` (macro, line 169) `#define H_FUNC_ALLOCCONSOLE`
+  - `H_FUNC_FREECONSOLE` (macro, line 170) `#define H_FUNC_FREECONSOLE`
+  - `H_FUNC_GETCONSOLEWINDOW` (macro, line 171) `#define H_FUNC_GETCONSOLEWINDOW`
+  - `H_FUNC_GETSTDHANDLE` (macro, line 172) `#define H_FUNC_GETSTDHANDLE`
+  - `H_FUNC_SETSTDHANDLE` (macro, line 173) `#define H_FUNC_SETSTDHANDLE`
+  - `H_FUNC_WAITNAMEDPIPEW` (macro, line 174) `#define H_FUNC_WAITNAMEDPIPEW`
+  - `H_FUNC_PEEKNAMEDPIPE` (macro, line 175) `#define H_FUNC_PEEKNAMEDPIPE`
+  - `H_FUNC_DISCONNECTNAMEDPIPE` (macro, line 176) `#define H_FUNC_DISCONNECTNAMEDPIPE`
+  - `H_FUNC_WRITEFILE` (macro, line 177) `#define H_FUNC_WRITEFILE`
+  - `H_FUNC_CONNECTNAMEDPIPE` (macro, line 178) `#define H_FUNC_CONNECTNAMEDPIPE`
+  - `H_FUNC_FREELIBRARY` (macro, line 179) `#define H_FUNC_FREELIBRARY`
+  - `H_FUNC_GETCURRENTDIRECTORYW` (macro, line 180) `#define H_FUNC_GETCURRENTDIRECTORYW`
+  - `H_FUNC_GETFILEATTRIBUTESW` (macro, line 181) `#define H_FUNC_GETFILEATTRIBUTESW`
+  - `H_FUNC_FINDFIRSTFILEW` (macro, line 182) `#define H_FUNC_FINDFIRSTFILEW`
+  - `H_FUNC_FINDNEXTFILEW` (macro, line 183) `#define H_FUNC_FINDNEXTFILEW`
+  - `H_FUNC_FINDCLOSE` (macro, line 184) `#define H_FUNC_FINDCLOSE`
+  - `H_FUNC_FILETIMETOSYSTEMTIME` (macro, line 185) `#define H_FUNC_FILETIMETOSYSTEMTIME`
+  - `H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME` (macro, line 186) `#define H_FUNC_SYSTEMTIMETOTZSPECIFICLOCALTIME`
+  - `H_FUNC_REMOVEDIRECTORYW` (macro, line 187) `#define H_FUNC_REMOVEDIRECTORYW`
+  - `H_FUNC_DELETEFILEW` (macro, line 188) `#define H_FUNC_DELETEFILEW`
+  - `H_FUNC_CREATEDIRECTORYW` (macro, line 189) `#define H_FUNC_CREATEDIRECTORYW`
+  - `H_FUNC_COPYFILEW` (macro, line 190) `#define H_FUNC_COPYFILEW`
+  - `H_FUNC_MOVEFILEEXW` (macro, line 191) `#define H_FUNC_MOVEFILEEXW`
+  - `H_FUNC_SETCURRENTDIRECTORYW` (macro, line 192) `#define H_FUNC_SETCURRENTDIRECTORYW`
+  - `H_FUNC_WOW64DISABLEWOW64FSREDIRECTION` (macro, line 193) `#define H_FUNC_WOW64DISABLEWOW64FSREDIRECTION`
+  - `H_FUNC_WOW64REVERTWOW64FSREDIRECTION` (macro, line 194) `#define H_FUNC_WOW64REVERTWOW64FSREDIRECTION`
+  - `H_FUNC_GETMODULEHANDLEA` (macro, line 195) `#define H_FUNC_GETMODULEHANDLEA`
+  - `H_FUNC_GETSYSTEMTIMEASFILETIME` (macro, line 196) `#define H_FUNC_GETSYSTEMTIMEASFILETIME`
+  - `H_FUNC_GETLOCALTIME` (macro, line 197) `#define H_FUNC_GETLOCALTIME`
+  - `H_FUNC_DUPLICATEHANDLE` (macro, line 198) `#define H_FUNC_DUPLICATEHANDLE`
+  - `H_FUNC_ATTACHCONSOLE` (macro, line 199) `#define H_FUNC_ATTACHCONSOLE`
+  - `H_FUNC_WRITECONSOLEA` (macro, line 200) `#define H_FUNC_WRITECONSOLEA`
+  - `H_FUNC_TERMINATEPROCESS` (macro, line 201) `#define H_FUNC_TERMINATEPROCESS`
+  - `H_FUNC_VIRTUALPROTECT` (macro, line 202) `#define H_FUNC_VIRTUALPROTECT`
+  - `H_FUNC_GETTOKENINFORMATION` (macro, line 203) `#define H_FUNC_GETTOKENINFORMATION`
+  - `H_FUNC_CREATEPROCESSWITHTOKENW` (macro, line 204) `#define H_FUNC_CREATEPROCESSWITHTOKENW`
+  - `H_FUNC_CREATEPROCESSWITHLOGONW` (macro, line 205) `#define H_FUNC_CREATEPROCESSWITHLOGONW`
+  - `H_FUNC_REVERTTOSELF` (macro, line 206) `#define H_FUNC_REVERTTOSELF`
+  - `H_FUNC_GETUSERNAMEA` (macro, line 207) `#define H_FUNC_GETUSERNAMEA`
+  - `H_FUNC_LOGONUSERW` (macro, line 208) `#define H_FUNC_LOGONUSERW`
+  - `H_FUNC_LOOKUPACCOUNTSIDA` (macro, line 209) `#define H_FUNC_LOOKUPACCOUNTSIDA`
+  - `H_FUNC_LOOKUPACCOUNTSIDW` (macro, line 210) `#define H_FUNC_LOOKUPACCOUNTSIDW`
+  - `H_FUNC_OPENTHREADTOKEN` (macro, line 211) `#define H_FUNC_OPENTHREADTOKEN`
+  - `H_FUNC_OPENPROCESSTOKEN` (macro, line 212) `#define H_FUNC_OPENPROCESSTOKEN`
+  - `H_FUNC_ADJUSTTOKENPRIVILEGES` (macro, line 213) `#define H_FUNC_ADJUSTTOKENPRIVILEGES`
+  - `H_FUNC_LOOKUPPRIVILEGENAMEA` (macro, line 214) `#define H_FUNC_LOOKUPPRIVILEGENAMEA`
+  - `H_FUNC_SYSTEMFUNCTION032` (macro, line 215) `#define H_FUNC_SYSTEMFUNCTION032`
+  - `H_FUNC_FREESID` (macro, line 216) `#define H_FUNC_FREESID`
+  - `H_FUNC_SETSECURITYDESCRIPTORSACL` (macro, line 217) `#define H_FUNC_SETSECURITYDESCRIPTORSACL`
+  - `H_FUNC_SETSECURITYDESCRIPTORDACL` (macro, line 218) `#define H_FUNC_SETSECURITYDESCRIPTORDACL`
+  - `H_FUNC_INITIALIZESECURITYDESCRIPTOR` (macro, line 219) `#define H_FUNC_INITIALIZESECURITYDESCRIPTOR`
+  - `H_FUNC_ADDMANDATORYACE` (macro, line 220) `#define H_FUNC_ADDMANDATORYACE`
+  - `H_FUNC_INITIALIZEACL` (macro, line 221) `#define H_FUNC_INITIALIZEACL`
+  - `H_FUNC_ALLOCATEANDINITIALIZESID` (macro, line 222) `#define H_FUNC_ALLOCATEANDINITIALIZESID`
+  - `H_FUNC_CHECKTOKENMEMBERSHIP` (macro, line 223) `#define H_FUNC_CHECKTOKENMEMBERSHIP`
+  - `H_FUNC_SETENTRIESINACLW` (macro, line 224) `#define H_FUNC_SETENTRIESINACLW`
+  - `H_FUNC_SETTHREADTOKEN` (macro, line 225) `#define H_FUNC_SETTHREADTOKEN`
+  - `H_FUNC_LSANTSTATUSTOWINERROR` (macro, line 226) `#define H_FUNC_LSANTSTATUSTOWINERROR`
+  - `H_FUNC_EQUALSID` (macro, line 227) `#define H_FUNC_EQUALSID`
+  - `H_FUNC_CONVERTSIDTOSTRINGSIDW` (macro, line 228) `#define H_FUNC_CONVERTSIDTOSTRINGSIDW`
+  - `H_FUNC_GETSIDSUBAUTHORITYCOUNT` (macro, line 229) `#define H_FUNC_GETSIDSUBAUTHORITYCOUNT`
+  - `H_FUNC_GETSIDSUBAUTHORITY` (macro, line 230) `#define H_FUNC_GETSIDSUBAUTHORITY`
+  - `H_FUNC_LOOKUPPRIVILEGEVALUEA` (macro, line 231) `#define H_FUNC_LOOKUPPRIVILEGEVALUEA`
+  - `H_FUNC_SAFEARRAYACCESSDATA` (macro, line 232) `#define H_FUNC_SAFEARRAYACCESSDATA`
+  - `H_FUNC_SAFEARRAYUNACCESSDATA` (macro, line 233) `#define H_FUNC_SAFEARRAYUNACCESSDATA`
+  - `H_FUNC_SAFEARRAYCREATE` (macro, line 234) `#define H_FUNC_SAFEARRAYCREATE`
+  - `H_FUNC_SAFEARRAYPUTELEMENT` (macro, line 235) `#define H_FUNC_SAFEARRAYPUTELEMENT`
+  - `H_FUNC_SAFEARRAYCREATEVECTOR` (macro, line 236) `#define H_FUNC_SAFEARRAYCREATEVECTOR`
+  - `H_FUNC_SAFEARRAYDESTROY` (macro, line 237) `#define H_FUNC_SAFEARRAYDESTROY`
+  - `H_FUNC_SYSALLOCSTRING` (macro, line 238) `#define H_FUNC_SYSALLOCSTRING`
+  - `H_FUNC_COMMANDLINETOARGVW` (macro, line 239) `#define H_FUNC_COMMANDLINETOARGVW`
+  - `H_FUNC_SHOWWINDOW` (macro, line 240) `#define H_FUNC_SHOWWINDOW`
+  - `H_FUNC_GETSYSTEMMETRICS` (macro, line 241) `#define H_FUNC_GETSYSTEMMETRICS`
+  - `H_FUNC_GETDC` (macro, line 242) `#define H_FUNC_GETDC`
+  - `H_FUNC_RELEASEDC` (macro, line 243) `#define H_FUNC_RELEASEDC`
+  - `H_FUNC_GETCURRENTOBJECT` (macro, line 244) `#define H_FUNC_GETCURRENTOBJECT`
+  - `H_FUNC_GETOBJECTW` (macro, line 245) `#define H_FUNC_GETOBJECTW`
+  - `H_FUNC_CREATECOMPATIBLEDC` (macro, line 246) `#define H_FUNC_CREATECOMPATIBLEDC`
+  - `H_FUNC_CREATEDIBSECTION` (macro, line 247) `#define H_FUNC_CREATEDIBSECTION`
+  - `H_FUNC_SELECTOBJECT` (macro, line 248) `#define H_FUNC_SELECTOBJECT`
+  - `H_FUNC_BITBLT` (macro, line 249) `#define H_FUNC_BITBLT`
+  - `H_FUNC_DELETEOBJECT` (macro, line 250) `#define H_FUNC_DELETEOBJECT`
+  - `H_FUNC_DELETEDC` (macro, line 251) `#define H_FUNC_DELETEDC`
+  - `H_FUNC_SETPROCESSVALIDCALLTARGETS` (macro, line 252) `#define H_FUNC_SETPROCESSVALIDCALLTARGETS`
+  - `H_FUNC_CLRCREATEINSTANCE` (macro, line 253) `#define H_FUNC_CLRCREATEINSTANCE`
+  - `H_FUNC_GETADAPTERSINFO` (macro, line 254) `#define H_FUNC_GETADAPTERSINFO`
+  - `H_FUNC_NETLOCALGROUPENUM` (macro, line 255) `#define H_FUNC_NETLOCALGROUPENUM`
+  - `H_FUNC_NETGROUPENUM` (macro, line 256) `#define H_FUNC_NETGROUPENUM`
+  - `H_FUNC_NETUSERENUM` (macro, line 257) `#define H_FUNC_NETUSERENUM`
+  - `H_FUNC_NETWKSTAUSERENUM` (macro, line 258) `#define H_FUNC_NETWKSTAUSERENUM`
+  - `H_FUNC_NETSESSIONENUM` (macro, line 259) `#define H_FUNC_NETSESSIONENUM`
+  - `H_FUNC_NETSHAREENUM` (macro, line 260) `#define H_FUNC_NETSHAREENUM`
+  - `H_FUNC_NETAPIBUFFERFREE` (macro, line 261) `#define H_FUNC_NETAPIBUFFERFREE`
+  - `H_FUNC_WSASTARTUP` (macro, line 262) `#define H_FUNC_WSASTARTUP`
+  - `H_FUNC_WSACLEANUP` (macro, line 263) `#define H_FUNC_WSACLEANUP`
+  - `H_FUNC_WSASOCKETA` (macro, line 264) `#define H_FUNC_WSASOCKETA`
+  - `H_FUNC_WSAGETLASTERROR` (macro, line 265) `#define H_FUNC_WSAGETLASTERROR`
+  - `H_FUNC_IOCTLSOCKET` (macro, line 266) `#define H_FUNC_IOCTLSOCKET`
+  - `H_FUNC_BIND` (macro, line 267) `#define H_FUNC_BIND`
+  - `H_FUNC_LISTEN` (macro, line 268) `#define H_FUNC_LISTEN`
+  - `H_FUNC_ACCEPT` (macro, line 269) `#define H_FUNC_ACCEPT`
+  - `H_FUNC_CLOSESOCKET` (macro, line 270) `#define H_FUNC_CLOSESOCKET`
+  - `H_FUNC_RECV` (macro, line 271) `#define H_FUNC_RECV`
+  - `H_FUNC_SEND` (macro, line 272) `#define H_FUNC_SEND`
+  - `H_FUNC_CONNECT` (macro, line 273) `#define H_FUNC_CONNECT`
+  - `H_FUNC_GETADDRINFO` (macro, line 274) `#define H_FUNC_GETADDRINFO`
+  - `H_FUNC_FREEADDRINFO` (macro, line 275) `#define H_FUNC_FREEADDRINFO`
+  - `H_FUNC_LSAREGISTERLOGONPROCESS` (macro, line 276) `#define H_FUNC_LSAREGISTERLOGONPROCESS`
+  - `H_FUNC_LSALOOKUPAUTHENTICATIONPACKAGE` (macro, line 277) `#define H_FUNC_LSALOOKUPAUTHENTICATIONPACKAGE`
+  - `H_FUNC_LSADEREGISTERLOGONPROCESS` (macro, line 278) `#define H_FUNC_LSADEREGISTERLOGONPROCESS`
+  - `H_FUNC_LSACONNECTUNTRUSTED` (macro, line 279) `#define H_FUNC_LSACONNECTUNTRUSTED`
+  - `H_FUNC_LSAFREERETURNBUFFER` (macro, line 280) `#define H_FUNC_LSAFREERETURNBUFFER`
+  - `H_FUNC_LSACALLAUTHENTICATIONPACKAGE` (macro, line 281) `#define H_FUNC_LSACALLAUTHENTICATIONPACKAGE`
+  - `H_FUNC_LSAGETLOGONSESSIONDATA` (macro, line 282) `#define H_FUNC_LSAGETLOGONSESSIONDATA`
+  - `H_FUNC_LSAENUMERATELOGONSESSIONS` (macro, line 283) `#define H_FUNC_LSAENUMERATELOGONSESSIONS`
+  - `H_FUNC_SLEEP` (macro, line 284) `#define H_FUNC_SLEEP`
+  - `H_FUNC_CREATETHREAD` (macro, line 285) `#define H_FUNC_CREATETHREAD`
+  - `H_FUNC_AMSISCANBUFFER` (macro, line 286) `#define H_FUNC_AMSISCANBUFFER`
+  - `H_FUNC_GLOBALFREE` (macro, line 287) `#define H_FUNC_GLOBALFREE`
+  - `H_FUNC_SWPRINTF_S` (macro, line 288) `#define H_FUNC_SWPRINTF_S`
+  - `H_COFFAPI_BEACONDATAPARSER` (macro, line 292) `#define H_COFFAPI_BEACONDATAPARSER`
+  - `H_COFFAPI_BEACONDATAINT` (macro, line 293) `#define H_COFFAPI_BEACONDATAINT`
+  - `H_COFFAPI_BEACONDATASHORT` (macro, line 294) `#define H_COFFAPI_BEACONDATASHORT`
+  - `H_COFFAPI_BEACONDATALENGTH` (macro, line 295) `#define H_COFFAPI_BEACONDATALENGTH`
+  - `H_COFFAPI_BEACONDATAEXTRACT` (macro, line 296) `#define H_COFFAPI_BEACONDATAEXTRACT`
+  - `H_COFFAPI_BEACONFORMATALLOC` (macro, line 298) `#define H_COFFAPI_BEACONFORMATALLOC`
+  - `H_COFFAPI_BEACONFORMATRESET` (macro, line 299) `#define H_COFFAPI_BEACONFORMATRESET`
+  - `H_COFFAPI_BEACONFORMATFREE` (macro, line 300) `#define H_COFFAPI_BEACONFORMATFREE`
+  - `H_COFFAPI_BEACONFORMATAPPEND` (macro, line 301) `#define H_COFFAPI_BEACONFORMATAPPEND`
+  - `H_COFFAPI_BEACONFORMATPRINTF` (macro, line 302) `#define H_COFFAPI_BEACONFORMATPRINTF`
+  - `H_COFFAPI_BEACONFORMATTOSTRING` (macro, line 303) `#define H_COFFAPI_BEACONFORMATTOSTRING`
+  - `H_COFFAPI_BEACONFORMATINT` (macro, line 304) `#define H_COFFAPI_BEACONFORMATINT`
+  - `H_COFFAPI_BEACONPRINTF` (macro, line 306) `#define H_COFFAPI_BEACONPRINTF`
+  - `H_COFFAPI_BEACONOUTPUT` (macro, line 307) `#define H_COFFAPI_BEACONOUTPUT`
+  - `H_COFFAPI_BEACONUSETOKEN` (macro, line 308) `#define H_COFFAPI_BEACONUSETOKEN`
+  - `H_COFFAPI_BEACONREVERTTOKEN` (macro, line 309) `#define H_COFFAPI_BEACONREVERTTOKEN`
+  - `H_COFFAPI_BEACONISADMIN` (macro, line 310) `#define H_COFFAPI_BEACONISADMIN`
+  - `H_COFFAPI_BEACONGETSPAWNTO` (macro, line 311) `#define H_COFFAPI_BEACONGETSPAWNTO`
+  - `H_COFFAPI_BEACONSPAWNTEMPORARYPROCESS` (macro, line 312) `#define H_COFFAPI_BEACONSPAWNTEMPORARYPROCESS`
+  - `H_COFFAPI_BEACONINJECTPROCESS` (macro, line 313) `#define H_COFFAPI_BEACONINJECTPROCESS`
+  - `H_COFFAPI_BEACONINJECTTEMPORARYPROCESS` (macro, line 314) `#define H_COFFAPI_BEACONINJECTTEMPORARYPROCESS`
+  - `H_COFFAPI_BEACONCLEANUPPROCESS` (macro, line 315) `#define H_COFFAPI_BEACONCLEANUPPROCESS`
+  - `H_COFFAPI_BEACONINFORMATION` (macro, line 316) `#define H_COFFAPI_BEACONINFORMATION`
+  - `H_COFFAPI_BEACONADDVALUE` (macro, line 317) `#define H_COFFAPI_BEACONADDVALUE`
+  - `H_COFFAPI_BEACONGETVALUE` (macro, line 318) `#define H_COFFAPI_BEACONGETVALUE`
+  - `H_COFFAPI_BEACONREMOVEVALUE` (macro, line 319) `#define H_COFFAPI_BEACONREMOVEVALUE`
+  - `H_COFFAPI_BEACONDATASTOREGETITEM` (macro, line 320) `#define H_COFFAPI_BEACONDATASTOREGETITEM`
+  - `H_COFFAPI_BEACONDATASTOREPROTECTITEM` (macro, line 321) `#define H_COFFAPI_BEACONDATASTOREPROTECTITEM`
+  - `H_COFFAPI_BEACONDATASTOREUNPROTECTITEM` (macro, line 322) `#define H_COFFAPI_BEACONDATASTOREUNPROTECTITEM`
+  - `H_COFFAPI_BEACONDATASTOREMAXENTRIES` (macro, line 323) `#define H_COFFAPI_BEACONDATASTOREMAXENTRIES`
+  - `H_COFFAPI_BEACONGETCUSTOMUSERDATA` (macro, line 324) `#define H_COFFAPI_BEACONGETCUSTOMUSERDATA`
+  - `H_COFFAPI_TOWIDECHAR` (macro, line 326) `#define H_COFFAPI_TOWIDECHAR`
+  - `H_COFFAPI_LOADLIBRARYA` (macro, line 327) `#define H_COFFAPI_LOADLIBRARYA`
+  - `H_COFFAPI_GETPROCADDRESS` (macro, line 328) `#define H_COFFAPI_GETPROCADDRESS`
+  - `H_COFFAPI_GETMODULEHANDLE` (macro, line 329) `#define H_COFFAPI_GETMODULEHANDLE`
+  - `H_COFFAPI_FREELIBRARY` (macro, line 330) `#define H_COFFAPI_FREELIBRARY`
+  - `H_COFFAPI_LOCALFREE` (macro, line 331) `#define H_COFFAPI_LOCALFREE`
+  - `H_COFFAPI_NTOPENTHREAD` (macro, line 333) `#define H_COFFAPI_NTOPENTHREAD`
+  - `H_COFFAPI_NTOPENPROCESS` (macro, line 334) `#define H_COFFAPI_NTOPENPROCESS`
+  - `H_COFFAPI_NTTERMINATEPROCESS` (macro, line 335) `#define H_COFFAPI_NTTERMINATEPROCESS`
+  - `H_COFFAPI_NTOPENTHREADTOKEN` (macro, line 336) `#define H_COFFAPI_NTOPENTHREADTOKEN`
+  - `H_COFFAPI_NTOPENPROCESSTOKEN` (macro, line 337) `#define H_COFFAPI_NTOPENPROCESSTOKEN`
+  - `H_COFFAPI_NTDUPLICATETOKEN` (macro, line 338) `#define H_COFFAPI_NTDUPLICATETOKEN`
+  - `H_COFFAPI_NTQUEUEAPCTHREAD` (macro, line 339) `#define H_COFFAPI_NTQUEUEAPCTHREAD`
+  - `H_COFFAPI_NTSUSPENDTHREAD` (macro, line 340) `#define H_COFFAPI_NTSUSPENDTHREAD`
+  - `H_COFFAPI_NTRESUMETHREAD` (macro, line 341) `#define H_COFFAPI_NTRESUMETHREAD`
+  - `H_COFFAPI_NTCREATEEVENT` (macro, line 342) `#define H_COFFAPI_NTCREATEEVENT`
+  - `H_COFFAPI_NTCREATETHREADEX` (macro, line 343) `#define H_COFFAPI_NTCREATETHREADEX`
+  - `H_COFFAPI_NTDUPLICATEOBJECT` (macro, line 344) `#define H_COFFAPI_NTDUPLICATEOBJECT`
+  - `H_COFFAPI_NTGETCONTEXTTHREAD` (macro, line 345) `#define H_COFFAPI_NTGETCONTEXTTHREAD`
+  - `H_COFFAPI_NTSETCONTEXTTHREAD` (macro, line 346) `#define H_COFFAPI_NTSETCONTEXTTHREAD`
+  - `H_COFFAPI_NTQUERYINFORMATIONPROCESS` (macro, line 347) `#define H_COFFAPI_NTQUERYINFORMATIONPROCESS`
+  - `H_COFFAPI_NTQUERYSYSTEMINFORMATION` (macro, line 348) `#define H_COFFAPI_NTQUERYSYSTEMINFORMATION`
+  - `H_COFFAPI_NTWAITFORSINGLEOBJECT` (macro, line 349) `#define H_COFFAPI_NTWAITFORSINGLEOBJECT`
+  - `H_COFFAPI_NTALLOCATEVIRTUALMEMORY` (macro, line 350) `#define H_COFFAPI_NTALLOCATEVIRTUALMEMORY`
+  - `H_COFFAPI_NTWRITEVIRTUALMEMORY` (macro, line 351) `#define H_COFFAPI_NTWRITEVIRTUALMEMORY`
+  - `H_COFFAPI_NTFREEVIRTUALMEMORY` (macro, line 352) `#define H_COFFAPI_NTFREEVIRTUALMEMORY`
+  - `H_COFFAPI_NTUNMAPVIEWOFSECTION` (macro, line 353) `#define H_COFFAPI_NTUNMAPVIEWOFSECTION`
+  - `H_COFFAPI_NTPROTECTVIRTUALMEMORY` (macro, line 354) `#define H_COFFAPI_NTPROTECTVIRTUALMEMORY`
+  - `H_COFFAPI_NTREADVIRTUALMEMORY` (macro, line 355) `#define H_COFFAPI_NTREADVIRTUALMEMORY`
+  - `H_COFFAPI_NTTERMINATETHREAD` (macro, line 356) `#define H_COFFAPI_NTTERMINATETHREAD`
+  - `H_COFFAPI_NTALERTRESUMETHREAD` (macro, line 357) `#define H_COFFAPI_NTALERTRESUMETHREAD`
+  - `H_COFFAPI_NTSIGNALANDWAITFORSINGLEOBJECT` (macro, line 358) `#define H_COFFAPI_NTSIGNALANDWAITFORSINGLEOBJECT`
+  - `H_COFFAPI_NTQUERYVIRTUALMEMORY` (macro, line 359) `#define H_COFFAPI_NTQUERYVIRTUALMEMORY`
+  - `H_COFFAPI_NTQUERYINFORMATIONTOKEN` (macro, line 360) `#define H_COFFAPI_NTQUERYINFORMATIONTOKEN`
+  - `H_COFFAPI_NTQUERYINFORMATIONTHREAD` (macro, line 361) `#define H_COFFAPI_NTQUERYINFORMATIONTHREAD`
+  - `H_COFFAPI_NTQUERYOBJECT` (macro, line 362) `#define H_COFFAPI_NTQUERYOBJECT`
+  - `H_COFFAPI_NTCLOSE` (macro, line 363) `#define H_COFFAPI_NTCLOSE`
+  - `H_COFFAPI_NTSETINFORMATIONTHREAD` (macro, line 364) `#define H_COFFAPI_NTSETINFORMATIONTHREAD`
+  - `H_COFFAPI_NTSETINFORMATIONVIRTUALMEMORY` (macro, line 365) `#define H_COFFAPI_NTSETINFORMATIONVIRTUALMEMORY`
+  - `H_COFFAPI_NTGETNEXTTHREAD` (macro, line 366) `#define H_COFFAPI_NTGETNEXTTHREAD`
+  - `H_MODULE_KERNEL32` (macro, line 368) `#define H_MODULE_KERNEL32`
+  - `H_MODULE_NTDLL` (macro, line 369) `#define H_MODULE_NTDLL`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/ObjectApi.c`, `payloads/Demon/src/core/Syscalls.c`, `payloads/Demon/src/inject/Inject.c`, `payloads/Demon/src/inject/InjectUtil.c`, `payloads/Demon/src/main/MainDll.c`
+
+## payloads/Demon/include/common/Macros.h
+- Doc: Heap allocation functions
+- Layer: utility
+- Language: h
+- Symbols:
+  - `DEMON_MACROS_H` (macro, line 2) `#define DEMON_MACROS_H`
+  - `PPEB_PTR` (macro, line 7) `#define PPEB_PTR`
+  - `PPEB_PTR` (macro, line 9) `#define PPEB_PTR`
+  - `NT_SUCCESS` (macro, line 12) `#define NT_SUCCESS(Status)`
+  - `NtCurrentProcess` (macro, line 13) `#define NtCurrentProcess()`
+  - `NtCurrentThread` (macro, line 14) `#define NtCurrentThread()`
+  - `NtGetLastError` (macro, line 15) `#define NtGetLastError()`
+  - `NtSetLastError` (macro, line 16) `#define NtSetLastError(x)`
+  - `NtProcessHeap` (macro, line 19) `#define NtProcessHeap()`
+  - `DLLEXPORT` (macro, line 20) `#define DLLEXPORT`
+  - `RVA` (macro, line 22) `#define RVA( TYPE, DLLBASE, RVA )`
+  - `DATA_FREE` (macro, line 23) `#define DATA_FREE( d, l )`
+  - `SEC_DATA` (macro, line 30) `#define SEC_DATA`
+  - `U_PTR` (macro, line 31) `#define U_PTR( x )`
+  - `C_PTR` (macro, line 32) `#define C_PTR( x )`
+  - `B_PTR` (macro, line 33) `#define B_PTR( x )`
+  - `DREF_U8` (macro, line 34) `#define DREF_U8( x )`
+  - `DREF_U16` (macro, line 35) `#define DREF_U16( x )`
+  - `HTONS32` (macro, line 36) `#define HTONS32( x )`
+  - `HTONS16` (macro, line 37) `#define HTONS16( x )`
+  - `IMAGE_SIZE` (macro, line 38) `#define IMAGE_SIZE( IM )`
+  - `PRINTF` (macro, line 44) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 45) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 47) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 48) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 50) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 51) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 53) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 54) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PRINTF` (macro, line 57) `#define PRINTF( f, ... )`
+  - `PRINTF_DONT_SEND` (macro, line 58) `#define PRINTF_DONT_SEND( f, ... )`
+  - `PUTS` (macro, line 63) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 64) `#define PUTS_DONT_SEND( s )`
+  - `PUTS` (macro, line 66) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 67) `#define PUTS_DONT_SEND( s )`
+  - `PUTS` (macro, line 69) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 70) `#define PUTS_DONT_SEND( s )`
+  - `PUTS` (macro, line 73) `#define PUTS( s )`
+  - `PUTS_DONT_SEND` (macro, line 74) `#define PUTS_DONT_SEND( s )`
+  - `PRINT_HEX` (macro, line 78) `#define PRINT_HEX( b, l )`
+  - `PRINT_HEX` (macro, line 86) `#define PRINT_HEX( b, l )`
+- Imported by: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/core/Win32.h`, `payloads/Demon/src/Demon.c`, `payloads/Demon/src/core/CoffeeLdr.c`, `payloads/Demon/src/core/Command.c`, `payloads/Demon/src/core/Obf.c`, `payloads/Demon/src/core/Pivot.c`, `payloads/Demon/src/core/Thread.c`, `payloads/Demon/src/core/Token.c`, `payloads/Demon/src/core/Transport.c`, `payloads/Demon/src/core/Win32.c`, `payloads/Demon/src/inject/Inject.c`
+
+
+Next: [KB_common_p2.md](KB_common_p2.md)

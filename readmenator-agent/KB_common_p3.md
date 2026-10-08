@@ -1,0 +1,500 @@
+# Subsystem: common (page 3 of 6)
+Previous: [KB_common_p2.md](KB_common_p2.md)
+
+## payloads/Demon/include/common/Native.h (continued)
+  - `_HAL_QUERY_INFORMATION_CLASS` (enum, line 3103)
+  - `POWER_INFORMATION_LEVEL` (enum, line 3133)
+  - `_IO_COMPLETION_INFORMATION_CLASS` (enum, line 3298)
+  - `_PORT_INFORMATION_CLASS` (enum, line 3302)
+  - `_SECTION_INHERIT` (enum, line 3306)
+  - `_SHUTDOWN_ACTION` (enum, line 3374)
+  - `_ATOM_INFORMATION_CLASS` (enum, line 3380)
+  - `_SEMAPHORE_INFORMATION_CLASS` (enum, line 3405)
+  - `_MUTANT_INFORMATION_CLASS` (enum, line 3419)
+  - `_TIMER_INFORMATION_CLASS` (enum, line 3434)
+  - `_SECTION_INFORMATION_CLASS` (enum, line 3443)
+  - `_OBJECT_INFORMATION_CLASS` (enum, line 3463)
+  - `_PLUGPLAY_EVENT_CATEGORY` (enum, line 3528)
+  - `_PNP_VETO_TYPE` (enum, line 3542)
+  - `_RTL_RXACT_OPERATION` (enum, line 3663)
+  - `_EVENT_INFORMATION_CLASS` (enum, line 3729)
+  - `_PLUGPLAY_CONTROL_CLASS` (enum, line 3734)
+  - `_KEY_INFORMATION_CLASS` (enum, line 3769)
+  - `_KEY_VALUE_INFORMATION_CLASS` (enum, line 3786)
+  - `_KEY_SET_INFORMATION_CLASS` (enum, line 3840)
+  - `_THREAD_STATE` (enum, line 4315)
+  - `_KWAIT_REASON` (enum, line 4327)
+  - `_LOGICAL_PROCESSOR_RELATIONSHIP` (enum, line 4698)
+  - `_PROCESSOR_CACHE_TYPE` (enum, line 4706)
+  - `_WATCHDOG_HANDLER_ACTION` (enum, line 5162)
+  - `_WATCHDOG_INFORMATION_CLASS` (enum, line 5176)
+  - `_WOW64_SHARED_INFORMATION` (enum, line 5398)
+  - `_BASESRV_API_NUMBER` (enum, line 6034)
+  - `_EVENT_TYPE` (enum, line 6449)
+  - `_TIMER_TYPE` (enum, line 6454)
+  - `_WAIT_TYPE` (enum, line 6459)
+  - `_RTL_PATH_TYPE` (enum, line 6741)
+  - `_NT_PRODUCT_TYPE` (enum, line 7311)
+  - `_SUITE_TYPE` (enum, line 7319)
+  - `_LSA_LOOKUP_DOMAIN_INFO_CLASS` (enum, line 8581)
+  - `_SECURITY_LOGON_TYPE` (enum, line 8640)
+  - `_SE_ADT_PARAMETER_TYPE` (enum, line 8676)
+  - `_POLICY_AUDIT_EVENT_TYPE` (enum, line 8769)
+  - `_POLICY_LSA_SERVER_ROLE` (enum, line 8922)
+  - `_POLICY_SERVER_ENABLE_STATE` (enum, line 8931)
+  - `_POLICY_INFORMATION_CLASS` (enum, line 8941)
+  - `_POLICY_DOMAIN_INFORMATION_CLASS` (enum, line 9068)
+  - `_POLICY_NOTIFICATION_INFORMATION_CLASS` (enum, line 9122)
+  - `_TRUSTED_INFORMATION_CLASS` (enum, line 9138)
+  - `_TABLE_SEARCH_RESULT` (enum, line 9930)
+  - `_RTL_GENERIC_COMPARE_RESULTS` (enum, line 9938)
+  - `_HARDERROR_RESPONSE_OPTION` (enum, line 10614)
+  - `_HARDERROR_RESPONSE` (enum, line 10627)
+  - `_ALTERNATIVE_ARCHITECTURE_TYPE` (enum, line 10642)
+  - `_HEAP_INFORMATION_CLASS` (enum, line 10695)
+  - `_DBG_STATE` (enum, line 11023)
+  - `_DEBUGOBJECTINFOCLASS` (enum, line 11077)
+  - `_VIRTUAL_MEMORY_INFORMATION_CLASS` (enum, line 11211)
+  - `_LDR_DLL_NOTIFICATION_DATA` (union, line 6616)
+  - `_SLIST_HEADER` (union, line 11656)
+  - `NTSTATUS` (type_alias, line 41) `typedef LONG NTSTATUS;`
+  - `SECURITY_STATUS` (type_alias, line 46) `typedef LONG SECURITY_STATUS;`
+  - `CCHAR` (type_alias, line 353) `typedef char CCHAR;`
+  - `CSHORT` (type_alias, line 355) `typedef short CSHORT;`
+  - `CLONG` (type_alias, line 358) `typedef ULONG CLONG;`
+  - `LOGICAL` (type_alias, line 360) `typedef ULONG LOGICAL;`
+  - `KPRIORITY` (type_alias, line 363) `typedef LONG KPRIORITY;`
+  - `Length` (type_alias, line 365) `typedef struct _STRING { USHORT Length;`
+  - `ANSI_STRING` (type_alias, line 374) `typedef STRING ANSI_STRING;`
+  - `PANSI_STRING` (type_alias, line 376) `typedef PSTRING PANSI_STRING;`
+  - `OEM_STRING` (type_alias, line 377) `typedef STRING OEM_STRING;`
+  - `POEM_STRING` (type_alias, line 379) `typedef PSTRING POEM_STRING;`
+  - `PCOEM_STRING` (type_alias, line 380) `typedef CONST STRING* PCOEM_STRING;`
+  - `Length` (type_alias, line 381) `typedef struct _CSTRING { USHORT Length;`
+  - `CANSI_STRING` (type_alias, line 390) `typedef STRING CANSI_STRING;`
+  - `PCANSI_STRING` (type_alias, line 392) `typedef PSTRING PCANSI_STRING;`
+  - `Length` (type_alias, line 393) `typedef struct _UNICODE_STRING { USHORT Length;`
+  - `Length` (type_alias, line 401) `typedef struct _STRING32 { USHORT Length;`
+  - `UNICODE_STRING32` (type_alias, line 409) `typedef STRING32 UNICODE_STRING32;`
+  - `ANSI_STRING32` (type_alias, line 413) `typedef STRING32 ANSI_STRING32;`
+  - `Length` (type_alias, line 416) `typedef struct _STRING64 { USHORT Length;`
+  - `UNICODE_STRING64` (type_alias, line 425) `typedef STRING64 UNICODE_STRING64;`
+  - `ANSI_STRING64` (type_alias, line 428) `typedef STRING64 ANSI_STRING64;`
+  - `RTL_ATOM` (type_alias, line 431) `typedef USHORT RTL_ATOM;`
+  - `KIRQL` (type_alias, line 434) `typedef UCHAR KIRQL;`
+  - `Flink` (type_alias, line 455) `typedef struct _TRIPLE_LIST_ENTRY { struct _TRIPLE_LIST_ENTRY* Flink[ 3 ];`
+  - `Length` (type_alias, line 504) `typedef struct _OBJECT_ATTRIBUTES { ULONG Length;`
+  - `Name` (type_alias, line 527) `typedef struct _OBJECT_DIRECTORY_INFORMATION { UNICODE_STRING Name;`
+  - `Group` (type_alias, line 534) `typedef struct _PROCESSOR_NUMBER { WORD Group;`
+  - `Version` (type_alias, line 887) `typedef struct _CSV_NAMESPACE_INFO { ULONG Version;`
+  - `PathNameLength` (type_alias, line 901) `typedef struct _PATHNAME_BUFFER { ULONG PathNameLength;`
+  - `First0x24BytesOfBootSector` (type_alias, line 908) `typedef struct _FSCTL_QUERY_FAT_BPB_BUFFER { UCHAR First0x24BytesOfBootSector[0x24];`
+  - `ExtentCount` (type_alias, line 970) `typedef struct RETRIEVAL_POINTERS_BUFFER { ULONG ExtentCount;`
+  - `FileHandle` (type_alias, line 1021) `typedef struct _MOVE_FILE_DATA32 { UINT32 FileHandle;`
+  - `Type` (type_alias, line 1204) `typedef struct _FILE_PREFETCH { ULONG Type;`
+  - `Type` (type_alias, line 1210) `typedef struct _FILE_PREFETCH_EX { ULONG Type;`
+  - `FileSystemType` (type_alias, line 1226) `typedef struct _FILESYSTEM_STATISTICS { USHORT FileSystemType;`
+  - `CreateHits` (type_alias, line 1254) `typedef struct _FAT_STATISTICS { ULONG CreateHits;`
+  - `CreateHits` (type_alias, line 1267) `typedef struct _EXFAT_STATISTICS { ULONG CreateHits;`
+  - `LogFileFullExceptions` (type_alias, line 1281) `typedef struct _NTFS_STATISTICS { ULONG LogFileFullExceptions;`
+  - `ObjectId` (type_alias, line 1383) `typedef struct _FILE_OBJECTID_BUFFER { UCHAR ObjectId[16];`
+  - `SetSparse` (type_alias, line 1409) `typedef struct _FILE_SET_SPARSE_BUFFER { BOOLEAN SetSparse;`
+  - `FileOffset` (type_alias, line 1420) `typedef struct _FILE_ZERO_DATA_INFORMATION { LARGE_INTEGER FileOffset;`
+  - `FileOffset` (type_alias, line 1430) `typedef struct _FILE_ALLOCATED_RANGE_BUFFER { LARGE_INTEGER FileOffset;`
+  - `EncryptionOperation` (type_alias, line 1441) `typedef struct _ENCRYPTION_BUFFER { ULONG EncryptionOperation;`
+  - `NoEncryptedStreams` (type_alias, line 1455) `typedef struct _DECRYPTION_STATUS_BUFFER { BOOLEAN NoEncryptedStreams;`
+  - `FileOffset` (type_alias, line 1465) `typedef struct _REQUEST_RAW_ENCRYPTED_DATA { LONGLONG FileOffset;`
+  - `StartingFileOffset` (type_alias, line 1472) `typedef struct _ENCRYPTED_DATA_INFO { ULONGLONG StartingFileOffset;`
+  - `ByteOffset` (type_alias, line 1501) `typedef struct _PLEX_READ_DATA_REQUEST { LARGE_INTEGER ByteOffset;`
+  - `SourceFileNameLength` (type_alias, line 1512) `typedef struct _SI_COPYFILE { ULONG SourceFileNameLength;`
+  - `CloseDisc` (type_alias, line 1526) `typedef struct _FILE_MAKE_COMPATIBLE_BUFFER { BOOLEAN CloseDisc;`
+  - `Disable` (type_alias, line 1530) `typedef struct _FILE_SET_DEFECT_MGMT_BUFFER { BOOLEAN Disable;`
+  - `SparingUnitBytes` (type_alias, line 1535) `typedef struct _FILE_QUERY_SPARING_BUFFER { ULONG SparingUnitBytes;`
+  - `DirectoryCount` (type_alias, line 1543) `typedef struct _FILE_QUERY_ON_DISK_VOL_INFO_BUFFER { LARGE_INTEGER DirectoryCount;`
+  - `ShrinkRequestType` (type_alias, line 1574) `typedef struct _SHRINK_VOLUME_INFORMATION { SHRINK_VOLUME_REQUEST_TYPES ShrinkRequestType;`
+  - `Flags` (type_alias, line 1627) `typedef struct _TXFS_MODIFY_RM { // // TXFS_RM_FLAG_* flags // ULONG Flags;`
+  - `BytesRequired` (type_alias, line 1699) `typedef struct _TXFS_QUERY_RM_INFORMATION { ULONG BytesRequired;`
+  - `LastVirtualClock` (type_alias, line 1801) `typedef struct _TXFS_ROLLFORWARD_REDO_INFORMATION { LARGE_INTEGER LastVirtualClock;`
+  - `Flags` (type_alias, line 1839) `typedef struct _TXFS_START_RM_INFORMATION { // // TXFS_START_RM_FLAG_* flags. // ULONG Flags;`
+  - `LowPart` (type_alias, line 1929) `typedef struct _TXFS_GET_METADATA_INFO_OUT { // // Returns the TxfId of the file referenced by the handle used to...`
+  - `Offset` (type_alias, line 1963) `typedef struct _TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY { // // Offset in bytes from the beginning of the...`
+  - `KtmTransaction` (type_alias, line 2000) `typedef struct _TXFS_LIST_TRANSACTION_LOCKED_FILES { // // GUID name of the KTM transaction that files should be...`
+  - `TransactionId` (type_alias, line 2034) `typedef struct _TXFS_LIST_TRANSACTIONS_ENTRY { // // Transaction GUID. // GUID TransactionId;`
+  - `NumberOfTransactions` (type_alias, line 2057) `typedef struct _TXFS_LIST_TRANSACTIONS { // // On output, the number of transactions involved in this RM. //...`
+  - `BufferLength` (type_alias, line 2080) `typedef struct _TXFS_READ_BACKUP_INFORMATION_OUT { union { // // Used to return the required buffer size if return...`
+  - `Buffer` (type_alias, line 2103) `typedef struct _TXFS_WRITE_BACKUP_INFORMATION { UCHAR Buffer[1];`
+  - `ThisBaseVersion` (type_alias, line 2110) `typedef struct _TXFS_GET_TRANSACTED_VERSION { // // The version that this handle is opened to. This will be //...`
+  - `KtmTransaction` (type_alias, line 2171) `typedef struct _TXFS_SAVEPOINT_INFORMATION { HANDLE KtmTransaction;`
+  - `StructureVersion` (type_alias, line 2177) `typedef struct _TXFS_CREATE_MINIVERSION_INFO { USHORT StructureVersion;`
+  - `TransactionsActiveAtSnapshot` (type_alias, line 2186) `typedef struct _TXFS_TRANSACTION_ACTIVE_INFO { BOOLEAN TransactionsActiveAtSnapshot;`
+  - `BootSectorCount` (type_alias, line 2196) `typedef struct _BOOT_AREA_INFO { ULONG BootSectorCount;`
+  - `FileAreaOffset` (type_alias, line 2205) `typedef struct _RETRIEVAL_POINTER_BASE { LARGE_INTEGER FileAreaOffset;`
+  - `VolumeFlags` (type_alias, line 2210) `typedef struct _FILE_FS_PERSISTENT_VOLUME_INFORMATION { ULONG VolumeFlags;`
+  - `FileSystem` (type_alias, line 2219) `typedef struct _FILE_SYSTEM_RECOGNITION_INFORMATION { CHAR FileSystem[9];`
+  - `StructureVersion` (type_alias, line 2235) `typedef struct _REQUEST_OPLOCK_INPUT_BUFFER { // // This should be set to REQUEST_OPLOCK_CURRENT_VERSION. // USHORT...`
+  - `StructureVersion` (type_alias, line 2262) `typedef struct _REQUEST_OPLOCK_OUTPUT_BUFFER { USHORT StructureVersion;`
+  - `CurrentMachineSIDOffset` (type_alias, line 2283) `typedef struct _SD_CHANGE_MACHINE_SID_INPUT { USHORT CurrentMachineSIDOffset;`
+  - `NumSDChangedSuccess` (type_alias, line 2293) `typedef struct _SD_CHANGE_MACHINE_SID_OUTPUT { // // How many entries were successfully changed in the $Secure...`
+  - `Flags` (type_alias, line 2348) `typedef struct _SD_GLOBAL_CHANGE_INPUT { // // Input flags (none currently defined) // ULONG Flags;`
+  - `Flags` (type_alias, line 2370) `typedef struct _SD_GLOBAL_CHANGE_OUTPUT { // // Output State Flags (none currently defined) // ULONG Flags;`
+  - `ExtendedCode` (type_alias, line 2404) `typedef struct _EXTENDED_ENCRYPTED_DATA_INFO { ULONG ExtendedCode;`
+  - `Flags` (type_alias, line 2413) `typedef struct _LOOKUP_STREAM_FROM_CLUSTER_INPUT { ULONG Flags;`
+  - `Offset` (type_alias, line 2420) `typedef struct _LOOKUP_STREAM_FROM_CLUSTER_OUTPUT { ULONG Offset;`
+  - `OffsetToNext` (type_alias, line 2436) `typedef struct _LOOKUP_STREAM_FROM_CLUSTER_ENTRY { ULONG OffsetToNext;`
+  - `Flags` (type_alias, line 2444) `typedef struct _FILE_TYPE_NOTIFICATION_INPUT { ULONG Flags;`
+  - `Address` (type_alias, line 2507) `typedef struct _SYSDBG_VIRTUAL { PVOID Address;`
+  - `Address` (type_alias, line 2514) `typedef struct _SYSDBG_PHYSICAL { PHYSICAL_ADDRESS Address;`
+  - `Address` (type_alias, line 2521) `typedef struct _SYSDBG_CONTROL_SPACE { ULONG64 Address;`
+  - `Address` (type_alias, line 2534) `typedef struct _SYSDBG_IO_SPACE { ULONG64 Address;`
+  - `Msr` (type_alias, line 2544) `typedef struct _SYSDBG_MSR { ULONG Msr;`
+  - `Address` (type_alias, line 2568) `typedef struct _SYSDBG_BUS_DATA { ULONG Address;`
+  - `Flags` (type_alias, line 2578) `typedef struct _SYSDBG_TRIAGE_DUMP { ULONG Flags;`
+  - `GDI_HANDLE_BUFFER32` (type_alias, line 2938) `typedef ULONG GDI_HANDLE_BUFFER32[GDI_HANDLE_BUFFER_SIZE32];`
+  - `GDI_HANDLE_BUFFER64` (type_alias, line 2940) `typedef ULONG GDI_HANDLE_BUFFER64[GDI_HANDLE_BUFFER_SIZE64];`
+  - `GDI_HANDLE_BUFFER` (type_alias, line 2941) `typedef ULONG GDI_HANDLE_BUFFER[GDI_HANDLE_BUFFER_SIZE];`
+  - `Status` (type_alias, line 3177) `typedef struct _IO_STATUS_BLOCK { union { NTSTATUS Status;`
+  - `ControlWord` (type_alias, line 3191) `typedef struct _X86_FLOATING_SAVE_AREA { ULONG ControlWord;`
+  - `ContextFlags` (type_alias, line 3204) `typedef struct _X86_CONTEXT { ULONG ContextFlags;`
+  - `Length` (type_alias, line 3278) `typedef struct _PORT_VIEW { ULONG Length;`
+  - `Length` (type_alias, line 3287) `typedef struct _REMOTE_PORT_VIEW { ULONG Length;`
+  - `5` (type_alias, line 3312) `typedef struct _MEMORY_WORKING_SET_BLOCK { ULONG_PTR Protection : 5;`
+  - `NumberOfEntries` (type_alias, line 3324) `typedef struct _MEMORY_WORKING_SET_INFORMATION { ULONG_PTR NumberOfEntries;`
+  - `1` (type_alias, line 3330) `typedef struct _MEMORY_WORKING_SET_EX_BLOCK { ULONG_PTR Valid : 1;`
+  - `AllocationBase` (type_alias, line 3347) `typedef struct _MEMORY_REGION_INFORMATION { PVOID AllocationBase;`
+  - `VirtualAddress` (type_alias, line 3355) `typedef struct _MEMORY_WORKING_SET_EX_INFORMATION { PVOID VirtualAddress;`
+  - `UsageCount` (type_alias, line 3385) `typedef struct _ATOM_BASIC_INFORMATION { USHORT UsageCount;`
+  - `NumberOfAtoms` (type_alias, line 3393) `typedef struct _ATOM_TABLE_INFORMATION { ULONG NumberOfAtoms;`
+  - `CurrentCount` (type_alias, line 3408) `typedef struct _SEMAPHORE_BASIC_INFORMATION { LONG CurrentCount;`
+  - `CurrentCount` (type_alias, line 3422) `typedef struct _MUTANT_BASIC_INFORMATION { LONG CurrentCount;`
+  - `RemainingTime` (type_alias, line 3437) `typedef struct _TIMER_BASIC_INFORMATION { LARGE_INTEGER RemainingTime;`
+  - `Attributes` (type_alias, line 3472) `typedef struct _OBJECT_BASIC_INFORMATION { ULONG Attributes;`
+  - `Name` (type_alias, line 3486) `typedef struct _OBJECT_NAME_INFORMATION { UNICODE_STRING Name;`
+  - `TypeName` (type_alias, line 3490) `typedef struct _OBJECT_TYPE_INFORMATION { UNICODE_STRING TypeName;`
+  - `NumberOfTypes` (type_alias, line 3515) `typedef struct _OBJECT_TYPES_INFORMATION { ULONG NumberOfTypes;`
+  - `Inherit` (type_alias, line 3521) `typedef struct _OBJECT_HANDLE_FLAG_INFORMATION { BOOLEAN Inherit;`
+  - `EventGuid` (type_alias, line 3557) `typedef struct _PLUGPLAY_EVENT_BLOCK { // // Common event data // GUID EventGuid;`
+  - `Year` (type_alias, line 3625) `typedef struct _TIME_FIELDS { CSHORT Year;`
+  - `Bias` (type_alias, line 3637) `typedef struct _RTL_TIME_ZONE_INFORMATION { LONG Bias;`
+  - `StartingIndex` (type_alias, line 3647) `typedef struct _RTL_BITMAP_RUN { ULONG StartingIndex;`
+  - `fFlags` (type_alias, line 3653) `typedef struct _PARSE_MESSAGE_CONTEXT { ULONG fFlags;`
+  - `OperationCount` (type_alias, line 3669) `typedef struct _RTL_RXACT_LOG { ULONG OperationCount;`
+  - `RootRegistryKey` (type_alias, line 3678) `typedef struct _RTL_RXACT_CONTEXT { HANDLE RootRegistryKey;`
+  - `CodePage` (type_alias, line 3687) `typedef struct _CPTABLEINFO { USHORT CodePage;`
+  - `OemTableInfo` (type_alias, line 3702) `typedef struct _NLSTABLEINFO { CPTABLEINFO OemTableInfo;`
+  - `Start` (type_alias, line 3712) `typedef struct _RTL_RANGE { ULONGLONG Start;`
+  - `LastWriteTime` (type_alias, line 3778) `typedef struct _KEY_BASIC_INFORMATION { LARGE_INTEGER LastWriteTime;`
+  - `TitleIndex` (type_alias, line 3798) `typedef struct _KEY_VALUE_BASIC_INFORMATION { ULONG TitleIndex;`
+  - `TitleIndex` (type_alias, line 3805) `typedef struct _KEY_VALUE_FULL_INFORMATION { ULONG TitleIndex;`
+  - `TitleIndex` (type_alias, line 3815) `typedef struct _KEY_VALUE_PARTIAL_INFORMATION { ULONG TitleIndex;`
+  - `Type` (type_alias, line 3822) `typedef struct _KEY_VALUE_PARTIAL_INFORMATION_ALIGN64 { ULONG Type;`
+  - `ValueName` (type_alias, line 3828) `typedef struct _KEY_VALUE_ENTRY { PUNICODE_STRING ValueName;`
+  - `UniqueProcess` (type_alias, line 3919) `typedef struct _CLIENT_ID { HANDLE UniqueProcess;`
+  - `UniqueProcess` (type_alias, line 3925) `typedef struct _CLIENT_ID32 { ULONG UniqueProcess;`
+  - `UniqueProcess` (type_alias, line 3931) `typedef struct _CLIENT_ID64 { ULONGLONG UniqueProcess;`
+  - `LowPart` (type_alias, line 3939) `typedef struct _KSYSTEM_TIME { ULONG LowPart;`
+  - `CreationTime` (type_alias, line 3953) `typedef struct _FILE_BASIC_INFORMATION { // ntddk wdm nthal LARGE_INTEGER CreationTime;`
+  - `AllocationSize` (type_alias, line 3961) `typedef struct _FILE_STANDARD_INFORMATION { LARGE_INTEGER AllocationSize;`
+  - `IndexNumber` (type_alias, line 3970) `typedef struct _FILE_INTERNAL_INFORMATION { LARGE_INTEGER IndexNumber;`
+  - `EaSize` (type_alias, line 3974) `typedef struct _FILE_EA_INFORMATION { ULONG EaSize;`
+  - `AccessFlags` (type_alias, line 3978) `typedef struct _FILE_ACCESS_INFORMATION { ACCESS_MASK AccessFlags;`
+  - `CurrentByteOffset` (type_alias, line 3982) `typedef struct _FILE_POSITION_INFORMATION { // ntddk wdm nthal LARGE_INTEGER CurrentByteOffset;`
+  - `Mode` (type_alias, line 3987) `typedef struct _FILE_MODE_INFORMATION { ULONG Mode;`
+  - `AlignmentRequirement` (type_alias, line 3990) `typedef struct _FILE_ALIGNMENT_INFORMATION { // ntddk nthal ULONG AlignmentRequirement;`
+  - `FileNameLength` (type_alias, line 3995) `typedef struct _FILE_NAME_INFORMATION { // ntddk ULONG FileNameLength;`
+  - `BasicInformation` (type_alias, line 3999) `typedef struct _FILE_ALL_INFORMATION { FILE_BASIC_INFORMATION BasicInformation;`
+  - `CreationTime` (type_alias, line 4011) `typedef struct _FILE_NETWORK_OPEN_INFORMATION { // ntddk wdm nthal LARGE_INTEGER CreationTime;`
+  - `FileAttributes` (type_alias, line 4022) `typedef struct _FILE_ATTRIBUTE_TAG_INFORMATION { // ntddk nthal ULONG FileAttributes;`
+  - `AllocationSize` (type_alias, line 4027) `typedef struct _FILE_ALLOCATION_INFORMATION { LARGE_INTEGER AllocationSize;`
+  - `CompressedFileSize` (type_alias, line 4030) `typedef struct _FILE_COMPRESSION_INFORMATION { LARGE_INTEGER CompressedFileSize;`
+  - `DeleteFile` (type_alias, line 4039) `typedef struct _FILE_DISPOSITION_INFORMATION { // ntddk nthal BOOLEAN DeleteFile;`
+  - `EndOfFile` (type_alias, line 4044) `typedef struct _FILE_END_OF_FILE_INFORMATION { // ntddk nthal LARGE_INTEGER EndOfFile;`
+  - `ValidDataLength` (type_alias, line 4048) `typedef struct _FILE_VALID_DATA_LENGTH_INFORMATION { // ntddk nthal LARGE_INTEGER ValidDataLength;`
+  - `ReplaceIfExists` (type_alias, line 4051) `typedef struct _FILE_LINK_INFORMATION { BOOLEAN ReplaceIfExists;`
+  - `ClusterCount` (type_alias, line 4058) `typedef struct _FILE_MOVE_CLUSTER_INFORMATION { ULONG ClusterCount;`
+  - `ReplaceIfExists` (type_alias, line 4065) `typedef struct _FILE_RENAME_INFORMATION { BOOLEAN ReplaceIfExists;`
+  - `NextEntryOffset` (type_alias, line 4072) `typedef struct _FILE_STREAM_INFORMATION { ULONG NextEntryOffset;`
+  - `DestinationFile` (type_alias, line 4080) `typedef struct _FILE_TRACKING_INFORMATION { HANDLE DestinationFile;`
+  - `Port` (type_alias, line 4086) `typedef struct _FILE_COMPLETION_INFORMATION { HANDLE Port;`
+  - `ReadMode` (type_alias, line 4091) `typedef struct _FILE_PIPE_INFORMATION { ULONG ReadMode;`
+  - `NamedPipeType` (type_alias, line 4096) `typedef struct _FILE_PIPE_LOCAL_INFORMATION { ULONG NamedPipeType;`
+  - `CollectDataTime` (type_alias, line 4109) `typedef struct _FILE_PIPE_REMOTE_INFORMATION { LARGE_INTEGER CollectDataTime;`
+  - `MaximumMessageSize` (type_alias, line 4114) `typedef struct _FILE_MAILSLOT_QUERY_INFORMATION { ULONG MaximumMessageSize;`
+  - `ReadTimeout` (type_alias, line 4122) `typedef struct _FILE_MAILSLOT_SET_INFORMATION { PLARGE_INTEGER ReadTimeout;`
+  - `FileReference` (type_alias, line 4126) `typedef struct _FILE_REPARSE_POINT_INFORMATION { LONGLONG FileReference;`
+  - `NextEntryOffset` (type_alias, line 4139) `typedef struct _FILE_FULL_EA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4149) `typedef struct _FILE_GET_EA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4159) `typedef struct _FILE_GET_QUOTA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4165) `typedef struct _FILE_QUOTA_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4187) `typedef struct _FILE_DIRECTORY_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4201) `typedef struct _FILE_FULL_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4216) `typedef struct _FILE_ID_FULL_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4232) `typedef struct _FILE_BOTH_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4249) `typedef struct _FILE_ID_BOTH_DIR_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 4267) `typedef struct _FILE_NAMES_INFORMATION { ULONG NextEntryOffset;`
+  - `FileReference` (type_alias, line 4274) `typedef struct _FILE_OBJECTID_INFORMATION { LONGLONG FileReference;`
+  - `DriverName` (type_alias, line 4292) `typedef struct _SYSTEM_GDI_DRIVER_INFORMATION { UNICODE_STRING DriverName;`
+  - `AlignmentFixupCount` (type_alias, line 4302) `typedef struct _SYSTEM_EXCEPTION_INFORMATION { ULONG AlignmentFixupCount;`
+  - `KernelTime` (type_alias, line 4369) `typedef struct _SYSTEM_THREAD_INFORMATION { LARGE_INTEGER KernelTime;`
+  - `ThreadInfo` (type_alias, line 4382) `typedef struct _SYSTEM_EXTENDED_THREAD_INFORMATION { SYSTEM_THREAD_INFORMATION ThreadInfo;`
+  - `Allocated` (type_alias, line 4393) `typedef struct _SYSTEM_POOL_ENTRY { BOOLEAN Allocated;`
+  - `TotalSize` (type_alias, line 4405) `typedef struct _SYSTEM_POOL_INFORMATION { SIZE_T TotalSize;`
+  - `Tag` (type_alias, line 4415) `typedef struct _SYSTEM_POOLTAG { union { UCHAR Tag[4];`
+  - `VirtualAddress` (type_alias, line 4428) `typedef struct _SYSTEM_BIGPOOL_ENTRY { union { PVOID VirtualAddress;`
+  - `Count` (type_alias, line 4440) `typedef struct _SYSTEM_POOLTAG_INFORMATION { ULONG Count;`
+  - `NextEntryOffset` (type_alias, line 4446) `typedef struct _SYSTEM_SESSION_POOLTAG_INFORMATION { SIZE_T NextEntryOffset;`
+  - `Count` (type_alias, line 4453) `typedef struct _SYSTEM_BIGPOOL_INFORMATION { ULONG Count;`
+  - `UniqueProcessId` (type_alias, line 4458) `typedef struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO { USHORT UniqueProcessId;`
+  - `NumberOfHandles` (type_alias, line 4469) `typedef struct _SYSTEM_HANDLE_INFORMATION { ULONG NumberOfHandles;`
+  - `Object` (type_alias, line 4475) `typedef struct _SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX { PVOID Object;`
+  - `NumberOfHandles` (type_alias, line 4487) `typedef struct _SYSTEM_HANDLE_INFORMATION_EX { ULONG NumberOfHandles;`
+  - `PoolTag` (type_alias, line 4494) `typedef struct _SYSTEM_SPECIAL_POOL_INFORMATION { ULONG PoolTag;`
+  - `NextEntryOffset` (type_alias, line 4500) `typedef struct _SYSTEM_OBJECTTYPE_INFORMATION { ULONG NextEntryOffset;`
+  - `NumberOfMcbPairs` (type_alias, line 4515) `typedef struct _SYSTEM_HIBERFILE_INFORMATION { ULONG NumberOfMcbPairs;`
+  - `KernelDebuggerEnabled` (type_alias, line 4521) `typedef struct _SYSTEM_KERNEL_DEBUGGER_INFORMATION { BOOLEAN KernelDebuggerEnabled;`
+  - `RegistryQuotaAllowed` (type_alias, line 4526) `typedef struct _SYSTEM_REGISTRY_QUOTA_INFORMATION { ULONG RegistryQuotaAllowed;`
+  - `ContextSwitches` (type_alias, line 4532) `typedef struct _SYSTEM_CONTEXT_SWITCH_INFORMATION { ULONG ContextSwitches;`
+  - `NextEntryOffset` (type_alias, line 4547) `typedef struct _SYSTEM_SESSION_MAPPED_VIEW_INFORMATION { SIZE_T NextEntryOffset;`
+  - `ContextSwitches` (type_alias, line 4555) `typedef struct _SYSTEM_INTERRUPT_INFORMATION { ULONG ContextSwitches;`
+  - `Spare` (type_alias, line 4564) `typedef struct _SYSTEM_DPC_BEHAVIOR_INFORMATION { ULONG Spare;`
+  - `CurrentDepth` (type_alias, line 4572) `typedef struct _SYSTEM_LOOKASIDE_INFORMATION { USHORT CurrentDepth;`
+  - `VetoType` (type_alias, line 4584) `typedef struct _SYSTEM_LEGACY_DRIVER_INFORMATION { ULONG VetoType;`
+  - `SegmentNotPresent` (type_alias, line 4589) `typedef struct _SYSTEM_VDM_INSTEMUL_INFO { ULONG SegmentNotPresent;`
+  - `BootTime` (type_alias, line 4627) `typedef struct _SYSTEM_TIMEOFDAY_INFORMATION { LARGE_INTEGER BootTime;`
+  - `SYSINF_PAGE_COUNT` (type_alias, line 4640) `typedef ULONG SYSINF_PAGE_COUNT;`
+  - `SYSINF_PAGE_COUNT` (type_alias, line 4642) `typedef SIZE_T SYSINF_PAGE_COUNT;`
+  - `Reserved` (type_alias, line 4644) `typedef struct _SYSTEM_BASIC_INFORMATION { ULONG Reserved;`
+  - `ProcessorArchitecture` (type_alias, line 4658) `typedef struct _SYSTEM_PROCESSOR_INFORMATION { USHORT ProcessorArchitecture;`
+  - `IdleTime` (type_alias, line 4666) `typedef struct _SYSTEM_PROCESSOR_PERFORMANCE_INFORMATION { LARGE_INTEGER IdleTime;`
+  - `IdleTime` (type_alias, line 4675) `typedef struct _SYSTEM_PROCESSOR_IDLE_INFORMATION { ULONGLONG IdleTime;`
+  - `HighestNodeNumber` (type_alias, line 4686) `typedef struct _SYSTEM_NUMA_INFORMATION { ULONG HighestNodeNumber;`
+  - `Level` (type_alias, line 4715) `typedef struct _CACHE_DESCRIPTOR { BYTE Level;`
+  - `ProcessorMask` (type_alias, line 4724) `typedef struct _SYSTEM_LOGICAL_PROCESSOR_INFORMATION { ULONG_PTR ProcessorMask;`
+  - `BaseAddress` (type_alias, line 4795) `typedef struct _MEMORY_BASIC_INFORMATION { PVOID BaseAddress;`
+  - `CurrentFrequency` (type_alias, line 4808) `typedef struct _SYSTEM_PROCESSOR_POWER_INFORMATION { UCHAR CurrentFrequency;`
+  - `TimeAdjustment` (type_alias, line 4830) `typedef struct _SYSTEM_QUERY_TIME_ADJUST_INFORMATION { ULONG TimeAdjustment;`
+  - `TimeAdjustment` (type_alias, line 4836) `typedef struct _SYSTEM_SET_TIME_ADJUST_INFORMATION { ULONG TimeAdjustment;`
+  - `IdleProcessTime` (type_alias, line 4841) `typedef struct _SYSTEM_PERFORMANCE_INFORMATION { LARGE_INTEGER IdleProcessTime;`
+  - `NextEntryOffset` (type_alias, line 4918) `typedef struct _SYSTEM_PROCESS_INFORMATION { ULONG NextEntryOffset;`
+  - `SessionId` (type_alias, line 4954) `typedef struct _SYSTEM_SESSION_PROCESS_INFORMATION { ULONG SessionId;`
+  - `StringOffset` (type_alias, line 4960) `typedef struct _SYSTEM_MEMORY_INFO { PUCHAR StringOffset;`
+  - `InfoSize` (type_alias, line 4968) `typedef struct _SYSTEM_MEMORY_INFORMATION { ULONG InfoSize;`
+  - `Length` (type_alias, line 4974) `typedef struct _SYSTEM_CALL_COUNT_INFORMATION { ULONG Length;`
+  - `NumberOfDisks` (type_alias, line 4979) `typedef struct _SYSTEM_DEVICE_INFORMATION { ULONG NumberOfDisks;`
+  - `Flags` (type_alias, line 4988) `typedef struct _SYSTEM_FLAGS_INFORMATION { ULONG Flags;`
+  - `Length` (type_alias, line 4992) `typedef struct _SYSTEM_CALL_TIME_INFORMATION { ULONG Length;`
+  - `NextEntryOffset` (type_alias, line 4998) `typedef struct _SYSTEM_OBJECT_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 5013) `typedef struct _SYSTEM_PAGEFILE_INFORMATION { ULONG NextEntryOffset;`
+  - `NextEntryOffset` (type_alias, line 5021) `typedef struct _SYSTEM_VERIFIER_INFORMATION { ULONG NextEntryOffset;`
+  - `VerifyMode` (type_alias, line 5056) `typedef struct _SYSTEM_VERIFIER_INFORMATION_EX { ULONG VerifyMode;`
+  - `CurrentSize` (type_alias, line 5069) `typedef struct _SYSTEM_FILECACHE_INFORMATION { SIZE_T CurrentSize;`
+  - `TargetAddress` (type_alias, line 5093) `typedef struct _HOTPATCH_HOOK_DESCRIPTOR { ULONG_PTR TargetAddress;`
+  - `Flags` (type_alias, line 5104) `typedef struct _SYSTEM_HOTPATCH_CODE_INFORMATION { ULONG Flags;`
+  - `CreateTime` (type_alias, line 5153) `typedef struct _KERNEL_USER_TIMES { LARGE_INTEGER CreateTime;`
+  - `WdHandler` (type_alias, line 5193) `typedef struct _SYSTEM_WATCHDOG_HANDLER_INFORMATION { PWD_HANDLER WdHandler;`
+  - `WdInfoClass` (type_alias, line 5203) `typedef struct _SYSTEM_WATCHDOG_TIMER_INFORMATION { WATCHDOG_INFORMATION_CLASS WdInfoClass;`
+  - `Object` (type_alias, line 5297) `typedef struct _GDI_HANDLE_ENTRY { union { PVOID Object;`
+  - `Handles` (type_alias, line 5320) `typedef struct _GDI_SHARED_MEMORY { GDI_HANDLE_ENTRY Handles[GDI_MAX_HANDLE_COUNT];`
+  - `DosPath` (type_alias, line 5332) `typedef struct _CURDIR { UNICODE_STRING DosPath;`
+  - `Flags` (type_alias, line 5341) `typedef struct _RTL_DRIVE_LETTER_CURDIR { USHORT Flags;`
+  - `MaximumLength` (type_alias, line 5352) `typedef struct _RTL_USER_PROCESS_PARAMETERS { ULONG MaximumLength;`
+  - `Flink` (type_alias, line 5422) `typedef struct LIST_ENTRY32 { DWORD Flink;`
+  - `Flink` (type_alias, line 5427) `typedef struct LIST_ENTRY64 { ULONGLONG Flink;`
+  - `Length` (type_alias, line 5436) `typedef struct _PEB_LDR_DATA32 { ULONG Length;`
+  - `InLoadOrderLinks` (type_alias, line 5451) `typedef struct _LDR_DATA_TABLE_ENTRY32 { LIST_ENTRY32 InLoadOrderLinks;`
+  - `DosPath` (type_alias, line 5488) `typedef struct _CURDIR32 { UNICODE_STRING32 DosPath;`
+  - `Flags` (type_alias, line 5494) `typedef struct _RTL_DRIVE_LETTER_CURDIR32 { USHORT Flags;`
+  - `MaximumLength` (type_alias, line 5502) `typedef struct _RTL_USER_PROCESS_PARAMETERS32 { ULONG MaximumLength;`
+  - `InheritedAddressSpace` (type_alias, line 5542) `typedef struct _PEB32 { BOOLEAN InheritedAddressSpace;`
+  - `Offset` (type_alias, line 5643) `typedef struct _GDI_TEB_BATCH32 { ULONG Offset;`
+  - `ExceptionList` (type_alias, line 5655) `typedef struct _NT_TIB32 { DWORD ExceptionList;`
+  - `ExceptionList` (type_alias, line 5667) `typedef struct _NT_TIB64 { DWORD64 ExceptionList;`
+  - `NtTib` (type_alias, line 5681) `typedef struct _TEB32 { NT_TIB32 NtTib;`
+  - `iCountry` (type_alias, line 5759) `typedef struct _NLS_USER_INFO { /*<thisrel this+0x0>*/ /*|0xa0|*/ WCHAR iCountry[80];`
+  - `Next` (type_alias, line 5801) `typedef struct _INIFILE_MAPPING_TARGET { struct _INIFILE_MAPPING_TARGET* Next;`
+  - `Next` (type_alias, line 5807) `typedef struct _INIFILE_MAPPING_VARNAME { struct _INIFILE_MAPPING_VARNAME* Next;`
+  - `Next` (type_alias, line 5815) `typedef struct _INIFILE_MAPPING_APPNAME { struct _INIFILE_MAPPING_APPNAME* Next;`
+  - `Next` (type_alias, line 5823) `typedef struct _INIFILE_MAPPING_FILENAME { struct _INIFILE_MAPPING_FILENAME* Next;`
+  - `FileNames` (type_alias, line 5831) `typedef struct _INIFILE_MAPPING { struct _INIFILE_MAPPING_FILENAME* FileNames;`
+  - `DataLength` (type_alias, line 5843) `typedef struct _PORT_MESSAGE { union { struct { CSHORT DataLength;`
+  - `Base` (type_alias, line 5881) `typedef struct _PORT_DATA_ENTRY { LPC_PVOID Base;`
+  - `CountDataEntries` (type_alias, line 5886) `typedef struct _PORT_DATA_INFORMATION { ULONG CountDataEntries;`
+  - `CSR_API_NUMBER` (type_alias, line 5895) `typedef ULONG CSR_API_NUMBER;`
+  - `ObjectDirectory` (type_alias, line 5905) `typedef struct _CSR_API_CONNECTINFO { HANDLE ObjectDirectory;`
+  - `ServerDllIndex` (type_alias, line 5921) `typedef struct _CSR_CLIENTCONNECT_MSG { ULONG ServerDllIndex;`
+  - `Length` (type_alias, line 5933) `typedef struct _CSR_CAPTURE_HEADER { ULONG Length;`
+  - `SessionLink` (type_alias, line 5964) `typedef struct _CSR_NT_SESSION { struct _LIST_ENTRY SessionLink;`
+  - `h` (type_alias, line 5972) `typedef struct _CSR_API_MSG { PORT_MESSAGE h;`
+  - `ApiNumberBase` (type_alias, line 5998) `typedef struct _CSR_CALLBACK_INFO { ULONG ApiNumberBase;`
+  - `tzi` (type_alias, line 6012) `typedef struct _RTL_DYNAMIC_TIME_ZONE_INFORMATION { struct _RTL_TIME_ZONE_INFORMATION tzi;`
+  - `ExpectedVersion` (type_alias, line 6022) `typedef struct _BASESRV_API_CONNECTINFO { ULONG ExpectedVersion;`
+  - `LCType` (type_alias, line 6067) `typedef struct _BASE_NLS_SET_USER_INFO_MSG { ULONG LCType;`
+  - `pData` (type_alias, line 6074) `typedef struct _BASE_NLS_GET_USER_INFO_MSG { struct _NLS_USER_INFO* pData;`
+  - `Reserved` (type_alias, line 6080) `typedef struct _BASE_NLS_UPDATE_CACHE_COUNT_MSG { ULONG Reserved;`
+  - `iTask` (type_alias, line 6085) `typedef struct _BASE_UPDATE_VDM_ENTRY_MSG { ULONG iTask;`
+  - `iTask` (type_alias, line 6096) `typedef struct _BASE_GET_NEXT_VDM_COMMAND_MSG { ULONG iTask;`
+  - `ShutdownLevel` (type_alias, line 6129) `typedef struct _BASE_SHUTDOWNPARAM_MSG { ULONG ShutdownLevel;`
+  - `uUnique` (type_alias, line 6135) `typedef struct _BASE_GETTEMPFILE_MSG { ULONG uUnique;`
+  - `dwProcessId` (type_alias, line 6140) `typedef struct _BASE_DEBUGPROCESS_MSG { ULONG dwProcessId;`
+  - `iTask` (type_alias, line 6147) `typedef struct _BASE_CHECKVDM_MSG { ULONG iTask;`
+  - `ConsoleHandle` (type_alias, line 6180) `typedef struct _BASE_GET_VDM_EXIT_CODE_MSG { PVOID ConsoleHandle;`
+  - `ClientId` (type_alias, line 6187) `typedef struct _BASE_DEFERREDCREATEPROCESS_MSG { struct _CLIENT_ID* ClientId;`
+  - `uExitCode` (type_alias, line 6193) `typedef struct _BASE_EXITPROCESS_MSG { NTSTATUS uExitCode;`
+  - `ConsoleHandle` (type_alias, line 6197) `typedef struct _BASE_GET_SET_VDM_CUR_DIRS_MSG { PVOID ConsoleHandle;`
+  - `ConsoleHandle` (type_alias, line 6204) `typedef struct _BASE_SET_REENTER_COUNT { PVOID ConsoleHandle;`
+  - `ulFlags` (type_alias, line 6220) `typedef struct _ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION { DWORD ulFlags;`
+  - `PCACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION` (type_alias, line 6226) `typedef const struct _ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION * PCACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION;`
+  - `Flags` (type_alias, line 6231) `typedef struct _BASE_SXS_CREATEPROCESS_MSG { ULONG Flags;`
+  - `ProcessHandle` (type_alias, line 6243) `typedef struct _BASE_CREATEPROCESS_MSG { PVOID ProcessHandle;`
+  - `ThreadHandle` (type_alias, line 6259) `typedef struct _BASE_CREATETHREAD_MSG { PVOID ThreadHandle;`
+  - `File` (type_alias, line 6266) `typedef struct _BASE_MSG_SXS_HANDLES { PVOID File;`
+  - `ConsoleHandle` (type_alias, line 6275) `typedef struct _BASE_EXIT_VDM_MSG { PVOID ConsoleHandle;`
+  - `FirstVDM` (type_alias, line 6283) `typedef struct _BASE_IS_FIRST_VDM_MSG { __int32 FirstVDM;`
+  - `ConsoleHandle` (type_alias, line 6289) `typedef struct _BASE_SET_REENTER_COUNT_MSG { PVOID ConsoleHandle;`
+  - `ConsoleHandle` (type_alias, line 6296) `typedef struct _BASE_BAT_NOTIFICATION_MSG { PVOID ConsoleHandle;`
+  - `hEventWowExec` (type_alias, line 6303) `typedef struct _BASE_REGISTER_WOWEXEC_MSG { PVOID hEventWowExec;`
+  - `IniFileName` (type_alias, line 6310) `typedef struct _BASE_REFRESHINIFILEMAPPING_MSG { UNICODE_STRING IniFileName;`
+  - `pDTZInfo` (type_alias, line 6316) `typedef struct _BASE_SET_TERMSRVCLIENTTIMEZONE { struct _RTL_DYNAMIC_TIME_ZONE_INFORMATION* pDTZInfo;`
+  - `bState` (type_alias, line 6325) `typedef struct _BASE_SET_TERMSRVAPPINSTALLMODE { __int32 bState;`
+  - `VideoMode` (type_alias, line 6330) `typedef struct _BASE_SOUNDSENTRY_NOTIFICATION_MSG { ULONG VideoMode;`
+  - `Flags` (type_alias, line 6336) `typedef struct _BASE_DEFINEDOSDEVICE_MSG { ULONG Flags;`
+  - `FileType` (type_alias, line 6344) `typedef struct _BASE_MSG_SXS_STREAM { UCHAR FileType;`
+  - `Flags` (type_alias, line 6356) `typedef struct _BASE_SXS_CREATE_ACTIVATION_CONTEXT_MSG { ULONG Flags;`
+  - `h` (type_alias, line 6373) `typedef struct _BASE_API_MSG { PORT_MESSAGE h;`
+  - `WindowsDirectory` (type_alias, line 6413) `typedef struct _BASE_STATIC_SERVER_DATA { UNICODE_STRING WindowsDirectory;`
+  - `Offset` (type_alias, line 6441) `typedef struct _GDI_TEB_BATCH { ULONG Offset;`
+  - `PPVOID` (type_alias, line 6468) `typedef PVOID* PPVOID;`
+  - `Flags` (type_alias, line 6472) `typedef struct _ASSEMBLY_STORAGE_MAP_ENTRY { ULONG Flags;`
+  - `Flags` (type_alias, line 6479) `typedef struct _ASSEMBLY_STORAGE_MAP { ULONG Flags;`
+  - `Magic` (type_alias, line 6486) `typedef struct _ACTIVATION_CONTEXT_DATA { ULONG Magic;`
+  - `RefCount` (type_alias, line 6497) `typedef struct _ACTIVATION_CONTEXT { LONG RefCount;`
+  - `Length` (type_alias, line 6519) `typedef struct _PEB_LDR_DATA { ULONG Length;`
+  - `OldStackBase` (type_alias, line 6532) `typedef struct _INITIAL_TEB { struct { PVOID OldStackBase;`
+  - `Wow64` (type_alias, line 6546) `typedef struct _WOW64_PROCESS { PVOID Wow64;`
+  - `Flags` (type_alias, line 6597) `typedef struct _LDR_DLL_LOADED_NOTIFICATION_DATA { ULONG Flags;`
+  - `Flags` (type_alias, line 6606) `typedef struct _LDR_DLL_UNLOADED_NOTIFICATION_DATA { ULONG Flags;`
+  - `Section` (type_alias, line 6627) `typedef struct _RTL_PROCESS_MODULE_INFORMATION { HANDLE Section;`
+  - `NumberOfModules` (type_alias, line 6641) `typedef struct _RTL_PROCESS_MODULES { ULONG NumberOfModules;`
+  - `NextOffset` (type_alias, line 6647) `typedef struct _RTL_PROCESS_MODULE_INFORMATION_EX { USHORT NextOffset;`
+  - `InLoadOrderLinks` (type_alias, line 6670) `typedef struct _LDR_DATA_TABLE_ENTRY { LIST_ENTRY InLoadOrderLinks;`
+  - `LDR_RELOCATE_IMAGE_RETURN_TYPE` (type_alias, line 6709) `typedef NTSTATUS LDR_RELOCATE_IMAGE_RETURN_TYPE;`
+  - `RelativeName` (type_alias, line 6725) `typedef struct _RTL_RELATIVE_NAME { STRING RelativeName;`
+  - `RelativeName` (type_alias, line 6733) `typedef struct _RTL_RELATIVE_NAME_U { UNICODE_STRING RelativeName;`
+  - `InheritedAddressSpace` (type_alias, line 6757) `typedef struct _PEB { BOOLEAN InheritedAddressSpace;`
+  - `Previous` (type_alias, line 6894) `typedef struct _RTL_ACTIVATION_CONTEXT_STACK_FRAME { struct _RTL_ACTIVATION_CONTEXT_STACK_FRAME* Previous;`
+  - `ActiveFrame` (type_alias, line 6901) `typedef struct _ACTIVATION_CONTEXT_STACK { struct _RTL_ACTIVATION_CONTEXT_STACK_FRAME * ActiveFrame;`
+  - `PCACTIVATION_CONTEXT_STACK` (type_alias, line 6911) `typedef const ACTIVATION_CONTEXT_STACK * PCACTIVATION_CONTEXT_STACK;`
+  - `Flags` (type_alias, line 6915) `typedef struct _TEB_ACTIVE_FRAME_CONTEXT { ULONG Flags;`
+  - `BasicContext` (type_alias, line 6923) `typedef struct _TEB_ACTIVE_FRAME_CONTEXT_EX { TEB_ACTIVE_FRAME_CONTEXT BasicContext;`
+  - `Flags` (type_alias, line 6935) `typedef struct _TEB_ACTIVE_FRAME { ULONG Flags;`
+  - `BasicFrame` (type_alias, line 6943) `typedef struct _TEB_ACTIVE_FRAME_EX { TEB_ACTIVE_FRAME BasicFrame;`
+  - `NtTib` (type_alias, line 6953) `typedef struct _TEB { NT_TIB NtTib;`
+  - `ExitStatus` (type_alias, line 7112) `typedef struct _THREAD_BASIC_INFORMATION { NTSTATUS ExitStatus;`
+  - `DirectoryHandle` (type_alias, line 7128) `typedef struct _PROCESS_DEVICEMAP_INFORMATION { union { struct { HANDLE DirectoryHandle;`
+  - `DirectoryHandle` (type_alias, line 7139) `typedef struct _PROCESS_DEVICEMAP_INFORMATION_EX { union { struct { HANDLE DirectoryHandle;`
+  - `ExitStatus` (type_alias, line 7153) `typedef struct _PROCESS_BASIC_INFORMATION { NTSTATUS ExitStatus;`
+  - `Size` (type_alias, line 7164) `typedef struct _PROCESS_EXTENDED_BASIC_INFORMATION { SIZE_T Size;`
+  - `Size` (type_alias, line 7182) `typedef struct _RTL_HEAP_ENTRY { SIZE_T Size;`
+  - `NumberOfAllocations` (type_alias, line 7212) `typedef struct _RTL_HEAP_TAG { ULONG NumberOfAllocations;`
+  - `BaseAddress` (type_alias, line 7222) `typedef struct _RTL_HEAP_INFORMATION { PVOID BaseAddress;`
+  - `NumberOfHeaps` (type_alias, line 7239) `typedef struct _RTL_PROCESS_HEAPS { ULONG NumberOfHeaps;`
+  - `Address` (type_alias, line 7245) `typedef struct _RTL_PROCESS_LOCK_INFORMATION { PVOID Address;`
+  - `POINTER_64_INT` (type_alias, line 7303) `typedef unsigned __int64 POINTER_64_INT;`
+  - `ContextFlags` (type_alias, line 7362) `typedef struct _CONTEXT { // // The flags values within this flag control the contents of // a CONTEXT record. // //...`
+  - `ExceptionCode` (type_alias, line 7449) `typedef struct _EXCEPTION_RECORD { DWORD ExceptionCode;`
+  - `ExceptionCode` (type_alias, line 7465) `typedef struct _EXCEPTION_RECORD32 { DWORD ExceptionCode;`
+  - `ExceptionCode` (type_alias, line 7474) `typedef struct _EXCEPTION_RECORD64 { DWORD ExceptionCode;`
+  - `ExceptionRecord` (type_alias, line 7488) `typedef struct _EXCEPTION_POINTERS { PEXCEPTION_RECORD ExceptionRecord;`
+  - `QueryRoutine` (type_alias, line 7505) `typedef struct _RTL_QUERY_REGISTRY_TABLE { PRTL_QUERY_REGISTRY_ROUTINE QueryRoutine;`
+  - `Foreground` (type_alias, line 7542) `typedef struct _PROCESS_PRIORITY_CLASS { BOOLEAN Foreground;`
+  - `Foreground` (type_alias, line 7547) `typedef struct _PROCESS_FOREGROUND_BACKGROUND { BOOLEAN Foreground;`
+  - `Version` (type_alias, line 7551) `typedef struct _FILE_PATH { ULONG Version;`
+  - `Signature` (type_alias, line 7568) `typedef struct _WINDOWS_OS_OPTIONS { UCHAR Signature[8];`
+  - `Version` (type_alias, line 7581) `typedef struct _BOOT_ENTRY { ULONG Version;`
+  - `Version` (type_alias, line 7594) `typedef struct _BOOT_OPTIONS { ULONG Version;`
+  - `sidAuthority` (type_alias, line 7608) `typedef struct _USER_SID { SID_IDENTIFIER_AUTHORITY sidAuthority;`
+  - `UserSid` (type_alias, line 7615) `typedef struct _USER_PERMISSION { USER_SID UserSid;`
+  - `Length` (type_alias, line 8512) `typedef struct _LSA_UNICODE_STRING { USHORT Length;`
+  - `Length` (type_alias, line 8521) `typedef struct _LSA_STRING { USHORT Length;`
+  - `Length` (type_alias, line 8527) `typedef struct _LSA_OBJECT_ATTRIBUTES { ULONG Length;`
+  - `Name` (type_alias, line 8538) `typedef struct _LSA_TRUST_INFORMATION { LSA_UNICODE_STRING Name;`
+  - `Entries` (type_alias, line 8543) `typedef struct _LSA_REFERENCED_DOMAIN_LIST { ULONG Entries;`
+  - `Use` (type_alias, line 8550) `typedef struct _LSA_TRANSLATED_SID2 { SID_NAME_USE Use;`
+  - `Use` (type_alias, line 8557) `typedef struct _LSA_TRANSLATED_NAME { SID_NAME_USE Use;`
+  - `DomainName` (type_alias, line 8563) `typedef struct _POLICY_ACCOUNT_DOMAIN_INFO { LSA_UNICODE_STRING DomainName;`
+  - `Name` (type_alias, line 8568) `typedef struct _POLICY_DNS_DOMAIN_INFO { LSA_UNICODE_STRING Name;`
+  - `ObjectType` (type_alias, line 8714) `typedef struct _SE_ADT_OBJECT_TYPE { GUID ObjectType;`
+  - `Type` (type_alias, line 8722) `typedef struct _SE_ADT_PARAMETER_ARRAY_ENTRY { SE_ADT_PARAMETER_TYPE Type;`
+  - `AccessMask` (type_alias, line 8730) `typedef struct _SE_ADT_ACCESS_REASON{ ACCESS_MASK AccessMask;`
+  - `CategoryId` (type_alias, line 8742) `typedef struct _SE_ADT_PARAMETER_ARRAY { ULONG CategoryId;`
+  - `Use` (type_alias, line 8913) `typedef struct _LSA_TRANSLATED_SID { SID_NAME_USE Use;`
+  - `AuditLogPercentFull` (type_alias, line 8960) `typedef struct _POLICY_AUDIT_LOG_INFO { ULONG AuditLogPercentFull;`
+  - `AuditingMode` (type_alias, line 8971) `typedef struct _POLICY_AUDIT_EVENTS_INFO { BOOLEAN AuditingMode;`
+  - `MaximumSubCategoryCount` (type_alias, line 8979) `typedef struct _POLICY_AUDIT_SUBCATEGORIES_INFO { ULONG MaximumSubCategoryCount;`
+  - `MaximumCategoryCount` (type_alias, line 8986) `typedef struct _POLICY_AUDIT_CATEGORIES_INFO { ULONG MaximumCategoryCount;`
+  - `Name` (type_alias, line 9011) `typedef struct _POLICY_PRIMARY_DOMAIN_INFO { LSA_UNICODE_STRING Name;`
+  - `Name` (type_alias, line 9018) `typedef struct _POLICY_PD_ACCOUNT_INFO { LSA_UNICODE_STRING Name;`
+  - `LsaServerRole` (type_alias, line 9024) `typedef struct _POLICY_LSA_SERVER_ROLE_INFO { POLICY_LSA_SERVER_ROLE LsaServerRole;`
+  - `ReplicaSource` (type_alias, line 9030) `typedef struct _POLICY_REPLICA_SOURCE_INFO { LSA_UNICODE_STRING ReplicaSource;`
+  - `QuotaLimits` (type_alias, line 9037) `typedef struct _POLICY_DEFAULT_QUOTA_INFO { QUOTA_LIMITS QuotaLimits;`
+  - `ModifiedId` (type_alias, line 9043) `typedef struct _POLICY_MODIFICATION_INFO { LARGE_INTEGER ModifiedId;`
+  - `ShutDownOnFull` (type_alias, line 9051) `typedef struct _POLICY_AUDIT_FULL_SET_INFO { BOOLEAN ShutDownOnFull;`
+  - `ShutDownOnFull` (type_alias, line 9058) `typedef struct _POLICY_AUDIT_FULL_QUERY_INFO { BOOLEAN ShutDownOnFull;`
+  - `QualityOfService` (type_alias, line 9095) `typedef struct _POLICY_DOMAIN_QUALITY_OF_SERVICE_INFO { ULONG QualityOfService;`
+  - `InfoLength` (type_alias, line 9102) `typedef struct _POLICY_DOMAIN_EFS_INFO { ULONG InfoLength;`
+  - `AuthenticationOptions` (type_alias, line 9111) `typedef struct _POLICY_DOMAIN_KERBEROS_TICKET_INFO { ULONG AuthenticationOptions;`
+  - `Name` (type_alias, line 9154) `typedef struct _TRUSTED_DOMAIN_NAME_INFO { LSA_UNICODE_STRING Name;`
+  - `Entries` (type_alias, line 9160) `typedef struct _TRUSTED_CONTROLLERS_INFO { ULONG Entries;`
+  - `Offset` (type_alias, line 9167) `typedef struct _TRUSTED_POSIX_OFFSET_INFO { ULONG Offset;`
+  - `Password` (type_alias, line 9173) `typedef struct _TRUSTED_PASSWORD_INFO { LSA_UNICODE_STRING Password;`
+  - `TRUSTED_DOMAIN_INFORMATION_BASIC` (type_alias, line 9178) `typedef LSA_TRUST_INFORMATION TRUSTED_DOMAIN_INFORMATION_BASIC;`
+  - `PTRUSTED_DOMAIN_INFORMATION_BASIC` (type_alias, line 9180) `typedef PLSA_TRUST_INFORMATION PTRUSTED_DOMAIN_INFORMATION_BASIC;`
+  - `Name` (type_alias, line 9236) `typedef struct _TRUSTED_DOMAIN_INFORMATION_EX { LSA_UNICODE_STRING Name;`
+  - `Name` (type_alias, line 9247) `typedef struct _TRUSTED_DOMAIN_INFORMATION_EX2 { LSA_UNICODE_STRING Name;`
+  - `LastUpdateTime` (type_alias, line 9268) `typedef struct _LSA_AUTH_INFORMATION { LARGE_INTEGER LastUpdateTime;`
+  - `IncomingAuthInfos` (type_alias, line 9276) `typedef struct _TRUSTED_DOMAIN_AUTH_INFORMATION { ULONG IncomingAuthInfos;`
+  - `Information` (type_alias, line 9287) `typedef struct _TRUSTED_DOMAIN_FULL_INFORMATION { TRUSTED_DOMAIN_INFORMATION_EX Information;`
+  - `Information` (type_alias, line 9295) `typedef struct _TRUSTED_DOMAIN_FULL_INFORMATION2 { TRUSTED_DOMAIN_INFORMATION_EX2 Information;`
+  - `SupportedEncryptionTypes` (type_alias, line 9303) `typedef struct _TRUSTED_DOMAIN_SUPPORTED_ENCRYPTION_TYPES { ULONG SupportedEncryptionTypes;`
+  - `Sid` (type_alias, line 9345) `typedef struct _LSA_FOREST_TRUST_DOMAIN_INFO { #ifdef MIDL_PASS PISID Sid;`
+  - `Length` (type_alias, line 9367) `typedef struct _LSA_FOREST_TRUST_BINARY_DATA { #ifdef MIDL_PASS [range(0, MAX_FOREST_TRUST_BINARY_DATA_SIZE)] ULONG...`
+  - `Flags` (type_alias, line 9379) `typedef struct _LSA_FOREST_TRUST_RECORD { ULONG Flags;`
+  - `RecordCount` (type_alias, line 9414) `typedef struct _LSA_FOREST_TRUST_INFORMATION { #ifdef MIDL_PASS [range(0, MAX_RECORDS_IN_FOREST_TRUST_INFO)] ULONG...`
+  - `Index` (type_alias, line 9434) `typedef struct _LSA_FOREST_TRUST_COLLISION_RECORD { ULONG Index;`
+  - `RecordCount` (type_alias, line 9443) `typedef struct _LSA_FOREST_TRUST_COLLISION_INFORMATION { ULONG RecordCount;`
+  - `Sid` (type_alias, line 9464) `typedef struct _LSA_ENUMERATION_INFORMATION { PSID Sid;`
+  - `LastSuccessfulLogon` (type_alias, line 9492) `typedef struct _LSA_LAST_INTER_LOGON_INFO { LARGE_INTEGER LastSuccessfulLogon;`
+  - `Size` (type_alias, line 9502) `typedef struct _SECURITY_LOGON_SESSION_DATA { ULONG Size;`
+  - `Version` (type_alias, line 9853) `typedef struct _EFI_DRIVER_ENTRY { ULONG Version;`
+  - `NextEntryOffset` (type_alias, line 9863) `typedef struct _EFI_DRIVER_ENTRY_LIST { ULONG NextEntryOffset;`
+  - `Address` (type_alias, line 9871) `typedef struct _RTL_STACK_CONTEXT_ENTRY { ULONG_PTR Address;`
+  - `NumberOfEntries` (type_alias, line 9876) `typedef struct _RTL_STACK_CONTEXT { ULONG NumberOfEntries;`
+  - `Length` (type_alias, line 9888) `typedef struct _RTL_HEAP_PARAMETERS { ULONG Length;`
+  - `BalancedRoot` (type_alias, line 10023) `typedef struct _RTL_AVL_TABLE { RTL_BALANCED_LINKS BalancedRoot;`
+  - `TableRoot` (type_alias, line 10038) `typedef struct _RTL_GENERIC_TABLE { PRTL_SPLAY_LINKS TableRoot;`
+  - `Checksum` (type_alias, line 10051) `typedef struct _GENERATE_NAME_CONTEXT { USHORT Checksum;`
+  - `NodeTypeCode` (type_alias, line 10067) `typedef struct _PREFIX_TABLE_ENTRY { CSHORT NodeTypeCode;`
+  - `NodeTypeCode` (type_alias, line 10076) `typedef struct _PREFIX_TABLE { CSHORT NodeTypeCode;`
+  - `NodeTypeCode` (type_alias, line 10083) `typedef struct _UNICODE_PREFIX_TABLE_ENTRY { CSHORT NodeTypeCode;`
+  - `NodeTypeCode` (type_alias, line 10093) `typedef struct _UNICODE_PREFIX_TABLE { CSHORT NodeTypeCode;`
+  - `CompressionFormatAndEngine` (type_alias, line 10109) `typedef struct _COMPRESSED_DATA_INFO { USHORT CompressionFormatAndEngine;`
+  - `TransferAddress` (type_alias, line 10123) `typedef struct _SECTION_IMAGE_INFORMATION { PVOID TransferAddress;`
+  - `TransferAddress` (type_alias, line 10160) `typedef struct _SECTION_IMAGE_INFORMATION64 { ULONGLONG TransferAddress;`
+  - `SizeOfBitMap` (type_alias, line 10184) `typedef struct _RTL_BITMAP { ULONG SizeOfBitMap;`
+  - `ListHead` (type_alias, line 10197) `typedef struct _RTL_RANGE_LIST { LIST_ENTRY ListHead;`
+  - `RangeListHead` (type_alias, line 10214) `typedef struct _RANGE_LIST_ITERATOR { PLIST_ENTRY RangeListHead;`
+  - `Unknown` (type_alias, line 10221) `typedef struct _STARTUP_ARGUMENT { //ULONG Unknown[ 3 ];`
+  - `Length` (type_alias, line 10249) `typedef struct _RTL_USER_PROCESS_INFORMATION { ULONG Length;`
+  - `Length` (type_alias, line 10257) `typedef struct _RTL_USER_PROCESS_INFORMATION64 { ULONG Length;`
+  - `CriticalSection` (type_alias, line 10270) `typedef struct _RTL_RESOURCE { RTL_CRITICAL_SECTION CriticalSection;`
+  - `Magic` (type_alias, line 10289) `typedef struct _RTL_TRACE_BLOCK { ULONG Magic;`
+  - `PRTL_TRACE_DATABASE` (type_alias, line 10304) `typedef struct _RTL_TRACE_DATABASE * PRTL_TRACE_DATABASE;`
+  - `Database` (type_alias, line 10305) `typedef struct _RTL_TRACE_ENUMERATE { PRTL_TRACE_DATABASE Database;`
+  - `InLoadOrderLinks` (type_alias, line 10311) `typedef struct _KLDR_DATA_TABLE_ENTRY { LIST_ENTRY InLoadOrderLinks;`
+  - `Type` (type_alias, line 10346) `typedef struct _DISPATCHER_HEADER { union { struct { UCHAR Type;`
+  - `Header` (type_alias, line 10379) `typedef struct _KEVENT { DISPATCHER_HEADER Header;`
+  - `Header` (type_alias, line 10384) `typedef struct _KGATE { DISPATCHER_HEADER Header;`
+  - `Header` (type_alias, line 10389) `typedef struct _KSEMAPHORE { DISPATCHER_HEADER Header;`
+  - `OwnerThread` (type_alias, line 10395) `typedef struct _OWNER_ENTRY { ULONG OwnerThread;`
+  - `SystemResourcesList` (type_alias, line 10402) `typedef struct _ERESOURCE { LIST_ENTRY SystemResourcesList;`
+
+Next: [KB_common_p4.md](KB_common_p4.md)

@@ -1,0 +1,162 @@
+[
+  {
+    "community_a": 3,
+    "community_b": 1,
+    "connection_type": "depends_on",
+    "explanation": "Extracted import edge crosses communities: client/include/Havoc/DBManager/DBManager.hpp imports client/include/global.hpp.",
+    "strength": 0.9,
+    "confidence": "EXTRACTED"
+  },
+  {
+    "community_a": 5,
+    "community_b": 7,
+    "connection_type": "duplicates",
+    "explanation": "Inferred duplicated scope: communities 5 and 7 share 11 symbols (Jaccard 0.50), e.g. `C_PTR`, `GET_SYMBOL`, `Modules`, `NTDLL_HASH`, `NtCurrentProcess`, `PPEB_PTR`. Candidate for consolidation.",
+    "strength": 0.6,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 1,
+    "community_b": 3,
+    "connection_type": "bridges",
+    "explanation": "Inferred cross-community bridge: client/include/Havoc/CmdLine.hpp reaches client/src/Havoc/PythonApi/PythonApi.cc in 5 hops.",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 1,
+    "community_b": 3,
+    "connection_type": "bridges",
+    "explanation": "Inferred cross-community bridge: client/include/Havoc/CmdLine.hpp reaches client/src/Havoc/PythonApi/UI/PyDialogClass.cc in 5 hops.",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 1,
+    "community_b": 3,
+    "connection_type": "bridges",
+    "explanation": "Inferred cross-community bridge: client/include/Havoc/CmdLine.hpp reaches client/src/Havoc/PythonApi/UI/PyLoggerClass.cc in 5 hops.",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 1,
+    "community_b": 3,
+    "connection_type": "bridges",
+    "explanation": "Inferred cross-community bridge: client/include/Havoc/CmdLine.hpp reaches client/src/Havoc/PythonApi/UI/PyTreeClass.cc in 5 hops.",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 1,
+    "community_b": 3,
+    "connection_type": "bridges",
+    "explanation": "Inferred cross-community bridge: client/include/Havoc/CmdLine.hpp reaches client/src/Havoc/PythonApi/UI/PyWidgetClass.cc in 5 hops.",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 2,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 2 (teamserver/cmd/server).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 4,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 4 (teamserver/pkg/profile/yaotl/ext/customdecode).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 5,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language h and layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 5 (payloads/Shellcode/Include).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 6,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 6 (payloads/Shellcode/Source).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 7,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language h and layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 7 (payloads/DllLdr/Include).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 8,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 8 (teamserver/pkg/profile/yaotl/hclsyntax).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 0,
+    "community_b": 9,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 0 (payloads/Demon/include/core) and community 9 (orphans).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 4,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language go and layer utility) with no import path between community 2 (teamserver/cmd/server) and community 4 (teamserver/pkg/profile/yaotl/ext/customdecode).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 5,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 2 (teamserver/cmd/server) and community 5 (payloads/Shellcode/Include).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 6,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 2 (teamserver/cmd/server) and community 6 (payloads/Shellcode/Source).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 7,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (layer utility) with no import path between community 2 (teamserver/cmd/server) and community 7 (payloads/DllLdr/Include).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 8,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language go and layer utility) with no import path between community 2 (teamserver/cmd/server) and community 8 (teamserver/pkg/profile/yaotl/hclsyntax).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  },
+  {
+    "community_a": 2,
+    "community_b": 9,
+    "connection_type": "shares_context",
+    "explanation": "Inferred shared context (language go and layer utility) with no import path between community 2 (teamserver/cmd/server) and community 9 (orphans).",
+    "strength": 0.5,
+    "confidence": "INFERRED"
+  }
+]
