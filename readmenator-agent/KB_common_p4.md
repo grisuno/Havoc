@@ -1,0 +1,500 @@
+# Subsystem: common (page 4 of 6)
+Previous: [KB_common_p3.md](KB_common_p3.md)
+
+## payloads/Demon/include/common/Native.h (continued)
+  - `CriticalSection` (type_alias, line 10440) `typedef struct _HEAP_LOCK { union { RTL_CRITICAL_SECTION CriticalSection;`
+  - `CommittThresholdShift` (type_alias, line 10449) `typedef struct _HEAP_TUNING_PARAMETERS { ULONG CommittThresholdShift;`
+  - `Allocs` (type_alias, line 10455) `typedef struct _HEAP_PSEUDO_TAG_ENTRY { ULONG Allocs;`
+  - `Allocs` (type_alias, line 10462) `typedef struct _HEAP_TAG_ENTRY { ULONG Allocs;`
+  - `Size` (type_alias, line 10472) `typedef struct _HEAP_ENTRY { USHORT Size;`
+  - `TotalMemoryReserved` (type_alias, line 10495) `typedef struct _HEAP_COUNTERS { ULONG TotalMemoryReserved;`
+  - `Entry` (type_alias, line 10517) `typedef struct _HEAP { HEAP_ENTRY Entry;`
+  - `TagIndex` (type_alias, line 10574) `typedef struct _HEAP_FREE_ENTRY_EXTRA { USHORT TagIndex;`
+  - `AllocatorBackTraceIndex` (type_alias, line 10580) `typedef struct _HEAP_ENTRY_EXTRA { USHORT AllocatorBackTraceIndex;`
+  - `Entry` (type_alias, line 10588) `typedef struct _HEAP_VIRTUAL_ALLOC_ENTRY { LIST_ENTRY Entry;`
+  - `Offset` (type_alias, line 10674) `typedef struct _XSTATE_FEATURE { DWORD Offset;`
+  - `EnabledFeatures` (type_alias, line 10678) `typedef struct _XSTATE_CONFIGURATION { // Mask of enabled features DWORD64 EnabledFeatures;`
+  - `TickCountLowDeprecated` (type_alias, line 10701) `typedef struct _KUSER_SHARED_DATA { ULONG TickCountLowDeprecated;`
+  - `Process` (type_alias, line 10915) `typedef struct _RTL_PROCESS_REFLECTION_INFORMATION { HANDLE Process;`
+  - `PeakVirtualSize` (type_alias, line 10923) `typedef struct _VM_COUNTERS { SIZE_T PeakVirtualSize;`
+  - `ReadOperationCount` (type_alias, line 10940) `typedef struct _IO_COUNTERS { ULONGLONG ReadOperationCount;`
+  - `NextEntryDelta` (type_alias, line 10953) `typedef struct _SYSTEM_PROCESSES_INFORMATION { ULONG NextEntryDelta;`
+  - `ExceptionRecord` (type_alias, line 10976) `typedef struct _DBGKM_EXCEPTION { EXCEPTION_RECORD ExceptionRecord;`
+  - `SubSystemKey` (type_alias, line 10982) `typedef struct _DBGKM_CREATE_THREAD { ULONG SubSystemKey;`
+  - `SubSystemKey` (type_alias, line 10988) `typedef struct _DBGKM_CREATE_PROCESS { ULONG SubSystemKey;`
+  - `ExitStatus` (type_alias, line 10998) `typedef struct _DBGKM_EXIT_THREAD { NTSTATUS ExitStatus;`
+  - `ExitStatus` (type_alias, line 11003) `typedef struct _DBGKM_EXIT_PROCESS { NTSTATUS ExitStatus;`
+  - `FileHandle` (type_alias, line 11008) `typedef struct _DBGKM_LOAD_DLL { HANDLE FileHandle;`
+  - `BaseAddress` (type_alias, line 11017) `typedef struct _DBGKM_UNLOAD_DLL { PVOID BaseAddress;`
+  - `HandleToThread` (type_alias, line 11037) `typedef struct _DBGUI_CREATE_THREAD { HANDLE HandleToThread;`
+  - `HandleToProcess` (type_alias, line 11043) `typedef struct _DBGUI_CREATE_PROCESS { HANDLE HandleToProcess;`
+  - `NewState` (type_alias, line 11050) `typedef struct _DBGUI_WAIT_STATE_CHANGE { DBG_STATE NewState;`
+  - `NumberOfAllocations` (type_alias, line 11086) `typedef struct _RTL_HEAP_TAG_INFO { ULONG NumberOfAllocations;`
+  - `Length` (type_alias, line 11109) `typedef struct _RTL_HEAP_USAGE { ULONG Length;`
+  - `DataAddress` (type_alias, line 11125) `typedef struct _RTL_HEAP_WALK_ENTRY { PVOID DataAddress;`
+  - `InterceptorFunction` (type_alias, line 11162) `typedef struct _HEAP_DEBUGGING_INFORMATION { PVOID InterceptorFunction;`
+  - `Ptr` (type_alias, line 11191) `typedef struct _RTL_SRWLOCK { PVOID Ptr;`
+  - `Segment` (type_alias, line 11195) `typedef struct _RTL_MEMORY_ZONE { RTL_MEMORY_ZONE_SEGMENT Segment;`
+  - `SizeStruct` (type_alias, line 11203) `typedef struct _RTL_PROCESS_VERIFIER_OPTIONS { ULONG SizeStruct;`
+  - `dwNumberOfOffsets` (type_alias, line 11217) `typedef struct _VM_INFORMATION { DWORD dwNumberOfOffsets;`
+  - `VirtualAddress` (type_alias, line 11226) `typedef struct _MEMORY_RANGE_ENTRY { PVOID VirtualAddress;`
+  - `NumberOfLocks` (type_alias, line 11232) `typedef struct _RTL_PROCESS_LOCKS { ULONG NumberOfLocks;`
+  - `SymbolicBackTrace` (type_alias, line 11239) `typedef struct _RTL_PROCESS_BACKTRACE_INFORMATION { PCHAR SymbolicBackTrace;`
+  - `CommittedMemory` (type_alias, line 11247) `typedef struct _RTL_PROCESS_BACKTRACES { ULONG CommittedMemory;`
+  - `SectionHandleClient` (type_alias, line 11255) `typedef struct _RTL_DEBUG_INFORMATION { HANDLE SectionHandleClient;`
+  - `Flags` (type_alias, line 11328) `typedef struct _RTL_HANDLE_TABLE_ENTRY { union { ULONG Flags;`
+  - `MaximumNumberOfHandles` (type_alias, line 11340) `typedef struct _RTL_HANDLE_TABLE { ULONG MaximumNumberOfHandles;`
+  - `JobHandle` (type_alias, line 11353) `typedef struct _JOB_SET_ARRAY { HANDLE JobHandle;`
+  - `Ptr` (type_alias, line 11504) `typedef struct _EVENT_DATA_DESCRIPTOR { ULONG_PTR Ptr;`
+  - `Id` (type_alias, line 11511) `typedef struct _EVENT_DESCRIPTOR { USHORT Id;`
+  - `Ptr` (type_alias, line 11528) `typedef struct _EVENT_FILTER_DESCRIPTOR { ULONG_PTR Ptr;`
+  - `Text` (type_alias, line 11540) `typedef struct _CHANNEL_MESSAGE { PVOID Text;`
+  - `Signature` (type_alias, line 11552) `typedef struct _HOTPATCH_HEADER { ULONG Signature;`
+  - `HotpatchImageNameLength` (type_alias, line 11571) `typedef struct _HOTPATCH_MODULE_DATA { USHORT HotpatchImageNameLength;`
+  - `ListEntry` (type_alias, line 11578) `typedef struct _HOTPATCH_MODULE_ENTRY { struct _TRIPLE_LIST_ENTRY ListEntry;`
+  - `HookType` (type_alias, line 11584) `typedef struct _HOTPATCH_HOOK { USHORT HookType;`
+  - `PatchList` (type_alias, line 11593) `typedef struct _RTL_PATCH_HEADER { LIST_ENTRY PatchList;`
+  - `Next` (type_alias, line 11632) `typedef struct DECLSPEC_ALIGN(16) _SLIST_ENTRY { PSLIST_ENTRY Next;`
+  - `Alignment` (type_alias, line 11646) `typedef struct DECLSPEC_ALIGN(16) _SLIST_HEADER { ULONGLONG Alignment;`
+  - `PRTL_OSVERSIONINFOW` (type_alias, line 14762) `typedef POSVERSIONINFOW PRTL_OSVERSIONINFOW;`
+  - `PRTL_OSVERSIONINFOEXW` (type_alias, line 14763) `typedef POSVERSIONINFOEXW PRTL_OSVERSIONINFOEXW;`
+  - `BaseAddress` (type_alias, line 21428) `typedef struct _RTL_UNLOAD_EVENT_TRACE { PVOID BaseAddress;`
+  - `BaseAddress` (type_alias, line 21437) `typedef struct _RTL_UNLOAD_EVENT_TRACE64 { ULONGLONG BaseAddress;`
+  - `BaseAddress` (type_alias, line 21446) `typedef struct _RTL_UNLOAD_EVENT_TRACE32 { ULONG BaseAddress;`
+  - `ai_flags` (type_alias, line 22497) `typedef struct addrinfo { int ai_flags;`
+  - `NtCurrentPeb` (function, line 7104) `__inline struct _PEB * NtCurrentPeb()`
+  - `GetKUserSharedData` (function, line 10905) `__inline struct _KUSER_SHARED_DATA * GetKUserSharedData()`
+  - `NtGetTickCount` (function, line 10907) `__forceinline ULONG NtGetTickCount()`
+  - `A_SHAFinal` (function, line 21318) `void NTAPI A_SHAFinal( PSHA_CTX Context, PULONG Result );`
+  - `RtlInitString` (function, line 21963) `void NTAPI RtlInitString( PSTRING DestinationString, PCSZ SourceString );`
+  - `RtlUpdateClonedCriticalSection` (function, line 22100) `void NTAPI RtlUpdateClonedCriticalSection( PRTL_CRITICAL_SECTION CriticalSection );`
+  - `LdrInitShimEngineDynamic` (function, line 22118) `int NTAPI LdrInitShimEngineDynamic( PVOID pShimEngineModule);`
+  - `ZwWow64GetCurrentProcessorNumberEx` (function, line 22202) `void NTAPI ZwWow64GetCurrentProcessorNumberEx( OUT PPROCESSOR_NUMBER ProcNumber );`
+  - `ZwWow64CsrCaptureMessageBuffer` (function, line 22224) `void NTAPI ZwWow64CsrCaptureMessageBuffer( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN PVOID Buffer OPTIONAL, IN...`
+  - `ZwWow64CsrCaptureMessageString` (function, line 22233) `void NTAPI ZwWow64CsrCaptureMessageString( _Inout_ PCSR_CAPTURE_HEADER CaptureBuffer, IN PCSTR String, IN ULONG...`
+  - `ZwWow64CsrFreeCaptureBuffer` (function, line 22254) `void NTAPI ZwWow64CsrFreeCaptureBuffer( IN PCSR_CAPTURE_HEADER CaptureBuffer );`
+  - `wcslen` (function, line 22538) `IMPORT_FN size_t __cdecl wcslen(const wchar_t *);`
+  - `wcscat` (function, line 22539) `IMPORT_FN wchar_t * __cdecl wcscat(wchar_t *dst, const wchar_t *src);`
+  - `wcscmp` (function, line 22540) `IMPORT_FN int __cdecl wcscmp(const wchar_t *src, const wchar_t *dst);`
+  - `_wcsicmp` (function, line 22541) `IMPORT_FN int __cdecl _wcsicmp(const wchar_t *, const wchar_t *);`
+  - `_wcsnicmp` (function, line 22542) `IMPORT_FN int __cdecl _wcsnicmp(const wchar_t *, const wchar_t *, size_t);`
+  - `_wcslwr` (function, line 22543) `IMPORT_FN wchar_t * __cdecl _wcslwr(wchar_t *);`
+  - `_wcsupr` (function, line 22544) `IMPORT_FN wchar_t * __cdecl _wcsupr(wchar_t *);`
+  - `wcschr` (function, line 22545) `IMPORT_FN wchar_t * __cdecl wcschr(const wchar_t *string, wchar_t ch);`
+  - `wcscpy` (function, line 22546) `IMPORT_FN wchar_t * __cdecl wcscpy(wchar_t *dst, const wchar_t *src);`
+  - `wcsncat` (function, line 22547) `IMPORT_FN wchar_t * __cdecl wcsncat(wchar_t *front, const wchar_t *back, size_t count);`
+  - `wcsncpy` (function, line 22548) `IMPORT_FN wchar_t * __cdecl wcsncpy(wchar_t *dest, const wchar_t *source, size_t count);`
+  - `NTSTATUS` (variable, line 34) `extern "C" { #endif #include <wtypes.h> #include <basetsd.h> #if !defined(NTSTATUS) typedef LONG NTSTATUS;`
+  - `_NTDLL_` (macro, line 21) `#define _NTDLL_`
+  - `EXPORT_FN` (macro, line 49) `#define EXPORT_FN`
+  - `IMPORT_FN` (macro, line 50) `#define IMPORT_FN`
+  - `PAGE_SIZE` (macro, line 52) `#define PAGE_SIZE`
+  - `EXTERNAL` (macro, line 54) `#define EXTERNAL`
+  - `UNREFERENCED_PARAMETER` (macro, line 57) `#define UNREFERENCED_PARAMETER(P)`
+  - `NT_SUCCESS` (macro, line 62) `#define NT_SUCCESS(Status)`
+  - `NT_INFORMATION` (macro, line 63) `#define NT_INFORMATION(Status)`
+  - `NT_WARNING` (macro, line 64) `#define NT_WARNING(Status)`
+  - `NT_ERROR` (macro, line 65) `#define NT_ERROR(Status)`
+  - `ABSOLUTE_TIME` (macro, line 67) `#define ABSOLUTE_TIME(wait)`
+  - `RELATIVE_TIME` (macro, line 68) `#define RELATIVE_TIME(wait)`
+  - `NANOSECONDS` (macro, line 69) `#define NANOSECONDS(nanos)`
+  - `MICROSECONDS` (macro, line 71) `#define MICROSECONDS(micros)`
+  - `MILLISECONDS` (macro, line 73) `#define MILLISECONDS(milli)`
+  - `SECONDS` (macro, line 75) `#define SECONDS(seconds)`
+  - `ARGUMENT_PRESENT` (macro, line 78) `#define ARGUMENT_PRESENT(ArgumentPointer)`
+  - `RESTORE_LIST` (macro, line 81) `#define RESTORE_LIST(ListEntry)`
+  - `UNLINK` (macro, line 85) `#define UNLINK(x)`
+  - `ALIGN_TO_POWER2` (macro, line 88) `#define ALIGN_TO_POWER2( x, n )`
+  - `POI` (macro, line 90) `#define POI(addr)`
+  - `IS_PATH_SEPARATOR` (macro, line 92) `#define IS_PATH_SEPARATOR(ch)`
+  - `IS_DOT` (macro, line 93) `#define IS_DOT(s)`
+  - `IS_DOT_DOT` (macro, line 94) `#define IS_DOT_DOT(s)`
+  - `IS_PATH_SEPARATOR_U` (macro, line 96) `#define IS_PATH_SEPARATOR_U(ch)`
+  - `IS_DOT_U` (macro, line 97) `#define IS_DOT_U(s)`
+  - `IS_DOT_DOT_U` (macro, line 98) `#define IS_DOT_DOT_U(s)`
+  - `jmp_length` (macro, line 100) `#define jmp_length(y,x)`
+  - `stc_jc` (macro, line 101) `#define stc_jc(y,x)`
+  - `MODIFYBYTE` (macro, line 103) `#define MODIFYBYTE( _base, _offset, _byte )`
+  - `MODIFYWORD` (macro, line 104) `#define MODIFYWORD( _base, _offset, _word )`
+  - `MODIFYDWORD` (macro, line 105) `#define MODIFYDWORD( _base, _offset, _dword )`
+  - `MODIFYQWORD` (macro, line 106) `#define MODIFYQWORD( _base, _offset, _qword )`
+  - `PTR_ADD_OFFSET` (macro, line 108) `#define PTR_ADD_OFFSET(Pointer, Offset)`
+  - `WRITE_JMP` (macro, line 110) `#define WRITE_JMP( from, to )`
+  - `GET_JMP` (macro, line 111) `#define GET_JMP( from )`
+  - `ASSERT` (macro, line 113) `#define ASSERT( exp )`
+  - `SHORT_SIZE` (macro, line 120) `#define SHORT_SIZE`
+  - `SHORT_MASK` (macro, line 121) `#define SHORT_MASK`
+  - `LONG_SIZE` (macro, line 122) `#define LONG_SIZE`
+  - `LONG_MASK` (macro, line 123) `#define LONG_MASK`
+  - `LOWBYTE_MASK` (macro, line 124) `#define LOWBYTE_MASK`
+  - `FIRSTBYTE` (macro, line 126) `#define FIRSTBYTE(VALUE)`
+  - `SECONDBYTE` (macro, line 127) `#define SECONDBYTE(VALUE)`
+  - `THIRDBYTE` (macro, line 128) `#define THIRDBYTE(VALUE)`
+  - `FOURTHBYTE` (macro, line 129) `#define FOURTHBYTE(VALUE)`
+  - `SHORT_LEAST_SIGNIFICANT_BIT` (macro, line 135) `#define SHORT_LEAST_SIGNIFICANT_BIT`
+  - `SHORT_MOST_SIGNIFICANT_BIT` (macro, line 136) `#define SHORT_MOST_SIGNIFICANT_BIT`
+  - `LONG_LEAST_SIGNIFICANT_BIT` (macro, line 138) `#define LONG_LEAST_SIGNIFICANT_BIT`
+  - `LONG_3RD_MOST_SIGNIFICANT_BIT` (macro, line 139) `#define LONG_3RD_MOST_SIGNIFICANT_BIT`
+  - `LONG_2ND_MOST_SIGNIFICANT_BIT` (macro, line 140) `#define LONG_2ND_MOST_SIGNIFICANT_BIT`
+  - `LONG_MOST_SIGNIFICANT_BIT` (macro, line 141) `#define LONG_MOST_SIGNIFICANT_BIT`
+  - `RtlStoreUshort` (macro, line 167) `#define RtlStoreUshort(ADDRESS,VALUE)`
+  - `RtlStoreUlong` (macro, line 205) `#define RtlStoreUlong(ADDRESS,VALUE)`
+  - `RtlRetrieveUshort` (macro, line 240) `#define RtlRetrieveUshort(DEST_ADDRESS,SRC_ADDRESS)`
+  - `RtlRetrieveUlong` (macro, line 277) `#define RtlRetrieveUlong(DEST_ADDRESS,SRC_ADDRESS)`
+  - `RtlOffsetToPointer` (macro, line 316) `#define RtlOffsetToPointer(B,O)`
+  - `RtlPointerToOffset` (macro, line 347) `#define RtlPointerToOffset(B,P)`
+  - `ANSI_NULL` (macro, line 389) `#define ANSI_NULL`
+  - `UNICODE_NULL` (macro, line 412) `#define UNICODE_NULL`
+  - `FIELD_OFFSET` (macro, line 449) `#define FIELD_OFFSET(type, field)`
+  - `CONTAINING_RECORD` (macro, line 451) `#define CONTAINING_RECORD(address, type, field)`
+  - `IN_REGION` (macro, line 462) `#define IN_REGION(x, Base, Size)`
+  - `RVATOVA` (macro, line 465) `#define RVATOVA(base, offset)`
+  - `NOP_FUNCTION` (macro, line 469) `#define NOP_FUNCTION`
+  - `PAGED_CODE` (macro, line 471) `#define PAGED_CODE()`
+  - `LPC_CLIENT_ID` (macro, line 474) `#define LPC_CLIENT_ID`
+  - `LPC_SIZE_T` (macro, line 475) `#define LPC_SIZE_T`
+  - `LPC_PVOID` (macro, line 476) `#define LPC_PVOID`
+  - `LPC_HANDLE` (macro, line 477) `#define LPC_HANDLE`
+  - `LPC_CLIENT_ID` (macro, line 479) `#define LPC_CLIENT_ID`
+  - `LPC_SIZE_T` (macro, line 480) `#define LPC_SIZE_T`
+  - `LPC_PVOID` (macro, line 481) `#define LPC_PVOID`
+  - `LPC_HANDLE` (macro, line 482) `#define LPC_HANDLE`
+  - `OBJ_INHERIT` (macro, line 485) `#define OBJ_INHERIT`
+  - `OBJ_HANDLE_TAGBITS` (macro, line 486) `#define OBJ_HANDLE_TAGBITS`
+  - `OBJ_PERMANENT` (macro, line 487) `#define OBJ_PERMANENT`
+  - `OBJ_EXCLUSIVE` (macro, line 488) `#define OBJ_EXCLUSIVE`
+  - `OBJ_CASE_INSENSITIVE` (macro, line 489) `#define OBJ_CASE_INSENSITIVE`
+  - `OBJ_OPENIF` (macro, line 490) `#define OBJ_OPENIF`
+  - `OBJ_OPENLINK` (macro, line 491) `#define OBJ_OPENLINK`
+  - `OBJ_KERNEL_HANDLE` (macro, line 492) `#define OBJ_KERNEL_HANDLE`
+  - `OBJ_FORCE_ACCESS_CHECK` (macro, line 493) `#define OBJ_FORCE_ACCESS_CHECK`
+  - `OBJ_VALID_ATTRIBUTES` (macro, line 494) `#define OBJ_VALID_ATTRIBUTES`
+  - `RTL_QUERY_PROCESS_MODULES` (macro, line 496) `#define RTL_QUERY_PROCESS_MODULES`
+  - `RTL_QUERY_PROCESS_BACKTRACES` (macro, line 497) `#define RTL_QUERY_PROCESS_BACKTRACES`
+  - `RTL_QUERY_PROCESS_HEAP_SUMMARY` (macro, line 498) `#define RTL_QUERY_PROCESS_HEAP_SUMMARY`
+  - `RTL_QUERY_PROCESS_HEAP_TAGS` (macro, line 499) `#define RTL_QUERY_PROCESS_HEAP_TAGS`
+  - `RTL_QUERY_PROCESS_HEAP_ENTRIES` (macro, line 500) `#define RTL_QUERY_PROCESS_HEAP_ENTRIES`
+  - `RTL_QUERY_PROCESS_LOCKS` (macro, line 501) `#define RTL_QUERY_PROCESS_LOCKS`
+  - `RTL_QUERY_PROCESS_MODULES32` (macro, line 502) `#define RTL_QUERY_PROCESS_MODULES32`
+  - `RTL_QUERY_PROCESS_NONINVASIVE` (macro, line 503) `#define RTL_QUERY_PROCESS_NONINVASIVE`
+  - `InitializeObjectAttributes` (macro, line 517) `#define InitializeObjectAttributes( p, n, a, r, s )`
+  - `___PROCESSOR_NUMBER_DEFINED` (macro, line 533) `#define ___PROCESSOR_NUMBER_DEFINED`
+  - `ANSI_NULL` (macro, line 543) `#define ANSI_NULL`
+  - `UNICODE_NULL` (macro, line 544) `#define UNICODE_NULL`
+  - `UNICODE_STRING_MAX_BYTES` (macro, line 547) `#define UNICODE_STRING_MAX_BYTES`
+  - `UNICODE_STRING_MAX_CHARS` (macro, line 550) `#define UNICODE_STRING_MAX_CHARS`
+  - `DECLARE_CONST_UNICODE_STRING` (macro, line 552) `#define DECLARE_CONST_UNICODE_STRING(_variablename, _string)`
+  - `IsListEmpty` (macro, line 558) `#define IsListEmpty(ListHead)`
+  - `InitializeListHead` (macro, line 561) `#define InitializeListHead(ListHead)`
+  - `IsListEmpty` (macro, line 564) `#define IsListEmpty(ListHead)`
+  - `RemoveHeadList` (macro, line 567) `#define RemoveHeadList(ListHead)`
+  - `RemoveTailList` (macro, line 571) `#define RemoveTailList(ListHead)`
+  - `RemoveEntryList` (macro, line 579) `#define RemoveEntryList(Entry)`
+  - `InsertTailList` (macro, line 594) `#define InsertTailList(ListHead,Entry)`
+  - `InsertHeadList` (macro, line 610) `#define InsertHeadList(ListHead,Entry)`
+  - `COUNT_IS_ALIGNED` (macro, line 627) `#define COUNT_IS_ALIGNED(Count,Pow2)`
+  - `POINTER_IS_ALIGNED` (macro, line 636) `#define POINTER_IS_ALIGNED(Ptr,Pow2)`
+  - `ROUND_DOWN_COUNT` (macro, line 640) `#define ROUND_DOWN_COUNT(Count,Pow2)`
+  - `ROUND_DOWN_POINTER` (macro, line 643) `#define ROUND_DOWN_POINTER(Ptr,Pow2)`
+  - `ROUND_UP_COUNT` (macro, line 655) `#define ROUND_UP_COUNT(Count,Pow2)`
+  - `ROUND_UP_POINTER` (macro, line 665) `#define ROUND_UP_POINTER(Ptr,Pow2)`
+  - `ALIGN_BYTE` (macro, line 668) `#define ALIGN_BYTE`
+  - `ALIGN_CHAR` (macro, line 669) `#define ALIGN_CHAR`
+  - `ALIGN_DESC_CHAR` (macro, line 670) `#define ALIGN_DESC_CHAR`
+  - `ALIGN_DWORD` (macro, line 671) `#define ALIGN_DWORD`
+  - `ALIGN_LONG` (macro, line 672) `#define ALIGN_LONG`
+  - `ALIGN_LPBYTE` (macro, line 673) `#define ALIGN_LPBYTE`
+  - `ALIGN_LPDWORD` (macro, line 674) `#define ALIGN_LPDWORD`
+  - `ALIGN_LPSTR` (macro, line 675) `#define ALIGN_LPSTR`
+  - `ALIGN_LPTSTR` (macro, line 676) `#define ALIGN_LPTSTR`
+  - `ALIGN_LPVOID` (macro, line 677) `#define ALIGN_LPVOID`
+  - `ALIGN_LPWORD` (macro, line 678) `#define ALIGN_LPWORD`
+  - `ALIGN_TCHAR` (macro, line 679) `#define ALIGN_TCHAR`
+  - `ALIGN_WCHAR` (macro, line 680) `#define ALIGN_WCHAR`
+  - `ALIGN_WORD` (macro, line 681) `#define ALIGN_WORD`
+  - `ALIGN_QUAD` (macro, line 682) `#define ALIGN_QUAD`
+  - `ALIGN_WORST` (macro, line 684) `#define ALIGN_WORST`
+  - `QUAD_ALIGN` (macro, line 687) `#define QUAD_ALIGN(VALUE)`
+  - `EXPORT_VA` (macro, line 693) `#define EXPORT_VA(x)`
+  - `IMPORT_VA` (macro, line 694) `#define IMPORT_VA(x)`
+  - `RELOC_VA` (macro, line 695) `#define RELOC_VA(x)`
+  - `RESOURCE_VA` (macro, line 696) `#define RESOURCE_VA(x)`
+  - `EXPORT_SIZE` (macro, line 698) `#define EXPORT_SIZE(x)`
+  - `IMPORT_SIZE` (macro, line 699) `#define IMPORT_SIZE(x)`
+  - `RELOC_SIZE` (macro, line 700) `#define RELOC_SIZE(x)`
+  - `RESOURCE_SIZE` (macro, line 701) `#define RESOURCE_SIZE(x)`
+  - `DEBUGDIR_VA` (macro, line 702) `#define DEBUGDIR_VA(x)`
+  - `DEBUGDIR_SIZE` (macro, line 703) `#define DEBUGDIR_SIZE(x)`
+  - `IS_VALID_HANDLE` (macro, line 706) `#define IS_VALID_HANDLE(hHandle)`
+  - `SIZEOF_ARRAY` (macro, line 707) `#define SIZEOF_ARRAY(arr)`
+  - `_FILESYSTEMFSCTL_` (macro, line 712) `#define _FILESYSTEMFSCTL_`
+  - `FSCTL_REQUEST_OPLOCK_LEVEL_1` (macro, line 714) `#define FSCTL_REQUEST_OPLOCK_LEVEL_1`
+  - `FSCTL_REQUEST_OPLOCK_LEVEL_2` (macro, line 715) `#define FSCTL_REQUEST_OPLOCK_LEVEL_2`
+  - `FSCTL_REQUEST_BATCH_OPLOCK` (macro, line 716) `#define FSCTL_REQUEST_BATCH_OPLOCK`
+  - `FSCTL_OPLOCK_BREAK_ACKNOWLEDGE` (macro, line 717) `#define FSCTL_OPLOCK_BREAK_ACKNOWLEDGE`
+  - `FSCTL_OPBATCH_ACK_CLOSE_PENDING` (macro, line 718) `#define FSCTL_OPBATCH_ACK_CLOSE_PENDING`
+  - `FSCTL_OPLOCK_BREAK_NOTIFY` (macro, line 719) `#define FSCTL_OPLOCK_BREAK_NOTIFY`
+  - `FSCTL_LOCK_VOLUME` (macro, line 720) `#define FSCTL_LOCK_VOLUME`
+  - `FSCTL_UNLOCK_VOLUME` (macro, line 721) `#define FSCTL_UNLOCK_VOLUME`
+  - `FSCTL_DISMOUNT_VOLUME` (macro, line 722) `#define FSCTL_DISMOUNT_VOLUME`
+  - `FSCTL_IS_VOLUME_MOUNTED` (macro, line 724) `#define FSCTL_IS_VOLUME_MOUNTED`
+  - `FSCTL_IS_PATHNAME_VALID` (macro, line 725) `#define FSCTL_IS_PATHNAME_VALID`
+  - `FSCTL_MARK_VOLUME_DIRTY` (macro, line 726) `#define FSCTL_MARK_VOLUME_DIRTY`
+  - `FSCTL_QUERY_RETRIEVAL_POINTERS` (macro, line 728) `#define FSCTL_QUERY_RETRIEVAL_POINTERS`
+  - `FSCTL_GET_COMPRESSION` (macro, line 729) `#define FSCTL_GET_COMPRESSION`
+  - `FSCTL_SET_COMPRESSION` (macro, line 730) `#define FSCTL_SET_COMPRESSION`
+  - `FSCTL_SET_BOOTLOADER_ACCESSED` (macro, line 733) `#define FSCTL_SET_BOOTLOADER_ACCESSED`
+  - `FSCTL_OPLOCK_BREAK_ACK_NO_2` (macro, line 734) `#define FSCTL_OPLOCK_BREAK_ACK_NO_2`
+  - `FSCTL_INVALIDATE_VOLUMES` (macro, line 735) `#define FSCTL_INVALIDATE_VOLUMES`
+  - `FSCTL_QUERY_FAT_BPB` (macro, line 736) `#define FSCTL_QUERY_FAT_BPB`
+  - `FSCTL_REQUEST_FILTER_OPLOCK` (macro, line 737) `#define FSCTL_REQUEST_FILTER_OPLOCK`
+  - `FSCTL_FILESYSTEM_GET_STATISTICS` (macro, line 738) `#define FSCTL_FILESYSTEM_GET_STATISTICS`
+  - `FSCTL_GET_NTFS_VOLUME_DATA` (macro, line 741) `#define FSCTL_GET_NTFS_VOLUME_DATA`
+  - `FSCTL_GET_NTFS_FILE_RECORD` (macro, line 742) `#define FSCTL_GET_NTFS_FILE_RECORD`
+  - `FSCTL_GET_VOLUME_BITMAP` (macro, line 743) `#define FSCTL_GET_VOLUME_BITMAP`
+  - `FSCTL_GET_RETRIEVAL_POINTERS` (macro, line 744) `#define FSCTL_GET_RETRIEVAL_POINTERS`
+  - `FSCTL_MOVE_FILE` (macro, line 745) `#define FSCTL_MOVE_FILE`
+  - `FSCTL_IS_VOLUME_DIRTY` (macro, line 746) `#define FSCTL_IS_VOLUME_DIRTY`
+  - `FSCTL_ALLOW_EXTENDED_DASD_IO` (macro, line 748) `#define FSCTL_ALLOW_EXTENDED_DASD_IO`
+  - `FSCTL_FIND_FILES_BY_SID` (macro, line 754) `#define FSCTL_FIND_FILES_BY_SID`
+  - `FSCTL_SET_OBJECT_ID` (macro, line 757) `#define FSCTL_SET_OBJECT_ID`
+  - `FSCTL_GET_OBJECT_ID` (macro, line 758) `#define FSCTL_GET_OBJECT_ID`
+  - `FSCTL_DELETE_OBJECT_ID` (macro, line 759) `#define FSCTL_DELETE_OBJECT_ID`
+  - `FSCTL_SET_REPARSE_POINT` (macro, line 760) `#define FSCTL_SET_REPARSE_POINT`
+  - `FSCTL_GET_REPARSE_POINT` (macro, line 761) `#define FSCTL_GET_REPARSE_POINT`
+  - `FSCTL_DELETE_REPARSE_POINT` (macro, line 762) `#define FSCTL_DELETE_REPARSE_POINT`
+  - `FSCTL_ENUM_USN_DATA` (macro, line 763) `#define FSCTL_ENUM_USN_DATA`
+  - `FSCTL_SECURITY_ID_CHECK` (macro, line 764) `#define FSCTL_SECURITY_ID_CHECK`
+  - `FSCTL_READ_USN_JOURNAL` (macro, line 765) `#define FSCTL_READ_USN_JOURNAL`
+  - `FSCTL_SET_OBJECT_ID_EXTENDED` (macro, line 766) `#define FSCTL_SET_OBJECT_ID_EXTENDED`
+  - `FSCTL_CREATE_OR_GET_OBJECT_ID` (macro, line 767) `#define FSCTL_CREATE_OR_GET_OBJECT_ID`
+  - `FSCTL_SET_SPARSE` (macro, line 768) `#define FSCTL_SET_SPARSE`
+  - `FSCTL_SET_ZERO_DATA` (macro, line 769) `#define FSCTL_SET_ZERO_DATA`
+  - `FSCTL_QUERY_ALLOCATED_RANGES` (macro, line 770) `#define FSCTL_QUERY_ALLOCATED_RANGES`
+  - `FSCTL_ENABLE_UPGRADE` (macro, line 771) `#define FSCTL_ENABLE_UPGRADE`
+  - `FSCTL_SET_ENCRYPTION` (macro, line 773) `#define FSCTL_SET_ENCRYPTION`
+  - `FSCTL_ENCRYPTION_FSCTL_IO` (macro, line 774) `#define FSCTL_ENCRYPTION_FSCTL_IO`
+  - `FSCTL_WRITE_RAW_ENCRYPTED` (macro, line 775) `#define FSCTL_WRITE_RAW_ENCRYPTED`
+  - `FSCTL_READ_RAW_ENCRYPTED` (macro, line 776) `#define FSCTL_READ_RAW_ENCRYPTED`
+  - `FSCTL_CREATE_USN_JOURNAL` (macro, line 777) `#define FSCTL_CREATE_USN_JOURNAL`
+  - `FSCTL_READ_FILE_USN_DATA` (macro, line 778) `#define FSCTL_READ_FILE_USN_DATA`
+  - `FSCTL_WRITE_USN_CLOSE_RECORD` (macro, line 779) `#define FSCTL_WRITE_USN_CLOSE_RECORD`
+  - `FSCTL_EXTEND_VOLUME` (macro, line 780) `#define FSCTL_EXTEND_VOLUME`
+  - `FSCTL_QUERY_USN_JOURNAL` (macro, line 781) `#define FSCTL_QUERY_USN_JOURNAL`
+  - `FSCTL_DELETE_USN_JOURNAL` (macro, line 782) `#define FSCTL_DELETE_USN_JOURNAL`
+  - `FSCTL_MARK_HANDLE` (macro, line 783) `#define FSCTL_MARK_HANDLE`
+  - `FSCTL_SIS_COPYFILE` (macro, line 784) `#define FSCTL_SIS_COPYFILE`
+  - `FSCTL_SIS_LINK_FILES` (macro, line 785) `#define FSCTL_SIS_LINK_FILES`
+  - `FSCTL_RECALL_FILE` (macro, line 789) `#define FSCTL_RECALL_FILE`
+  - `FSCTL_READ_FROM_PLEX` (macro, line 791) `#define FSCTL_READ_FROM_PLEX`
+  - `FSCTL_FILE_PREFETCH` (macro, line 792) `#define FSCTL_FILE_PREFETCH`
+  - `FSCTL_MAKE_MEDIA_COMPATIBLE` (macro, line 796) `#define FSCTL_MAKE_MEDIA_COMPATIBLE`
+  - `FSCTL_SET_DEFECT_MANAGEMENT` (macro, line 797) `#define FSCTL_SET_DEFECT_MANAGEMENT`
+  - `FSCTL_QUERY_SPARING_INFO` (macro, line 798) `#define FSCTL_QUERY_SPARING_INFO`
+  - `FSCTL_QUERY_ON_DISK_VOLUME_INFO` (macro, line 799) `#define FSCTL_QUERY_ON_DISK_VOLUME_INFO`
+  - `FSCTL_SET_VOLUME_COMPRESSION_STATE` (macro, line 800) `#define FSCTL_SET_VOLUME_COMPRESSION_STATE`
+  - `FSCTL_TXFS_MODIFY_RM` (macro, line 802) `#define FSCTL_TXFS_MODIFY_RM`
+  - `FSCTL_TXFS_QUERY_RM_INFORMATION` (macro, line 803) `#define FSCTL_TXFS_QUERY_RM_INFORMATION`
+  - `FSCTL_TXFS_ROLLFORWARD_REDO` (macro, line 805) `#define FSCTL_TXFS_ROLLFORWARD_REDO`
+  - `FSCTL_TXFS_ROLLFORWARD_UNDO` (macro, line 806) `#define FSCTL_TXFS_ROLLFORWARD_UNDO`
+  - `FSCTL_TXFS_START_RM` (macro, line 807) `#define FSCTL_TXFS_START_RM`
+  - `FSCTL_TXFS_SHUTDOWN_RM` (macro, line 808) `#define FSCTL_TXFS_SHUTDOWN_RM`
+  - `FSCTL_TXFS_READ_BACKUP_INFORMATION` (macro, line 809) `#define FSCTL_TXFS_READ_BACKUP_INFORMATION`
+  - `FSCTL_TXFS_WRITE_BACKUP_INFORMATION` (macro, line 810) `#define FSCTL_TXFS_WRITE_BACKUP_INFORMATION`
+  - `FSCTL_TXFS_CREATE_SECONDARY_RM` (macro, line 811) `#define FSCTL_TXFS_CREATE_SECONDARY_RM`
+  - `FSCTL_TXFS_GET_METADATA_INFO` (macro, line 812) `#define FSCTL_TXFS_GET_METADATA_INFO`
+  - `FSCTL_TXFS_GET_TRANSACTED_VERSION` (macro, line 813) `#define FSCTL_TXFS_GET_TRANSACTED_VERSION`
+  - `FSCTL_TXFS_SAVEPOINT_INFORMATION` (macro, line 815) `#define FSCTL_TXFS_SAVEPOINT_INFORMATION`
+  - `FSCTL_TXFS_CREATE_MINIVERSION` (macro, line 816) `#define FSCTL_TXFS_CREATE_MINIVERSION`
+  - `FSCTL_TXFS_TRANSACTION_ACTIVE` (macro, line 820) `#define FSCTL_TXFS_TRANSACTION_ACTIVE`
+  - `FSCTL_SET_ZERO_ON_DEALLOCATION` (macro, line 821) `#define FSCTL_SET_ZERO_ON_DEALLOCATION`
+  - `FSCTL_SET_REPAIR` (macro, line 822) `#define FSCTL_SET_REPAIR`
+  - `FSCTL_GET_REPAIR` (macro, line 823) `#define FSCTL_GET_REPAIR`
+  - `FSCTL_WAIT_FOR_REPAIR` (macro, line 824) `#define FSCTL_WAIT_FOR_REPAIR`
+  - `FSCTL_INITIATE_REPAIR` (macro, line 826) `#define FSCTL_INITIATE_REPAIR`
+  - `FSCTL_CSC_INTERNAL` (macro, line 827) `#define FSCTL_CSC_INTERNAL`
+  - `FSCTL_SHRINK_VOLUME` (macro, line 828) `#define FSCTL_SHRINK_VOLUME`
+  - `FSCTL_SET_SHORT_NAME_BEHAVIOR` (macro, line 829) `#define FSCTL_SET_SHORT_NAME_BEHAVIOR`
+  - `FSCTL_DFSR_SET_GHOST_HANDLE_STATE` (macro, line 830) `#define FSCTL_DFSR_SET_GHOST_HANDLE_STATE`
+  - `FSCTL_TXFS_LIST_TRANSACTION_LOCKED_FILES` (macro, line 836) `#define FSCTL_TXFS_LIST_TRANSACTION_LOCKED_FILES`
+  - `FSCTL_TXFS_LIST_TRANSACTIONS` (macro, line 838) `#define FSCTL_TXFS_LIST_TRANSACTIONS`
+  - `FSCTL_QUERY_PAGEFILE_ENCRYPTION` (macro, line 839) `#define FSCTL_QUERY_PAGEFILE_ENCRYPTION`
+  - `FSCTL_RESET_VOLUME_ALLOCATION_HINTS` (macro, line 843) `#define FSCTL_RESET_VOLUME_ALLOCATION_HINTS`
+  - `FSCTL_QUERY_DEPENDENT_VOLUME` (macro, line 847) `#define FSCTL_QUERY_DEPENDENT_VOLUME`
+  - `FSCTL_SD_GLOBAL_CHANGE` (macro, line 848) `#define FSCTL_SD_GLOBAL_CHANGE`
+  - `FSCTL_TXFS_READ_BACKUP_INFORMATION2` (macro, line 852) `#define FSCTL_TXFS_READ_BACKUP_INFORMATION2`
+  - `FSCTL_LOOKUP_STREAM_FROM_CLUSTER` (macro, line 856) `#define FSCTL_LOOKUP_STREAM_FROM_CLUSTER`
+  - `FSCTL_TXFS_WRITE_BACKUP_INFORMATION2` (macro, line 857) `#define FSCTL_TXFS_WRITE_BACKUP_INFORMATION2`
+  - `FSCTL_FILE_TYPE_NOTIFICATION` (macro, line 858) `#define FSCTL_FILE_TYPE_NOTIFICATION`
+  - `FSCTL_GET_BOOT_AREA_INFO` (macro, line 865) `#define FSCTL_GET_BOOT_AREA_INFO`
+  - `FSCTL_GET_RETRIEVAL_POINTER_BASE` (macro, line 866) `#define FSCTL_GET_RETRIEVAL_POINTER_BASE`
+  - `FSCTL_SET_PERSISTENT_VOLUME_STATE` (macro, line 867) `#define FSCTL_SET_PERSISTENT_VOLUME_STATE`
+  - `FSCTL_QUERY_PERSISTENT_VOLUME_STATE` (macro, line 868) `#define FSCTL_QUERY_PERSISTENT_VOLUME_STATE`
+  - `FSCTL_REQUEST_OPLOCK` (macro, line 870) `#define FSCTL_REQUEST_OPLOCK`
+  - `FSCTL_CSV_TUNNEL_REQUEST` (macro, line 872) `#define FSCTL_CSV_TUNNEL_REQUEST`
+  - `FSCTL_IS_CSV_FILE` (macro, line 873) `#define FSCTL_IS_CSV_FILE`
+  - `FSCTL_QUERY_FILE_SYSTEM_RECOGNITION` (macro, line 875) `#define FSCTL_QUERY_FILE_SYSTEM_RECOGNITION`
+  - `FSCTL_CSV_GET_VOLUME_PATH_NAME` (macro, line 876) `#define FSCTL_CSV_GET_VOLUME_PATH_NAME`
+  - `FSCTL_CSV_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT` (macro, line 877) `#define FSCTL_CSV_GET_VOLUME_NAME_FOR_VOLUME_MOUNT_POINT`
+  - `FSCTL_CSV_GET_VOLUME_PATH_NAMES_FOR_VOLUME_NAME` (macro, line 878) `#define FSCTL_CSV_GET_VOLUME_PATH_NAMES_FOR_VOLUME_NAME`
+  - `FSCTL_IS_FILE_ON_CSV_VOLUME` (macro, line 879) `#define FSCTL_IS_FILE_ON_CSV_VOLUME`
+  - `FSCTL_MARK_AS_SYSTEM_HIVE` (macro, line 883) `#define FSCTL_MARK_AS_SYSTEM_HIVE`
+  - `CSV_NAMESPACE_INFO_V1` (macro, line 897) `#define CSV_NAMESPACE_INFO_V1`
+  - `CSV_INVALID_DEVICE_NUMBER` (macro, line 898) `#define CSV_INVALID_DEVICE_NUMBER`
+  - `USN_PAGE_SIZE` (macro, line 1096) `#define USN_PAGE_SIZE`
+  - `USN_REASON_DATA_OVERWRITE` (macro, line 1098) `#define USN_REASON_DATA_OVERWRITE`
+  - `USN_REASON_DATA_EXTEND` (macro, line 1099) `#define USN_REASON_DATA_EXTEND`
+  - `USN_REASON_DATA_TRUNCATION` (macro, line 1100) `#define USN_REASON_DATA_TRUNCATION`
+  - `USN_REASON_NAMED_DATA_OVERWRITE` (macro, line 1101) `#define USN_REASON_NAMED_DATA_OVERWRITE`
+  - `USN_REASON_NAMED_DATA_EXTEND` (macro, line 1102) `#define USN_REASON_NAMED_DATA_EXTEND`
+  - `USN_REASON_NAMED_DATA_TRUNCATION` (macro, line 1103) `#define USN_REASON_NAMED_DATA_TRUNCATION`
+  - `USN_REASON_FILE_CREATE` (macro, line 1104) `#define USN_REASON_FILE_CREATE`
+  - `USN_REASON_FILE_DELETE` (macro, line 1105) `#define USN_REASON_FILE_DELETE`
+  - `USN_REASON_EA_CHANGE` (macro, line 1106) `#define USN_REASON_EA_CHANGE`
+  - `USN_REASON_SECURITY_CHANGE` (macro, line 1107) `#define USN_REASON_SECURITY_CHANGE`
+  - `USN_REASON_RENAME_OLD_NAME` (macro, line 1108) `#define USN_REASON_RENAME_OLD_NAME`
+  - `USN_REASON_RENAME_NEW_NAME` (macro, line 1109) `#define USN_REASON_RENAME_NEW_NAME`
+  - `USN_REASON_INDEXABLE_CHANGE` (macro, line 1110) `#define USN_REASON_INDEXABLE_CHANGE`
+  - `USN_REASON_BASIC_INFO_CHANGE` (macro, line 1111) `#define USN_REASON_BASIC_INFO_CHANGE`
+  - `USN_REASON_HARD_LINK_CHANGE` (macro, line 1112) `#define USN_REASON_HARD_LINK_CHANGE`
+  - `USN_REASON_COMPRESSION_CHANGE` (macro, line 1113) `#define USN_REASON_COMPRESSION_CHANGE`
+  - `USN_REASON_ENCRYPTION_CHANGE` (macro, line 1114) `#define USN_REASON_ENCRYPTION_CHANGE`
+  - `USN_REASON_OBJECT_ID_CHANGE` (macro, line 1115) `#define USN_REASON_OBJECT_ID_CHANGE`
+  - `USN_REASON_REPARSE_POINT_CHANGE` (macro, line 1116) `#define USN_REASON_REPARSE_POINT_CHANGE`
+  - `USN_REASON_STREAM_CHANGE` (macro, line 1117) `#define USN_REASON_STREAM_CHANGE`
+  - `USN_REASON_TRANSACTED_CHANGE` (macro, line 1118) `#define USN_REASON_TRANSACTED_CHANGE`
+  - `USN_REASON_CLOSE` (macro, line 1119) `#define USN_REASON_CLOSE`
+  - `USN_DELETE_FLAG_DELETE` (macro, line 1140) `#define USN_DELETE_FLAG_DELETE`
+  - `USN_DELETE_FLAG_NOTIFY` (macro, line 1141) `#define USN_DELETE_FLAG_NOTIFY`
+  - `USN_DELETE_VALID_FLAGS` (macro, line 1143) `#define USN_DELETE_VALID_FLAGS`
+  - `USN_SOURCE_DATA_MANAGEMENT` (macro, line 1164) `#define USN_SOURCE_DATA_MANAGEMENT`
+  - `USN_SOURCE_AUXILIARY_DATA` (macro, line 1165) `#define USN_SOURCE_AUXILIARY_DATA`
+  - `USN_SOURCE_REPLICATION_MANAGEMENT` (macro, line 1166) `#define USN_SOURCE_REPLICATION_MANAGEMENT`
+  - `MARK_HANDLE_PROTECT_CLUSTERS` (macro, line 1168) `#define MARK_HANDLE_PROTECT_CLUSTERS`
+  - `MARK_HANDLE_TXF_SYSTEM_LOG` (macro, line 1169) `#define MARK_HANDLE_TXF_SYSTEM_LOG`
+  - `MARK_HANDLE_NOT_TXF_SYSTEM_LOG` (macro, line 1170) `#define MARK_HANDLE_NOT_TXF_SYSTEM_LOG`
+  - `MARK_HANDLE_REALTIME` (macro, line 1176) `#define MARK_HANDLE_REALTIME`
+  - `MARK_HANDLE_NOT_REALTIME` (macro, line 1177) `#define MARK_HANDLE_NOT_REALTIME`
+  - `NO_8DOT3_NAME_PRESENT` (macro, line 1179) `#define NO_8DOT3_NAME_PRESENT`
+  - `REMOVED_8DOT3_NAME` (macro, line 1180) `#define REMOVED_8DOT3_NAME`
+  - `PERSISTENT_VOLUME_STATE_SHORT_NAME_CREATION_DISABLED` (macro, line 1182) `#define PERSISTENT_VOLUME_STATE_SHORT_NAME_CREATION_DISABLED`
+  - `VOLUME_IS_DIRTY` (macro, line 1198) `#define VOLUME_IS_DIRTY`
+  - `VOLUME_UPGRADE_SCHEDULED` (macro, line 1199) `#define VOLUME_UPGRADE_SCHEDULED`
+  - `VOLUME_SESSION_OPEN` (macro, line 1200) `#define VOLUME_SESSION_OPEN`
+  - `FILE_PREFETCH_TYPE_FOR_CREATE` (macro, line 1218) `#define FILE_PREFETCH_TYPE_FOR_CREATE`
+  - `FILE_PREFETCH_TYPE_FOR_DIRENUM` (macro, line 1219) `#define FILE_PREFETCH_TYPE_FOR_DIRENUM`
+  - `FILE_PREFETCH_TYPE_FOR_CREATE_EX` (macro, line 1220) `#define FILE_PREFETCH_TYPE_FOR_CREATE_EX`
+  - `FILE_PREFETCH_TYPE_FOR_DIRENUM_EX` (macro, line 1221) `#define FILE_PREFETCH_TYPE_FOR_DIRENUM_EX`
+  - `FILE_PREFETCH_TYPE_MAX` (macro, line 1223) `#define FILE_PREFETCH_TYPE_MAX`
+  - `FILESYSTEM_STATISTICS_TYPE_NTFS` (macro, line 1251) `#define FILESYSTEM_STATISTICS_TYPE_NTFS`
+  - `FILESYSTEM_STATISTICS_TYPE_FAT` (macro, line 1252) `#define FILESYSTEM_STATISTICS_TYPE_FAT`
+  - `FILESYSTEM_STATISTICS_TYPE_EXFAT` (macro, line 1253) `#define FILESYSTEM_STATISTICS_TYPE_EXFAT`
+  - `FILE_SET_ENCRYPTION` (macro, line 1449) `#define FILE_SET_ENCRYPTION`
+  - `FILE_CLEAR_ENCRYPTION` (macro, line 1450) `#define FILE_CLEAR_ENCRYPTION`
+  - `STREAM_SET_ENCRYPTION` (macro, line 1451) `#define STREAM_SET_ENCRYPTION`
+  - `STREAM_CLEAR_ENCRYPTION` (macro, line 1452) `#define STREAM_CLEAR_ENCRYPTION`
+  - `MAXIMUM_ENCRYPTION_VALUE` (macro, line 1454) `#define MAXIMUM_ENCRYPTION_VALUE`
+  - `ENCRYPTION_FORMAT_DEFAULT` (macro, line 1462) `#define ENCRYPTION_FORMAT_DEFAULT`
+  - `COMPRESSION_FORMAT_SPARSE` (macro, line 1464) `#define COMPRESSION_FORMAT_SPARSE`
+  - `COPYFILE_SIS_LINK` (macro, line 1520) `#define COPYFILE_SIS_LINK`
+  - `COPYFILE_SIS_REPLACE` (macro, line 1521) `#define COPYFILE_SIS_REPLACE`
+  - `COPYFILE_SIS_FLAGS` (macro, line 1522) `#define COPYFILE_SIS_FLAGS`
+  - `SET_REPAIR_ENABLED` (macro, line 1560) `#define SET_REPAIR_ENABLED`
+  - `SET_REPAIR_VOLUME_BITMAP_SCAN` (macro, line 1561) `#define SET_REPAIR_VOLUME_BITMAP_SCAN`
+  - `SET_REPAIR_DELETE_CROSSLINK` (macro, line 1562) `#define SET_REPAIR_DELETE_CROSSLINK`
+  - `SET_REPAIR_WARN_ABOUT_DATA_LOSS` (macro, line 1563) `#define SET_REPAIR_WARN_ABOUT_DATA_LOSS`
+  - `SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT` (macro, line 1564) `#define SET_REPAIR_DISABLED_AND_BUGCHECK_ON_CORRUPT`
+  - `SET_REPAIR_VALID_MASK` (macro, line 1565) `#define SET_REPAIR_VALID_MASK`
+  - `TXFS_RM_FLAG_LOGGING_MODE` (macro, line 1583) `#define TXFS_RM_FLAG_LOGGING_MODE`
+  - `TXFS_RM_FLAG_RENAME_RM` (macro, line 1584) `#define TXFS_RM_FLAG_RENAME_RM`
+  - `TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX` (macro, line 1585) `#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX`
+  - `TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN` (macro, line 1586) `#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN`
+  - `TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS` (macro, line 1587) `#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS`
+  - `TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT` (macro, line 1588) `#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT`
+  - `TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE` (macro, line 1589) `#define TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE`
+  - `TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX` (macro, line 1590) `#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX`
+  - `TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN` (macro, line 1591) `#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN`
+  - `TXFS_RM_FLAG_GROW_LOG` (macro, line 1592) `#define TXFS_RM_FLAG_GROW_LOG`
+  - `TXFS_RM_FLAG_SHRINK_LOG` (macro, line 1593) `#define TXFS_RM_FLAG_SHRINK_LOG`
+  - `TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE` (macro, line 1594) `#define TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE`
+  - `TXFS_RM_FLAG_PRESERVE_CHANGES` (macro, line 1595) `#define TXFS_RM_FLAG_PRESERVE_CHANGES`
+  - `TXFS_RM_FLAG_RESET_RM_AT_NEXT_START` (macro, line 1596) `#define TXFS_RM_FLAG_RESET_RM_AT_NEXT_START`
+  - `TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START` (macro, line 1597) `#define TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START`
+  - `TXFS_RM_FLAG_PREFER_CONSISTENCY` (macro, line 1598) `#define TXFS_RM_FLAG_PREFER_CONSISTENCY`
+  - `TXFS_RM_FLAG_PREFER_AVAILABILITY` (macro, line 1599) `#define TXFS_RM_FLAG_PREFER_AVAILABILITY`
+  - `TXFS_LOGGING_MODE_SIMPLE` (macro, line 1601) `#define TXFS_LOGGING_MODE_SIMPLE`
+  - `TXFS_LOGGING_MODE_FULL` (macro, line 1602) `#define TXFS_LOGGING_MODE_FULL`
+  - `TXFS_TRANSACTION_STATE_NONE` (macro, line 1604) `#define TXFS_TRANSACTION_STATE_NONE`
+  - `TXFS_TRANSACTION_STATE_ACTIVE` (macro, line 1605) `#define TXFS_TRANSACTION_STATE_ACTIVE`
+  - `TXFS_TRANSACTION_STATE_PREPARED` (macro, line 1606) `#define TXFS_TRANSACTION_STATE_PREPARED`
+  - `TXFS_TRANSACTION_STATE_NOTACTIVE` (macro, line 1607) `#define TXFS_TRANSACTION_STATE_NOTACTIVE`
+  - `TXFS_MODIFY_RM_VALID_FLAGS` (macro, line 1609) `#define TXFS_MODIFY_RM_VALID_FLAGS`
+  - `TXFS_RM_STATE_NOT_STARTED` (macro, line 1685) `#define TXFS_RM_STATE_NOT_STARTED`
+  - `TXFS_RM_STATE_STARTING` (macro, line 1686) `#define TXFS_RM_STATE_STARTING`
+  - `TXFS_RM_STATE_ACTIVE` (macro, line 1687) `#define TXFS_RM_STATE_ACTIVE`
+  - `TXFS_RM_STATE_SHUTTING_DOWN` (macro, line 1688) `#define TXFS_RM_STATE_SHUTTING_DOWN`
+  - `TXFS_QUERY_RM_INFORMATION_VALID_FLAGS` (macro, line 1690) `#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS`
+  - `TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN` (macro, line 1795) `#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN`
+  - `TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK` (macro, line 1796) `#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK`
+  - `TXFS_ROLLFORWARD_REDO_VALID_FLAGS` (macro, line 1798) `#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS`
+  - `TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX` (macro, line 1810) `#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX`
+  - `TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN` (macro, line 1811) `#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN`
+  - `TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE` (macro, line 1812) `#define TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE`
+  - `TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS` (macro, line 1813) `#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS`
+  - `TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT` (macro, line 1814) `#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT`
+  - `TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE` (macro, line 1815) `#define TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE`
+  - `TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX` (macro, line 1816) `#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX`
+  - `TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN` (macro, line 1817) `#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN`
+  - `TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT` (macro, line 1819) `#define TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT`
+  - `TXFS_START_RM_FLAG_LOGGING_MODE` (macro, line 1820) `#define TXFS_START_RM_FLAG_LOGGING_MODE`
+  - `TXFS_START_RM_FLAG_PRESERVE_CHANGES` (macro, line 1821) `#define TXFS_START_RM_FLAG_PRESERVE_CHANGES`
+  - `TXFS_START_RM_FLAG_PREFER_CONSISTENCY` (macro, line 1823) `#define TXFS_START_RM_FLAG_PREFER_CONSISTENCY`
+  - `TXFS_START_RM_FLAG_PREFER_AVAILABILITY` (macro, line 1824) `#define TXFS_START_RM_FLAG_PREFER_AVAILABILITY`
+  - `TXFS_START_RM_VALID_FLAGS` (macro, line 1826) `#define TXFS_START_RM_VALID_FLAGS`
+  - `TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED` (macro, line 1961) `#define TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED`
+  - `TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED` (macro, line 1962) `#define TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED`
+  - `TXFS_TRANSACTED_VERSION_NONTRANSACTED` (macro, line 2108) `#define TXFS_TRANSACTED_VERSION_NONTRANSACTED`
+  - `TXFS_TRANSACTED_VERSION_UNCOMMITTED` (macro, line 2109) `#define TXFS_TRANSACTED_VERSION_UNCOMMITTED`
+  - `TXFS_SAVEPOINT_SET` (macro, line 2151) `#define TXFS_SAVEPOINT_SET`
+  - `TXFS_SAVEPOINT_ROLLBACK` (macro, line 2157) `#define TXFS_SAVEPOINT_ROLLBACK`
+  - `TXFS_SAVEPOINT_CLEAR` (macro, line 2164) `#define TXFS_SAVEPOINT_CLEAR`
+  - `TXFS_SAVEPOINT_CLEAR_ALL` (macro, line 2170) `#define TXFS_SAVEPOINT_CLEAR_ALL`
+  - `OPLOCK_LEVEL_CACHE_READ` (macro, line 2226) `#define OPLOCK_LEVEL_CACHE_READ`
+  - `OPLOCK_LEVEL_CACHE_HANDLE` (macro, line 2227) `#define OPLOCK_LEVEL_CACHE_HANDLE`
+  - `OPLOCK_LEVEL_CACHE_WRITE` (macro, line 2228) `#define OPLOCK_LEVEL_CACHE_WRITE`
+  - `REQUEST_OPLOCK_INPUT_FLAG_REQUEST` (macro, line 2230) `#define REQUEST_OPLOCK_INPUT_FLAG_REQUEST`
+  - `REQUEST_OPLOCK_INPUT_FLAG_ACK` (macro, line 2231) `#define REQUEST_OPLOCK_INPUT_FLAG_ACK`
+  - `REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE` (macro, line 2232) `#define REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE`
+  - `REQUEST_OPLOCK_CURRENT_VERSION` (macro, line 2234) `#define REQUEST_OPLOCK_CURRENT_VERSION`
+  - `REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED` (macro, line 2260) `#define REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED`
+  - `REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED` (macro, line 2261) `#define REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED`
+  - `SD_GLOBAL_CHANGE_TYPE_MACHINE_SID` (macro, line 2282) `#define SD_GLOBAL_CHANGE_TYPE_MACHINE_SID`
+  - `ENCRYPTED_DATA_INFO_SPARSE_FILE` (macro, line 2403) `#define ENCRYPTED_DATA_INFO_SPARSE_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE` (macro, line 2427) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET` (macro, line 2428) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE` (macro, line 2429) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE` (macro, line 2430) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK` (macro, line 2432) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA` (macro, line 2433) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX` (macro, line 2434) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX`
+  - `LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM` (macro, line 2435) `#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM`
+  - `FILE_TYPE_NOTIFICATION_FLAG_USAGE_BEGIN` (macro, line 2453) `#define FILE_TYPE_NOTIFICATION_FLAG_USAGE_BEGIN`
+  - `FILE_TYPE_NOTIFICATION_FLAG_USAGE_END` (macro, line 2454) `#define FILE_TYPE_NOTIFICATION_FLAG_USAGE_END`
+  - `LOCK_QUEUE_WAIT` (macro, line 2714) `#define LOCK_QUEUE_WAIT`
+  - `LOCK_QUEUE_WAIT_BIT` (macro, line 2715) `#define LOCK_QUEUE_WAIT_BIT`
+  - `LOCK_QUEUE_OWNER` (macro, line 2717) `#define LOCK_QUEUE_OWNER`
+  - `LOCK_QUEUE_OWNER_BIT` (macro, line 2718) `#define LOCK_QUEUE_OWNER_BIT`
+  - `LOCK_QUEUE_TIMER_LOCK_SHIFT` (macro, line 2720) `#define LOCK_QUEUE_TIMER_LOCK_SHIFT`
+  - `LOCK_QUEUE_TIMER_TABLE_LOCKS` (macro, line 2721) `#define LOCK_QUEUE_TIMER_TABLE_LOCKS`
+  - `PROCESS_TERMINATE` (macro, line 2876) `#define PROCESS_TERMINATE`
+  - `PROCESS_CREATE_THREAD` (macro, line 2877) `#define PROCESS_CREATE_THREAD`
+  - `PROCESS_SET_SESSIONID` (macro, line 2878) `#define PROCESS_SET_SESSIONID`
+  - `PROCESS_VM_OPERATION` (macro, line 2879) `#define PROCESS_VM_OPERATION`
+  - `PROCESS_VM_READ` (macro, line 2880) `#define PROCESS_VM_READ`
+  - `PROCESS_VM_WRITE` (macro, line 2881) `#define PROCESS_VM_WRITE`
+  - `PROCESS_DUP_HANDLE` (macro, line 2882) `#define PROCESS_DUP_HANDLE`
+  - `PROCESS_CREATE_PROCESS` (macro, line 2883) `#define PROCESS_CREATE_PROCESS`
+  - `PROCESS_SET_QUOTA` (macro, line 2884) `#define PROCESS_SET_QUOTA`
+  - `PROCESS_SET_INFORMATION` (macro, line 2885) `#define PROCESS_SET_INFORMATION`
+
+Next: [KB_common_p5.md](KB_common_p5.md)

@@ -1,0 +1,313 @@
+# Architecture (page 2 of 2)
+Previous: [ARCHITECTURE.md](ARCHITECTURE.md)
+
+## Internal Dependencies (continued)
+- `teamserver/pkg/handlers/http.go` -> `teamserver/pkg/logr/logr.go`
+- `teamserver/pkg/handlers/smb.go` -> `teamserver/pkg/colors/colors.go`
+- `teamserver/pkg/handlers/smb.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/handlers/types.go` -> `teamserver/pkg/handlers/http.go`
+- `teamserver/pkg/logger/logger.go` -> `teamserver/pkg/colors/colors.go`
+- `teamserver/pkg/logr/demon.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/logr/logr.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/logr/server.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/packager/packages.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/profile/profile.go` -> `teamserver/pkg/colors/colors.go`
+- `teamserver/pkg/profile/profile.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/profile/profile.go` -> `teamserver/pkg/profile/yaotl/hclsimple/hclsimple.go`
+- `teamserver/pkg/profile/yaotl/doc.go` -> `teamserver/pkg/profile/yaotl/hclsimple/hclsimple.go`
+- `teamserver/pkg/profile/yaotl/ext/tryfunc/tryfunc.go` -> `teamserver/pkg/profile/yaotl/ext/customdecode/customdecode.go`
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/type_type.go` -> `teamserver/pkg/profile/yaotl/ext/customdecode/customdecode.go`
+- `teamserver/pkg/profile/yaotl/hcldec/spec.go` -> `teamserver/pkg/profile/yaotl/ext/customdecode/customdecode.go`
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression.go` -> `teamserver/pkg/profile/yaotl/ext/customdecode/customdecode.go`
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression_vars_gen.go` -> `teamserver/pkg/profile/yaotl/hclsyntax/token.go`
+- `teamserver/pkg/service/agent.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/service/agent.go` -> `teamserver/pkg/utils/utils.go`
+- `teamserver/pkg/service/listener.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/service/service.go` -> `teamserver/pkg/colors/colors.go`
+- `teamserver/pkg/service/service.go` -> `teamserver/pkg/events/events.go`
+- `teamserver/pkg/service/service.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/service/service.go` -> `teamserver/pkg/logr/logr.go`
+- `teamserver/pkg/service/types.go` -> `teamserver/pkg/profile/profile.go`
+- `teamserver/pkg/socks/util.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/utils/utils.go` -> `teamserver/pkg/logger/logger.go`
+- `teamserver/pkg/webhook/webhook.go` -> `teamserver/pkg/handlers/http.go`
+
+## External Imports
+
+- `client/include/External.h` -> nlohmann/json.hpp, spdlog/spdlog.h, toml.hpp
+- `client/include/Havoc/CmdLine.hpp` -> algorithm, cstdlib, cstring, cxxabi.h, iostream, map, sstream, stdexcept, string, typeinfo, vector
+- `client/include/Havoc/Connector.hpp` -> QAbstractSocket, QJsonDocument, QJsonObject, QWebSocket
+- `client/include/Havoc/DBManager/DBManager.hpp` -> QSqlDatabase, QSqlError, QSqlQuery
+- `client/include/Havoc/DemonCmdDispatch.h` -> QFile, QStringList
+- `client/include/Havoc/PythonApi/PythonApi.h` -> Python.h
+- `client/include/Havoc/PythonApi/UI/PyDialogClass.hpp` -> QCalendarWidget, QCheckBox, QDial, QDialog, QLabel, QLineEdit, QPushButton, QScrollArea, QSlider, QVBoxLayout
+- `client/include/Havoc/PythonApi/UI/PyLoggerClass.hpp` -> QDialog, QGridLayout, QTextEdit
+- `client/include/Havoc/PythonApi/UI/PyTreeClass.hpp` -> QHBoxLayout, QScrollArea, QSplitter, QStandardItem, QStandardItemModel, QTextBrowser, QTextEdit, QTreeView, QVBoxLayout, QWidget
+- `client/include/Havoc/PythonApi/UI/PyWidgetClass.hpp` -> QCalendarWidget, QCheckBox, QDial, QDialog, QLabel, QLineEdit, QPushButton, QScrollArea, QSlider, QVBoxLayout
+- `client/include/Havoc/Service.hpp` -> QJsonDocument, QString, QStringList, vector
+- `client/include/UserInterface/Dialogs/About.hpp` -> QTextBrowser
+- `client/include/UserInterface/Dialogs/Connect.hpp` -> QLineEdit, QList, QListWidget, QPlainTextEdit
+- `client/include/UserInterface/Dialogs/Listener.hpp` -> QCheckBox, QComboBox, QGroupBox, QLineEdit, QPlainTextEdit, QtCore/QVariant, QtWidgets/QApplication, QtWidgets/QCheckBox, QtWidgets/QComboBox, QtWidgets/QDialog, QtWidgets/QGridLayout, QtWidgets/QGroupBox, QtWidgets/QLabel, QtWidgets/QLineEdit, QtWidgets/QListWidget, QtWidgets/QPushButton, QtWidgets/QStackedWidget, QtWidgets/QWidget
+- `client/include/UserInterface/Dialogs/Payload.hpp` -> QCheckBox, QComboBox, QFile, QGroupBox, QMetaObject, QTextEdit, QThread, QTreeWidget, QVariant, QtWidgets/QApplication, QtWidgets/QDialog, QtWidgets/QGridLayout, QtWidgets/QLabel
+- `client/include/UserInterface/HavocUI.hpp` -> QDesktopServices, QDockWidget, QFile, QHeaderView, QShortcut, QSplitter, QStackedWidget, QStatusBar, QTableWidget
+- `client/include/UserInterface/Widgets/Chat.hpp` -> QLineEdit, QTextEdit
+- `client/include/UserInterface/Widgets/FileBrowser.hpp` -> QtCore/QJsonArray, QtCore/QJsonDocument, QtCore/QJsonObject, QtCore/QJsonValue, QtCore/QVariant, QtWidgets/QApplication, QtWidgets/QFormLayout, QtWidgets/QGridLayout, QtWidgets/QHeaderView, QtWidgets/QLineEdit, QtWidgets/QPushButton, QtWidgets/QSplitter, QtWidgets/QTableWidget, QtWidgets/QTreeWidget, QtWidgets/QWidget, vector
+- `client/include/UserInterface/Widgets/ListenerTable.hpp` -> QTableWidget
+- `client/include/UserInterface/Widgets/LootWidget.h` -> QLabel, QScrollArea, QtWidgets/QApplication, QtWidgets/QComboBox, QtWidgets/QGridLayout, QtWidgets/QSpacerItem, QtWidgets/QSplitter, QtWidgets/QStackedWidget, QtWidgets/QTableWidget, QtWidgets/QWidget
+- `client/include/UserInterface/Widgets/ProcessList.hpp` -> QJsonArray, QJsonDocument, QJsonObject, QtCore/QVariant, QtWidgets/QApplication, QtWidgets/QGridLayout, QtWidgets/QHeaderView, QtWidgets/QPushButton, QtWidgets/QSpacerItem, QtWidgets/QSplitter, QtWidgets/QTableWidget, QtWidgets/QTreeWidget, QtWidgets/QWidget
+- `client/include/UserInterface/Widgets/PythonScript.hpp` -> Python.h, QPlainTextEdit
+- `client/include/UserInterface/Widgets/SessionGraph.hpp` -> QGraphicsItem, QGraphicsView, QRect
+- `client/include/UserInterface/Widgets/SessionTable.hpp` -> QTableWidget
+- `client/include/UserInterface/Widgets/Store.hpp` -> QDir, QEventLoop, QHBoxLayout, QJsonArray, QJsonDocument, QJsonObject, QJsonValue, QLabel, QNetworkAccessManager, QNetworkReply, QNetworkRequest, QPushButton, QScrollArea, QSplitter, QTableWidget, QTableWidgetItem, QVBoxLayout, QtCore/QVariant, QtWidgets/QApplication, QtWidgets/QFormLayout, QtWidgets/QGridLayout, QtWidgets/QHeaderView, QtWidgets/QListWidget, QtWidgets/QSplitter, QtWidgets/QStackedWidget, QtWidgets/QTextEdit, QtWidgets/QTreeWidget, QtWidgets/QWidget
+- `client/include/UserInterface/Widgets/Teamserver.hpp` -> QtCore/QVariant, QtWidgets/QApplication, QtWidgets/QFormLayout, QtWidgets/QGridLayout, QtWidgets/QHeaderView, QtWidgets/QListWidget, QtWidgets/QSplitter, QtWidgets/QStackedWidget, QtWidgets/QTextEdit, QtWidgets/QTreeWidget, QtWidgets/QWidget
+- `client/include/UserInterface/Widgets/TeamserverTabSession.h` -> QSplitter, QStackedWidget
+- `client/include/Util/Base.hpp` -> QDateTime, QFile, QIcon, QMessageBox, QString, QTime, spdlog/spdlog.h
+- `client/include/Util/Base64.h` -> string
+- `client/include/global.hpp` -> Python.h, QAction, QApplication, QDate, QDialog, QFormLayout, QGridLayout, QJsonDocument, QJsonObject, QLabel, QLineEdit, QMainWindow, QMenu, QMenuBar, QMessageBox, QPushButton, QSpacerItem, QTabWidget, QTableWidget, QTextCodec, QTextEdit, QWidget, QtCore/QVariant, QtGui/QIcon, QtNetwork/QTcpServer, QtNetwork/QTcpSocket, any, iostream, map, string
+- `client/src/Havoc/Connector.cc` -> QBuffer, QCryptographicHash, QMap
+- `client/src/Havoc/DBManger/DBManager.cc` -> QFileInfo
+- `client/src/Havoc/DBManger/Teamserver.cc` -> QSqlError
+- `client/src/Havoc/Demon/CommandOutput.cc` -> QFile, QJsonArray, QJsonDocument
+- `client/src/Havoc/Demon/CommandSend.cc` -> QFile
+- `client/src/Havoc/Demon/ConsoleInput.cc` -> algorithm, filesystem, iomanip, sstream, vector
+- `client/src/Havoc/Havoc.cc` -> QTimer
+- `client/src/Havoc/Packager.cc` -> QByteArray, QDir, QJsonArray, QScrollBar, sstream
+- `client/src/Havoc/PythonApi/Event.cc` -> Python.h, structmember.h
+- `client/src/Havoc/PythonApi/Havoc.cc` -> QCompleter, QFile
+- `client/src/Havoc/PythonApi/HavocUi.cc` -> QColorDialog, QErrorMessage, QFile, QFileDialog, QInputDialog, QMessageBox, QProgressDialog, QTimer
+- `client/src/Havoc/PythonApi/PyAgentClass.cc` -> Python.h, structmember.h
+- `client/src/Havoc/PythonApi/PyDemonClass.cc` -> Python.h, structmember.h
+- `client/src/Havoc/PythonApi/UI/PyDialogClass.cc` -> Python.h, structmember.h
+- `client/src/Havoc/PythonApi/UI/PyLoggerClass.cc` -> Python.h, structmember.h
+- `client/src/Havoc/PythonApi/UI/PyTreeClass.cc` -> Python.h, structmember.h
+- `client/src/Havoc/PythonApi/UI/PyWidgetClass.cc` -> Python.h, structmember.h
+- `client/src/Main.cc` -> QTimer
+- `client/src/UserInterface/Dialogs/Listener.cc` -> QApplication, QDialog, QFile, QGridLayout, QLabel, QLineEdit, QPushButton, QSpacerItem
+- `client/src/UserInterface/Dialogs/Payload.cc` -> QFileDialog, QHeaderView, QIODevice, QJsonArray, vector
+- `client/src/UserInterface/HavocUi.cc` -> QPixmap, QProcess, QShortcut, QTimer, QToolButton
+- `client/src/UserInterface/Widgets/Chat.cc` -> QAbstractItemModel, QCompleter, QtCore
+- `client/src/UserInterface/Widgets/DemonInteracted.cc` -> QCompleter, QDate, QEvent, QKeyEvent, QScrollBar, QStringListModel, QTime
+- `client/src/UserInterface/Widgets/FileBrowser.cc` -> QList, spdlog/spdlog.h
+- `client/src/UserInterface/Widgets/ListenersTable.cc` -> QHeaderView, QMap
+- `client/src/UserInterface/Widgets/LootWidget.cc` -> QFile, QGraphicsPixmapItem, QGraphicsScene, QGraphicsSceneWheelEvent, QGraphicsView, QHeaderView, QKeyEvent, QLabel, QScrollBar, QTreeWidgetItem, spdlog/spdlog.h
+- `client/src/UserInterface/Widgets/ProcessList.cc` -> QClipboard
+- `client/src/UserInterface/Widgets/PythonScript.cc` -> QThread, QTime, thread
+- `client/src/UserInterface/Widgets/ScriptManager.cc` -> QFile, QFileDialog, QHeaderView, QTableWidgetItem
+- `client/src/UserInterface/Widgets/SessionGraph.cc` -> QGraphicsSceneContextMenuEvent, QKeyEvent, QPixmap, QRandomGenerator, QStyle, QStyleOptionGraphicsItem, math.h
+- `client/src/UserInterface/Widgets/SessionTable.cc` -> QHeaderView, QItemSelectionModel
+- `client/src/UserInterface/Widgets/Store.cc` -> QScrollBar
+- `client/src/UserInterface/Widgets/Teamserver.cc` -> QScrollBar
+- `client/src/UserInterface/Widgets/TeamserverTabSession.cc` -> QByteArray, QFile, QHeaderView, QKeyEvent, QShortcut, QToolButton
+- `client/src/global.cc` -> QFileDialog, random
+- `payloads/Demon/include/Demon.h` -> aclapi.h, ntstatus.h, stdio.h, windns.h, windows.h, winsock2.h
+- `payloads/Demon/include/common/Clr.h` -> windows.h
+- `payloads/Demon/include/common/Macros.h` -> stdio.h
+- `payloads/Demon/include/common/Native.h` -> basetsd.h, guiddef.h, ntstatus.h, poppack.h, pshpack4.h, wtypes.h
+- `payloads/Demon/include/core/Download.h` -> windows.h
+- `payloads/Demon/include/core/HwBpEngine.h` -> ntstatus.h, windows.h
+- `payloads/Demon/include/core/HwBpExceptions.h` -> windows.h
+- `payloads/Demon/include/core/Jobs.h` -> windows.h
+- `payloads/Demon/include/core/ObjectApi.h` -> windows.h
+- `payloads/Demon/include/core/Parser.h` -> windows.h
+- `payloads/Demon/include/core/Pivot.h` -> windows.h
+- `payloads/Demon/include/core/Runtime.h` -> windows.h
+- `payloads/Demon/include/core/SleepObf.h` -> windows.h
+- `payloads/Demon/include/core/Socket.h` -> winsock2.h
+- `payloads/Demon/include/core/Spoof.h` -> windows.h
+- `payloads/Demon/include/core/Syscalls.h` -> windows.h
+- `payloads/Demon/include/core/Token.h` -> windows.h
+- `payloads/Demon/include/core/TransportHttp.h` -> windows.h, winhttp.h
+- `payloads/Demon/include/core/Win32.h` -> iphlpapi.h, lm.h, mscoree.h, shellapi.h, tlhelp32.h, winhttp.h, winsock2.h
+- `payloads/Demon/include/crypt/AesCrypt.h` -> windows.h
+- `payloads/Demon/include/inject/InjectUtil.h` -> windows.h
+- `payloads/Demon/scripts/hash_func.py` -> sys
+- `payloads/Demon/src/core/Obf.c` -> ntstatus.h, rpcndr.h
+- `payloads/Demon/src/core/ObjectApi.c` -> stdarg.h, stdint.h, stdio.h
+- `payloads/Demon/src/core/Token.c` -> ntstatus.h
+- `payloads/Demon/src/inject/Inject.c` -> ntstatus.h
+- `payloads/DllLdr/Include/Core.h` -> windows.h
+- `payloads/DllLdr/Include/Macro.h` -> windows.h
+- `payloads/DllLdr/Scripts/extract.py` -> argparse, struct, sys
+- `payloads/DllLdr/Source/Entry.c` -> Core.h, Native.h, ntdef.h
+- `payloads/Shellcode/Include/Core.h` -> windows.h
+- `payloads/Shellcode/Include/Macro.h` -> windows.h
+- `payloads/Shellcode/Include/Utils.h` -> windows.h
+- `payloads/Shellcode/Include/Win32.h` -> windows.h
+- `payloads/Shellcode/Scripts/Hasher.c` -> ctype.h, stdio.h
+- `payloads/Shellcode/Scripts/extract.py` -> argparse, pefile
+- `payloads/Shellcode/Source/Entry.c` -> Core.h, Win32.h, ntdef.h
+- `payloads/Shellcode/Source/Utils.c` -> Macro.h
+- `payloads/Shellcode/Source/Win32.c` -> Win32.h, winternl.h
+- `teamserver/cmd/client.go` -> github.com/spf13/cobra, os, os/exec
+- `teamserver/cmd/cmd.go` -> Havoc/cmd/server, fmt, github.com/spf13/cobra, os
+- `teamserver/cmd/server.go` -> Havoc/cmd/server, fmt, github.com/spf13/cobra, os, time
+- `teamserver/cmd/server/agent.go` -> Havoc/pkg/agent, Havoc/pkg/packager, encoding/json, fmt, math/rand, strconv, time
+- `teamserver/cmd/server/dispatch.go` -> Havoc/pkg/agent, Havoc/pkg/packager, encoding/json, errors, fmt, strconv, strings, time
+- `teamserver/cmd/server/listener.go` -> Havoc/pkg/packager, Havoc/pkg/service, encoding/json, errors, fmt, github.com/fatih/structs, strings, time
+- `teamserver/cmd/server/service.go` -> Havoc/pkg/agent, fmt
+- `teamserver/cmd/server/teamserver.go` -> Havoc/pkg/agent, Havoc/pkg/common, Havoc/pkg/common/certs, Havoc/pkg/packager, Havoc/pkg/service, bytes, encoding/hex, encoding/json, errors, fmt, github.com/gin-gonic/gin, github.com/gorilla/websocket, golang.org/x/crypto/sha3, io, os, os/exec, strconv, strings, time
+- `teamserver/cmd/server/types.go` -> Havoc/pkg/agent, Havoc/pkg/packager, Havoc/pkg/service, github.com/gin-gonic/gin, github.com/gorilla/websocket, sync
+- `teamserver/pkg/agent/agent.go` -> Havoc/pkg/common, Havoc/pkg/common/crypt, Havoc/pkg/common/parser, bytes, encoding/binary, encoding/hex, encoding/json, errors, fmt, github.com/fatih/structs, io, net, os, path/filepath, reflect, strconv, strings, time
+- `teamserver/pkg/agent/demons.go` -> Havoc/pkg/common, Havoc/pkg/common/parser, Havoc/pkg/win32, bytes, encoding/base64, encoding/binary, encoding/hex, encoding/json, errors, fmt, github.com/olekukonko/tablewriter, io, math/rand, net, os, strconv, strings, time
+- `teamserver/pkg/agent/types.go` -> Havoc/pkg/common/parser, Havoc/pkg/packager, net, os, sync
+- `teamserver/pkg/colors/colors.go` -> github.com/fatih/color
+- `teamserver/pkg/common/builder/builder.go` -> Havoc/pkg/common, Havoc/pkg/win32, bytes, encoding/hex, encoding/json, errors, fmt, os, os/exec, path, path/filepath, strconv, strings
+- `teamserver/pkg/common/certs/https.go` -> bytes, crypto/ecdsa, crypto/rand, crypto/rsa, crypto/x509, crypto/x509/pkix, encoding/binary, encoding/pem, fmt, math/big, math/rand, net, strings, time
+- `teamserver/pkg/common/crypt/aes.go` -> crypto/cipher
+- `teamserver/pkg/common/packer/packer.go` -> Havoc/pkg/common, Havoc/pkg/common/crypt, bytes, encoding/binary
+- `teamserver/pkg/common/parser/parser.go` -> Havoc/pkg/common, Havoc/pkg/common/crypt, encoding/binary
+- `teamserver/pkg/common/util.go` -> bufio, bytes, encoding/binary, errors, fmt, golang.org/x/image/bmp, golang.org/x/text/encoding/unicode, image/png, io, math/rand, net, regexp, strconv, strings, time, unicode/utf16, unicode/utf8
+- `teamserver/pkg/db/agents.go` -> Havoc/pkg/agent, encoding/base64, errors, fmt, strconv
+- `teamserver/pkg/db/db.go` -> database/sql, github.com/mattn/go-sqlite3, os
+- `teamserver/pkg/db/links.go` -> errors, log
+- `teamserver/pkg/db/listeners.go` -> errors, log
+- `teamserver/pkg/events/chatlog.go` -> Havoc/pkg/packager, time
+- `teamserver/pkg/events/demons.go` -> Havoc/pkg/agent, Havoc/pkg/packager, encoding/base64, encoding/json, fmt, strconv, time
+- `teamserver/pkg/events/events.go` -> Havoc/pkg/packager, encoding/json, net, time
+- `teamserver/pkg/events/gate.go` -> Havoc/pkg/packager, encoding/base64, time
+- `teamserver/pkg/events/listeners.go` -> Havoc/pkg/packager, github.com/fatih/structs, strings, time
+- `teamserver/pkg/events/service.go` -> Havoc/pkg/packager, time
+- `teamserver/pkg/events/teamserver.go` -> Havoc/pkg/packager, time
+- `teamserver/pkg/handlers/external.go` -> encoding/hex, github.com/gin-gonic/gin, io, strings
+- `teamserver/pkg/handlers/handlers.go` -> Havoc/pkg/agent, Havoc/pkg/common/parser, bytes, encoding/hex, fmt, math/bits
+- `teamserver/pkg/handlers/http.go` -> Havoc/pkg/common, Havoc/pkg/common/certs, context, encoding/hex, fmt, github.com/gin-gonic/gin, io, log, os, regexp, strings, time
+- `teamserver/pkg/handlers/types.go` -> Havoc/pkg/agent, github.com/gin-gonic/gin
+- `teamserver/pkg/logger/global.go` -> io, log, os
+- `teamserver/pkg/logger/logger.go` -> fmt, log, os, runtime, strconv, strings, time
+- `teamserver/pkg/logr/demon.go` -> Havoc/pkg/common, errors, fmt, log, os, path/filepath, strings
+- `teamserver/pkg/logr/logr.go` -> os
+- `teamserver/pkg/logr/server.go` -> bufio, log, os, regexp
+- `teamserver/pkg/packager/packages.go` -> encoding/json
+- `teamserver/pkg/profile/yaotl/diagnostic.go` -> fmt
+- `teamserver/pkg/profile/yaotl/diagnostic_text.go` -> bufio, bytes, errors, fmt, github.com/mitchellh/go-wordwrap, github.com/zclconf/go-cty/cty, io, sort
+- `teamserver/pkg/profile/yaotl/didyoumean.go` -> github.com/agext/levenshtein
+- `teamserver/pkg/profile/yaotl/doc.go` -> log
+- `teamserver/pkg/profile/yaotl/eval_context.go` -> github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/function
+- `teamserver/pkg/profile/yaotl/ext/customdecode/customdecode.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/customdecode/expression_type.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, reflect
+- `teamserver/pkg/profile/yaotl/ext/dynblock/expand_body.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/dynblock/expand_body_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hcldec, Havoc/pkg/profile/yaotl/hcltest, github.com/zclconf/go-cty/cty, strings, testing
+- `teamserver/pkg/profile/yaotl/ext/dynblock/expand_spec.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert
+- `teamserver/pkg/profile/yaotl/ext/dynblock/expr_wrap.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/dynblock/iteration.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/dynblock/public.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/ext/dynblock/schema.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/ext/dynblock/unknown_body.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/dynblock/variables.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/dynblock/variables_hcldec.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hcldec
+- `teamserver/pkg/profile/yaotl/ext/dynblock/variables_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hcldec, Havoc/pkg/profile/yaotl/hclsyntax, github.com/davecgh/go-spew/spew, github.com/zclconf/go-cty/cty, reflect, testing
+- `teamserver/pkg/profile/yaotl/ext/transform/error.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/ext/transform/transform.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/ext/transform/transform_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hcltest, github.com/zclconf/go-cty/cty, reflect, testing
+- `teamserver/pkg/profile/yaotl/ext/transform/transformer.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/ext/tryfunc/tryfunc.go` -> Havoc/pkg/profile/yaotl, errors, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/function, strings
+- `teamserver/pkg/profile/yaotl/ext/tryfunc/tryfunc_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/function, testing
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/get_type.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/get_type_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/gohcl, Havoc/pkg/profile/yaotl/hclsyntax, Havoc/pkg/profile/yaotl/json, github.com/zclconf/go-cty/cty, testing
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/public.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, bytes, fmt, github.com/zclconf/go-cty/cty, sort
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/type_string_test.go` -> github.com/zclconf/go-cty/cty, testing
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/type_type.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert, github.com/zclconf/go-cty/cty/function, reflect
+- `teamserver/pkg/profile/yaotl/ext/typeexpr/type_type_test.go` -> fmt, github.com/zclconf/go-cty/cty, testing
+- `teamserver/pkg/profile/yaotl/ext/userfunc/decode.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/function
+- `teamserver/pkg/profile/yaotl/ext/userfunc/decode_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty, testing
+- `teamserver/pkg/profile/yaotl/ext/userfunc/public.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty/function
+- `teamserver/pkg/profile/yaotl/gohcl/decode.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert, github.com/zclconf/go-cty/cty/gocty, reflect
+- `teamserver/pkg/profile/yaotl/gohcl/encode.go` -> Havoc/pkg/profile/yaotl/hclwrite, fmt, github.com/zclconf/go-cty/cty/gocty, reflect, sort
+- `teamserver/pkg/profile/yaotl/gohcl/schema.go` -> Havoc/pkg/profile/yaotl, fmt, reflect, sort, strings
+- `teamserver/pkg/profile/yaotl/gohcl/types.go` -> Havoc/pkg/profile/yaotl, reflect
+- `teamserver/pkg/profile/yaotl/guide/conf.py` -> os, os.path, subprocess
+- `teamserver/pkg/profile/yaotl/hcldec/block_labels.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hcldec/decode.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hcldec/public.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hcldec/public_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty, reflect, testing
+- `teamserver/pkg/profile/yaotl/hcldec/schema.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hcldec/spec.go` -> Havoc/pkg/profile/yaotl, bytes, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert, github.com/zclconf/go-cty/cty/function, sort
+- `teamserver/pkg/profile/yaotl/hcldec/spec_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/apparentlymart/go-dump/dump, github.com/zclconf/go-cty/cty, reflect, testing
+- `teamserver/pkg/profile/yaotl/hcldec/variables.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hcldec/variables_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty, reflect, testing
+- `teamserver/pkg/profile/yaotl/hcled/navigation.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclparse/parser.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, Havoc/pkg/profile/yaotl/json, fmt, io/ioutil
+- `teamserver/pkg/profile/yaotl/hclsimple/hclsimple.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/gohcl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, io/ioutil, os
+- `teamserver/pkg/profile/yaotl/hclsyntax/diagnostics.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/didyoumean.go` -> github.com/agext/levenshtein
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert, github.com/zclconf/go-cty/cty/function, sync
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression_ops.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert, github.com/zclconf/go-cty/cty/function, github.com/zclconf/go-cty/cty/function/stdlib
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression_template.go` -> Havoc/pkg/profile/yaotl, bytes, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression_vars.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/expression_vars_gen.go` -> fmt, go/ast, go/parser, os, sort
+- `teamserver/pkg/profile/yaotl/hclsyntax/file.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/fuzz/config/fuzz.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclsyntax/fuzz/expr/fuzz.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclsyntax/fuzz/template/fuzz.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclsyntax/fuzz/traversal/fuzz.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclsyntax/keywords.go` -> bytes
+- `teamserver/pkg/profile/yaotl/hclsyntax/navigation.go` -> Havoc/pkg/profile/yaotl, bytes, fmt
+- `teamserver/pkg/profile/yaotl/hclsyntax/node.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/parser.go` -> Havoc/pkg/profile/yaotl, bytes, encoding/hex, fmt, github.com/apparentlymart/go-textseg/v13/textseg, github.com/zclconf/go-cty/cty, strconv, unicode/utf8
+- `teamserver/pkg/profile/yaotl/hclsyntax/parser_template.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/apparentlymart/go-textseg/v13/textseg, github.com/zclconf/go-cty/cty, strings, unicode
+- `teamserver/pkg/profile/yaotl/hclsyntax/parser_traversal.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hclsyntax/peeker.go` -> Havoc/pkg/profile/yaotl, bytes, fmt, path/filepath, runtime, strings
+- `teamserver/pkg/profile/yaotl/hclsyntax/public.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/scan_tokens.go` -> Havoc/pkg/profile/yaotl, bytes
+- `teamserver/pkg/profile/yaotl/hclsyntax/structure.go` -> Havoc/pkg/profile/yaotl, fmt, strings
+- `teamserver/pkg/profile/yaotl/hclsyntax/structure_at_pos.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/token.go` -> Havoc/pkg/profile/yaotl, bytes, fmt, github.com/apparentlymart/go-textseg/v13/textseg
+- `teamserver/pkg/profile/yaotl/hclsyntax/token_type_string.go` -> strconv
+- `teamserver/pkg/profile/yaotl/hclsyntax/unicode2ragel.rb` -> open-uri, optparse
+- `teamserver/pkg/profile/yaotl/hclsyntax/variables.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hclsyntax/walk.go` -> Havoc/pkg/profile/yaotl
+- `teamserver/pkg/profile/yaotl/hcltest/mock.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hcltest/mock_test.go` -> Havoc/pkg/profile/yaotl, github.com/zclconf/go-cty/cty, reflect, strings, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/ast.go` -> bytes, io
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_attribute.go` -> Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_block.go` -> Havoc/pkg/profile/yaotl/hclsyntax, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_block_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/davecgh/go-spew/spew, github.com/google/go-cmp/cmp, reflect, strings, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_body.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, github.com/zclconf/go-cty/cty, reflect
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_body_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/davecgh/go-spew/spew, github.com/google/go-cmp/cmp, github.com/zclconf/go-cty/cty, reflect, strings, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_expression.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hclwrite/ast_test.go` -> fmt, strings
+- `teamserver/pkg/profile/yaotl/hclwrite/examples_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclwrite, fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/hclwrite/format.go` -> Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclwrite/format_test.go` -> Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/davecgh/go-spew/spew, reflect, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/fuzz/config/fuzz.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclwrite, io/ioutil
+- `teamserver/pkg/profile/yaotl/hclwrite/generate.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty, unicode, unicode/utf8
+- `teamserver/pkg/profile/yaotl/hclwrite/generate_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, bytes, github.com/google/go-cmp/cmp, github.com/zclconf/go-cty/cty, math/big, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/native_node_sorter.go` -> Havoc/pkg/profile/yaotl/hclsyntax
+- `teamserver/pkg/profile/yaotl/hclwrite/node.go` -> fmt, github.com/google/go-cmp/cmp
+- `teamserver/pkg/profile/yaotl/hclwrite/parser.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty, sort
+- `teamserver/pkg/profile/yaotl/hclwrite/parser_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/davecgh/go-spew/spew, github.com/google/go-cmp/cmp, github.com/kylelemons/godebug/pretty, reflect, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/public.go` -> Havoc/pkg/profile/yaotl, bytes
+- `teamserver/pkg/profile/yaotl/hclwrite/round_trip_test.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, bytes, github.com/sergi/go-diff/diffmatchpatch, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/function, github.com/zclconf/go-cty/cty/function/stdlib, testing
+- `teamserver/pkg/profile/yaotl/hclwrite/tokens.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, bytes, github.com/apparentlymart/go-textseg/v13/textseg, io
+- `teamserver/pkg/profile/yaotl/json/ast.go` -> Havoc/pkg/profile/yaotl, math/big
+- `teamserver/pkg/profile/yaotl/json/didyoumean.go` -> github.com/agext/levenshtein
+- `teamserver/pkg/profile/yaotl/json/didyoumean_test.go` -> testing
+- `teamserver/pkg/profile/yaotl/json/fuzz/config/fuzz.go` -> Havoc/pkg/profile/yaotl/json
+- `teamserver/pkg/profile/yaotl/json/navigation.go` -> fmt, strings
+- `teamserver/pkg/profile/yaotl/json/navigation_test.go` -> fmt, strconv, testing
+- `teamserver/pkg/profile/yaotl/json/parser.go` -> Havoc/pkg/profile/yaotl, encoding/json, fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/json/parser_test.go` -> Havoc/pkg/profile/yaotl, github.com/go-test/deep, math/big, testing
+- `teamserver/pkg/profile/yaotl/json/public.go` -> Havoc/pkg/profile/yaotl, fmt, io/ioutil, os
+- `teamserver/pkg/profile/yaotl/json/public_test.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/zclconf/go-cty/cty, strings, testing
+- `teamserver/pkg/profile/yaotl/json/scanner.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/apparentlymart/go-textseg/v13/textseg
+- `teamserver/pkg/profile/yaotl/json/scanner_test.go` -> Havoc/pkg/profile/yaotl, bytes, fmt, reflect, testing
+- `teamserver/pkg/profile/yaotl/json/structure.go` -> Havoc/pkg/profile/yaotl, Havoc/pkg/profile/yaotl/hclsyntax, fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert
+- `teamserver/pkg/profile/yaotl/json/structure_test.go` -> Havoc/pkg/profile/yaotl, fmt, github.com/davecgh/go-spew/spew, github.com/go-test/deep, github.com/zclconf/go-cty/cty, reflect, strings, testing
+- `teamserver/pkg/profile/yaotl/json/tokentype_string.go` -> strconv
+- `teamserver/pkg/profile/yaotl/merged.go` -> fmt
+- `teamserver/pkg/profile/yaotl/ops.go` -> fmt, github.com/zclconf/go-cty/cty, github.com/zclconf/go-cty/cty/convert, math/big
+- `teamserver/pkg/profile/yaotl/pos.go` -> fmt
+- `teamserver/pkg/profile/yaotl/pos_scanner.go` -> bufio, bytes, github.com/apparentlymart/go-textseg/v13/textseg
+- `teamserver/pkg/profile/yaotl/specsuite/spec_test.go` -> bufio, bytes, fmt, os, os/exec, path/filepath, runtime, strings, testing
+- `teamserver/pkg/profile/yaotl/static_expr.go` -> github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/structure.go` -> github.com/zclconf/go-cty/cty
+- `teamserver/pkg/profile/yaotl/traversal.go` -> fmt, github.com/zclconf/go-cty/cty
+- `teamserver/pkg/service/agent.go` -> Havoc/pkg/agent, encoding/base64, encoding/json, fmt
+- `teamserver/pkg/service/listener.go` -> encoding/json
+- `teamserver/pkg/service/service.go` -> Havoc/pkg/agent, Havoc/pkg/common, encoding/base64, encoding/hex, encoding/json, fmt, github.com/gin-gonic/gin, github.com/gorilla/websocket, golang.org/x/crypto/sha3, strconv, strings, time
+- `teamserver/pkg/service/types.go` -> Havoc/pkg/agent, Havoc/pkg/packager, github.com/gin-gonic/gin, github.com/gorilla/websocket, sync
+- `teamserver/pkg/socks/socks.go` -> errors, net, strings
+- `teamserver/pkg/socks/util.go` -> bufio, encoding/binary, errors, fmt, net
+- `teamserver/pkg/utils/utils.go` -> encoding/base64, encoding/binary, fmt, math/rand, os, strconv, strings, time, unicode/utf16, unsafe
+- `teamserver/pkg/webhook/webhook.go` -> bytes, encoding/json, fmt, io, strconv
+
