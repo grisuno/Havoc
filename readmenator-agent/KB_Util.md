@@ -1,51 +1,44 @@
 # Subsystem: Util
 
-## client/include/Util/Base.hpp
+## client/src/Util/Base.cpp
 - Layer: infrastructure
-- Language: hpp
-- Symbols:
-  - `HAVOC_BASE_HPP` (macro, line 2) `#define HAVOC_BASE_HPP`
-- Imported by: `client/include/global.hpp`, `client/src/Havoc/Packager.cc`, `client/src/UserInterface/Widgets/FileBrowser.cc`, `client/src/Util/Base.cpp`
+- Language: cpp
+- Depends on: `client/include/Util/Base.hpp`
 
-## client/include/Util/Base64.h
+## client/src/Util/Base64.cpp
 - Layer: infrastructure
-- Language: h
+- Language: cpp
 - Symbols:
-  - `HAVOC_BASE64_H` (macro, line 2) `#define HAVOC_BASE64_H`
+  - `base64_encode` (function, line 9) `std::string HavocNamespace::Util::base64_encode(const char* buf, unsigned int bufLen)`
 - Depends on: `client/include/global.hpp`
-- Imported by: `client/src/Havoc/Demon/CommandSend.cc`
 
-## client/include/Util/ColorText.h
+## client/src/Util/ColorText.cpp
 - Layer: infrastructure
-- Language: h
+- Language: cpp
 - Symbols:
-  - `Colors` (struct, line 8)
-  - `Hex` (struct, line 9)
-  - `SetDraculaDark` (function, line 33) `static void SetDraculaDark();`
-  - `SetDraculaLight` (function, line 34) `static void SetDraculaLight();`
-  - `Color` (function, line 36) `static QString Color(const QString& color, const QString& text);`
-  - `Background` (function, line 37) `static QString Background(const QString&);`
-  - `Foreground` (function, line 38) `static QString Foreground(const QString&);`
-  - `Comment` (function, line 39) `static QString Comment(const QString&);`
-  - `Cyan` (function, line 40) `static QString Cyan(const QString&);`
-  - `Green` (function, line 41) `static QString Green(const QString&);`
-  - `Orange` (function, line 42) `static QString Orange(const QString&);`
-  - `Pink` (function, line 43) `static QString Pink(const QString&);`
-  - `Purple` (function, line 44) `static QString Purple(const QString&);`
-  - `Red` (function, line 45) `static QString Red(const QString&);`
-  - `Yellow` (function, line 46) `static QString Yellow(const QString&);`
-  - `Underline` (function, line 48) `static QString Underline(const QString& text);`
-  - `UnderlineBackground` (function, line 49) `static QString UnderlineBackground(const QString& text);`
-  - `UnderlineForeground` (function, line 50) `static QString UnderlineForeground(const QString& text);`
-  - `UnderlineComment` (function, line 51) `static QString UnderlineComment(const QString& text);`
-  - `UnderlineCyan` (function, line 52) `static QString UnderlineCyan(const QString& text);`
-  - `UnderlineGreen` (function, line 53) `static QString UnderlineGreen(const QString& text);`
-  - `UnderlineOrange` (function, line 54) `static QString UnderlineOrange(const QString& text);`
-  - `UnderlinePink` (function, line 55) `static QString UnderlinePink(const QString& text);`
-  - `UnderlinePurple` (function, line 56) `static QString UnderlinePurple(const QString& text);`
-  - `UnderlineRed` (function, line 57) `static QString UnderlineRed(const QString& text);`
-  - `UnderlineYellow` (function, line 58) `static QString UnderlineYellow(const QString& text);`
-  - `Bold` (function, line 60) `static QString Bold(const QString& text);`
-  - `HAVOC_COLORTEXT_H` (macro, line 2) `#define HAVOC_COLORTEXT_H`
-- Depends on: `client/include/global.hpp`
-- Imported by: `client/src/Havoc/Demon/CommandOutput.cc`, `client/src/Havoc/Demon/ConsoleInput.cc`, `client/src/Havoc/Packager.cc`, `client/src/Havoc/PythonApi/PyAgentClass.cc`, `client/src/Havoc/PythonApi/PyDemonClass.cc`, `client/src/UserInterface/Dialogs/Payload.cc`, `client/src/UserInterface/HavocUi.cc`, `client/src/UserInterface/SmallWidgets/EventViewer.cc`, `client/src/UserInterface/Widgets/Chat.cc`, `client/src/UserInterface/Widgets/DemonInteracted.cc`, `client/src/UserInterface/Widgets/ListenersTable.cc`, `client/src/UserInterface/Widgets/PythonScript.cc`, `client/src/UserInterface/Widgets/SessionGraph.cc`, `client/src/UserInterface/Widgets/SessionTable.cc`, `client/src/UserInterface/Widgets/TeamserverTabSession.cc`, `client/src/Util/ColorText.cpp`
+  - `SetDraculaDark` (function, line 24) `void HavocNamespace::Util::ColorText::SetDraculaDark()`
+  - `SetDraculaLight` (function, line 40) `void HavocNamespace::Util::ColorText::SetDraculaLight()`
+  - `Color` (function, line 45) `QString HavocNamespace::Util::ColorText::Color(const QString& color, const QString &text)`
+  - `Background` (function, line 50) `QString HavocNamespace::Util::ColorText::Background(const QString& text)`
+  - `Foreground` (function, line 55) `QString HavocNamespace::Util::ColorText::Foreground(const QString& text)`
+  - `Comment` (function, line 59) `QString HavocNamespace::Util::ColorText::Comment(const QString& text)`
+  - `Cyan` (function, line 63) `QString HavocNamespace::Util::ColorText::Cyan(const QString& text)`
+  - `Green` (function, line 67) `QString HavocNamespace::Util::ColorText::Green(const QString& text)`
+  - `Orange` (function, line 71) `QString HavocNamespace::Util::ColorText::Orange(const QString& text)`
+  - `Pink` (function, line 75) `QString HavocNamespace::Util::ColorText::Pink(const QString& text)`
+  - `Purple` (function, line 79) `QString HavocNamespace::Util::ColorText::Purple(const QString& text)`
+  - `Red` (function, line 83) `QString HavocNamespace::Util::ColorText::Red(const QString& text)`
+  - `Yellow` (function, line 87) `QString HavocNamespace::Util::ColorText::Yellow(const QString& text)`
+  - `Bold` (function, line 91) `QString HavocNamespace::Util::ColorText::Bold(const QString& text)`
+  - `Underline` (function, line 95) `QString HavocNamespace::Util::ColorText::Underline(const QString &text)`
+  - `UnderlineBackground` (function, line 99) `QString HavocNamespace::Util::ColorText::UnderlineBackground(const QString &text)`
+  - `UnderlineForeground` (function, line 103) `QString HavocNamespace::Util::ColorText::UnderlineForeground(const QString &text)`
+  - `UnderlineComment` (function, line 107) `QString HavocNamespace::Util::ColorText::UnderlineComment(const QString &text)`
+  - `UnderlineCyan` (function, line 111) `QString HavocNamespace::Util::ColorText::UnderlineCyan(const QString &text)`
+  - `UnderlineGreen` (function, line 115) `QString HavocNamespace::Util::ColorText::UnderlineGreen(const QString &text)`
+  - `UnderlineOrange` (function, line 119) `QString HavocNamespace::Util::ColorText::UnderlineOrange(const QString &text)`
+  - `UnderlinePink` (function, line 123) `QString HavocNamespace::Util::ColorText::UnderlinePink(const QString &text)`
+  - `UnderlinePurple` (function, line 127) `QString HavocNamespace::Util::ColorText::UnderlinePurple(const QString &text)`
+  - `UnderlineRed` (function, line 131) `QString HavocNamespace::Util::ColorText::UnderlineRed(const QString &text)`
+  - `UnderlineYellow` (function, line 135) `QString HavocNamespace::Util::ColorText::UnderlineYellow(const QString &text)`
+- Depends on: `client/include/Util/ColorText.h`

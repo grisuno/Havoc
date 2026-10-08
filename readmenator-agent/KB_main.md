@@ -1,8 +1,8 @@
 # Subsystem: main
 
 ## payloads/Demon/src/main/MainDll.c
-- Doc: Export this for rundll32 or any other program that requires and exported functions...
 - Layer: utility
+- Doc: Export this for rundll32 or any other program that requires and exported functions... TODO: make this function name opti
 - Language: c
 - Symbols:
   - `Start` (function, line 8) `DLLEXPORT VOID Start(  )`
@@ -20,8 +20,8 @@
 - Depends on: `payloads/Demon/include/Demon.h`
 
 ## payloads/Demon/src/main/MainSvc.c
-- Doc: Service handle and status variable
 - Layer: utility
+- Doc: Service handle and status variable
 - Language: c
 - Symbols:
   - `WinMain` (function, line 16) `INT WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, INT nShowCmd )`

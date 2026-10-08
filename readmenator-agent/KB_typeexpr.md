@@ -1,12 +1,11 @@
 # Subsystem: typeexpr
 
 ## teamserver/pkg/profile/yaotl/ext/typeexpr/doc.go
-- Doc: Package typeexpr extends HCL with a convention for describing HCL types within configuration files.
 - Layer: utility
+- Doc: Package typeexpr extends HCL with a convention for describing HCL types within configuration files.  The type syntax is 
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/ext/typeexpr/get_type.go
-- Doc: getType: getType is the internal implementation of both Type and TypeConstraint, using the...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -20,7 +19,6 @@
   - `TestGetTypeJSON` (function, line 282) `func TestGetTypeJSON(`
 
 ## teamserver/pkg/profile/yaotl/ext/typeexpr/public.go
-- Doc: Type: Type attempts to process the given expression as a type expression and, if successful...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -35,7 +33,6 @@
   - `TestTypeString` (function, line 9) `func TestTypeString(`
 
 ## teamserver/pkg/profile/yaotl/ext/typeexpr/type_type.go
-- Doc: TypeConstraintVal: TypeConstraintVal constructs a cty.Value whose type is TypeConstraintType.
 - Layer: utility
 - Language: go
 - Symbols:

@@ -1,15 +1,14 @@
 # Subsystem: customdecode
 
 ## teamserver/pkg/profile/yaotl/ext/customdecode/customdecode.go
-- Doc: Package customdecode contains a HCL extension that allows, in certain contexts, expression...
 - Layer: utility
+- Doc: Package customdecode contains a HCL extension that allows, in certain contexts, expression evaluation to be overridden b
 - Language: go
 - Symbols:
   - `CustomExpressionDecoderForType` (function, line 48) `func CustomExpressionDecoderForType(`
 - Imported by: `teamserver/pkg/profile/yaotl/ext/tryfunc/tryfunc.go`, `teamserver/pkg/profile/yaotl/ext/typeexpr/type_type.go`, `teamserver/pkg/profile/yaotl/hcldec/spec.go`, `teamserver/pkg/profile/yaotl/hclsyntax/expression.go`
 
 ## teamserver/pkg/profile/yaotl/ext/customdecode/expression_type.go
-- Doc: ExpressionClosure: ExpressionClosure is the type encapsulated in ExpressionClosureType
 - Layer: utility
 - Language: go
 - Symbols:

@@ -1,8 +1,7 @@
 # Subsystem: yaotl
 
 ## teamserver/pkg/profile/yaotl/diagnostic.go
-- Doc: Diagnostic: Diagnostic represents information to be presented to a user about an error or...
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `Error` (function, line 76) `func (d *Diagnostic) Error(`
@@ -15,8 +14,7 @@
   - `DiagnosticWriter` (interface, line 140)
 
 ## teamserver/pkg/profile/yaotl/diagnostic_text.go
-- Doc: NewDiagnosticTextWriter: NewDiagnosticTextWriter creates a DiagnosticWriter that writes...
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `NewDiagnosticTextWriter` (function, line 34) `func NewDiagnosticTextWriter(`
@@ -28,20 +26,18 @@
   - `diagnosticTextWriter` (struct, line 15)
 
 ## teamserver/pkg/profile/yaotl/didyoumean.go
-- Doc: nameSuggestion: nameSuggestion tries to find a name from the given slice of suggested names that...
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `nameSuggestion` (function, line 16) `func nameSuggestion(`
 
 ## teamserver/pkg/profile/yaotl/doc.go
-- Doc: Package hcl contains the main modelling types and general utility functions for HCL.
 - Layer: utility
+- Doc: Package hcl contains the main modelling types and general utility functions for HCL.  For a simple entry point into HCL,
 - Language: go
 - Depends on: `teamserver/pkg/profile/yaotl/hclsimple/hclsimple.go`
 
 ## teamserver/pkg/profile/yaotl/eval_context.go
-- Doc: EvalContext: An EvalContext provides the variables and functions that should be used to evaluate...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -50,7 +46,6 @@
   - `EvalContext` (struct, line 10)
 
 ## teamserver/pkg/profile/yaotl/expr_call.go
-- Doc: StaticCall: StaticCall represents a function call that was extracted statically from an...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -58,14 +53,12 @@
   - `StaticCall` (struct, line 41)
 
 ## teamserver/pkg/profile/yaotl/expr_list.go
-- Doc: ExprList: ExprList tests if the given expression is a static list construct and, if so, extracts...
 - Layer: utility
 - Language: go
 - Symbols:
   - `ExprList` (function, line 14) `func ExprList(`
 
 ## teamserver/pkg/profile/yaotl/expr_map.go
-- Doc: KeyValuePair: KeyValuePair represents a pair of expressions that serve as a single item within a...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -73,7 +66,6 @@
   - `KeyValuePair` (struct, line 41)
 
 ## teamserver/pkg/profile/yaotl/expr_unwrap.go
-- Doc: UnwrapExpression: type-assert on the physical AST types used by the underlying syntax.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -82,7 +74,6 @@
   - `unwrapExpression` (interface, line 3)
 
 ## teamserver/pkg/profile/yaotl/merged.go
-- Doc: MergeFiles: MergeFiles combines the given files to produce a single body that contains...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -96,7 +87,6 @@
   - `mergedContent` (function, line 142) `func (mb mergedBodies) mergedContent(`
 
 ## teamserver/pkg/profile/yaotl/ops.go
-- Doc: Index: Index is a helper function that performs the same operation as the index operator in the...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -105,7 +95,6 @@
   - `ApplyPath` (function, line 404) `func ApplyPath(`
 
 ## teamserver/pkg/profile/yaotl/pos.go
-- Doc: Pos: Pos represents a single position in a source file, by addressing the start byte of a...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -125,7 +114,6 @@
   - `Range` (struct, line 43)
 
 ## teamserver/pkg/profile/yaotl/pos_scanner.go
-- Doc: RangeScanner: RangeScanner is a helper that will scan over a buffer using a bufio.SplitFunc and...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -138,7 +126,6 @@
   - `RangeScanner` (struct, line 21)
 
 ## teamserver/pkg/profile/yaotl/schema.go
-- Doc: BlockHeaderSchema: BlockHeaderSchema represents the shape of a block header, and is used for...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -147,7 +134,6 @@
   - `BodySchema` (struct, line 18)
 
 ## teamserver/pkg/profile/yaotl/static_expr.go
-- Doc: StaticExpr: StaticExpr returns an Expression that always evaluates to the given value.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -159,7 +145,6 @@
   - `staticExpr` (struct, line 7)
 
 ## teamserver/pkg/profile/yaotl/structure.go
-- Doc: File: File is the top-level node that results from parsing a HCL file.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -173,7 +158,6 @@
   - `Expression` (interface, line 95)
 
 ## teamserver/pkg/profile/yaotl/structure_at_pos.go
-- Doc: BlocksAtPos: BlocksAtPos attempts to find all of the blocks that contain the given position...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -184,7 +168,6 @@
   - `AttributeAtPos` (function, line 105) `func (f *File) AttributeAtPos(`
 
 ## teamserver/pkg/profile/yaotl/traversal.go
-- Doc: TraversalSplit: TraversalSplit represents a pair of traversals, the first of which is an...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -218,7 +201,6 @@
   - `TraverseSplat` (struct, line 281)
 
 ## teamserver/pkg/profile/yaotl/traversal_for_expr.go
-- Doc: AbsTraversalForExpr: A particular Expression implementation can support this function by...
 - Layer: utility
 - Language: go
 - Symbols:

@@ -1,12 +1,11 @@
 # Subsystem: hcltest
 
 ## teamserver/pkg/profile/yaotl/hcltest/doc.go
-- Doc: Package hcltest contains utilities that aim to make it more convenient to write tests for code...
-- Layer: utility
+- Layer: testing
+- Doc: Package hcltest contains utilities that aim to make it more convenient to write tests for code that interacts with the H
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/hcltest/mock.go
-- Doc: MockBody: MockBody returns a hcl.Body implementation that works in terms of a caller-constructed...
 - Layer: testing
 - Language: go
 - Symbols:

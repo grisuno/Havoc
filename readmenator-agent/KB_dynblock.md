@@ -1,7 +1,6 @@
 # Subsystem: dynblock
 
 ## teamserver/pkg/profile/yaotl/ext/dynblock/expand_body.go
-- Doc: expandBody: expandBody wraps another hcl.Body and expands any "dynamic" blocks found inside...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -31,7 +30,6 @@
   - `expandSpec` (struct, line 11)
 
 ## teamserver/pkg/profile/yaotl/ext/dynblock/expr_wrap.go
-- Doc: UnwrapExpression: UnwrapExpression returns the expression being wrapped by this instance.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -51,8 +49,8 @@
   - `iteration` (struct, line 8)
 
 ## teamserver/pkg/profile/yaotl/ext/dynblock/public.go
-- Doc: Package dynblock provides an extension to HCL that allows dynamic declaration of nested blocks...
 - Layer: utility
+- Doc: Package dynblock provides an extension to HCL that allows dynamic declaration of nested blocks in certain contexts via a
 - Language: go
 - Symbols:
   - `Expand` (function, line 42) `func Expand(`
@@ -62,7 +60,6 @@
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/ext/dynblock/unknown_body.go
-- Doc: unknownBody: unknownBody is a funny body that just reports everything inside it as unknown.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -76,7 +73,6 @@
   - `unknownBody` (struct, line 17)
 
 ## teamserver/pkg/profile/yaotl/ext/dynblock/variables.go
-- Doc: WalkVariables: WalkVariables begins the recursive process of walking all expressions and nested...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -89,7 +85,6 @@
   - `WalkVariablesChild` (struct, line 45)
 
 ## teamserver/pkg/profile/yaotl/ext/dynblock/variables_hcldec.go
-- Doc: VariablesHCLDec: VariablesHCLDec is a wrapper around WalkVariables that uses the given hcldec...
 - Layer: utility
 - Language: go
 - Symbols:

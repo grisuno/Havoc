@@ -8,7 +8,6 @@
 - Imported by: `client/include/global.hpp`
 
 ## client/include/global.hpp
-- Doc: u32: pragma push_macro("slots") undef slots include <Python.h> pragma pop_macro("slots")
 - Layer: infrastructure
 - Language: hpp
 - Symbols:

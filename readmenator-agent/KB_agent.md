@@ -1,7 +1,6 @@
 # Subsystem: agent
 
 ## teamserver/pkg/agent/agent.go
-- Doc: IsKnownRequestID: check that the request the agent is valid
 - Layer: utility
 - Language: go
 - Symbols:
@@ -43,7 +42,6 @@
 - Language: go
 
 ## teamserver/pkg/agent/demons.go
-- Doc: UploadMemFileInChunks: we upload heavy files to the implant in chunks, so SMB agents can handle...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -55,7 +53,6 @@
 - Depends on: `teamserver/pkg/logger/logger.go`, `teamserver/pkg/logr/logr.go`, `teamserver/pkg/socks/socks.go`, `teamserver/pkg/utils/utils.go`
 
 ## teamserver/pkg/agent/types.go
-- Doc: Agent: TODO: maybe change this to type map[string]any instead of struct
 - Layer: utility
 - Language: go
 - Symbols:

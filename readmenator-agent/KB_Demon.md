@@ -8,8 +8,8 @@
 - Depends on: `client/include/Havoc/DemonCmdDispatch.h`, `client/include/UserInterface/Widgets/DemonInteracted.h`, `client/include/UserInterface/Widgets/ProcessList.hpp`, `client/include/UserInterface/Widgets/TeamserverTabSession.h`, `client/include/Util/ColorText.h`
 
 ## client/src/Havoc/Demon/CommandSend.cc
-- Doc: TODO: refactor this
 - Layer: infrastructure
+- Doc: TODO: refactor this
 - Language: cc
 - Depends on: `client/include/Havoc/Connector.hpp`, `client/include/Havoc/DemonCmdDispatch.h`, `client/include/Havoc/Packager.hpp`, `client/include/UserInterface/Widgets/DemonInteracted.h`, `client/include/Util/Base64.h`
 

@@ -1,26 +1,23 @@
 # Subsystem: hclsyntax
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/diagnostics.go
-- Doc: setDiagEvalContext: setDiagEvalContext is an internal helper that will impose a particular...
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `setDiagEvalContext` (function, line 16) `func setDiagEvalContext(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/didyoumean.go
-- Doc: nameSuggestion: nameSuggestion tries to find a name from the given slice of suggested names that...
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `nameSuggestion` (function, line 16) `func nameSuggestion(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/doc.go
-- Doc: Package hclsyntax contains the parser, AST, etc for HCL's native language, as opposed to the...
 - Layer: utility
+- Doc: Package hclsyntax contains the parser, AST, etc for HCL's native language, as opposed to the JSON variant.  In normal us
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/expression.go
-- Doc: ParenthesesExpr: ParenthesesExpr represents an expression written in grouping parentheses.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -120,7 +117,6 @@
   - `UnaryOpExpr` (struct, line 206)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/expression_template.go
-- Doc: TemplateJoinExpr: TemplateJoinExpr is used to convert tuples of strings produced by template...
 - Layer: presentation
 - Language: go
 - Symbols:
@@ -164,8 +160,8 @@
   - `Variables` (function, line 74) `func (e *UnaryOpExpr) Variables(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/expression_vars_gen.go
-- Doc: This is a 'go generate'-oriented program for producing the "Variables" method on every...
 - Layer: utility
+- Doc: This is a 'go generate'-oriented program for producing the "Variables" method on every Expression implementation found w
 - Language: go
 - Symbols:
   - `main` (function, line 20) `func main(`
@@ -173,7 +169,6 @@
 - Depends on: `teamserver/pkg/profile/yaotl/hclsyntax/token.go`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/file.go
-- Doc: File: File is the top-level object resulting from parsing a configuration file.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -191,7 +186,6 @@
   - `TokenMatches` (function, line 16) `func (kw Keyword) TokenMatches(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/navigation.go
-- Doc: ContextString: Implementation of hcled.ContextString
 - Layer: utility
 - Language: go
 - Symbols:
@@ -200,14 +194,12 @@
   - `navigation` (struct, line 10)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/node.go
-- Doc: Node: Node is the abstract type that every AST node implements.
 - Layer: utility
 - Language: go
 - Symbols:
   - `Node` (interface, line 11)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/parser.go
-- Doc: parseSingleAttrBody: parseSingleAttrBody is a weird variant of ParseBody that deals with the...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -239,7 +231,6 @@
   - `parser` (struct, line 15)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/parser_template.go
-- Doc: templateToken: templateToken is a higher-level token that represents a single atom within the...
 - Layer: presentation
 - Language: go
 - Symbols:
@@ -267,14 +258,12 @@
   - `templateEndToken` (struct, line 801)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/parser_traversal.go
-- Doc: ParseTraversalAbs: ParseTraversalAbs parses an absolute traversal that is assumed to consume all...
 - Layer: utility
 - Language: go
 - Symbols:
   - `ParseTraversalAbs` (function, line 12) `func (p *parser) ParseTraversalAbs(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/peeker.go
-- Doc: peekerNewlineStackChange: for use in debugging the stack usage only
 - Layer: utility
 - Language: go
 - Symbols:
@@ -293,7 +282,6 @@
   - `peekerNewlineStackChange` (struct, line 32)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/public.go
-- Doc: ParseConfig: ParseConfig parses the given buffer as a whole HCL config file, returning a...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -307,21 +295,20 @@
   - `ValidIdentifier` (function, line 165) `func ValidIdentifier(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/scan_string_lit.go
-- Doc: line scan_string_lit.rl:1
 - Layer: utility
+- Doc: line scan_string_lit.rl:1
 - Language: go
 - Symbols:
   - `scanStringLit` (function, line 119) `func scanStringLit(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/scan_tokens.go
-- Doc: line scan_tokens.rl:1
 - Layer: utility
+- Doc: line scan_tokens.rl:1
 - Language: go
 - Symbols:
   - `scanTokens` (function, line 4220) `func scanTokens(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/structure.go
-- Doc: Body: Body is the implementation of hcl.Body for the HCL native syntax.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -347,7 +334,6 @@
   - `Block` (struct, line 373)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/structure_at_pos.go
-- Doc: BlocksAtPos: BlocksAtPos implements the method of the same name for an *hcl.File that is backed...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -361,7 +347,6 @@
   - `OutermostExprAtPos` (function, line 109) `func (b *Body) OutermostExprAtPos(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/token.go
-- Doc: Token: Token represents a sequence of bytes from some HCL code that has been tagged with a type...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -376,16 +361,16 @@
 - Imported by: `teamserver/pkg/profile/yaotl/hclsyntax/expression_vars_gen.go`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/token_type_string.go
-- Doc: Code generated by "stringer -type TokenType -output token_type_string.go"; DO NOT EDIT.
 - Layer: utility
+- Doc: Code generated by "stringer -type TokenType -output token_type_string.go"; DO NOT EDIT.
 - Language: go
 - Symbols:
   - `_` (function, line 7) `func _(`
   - `String` (function, line 126) `func (i TokenType) String(`
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/unicode2ragel.rb
-- Doc: This scripted has been updated to accept more command-line arguments:  -u, --url...
 - Layer: utility
+- Doc: This scripted has been updated to accept more command-line arguments:  -u, --url                        URL to process -
 - Language: rb
 - Symbols:
   - `each_alpha` (method, line 80)
@@ -401,7 +386,6 @@
   - `generate_machine` (method, line 285)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/variables.go
-- Doc: variablesWalker: variablesWalker is a Walker implementation that calls its callback for any root...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -414,7 +398,6 @@
   - `ChildScope` (struct, line 73)
 
 ## teamserver/pkg/profile/yaotl/hclsyntax/walk.go
-- Doc: Walker: Walker is an interface used with Walk.
 - Layer: utility
 - Language: go
 - Symbols:

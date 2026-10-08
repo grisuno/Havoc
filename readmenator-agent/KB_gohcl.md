@@ -1,7 +1,6 @@
 # Subsystem: gohcl
 
 ## teamserver/pkg/profile/yaotl/gohcl/decode.go
-- Doc: DecodeBody: a map, where in the former case the configuration will be decoded using struct tags...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -13,12 +12,11 @@
   - `DecodeExpression` (function, line 306) `func DecodeExpression(`
 
 ## teamserver/pkg/profile/yaotl/gohcl/doc.go
-- Doc: Package gohcl allows decoding HCL configurations into Go data structures.
 - Layer: utility
+- Doc: Package gohcl allows decoding HCL configurations into Go data structures.  It provides a convenient and concise way of d
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/gohcl/encode.go
-- Doc: EncodeIntoBody: Any fields tagged as "label" are ignored by this function.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -27,7 +25,6 @@
   - `populateBody` (function, line 85) `func populateBody(`
 
 ## teamserver/pkg/profile/yaotl/gohcl/schema.go
-- Doc: ImpliedBodySchema: ImpliedBodySchema produces a hcl.BodySchema derived from the type of the...
 - Layer: utility
 - Language: go
 - Symbols:

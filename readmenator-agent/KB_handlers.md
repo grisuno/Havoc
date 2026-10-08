@@ -1,7 +1,6 @@
 # Subsystem: handlers
 
 ## teamserver/pkg/handlers/external.go
-- Doc: Request: Request The way the external c2 handles or parses the request is like the HTTP listener.
 - Layer: presentation
 - Language: go
 - Symbols:
@@ -11,7 +10,6 @@
 - Depends on: `teamserver/pkg/colors/colors.go`, `teamserver/pkg/handlers/http.go`, `teamserver/pkg/logger/logger.go`
 
 ## teamserver/pkg/handlers/handlers.go
-- Doc: parseAgentRequest: parseAgentRequest parses the agent request and handles the given data. return...
 - Layer: presentation
 - Language: go
 - Symbols:
@@ -23,7 +21,6 @@
 - Imported by: `teamserver/cmd/server/dispatch.go`, `teamserver/cmd/server/listener.go`, `teamserver/cmd/server/teamserver.go`, `teamserver/pkg/common/builder/builder.go`, `teamserver/pkg/events/listeners.go`
 
 ## teamserver/pkg/handlers/http.go
-- Doc: fake404: fake nginx 404 page
 - Layer: presentation
 - Language: go
 - Symbols:

@@ -17,8 +17,8 @@
 - Imported by: `client/include/Havoc/Havoc.hpp`, `client/include/UserInterface/HavocUI.hpp`, `client/include/UserInterface/Widgets/ListenerTable.hpp`, `client/src/Havoc/DBManger/DBManager.cc`, `client/src/Havoc/DBManger/Scripts.cc`, `client/src/Havoc/DBManger/Teamserver.cc`, `client/src/UserInterface/Dialogs/Connect.cc`, `client/src/UserInterface/Widgets/ScriptManager.cc`, `client/src/UserInterface/Widgets/Store.cc`
 
 ## client/include/UserInterface/HavocUI.hpp
-- Doc: QT libraries
 - Layer: presentation
+- Doc: QT libraries
 - Language: hpp
 - Symbols:
   - `MarkSessionAs` (function, line 68) `public: void MarkSessionAs( HavocNamespace::Util::SessionItem session, QString Mark );`
@@ -47,8 +47,8 @@
 - Imported by: `client/src/Havoc/Packager.cc`, `client/src/UserInterface/HavocUi.cc`, `client/src/UserInterface/SmallWidgets/EventViewer.cc`, `client/src/UserInterface/Widgets/ListenersTable.cc`, `client/src/UserInterface/Widgets/SessionTable.cc`, `client/src/UserInterface/Widgets/TeamserverTabSession.cc`
 
 ## client/src/UserInterface/HavocUi.cc
-- Doc: Headers for UserInterface
 - Layer: presentation
+- Doc: Headers for UserInterface
 - Language: cc
 - Symbols:
   - `setupUi` (function, line 28) `void HavocNamespace::UserInterface::HavocUi::setupUi(QMainWindow *Havoc)`
@@ -92,7 +92,6 @@
 - Depends on: `client/include/UserInterface/SmallWidgets/EventViewer.hpp`, `client/include/Util/ColorText.h`
 
 ## payloads/Demon/include/Demon.h
-- Doc: Session: TODO: remove all variables that are not switched/changed after some time
 - Layer: utility
 - Language: h
 - Symbols:
@@ -119,16 +118,16 @@
 - Imported by: `payloads/Demon/src/core/Package.c`, `payloads/Demon/src/core/Parser.c`, `payloads/Demon/src/core/Transport.c`, `payloads/Demon/src/crypt/AesCrypt.c`
 
 ## payloads/Demon/scripts/hash_func.py
-- Doc: credit: https://github.com/tigr0w/realoriginal_titanldr-ng/blob/5b8835143f36adfb8d077823e18f21d30...
 - Layer: utility
+- Doc: credit: https://github.com/tigr0w/realoriginal_titanldr-ng/blob/5b8835143f36adfb8d077823e18f21d3043960fb/python3/hashstr
 - Language: py
 - Symbols:
   - `hash_string` (function, line 7) `def hash_string(string)`
   - `hash_coffapi` (function, line 18) `def hash_coffapi(string)`
 
 ## payloads/Demon/src/Demon.c
-- Doc: Import Common Headers
 - Layer: utility
+- Doc: Import Common Headers
 - Language: c
 - Symbols:
   - `DemonMain` (function, line 34) `VOID DemonMain( PVOID ModuleInst, PKAYN_ARGS KArgs )`
@@ -159,7 +158,6 @@ VOID DemonConfig()`
 - Depends on: `payloads/Demon/include/Demon.h`, `payloads/Demon/include/common/Defines.h`, `payloads/Demon/include/common/Macros.h`, `payloads/Demon/include/core/MiniStd.h`, `payloads/Demon/include/core/ObjectApi.h`, `payloads/Demon/include/core/Runtime.h`, `payloads/Demon/include/core/SleepObf.h`, `payloads/Demon/include/core/SysNative.h`, `payloads/Demon/include/core/Transport.h`, `payloads/Demon/include/core/Win32.h`, `payloads/Demon/include/inject/Inject.h`
 
 ## payloads/Demon/src/crypt/AesCrypt.c
-- Doc: AddRoundKey: This function adds the round key to state.
 - Layer: utility
 - Language: c
 - Symbols:
@@ -220,7 +218,7 @@ VOID DemonConfig()`
 - Imported by: `teamserver/cmd/cmd.go`, `teamserver/cmd/server.go`, `teamserver/cmd/server/listener.go`, `teamserver/cmd/server/teamserver.go`, `teamserver/pkg/handlers/external.go`, `teamserver/pkg/handlers/http.go`, `teamserver/pkg/handlers/smb.go`, `teamserver/pkg/logger/logger.go`, `teamserver/pkg/profile/profile.go`, `teamserver/pkg/service/service.go`
 
 ## teamserver/pkg/common/builder/builder.go
-- Layer: infrastructure
+- Layer: presentation
 - Language: go
 - Symbols:
   - `NewBuilder` (function, line 141) `func NewBuilder(`
@@ -247,7 +245,6 @@ VOID DemonConfig()`
 - Imported by: `teamserver/cmd/server/dispatch.go`
 
 ## teamserver/pkg/common/certs/https.go
-- Doc: HTTPSGenerateRSACertificate: HTTPSGenerateRSACertificate - Generate a server certificate signed...
 - Layer: presentation
 - Language: go
 - Symbols:
@@ -273,7 +270,6 @@ VOID DemonConfig()`
 - Depends on: `teamserver/pkg/logger/logger.go`
 
 ## teamserver/pkg/common/packer/packer.go
-- Doc: AddUInt32: AddUInt32 use a much as possible this function
 - Layer: utility
 - Language: go
 - Symbols:
@@ -314,7 +310,6 @@ VOID DemonConfig()`
   - `Parser` (struct, line 19)
 
 ## teamserver/pkg/common/util.go
-- Doc: GeneratePipeName: generate a PipeName from a name template
 - Layer: utility
 - Language: go
 - Symbols:
@@ -338,12 +333,12 @@ VOID DemonConfig()`
 - Depends on: `teamserver/pkg/logger/logger.go`
 
 ## teamserver/pkg/profile/yaotl/guide/conf.py
-- Layer: utility
+- Layer: presentation
 - Language: py
 
 ## teamserver/pkg/profile/yaotl/hclparse/parser.go
-- Doc: Package hclparse has the main API entry point for parsing both HCL native syntax and HCL JSON.
 - Layer: utility
+- Doc: Package hclparse has the main API entry point for parsing both HCL native syntax and HCL JSON.  The main HCL package als
 - Language: go
 - Symbols:
   - `NewParser` (function, line 43) `func NewParser(`
@@ -357,8 +352,8 @@ VOID DemonConfig()`
   - `Parser` (struct, line 38)
 
 ## teamserver/pkg/profile/yaotl/hclsimple/hclsimple.go
-- Doc: Package hclsimple is a higher-level entry point for loading HCL configuration files directly...
 - Layer: utility
+- Doc: Package hclsimple is a higher-level entry point for loading HCL configuration files directly into Go struct values in a 
 - Language: go
 - Symbols:
   - `Decode` (function, line 53) `func Decode(`

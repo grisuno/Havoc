@@ -16,8 +16,8 @@
   - `sourceRange` (function, line 31) `func sourceRange(`
 
 ## teamserver/pkg/profile/yaotl/hcldec/doc.go
-- Doc: Package hcldec provides a higher-level API for unpacking the content of HCL bodies, implemented...
 - Layer: utility
+- Doc: Package hcldec provides a higher-level API for unpacking the content of HCL bodies, implemented in terms of the low-leve
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/hcldec/gob.go
@@ -27,7 +27,6 @@
   - `init` (function, line 7) `func init(`
 
 ## teamserver/pkg/profile/yaotl/hcldec/public.go
-- Doc: Decode: Decode interprets the given body using the given specification and returns the resulting...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -45,14 +44,12 @@
   - `TestSourceRange` (function, line 1046) `func TestSourceRange(`
 
 ## teamserver/pkg/profile/yaotl/hcldec/schema.go
-- Doc: ImpliedSchema: ImpliedSchema returns the *hcl.BodySchema implied by the given specification.
 - Layer: utility
 - Language: go
 - Symbols:
   - `ImpliedSchema` (function, line 10) `func ImpliedSchema(`
 
 ## teamserver/pkg/profile/yaotl/hcldec/spec.go
-- Doc: AttrSpec: An AttrSpec is a Spec that evaluates a particular attribute expression in the body and...
 - Layer: testing
 - Language: go
 - Symbols:
@@ -188,7 +185,6 @@
   - `TestValidateFuncSpec` (function, line 145) `func TestValidateFuncSpec(`
 
 ## teamserver/pkg/profile/yaotl/hcldec/variables.go
-- Doc: Variables: Variables processes the given body with the given spec and returns a list of the...
 - Layer: utility
 - Language: go
 - Symbols:

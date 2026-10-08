@@ -1,8 +1,8 @@
 # Subsystem: tryfunc
 
 ## teamserver/pkg/profile/yaotl/ext/tryfunc/tryfunc.go
-- Doc: Package tryfunc contains some optional functions that can be exposed in HCL-based languages to...
 - Layer: utility
+- Doc: Package tryfunc contains some optional functions that can be exposed in HCL-based languages to allow authors to test whe
 - Language: go
 - Symbols:
   - `init` (function, line 30) `func init(`

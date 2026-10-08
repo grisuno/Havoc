@@ -5,7 +5,6 @@
 - Language: go
 
 ## teamserver/cmd/cmd.go
-- Doc: init: init all flags
 - Layer: utility
 - Language: go
 - Symbols:

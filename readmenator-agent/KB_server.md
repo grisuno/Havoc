@@ -26,14 +26,13 @@
 - Depends on: `teamserver/pkg/events/events.go`, `teamserver/pkg/logger/logger.go`
 
 ## teamserver/cmd/server/dispatch.go
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `DispatchEvent` (function, line 20) `func (t *Teamserver) DispatchEvent(`
 - Depends on: `teamserver/pkg/common/builder/builder.go`, `teamserver/pkg/events/events.go`, `teamserver/pkg/handlers/handlers.go`, `teamserver/pkg/logger/logger.go`, `teamserver/pkg/logr/logr.go`
 
 ## teamserver/cmd/server/listener.go
-- Doc: ListenerAdd: ListenerAdd creates a package for the client that a new listener has been added.
 - Layer: utility
 - Language: go
 - Symbols:

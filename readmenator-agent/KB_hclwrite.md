@@ -1,7 +1,6 @@
 # Subsystem: hclwrite
 
 ## teamserver/pkg/profile/yaotl/hclwrite/ast.go
-- Doc: NewEmptyFile: NewEmptyFile constructs a new file with no content, ready to be mutated by other...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -34,7 +33,6 @@
   - `Attribute` (struct, line 7)
 
 ## teamserver/pkg/profile/yaotl/hclwrite/ast_block.go
-- Doc: NewBlock: NewBlock constructs a new, empty block with the given type name and labels.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -63,7 +61,6 @@
   - `TestBlockSetLabels` (function, line 198) `func TestBlockSetLabels(`
 
 ## teamserver/pkg/profile/yaotl/hclwrite/ast_body.go
-- Doc: Clear: Clear removes all of the items from the body, making it empty.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -103,7 +100,6 @@
   - `TestBodyRemoveBlock` (function, line 1392) `func TestBodyRemoveBlock(`
 
 ## teamserver/pkg/profile/yaotl/hclwrite/ast_expression.go
-- Doc: Traversal: Traversal represents a sequence of variable, attribute, and/or index operations.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -129,8 +125,8 @@
   - `TestTreeNode` (struct, line 8)
 
 ## teamserver/pkg/profile/yaotl/hclwrite/doc.go
-- Doc: Package hclwrite deals with the problem of generating HCL configuration and of making specific...
 - Layer: utility
+- Doc: Package hclwrite deals with the problem of generating HCL configuration and of making specific surgical changes to exist
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/hclwrite/examples_test.go
@@ -141,8 +137,7 @@
   - `ExampleExpression_RenameVariablePrefix` (function, line 74) `func ExampleExpression_RenameVariablePrefix(`
 
 ## teamserver/pkg/profile/yaotl/hclwrite/format.go
-- Doc: formatLine: formatLine represents a single line of source code for formatting purposes...
-- Layer: utility
+- Layer: data_access
 - Language: go
 - Symbols:
   - `format` (function, line 19) `func format(`
@@ -163,7 +158,6 @@
   - `TestLinesForFormat` (function, line 632) `func TestLinesForFormat(`
 
 ## teamserver/pkg/profile/yaotl/hclwrite/generate.go
-- Doc: TokensForValue: TokensForValue returns a sequence of tokens that represents the given constant...
 - Layer: utility
 - Language: go
 - Symbols:
@@ -192,7 +186,6 @@
   - `nativeNodeSorter` (struct, line 7)
 
 ## teamserver/pkg/profile/yaotl/hclwrite/node.go
-- Doc: node: node represents a node in the AST.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -229,7 +222,6 @@
   - `leafNode` (struct, line 292)
 
 ## teamserver/pkg/profile/yaotl/hclwrite/parser.go
-- Doc: parse: up to AST nodes.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -271,7 +263,6 @@
   - `TestLexConfig` (function, line 1458) `func TestLexConfig(`
 
 ## teamserver/pkg/profile/yaotl/hclwrite/public.go
-- Doc: NewFile: NewFile creates a new file object that is empty and ready to have constructs added t it.
 - Layer: utility
 - Language: go
 - Symbols:
@@ -287,7 +278,6 @@
   - `TestRoundTripFormat` (function, line 82) `func TestRoundTripFormat(`
 
 ## teamserver/pkg/profile/yaotl/hclwrite/tokens.go
-- Doc: Token: Token is a single sequence of bytes annotated with a type.
 - Layer: utility
 - Language: go
 - Symbols:

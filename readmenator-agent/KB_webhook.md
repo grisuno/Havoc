@@ -1,7 +1,7 @@
 # Subsystem: webhook
 
 ## teamserver/pkg/webhook/discord.go
-- Layer: utility
+- Layer: infrastructure
 - Language: go
 - Symbols:
   - `Message` (struct, line 3)

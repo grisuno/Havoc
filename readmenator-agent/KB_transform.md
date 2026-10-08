@@ -1,13 +1,12 @@
 # Subsystem: transform
 
 ## teamserver/pkg/profile/yaotl/ext/transform/doc.go
-- Doc: Package transform is a helper package for writing extensions that work by applying transforms to...
-- Layer: utility
+- Layer: data_access
+- Doc: Package transform is a helper package for writing extensions that work by applying transforms to bodies.  It defines a t
 - Language: go
 
 ## teamserver/pkg/profile/yaotl/ext/transform/error.go
-- Doc: NewErrorBody: NewErrorBody returns a hcl.Body that returns the given diagnostics whenever any of...
-- Layer: utility
+- Layer: data_access
 - Language: go
 - Symbols:
   - `NewErrorBody` (function, line 17) `func NewErrorBody(`
@@ -20,8 +19,7 @@
   - `diagBody` (struct, line 51)
 
 ## teamserver/pkg/profile/yaotl/ext/transform/transform.go
-- Doc: deepWrapper: deepWrapper is a hcl.Body implementation that ensures that a given transformer is...
-- Layer: utility
+- Layer: data_access
 - Language: go
 - Symbols:
   - `Shallow` (function, line 9) `func Shallow(`
@@ -40,8 +38,7 @@
   - `TestDeep` (function, line 16) `func TestDeep(`
 
 ## teamserver/pkg/profile/yaotl/ext/transform/transformer.go
-- Doc: Transformer: A Transformer takes a given body, applies some (possibly no-op) transform to it...
-- Layer: utility
+- Layer: data_access
 - Language: go
 - Symbols:
   - `TransformBody` (function, line 23) `func (f TransformerFunc) TransformBody(`

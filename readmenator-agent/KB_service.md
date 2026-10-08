@@ -28,7 +28,6 @@
 - Depends on: `teamserver/pkg/logger/logger.go`
 
 ## teamserver/pkg/service/service.go
-- Doc: routine: the main service routine
 - Layer: business_logic
 - Language: go
 - Symbols:
